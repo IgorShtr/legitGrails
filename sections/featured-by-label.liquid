@@ -1,0 +1,69 @@
+<style>
+  .featured-by {
+    width: 100%;
+    background: #3C1F1B;
+    padding: 20px 0;
+  }
+  .featured-by .rebranding_container {
+    justify-content: center;
+    align-items: center;
+  }
+  .featured-by_label {
+    gap: 20px;
+    justify-content: center;
+  }
+  .featured-by_label p {
+    color: #F2F2EA;
+  }
+  .featured-by_label-items {
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .featured-by_label-items svg {
+      width: auto;
+    }
+  @media(max-width: 950px) {
+    .featured-by_label {
+      margin: 0;
+    }
+  }
+  @media(max-width: 750px) {
+    .featured-by_label-items svg:nth-child(1), .featured-by_label-items svg:nth-child(2) {
+      height: 10px;
+    }
+    .featured-by_label-items svg:nth-child(3) {
+      height: 11px;
+    }
+    .featured-by_label-items svg:nth-child(4) {
+      height: 15px;
+    }
+    .featured-by_label-items {
+      width: 100%;
+    }
+    .featured-by_label {
+      gap: 5px;
+    }
+    .featured-by {
+      padding: 15px 0;
+    }
+  }
+</style>
+<div class="rebranding_container block-flex">
+  <div class="featured-by_label block-flex-wrap">
+    <p class="body-text">Featured by</p>
+    <div class="featured-by_label-items block-flex-wrap">
+      {% render "icon-rapaport" %}
+      {% render "icon-insider" %}
+      {% render "icon-forbes" %}
+      {% render "icon-nice" %}
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Featured by",
+    "class": "featured-by",
+    "settings": []
+  }
+{% endschema %}

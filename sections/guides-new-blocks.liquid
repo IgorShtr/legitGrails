@@ -1,0 +1,109 @@
+{% if template contains 'article' %}
+    {%- assign product = all_products[article.metafields.custom.product] -%}
+{% elsif template contains 'page' %}
+    {%- assign product = all_products[page.metafields.custom.product] -%}
+{% elsif template contains 'blogs' %}
+    {%- assign product = all_products[blogs.metafields.custom.product] -%}
+{% endif %}
+
+
+
+<div class="container rebranding_container">
+    <div class="product_boxes-wrapp block-flex-wrap">
+      <div id="product_boxes-content" class="product_boxes-content block-flex-wrap block-gap-15">
+        <div class="product_box product_box-steps">
+          <div class="product_box-content block-flex-wrap block-gap-20">
+            <p class="h3-heading-ss-small product_box-title">
+              <span class="h3-heading-pp-small">Verify</span> any branded item in<br><span class="h3-heading-pp-small">3 simple steps</span>
+            </p>
+            <div class="product_box-steps-items block-flex-wrap">
+              <div class="product_box-steps-item block-flex-wrap">
+                <span class="product_box-steps-item-circle block-flex">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="6" cy="6" r="6" fill="#3C1F1B"/>
+                  </svg>
+                </span>
+                <p class="small-text">Choose response time & upload photos</p>
+              </div>
+              <div class="product_box-steps-item block-flex-wrap">
+                <span class="product_box-steps-item-circle block-flex">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="6" cy="6" r="6" fill="#3C1F1B"/>
+                  </svg>
+                </span>
+                <p class="small-text">Wait for our team’s review</p>
+              </div>
+              <div class="product_box-steps-item block-flex-wrap">
+                <span class="product_box-steps-item-circle block-flex">
+                  <svg width="21" height="18" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M18.4107 0.457394L6.47734 11.9741L3.31068 8.59073C2.72734 8.04073 1.81068 8.00739 1.14401 8.47406C0.49401 8.9574 0.310676 9.80739 0.710676 10.4907L4.46068 16.5907C4.82734 17.1574 5.46068 17.5074 6.17734 17.5074C6.86068 17.5074 7.51068 17.1574 7.87734 16.5907C8.47734 15.8074 19.9273 2.15739 19.9273 2.15739C21.4273 0.624061 19.6107 -0.725939 18.4107 0.440728V0.457394Z" fill="#3C1F1B"/>
+                  </svg>
+                </span>
+                <p class="small-text">Get the verdict and personal certificate </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product_box product_hero-box block-flex-wrap block-gap-20">
+          <p class="h3-heading-ss product_box-title">
+              <span class="h3-heading-pp">Chanel</span><br> authentication service
+            </p>
+          <ul class="product_hero-box-ul block-flex-wrap block-gap-15">
+            <li>
+              <p class="small-text">
+                <span></span> authentication success rate >99.3%
+              </p>
+            </li>
+            <li>
+              <p class="small-text">
+                <span></span> item is reviewed by 2-4 specialists
+              </p>
+            </li>
+            <li>
+              <p class="small-text">
+                <span></span> relied on by over 100K users
+              </p>
+            </li>
+          </ul>
+          <div class="product_hero-box-time">
+            <p class="caption">Takes as little as</p>
+            <p class="h4-heading-pp">30 minutes</p>
+          </div>
+          <a href="" class="rebranding_btn rebranding_btn-main">Learn more</a>
+        </div>
+        <div class="product_box product_box-reviews">
+          <div class="product_box-content block-flex-wrap block-gap-20">
+            <p class="h3-heading-ss-small product_box-title">
+              <span class="h3-heading-pp-small">Authenticate</span> your branded items <span class="h3-heading-pp-small">with Experts & AI</span>
+            </p>
+            <div class="product_box-reviews-item product_box-reviews-item-rate block-flex-wrap">
+              <svg width="158" height="26" viewBox="0 0 158 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.4335 1L18.3325 8.89905L27.0518 10.1735L20.7426 16.3186L22.2316 25L14.4335 20.8991L6.63538 25L8.12433 16.3186L1.81519 10.1735L10.5344 8.89905L14.4335 1Z" fill="#F24F14" stroke="#F24F14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M47.2623 1L51.1614 8.89905L59.8806 10.1735L53.5715 16.3186L55.0604 25L47.2623 20.8991L39.4642 25L40.9532 16.3186L34.644 10.1735L43.3633 8.89905L47.2623 1Z" fill="#F24F14" stroke="#F24F14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M78.8346 1L82.7337 8.89905L91.4529 10.1735L85.1438 16.3186L86.6327 25L78.8346 20.8991L71.0365 25L72.5255 16.3186L66.2163 10.1735L74.9356 8.89905L78.8346 1Z" fill="#F24F14" stroke="#F24F14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M111.042 1L114.941 8.89905L123.66 10.1735L117.351 16.3186L118.84 25L111.042 20.8991L103.244 25L104.733 16.3186L98.4236 10.1735L107.143 8.89905L111.042 1Z" fill="#F24F14" stroke="#F24F14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M143.566 1L147.465 8.89905L156.185 10.1735L149.875 16.3186L151.364 25L143.566 20.8991L135.768 25L137.257 16.3186L130.948 10.1735L139.667 8.89905L143.566 1Z" fill="#F24F14" stroke="#F24F14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <p class="small-text">rated 4.5/5.0 by more than 100,000 customers</p>
+              <div class="product_box-reviews-item-clients block-flex-wrap">
+                  <img src="https://legitgrails.com/cdn/shop/t/159/assets/reviews_klients-1.webp?v=74878100532075713011741247497">
+                  <img src="https://legitgrails.com/cdn/shop/t/159/assets/reviews_klients-2.webp?v=41183952190493848361741247499">
+                  <img src="https://legitgrails.com/cdn/shop/t/159/assets/reviews_klients-3.webp?v=8634590307638877741741247501">
+                  <img src="https://legitgrails.com/cdn/shop/t/159/assets/reviews_klients-4.webp?v=165927462190679524681741247503">
+                  <img src="https://legitgrails.com/cdn/shop/t/159/assets/reviews_klients-5.webp?v=13013853587034224981741247505">
+              </div>
+            </div>
+            <div class="product_box-reviews-item product_box-reviews-item-rate block-flex-wrap">
+              <p class="small-text">featured by</p>
+              <div class="product_box-reviews-item-logos block-flex-wrap">
+                <img src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/guide-block_rapaport.svg?v=1702460484">
+                <img src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/guide-block_insider.svg?v=1702460484">
+                <img src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/guide-block_forbes.svg?v=1702460484">
+                <img src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/guide-block_nice.svg?v=1702460484">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

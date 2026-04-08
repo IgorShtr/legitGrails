@@ -1,0 +1,97 @@
+<style>
+  .article_column-image {
+    width: 100%;
+    height: 320px;
+    border-radius: 11px;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+  .article_column {
+      height: max-content;
+  }
+  .article_column-third {
+    width: calc(33.3333334% - 33.3333334px);
+  }
+  @media(max-width: 1450px) {
+    .article_column-third {
+      width: calc(33.3333334% - 20px);
+    }
+    .article_columns-wrapp {
+      gap: 30px;
+    }
+  }
+  @media(max-width: 1250px) {
+    .article_column-third {
+        width: calc(50% - 15px);
+    }
+  }
+  @media(max-width: 750px) {
+    .article_column-third {
+        width: 100%;
+        gap: 30px;
+    }
+    .article_columns-wrapp {
+        gap: 40px;
+    }
+  }
+  @media(max-width: 450px) {
+    .article_column-image {
+      height: 250px;
+    }
+  }
+</style>
+
+<div class="rebranding_container block-flex-wrap block-gap-50">
+  <div class="rebranding-section-title">
+    <h2 class="h2-heading-ss">
+      Signs your 
+      <span class="h2-heading-pp">
+        Chanel isn’t authentic
+      </span>
+    </h2>
+  </div>
+  <div class="article_columns-wrapp block-flex-wrap block-gap-50 block-flex-start-center">
+    <div class="article_column article_column-third block-flex-wrap block-gap-30">
+      <img class="article_column-image" src="{{ "chanel_sign-1.webp" | asset_url }}" alt="Authentic Chanel bag serial number sticker and date code">
+      <div class="article_column-text block-flex-wrap block-gap-15 block-flex-center-center tac">
+        <p class="caption w-100">Sign 1</p>
+        <h3 class="article_column-title h3-heading-pp w-100">Serial number sticker and date code</h3>
+        <p class="article_column-desc body-text taj w-100">
+          Authentic Chanel bags feature a serial number sticker, typically found on the lining or a small leather tab. This sticker includes a unique code that corresponds to the bag’s production period, helping estimate its age and check for authenticity. 
+          <br><br>
+          Different number ranges are linked to specific years, making it easier to date the bag. While a valid serial number is a good sign, it shouldn’t be your only checkpoint – fake bags can carry replicated codes that look convincing, so it’s important to consider other authenticity factors as well.
+        </p>
+      </div>
+    </div>
+    <div class="article_column article_column-third block-flex-wrap block-gap-30">
+      <img class="article_column-image" src="{{ "chanel_sign-2.webp" | asset_url }}" alt="Authentic Chanel bag quality of materials and craftsmanship">
+      <div class="article_column-text block-flex-wrap block-gap-15 block-flex-center-center tac">
+        <p class="caption w-100">Sign 2</p>
+        <h3 class="article_column-title h3-heading-pp w-100">Quality of materials and Craftsmanship</h3>
+        <p class="article_column-desc body-text taj w-100">
+          Chanel is known for its top-tier craftsmanship and luxurious materials. Genuine pieces feel rich and smooth, made from quilted leather, soft lambskin, or textured caviar leather. Fakes often use cheap synthetics that feel stiff or plastic-like.
+          <br><br>
+          Authentic Chanel also stands out through precise construction – clean stitching, sturdy hardware, and flawless finishing reflect the brand’s high standards and attention to detail, setting real items apart from counterfeits.
+        </p>
+      </div>
+    </div>
+    <div class="article_column article_column-third block-flex-wrap block-gap-30">
+      <img class="article_column-image" src="{{ "chanel_sign-3.webp" | asset_url }}" alt="Authentic Chanel bag authenticity card">
+      <div class="article_column-text block-flex-wrap block-gap-15 block-flex-center-center tac">
+        <p class="caption w-100">Sign 3</p>
+        <h3 class="article_column-title h3-heading-pp w-100">Authenticity<br>card</h3>
+        <p class="article_column-desc body-text taj w-100">
+          Every real Chanel bag has an authenticity card with unique design features, like a gold border and specific print details. A key thing to check is the grey circle in the top right corner – this should only appear on cards for bags made after 2005. If a bag has a pre-2005 serial number but includes a card with this circle, it’s likely fake. When verifying authenticity, always match the card design to the bag’s production year.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Article Three columns",
+    "class": "article_columns article_three-columns rebranding-wider-section-bottom rebranding-wider-section-top",
+    "settings": []
+  }
+{% endschema %}

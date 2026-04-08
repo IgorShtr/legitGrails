@@ -1,0 +1,87 @@
+<style>
+  .article_column-quarter {
+    width: calc(25% - 37.5px);
+  }
+  .article_column-quarter .article_column-image {
+    height: 260px;
+  }
+  @media(max-width: 1450px) {
+    .article_column-quarter {
+      width: calc(25% - 22.5px);
+    }
+  }
+  @media(max-width: 1250px) {
+    .article_column-quarter {
+        width: calc(50% - 15px);
+    }
+  }
+  @media(max-width: 750px) {
+    .article_column-quarter {
+        width: 100%;
+        gap: 30px;
+    }
+  }
+</style>
+
+<div class="rebranding_container block-flex-wrap block-gap-50">
+  <div class="rebranding-section-title block-flex-wrap block-gap-15 block-flex-center-center">
+    <h2 class="h2-heading-ss w-100">
+      Inspecting   
+      <span class="h2-heading-pp">
+        the bag’s exterior
+      </span>
+    </h2>
+    <p class="body-text block-max-width">
+      When inspecting the exterior of a Louis Vuitton bag, look for the following:
+    </p>
+  </div>
+  <div class="article_columns-wrapp block-flex-wrap block-gap-50 block-flex-start-center">
+    <div class="article_column article_column-quarter block-flex-wrap block-gap-30">
+      <img class="article_column-image back-image-style" src="{{ "lv_inspecting-the-bags-exterior-1.webp" | asset_url }}" alt="Authentic Louis Vuitton bag has symmetrical and evenly spaced monogram pattern">
+      <div class="article_column-text block-flex-wrap block-gap-15 block-flex-center-center tac">
+        <h3 class="article_column-title h3-heading-pp w-100">Monogram pattern</h3>
+        <p class="article_column-desc body-text taj w-100">
+         The iconic Louis Vuitton monogram pattern should be symmetrical and evenly spaced.
+        </p>
+      </div>
+    </div>
+    <div class="article_column article_column-quarter block-flex-wrap block-gap-30">
+      <img class="article_column-image back-image-style" src="{{ "lv_inspecting-the-bags-exterior-2.webp" | asset_url }}" alt="Authentic Louis Vuitton bag has precise and consistent stitching">
+      <div class="article_column-text block-flex-wrap block-gap-15 block-flex-center-center tac">
+        <h3 class="article_column-title h3-heading-pp w-100">Stitching</h3>
+        <p class="article_column-desc body-text taj w-100">
+          The stitching should be precise and consistent, with no loose threads or uneven stitches.
+        </p>
+      </div>
+    </div>
+    <div class="article_column article_column-quarter block-flex-wrap block-gap-30">
+      <img class="article_column-image back-image-style" src="{{ "lv_inspecting-the-bags-exterior-3.webp" | asset_url }}" alt="Authentic Louis Vuitton bag has the hardware made of high-quality metal">
+      <div class="article_column-text block-flex-wrap block-gap-15 block-flex-center-center tac">
+        <h3 class="article_column-title h3-heading-pp w-100">Hardware</h3>
+        <p class="article_column-desc body-text taj w-100">
+          The hardware, such as the zippers and buckles, should be made of high-quality metal and have a smooth, even finish.
+        </p>
+      </div>
+    </div>
+    <div class="article_column article_column-quarter block-flex-wrap block-gap-30">
+      <img class="article_column-image article_column-image-border back-image-style" src="{{ "lv_inspecting-the-bags-exterior-4.webp" | asset_url }}" alt="Authentic Louis Vuitton bag has the consistent shape">
+      <div class="article_column-text block-flex-wrap block-gap-15 block-flex-center-center tac">
+        <h3 class="article_column-title h3-heading-pp w-100">Bag’s shape</h3>
+        <p class="article_column-desc body-text taj w-100">
+          The bag’s shape and structure should be consistent with the style and design of the bag.
+        </p>
+      </div>
+    </div>
+  </div>
+  <p class="body-text tac block-bottom-text w-100">
+      These details are crucial in ensuring that the Louis Vuitton bag you are examining is authentic and of the highest quality.
+  </p>
+</div>
+
+{% schema %}
+  {
+    "name": "Article Three columns",
+    "class": "article_columns article_three-columns rebranding-wider-section-bottom",
+    "settings": []
+  }
+{% endschema %}

@@ -1,0 +1,208 @@
+{% render 'section-legit-product-nft-services-styles' %}
+<div class="featured-collection collection-template" data-section-id="{{ section.id }}">
+    <div class="page-width">
+        <div class="featured-collection__heading grid text-center">
+            <div class="grid__item medium-up--ten-twelfths medium-up--push-one-twelfth">
+                <p class="hero__overlay-title section-title font-title" data-animate>{{ section.settings.title }}</p>
+                <p class="section-description font-description">{{ section.settings.description }}</p>
+            </div>
+        </div>
+
+        <div class="block-service block-service--{{ section.id }} block-service--{{ section.settings.section_height }}"
+             data-section-id="{{ section.id }}" data-section-type="gallery">
+            {% for block in section.blocks %}
+                <div class="block-service__flex block-service__{{ section.blocks.size }}-column">
+                    {% if block.settings.image != blank %}
+                        <div class="block-service__item block-service__item--{{ block.id }} lazyload" {{ block.shopify_attributes }}
+                             data-bgset="{% include 'bgset', image: block.settings.image %}" >
+                        </div>
+                    {% endif %}
+                    <div class="block-service__text-small" data-animate>
+                        {% if block.settings.cta_label != blank %}
+                            <p class="block-service__caption font-title">{{ block.settings.cta_label | escape }}</p>
+                        {% endif %}
+                        {% if block.settings.block_description != blank %}
+                            <div class="section-description font-description">{{ block.settings.block_description }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        {% if section.blocks.size == 0 %}
+            {% include 'no-blocks' %}
+        {% endif %}
+
+        {% if section.settings.button_label != blank %}
+            <div class="button-container">
+                <a href="{{ section.settings.button_link }}" class="main-btn{% if section.settings.use_second_button %} btn--secondary{% endif %} hero__btn">
+                    {{ section.settings.button_label }}
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": {
+    "en": "Legit nft services"
+  },
+  "class" : "index-section--services",
+  "max_blocks": 3,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "section_image",
+      "label": {
+        "en": "Image"
+      }
+    },
+    {
+      "type": "select",
+      "id": "section_height",
+      "label": {
+        "en": "Section height"
+      },
+      "default": "medium",
+      "options": [
+        {
+          "label": {
+            "en": "Extra Small"
+          },
+          "value": "x-small"
+        },
+        {
+          "label": {
+            "en": "Small"
+          },
+          "value": "small"
+        },
+        {
+          "label": {
+            "en": "Medium"
+          },
+          "value": "medium"
+        },
+        {
+          "label": {
+            "en": "Large"
+          },
+          "value": "large"
+        },
+        {
+          "label": {
+            "en": "Extra Large"
+          },
+          "value": "x-large"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": {
+        "en": "Heading"
+      },
+      "default": {
+        "en": "Legit services"
+      }
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": {
+        "en": "Description"
+      }
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": {
+        "en": "Button label"
+      }
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": {
+        "en": "Button link"
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": {
+        "en": "Image"
+      },
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": {
+            "en": "Image"
+          }
+        },
+        {
+          "type": "header",
+          "content": {
+            "en": "Text"
+          }
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": {
+            "en": "Caption"
+          },
+          "default": {
+            "en": "Talk about your brand"
+          }
+        },
+        {
+          "type": "richtext",
+          "id": "block_description",
+          "label": {
+            "en": "Description"
+          },
+          "default": {
+            "en": "<p>Describe your brand</p>"
+          }
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": {
+            "en": "Link"
+          },
+          "info": {
+            "en": "Optional"
+          }
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "en": "Legit nft services"
+      },
+      "category": {
+        "en": "Image"
+      },
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,355 @@
+<style>
+  .card-with-shadow {
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #EAEAEA;
+    background: #FFF;
+    box-shadow: 0px 52px 15px 0px rgba(108, 77, 72, 0.00), 0px 33px 13px 0px rgba(108, 77, 72, 0.01), 0px 19px 11px 0px rgba(108, 77, 72, 0.03), 0px 8px 8px 0px rgba(108, 77, 72, 0.04), 0px 2px 5px 0px rgba(108, 77, 72, 0.05);
+  }
+  .account-calculator_item {
+    width: 410px;
+    height: 348px;
+  }
+  .account-calculator_item-product {
+    width: calc(100% - 850px);
+    border: 1px solid #F6ECD5;
+    background: #FFFCF5;
+    height: max-content;
+  }
+  .account-calculator_item-offer svg {
+    width: 47px;
+    height: 47px;
+  }
+  .account-calculator_item-offer p {
+    width: calc(100% - 62px);
+  }
+  .account-calculator_item-prices {
+    position: relative;
+  }
+  .secondary-price {
+    font-size: 26px;
+    letter-spacing: -1.04px;
+    opacity: 0.7;
+    position: absolute;
+    top: 50%;
+    margin-top: -14px;
+    left: calc(100% + 10px);
+    text-decoration: line-through;
+}
+  .account-calculator_item-prices-wrapp {
+  position: relative;
+}
+  @media(max-width: 1450px) {
+    .account-calculator_item-product {
+      width: 835px;
+      order: 1;
+    }
+    .account-calculator_item-offers {
+      order: 2;
+    }
+    .account-calculator_item-deal {
+      order: 3;
+    }
+  }
+  @media(max-width: 950px) {
+    .account-calculator_item {
+      width: calc(50% - 7.5px);
+    }
+    .account-calculator_item-product {
+      width: 100%;
+    }
+  }
+  @media(max-width: 750px) {
+    .secondary-price {
+    font-size: 20px;
+    letter-spacing: -0.8px;
+    }
+    .account-calculator_item-deal {
+      display: none;
+    }
+    .account-calculator_item {
+      gap: 30px;
+      width: 100%;
+      height: max-content;
+    }
+    .account-calculator_item-product-btns {
+      gap: 30px;
+    }
+    .account-calculator_item-offer {
+        width: 100%;
+        max-width: 343px;
+        margin: 0 auto;
+        height: max-content;
+    }
+    .account-calculator_item-offer svg {
+        width: 40px;
+        height: auto;
+    }
+    .account-calculator_item-offer p {
+        width: calc(100% - 55px);
+    }
+  }
+</style>
+
+<div class="rebranding_container block-flex-wrap block-gap-50">
+  <div class="account-calculator_items block-flex-wrap block-gap-15 block-flex-center-center w-100">
+    <div class="card-with-shadow account-calculator_item account-calculator_item-offers block-flex-wrap block-gap-30">
+      <p class="body-text bold w-100 tac">
+        Why use LegitGrails Credits
+      </p>
+      <div class="account-calculator_item-offer block-flex-wrap block-gap-15 block-flex-center-start">
+        <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="45" height="45" rx="22.5" fill="#F2F2EA"/>
+        <rect x="1" y="1" width="45" height="45" rx="22.5" stroke="#3C1F1B" stroke-width="2"/>
+        <path d="M33 30L23.5 20.5L18.5 25.5L11 18M33 30H27M33 30V24" stroke="#3C1F1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <p class="body-text">1 USD = 1 LegitGrails Credit</p>
+      </div>
+      <div class="account-calculator_item-offer block-flex-wrap block-gap-15 block-flex-center-start">
+        <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="45" height="45" rx="22.5" fill="#F2F2EA"/>
+        <rect x="1" y="1" width="45" height="45" rx="22.5" stroke="#3C1F1B" stroke-width="2"/>
+        <path d="M22.504 35.232V33.264C21.288 33.168 20.264 32.856 19.432 32.328C18.6 31.784 17.976 31.104 17.56 30.288C17.144 29.456 16.936 28.56 16.936 27.6H19.192C19.192 28.656 19.496 29.536 20.104 30.24C20.712 30.928 21.512 31.336 22.504 31.464V24.984L21.928 24.816C21.064 24.576 20.288 24.24 19.6 23.808C18.928 23.376 18.392 22.832 17.992 22.176C17.592 21.52 17.392 20.744 17.392 19.848C17.392 19 17.616 18.248 18.064 17.592C18.528 16.936 19.152 16.408 19.936 16.008C20.72 15.608 21.592 15.376 22.552 15.312V13.368H23.872V15.312C25.52 15.44 26.776 15.968 27.64 16.896C28.504 17.808 28.968 18.928 29.032 20.256H26.776C26.68 19.328 26.376 18.6 25.864 18.072C25.352 17.544 24.688 17.224 23.872 17.112V23.088L24.112 23.16C24.784 23.32 25.432 23.528 26.056 23.784C26.696 24.024 27.272 24.336 27.784 24.72C28.296 25.088 28.704 25.56 29.008 26.136C29.312 26.712 29.464 27.408 29.464 28.224C29.464 29.216 29.224 30.08 28.744 30.816C28.264 31.536 27.6 32.104 26.752 32.52C25.904 32.936 24.928 33.184 23.824 33.264V35.232H22.504ZM27.208 28.56C27.208 27.616 26.936 26.928 26.392 26.496C25.848 26.048 24.992 25.664 23.824 25.344V31.488C24.88 31.392 25.704 31.088 26.296 30.576C26.904 30.064 27.208 29.392 27.208 28.56ZM19.648 19.824C19.648 20.496 19.864 21.072 20.296 21.552C20.728 22.032 21.48 22.432 22.552 22.752V17.088C21.672 17.168 20.968 17.448 20.44 17.928C19.912 18.392 19.648 19.024 19.648 19.824Z" fill="#3C1F1B"/>
+        </svg>
+        <p class="body-text">Get bonus credits when you top up more</p>
+      </div>
+      <div class="account-calculator_item-offer block-flex-wrap block-gap-15 block-flex-center-start">
+        <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="45" height="45" rx="22.5" fill="#F2F2EA"/>
+        <rect x="1" y="1" width="45" height="45" rx="22.5" stroke="#3C1F1B" stroke-width="2"/>
+        <path d="M31.9555 23.9012C31.901 24.4508 32.3022 24.9405 32.8518 24.9951C33.4014 25.0497 33.8912 24.6484 33.9457 24.0988L31.9555 23.9012ZM24.0988 33.9457C24.6484 33.8912 25.0497 33.4014 24.9951 32.8518C24.9405 32.3022 24.4508 31.9009 23.9012 31.9555L24.0988 33.9457ZM23.5 32.9877L23.4508 31.9889H23.4508L23.5 32.9877ZM24 17C24 16.4477 23.5523 16 23 16C22.4477 16 22 16.4477 22 17H24ZM23 23H22C22 23.3788 22.214 23.725 22.5528 23.8944L23 23ZM26.2912 25.7636C26.7851 26.0106 27.3858 25.8104 27.6328 25.3164C27.8798 24.8224 27.6796 24.2217 27.1856 23.9748L26.2912 25.7636ZM33.7071 28.7071C34.0976 28.3166 34.0976 27.6834 33.7071 27.2929C33.3166 26.9024 32.6834 26.9024 32.2929 27.2929L33.7071 28.7071ZM27.2929 32.2929C26.9024 32.6834 26.9024 33.3166 27.2929 33.7071C27.6834 34.0976 28.3166 34.0976 28.7071 33.7071L27.2929 32.2929ZM28.7071 27.2929C28.3166 26.9024 27.6834 26.9024 27.2929 27.2929C26.9024 27.6834 26.9024 28.3166 27.2929 28.7071L28.7071 27.2929ZM32.2929 33.7071C32.6834 34.0976 33.3166 34.0976 33.7071 33.7071C34.0976 33.3166 34.0976 32.6834 33.7071 32.2929L32.2929 33.7071ZM23 33V32C18.0294 32 14 27.9706 14 23H13H12C12 29.0751 16.9249 34 23 34V33ZM13 23H14C14 18.0294 18.0294 14 23 14V13V12C16.9249 12 12 16.9249 12 23H13ZM23 13V14C27.9706 14 32 18.0294 32 23H33H34C34 16.9249 29.0751 12 23 12V13ZM33 23H32C32 23.3045 31.9849 23.6051 31.9555 23.9012L32.9506 24L33.9457 24.0988C33.9816 23.7371 34 23.3705 34 23H33ZM24 32.9506L23.9012 31.9555C23.7522 31.9703 23.602 31.9815 23.4508 31.9889L23.5 32.9877L23.5492 33.9865C23.7336 33.9774 23.9168 33.9638 24.0988 33.9457L24 32.9506ZM23.5 32.9877L23.4508 31.9889C23.3016 31.9963 23.1513 32 23 32V33V34C23.1841 34 23.3672 33.9955 23.5492 33.9865L23.5 32.9877ZM23 17H22V23H23H24V17H23ZM23 23L22.5528 23.8944L26.2912 25.7636L26.7384 24.8692L27.1856 23.9748L23.4472 22.1056L23 23ZM33 28L32.2929 27.2929L29.7929 29.7929L30.5 30.5L31.2071 31.2071L33.7071 28.7071L33 28ZM30.5 30.5L29.7929 29.7929L27.2929 32.2929L28 33L28.7071 33.7071L31.2071 31.2071L30.5 30.5ZM28 28L27.2929 28.7071L29.7929 31.2071L30.5 30.5L31.2071 29.7929L28.7071 27.2929L28 28ZM30.5 30.5L29.7929 31.2071L32.2929 33.7071L33 33L33.7071 32.2929L31.2071 29.7929L30.5 30.5Z" fill="#3C1F1B"/>
+        </svg>
+        <p class="body-text">Credits never expire – use them anytime</p>
+      </div>
+    </div>
+    <div class="card-with-shadow account-calculator_item account-calculator_item-product block-flex-wrap block-gap-30">
+      <h2 class="h2-heading-ss w-100 tac" data-type="mainOffer">
+        Get <span class="h2-heading-pp">More Authentications</span> for Less
+      </h2>
+      <div class="account-calculator_item-product-btns block-flex-wrap block-gap-50 block-flex-center-center">
+        <div class="account-calculator_item-product-btns-item block-gap-12 block-flex-wrap block-flex-center-center w-100">
+          <p class="body-text bold w-100 tac">
+            Which brands to authenticate?
+          </p>
+          <div class="block-flex-wrap block-gap-15 block-flex-center-center w-100">
+            <a href="javascript:void(0)" data-type="category" data-category="luxury" class="accountCalculatorBtn accountCalculatorBtnCategory inf-btn active">Luxury</a>
+            <a href="javascript:void(0)" data-type="category" data-category="hype" class="accountCalculatorBtn accountCalculatorBtnCategory inf-btn">Hype</a>
+          </div>
+          <p data-type="categoryText" class="tiny-text additional-text-color tac w-100">Brands like Gucci, Louis Vuitton, and more</p>
+        </div>
+        <div class="account-calculator_item-product-btns-item block-gap-12 block-flex-wrap block-flex-center-center w-100">
+          <p class="body-text bold w-100 tac">
+            How many items to authenticate?
+          </p>
+          <div class="block-flex-wrap block-gap-15 block-flex-center-center w-100">
+            <a href="javascript:void(0)" data-type="pricing" data-pricing="5" class="accountCalculatorBtn accountCalculatorBtnPricing inf-btn active">5</a>
+            <a href="javascript:void(0)" data-type="pricing" data-pricing="25" class="accountCalculatorBtn accountCalculatorBtnPricing inf-btn">25</a>
+            <a href="javascript:void(0)" data-type="pricing" data-pricing="100" class="accountCalculatorBtn accountCalculatorBtnPricing inf-btn">100</a>
+            <a href="javascript:void(0)" data-type="pricing" data-pricing="300" class="accountCalculatorBtn accountCalculatorBtnPricing inf-btn">300</a>
+            <a href="javascript:void(0)" data-type="pricing" data-pricing="500" class="accountCalculatorBtn accountCalculatorBtnPricing inf-btn">500</a>
+            <a href="javascript:void(0)" data-type="pricing" data-pricing="1700" class="accountCalculatorBtn accountCalculatorBtnPricing inf-btn">1700</a>
+          </div>
+          {% comment %} <p class="tiny-text additional-text-color tac w-100">
+            *<span data-type="pricingText">$300 gives you 300 credits + 40 bonus credits</span><br>
+            More credits = lower cost per authentication
+          </p> {% endcomment %}
+        </div>
+
+        <div class="account-calculator_item-prices block-gap-12 block-flex-wrap block-flex-center-center">
+            <p class="body-text bold w-100 tac">
+              Cost per authentication:
+            </p>
+            <span class="account-calculator_item-prices-wrapp">
+            <p class="h2-heading-pp main-price">
+              $13.24
+            </p>
+            <p class="h2-heading-pp secondary-price">
+              $15.00
+            </p>
+            </span>
+        </div>
+      </div>
+      <div class="block-flex-wrap block-gap-10 w-100">
+      <a href="https://account.legitgrails.com/" target="_blank" class="rebranding_btn rebranding_btn-main w-100">Create Free Account & Top Up</a>
+      <a href="https://legitgrails.com/pages/account-pricing" class="rebranding_btn w-100">Learn more about our pricing</a>
+      </div>
+      {% comment %} <p class="body-text tac w-100">Not ready to apply? <a href="">Learn more about the program</a></p> {% endcomment %}
+    </div>
+    <div class="card-with-shadow account-calculator_item account-calculator_item-deal block-flex-wrap block-gap-30">
+      <p class="body-text bold w-100 tac">
+        Featured Deal
+      </p>
+      <h3 class="h3-heading-ss tac w-100">
+        Top up 1,000 credits & get
+        <span class="h3-heading-pp">$250 in free authentications</span>
+      </h3>
+      <p class="body-text tac w-100">60+ free hype authentications or 20+ free luxury authentications*</p>
+      <p class="tiny-text additional-text-color tac w-100">*12 hours turnaround</p>
+    </div>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.accountCalculatorBtn').forEach(function(button) {
+  button.addEventListener('click', function () {
+
+    document.querySelectorAll(`.accountCalculatorBtn[data-type="${this.dataset.type}"]`).forEach(btn => {
+      btn.classList.remove('active');
+    });
+
+
+    this.classList.add('active');
+
+
+    if (this.dataset.type === 'category') {
+      changeCategoryText();
+      changePricingText();
+    } else if (this.dataset.type === 'pricing') {
+      changePricingText();
+    } else {
+      console.warn(`Unrecognized data type: ${this.dataset.type}`);
+    }
+  });
+});
+
+const categoryTexts = {
+  Luxury: "Brands like Gucci, Louis Vuitton, and more",
+  Hype: "Brands like Nike, Adidas, and more"
+};
+
+const pricingBonusTexts = {
+  "300": "$300 gives you 300 credits + 40 bonus credits",
+  "1000": "$1,000 gives you 1,000 credits + 250 bonus credits",
+  "5000": "$5,000 gives you 5,000 credits + 1,660 bonus credits"
+};
+
+const pricingData = {
+  Luxury: {
+    "5": { main: 15.00, secondary: '' },
+    "25": { main: 13.24, secondary: 15.00 },
+    "100": { main: 12.00, secondary: 15.00 },
+    "500": { main: 11.36, secondary: 15.00 }
+  },
+  Hype: {
+    "5": { main: 4.00, secondary: '' },
+    "300": { main: 3.53, secondary: 4.00 },
+    "500": { main: 3.20, secondary: 4.00 },
+    "1700": { main: 3.03, secondary: 4.00 }
+  }
+};
+
+function getActiveButtonText(type) {
+  const btn = document.querySelector(`.accountCalculatorBtn.active[data-type="${type}"]`);
+  if (!btn) {
+    console.warn(`No active button found for type "${type}".`);
+    return null;
+  }
+
+
+  if (type === 'pricing') {
+    return btn.dataset.pricing;
+  }
+
+  return btn.textContent.trim();
+}
+
+function updateTextContent(selector, text, useHTML = false) {
+  const element = document.querySelector(selector);
+  if (!element) {
+    console.warn(`Target element not found for selector: ${selector}`);
+    return;
+  }
+  if (useHTML) {
+    element.innerHTML = text ?? '';
+  } else {
+    element.textContent = text ?? '';
+  }
+}
+
+function changeCategoryText() {
+  const category = getActiveButtonText('category');
+  if (!category) return;
+
+  const text = categoryTexts[category];
+  updateTextContent('p[data-type="categoryText"]', text);
+}
+
+function changePricingText() {
+  const category = getActiveButtonText('category');
+  const pricing = getActiveButtonText('pricing');
+  if (!category || !pricing) return;
+
+  const priceInfo = pricingData[category]?.[pricing];
+  const bonusText = pricingBonusTexts[pricing];
+
+  if (priceInfo) {
+    updateTextContent('p.main-price', `$${priceInfo.main.toFixed(2)}`);
+
+    const secondaryEl = document.querySelector('p.secondary-price');
+    if (!secondaryEl) return;
+
+    const hasSecondaryNumber = typeof priceInfo.secondary === 'number' && !isNaN(priceInfo.secondary);
+    const isSame = hasSecondaryNumber && Math.abs(priceInfo.secondary - priceInfo.main) < 0.01;
+
+    if (hasSecondaryNumber && !isSame) {
+      secondaryEl.textContent = `$${priceInfo.secondary.toFixed(2)}`;
+      secondaryEl.style.display = '';     // show
+    } else {
+      secondaryEl.textContent = '';       // clear any old text
+      secondaryEl.style.display = 'none'; // hide
+    }
+  }
+
+  updateTextContent('span[data-type="pricingText"]', bonusText || '');
+}
+
+const pricingOptions = {
+    Luxury: ['5', '25', '100', '500'],
+    Hype: ['5', '300', '500', '1700'],
+  };
+
+  function filterPricingButtons() {
+    const category = getActiveButtonText('category'); 
+    if (!category) return;
+
+    const allowed = pricingOptions[category] || [];
+    const pricingBtns = Array.from(document.querySelectorAll('.accountCalculatorBtn[data-type="pricing"]'));
+
+
+    pricingBtns.forEach(btn => {
+      const val = btn.dataset.pricing;
+      btn.style.display = allowed.includes(val) ? '' : 'none';
+    });
+
+
+    let active = document.querySelector('.accountCalculatorBtn.active[data-type="pricing"]');
+    const activeVal = active?.dataset.pricing;
+
+    if (!active || !allowed.includes(activeVal)) {
+
+      pricingBtns.forEach(b => b.classList.remove('active'));
+
+      const firstAllowed = pricingBtns.find(b => allowed.includes(b.dataset.pricing));
+      if (firstAllowed) firstAllowed.classList.add('active');
+    }
+
+
+    changePricingText();
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    filterPricingButtons();
+  });
+
+  document.querySelectorAll('.accountCalculatorBtn[data-type="category"]').forEach(btn => {
+    btn.addEventListener('click', filterPricingButtons);
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Account Calculator",
+    "class": "account-calculator rebranding-section",
+    "settings": []
+  }
+{% endschema %}

@@ -1,0 +1,35 @@
+<style>
+  .blog-hero {
+    padding: 60px 0 30px 0;
+  }
+</style>
+<div class="rebranding_container">
+  <div class="blog-hero_content block-flex-wrap block-flex-center-center block-gap-30">
+    <div class="rebranding-section-title block-flex-wrap block-flex-center-center block-gap-15">
+      <h1 class="h1-heading-pp w-100">
+        {{ page_title }}
+      </h1>
+      <!-- {% if blog.metafields.custom.description != blank %}
+      <p class="body-text block-max-width">{{ blog.metafields.custom.description }}</p>
+      {% endif %}-->
+    </div>
+    <!-- TrustBox widget - Mini
+    <a href="{{ product.url }}" class="rebranding_btn rebranding_btn-main">
+      Authenticate now
+    </a>
+    <div class="block-flex-wrap block-flex-center-center w-100" style="height: 97px;">
+      <div class="trustpilot-widget" data-locale="en-GB" data-template-id="53aa8807dec7e10d38f59f32" data-businessunit-id="5fbebb2d281b010001718c1c" data-style-height="112px" data-style-width="200px" data-theme="light">
+         <a href="https://uk.trustpilot.com/review/legitgrails.com" target="_blank" rel="noopener">Trustpilot</a>
+      </div>
+    </div>
+     End TrustBox widget -->
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Blog Hero",
+    "class": "blog-hero",
+    "settings": []
+  }
+{% endschema %}

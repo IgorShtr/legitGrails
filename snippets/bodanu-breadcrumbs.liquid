@@ -1,0 +1,108 @@
+
+    {% unless template == 'index' or template == 'cart' or template == 'list-collections' or template == '404' %}
+    {% assign t = template | split: '.' | first %}
+    <nav class="breadcrumbs font-title" role="navigation" aria-label="breadcrumbs">
+       <ol>
+          <li>
+             <a href="/" title="{{ shop.name }}">Home</a>
+          </li>
+          {% case t %}
+          {% when 'page' %}
+          <li>
+             <a href="{{ page.url }}" aria-current="page">{{ page.title }}</a>
+          </li>
+          {% when 'product' %}
+             {% assign current_variant = product.selected_or_first_available_variant %}
+           {% if collection.url %}
+           <li><a href="{{ collection.url }}">{{ collection.title | split: "-" | first }}</a></li>
+           {% endif %}
+          <li>
+             <a href="{{ product.url }}" aria-current="page">{{ product.title | split: "-" | first }}</a>
+          </li>
+          {% when 'collection' and collection.handle %}
+          <li>
+             <a href="{{ collection.url }}" aria-current="page">{{ collection.title | split: "-" | first }}</a>
+          </li>
+        {% if collection.products != empty %}
+         {% endif %}
+          {% when 'blog' %}
+          <li>
+             <a href="{{ blog.url }}" aria-current="page">{{ blog.title }}</a>
+          </li>
+          {% when 'article' %}
+          <li>{{ blog.title | link_to: blog.url }}</li>
+          <li>
+             <a href="{{ article.url }}" aria-current="page">{{ article.title }}</a>
+          </li>
+          {% else %}
+          <li aria-current="page">
+             <a href="{{ request.path }}" aria-current="page">{{ page_title }}</a>
+          </li>
+          {% endcase %}
+       </ol>
+    </nav>
+    {% endunless %}
+    <style>
+       .breadcrumbs {
+       font-size: 13px;
+           padding: 0 2em 0.8em;
+       text-align: center;
+       text-transform: uppercase;
+       color: #989898;
+       letter-spacing: 1px;
+       }
+       .breadcrumbs ol {
+       list-style-type: none;
+       margin: 0;
+       padding: 0;
+       }
+       .breadcrumbs li {
+       display: inline-block;
+       }
+       .breadcrumbs a {
+       position: relative;
+       color: #989898;
+       text-decoration: none !important;
+       transition: 0.3s;
+       padding: 10px 0;
+       }
+       .breadcrumbs a:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 5px;
+        left: 0;
+        background-color: #989898;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+       }
+       .breadcrumbs a:hover{
+       color:#C0C0C0;
+       }
+      .breadcrumbs a:hover:before{
+       background-color: #C0C0C0;
+       visibility: visible;
+       width: 100%;
+       }
+       .breadcrumbs ol li:last-of-type {
+       pointer-events: none;
+       }
+       .breadcrumbs ol li:not(:last-of-type):after {
+       content: "›\00a0";
+       display: inline-block;
+       padding-left: .25ch;
+       speak: none;
+       font-size: 20px;
+       margin-right: -0.5ch;
+       }
+       .breadcrumbs [aria-current="page"] {
+       color: inherit;
+       font-weight: normal;
+       text-decoration: none;
+       }
+       .breadcrumbs [aria-current="page"]:hover,
+       .breadcrumbs [aria-current="page"]:focus {
+       text-decoration: underline;
+       }
+    </style>

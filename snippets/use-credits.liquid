@@ -1,0 +1,109 @@
+{%- comment -%}
+  "Start: Protected block of code for functionality credits-app-with-db. Do not make changes without consulting the manager."
+{%- endcomment -%}
+
+<button
+  type="submit"
+  id="checkout"
+  class="btn btn--loader"
+  name="checkout"
+  {% if cart == empty %}
+    disabled
+  {% endif %}
+  form="cart"
+>
+  {{ 'cart.general.checkout' | t }}
+</button>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    function submitDefaultForm() {
+  				if (form.elements["credits"]) {
+  						form.elements["credits"].remove();
+  				}
+
+      // Add checkout field
+      const checkoutInput = document.createElement("input");
+      checkoutInput.type = "hidden";
+      checkoutInput.name = "checkout";
+      checkoutInput.value = "true";
+      form.append(checkoutInput);
+
+      form.submit();
+    }
+
+    const form = document.forms.cart;
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const checkoutButton = document.getElementById("checkout");
+      checkoutButton.disabled = true;
+      checkoutButton.textContent = "Loading...";
+
+      if (!form.elements["credits"]) {
+  						submitDefaultForm();
+  				}
+
+      if (Number(form.elements["credits"].value) === 0) {
+        console.log("No credits used - submit form without credits");
+        // No credits used - just submit
+        submitDefaultForm();
+      }
+
+      const formData = {
+        credits: form.elements["credits"].value
+      };
+
+      console.log("ready to send data");
+
+      // Send data to proxy
+      fetch("/a/proxy", {
+        method: "POST",
+        body: JSON.stringify(formData)
+      })
+        .then(async response => {
+          if (!response.ok) {
+            // Error - submit form without credits
+            console.log("Error - submit form without credits");
+            submitDefaultForm();
+          }
+          if (response.ok) {
+            // Get discount code from response
+            const { discountCode } = await response.json();
+
+            // Remove existing credits field
+            form.elements["credits"].remove();
+
+            const discountInput = document.createElement("input");
+            discountInput.type = "hidden";
+            discountInput.name = "discount";
+            discountInput.value = discountCode;
+
+            form.append(discountInput);
+
+            // Add checkout and discount
+            const checkoutInput = document.createElement("input");
+            checkoutInput.type = "hidden";
+            checkoutInput.name = "checkout";
+            checkoutInput.value = "true";
+
+            form.append(checkoutInput);
+
+            // Submit form
+            form.submit();
+          }
+        })
+        .catch(() => {
+          // Network error - submit form without credits
+          console.log("Error - submit form without credits");
+          submitDefaultForm();
+        })
+        .finally(() => {
+          // Re-enable the button and restore its text
+          checkoutButton.disabled = false;
+          checkoutButton.textContent = "{{ 'cart.general.checkout' | t }}";
+        });
+    });
+  });
+</script>

@@ -1,0 +1,33 @@
+<section class="text-section text-section-right">
+    <div class="container">
+        <div class="text-section-wrapp">
+            <div class="text-section_text">
+                <span></span>
+                <h2 class="text-section_text-title font-title">
+                    Verificación confiable
+                </h2>
+                <p class="text-section_text-desc font-description">
+                    {{ product.metafields.custom_fields.reliable_verification }}
+                </p>
+                <a href="javascript:void(0)" class="text-section_text-a text-section_text-a-scroll font-title">
+                    Aprende Más
+                </a>
+            </div>
+            <img src="{{ product.metafields.custom_fields.reliable_image | image_url: width: 590 }}" class="text-section_img" alt="Reliable Verification">
+        </div>
+
+    </div>
+</section>
+{% schema %}
+  {
+    "name": "Reliable Verification",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+

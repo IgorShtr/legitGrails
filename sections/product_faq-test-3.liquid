@@ -1,0 +1,425 @@
+<style>
+  .product_faq {
+    background: #3C1F1B;
+  }
+  .product_faq-wrapper {
+    justify-content: center;
+    gap: 50px;
+  }
+  .product_faq-text {
+    width: 515px;
+  }
+  .product_faq-text h2, .product_faq-text p {
+    color: #F2F2EA;
+  }
+  .product_faq-text p {
+    margin-top: 10px;
+  }
+  .product_faq-items {
+    width: calc(100% - 565px);
+    gap: 10px;
+  }
+  .product_faq-item {
+    border-radius: 12px;
+    background: #fff;
+    transition: 0.3s;
+    width: 100%;
+    padding: 4px 40px;
+  }
+  .product_faq-item:hover {
+    cursor: pointer;
+  }
+  .product_faq-item-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0px;
+  }
+  .product_faq-item-title p {
+    max-width: calc(100% - 38px);
+  }
+  a.product_faq-item-cross {
+    display: block;
+    height: max-content;
+  }
+  .product_faq-item-title a svg {
+      height: 28px;
+      width: auto;
+      transition: .3s;
+      transform: rotate(0deg);
+    display: block;
+  }
+  .product_faq-item-title a svg path {
+    transition: .3s;
+  }
+  .product_faq-item.active .product_faq-item-title a svg {
+      transform: rotate(45deg);
+  }
+  .product_faq-item.active .product_faq-item-title a svg path {
+    stroke: #F24F14;
+  }
+  .product_faq-item-text {
+    height: max-content;
+    max-height: 0px;
+    overflow: hidden;
+    width: 100%;
+    transition: .5s;
+    position: relative;
+  }
+  .product_faq-item-text a {
+    text-decoration: underline;
+    transition: .3s;
+  }
+  .product_faq-item-text a:hover {
+    opacity: .85;
+  }
+  .product_faq-item-text a:active {
+    opacity: .7;
+  }
+  .product_faq-item.active .product_faq-item-text {
+    padding-top: 21px;
+    padding-bottom: 16px;
+    max-height: 164px;
+  }
+  .product_faq-item-text::before {
+    content:'';
+    display: block;
+    height: 100%;
+    max-height: 0px;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    background: rgba(60, 31, 27, 0.30);
+    transition: .5s;
+  }
+  .product_faq-item-text::before {
+    max-height: 1px;
+  }
+  .product_faq-desc {
+    margin-top: 15px;
+  }
+  .product_faq-btns {
+    margin-top: 30px;
+    justify-content: center;
+  }
+  .product_faq-btns a {
+    margin: 0;
+  }
+  .product_faq-a {
+    text-decoration: underline;
+    color: #fff;
+  }
+  .product_faq-btns-desktop-hidden {
+    display: none;
+  }
+  @media(max-width: 1450px) {
+    .product_faq-item {
+        padding: 4px 30px;
+    }
+    .product_faq-item.active .product_faq-item-text {
+      max-height: 222px;
+    }
+  }
+  @media(max-width: 1250px) {
+    .product_faq-btns-mobile-hidden {
+      display: none;
+    }
+    .product_faq-btns-desktop-hidden {
+      display: flex!important;
+    }
+    .product_faq-items {
+      width: 100%;
+    }
+    .product_faq-btns {
+      margin-top: 0;
+      width: 100%;
+    }
+    .product_faq-text {
+        width: 100%;
+        text-align: center;
+    }
+    .product_faq-wrapper {
+      gap: 40px;
+    }
+  }
+  @media(max-width: 750px) {
+    .product_faq {
+      padding: 60px 0;
+    }
+    .product_faq-wrapper a.rebranding_btn {
+      margin: 0px auto;
+    }
+    .product_faq-item-title {
+      padding: 15px 0;
+    }
+    .product_faq-item {
+        padding: 0px 20px;
+    }
+    .product_faq-item.active .product_faq-item-text {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    }
+    .product_faq-item-title a svg {
+      height: 24px;
+    }
+  }
+</style>
+
+<div class="container rebranding_container">
+  <div class="product_faq-wrapper block-flex-wrap">
+    <div class="product_faq-text">
+      <h2 class="h2-heading-ss">
+        Featured
+        <span class="h2-heading-pp">questions</span>
+      </h2>
+      <p class="product_faq-desc body-text">
+        Have more questions? Visit our <a href="https://legitgrails.frontkb.com/en" target="_blank" class="product_faq-a standart-hover">Help Center</a>
+      </p>
+      <div class="product_faq-btns block-flex-wrap block-gap-15 product_faq-btns-mobile-hidden">
+        <a href="https://legitgrails.frontkb.com/en" target="_blank" class="rebranding_btn">
+        Help Center
+      </a>
+        <a href="#product_boxes" class="rebranding_btn rebranding_btn-main product_authenticate-now-btn-track">
+        Authenticate now
+      </a>
+      </div>
+    </div>
+    <div class="product_faq-items block-flex-wrap">
+      <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">How does LegitGrails {{ product.title }} work?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            Our {{ product.title }} works using Hybrid Authentication. This combines AI precision with human expertise to verify your item's authenticity. You begin by uploading photos of your item for our AI to check against a large database of {{ product.title | remove: "Authentication Service" }} items and characteristics. Then, our experts carefully review the photos, using their deep knowledge to confirm authenticity. If more details are needed, we'll contact you right away to ensure the most accurate outcome as quickly as possible.
+         </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">What sets LegitGrails Authentication Service apart from similar services?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            Our {{ product.title }} combines AI precision with human expertise in a Hybrid Authentication, ensuring quick and accurate verification. With over six years of industry experience, our team conducts thorough authentications, validated by at least two specialists. We provide detailed results, free Authenticity Certificates, and ongoing support, ensuring accuracy, transparency, and trust.
+                        </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">Which photos should I upload for authentication?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            For the most accurate and quick authentication process, we advise you to upload clear photos of the areas visible when clicking 'Upload photos' on this page. We quickly determine if the uploaded photo meets our criteria. If your photos do not meet the criteria, you will receive a request for more and/or clearer photos. Check out <a href="https://legitgrails.frontkb.com/en/categories/604802-general-photos" target="_blank">Photo Instructions</a> to find clear examples for each detail.
+                        </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">How long does LegitGrails authentication process take?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            We provide a range of authentication response times to suit your needs, with options including 12 hours, 6 hours, 2 hours, and 30 minutes. Additionally, we offer an ultra-fast 1-minute turnaround for certain brands.
+          </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">How precise is LegitGrails {{ product.title }}?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            At LegitGrails, our Hybrid Authentication combines AI precision with human expertise to deliver authentication results with an accuracy rate over 99.3%. Our team of experts, equipped with advanced tools and industry knowledge, carefully examines each item to identify any signs of counterfeiting. Our {{ product.title }} process stands out for its high accuracy rate and speed.
+                        </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">Is it possible to have my model authenticated by LegitGrails?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+           You can upload any model under the brand page for authentication. If we are unable to authenticate your specific model, you will receive a refund in credits or back to your original payment method.
+          </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">What happens if my item is deemed fake?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            In the unfortunate event that your item is deemed counterfeit by LegitGrails, we will provide you with a comprehensive report of our findings and inform you of the result.
+          </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">What if I have additional questions or concerns about the service?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+           If you have additional questions or concerns about the service, please feel free to contact our customer support team. We are available 24/7 to assist you with any inquiries, feedback, or issues you may encounter. You can reach us through our live chat on the website, our email <a href="mailto:support@legitgrails.com">support@legitgrails.com</a>, or visit our <a href="https://legitgrails.frontkb.com/en" target="_blank">Help Center</a>. We will respond as soon as possible.
+                        </p>
+        </div>
+      </div>
+    </div>
+      <div class="product_faq-btns block-flex-wrap block-gap-15 product_faq-btns-desktop-hidden">
+        <a href="https://legitgrails.frontkb.com/en" target="_blank" class="rebranding_btn">
+        Help Center
+      </a>
+        <a href="#product_boxes" class="rebranding_btn rebranding_btn-main product_authenticate-now-btn-track">
+        Authenticate now
+      </a>
+      </div>
+  </div>
+</div>
+
+{% if product %}
+{% assign product_name = product.title | escape %}
+{% assign short_product_name = product_name | remove: 'Authentication Service' %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does LegitGrails {{ product_name }} work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our {{ product_name }} works using Hybrid Authentication. This combines AI precision with human expertise to verify your item's authenticity. You begin by uploading photos of your item for our AI to check against a large database of {{ short_product_name }} items and characteristics. Then, our experts carefully review the photos, using their deep knowledge to confirm authenticity. If more details are needed, we'll contact you right away to ensure the most accurate outcome as quickly as possible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What sets LegitGrails Authentication Service apart from similar services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our {{ product_name }} combines AI precision with human expertise in a Hybrid Authentication, ensuring quick and accurate verification. With over six years of industry experience, our team conducts thorough authentications, validated by at least two specialists. We provide detailed results, free Authenticity Certificates, and ongoing support, ensuring accuracy, transparency, and trust."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which photos should I upload for authentication?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For the most accurate and quick authentication process, we advise you to upload clear photos of the areas visible when clicking 'Upload photos' on this page. We quickly determine if the uploaded photo meets our criteria. If your photos do not meet the criteria, you will receive a request for more and/or clearer photos. Check out our Photo Instructions at https://legitgrails.frontkb.com/en/categories/604802-general-photos to find clear examples for each detail."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does LegitGrails authentication process take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We provide a range of authentication response times to suit your needs, with options including 12 hours, 6 hours, 2 hours, and 30 minutes. Additionally, we offer an ultra-fast 1-minute turnaround for certain brands."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How precise is LegitGrails {{ product_name }}?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "At LegitGrails, our Hybrid Authentication combines AI precision with human expertise to deliver authentication results with an accuracy rate over 99.3%. Our team of experts, equipped with advanced tools and industry knowledge, carefully examines each item to identify any signs of counterfeiting. Our {{ product_name }} process stands out for its high accuracy rate and speed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it possible to have my model authenticated by LegitGrails?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can upload any model under the brand page for authentication. If we are unable to authenticate your specific model, you will receive a refund in credits or back to your original payment method."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if my item is deemed fake?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In the unfortunate event that your item is deemed counterfeit by LegitGrails, we will provide you with a comprehensive report of our findings and inform you of the result."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I have additional questions or concerns about the service?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If you have additional questions or concerns about the service, please feel free to contact our customer support team. We are available 24/7 to assist you with any inquiries, feedback, or issues you may encounter. You can reach us through our live chat on the website, our email support@legitgrails.com, or visit our Help Center at https://legitgrails.frontkb.com/en. We will respond as soon as possible."
+      }
+    }
+  ]
+}
+</script>
+{% endif %}
+
+<script>
+  $( ".product_faq-item" ).on( "click", function() {
+    if ($(this).hasClass("active")) {
+      $(".product_faq-item").removeClass("active");
+    } else {
+      $(".product_faq-item").removeClass("active");
+      $(this).addClass("active");
+    }
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Product FAQ",
+    "class": "product_faq rebranding-section",
+    "settings": []
+  }
+{% endschema %}

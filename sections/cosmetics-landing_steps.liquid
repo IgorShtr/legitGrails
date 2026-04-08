@@ -1,0 +1,348 @@
+<style>
+  .cosmetics_steps {
+    padding: 150px 0;
+    text-align: center;
+  }
+  .cosmetics_steps-line-wrapp {
+    display: flex;
+    width: 1000px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: 30px auto 0 auto;
+  }
+  .cosmetics_steps-line {
+    background: #D8D9DE;
+    height: 3px;
+    width: 0;
+    position: absolute;
+    display: block;
+    top: 26px;
+    left: 27px;
+    z-index: 5;
+    transition: 1s linear;
+  }
+  .cosmetics_steps-line.animated {
+    width: calc(100% - 54px);
+  }
+  .cosmetics_steps-line-item-wrapp {
+    position: relative;
+    height: 55px;
+    width: 55px;
+  }
+  span.cosmetics_steps-line-item {
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 0;
+    width: 0;
+    transition: 1s;
+    margin-top: 0;
+    margin-left: 0;
+  }
+  span.cosmetics_steps-line-item-1 {
+    background: #D8D9DE;
+    z-index: 3;
+    margin-top: -1px;
+    margin-left: -1px;
+  }
+  .cosmetics_steps-line-item-wrapp.animated span.cosmetics_steps-line-item-1 {
+    margin-top: -9px;
+    margin-left: -9px;
+    height: 18px;
+    width: 18px;
+  }
+  span.cosmetics_steps-line-item-2 {
+    margin-top: -1px;
+    margin-left: -1px;
+    background: #E8E8E8;
+    z-index: 2;
+  }
+  .cosmetics_steps-line-item-wrapp.animated span.cosmetics_steps-line-item-2 {
+    margin-top: -18px;
+    margin-left: -18px;
+    height: 36px;
+    width: 36px;
+  }
+  span.cosmetics_steps-line-item-3 {
+    border: 1px solid #D8D9DE;
+    background: linear-gradient(96deg, rgba(230, 231, 235, 0.30) 23.53%, rgba(216, 217, 222, 0.30) 75.95%);
+    box-shadow: 0px 4px 24px -2px rgba(0, 0, 0, 0.10);
+    backdrop-filter: blur(20px);
+    border-radius: 50%;
+    z-index: 1;
+    margin-top: -2px;
+    margin-left: -1px;
+  }
+  .cosmetics_steps-line-item-wrapp.animated span.cosmetics_steps-line-item-3 {
+    margin-top: -27px;
+    margin-left: -27px;
+    height: 54px;
+    width: 54px;
+  }
+  .cosmetics_steps-items {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+  .cosmetics_steps-item {
+    width: 454px;
+    padding: 0px 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.5s;
+  }
+  .cosmetics_steps-item.animated {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  p.cosmetics_steps-item-title {
+    font-size: 35px;
+    line-height: 106.772%;
+    letter-spacing: -1.05px;
+    font-weight: 300;
+  }
+.cosmetics_steps-item-images {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    border: 1px solid #D8D9DE;
+    gap: 10px;
+    padding: 10px;
+    width: max-content;
+    margin: 20px auto 0 auto;
+}
+  img.cosmetics_steps-item-image {
+    height: 112px;
+    width: auto;
+    border-radius: 3px;
+    border: 1px solid #D8D9DE;
+  }
+  .cosmetics_steps-item.single-image img.cosmetics_steps-item-image {
+    border: none;
+  }
+  .cosmetics_steps-line-item-wrapp-mobile {
+    display: none;
+  }
+  a.cosmetics_steps-btn {
+    margin: 30px auto 0 auto
+  }
+  @media(max-width: 1450px) {
+    .cosmetics_steps-item {
+      width: 340px;
+    }
+    p.cosmetics_steps-item-title {
+      font-size: 29px;
+    }
+    img.cosmetics_steps-item-image {
+      height: 93px;
+    }
+    .cosmetics_steps-line-wrapp {
+      width: 913px
+    }
+  }
+  @media(max-width: 1250px) {
+    .cosmetics_steps {
+    padding: 120px 0;
+    }
+    .cosmetics_steps-item {
+      width: 299px;
+    }
+    p.cosmetics_steps-item-title {
+      font-size: 26px;
+    }
+    .cosmetics_steps-item-images {
+        gap: 5px;
+        padding: 5px;
+        margin: 10px auto 0 auto;
+    }
+    img.cosmetics_steps-item-image {
+      height: 79px;
+    }
+    .cosmetics_steps-line-wrapp {
+      width: 649px;
+      margin: 20px auto 0 auto;
+    }
+    .cosmetics_steps-line-item-wrapp.animated span.cosmetics_steps-line-item-1 {
+        margin-top: -6px;
+        margin-left: -6px;
+        height: 12px;
+        width: 12px;
+    }
+    .cosmetics_steps-line-item-wrapp.animated span.cosmetics_steps-line-item-2 {
+        margin-top: -14px;
+        margin-left: -14px;
+        height: 28px;
+        width: 28px;
+    }
+    .cosmetics_steps-line-item-wrapp.animated span.cosmetics_steps-line-item-3 {
+        margin-top: -23px;
+        margin-left: -23px;
+        height: 46px;
+        width: 46px;
+    }
+    .cosmetics_steps-line-item-wrapp {
+        height: 47px;
+        width: 47px;
+    }
+    .cosmetics_steps-line {
+      top: 23px;
+    }
+    a.cosmetics_steps-btn {
+    margin: 20px auto 0 auto
+  }
+  }
+  @media(max-width: 950px) {
+    .cosmetics_steps-line-wrapp {
+      display: none;
+    }
+    .cosmetics_steps-item {
+      width: calc(50% - 15px);
+      padding: 0;
+    }
+    .cosmetics_steps-items {
+        gap: 30px;
+        justify-content: center;
+    }
+    .cosmetics_steps-line-item-wrapp-desk {
+      display: none;
+    }
+    .cosmetics_steps-line-item-wrapp-mobile {
+      display: block;
+      margin: 0 auto 10px auto;
+    }
+  }
+  @media(max-width: 750px) {
+    p.cosmetics_steps-item-title {
+        font-size: 20px;
+    }
+    .cosmetics_steps-line-item-wrapp.animated span.cosmetics_steps-line-item-1 {
+        margin-top: -5px;
+        margin-left: -5px;
+        height: 10px;
+        width: 10px;
+    }
+    .cosmetics_steps-line-item-wrapp.animated span.cosmetics_steps-line-item-2 {
+        margin-top: -11px;
+        margin-left: -11px;
+        height: 22px;
+        width: 22px;
+    }
+    .cosmetics_steps-line-item-wrapp.animated span.cosmetics_steps-line-item-3 {
+        margin-top: -18px;
+        margin-left: -18px;
+        height: 36px;
+        width: 36px;
+    }
+    .cosmetics_steps-line-item-wrapp {
+        height: 37px;
+        width: 37px;
+        margin: 0 auto 10px auto;
+    }
+  }
+  @media(max-width: 600px) {
+        .cosmetics_steps-item {
+        width: 100%;
+    }
+        .cosmetics_steps-items {
+        gap: 20px;
+        }
+    .cosmetics_steps {
+      padding: 80px 0;
+    }
+  }
+  @media(max-width: 400px) {
+        p.cosmetics_steps-item-title {
+        font-size: 18px;
+    }
+        .cosmetics_steps-items {
+        gap: 15px;
+        }
+    .cosmetics_steps {
+    padding: 60px 0;
+    }
+  }
+</style>
+
+<div class="container">
+  <h2 class="cosmetics_section-title">Get <span class="pp-accent">accurate authentication</span> for skincare, makeup, and luxury perfumes in 3 simple steps</h2>
+  <div class="cosmetics_steps-line-wrapp">
+    <span class="cosmetics_steps-line"></span>
+    <div class="cosmetics_steps-line-item-wrapp cosmetics_steps-line-item-wrapp-desk cosmetics_steps-line-item-wrapp-1">
+      <span class="cosmetics_steps-line-item cosmetics_steps-line-item-1"></span>
+      <span class="cosmetics_steps-line-item cosmetics_steps-line-item-2"></span>
+      <span class="cosmetics_steps-line-item cosmetics_steps-line-item-3"></span>
+    </div>
+    <div class="cosmetics_steps-line-item-wrapp cosmetics_steps-line-item-wrapp-desk cosmetics_steps-line-item-wrapp-2">
+      <span class="cosmetics_steps-line-item cosmetics_steps-line-item-1"></span>
+      <span class="cosmetics_steps-line-item cosmetics_steps-line-item-2"></span>
+      <span class="cosmetics_steps-line-item cosmetics_steps-line-item-3"></span>
+    </div>
+    <div class="cosmetics_steps-line-item-wrapp cosmetics_steps-line-item-wrapp-desk cosmetics_steps-line-item-wrapp-3">
+      <span class="cosmetics_steps-line-item cosmetics_steps-line-item-1"></span>
+      <span class="cosmetics_steps-line-item cosmetics_steps-line-item-2"></span>
+      <span class="cosmetics_steps-line-item cosmetics_steps-line-item-3"></span>
+    </div>
+  </div>
+  <div class="cosmetics_steps-items">
+    <div class="cosmetics_steps-item cosmetics_steps-item-1">
+      <div class="cosmetics_steps-line-item-wrapp cosmetics_steps-line-item-wrapp-mobile cosmetics_steps-line-item-wrapp-1">
+        <span class="cosmetics_steps-line-item cosmetics_steps-line-item-1"></span>
+        <span class="cosmetics_steps-line-item cosmetics_steps-line-item-2"></span>
+        <span class="cosmetics_steps-line-item cosmetics_steps-line-item-3"></span>
+      </div>
+      <p class="cosmetics_steps-item-title">
+        <span class="pp-accent">Upload photos</span> of your packaging and details
+      </p>
+      <div class="cosmetics_steps-item-images">
+        <img src="{{ 'cosmetics-landing_steps-1-1.jpg' | asset_url }}" class="cosmetics_steps-item-image">
+        <img src="{{ 'cosmetics-landing_steps-1-2.jpg' | asset_url }}" class="cosmetics_steps-item-image">
+        <img src="{{ 'cosmetics-landing_steps-1-3.jpg' | asset_url }}" class="cosmetics_steps-item-image">
+      </div>
+    </div>
+    <div class="cosmetics_steps-item cosmetics_steps-item-2">
+      <div class="cosmetics_steps-line-item-wrapp cosmetics_steps-line-item-wrapp-mobile cosmetics_steps-line-item-wrapp-2">
+        <span class="cosmetics_steps-line-item cosmetics_steps-line-item-1"></span>
+        <span class="cosmetics_steps-line-item cosmetics_steps-line-item-2"></span>
+        <span class="cosmetics_steps-line-item cosmetics_steps-line-item-3"></span>
+      </div>
+      <p class="cosmetics_steps-item-title">
+        Experts and AI <span class="pp-accent">verify the authenticity</span> of your item
+      </p>
+      <div class="cosmetics_steps-item-images">
+        <img src="{{ 'cosmetics-landing_step-2-1.jpg' | asset_url }}" class="cosmetics_steps-item-image">
+        <img src="{{ 'cosmetics-landing_step-2-2.jpg' | asset_url }}" class="cosmetics_steps-item-image">
+        <img src="{{ 'cosmetics-landing_step-2-3.jpg' | asset_url }}" class="cosmetics_steps-item-image">
+      </div>
+    </div>
+    <div class="cosmetics_steps-item single-image cosmetics_steps-item-3">
+      <div class="cosmetics_steps-line-item-wrapp cosmetics_steps-line-item-wrapp-mobile cosmetics_steps-line-item-wrapp-3">
+        <span class="cosmetics_steps-line-item cosmetics_steps-line-item-1"></span>
+        <span class="cosmetics_steps-line-item cosmetics_steps-line-item-2"></span>
+        <span class="cosmetics_steps-line-item cosmetics_steps-line-item-3"></span>
+      </div>
+      <p class="cosmetics_steps-item-title">
+        <span class="pp-accent">Receive your results</span> in<br>30 minutes or less
+      </p>
+      <div class="cosmetics_steps-item-images">
+        <img src="{{ 'cosmetics-landing_certificate.png' | asset_url }}" class="cosmetics_steps-item-image">
+      </div>
+    </div>
+  </div>
+  <a href="#product-box_section" class="cosmetics-btn cosmetics-btn-primary cosmetics_steps-btn">
+      Check my beauty item now
+  </a>
+</div>
+
+{% schema %}
+  {
+    "name": "Cosmetics Steps",
+    "class": "cosmetics_steps",
+    "settings": []
+  }
+{% endschema %}

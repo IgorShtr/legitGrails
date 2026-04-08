@@ -1,0 +1,111 @@
+{%- assign first_variant = product.selected_or_first_available_variant -%}
+{%- assign variants_count = product.variants.size -%}
+{% form 'product', product, class: 'product-form product-form__multiply-options' %}
+    <div class="uploadkit" data-uploadkit-product-json="{{ product | json | escape }}"
+         data-uploadkit-collections-json="{{ product.collections | json | escape }}"></div>
+
+    <div id="option-container" class="option-container">
+        {%- for option in product.options_with_values -%}
+            <div class="option-wrapper">
+                <p class="pro-option-name product_checkout-answear">{{ option.name }} </p>
+                <div class="{% if option.name contains "Brand" %}option-dropdown-container{% else %}center-options-container{% endif %}">
+                    {% if option.name contains "Brand" %}
+                        <div id="option{{- forloop.index -}}"
+                             class="current-option current-option__{{ option.name | downcase | replace: " ", "-" }}">
+                            {{ option.values[0] }}
+                        </div>
+                    {% endif %}
+                    <div id="options{{- forloop.index -}}" class="{% if option.name contains "Brand" %}option-dropdown {% endif %}">
+                        {%- capture selector_id -%}
+                            {%- if shop_bar -%}
+                                ShopBar-
+                            {%- else -%}
+                                Product-t
+                            {%- endif -%}
+                            SingleOptionSelector-{{- forloop.index0 -}}-{{- product.id -}}
+                        {%- endcapture -%}
+                        {%- for value in option.values -%}
+                            <div class="radio-options">
+                                <label for="radio_{{ selector_id }}" class="radio radio-wrap">
+                                    {{- value -}}
+                                    <input type="radio" name="{{ option.name | downcase | replace: " ", "-" }}"
+                                           value="{{ value | escape }}" id="radio_{{ selector_id }}"
+                                           data-option="option{{ option.position }}"
+                                           class="radio-option"
+                                            {% if forloop.index == 1 %} checked="checked"{% endif %}
+                                    />
+                                    {% unless option.name contains "Brand" %}<div class="checkmark"></div>{% endunless %}
+                                </label>
+                            </div>
+                        {%- endfor -%}
+                    </div>
+                </div>
+            </div>
+        {%- endfor -%}
+    </div>
+    <div class="hidden" id="selected-options-values--{{ product.id }}" data-option1="{{ first_variant.option1 }}"
+         data-option2="{{ first_variant.option2 }}" data-variant="{{ first_variant.id }}"></div>
+    <label for="product-select--{{ section.id }}"
+           class="hidden accessible-label">Select variant</label>
+    {%- if variants_count > 1 -%}
+        <select
+                name="id" data-productid="{{ product.id }}"
+                id="product-select--{{ section.id }}"
+                class="hidden product-single__variants"
+                data-product-id="{{ product.id }}"
+                data-product-select>
+            {%- for variant in product.variants -%}
+                {%- if variant.available -%}
+                    <option
+                            {% if variant == first_variant %} selected="selected" {% endif %}
+                            data-sku="{{ variant.sku }}"
+                            data-price="{{ variant.price | money }}"
+                            value="{{ variant.id }}">{{ variant.title }} --- {{ variant.price | money_with_currency }}</option>
+                {%- else -%}
+                    <option disabled="disabled">{{ variant.title }} - Sold out</option>
+                {%- endif -%}
+            {%- endfor -%}
+        </select>
+    {%- else -%}
+        <input name="id" data-productid="{{ product.id }}" id="product-select--{{ section.id }}"
+               data-product-id="{{ product.id }}" type="hidden" value="{{ first_variant.id }}">
+    {%- endif -%}
+    <div class="product_checkout-btns">
+        {% if template.handle contains 'product' %}
+            <button class="product_checkout-cart btn--full product__add-to-cart-button{% if section.settings.enable_payment_button and current_variant.available %} shopify-payment-btn btn--secondary{% endif %}"
+                    data-cart-submit
+                    type="submit" name="add"
+                    {% unless current_variant.available %} disabled="true"{% endunless %}
+                    aria-label="{{ button_text }}"
+            >
+    <span class="primary-text" aria-hidden="false" data-cart-primary-submit-text>
+      {{ button_text }}
+    </span>
+                <span class="secondary-text" aria-hidden=true
+                      data-cart-secondary-submit-text>{{ 'products.product.view_cart' | t }}</span>
+            </button>
+        {% endif %}
+
+        <div class="redirect-checkout-btn">
+            <input type="hidden" name="redirect" id="redirect-addtocart-btn" data-productid="{{ product.id }}"
+                   class="product-select" value="{{ product.selected_or_first_available_variant.id }}"
+                   data-variant-title="{{ product.selected_or_first_available_variant.title }}"/>
+            <input type="submit" value="Add To Cart" class="hidden product_checkout-cart"/>
+            <input type="hidden" name="return_to" value="/checkout"/>
+            <div class="btn-submit-container">
+                <div class="cart-notification"></div>
+                <button id="cart___submit" class="custom-cart-button">Add to cart</button>
+            </div>
+        </div>
+
+        <p class="product__notification text-small text-center" data-cart-notification></p>
+        {% if section.settings.enable_payment_button and current_variant.available %}
+            {{ form | payment_button }}
+        {% endif %}
+        <a class="product_checkout-alternative" href="{{ product.metafields.custom_fields.alternative }}">Free
+            alternative</a>
+    </div>
+    {% if product.tags contains "uploadcare" %}
+        <div class="uploadcare-attributes hidden"></div>
+    {% endif %}
+{% endform %}

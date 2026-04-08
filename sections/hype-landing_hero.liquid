@@ -1,0 +1,805 @@
+<style>
+.hype_hero {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    min-height: 836px;
+}
+  .hype_hero .wider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  .hype_hero-content {
+    width: 830px;
+    height: max-content;
+    max-width: 100%;
+}
+  .hype_hero-content a.new-main-btn {
+    margin: 20px auto;
+  }
+  .hype_hero-content p.main-desc {
+    margin-top: 5px;
+  }
+  .hype_hero-numbers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  span.hype_hero-numbers-separator {
+    width: 1px;
+    height: auto;
+    background: #E8E8E8;
+    display: block;
+  }
+  .hype_hero-numbers-item {
+    width: max-content;
+  }
+  p.hype_hero-numbers-item-title {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+  }
+  p.hype_hero-numbers-item-desc {
+    color: #676767;
+    font-family: "Open Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 127.8%;
+  }
+  p.hype_numbers-item-title-animation {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: max-content;
+  }
+  span.hype_hero-numbers-item-title-arrow-up, span.hype_hero-numbers-item-title-arrow-down {
+    color: #676767;
+    font-family: "Open Sans";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 127.8%;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 3px;
+    position: absolute;
+    left: 100%;
+    width: max-content;
+    margin-left: 4px;
+  }
+  span.hype_hero-numbers-item-title-arrow-up {
+    top: 7px;
+  }
+  span.hype_hero-numbers-item-title-arrow-down {
+    top: 25px;
+  }
+  span.hype_hero-numbers-item-title-arrow-up::before {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='9' viewBox='0 0 12 9' fill='none'%3E%3Cpath d='M6.1543 0L11.3504 9H0.958145L6.1543 0Z' fill='%2300B67A'/%3E%3C/svg%3E");
+    display: block;
+  }
+  span.hype_hero-numbers-item-title-arrow-down::before {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='9' viewBox='0 0 12 9' fill='none'%3E%3Cpath d='M6.1543 9L0.958146 -9.78799e-07L11.3504 -7.02746e-08L6.1543 9Z' fill='%23B60000'/%3E%3C/svg%3E");
+    display: block;
+  }
+  .hype_hero-numbers-item-animation {
+    padding-right: 29px;
+  }
+  .hype_hero-conten-reviews {
+    height: 32px;
+    margin: auto;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .hype_hero-img {
+    position: absolute;
+    z-index: 11;
+  }
+  .hype_hero-img-1 {
+    top: 50%;
+    left: 50%;
+    height: 140px;
+    margin-top: -566px;
+    margin-left: -1009px;
+}
+.hype_hero-img-2 {
+    top: 50%;
+    left: 50%;
+    height: 203px;
+    margin-top: -402px;
+    margin-left: -927px;
+}
+  .hype_hero-img-3 {
+    top: 50%;
+    left: 50%;
+    height: 240px;
+    margin-left: -1118px;
+    margin-top: 123px;
+  }
+.hype_hero-img-4 {
+    top: 50%;
+    left: 50%;
+    margin-top: -352px;
+    margin-left: -552px;
+    height: 161px;
+}
+  img.hype_hero-img-5 {
+    height: 472px;
+    top: 50%;
+    left: 50%;
+    margin-left: -815px;
+    margin-top: -207px;
+}
+  img.hype_hero-img-6 {
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    margin-left: -645px;
+    margin-top: 283px;
+}
+  img.hype_hero-img-7 {
+    top: 50%;
+    left: 50%;
+    height: 84px;
+    margin-top: -308px;
+    margin-left: 447px;
+  }
+  img.hype_hero-img-8 {
+    top: 50%;
+    left: 50%;
+    height: 155px;
+    margin-top: -591px;
+    margin-left: 855px;
+  }
+  img.hype_hero-img-9 {
+    height: 110px;
+    left: 50%;
+    top: 50%;
+    margin-top: -390px;
+    margin-left: 679px;
+  }
+  img.hype_hero-img-10 {
+    top: 50%;
+    left: 50%;
+    height: 200px;
+    margin-top: -251px;
+    margin-left: 845px;
+  }
+  img.hype_hero-img-11 {
+    height: 546px;
+    top: 50%;
+    left: 50%;
+    margin-top: -232px;
+    margin-left: 365px;
+}
+  img.hype_hero-img-12 {
+    top: 50%;
+    left: 50%;
+    height: 150px;
+    margin-top: 280px;
+    margin-left: 452px;
+  }
+  img.hype_hero-img-13 {
+    top: 50%;
+    left: 50%;
+    height: 130px;
+    margin-top: 290px;
+    margin-left: 805px;
+  }
+  img.hype_hero-img-14 {
+    display: none;
+  }
+ 
+  @media(max-width: 1600px) {
+    img.hype_hero-img-11 {
+    height: 546px;
+    top: 50%;
+    left: 50%;
+    margin-top: -232px;
+    margin-left: 278px;
+}
+img.hype_hero-img-7 {
+    top: 50%;
+    left: 50%;
+    height: 84px;
+    margin-top: -333px;
+    margin-left: 287px;
+}
+    img.hype_hero-img-12 {
+        top: 50%;
+        left: 50%;
+        height: 113px;
+        margin-top: 291px;
+        margin-left: 403px;
+    }
+    img.hype_hero-img-9 {
+        height: 85px;
+        left: 50%;
+        top: 50%;
+        margin-top: -332px;
+        margin-left: 512px;
+    }
+    img.hype_hero-img-5 {
+    height: 411px;
+    top: 50%;
+    left: 50%;
+    margin-left: -718px;
+    margin-top: -173px;
+}
+    .hype_hero-img-4 {
+        top: 50%;
+        left: 50%;
+        margin-top: -314px;
+        margin-left: -418px;
+        height: 128px;
+    }
+    .hype_hero-img-1 {
+    top: 50%;
+    left: 50%;
+    height: 140px;
+    margin-top: -325px;
+    margin-left: -858px;
+}
+    .hype_hero-img-2 {
+        top: 50%;
+        left: 50%;
+        height: 149px;
+        margin-top: -347px;
+        margin-left: -643px;
+    }
+    img.hype_hero-img-6 {
+        height: 122px;
+        top: 50%;
+        left: 50%;
+        margin-left: -505px;
+        margin-top: 247px;
+    }
+    .hype_hero-img-3 {
+    top: 50%;
+    left: 50%;
+    height: 240px;
+    margin-left: -946px;
+    margin-top: 123px;
+}
+    img.hype_hero-img-10 {
+    top: 50%;
+    left: 50%;
+    height: 200px;
+    margin-top: -251px;
+    margin-left: 699px;
+}
+    img.hype_hero-img-13 {
+        top: 50%;
+        left: 50%;
+        height: 130px;
+        margin-top: 292px;
+        margin-left: 677px;
+    }
+  }
+  @media(max-width: 1450px) {
+          img.hype_hero-img-11 {
+        height: 447px;
+        top: 50%;
+        left: 50%;
+        margin-top: -180px;
+        margin-left: 278px;
+    }
+        img.hype_hero-img-5 {
+        height: 367px;
+        top: 50%;
+        left: 50%;
+        margin-left: -636px;
+        margin-top: -135px;
+    }
+  }
+  
+  @media(max-width: 1250px) {
+    .hype_hero {
+    min-height: 757px;
+}
+        .hype_hero-img-2 {
+        top: 50%;
+        left: 50%;
+        height: 121px;
+        margin-top: -249px;
+        margin-left: -574px;
+    }
+        .hype_hero-img-3 {
+        top: 50%;
+        left: 50%;
+        height: 137px;
+        margin-left: -707px;
+        margin-top: 148px;
+    }
+        .hype_hero-img-4 {
+        top: 50%;
+        left: 50%;
+        margin-top: -311px;
+        margin-left: -379px;
+        height: 115px;
+    }
+        img.hype_hero-img-5 {
+        height: 293px;
+        top: 50%;
+        left: 50%;
+        margin-left: -560px;
+        margin-top: -81px;
+    }
+        img.hype_hero-img-6 {
+        height: 101px;
+        top: 50%;
+        left: 50%;
+        margin-left: -414px;
+        margin-top: 255px;
+    }
+        img.hype_hero-img-7 {
+        top: 50%;
+        left: 50%;
+        height: 71px;
+        margin-top: -264px;
+        margin-left: 377px;
+    }
+        img.hype_hero-img-9 {
+        height: 85px;
+        left: 50%;
+        top: 50%;
+        margin-top: -372px;
+        margin-left: 543px;
+    }
+        img.hype_hero-img-10 {
+        top: 50%;
+        left: 50%;
+        height: 95px;
+        margin-top: -193px;
+        margin-left: 548px;
+    }
+      img.hype_hero-img-11 {
+        height: 357px;
+        top: 50%;
+        left: 50%;
+        margin-top: -131px;
+        margin-left: 278px;
+    }
+        img.hype_hero-img-12 {
+        top: 50%;
+        left: 50%;
+        height: 108px;
+        margin-top: 260px;
+        margin-left: 292px;
+    }
+        img.hype_hero-img-13 {
+        top: 50%;
+        left: 50%;
+        height: 114px;
+        margin-top: 273px;
+        margin-left: 481px;
+    }
+    
+  }
+  @media(max-width: 1120px) {
+        .hype_hero-img-1 {
+        top: 50%;
+        left: 50%;
+        height: 98px;
+        margin-top: -339px;
+        margin-left: -566px;
+    }
+        .hype_hero-img-2 {
+        top: 50%;
+        left: 50%;
+        height: 111px;
+        margin-top: -192px;
+        margin-left: -487px;
+    }
+        .hype_hero-img-3 {
+        top: 50%;
+        left: 50%;
+        height: 137px;
+        margin-left: -600px;
+        margin-top: 200px;
+    }
+        .hype_hero-img-4 {
+        top: 50%;
+        left: 50%;
+        margin-top: -291px;
+        margin-left: -346px;
+        height: 88px;
+    }
+        img.hype_hero-img-5 {
+        height: 229px;
+        top: 50%;
+        left: 50%;
+        margin-left: -488px;
+        margin-top: -16px;
+    }
+        img.hype_hero-img-6 {
+        height: 88px;
+        top: 50%;
+        left: 50%;
+        margin-left: -212px;
+        margin-top: 236px;
+    }
+        img.hype_hero-img-7 {
+        top: 50%;
+        left: 50%;
+        height: 52px;
+        margin-top: -244px;
+        margin-left: 335px;
+    }
+        img.hype_hero-img-9 {
+        height: 85px;
+        left: 50%;
+        top: 50%;
+        margin-top: -342px;
+        margin-left: 462px;
+    }
+        img.hype_hero-img-10 {
+        top: 50%;
+        left: 50%;
+        height: 88px;
+        margin-top: -193px;
+        margin-left: 459px;
+    }
+        img.hype_hero-img-11 {
+        height: 299px;
+        top: 50%;
+        left: 50%;
+        margin-top: -105px;
+        margin-left: 271px;
+    }
+        img.hype_hero-img-12 {
+        top: 50%;
+        left: 50%;
+        height: 108px;
+        margin-top: 208px;
+        margin-left: 250px;
+    }
+        img.hype_hero-img-13 {
+        top: 50%;
+        left: 50%;
+        height: 114px;
+        margin-top: 224px;
+        margin-left: 430px;
+    }
+  }
+  @media (max-width: 950px) {
+    p.hype_hero-numbers-item-title {
+      font-size: 26px;
+    }
+    p.hype_hero-numbers-item-desc, p.main-desc {
+      font-size: 18px;
+    }
+    span.hype_hero-numbers-item-title-arrow-up {
+    top: 3px;
+}
+    span.hype_hero-numbers-item-title-arrow-down {
+    top: 17px;
+}
+    .hype_hero-numbers-item-animation {
+    padding-right: 9px;
+}
+    .hype_hero-img-2 {
+        top: 50%;
+        left: 50%;
+        height: 111px;
+        margin-top: -209px;
+        margin-left: -409px;
+    }
+    .hype_hero-img-3 {
+        top: 50%;
+        left: 50%;
+        height: 126px;
+        margin-left: -552px;
+        margin-top: 168px;
+    }
+    .hype_hero-img-4 {
+        top: 50%;
+        left: 50%;
+        margin-top: -324px;
+        margin-left: -298px;
+        height: 88px;
+    }
+    img.hype_hero-img-5 {
+        height: 198px;
+        top: 50%;
+        left: 50%;
+        margin-left: -441px;
+        margin-top: -29px;
+    }
+        img.hype_hero-img-6 {
+        height: 88px;
+        top: 50%;
+        left: 50%;
+        margin-left: -234px;
+        margin-top: 202px;
+    }
+        img.hype_hero-img-7 {
+        top: 50%;
+        left: 50%;
+        height: 52px;
+        margin-top: -230px;
+        margin-left: 281px;
+    }
+        img.hype_hero-img-9 {
+        height: 66px;
+        left: 50%;
+        top: 50%;
+        margin-top: -301px;
+        margin-left: 416px;
+    }
+        img.hype_hero-img-10 {
+        top: 50%;
+        left: 50%;
+        height: 88px;
+        margin-top: -182px;
+        margin-left: 404px;
+    }
+        img.hype_hero-img-11 {
+        height: 262px;
+        top: 50%;
+        left: 50%;
+        margin-top: -101px;
+        margin-left: 233px;
+    }
+        img.hype_hero-img-12 {
+        top: 50%;
+        left: 50%;
+        height: 100px;
+        margin-top: 173px;
+        margin-left: 202px;
+    }
+        img.hype_hero-img-13 {
+        top: 50%;
+        left: 50%;
+        height: 102px;
+        margin-top: 189px;
+        margin-left: 357px;
+    }
+}
+  @media(max-width: 800px) {
+    img.hype_hero-img-6 {
+      margin-left: -282px;
+    }
+  }
+  @media(max-width: 600px) {
+    .hype_hero {
+    min-height: 900px;
+}
+    .hype_hero .wider-container {
+    align-items: flex-start;
+}
+    .hype_hero-content p.main-desc {
+    margin-top: 5px;
+}
+ p.hype_hero-numbers-item-desc {
+    font-size: 16px;
+}
+    p.hype_hero-numbers-item-title {
+        font-size: 24px;
+    }
+    .hype_hero-numbers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+    .hype_hero-numbers-item {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+}
+    span.hype_hero-numbers-separator {
+    width: 140px;
+    height: 1px;
+    }
+    p.hype_hero-numbers-item-desc {
+      width: 100%;
+    }
+    p.hype_hero-numbers-item-title {
+      font-weight: 600;
+    }
+    .hype_hero-numbers-item-title span {
+      margin-left: -63px;
+    }
+    span.hype_numbers-item-title-animation-main {
+        margin-left: 0;
+        display: block;
+    }
+    p.hype_numbers-item-title-animation {
+      padding-right: 69px;
+    }
+    .hype_hero-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 90px;
+}
+    .hype_hero-conten-reviews {
+    height: 24px;
+    margin-top: 20px;
+    margin-bottom: 0;
+      order: 3;
+}
+    .hype_hero-content-text {
+      order: 1;
+    }
+    .hype_hero-numbers {
+      order: 2;
+    }
+    .hype_hero-content a.new-main-btn {
+      order: 4;
+    }
+    .trustpilot-widget {
+      order: 5;
+    }
+    img.hype_hero-img-5, img.hype_hero-img-11, img.hype_hero-img-1, .hype_hero-img-3, img.hype_hero-img-4, img.hype_hero-img-8, img.hype_hero-img-9 {
+      display: none;
+    }
+    .hype_hero-img-2 {
+        height: 119px;
+        margin-top: 312px;
+        margin-left: -25px;
+    }
+    img.hype_hero-img-6 {
+        margin-left: -260px;
+        margin-top: 123px;
+    }
+    img.hype_hero-img-7 {
+        margin-top: 41px;
+        margin-left: 208px;
+        height: 43px;
+    }
+    img.hype_hero-img-10 {
+        top: 50%;
+        left: 50%;
+        height: 121px;
+        margin-top: 234px;
+        margin-left: 144px;
+    }
+    img.hype_hero-img-12 {
+        height: 77px;
+        margin-top: 12px;
+        margin-left: -157px;
+    }
+    img.hype_hero-img-13 {
+        height: 123px;
+        margin-top: 340px;
+        margin-left: -340px;
+    }
+    img.hype_hero-img-14 {
+        display: block;
+        top: 50%;
+        left: 50%;
+        margin-left: -232px;
+        height: 334px;
+        margin-top: 19px;
+    }
+  }
+  @media(max-width: 450px) {
+       .hype_hero {
+        min-height: 924px;
+    }
+    .hype_hero-img-2 {
+        height: 99px;
+        margin-top: 319px;
+        margin-left: -35px;
+    }
+    img.hype_hero-img-6 {
+        margin-left: -182px;
+        margin-top: 114px;
+        height: 72px;
+    }
+    img.hype_hero-img-7 {
+        margin-top: 65px;
+        margin-left: 152px;
+        height: 38px;
+    }
+    img.hype_hero-img-10 {
+        top: 50%;
+        left: 50%;
+        height: 121px;
+        margin-top: 241px;
+        margin-left: 133px;
+    }
+    img.hype_hero-img-12 {
+        height: 61px;
+        margin-top: 43px;
+        margin-left: -64px;
+    }
+    img.hype_hero-img-13 {
+        height: 108px;
+        margin-top: 355px;
+        margin-left: -274px;
+    }
+    img.hype_hero-img-14 {
+        display: block;
+        top: 50%;
+        left: 50%;
+        margin-left: -193px;
+        height: 271px;
+        margin-top: 78px;
+    }
+  }
+</style>
+<img class="hype_hero-img hype_hero-img-1 rellax" data-rellax-speed="2" src="{{ 'hype_hero-1-2.png' | asset_url }}">
+<img class="hype_hero-img hype_hero-img-2 rellax" data-rellax-speed="4" src="{{ 'hype_hero-2-2.png' | asset_url }}">
+<img class="hype_hero-img hype_hero-img-3 rellax" data-rellax-speed="4" src="{{ 'hype_hero-3-2.png' | asset_url }}">
+<img class="hype_hero-img hype_hero-img-4 rellax" data-rellax-speed="4" src="{{ 'hype_hero-4-2.png' | asset_url }}">
+<img class="hype_hero-img hype_hero-img-5 rellax" data-rellax-speed="8" src="{{ 'hype_hero-5.png' | asset_url }}">
+<img class="hype_hero-img hype_hero-img-6 rellax" data-rellax-speed="2" src="{{ 'hype_hero-6-2.png' | asset_url }}">
+<img class="hype_hero-img hype_hero-img-7 rellax" data-rellax-speed="2" src="{{ 'hype_hero-7-2-2.png' | asset_url }}">
+<img class="hype_hero-img hype_hero-img-8 rellax" data-rellax-speed="4" src="{{ 'hype_hero-8-2.png' | asset_url }}">
+<img class="hype_hero-img hype_hero-img-9 rellax" data-rellax-speed="4" src="{{ 'hype_hero-9-2.png' | asset_url }}">
+<img class="hype_hero-img hype_hero-img-10 rellax" data-rellax-speed="4" src="{{ 'hype_hero-10-2.png' | asset_url }}">
+<img class="hype_hero-img hype_hero-img-11 rellax" data-rellax-speed="8" src="{{ 'hype_hero-11-3.png' | asset_url }}">
+<img class="hype_hero-img hype_hero-img-12 rellax" data-rellax-speed="4" src="{{ 'hype_hero-12-2.png' | asset_url }}">
+<img class="hype_hero-img hype_hero-img-13 rellax" data-rellax-speed="2" src="{{ 'hype_hero-13-2.png' | asset_url }}">
+<img class="hype_hero-img hype_hero-img-14 rellax" data-rellax-speed="8" src="{{ 'hype_hero-5-mob.png' | asset_url }}">
+<div class="wider-container">
+  <div class="hype_hero-content">
+    <div class="hype_hero-content-text">
+      <h1 class="main-title">Legit Check Your Sneakers <br>& Streetwear Fast</h1>
+      <p class="section-desc-style">
+        Get verified by real experts in 30 minutes or less.
+      </p>
+    </div>
+    <div class="hype_hero-numbers">
+      <div class="hype_hero-numbers-item">
+        <p class="hype_hero-numbers-item-title">
+          100.000+
+        </p>
+        <p class="hype_hero-numbers-item-desc">
+          Happy Customers
+        </p>
+      </div>
+      <span class="hype_hero-numbers-separator"></span>
+      <div class="hype_hero-numbers-item hype_hero-numbers-item-animation">
+        <p class="hype_hero-numbers-item-title hype_numbers-item-title-animation">
+          <span class="hype_numbers-item-title-animation-main count">2,005,712</span>
+            <span class="hype_hero-numbers-item-title-arrow-up">
+              1,054,892
+            </span>
+            <span class="hype_hero-numbers-item-title-arrow-down">
+              812,042
+            </span>
+        </p>
+        <p class="hype_hero-numbers-item-desc">
+          Items Authenticated
+        </p>
+      </div>
+    </div>
+    <a href="#product-box_section" class="new-main-btn new-btn">Start My Legit Check</a>
+
+<!-- TrustBox widget - Micro TrustScore -->
+<div class="trustpilot-widget" data-locale="en-GB" data-template-id="5419b637fa0340045cd0c936" data-businessunit-id="5fbebb2d281b010001718c1c" data-style-height="20px" data-style-width="100%">
+<a href="https://uk.trustpilot.com/review/legitgrails.com" target="_blank" rel="noopener">Trustpilot</a>
+</div>
+<!-- End TrustBox widget -->
+
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js" integrity="sha512-f5HTYZYTDZelxS7LEQYv8ppMHTZ6JJWglzeQmr0CVTS70vJgaJiIO15ALqI7bhsracojbXkezUIL+35UXwwGrQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- TrustBox script -->
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<!-- End TrustBox script -->
+{% schema %}
+  {
+    "name": "Hype Landing Hero",
+    "class": "hype_hero",
+    "settings": []
+  }
+{% endschema %}

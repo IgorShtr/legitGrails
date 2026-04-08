@@ -1,0 +1,57 @@
+{% render 'product-bundles-styles-min' %}
+{% section 'product-landing-banner' %}
+{% section 'legit-product-bundles-tabs' %}
+<div class="product_checkout page-width" id="product_checkout">
+    <div class="form-row">
+        <div class="form-column first">
+            {% section 'product-bundles-how-it-works' %}
+        </div>
+        <div class="form-column second">
+            <div class="form-column__product-form">
+                {% section 'product-template-bundles' %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% section 'legit-page-verify-certificate-brands' %}
+{% section 'legit-product-bundles-compare' %}
+{% section 'legit-text-image-blocks-horizontal_bundles' %}
+
+
+<!--Start typeform-->        
+<!-- <div class="frame" data-tf-widget="qspsn7oe" data-tf-iframe-props="title=Let's Get Personal" data-tf-medium="snippet" style="width:100%;height:500px;"></div><script src="//embed.typeform.com/next/embed.js"></script>
+ -->
+<div data-tf-widget="qspsn7oe" data-tf-opacity="100" data-tf-inline-on-mobile data-tf-iframe-props="title=Let's Get Personal" style="width:100%;height:500px;"></div><script src="//embed.typeform.com/next/embed.js"></script>
+<!--End typeform--> 
+
+{% section 'legit-page-why-services-background' %}
+
+
+
+
+<script>
+    window.theme = window.theme || {};
+    window.theme.strings = window.theme.strings || {};
+
+    // Override default values of theme.strings for each template.
+    // Values are used by JavaScript only; Liquid must be updated separately
+    window.theme.strings.addToCart = {{ 'products.product.add_to_cart' | t | json }};
+    window.theme.strings.soldOut = {{ 'products.product.sold_out' | t | json }};
+    window.theme.strings.unavailable = {{ 'products.product.unavailable' | t | json }};
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('.product_checkout-cart').click(function () {
+            $(this).text('Adding...');
+            setTimeout(() => {
+                $(this).text('Thank You!');
+                setTimeout(() => {
+                    $(this).parent('.product_checkout-btns').parent('.product_checkout-right').parent('form').submit();
+                }, 1000);
+            }, 1000);
+        });
+    });
+   $(".template-bundles .compare-blocks .main-btn").attr("href", "#product_checkout");
+</script>

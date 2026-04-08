@@ -1,0 +1,300 @@
+<style>
+  .cosmetics-landing_authentication {
+    padding: 150px 0;
+  }
+  .cosmetics-landing_authentication h2.cosmetics_section-title {
+    text-align: left;
+  }
+  .cosmetics-landing_authentication-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 94px;
+  }
+  img.cosmetics-landing_authentication-wrapper-image {
+    width: 505px;
+    height: auto;
+    transition: .5s;
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  img.cosmetics-landing_authentication-wrapper-image.animated {
+    opacity: 1;
+    transform: translateY(0);
+  }
+.product_checkout-right {
+    width: 626px;
+  transition: .5s;
+    opacity: 0;
+    transform: translateY(50px);
+}
+  .product_checkout-right.animated {
+    opacity: 1;
+    transform: translateY(0);
+  }
+p.cosmetics-landing_authentication-wrapper-desc {
+    font-size: 22px;
+    line-height: 105%;
+    margin-top: 15px;
+}
+.cosmetics-landing_authentication-wrapper-content {
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+  p.cosmetics-landing_authentication-wrapper-content-title {
+    font-family: "PP Fragment";
+    font-size: 22px;
+    line-height: 127.8%;
+  }
+  .cosmetics-landing_authentication-wrapper-content-options-items, .cosmetics-landing_authentication-wrapper-content-offers-items {
+    margin-top: 10px;
+  }
+  .cosmetics-landing_authentication-wrapper-content-split {
+    width: 1px;
+    height: auto;
+    background: #D8D9DE;
+    display: block;
+  }
+  .cosmetics-landing_authentication-wrapper-content-offers-item {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  .cosmetics-landing_authentication-wrapper-content-offers-item svg {
+    height: 18px;
+    width: 18px;
+    min-width: 18px;
+    margin-top: 2px;
+  }
+  .cosmetics-landing_authentication-wrapper-content-offers-item p {
+    font-size: 20px;
+    line-height: 127.8%; 
+    margin-left: 7px;
+  }
+  .cosmetics-landing_authentication-wrapper-content-offers-item:last-child {
+    margin-bottom: 0;
+  }
+  .cosmetics-landing_authentication label.radio.radio-wrap.hype_authentication-wrapper-content-options-item-time {
+    display: flex;
+    justify-content: space-between;
+    width: 194px;
+    font-family: "Suisse Intl" !important;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 127.8%;
+    color: #3C1F1B;
+    text-align: right;
+    margin-bottom: 10px !important;
+}
+  .cosmetics-landing_authentication .checkmark {
+    top: 3px!important;
+    height: 18px!important;
+    width: 18px!important;
+    border: 1px solid #3C1F1B!important;
+}
+  .cosmetics-landing_authentication .radio-wrap .checkmark:after {
+    top: 3px!important;
+    left: 3px!important;
+    width: 10px!important;
+    height: 10px!important;
+    background: #3C1F1B!important;
+}
+  .cosmetics-landing_authentication-wrapper-content-options {
+    width: 194px;
+}
+ .cosmetics-landing_authentication .authenticate-btn {
+        margin: 20px 0 0 0!important;
+    height: max-content!important;
+    font-weight: 300!important;
+    min-width: auto !important;
+    border-radius: 8px !important;
+    font-family: "Suisse Intl"!important;
+    font-size: 22px!important;
+   text-transform: none!important;
+  }
+ .cosmetics-landing_authentication .radio-options:last-child label.radio.radio-wrap.hype_authentication-wrapper-content-options-item-time {
+    margin-bottom: 0!important;
+  }
+  @media(max-width: 1450px) {
+    img.cosmetics-landing_authentication-wrapper-image {
+      width: 470px;
+    }
+    .cosmetics-landing_authentication-wrapper {
+      gap: 60px;
+    }
+  }
+  @media(max-width: 1250px) {
+    .cosmetics-landing_authentication {
+    padding: 120px 0;
+  }
+    p.cosmetics-landing_authentication-wrapper-desc {
+      font-size: 20px;
+    }
+    p.cosmetics-landing_authentication-wrapper-content-title {
+      font-size: 20px;
+    }
+    label.radio.radio-wrap.hype_authentication-wrapper-content-options-item-time {
+        width: 163px!important;
+      font-size: 18px!important;
+    }
+    .cosmetics-landing_authentication-wrapper-content-offers-item p {
+      font-size: 18px;
+      margin-left: 9px;
+    }
+   .cosmetics-landing_authentication .checkmark {
+      top: 1px !important;
+    }
+    .cosmetics-landing_authentication-wrapper-content-options {
+        width: 163px;
+}
+    .cosmetics-landing_authentication-wrapper-content {
+      gap: 15px;
+    }
+        .cosmetics-landing_authentication-wrapper {
+        gap: 30px;
+    }
+    .cosmetics-landing_authentication-wrapper-content-offers {
+    width: 222px;
+}
+    .cosmetics-landing_authentication-wrapper-content-offers-item {
+    align-items: flex-start;
+}
+        .product_checkout-right {
+        width: 450px;
+    }
+    img.cosmetics-landing_authentication-wrapper-image {
+        width: 410px;
+    }
+   .cosmetics-landing_authentication .authenticate-btn {
+    font-size: 18px !important;
+}
+  }
+  @media(max-width: 950px) {
+        .product_checkout-right {
+        width: 100%;
+          order: 1;
+        }
+        img.cosmetics-landing_authentication-wrapper-image {
+        width: 454px;
+        order: 2;
+    }
+    .cosmetics-landing_authentication h2.cosmetics_section-title, p.cosmetics-landing_authentication-wrapper-desc{
+    text-align: center;
+}
+    .cosmetics-landing_authentication-wrapper-content-offers {
+      width: max-content;
+    }
+    .cosmetics-landing_authentication-wrapper-content {
+    justify-content: center;
+}
+   .cosmetics-landing_authentication .authenticate-btn {
+    margin: 20px auto 0 auto !important;
+    }
+  }
+  @media(max-width: 750px) {
+     .cosmetics-landing_authentication  .authenticate-btn {
+        font-size: 16px!important;
+    }
+        p.cosmetics-landing_authentication-wrapper-desc {
+        font-size: 16px;
+          margin-top: 5px;
+        }
+        .cosmetics-landing_authentication-wrapper-content-offers-item p {
+        font-size: 16px;
+        margin-left: 7px;
+    }
+       .cosmetics-landing_authentication label.radio.radio-wrap.hype_authentication-wrapper-content-options-item-time {
+        width: 150px!important;
+        font-size: 16px!important;
+    }
+    .cosmetics-landing_authentication-wrapper-content-options {
+    width: 150px;
+}
+  }
+  @media(max-width: 600px) {
+    .cosmetics-landing_authentication {
+    padding: 80px 0;
+  }
+  }
+  @media(max-width: 550px) {
+    img.cosmetics-landing_authentication-wrapper-image {
+        width: 90%;
+    }
+    .cosmetics-landing_authentication-wrapper-content-split {
+        width: 100%;
+        height: 1px;
+    }
+    p.cosmetics-landing_authentication-wrapper-content-title {
+      text-align: center;
+    }
+    .cosmetics-landing_authentication-wrapper-content-options {
+    width: 100%;
+    order: 3;
+}
+    .cosmetics-landing_authentication-wrapper-content-split {
+    width: 313px;
+    height: 1px;
+    order: 2;
+}
+    .cosmetics-landing_authentication-wrapper-content-offers {
+      width: 100%;
+      order: 1;
+    }
+    .cosmetics-landing_authentication-wrapper-content-offers-items {
+    width: max-content;
+    margin: 10px auto 0 auto;
+}
+    .cosmetics-landing_authentication-wrapper-content {
+      gap: 20px;
+    }
+  }
+  @media(max-width: 400px) {
+    .cosmetics-landing_authentication {
+    padding: 60px 0;
+  }
+   .cosmetics-landing_authentication .authenticate-btn {
+        font-size: 14px!important;
+    }
+        p.cosmetics-landing_authentication-wrapper-desc {
+        font-size: 14px;
+          margin-top: 3px;
+        }
+        .cosmetics-landing_authentication-wrapper-content-offers-item p {
+        font-size: 14px;
+        margin-left: 5px;
+    }
+      .cosmetics-landing_authentication  label.radio.radio-wrap.hype_authentication-wrapper-content-options-item-time {
+        width: 130px!important;
+        font-size: 14px!important;
+    }
+    .cosmetics-landing_authentication-wrapper-content-options {
+    width: 130px;
+}
+        p.cosmetics-landing_authentication-wrapper-content-title {
+        font-size: 18px;
+    }
+    .cosmetics-landing_authentication-wrapper-content-offers-item svg {
+    height: 16px;
+    width: 16px;
+    min-width: 16px;
+    margin-top: -1px;
+}
+   .cosmetics-landing_authentication .checkmark {
+    top: 0px !important;
+    height: 16px !important;
+    width: 16px !important;
+}
+   .cosmetics-landing_authentication .radio-wrap .checkmark:after {
+    width: 8px !important;
+    height: 8px !important;
+}
+   .cosmetics-landing_authentication .radio-wrap {
+      padding-left: 22px!important;
+    }
+  }
+</style>

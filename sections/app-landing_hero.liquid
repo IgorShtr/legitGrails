@@ -1,0 +1,385 @@
+<style>
+    .app-hero {
+        overflow: hidden;
+    }
+    .legal-disclaimer {
+        max-width: 800px;
+    }
+    .app-landing_hero_phone-wrapp {
+        position: relative;
+    }
+img.app-landing_hero_phone {
+    width: 500px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -250px;
+    max-width: fit-content;
+    z-index: 2;
+}
+.app-landing_hero_phone-wrapp_screen {
+    width: 445px;
+    margin-top: 24px;
+    margin-left: -1px;
+    gap: 24px;
+    padding: 8px 16px 20px 16px;
+    border-radius: 22px;
+    border-right: 1px solid var(--Stroke-Color, rgba(60, 31, 27, 0.30));
+    border-bottom: 1px solid var(--Stroke-Color, rgba(60, 31, 27, 0.30));
+    border-left: 1px solid var(--Stroke-Color, rgba(60, 31, 27, 0.30));
+    z-index: 1;
+    position: relative;
+    background: #fff;
+}
+img.app-landing_hero_graphics {
+    width: 1500px;
+    position: absolute;
+    left: 50%;
+    margin-left: -750px;
+    height: auto;
+    z-index: 0;
+    top: 0;
+    display: block;
+    max-width: fit-content;
+    margin-top: 100px;
+}
+.app-landing_hero_phone-wrapp_screen-desc-left {
+    margin-left: -700px;
+}
+.app-landing_hero_phone-wrapp_screen-desc-left {
+    margin-right: -700px;
+}
+.app-landing_hero_phone-wrapp_screen-desc-left svg {
+    order: 2;
+}
+.app-landing_hero_phone-wrapp_screen-desc-left .app-landing_hero_phone-wrapp_screen-desc-text {
+    order: 1;
+}
+.app-landing_hero_phone-wrapp_screen-desc svg {
+    width: 50px;
+    height: auto;
+}
+.app-landing_hero_phone-wrapp_screen-desc-text {
+    width: calc(100% - 65px);
+    margin-top: 9px;
+    animation-delay: 0.5s;
+}
+.app-landing_hero_phone-wrapp_screen-desc {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 450px;
+}
+.app-landing_hero_phone-wrapp_screen-desc-1 {
+    top: 973px;
+    margin-left: -700px;
+}
+.app-landing_hero_phone-wrapp_screen-desc-2 {
+    margin-right: -700px;
+    margin-top: 1283px;
+    left: auto;
+    right: 50%;
+}
+.app-landing_hero_phone-wrapp_screen-desc-3 {
+    top: 1619px;
+    margin-left: -700px;
+}
+.app-landing_hero_phone-wrapp_screen-desc-item {
+    gap: 24px;
+}
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+}
+.fade-up.animated {
+    animation: fadeUp 0.6s ease-out forwards;
+}
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media(max-width: 1450px) {
+    .app-landing_hero_phone-wrapp_screen {
+        width: 357px;
+        margin-top: 18px;
+    }
+    img.app-landing_hero_phone {
+        width: 400px;
+        margin-left: -200px;
+    }
+    .app-landing_hero_phone-wrapp_screen-desc {
+        width: 400px;
+    }
+    .app-landing_hero_phone-wrapp_screen-desc-1 {
+        top: 774px;
+        margin-left: -600px;
+    }
+    .app-landing_hero_phone-wrapp_screen-desc-2 {
+        margin-right: -600px;
+        margin-top: 1024px;
+    }
+    .app-landing_hero_phone-wrapp_screen-desc-3 {
+        top: 1291px;
+        margin-left: -600px;
+    }
+    img.app-landing_hero_graphics {
+        width: 1200px;
+        margin-left: -600px;
+        margin-top: 100px;
+    }
+}
+@media(max-width: 1250px) {
+    .app-landing_hero_phone-wrapp_screen-desc {
+        position: relative;
+        text-align: center;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding-top: 10px;
+    }
+    .app-landing_hero_phone-wrapp_screen-desc-text {
+        width: 100%;
+        order: 2;
+        text-align: center;
+    }
+    .app-landing_hero_phone-wrapp_screen-desc svg {
+        width: 40px;
+        height: auto;
+        order: 1;
+        margin: auto;
+    }
+    img.app-landing_hero_phone {
+        width: 500px;
+        margin-left: -250px;
+    }
+    .app-landing_hero_phone-wrapp_screen {
+        width: 445px;
+        margin-top: 23px;
+    }
+}
+
+@media(max-width: 750px) {
+    .legal-disclaimer-wrapp, .app-landing_hero-trustpilot-widget {
+        display: none;
+    }
+}
+
+@media(max-width: 550px) {
+    img.app-landing_hero_phone {
+        width: 380px;
+        margin-left: -190px;
+    }
+    .app-landing_hero_phone-wrapp_screen {
+        width: 339px;
+        margin-top: 18px;
+    }
+}
+@media(max-width: 400px) {
+        img.app-landing_hero_phone {
+        width: 300px;
+        margin-left: -150px;
+    }
+        .app-landing_hero_phone-wrapp_screen {
+        width: 267px;
+        margin-top: 13px;
+    }
+        .app-landing_hero_phone-wrapp_screen-desc svg {
+        width: 35px;
+        }
+}
+</style>
+
+<div class="rebranding_container">
+    <div class="app-landing_hero-wrapp block-flex-wrap block-gap-50 block-flex-center-center">
+        <div class="block-flex-wrap block-flex-center-center w-100 block-gap-30">
+            <div class="block-flex-wrap block-flex-center-center w-100 block-gap-15">
+                <h1 class="h1-heading-ss w-100 tac">
+                    <span class="h1-heading-pp">
+                        Luxury Authentication
+                    </span>
+                    App
+                </h1>
+                <p class="body-text w-100 tac">
+                    Get expert verification for luxury items in as little as 30 minutes
+                </p>
+            </div>
+            <a href="#" class="standart-hover">
+                <svg width="202" height="60" viewBox="0 0 202 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_5200_880)">
+                <path d="M200.712 52.9144C200.712 56.0776 198.137 58.6588 194.98 58.6588H7.06999C3.88849 58.6588 1.31299 56.0776 1.31299 52.9144V7.08563C1.31299 3.8971 3.88849 1.34122 7.06999 1.34122H194.955C198.137 1.34122 200.687 3.92241 200.687 7.08563C200.687 10.2489 200.687 52.9144 200.687 52.9144H200.712Z" fill="#3C1F1B"/>
+                <path d="M194.98 60H7.07C3.15625 60 0 56.8368 0 52.9144V7.08562C0 3.16322 3.1815 0 7.07 0H194.955C198.869 0 202.025 3.18853 202.025 7.08562V52.9144C202.025 56.8115 198.844 60 194.955 60H194.98Z" fill="#FFEEE5"/>
+                <path d="M200.712 52.9144C200.712 56.0776 198.137 58.6588 194.98 58.6588H7.06999C3.88849 58.6588 1.31299 56.0776 1.31299 52.9144V7.08563C1.31299 3.8971 3.88849 1.34122 7.06999 1.34122H194.955C198.137 1.34122 200.687 3.92241 200.687 7.08563C200.687 10.2489 200.687 52.9144 200.687 52.9144H200.712Z" fill="#FFEEE5"/>
+                <path d="M45.1218 29.6837C45.0713 24.8503 49.0861 22.4968 49.2628 22.3956C46.9903 19.0806 43.4806 18.6504 42.2686 18.5997C39.3143 18.2961 36.4611 20.3711 34.9713 20.3711C33.4816 20.3711 31.1333 18.6251 28.6336 18.6757C25.4268 18.7263 22.4221 20.5736 20.7808 23.4585C17.3973 29.3547 19.9223 37.984 23.1796 42.7415C24.7956 45.0696 26.7146 47.6761 29.1891 47.5749C31.6131 47.4736 32.5221 46.0312 35.4763 46.0312C38.4306 46.0312 39.2386 47.5749 41.7888 47.5242C44.3896 47.4736 46.0561 45.1961 47.6216 42.8427C49.4901 40.1856 50.2476 37.5538 50.2981 37.4019C50.2476 37.4019 45.2228 35.4534 45.1723 29.6584L45.1218 29.6837ZM40.3243 15.4618C41.6373 13.817 42.5211 11.59 42.2686 9.33783C40.3748 9.41375 38.0013 10.6537 36.6378 12.248C35.4258 13.6651 34.3401 15.9679 34.6431 18.1442C36.7641 18.2961 38.9608 17.0561 40.3243 15.4618Z" fill="#130706"/>
+                <path d="M80.3709 47.2712H76.9622L75.0937 41.4003H68.6297L66.8622 47.2712H63.5544L69.9679 27.3049H73.9322L80.3709 47.2712ZM74.5382 38.9456L72.8464 33.7326C72.6697 33.2012 72.3414 31.9359 71.8364 29.9621H71.7859C71.5839 30.8224 71.2809 32.0624 70.8517 33.7326L69.1852 38.9456H74.5382ZM96.8339 39.8819C96.8339 42.3366 96.1774 44.2598 94.8392 45.6769C93.6524 46.9422 92.1627 47.5749 90.4204 47.5749C88.6782 47.5749 87.1379 46.8916 86.3047 45.5251V53.0915H83.1232V37.5791C83.1232 36.0354 83.0727 34.4665 82.9969 32.8469H85.7997L85.9764 35.1244H86.0269C87.0874 33.4036 88.7034 32.5432 90.8749 32.5432C93.0464 32.5432 93.9807 33.2265 95.1169 34.5677C96.2532 35.9089 96.8087 37.6803 96.8087 39.8819H96.8339ZM93.5767 40.0084C93.5767 38.6166 93.2737 37.4526 92.6424 36.5416C91.9607 35.6052 91.0264 35.1244 89.8649 35.1244C88.7034 35.1244 88.3499 35.3775 87.7187 35.9089C87.0874 36.4403 86.6582 37.1236 86.4562 37.9587C86.3804 38.2877 86.3299 38.5913 86.3047 38.9203V41.3243C86.3047 42.3619 86.6329 43.2476 87.2642 43.9815C87.8954 44.69 88.7287 45.0696 89.7639 45.0696C90.7992 45.0696 91.9102 44.6141 92.5667 43.6778C93.2484 42.7415 93.5767 41.5268 93.5767 40.0084ZM113.373 39.8819C113.373 42.3366 112.716 44.2598 111.378 45.6769C110.191 46.9422 108.701 47.5749 106.959 47.5749C105.217 47.5749 103.677 46.8916 102.843 45.5251V53.0915H99.6619V37.5791C99.6619 36.0354 99.6114 34.4665 99.5357 32.8469H102.338L102.515 35.1244H102.566C103.626 33.4036 105.242 32.5432 107.414 32.5432C109.585 32.5432 110.519 33.2265 111.656 34.5677C112.792 35.9089 113.347 37.6803 113.347 39.8819H113.373ZM110.115 40.0084C110.115 38.6166 109.787 37.4526 109.156 36.5416C108.474 35.6052 107.54 35.1244 106.378 35.1244C105.217 35.1244 104.863 35.3775 104.232 35.9089C103.601 36.4403 103.172 37.1236 102.97 37.9587C102.869 38.3636 102.818 38.6672 102.818 38.9203V41.3243C102.818 42.3619 103.146 43.2476 103.778 43.9815C104.409 44.69 105.242 45.0696 106.277 45.0696C107.313 45.0696 108.424 44.6141 109.08 43.6778C109.762 42.7415 110.09 41.5268 110.09 40.0084H110.115ZM131.83 41.6786C131.83 43.3741 131.25 44.7659 130.063 45.8288C128.775 46.9928 126.957 47.5749 124.634 47.5749C122.311 47.5749 120.771 47.17 119.483 46.3349L120.215 43.6778C121.604 44.5129 123.144 44.9178 124.836 44.9178C126.528 44.9178 126.982 44.6394 127.639 44.108C128.321 43.5766 128.649 42.8427 128.649 41.9317C128.649 41.0207 128.371 40.4386 127.816 39.8819C127.26 39.3252 126.351 38.8191 125.063 38.3383C121.579 37.0224 119.837 35.1244 119.837 32.6192C119.837 30.1139 120.443 29.6331 121.68 28.5955C122.917 27.558 124.533 27.0266 126.578 27.0266C128.624 27.0266 129.911 27.3556 131.098 27.9629L130.29 30.5694C129.154 29.9621 127.891 29.6584 126.452 29.6584C125.013 29.6584 124.432 29.9367 123.801 30.4935C123.271 30.9996 122.993 31.5816 122.993 32.3155C122.993 33.0494 123.296 33.7579 123.902 34.264C124.432 34.7448 125.392 35.251 126.806 35.8077C128.523 36.4909 129.785 37.3007 130.593 38.237C131.401 39.1734 131.805 40.3121 131.805 41.7039L131.83 41.6786ZM142.435 35.2763H138.926V42.2607C138.926 44.0321 139.557 44.9178 140.794 44.9178C142.031 44.9178 141.829 44.8672 142.208 44.7659L142.284 47.1953C141.653 47.423 140.819 47.5496 139.809 47.5496C138.799 47.5496 137.562 47.17 136.855 46.3855C136.148 45.6263 135.795 44.3104 135.795 42.5137V35.251H133.699V32.8469H135.795V30.2151L138.926 29.2788V32.8722H142.435V35.2763ZM158.267 39.9578C158.267 42.1594 157.636 43.9814 156.373 45.3986C155.06 46.8663 153.293 47.6002 151.121 47.6002C148.95 47.6002 147.334 46.8916 146.071 45.4998C144.809 44.108 144.203 42.3366 144.203 40.1856C144.203 38.0346 144.859 36.1367 146.147 34.6942C147.435 33.2771 149.177 32.5685 151.374 32.5685C153.571 32.5685 155.187 33.2771 156.449 34.6689C157.686 36.0354 158.292 37.7815 158.292 39.9325L158.267 39.9578ZM154.959 40.0337C154.959 38.7178 154.682 37.5791 154.101 36.6428C153.419 35.504 152.485 34.922 151.222 34.922C149.96 34.922 148.975 35.504 148.293 36.6428C147.713 37.5791 147.435 38.7432 147.435 40.1097C147.435 41.4762 147.713 42.5643 148.293 43.5006C148.975 44.6394 149.935 45.2214 151.197 45.2214C152.46 45.2214 153.369 44.6394 154.076 43.4753C154.656 42.5137 154.959 41.375 154.959 40.0337ZM168.645 35.6812C168.317 35.6305 167.988 35.5799 167.635 35.6052C166.524 35.6052 165.64 36.0354 165.034 36.8705C164.504 37.6297 164.226 38.566 164.226 39.7048V47.2712H161.045V37.4019C161.045 35.8836 161.019 34.3906 160.944 32.8722H163.721L163.847 35.6305H163.923C164.251 34.6942 164.782 33.9098 165.514 33.353C166.17 32.8469 166.978 32.5939 167.812 32.5939C168.115 32.5939 168.367 32.5939 168.62 32.6445V35.7065L168.645 35.6812ZM182.936 39.4011C182.936 39.8819 182.911 40.3627 182.81 40.8435H173.24C173.266 42.2607 173.745 43.3488 174.629 44.108C175.437 44.7659 176.472 45.1202 177.76 45.1202C179.048 45.1202 180.462 44.8925 181.623 44.437L182.128 46.6639C180.765 47.2459 179.174 47.5496 177.306 47.5496C175.437 47.5496 173.316 46.8916 172.054 45.5757C170.791 44.2598 170.16 42.4884 170.16 40.2868C170.16 38.0852 170.741 36.3138 171.927 34.8714C173.165 33.3277 174.831 32.5685 176.952 32.5685C179.073 32.5685 180.588 33.3277 181.649 34.8714C182.482 36.086 182.911 37.6044 182.911 39.4011H182.936ZM179.881 38.566C179.881 37.6044 179.704 36.7946 179.25 36.1114C178.694 35.2257 177.836 34.7701 176.7 34.7701C175.563 34.7701 174.806 35.2003 174.149 36.0861C173.619 36.7693 173.291 37.6044 173.215 38.566H179.856H179.881Z" fill="#130706"/>
+                <path d="M67.6952 20.2446C66.8115 20.2446 66.0287 20.194 65.3975 20.1181V10.4766C66.2812 10.3501 67.1902 10.2741 68.0992 10.2741C71.7605 10.2741 73.4522 12.0709 73.4522 15.0316C73.4522 17.9924 71.4575 20.2699 67.6952 20.2699V20.2446ZM68.2507 11.5141C67.7457 11.5141 67.3417 11.5394 66.9882 11.6154V18.954C67.165 18.9793 67.5437 19.0046 68.0487 19.0046C70.4475 19.0046 71.811 17.6381 71.811 15.0822C71.811 12.5264 70.5737 11.5394 68.2507 11.5394V11.5141ZM78.7042 20.3205C76.6337 20.3205 75.2955 18.7769 75.2955 16.6765C75.2955 14.5761 76.659 12.9313 78.8052 12.9313C80.9515 12.9313 82.214 14.399 82.214 16.55C82.214 18.701 80.8 20.2952 78.7042 20.2952V20.3205ZM78.78 14.0953C77.6437 14.0953 76.9115 15.1582 76.9115 16.6512C76.9115 18.1442 77.6437 19.1818 78.7547 19.1818C79.8657 19.1818 80.598 18.043 80.598 16.6259C80.598 15.2088 79.8657 14.1206 78.78 14.1206V14.0953ZM94.0057 13.0831L91.809 20.1687H90.3697L89.4607 17.1067C89.2335 16.3475 89.0315 15.5884 88.9052 14.8292H88.88C88.7537 15.5884 88.5517 16.3728 88.3245 17.1067L87.3397 20.1687H85.8752L83.8047 13.0831H85.4207L86.2287 16.4488C86.4055 17.2585 86.5822 18.0177 86.7085 18.7263H86.7337C86.86 18.1189 87.0367 17.3851 87.3145 16.4741L88.3245 13.1084H89.6122L90.5717 16.4234C90.799 17.2332 91.001 18.0177 91.1272 18.7516H91.1777C91.2787 18.0177 91.4302 17.2585 91.6575 16.4234L92.516 13.1084H94.0562L94.0057 13.0831ZM102.136 20.1434H100.571V16.0692C100.571 14.8292 100.091 14.1965 99.1567 14.1965C98.2225 14.1965 97.5912 15.0063 97.5912 15.9173V20.1181H96.0257V15.0569C96.0257 14.4243 96.0257 13.7663 95.9752 13.0325H97.364L97.4397 14.1206H97.4902C97.9195 13.3614 98.778 12.8806 99.7375 12.8806C101.227 12.8806 102.187 14.0194 102.187 15.8667V20.0928L102.136 20.1434ZM106.454 20.1434H104.888V9.81864H106.454V20.1434ZM112.186 20.3205C110.115 20.3205 108.777 18.7769 108.777 16.6765C108.777 14.5761 110.14 12.9313 112.287 12.9313C114.433 12.9313 115.695 14.399 115.695 16.55C115.695 18.7516 114.281 20.2952 112.186 20.2952V20.3205ZM112.236 14.0953C111.1 14.0953 110.368 15.1582 110.368 16.6512C110.368 18.1442 111.1 19.1818 112.211 19.1818C113.322 19.1818 114.054 18.043 114.054 16.6259C114.054 15.1835 113.322 14.1206 112.236 14.1206V14.0953ZM121.882 20.1434L121.755 19.3336H121.705C121.225 19.9916 120.518 20.3205 119.634 20.3205C118.372 20.3205 117.463 19.4348 117.463 18.2455C117.463 16.4994 118.978 15.5884 121.579 15.5884V15.4618C121.579 14.5255 121.074 14.07 120.114 14.07C119.155 14.07 118.801 14.2472 118.271 14.6014L117.943 13.5639C118.599 13.159 119.407 12.9566 120.367 12.9566C122.21 12.9566 123.144 13.9435 123.144 15.892V18.4985C123.144 19.2071 123.169 19.7638 123.245 20.194H121.831L121.882 20.1434ZM121.68 16.6259C119.937 16.6259 119.054 17.0561 119.054 18.043C119.054 19.0299 119.508 19.1565 120.139 19.1565C120.771 19.1565 121.68 18.5491 121.68 17.714V16.6259ZM130.82 20.1434L130.744 19.0046H130.694C130.239 19.865 129.482 20.2952 128.421 20.2952C126.73 20.2952 125.467 18.8022 125.467 16.6765C125.467 14.5508 126.78 12.9059 128.548 12.9059C130.315 12.9059 130.164 13.2349 130.542 13.8676H130.568V9.79333H132.133V18.2202C132.133 18.9034 132.133 19.5361 132.184 20.1181H130.795L130.82 20.1434ZM130.593 15.9933C130.593 15.0063 129.936 14.1459 128.952 14.1459C127.967 14.1459 127.083 15.1835 127.083 16.6259C127.083 18.0683 127.815 19.0299 128.926 19.0299C130.037 19.0299 130.618 18.1695 130.618 17.1573V15.9679L130.593 15.9933ZM142.107 20.3205C140.036 20.3205 138.698 18.7769 138.698 16.6765C138.698 14.5761 140.062 12.9313 142.208 12.9313C144.354 12.9313 145.617 14.399 145.617 16.55C145.617 18.7516 144.203 20.2952 142.107 20.2952V20.3205ZM142.183 14.0953C141.046 14.0953 140.314 15.1582 140.314 16.6512C140.314 18.1442 141.046 19.1818 142.157 19.1818C143.268 19.1818 144.001 18.043 144.001 16.6259C144.001 15.1835 143.268 14.1206 142.183 14.1206V14.0953ZM154.075 20.1434H152.51V16.0692C152.51 14.8292 152.03 14.1965 151.096 14.1965C150.162 14.1965 149.53 15.0063 149.53 15.9173V20.1181H147.965V15.0569C147.965 14.4243 147.965 13.7663 147.914 13.0325H149.303L149.379 14.1206H149.429C149.859 13.3614 150.717 12.8806 151.677 12.8806C153.166 12.8806 154.126 14.0194 154.126 15.8667V20.0928L154.075 20.1434ZM164.63 14.2472H162.913V17.6887C162.913 18.5744 163.216 19.0046 163.822 19.0046C164.428 19.0046 164.327 18.9793 164.529 18.9287L164.579 20.1181C164.276 20.2446 163.872 20.2952 163.367 20.2952C162.13 20.2952 161.398 19.612 161.398 17.8153V14.2472H160.363V13.0578H161.398V11.7672L162.938 11.3117V13.0831H164.655V14.2725L164.63 14.2472ZM172.937 20.1434H171.372V16.1198C171.372 14.8545 170.892 14.2218 169.958 14.2218C169.023 14.2218 168.392 14.7786 168.392 15.892V20.1687H166.827V9.84395H168.392V14.0953H168.417C168.922 13.3361 169.629 12.9566 170.538 12.9566C172.028 12.9566 172.937 14.1206 172.937 15.9679V20.1687V20.1434ZM181.446 17.0055H176.725C176.75 18.3467 177.634 19.1059 178.947 19.1059C180.26 19.1059 180.285 18.9793 180.84 18.7769L181.093 19.865C180.436 20.1687 179.628 20.2952 178.719 20.2952C176.523 20.2952 175.21 18.9034 175.21 16.7271C175.21 14.5508 176.548 12.9313 178.543 12.9313C180.537 12.9313 181.472 14.2725 181.472 16.2969C181.472 16.5247 181.472 16.7777 181.421 17.0055H181.446ZM180.007 15.8667C180.007 14.7786 179.452 13.9941 178.442 13.9941C177.432 13.9941 176.826 14.7786 176.725 15.8667H179.982H180.007Z" fill="#130706"/>
+                </g>
+                <rect x="0.5" y="0.5" width="201" height="59" rx="9.5" stroke="url(#paint0_linear_5200_880)"/>
+                <defs>
+                <linearGradient id="paint0_linear_5200_880" x1="-2.83621e-07" y1="60" x2="206.326" y2="27.2742" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FF8452"/>
+                <stop offset="1" stop-color="#E64508"/>
+                </linearGradient>
+                <clipPath id="clip0_5200_880">
+                <rect width="202" height="60" rx="10" fill="white"/>
+                </clipPath>
+                </defs>
+                </svg>
+            </a>
+            <div class="legal-disclaimer-wrapp block-flex-wrap block-flex-center-center w-100">
+                <p class="legal-disclaimer tiny-text legal-disclaimer--collapsed tac">
+                    <span class="legal-disclaimer-short">
+                    LegitGrails provides independent authentication and verification services based on expert analysis and industry experience.
+                    </span>
+                    <span class="legal-disclaimer-rest">
+                    <br><br>
+                    Our assessments and certificates represent our professional opinion only and are not official determinations issued by the respective brands. LegitGrails operates independently and is not affiliated with, endorsed, sponsored, or authorized by any brands featured, mentioned, or authenticated on this website.<br><br>
+                    All trademarks, logos, product names, and distinctive design elements remain the property of their respective owners and are used strictly for identification, descriptive, and educational purposes.<br><br>
+                    Any brand references, comparisons, or illustrative visuals on this website are provided solely for educational and informational purposes and do not imply any cooperation, partnership, or approval from the original brand owners.
+                        </span>
+                    <a href="#" class="legal-disclaimer-toggle standart-hover">Expand</a>
+                </p>
+            </div>
+            <div class="app-landing_hero-trustpilot-widget w-100 block-flex-wrap block-flex-center-center">
+                <!-- TrustBox widget - Mini -->
+                <div class="trustpilot-widget" data-locale="en-GB" data-template-id="53aa8807dec7e10d38f59f32" data-businessunit-id="5fbebb2d281b010001718c1c" data-style-height="97" data-style-width="200">
+                <a href="https://uk.trustpilot.com/review/legitgrails.com" target="_blank" rel="noopener">Trustpilot</a>
+                </div>
+                <!-- End TrustBox widget -->
+            </div>
+        </div>
+        <div class="app-landing_hero_phone-wrapp">
+            <img class="app-landing_hero_phone" src="{{ "app-landing_iphone.webp" | asset_url }}">
+            <div class="app-landing_hero_phone-wrapp_screen block-flex-wrap block-flex-center-center">
+                <img class="app-landing_hero_phone-wrapp_screen-img w-100" src="{{ "app-landing_screen-nav-bar.webp" | asset_url }}">
+                <img class="app-landing_hero_phone-wrapp_screen-img w-100" src="{{ "app-landing_screen-search.webp" | asset_url }}">
+                <img class="app-landing_hero_phone-wrapp_screen-img w-100 mobile-hidden" src="{{ "app-landing_screen-quick-start.webp" | asset_url }}">
+                <img class="app-landing_hero_phone-wrapp_screen-img w-100" src="{{ "app-landing_screen-dashbord.webp" | asset_url }}">
+
+                <div class="app-landing_hero_phone-wrapp_screen-desc-item block-flex-wrap w-100">
+                    <div class="app-landing_hero_phone-wrapp_screen-desc fade-up app-landing_hero_phone-wrapp_screen-desc-1 app-landing_hero_phone-wrapp_screen-desc-left block-flex-wrap block-flex-start-left block-gap-15 tal">
+                        <svg width="53" height="55" viewBox="0 0 53 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M53 27.2092C53 42.2365 41.1355 54.4185 26.5 54.4185C11.8645 54.4185 0 42.2365 0 27.2092C0 12.182 11.8645 0 26.5 0C41.1355 0 53 12.182 53 27.2092Z" fill="#C7BEBD"/>
+                        <path d="M44.1666 27.2092C44.1666 37.2273 36.2569 45.3487 26.4999 45.3487C16.7429 45.3487 8.83325 37.2273 8.83325 27.2092C8.83325 17.191 16.7429 9.06966 26.4999 9.06966C36.2569 9.06966 44.1666 17.191 44.1666 27.2092Z" fill="#8A7876"/>
+                        <path d="M35.3333 27.2088C35.3333 32.2179 31.3785 36.2786 26.5 36.2786C21.6214 36.2786 17.6666 32.2179 17.6666 27.2088C17.6666 22.1997 21.6214 18.1391 26.5 18.1391C31.3785 18.1391 35.3333 22.1997 35.3333 27.2088Z" fill="#3C1F1B"/>
+                        </svg>
+                        <div class="app-landing_hero_phone-wrapp_screen-desc-text block-flex-wrap block-gap-10 tar">
+                            <h3 class="h3-heading-pp w-100">Choose Your Time</h3>
+                            <p class="body-text w-100">Select the authentication speed that fits your needs—12 hours, 6 hours, 2 hours, or 30 min.</p>
+                        </div>
+                    </div>
+                    <img class="app-landing_hero_phone-wrapp_screen-img fade-up app-landing_hero_phone-wrapp_screen-img-1 w-100" src="{{ "app-landing_screen-answer-time.webp" | asset_url }}">
+                </div>
+                <div class="app-landing_hero_phone-wrapp_screen-desc-item block-flex-wrap w-100">
+                    <div class="fade-up app-landing_hero_phone-wrapp_screen-desc fade-up app-landing_hero_phone-wrapp_screen-desc-2 app-landing_hero_phone-wrapp_screen-desc-right block-flex-wrap block-flex-start-left block-gap-15 tar">
+                        <svg width="53" height="55" viewBox="0 0 53 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M53 27.2092C53 42.2365 41.1355 54.4185 26.5 54.4185C11.8645 54.4185 0 42.2365 0 27.2092C0 12.182 11.8645 0 26.5 0C41.1355 0 53 12.182 53 27.2092Z" fill="#C7BEBD"/>
+                        <path d="M44.1666 27.2092C44.1666 37.2273 36.2569 45.3487 26.4999 45.3487C16.7429 45.3487 8.83325 37.2273 8.83325 27.2092C8.83325 17.191 16.7429 9.06966 26.4999 9.06966C36.2569 9.06966 44.1666 17.191 44.1666 27.2092Z" fill="#8A7876"/>
+                        <path d="M35.3333 27.2088C35.3333 32.2179 31.3785 36.2786 26.5 36.2786C21.6214 36.2786 17.6666 32.2179 17.6666 27.2088C17.6666 22.1997 21.6214 18.1391 26.5 18.1391C31.3785 18.1391 35.3333 22.1997 35.3333 27.2088Z" fill="#3C1F1B"/>
+                        </svg>
+                        <div class="app-landing_hero_phone-wrapp_screen-desc-text block-flex-wrap block-gap-10 tal">
+                            <h3 class="h3-heading-pp w-100">Upload Your Photos</h3>
+                            <p class="body-text w-100">Snap and upload detailed photos of your item directly in the app.</p>
+                        </div>
+                    </div>
+                    <img class="app-landing_hero_phone-wrapp_screen-img fade-up app-landing_hero_phone-wrapp_screen-img-2 fade-up w-100" src="{{ "app-landing_screen-upload.webp" | asset_url }}">
+                </div>
+                <div class="app-landing_hero_phone-wrapp_screen-desc-item block-flex-wrap w-100">
+                    <div class="app-landing_hero_phone-wrapp_screen-desc fade-up app-landing_hero_phone-wrapp_screen-desc-3 app-landing_hero_phone-wrapp_screen-desc-left block-flex-wrap block-flex-start-left block-gap-15 tal">
+                        <svg width="53" height="55" viewBox="0 0 53 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M53 27.2092C53 42.2365 41.1355 54.4185 26.5 54.4185C11.8645 54.4185 0 42.2365 0 27.2092C0 12.182 11.8645 0 26.5 0C41.1355 0 53 12.182 53 27.2092Z" fill="#C7BEBD"/>
+                        <path d="M44.1666 27.2092C44.1666 37.2273 36.2569 45.3487 26.4999 45.3487C16.7429 45.3487 8.83325 37.2273 8.83325 27.2092C8.83325 17.191 16.7429 9.06966 26.4999 9.06966C36.2569 9.06966 44.1666 17.191 44.1666 27.2092Z" fill="#8A7876"/>
+                        <path d="M35.3333 27.2088C35.3333 32.2179 31.3785 36.2786 26.5 36.2786C21.6214 36.2786 17.6666 32.2179 17.6666 27.2088C17.6666 22.1997 21.6214 18.1391 26.5 18.1391C31.3785 18.1391 35.3333 22.1997 35.3333 27.2088Z" fill="#3C1F1B"/>
+                        </svg>
+                        <div class="app-landing_hero_phone-wrapp_screen-desc-text block-flex-wrap block-gap-10 tar">
+                            <h3 class="h3-heading-pp w-100">Pay with Credits</h3>
+                            <p class="body-text w-100">Complete your request using account credits, our secure in-app currency.</p>
+                        </div>
+                    </div>
+                    <img class="app-landing_hero_phone-wrapp_screen-img fade-up app-landing_hero_phone-wrapp_screen-img-2 w-100" src="{{ "app-landing_screen-payment.webp" | asset_url }}">
+                </div>
+            </div>
+            <img class="app-landing_hero_graphics" src="{{ "app-landing_hero-graphics.webp" | asset_url }}">
+        </div>
+    </div>
+</div>
+
+<!-- TrustBox script -->
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<!-- End TrustBox script -->
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const items = document.querySelectorAll('.app-landing_hero_phone-wrapp_screen-desc-item');
+
+  const OFFSET = -300;
+
+  const STEP_GAP = 1500;     // 1.2s between items starting (set 1000–2000)
+  const WITHIN_GAP = 600;    // 0.6s between desc and image inside ONE item
+
+  let nextStartAt = 0;
+
+  function schedule(fn, delayMs) {
+    setTimeout(fn, Math.max(0, delayMs));
+  }
+
+  function animateItem(item, index) {
+    const isNarrow = window.innerWidth < 1250;
+
+    const descEl = item.querySelector('.app-landing_hero_phone-wrapp_screen-desc');
+    const imgEl  = item.querySelector('.app-landing_hero_phone-wrapp_screen-img');
+
+    // Desktop rule: ONLY second item is image first
+    const imgFirst = !isNarrow && index === 1;
+
+    if (imgFirst) {
+      imgEl?.classList.add('animated');
+      schedule(() => descEl?.classList.add('animated'), WITHIN_GAP);
+    } else {
+      descEl?.classList.add('animated');
+      schedule(() => imgEl?.classList.add('animated'), WITHIN_GAP);
+    }
+  }
+
+  function onScroll() {
+    const y = window.pageYOffset;
+    const windowHeight = window.innerHeight;
+
+    items.forEach((item, index) => {
+      if (item.dataset.queued) return;
+
+      const top = item.getBoundingClientRect().top + y;
+      const inView = top - OFFSET < y + windowHeight;
+      if (!inView) return;
+
+      item.dataset.queued = 'true';
+
+      // Ensure items start one-after-another, not all at once
+      const now = Date.now();
+      if (nextStartAt < now) nextStartAt = now;
+
+      const startDelay = nextStartAt - now;
+      schedule(() => animateItem(item, index), startDelay);
+
+      nextStartAt += STEP_GAP;
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+});
+</script>
+
+{% schema %}
+  {
+    "name": "App Hero",
+    "class": "app-hero rebranding-section",
+    "settings": []
+  }
+{% endschema %}

@@ -1,0 +1,74 @@
+{% render 'fonts-rebrand' %}
+<style>
+  .card__image-wrapper {
+    background: #161616;
+    border-radius: 8px;
+    padding: 0;
+    height: 280px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  p.card__image-wrapper-title {
+    color: #FFF;
+    text-align: center;
+    font-family: "PP Fragment";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%; /* 38.85px */
+    letter-spacing: 0.37px;
+    transition: .3s;
+    padding: 0 15px;
+  }
+  .card-product:hover p.card__image-wrapper-title {
+    transform: scale(1.1)!important;
+  }
+  .predictive-search__item:hover p.card__image-wrapper-title {
+    transform: scale(1.1)!important;
+  }
+  .product-search-section p.card__image-wrapper-title {
+    font-size: 15px;
+    padding: 0 3px;
+    transition: .3s;
+}
+  .products-search_result .card-list .card.card-product a.card__wrapper:hover p.card__image-wrapper-title {
+        transform: scale(1.1);
+}
+  @media(max-width: 1250px) {
+    p.card__image-wrapper-title {
+      font-size: 22px;
+    }
+    .card__image-wrapper {
+        height: 200px;
+    }
+  }
+   @media(max-width: 750px) {
+    p.card__image-wrapper-title {
+      font-size: 17px;
+    }
+  }
+  @media(max-width: 450px) {
+    p.card__image-wrapper-title {
+        font-size: 16px;
+    }
+    .card__image-wrapper {
+      height: 170px;
+    }
+  }
+  @media(max-width: 400px) {
+    p.card__image-wrapper-title {
+      font-size: 14px;
+    }
+    .card__image-wrapper {
+        height: 150px;
+    }
+  }
+</style>
+
+<div class="card__image-wrapper card__image-wrapper--aligned">
+    <p class="card__image-wrapper-title">
+      {{ product.title | remove: "Authentication Service" }}
+    </p>
+</div>

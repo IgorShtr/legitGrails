@@ -1,0 +1,288 @@
+<style>
+  .product-box{display:flex;justify-content:center}.product-card{width:100%}.hidden{display:none}.product_card-btns{display:flex;flex-direction:column;gap:15px;width:100%}.product-form{display:flex;flex-direction:column;gap:20px;align-items:center}.radio-wrap,.radio-wrap input:checked~.checkmark:after{display:block}.custom-cart-button,.redirect-checkout-btn .product_card-cart{width:100%;background:#161616;border:1px solid #161616;color:#fff;font-weight:700;text-transform:uppercase;font-family:'Work Sans';border-radius:5px;transition:.5s;height:43px}.btn-submit-container{position:relative}.cart-notification{position:absolute;width:100%;top:-20px;line-height:16px;color:#e51b24}.radio-wrap{position:relative;padding-left:25px;margin-bottom:12px;cursor:pointer;font-size:16px;line-height:16px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.radio-wrap input{position:absolute;opacity:0;cursor:pointer}.checkmark{position:absolute;top:0;left:0;height:16px;width:16px;background-color:#fff;border-radius:50%;border:1px solid #cdab71}.radio-wrap:hover input~.checkmark{background-color:#f2f2f2}.radio-wrap input:checked~.checkmark{background-color:#fff}.checkmark:after{content:"";position:absolute;display:none}.radio-wrap .checkmark:after{top:3px;left:3px;width:8px;height:8px;border-radius:50%;background:#cdab71}@media (min-width:425px){.product_card-btns{min-width:320px}}p.product_card-price{display:block;width:100%;text-align:center}p.product_card-title{margin-top:0!important;font-size:22px!important}.uploadcare{margin-bottom:0!important}p.authenticate-btn{width:100%!important;max-width:fit-content!important;min-width:100%!important}@media(max-width:990px){.article__share-desktop{display:none}}@media(max-width:650px){.product-card__0 .guides-block .guides-block_item:first-child,.product-card__1 .guides-block .guides-block_item:nth-child(3){display:none}.product-card__0 .guides-block .guides-block_item:nth-child(2),.product-card__1 .guides-block .guides-block_item:nth-child(2){order:1}.product-card__0 .guides-block .guides-block_item:nth-child(3),.product-card__1 .guides-block .guides-block_item:first-child{order:2}p.product_card-title{font-size:20px!important;line-height:24px!important}}.blok-1-wrapper,.blok-2-wrapper,.blok-3-wrapper,.blok-4-wrapper,.review-section-wrap{display:none!important}.guides-block_item-step p{line-height:1.4}.guides-block_item-advantages-reviews{width:100%}.guides-block_item-advantages-reviews-stars{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:3px}p.guides-block_item-advantages-reviews-desc{color:#000;font-size:16px;font-family:'Open Sans';font-weight:400;margin:8px 0 0;line-height:1.4}.guides-block_item-advantages-reviews-imgs{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;margin-top:8px}.guides-block_item-advantages-reviews-img{height:45px;width:45px;border-radius:50%;overflow:hidden;border:2px solid #fff;margin-left:-10px}.guides-block_item-advantages-reviews-img img{height:45px;width:45px}
+p.h3-heading-ss {
+font-family: "Suisse Intl"!important;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 110%;
+    letter-spacing: -0.84px;
+}
+p.product_box-title {
+    text-align: center;
+    margin: 0;
+}
+.guides-block_item-step span {
+      justify-content: center;
+    align-items: center;
+    height: 53px;
+    width: 53px;
+    position: relative;
+    border-radius: 50%;
+    background: #F2F2EA;
+    border: none;
+    display: flex;
+    min-width: 53px;
+    min-height: 53px;
+}
+.guides-block_item-step span::before {
+    content: '';
+    display: block;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    border: 2px solid #3C1F1B;
+    top: 4px;
+    left: 4px;
+    position: absolute;
+    background: none;
+    min-width: auto;
+    min-height: auto;
+}
+.guides-block_item-step span::after {
+  content: '';
+    position: absolute;
+    display: block;
+    border-radius: 2px;
+    background: #3C1F1B;
+    height: 25px;
+    width: 3px;
+    top: 100%;
+    left: 50%;
+    margin-left: -1.5px;
+}
+.guides-block_item-step p {
+    line-height: 130%;
+    margin: 0 0px 0 15px;
+}
+.guides-block_item-advantages-reviews-imgs img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #fff;
+    margin-left: -10px;
+}
+.guides-block_item-content {
+    height: max-content;
+}
+.guides-block_item-content p  {
+    margin: 0;
+}
+.guides-block_item-step p {
+    margin-left: 15px;
+}
+p.product_card-title {
+    font-family: "Suisse Intl" !important;
+    font-size: 36px !important;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 110%;
+    letter-spacing: -1.08px;
+}
+.guides-block_item {
+        border-radius: 8px;
+    border: 1px solid rgba(60, 31, 27, 0.20);
+    padding: 20px;
+    width: 400px;
+    box-shadow: none;
+    order: 1;
+}
+.guides-block_item:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    border: 1px solid rgba(60, 31, 27, 0.30);
+    width: max-content;
+    padding: 20px;
+    border: 1px solid #F6ECD5;
+    background: #FFFCF5;
+    width: 500px !important;
+    text-align: center;
+    flex-wrap: wrap;
+    order: 3;
+}
+label.radio.radio-wrap {
+    font-family: "Suisse Intl" !important;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.4px;
+    color: #3C1F1B;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    transition: .3s;
+    margin-bottom: 15px;
+}
+p.pro-option-name.product_card-answear {
+        color: var(--Chocolate, #3C1F1B);
+    text-align: center;
+    font-family: "Geist Mono"!important;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.36px;
+    text-transform: uppercase;
+}
+.variant-list {
+    width: max-content;
+}
+.product-form {
+    width: 100%;
+    gap: 25px;
+}
+p.product_card-title {
+    margin-bottom: 25px !important;
+}
+.radio-wrap .checkmark::after {
+    background: #3C1F1B !important;
+    border-radius: 50%;
+    height: 10px !important;
+    left: 3px;
+    top: 3px;
+    width: 10px !important;
+}
+.checkmark {
+    border: 1px solid #3C1F1B !important;
+    height: 18px !important;
+    width: 18px !important;
+    margin-top: 2px;
+    background: #FFFCF5;
+}
+span.product__current-price {
+    font-family: "PP Fragment" !important;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -1.2px;
+}
+.checkmark, .popup-container, .radio-wrap input:checked~.checkmark {
+    background-color: transparent;
+}
+p.product-box_title {
+    color: var(--Chocolate, #3C1F1B);
+    text-align: center;
+    font-family: "Geist Mono" !important;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.36px;
+    text-transform: uppercase;
+    margin: 0;
+}
+p.authenticate-btn.font-title.guides_upload-photos-btn-track {
+    margin: 0!important;
+    background: #F24F14;
+    color: #fff;
+    height: max-content;
+    border-radius: 8px;
+    font-size: 20px;
+    text-transform: none;
+    font-weight: 400;
+    line-height: 1;
+    margin: 25px auto 0 auto;
+    transition: .5s;
+    min-width: auto;
+    width: max-content;
+    padding: 13px 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-family: "Suisse Intl" !important;
+    letter-spacing: -0.4px;
+}
+.uploadcare {
+    margin: 0 !important;
+    width: 100%;
+}
+.guides-block_item-advantages-featured-images {
+    justify-content: center;
+    gap: 10px 20px;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.guides-block_item-advantages-featured-images img {
+    height: 18px;
+    margin: 0;
+}
+.guides-block_item-advantages-featured-images img:nth-child(3) {
+    height: 22px;
+}
+.guides-block_item-advantages-featured-images img:nth-child(4) {
+    height: 27px;
+}
+.form-block__title, .uploadcare--text.uploadcare--text_size_extra-large {
+    font-weight: 400;
+}
+.tab-section__title {
+    color: #3C1F1B;
+    font-family: "PP Fragment" !important;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -0.8px;
+}
+.form-block__title, .tab-section__title, #upladcare-cart {
+    font-family: "Suisse Intl" !important;
+}
+p.popup-terms a {
+    color: #F24F14;
+}
+.form-block__title.h3-heading-pp {
+    font-family: "PP Fragment" !important;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -1.2px;
+}
+@media(max-width: 900px) {
+    .guides-block_item {
+    width: calc(50% - 12px);
+}
+}
+@media(max-width: 750px) {
+    .form-block__title.h3-heading-pp {
+                font-size: 26px;
+        letter-spacing: -1.04px;
+    }
+    .guides-block_item {
+        width: 100%;
+        order: 2;
+    }
+    .guides-block_item:nth-child(2) {
+    width: 100% !important;
+    order: 1;
+}
+.rte p {
+            font-size: 16px;
+        letter-spacing: -0.32px;
+}
+h1.article__title {
+            font-size: 36px;
+        letter-spacing: -1.44px;
+}
+.rte h2 {
+    font-size: 34px;
+        letter-spacing: -1.36px;
+}
+.rte h3, p.h3-heading-ss {
+            font-size: 26px;
+        letter-spacing: -1.04px;
+}
+.article__wrapper {
+    padding: 30px 0;
+    margin: 0;
+}
+}
+</style>

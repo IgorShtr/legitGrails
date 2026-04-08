@@ -1,0 +1,25 @@
+{% render 'fonts-rebrand' %}
+<style>
+  footer {
+      border-top: 1px solid #3C1F1B;
+    }
+      .content-for-layout {
+        padding-bottom: 0!important;
+    }
+  a, p, ul, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    color: #3C1F1B;
+  }
+</style>
+{% render "rebranding_main-styles" %}
+{% section 'resalex-landing_hero' %}
+{% section 'resalex-landing_about' %}
+{% section 'resalex-landing_offers' %}
+{% section 'resalex-landing_steps' %}
+{% section 'resalex-landing_trusted' %}
+{% section 'resalex-landing_cta' %}
+<!-- TrustBox script -->
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<!-- End TrustBox script -->
+{% render 'resalex-landing-scripts' %}

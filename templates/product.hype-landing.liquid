@@ -1,0 +1,312 @@
+{% render 'hype-landing-styles' %}
+{% render 'hype-authentication-styles' %}
+{% section 'hype-landing_hero' %}
+{% section 'hype-offers' %}
+{% section 'hype-coverage' %}
+
+
+
+
+<section class="product-box_section hype_authentication" id="product-box_section">
+  <div class="container">
+  <div class="section-title">
+    <h2 class="second-title-style">
+      Fast & Reliable Legit Checks
+    </h2>
+  </div>
+  <div class="hype_authentication-wrapper">
+    {%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- assign current_variant_sale = false -%}
+{% if current_variant.compare_at_price > current_variant.price %}
+    {%- assign current_variant_sale = true -%}
+{% endif %}
+{% assign featured_media = current_variant.featured_media | default: product.featured_media %}
+
+<div class="product_checkout-right" data-section-id="{{ section.id }}" data-section-type="product-template"
+     data-variant-id="{{ current_variant.id }}" itemscope itemtype="http://schema.org/Product">
+    <meta itemprop="name" content="{{ product.title }}">
+    <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+    <meta itemprop="image" content="{{ featured_media | img_url: 'grande' }}">
+    <img class="hype_authentication-wrapper-image" src="{{ 'hype_authentication.png' | asset_url }}">
+    <div class="hype_authentication-wrapper-title">
+      <p class="card-title">Authentication</p>
+      <p class="card-desc">Designed for collectors and resellers, we make legit checks accessible.</p>
+    </div>
+    <div class="hype_authentication-wrapper-price">
+      <p class="hype_authentication-wrapper-price-desc">Start at</p>
+      <p class="hype_authentication-wrapper-price-title">$4</p>
+    </div>
+    <div class="hype_authentication-wrapper-content">
+      <div class="hype_authentication-wrapper-content-options">
+        <p class="hype_authentication-wrapper-content-title">Time Options</p>
+        <div class="hype_authentication-wrapper-content-options-items">
+          <meta itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
+                <meta itemprop="priceCurrency" content="{{ cart.currency.iso_code }}">
+                <link itemprop="availability"
+                      href="http://schema.org/{% if current_variant.available %}InStock{% else %}OutOfStock{% endif %}">
+              {% render 'product-form-upload-hype' %}
+        </div>
+      </div>
+      <span class="hype_authentication-wrapper-content-split"></span>
+      <div class="hype_authentication-wrapper-content-offers hype_authentication-wrapper-content-offers-desk">
+        <p class="hype_authentication-wrapper-content-title">Includes: </p>
+        <div class="hype_authentication-wrapper-content-offers-items">
+          <div class="hype_authentication-wrapper-content-offers-item">
+            {% render "hype-authentication-offers-icon" %}
+            <p class="hype_authentication-wrapper-content-offers-item-text">Expert and AI authentication</p>
+          </div>
+          <div class="hype_authentication-wrapper-content-offers-item">
+            {% render "hype-authentication-offers-icon" %}
+            <p class="hype_authentication-wrapper-content-offers-item-text">99.3% accuracy</p>
+          </div>
+          <div class="hype_authentication-wrapper-content-offers-item">
+            {% render "hype-authentication-offers-icon" %}
+            <p class="hype_authentication-wrapper-content-offers-item-text">Fast legit check starting from 15 minutes</p>
+          </div>
+          <div class="hype_authentication-wrapper-content-offers-item">
+            {% render "hype-authentication-offers-icon" %}
+            <p class="hype_authentication-wrapper-content-offers-item-text">Verified certificate of authenticity</p>
+          </div>
+          <div class="hype_authentication-wrapper-content-offers-item">
+            {% render "hype-authentication-offers-icon" %}
+            <p class="hype_authentication-wrapper-content-offers-item-text">24/7 customer support</p>
+          </div>
+        </div>
+      </div>
+    </div>
+     <div class="uploadcare">
+     <button id="authenticate-btn" class="font-title hype_authentication-wrapper-btn authenticate-btn new-main-btn new-btn">Legit Check Now</button>
+    </div>
+  </div>
+</div>
+  <div class="hype_authentication-wrapper-content-offers hype_authentication-wrapper-content-offers-mobile">
+        <p class="hype_authentication-wrapper-content-title">Includes: </p>
+        <div class="hype_authentication-wrapper-content-offers-items">
+          <div class="hype_authentication-wrapper-content-offers-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_210_679)">
+            <g filter="url(#filter0_bd_210_679)">
+            <circle cx="10" cy="10" r="10" fill="url(#paint0_linear_210_679)" fill-opacity="0.2"/>
+            <circle cx="10" cy="10" r="9.5" stroke="url(#paint1_linear_210_679)" stroke-opacity="0.2"/>
+            </g>
+            <path d="M15.447 7.0713L8.51839 13.9999C8.23268 14.2856 7.8041 14.2856 7.51839 13.9999L4.44696 10.9284C3.8041 10.2856 4.8041 9.28559 5.44696 9.92845L8.01839 12.4999L14.447 6.0713C15.0898 5.35702 16.0898 6.42845 15.447 7.0713Z" fill="#C7A874"/>
+            </g>
+            <defs>
+            <filter id="filter0_bd_210_679" x="-40" y="-40" width="100" height="100" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feGaussianBlur in="BackgroundImageFix" stdDeviation="20"/>
+            <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_210_679"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feMorphology radius="2" operator="erode" in="SourceAlpha" result="effect2_dropShadow_210_679"/>
+            <feOffset dy="4"/>
+            <feGaussianBlur stdDeviation="12"/>
+            <feComposite in2="hardAlpha" operator="out"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+            <feBlend mode="normal" in2="effect1_backgroundBlur_210_679" result="effect2_dropShadow_210_679"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_210_679" result="shape"/>
+            </filter>
+            <linearGradient id="paint0_linear_210_679" x1="5.20833" y1="1.2464e-06" x2="16.6828" y2="1.22725" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#E0E0E0"/>
+            <stop offset="1" stop-color="#BDBDBD"/>
+            </linearGradient>
+            <linearGradient id="paint1_linear_210_679" x1="1.89167" y1="-0.74074" x2="18.5975" y2="0.400768" gradientUnits="userSpaceOnUse">
+            <stop stop-opacity="0.32"/>
+            <stop offset="0.315" stop-color="#0F0F0F" stop-opacity="0.21"/>
+            <stop offset="0.685" stop-color="#A49685"/>
+            <stop offset="1" stop-color="#C7A874"/>
+            </linearGradient>
+            <clipPath id="clip0_210_679">
+            <rect width="20" height="20" fill="white"/>
+            </clipPath>
+            </defs>
+            </svg>
+            <p class="hype_authentication-wrapper-content-offers-item-text">Expert and AI authentication</p>
+          </div>
+          <div class="hype_authentication-wrapper-content-offers-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_210_679)">
+            <g filter="url(#filter0_bd_210_679)">
+            <circle cx="10" cy="10" r="10" fill="url(#paint0_linear_210_679)" fill-opacity="0.2"/>
+            <circle cx="10" cy="10" r="9.5" stroke="url(#paint1_linear_210_679)" stroke-opacity="0.2"/>
+            </g>
+            <path d="M15.447 7.0713L8.51839 13.9999C8.23268 14.2856 7.8041 14.2856 7.51839 13.9999L4.44696 10.9284C3.8041 10.2856 4.8041 9.28559 5.44696 9.92845L8.01839 12.4999L14.447 6.0713C15.0898 5.35702 16.0898 6.42845 15.447 7.0713Z" fill="#C7A874"/>
+            </g>
+            <defs>
+            <filter id="filter0_bd_210_679" x="-40" y="-40" width="100" height="100" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feGaussianBlur in="BackgroundImageFix" stdDeviation="20"/>
+            <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_210_679"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feMorphology radius="2" operator="erode" in="SourceAlpha" result="effect2_dropShadow_210_679"/>
+            <feOffset dy="4"/>
+            <feGaussianBlur stdDeviation="12"/>
+            <feComposite in2="hardAlpha" operator="out"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+            <feBlend mode="normal" in2="effect1_backgroundBlur_210_679" result="effect2_dropShadow_210_679"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_210_679" result="shape"/>
+            </filter>
+            <linearGradient id="paint0_linear_210_679" x1="5.20833" y1="1.2464e-06" x2="16.6828" y2="1.22725" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#E0E0E0"/>
+            <stop offset="1" stop-color="#BDBDBD"/>
+            </linearGradient>
+            <linearGradient id="paint1_linear_210_679" x1="1.89167" y1="-0.74074" x2="18.5975" y2="0.400768" gradientUnits="userSpaceOnUse">
+            <stop stop-opacity="0.32"/>
+            <stop offset="0.315" stop-color="#0F0F0F" stop-opacity="0.21"/>
+            <stop offset="0.685" stop-color="#A49685"/>
+            <stop offset="1" stop-color="#C7A874"/>
+            </linearGradient>
+            <clipPath id="clip0_210_679">
+            <rect width="20" height="20" fill="white"/>
+            </clipPath>
+            </defs>
+            </svg>
+            <p class="hype_authentication-wrapper-content-offers-item-text">99.3% accuracy</p>
+          </div>
+          <div class="hype_authentication-wrapper-content-offers-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_210_679)">
+            <g filter="url(#filter0_bd_210_679)">
+            <circle cx="10" cy="10" r="10" fill="url(#paint0_linear_210_679)" fill-opacity="0.2"/>
+            <circle cx="10" cy="10" r="9.5" stroke="url(#paint1_linear_210_679)" stroke-opacity="0.2"/>
+            </g>
+            <path d="M15.447 7.0713L8.51839 13.9999C8.23268 14.2856 7.8041 14.2856 7.51839 13.9999L4.44696 10.9284C3.8041 10.2856 4.8041 9.28559 5.44696 9.92845L8.01839 12.4999L14.447 6.0713C15.0898 5.35702 16.0898 6.42845 15.447 7.0713Z" fill="#C7A874"/>
+            </g>
+            <defs>
+            <filter id="filter0_bd_210_679" x="-40" y="-40" width="100" height="100" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feGaussianBlur in="BackgroundImageFix" stdDeviation="20"/>
+            <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_210_679"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feMorphology radius="2" operator="erode" in="SourceAlpha" result="effect2_dropShadow_210_679"/>
+            <feOffset dy="4"/>
+            <feGaussianBlur stdDeviation="12"/>
+            <feComposite in2="hardAlpha" operator="out"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+            <feBlend mode="normal" in2="effect1_backgroundBlur_210_679" result="effect2_dropShadow_210_679"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_210_679" result="shape"/>
+            </filter>
+            <linearGradient id="paint0_linear_210_679" x1="5.20833" y1="1.2464e-06" x2="16.6828" y2="1.22725" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#E0E0E0"/>
+            <stop offset="1" stop-color="#BDBDBD"/>
+            </linearGradient>
+            <linearGradient id="paint1_linear_210_679" x1="1.89167" y1="-0.74074" x2="18.5975" y2="0.400768" gradientUnits="userSpaceOnUse">
+            <stop stop-opacity="0.32"/>
+            <stop offset="0.315" stop-color="#0F0F0F" stop-opacity="0.21"/>
+            <stop offset="0.685" stop-color="#A49685"/>
+            <stop offset="1" stop-color="#C7A874"/>
+            </linearGradient>
+            <clipPath id="clip0_210_679">
+            <rect width="20" height="20" fill="white"/>
+            </clipPath>
+            </defs>
+            </svg>
+            <p class="hype_authentication-wrapper-content-offers-item-text">Fast legit check starting from 15 minutes</p>
+          </div>
+          <div class="hype_authentication-wrapper-content-offers-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_210_679)">
+            <g filter="url(#filter0_bd_210_679)">
+            <circle cx="10" cy="10" r="10" fill="url(#paint0_linear_210_679)" fill-opacity="0.2"/>
+            <circle cx="10" cy="10" r="9.5" stroke="url(#paint1_linear_210_679)" stroke-opacity="0.2"/>
+            </g>
+            <path d="M15.447 7.0713L8.51839 13.9999C8.23268 14.2856 7.8041 14.2856 7.51839 13.9999L4.44696 10.9284C3.8041 10.2856 4.8041 9.28559 5.44696 9.92845L8.01839 12.4999L14.447 6.0713C15.0898 5.35702 16.0898 6.42845 15.447 7.0713Z" fill="#C7A874"/>
+            </g>
+            <defs>
+            <filter id="filter0_bd_210_679" x="-40" y="-40" width="100" height="100" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feGaussianBlur in="BackgroundImageFix" stdDeviation="20"/>
+            <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_210_679"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feMorphology radius="2" operator="erode" in="SourceAlpha" result="effect2_dropShadow_210_679"/>
+            <feOffset dy="4"/>
+            <feGaussianBlur stdDeviation="12"/>
+            <feComposite in2="hardAlpha" operator="out"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+            <feBlend mode="normal" in2="effect1_backgroundBlur_210_679" result="effect2_dropShadow_210_679"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_210_679" result="shape"/>
+            </filter>
+            <linearGradient id="paint0_linear_210_679" x1="5.20833" y1="1.2464e-06" x2="16.6828" y2="1.22725" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#E0E0E0"/>
+            <stop offset="1" stop-color="#BDBDBD"/>
+            </linearGradient>
+            <linearGradient id="paint1_linear_210_679" x1="1.89167" y1="-0.74074" x2="18.5975" y2="0.400768" gradientUnits="userSpaceOnUse">
+            <stop stop-opacity="0.32"/>
+            <stop offset="0.315" stop-color="#0F0F0F" stop-opacity="0.21"/>
+            <stop offset="0.685" stop-color="#A49685"/>
+            <stop offset="1" stop-color="#C7A874"/>
+            </linearGradient>
+            <clipPath id="clip0_210_679">
+            <rect width="20" height="20" fill="white"/>
+            </clipPath>
+            </defs>
+            </svg>
+            <p class="hype_authentication-wrapper-content-offers-item-text">Verified certificate of authenticity</p>
+          </div>
+          <div class="hype_authentication-wrapper-content-offers-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_210_679)">
+            <g filter="url(#filter0_bd_210_679)">
+            <circle cx="10" cy="10" r="10" fill="url(#paint0_linear_210_679)" fill-opacity="0.2"/>
+            <circle cx="10" cy="10" r="9.5" stroke="url(#paint1_linear_210_679)" stroke-opacity="0.2"/>
+            </g>
+            <path d="M15.447 7.0713L8.51839 13.9999C8.23268 14.2856 7.8041 14.2856 7.51839 13.9999L4.44696 10.9284C3.8041 10.2856 4.8041 9.28559 5.44696 9.92845L8.01839 12.4999L14.447 6.0713C15.0898 5.35702 16.0898 6.42845 15.447 7.0713Z" fill="#C7A874"/>
+            </g>
+            <defs>
+            <filter id="filter0_bd_210_679" x="-40" y="-40" width="100" height="100" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feGaussianBlur in="BackgroundImageFix" stdDeviation="20"/>
+            <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_210_679"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feMorphology radius="2" operator="erode" in="SourceAlpha" result="effect2_dropShadow_210_679"/>
+            <feOffset dy="4"/>
+            <feGaussianBlur stdDeviation="12"/>
+            <feComposite in2="hardAlpha" operator="out"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+            <feBlend mode="normal" in2="effect1_backgroundBlur_210_679" result="effect2_dropShadow_210_679"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_210_679" result="shape"/>
+            </filter>
+            <linearGradient id="paint0_linear_210_679" x1="5.20833" y1="1.2464e-06" x2="16.6828" y2="1.22725" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#E0E0E0"/>
+            <stop offset="1" stop-color="#BDBDBD"/>
+            </linearGradient>
+            <linearGradient id="paint1_linear_210_679" x1="1.89167" y1="-0.74074" x2="18.5975" y2="0.400768" gradientUnits="userSpaceOnUse">
+            <stop stop-opacity="0.32"/>
+            <stop offset="0.315" stop-color="#0F0F0F" stop-opacity="0.21"/>
+            <stop offset="0.685" stop-color="#A49685"/>
+            <stop offset="1" stop-color="#C7A874"/>
+            </linearGradient>
+            <clipPath id="clip0_210_679">
+            <rect width="20" height="20" fill="white"/>
+            </clipPath>
+            </defs>
+            </svg>
+            <p class="hype_authentication-wrapper-content-offers-item-text">24/7 customer support</p>
+          </div>
+        </div>
+      </div>
+</div>
+</section>
+
+{% if product.tags contains "uploadcare" %}
+    {% render 'uploadcare-fields' %}
+{% endif %}
+<script type="application/json" data-product-json>
+    {{ product | json }}
+    </script>
+    <script type="application/json" data-model-json="{{ section.id }}">
+    {{ product.media | where: 'media_type', 'model' | json }}
+    </script>
+<script>
+            (function (){
+                const linkContainer = document.getElementById('product-link')
+                const link = document.createElement('a')
+                link.href = 'https://legitgrails.com/pages/business-solutions'
+                link.innerText = "Need multiple authentications?"
+                linkContainer.appendChild(link)
+            })();
+        </script>
+
+
+{% section 'hype-steps' %}
+{% section 'hype-cta' %}
+{% render 'hype-landing-scripts' %}

@@ -1,0 +1,79 @@
+<!-- /snippets/social-sharing.liquid -->
+
+{%- assign totalShares = 0 -%}
+{% if settings.share_facebook %}
+    {%- assign totalShares = totalShares | plus:1 -%}
+{% endif %}
+{% if settings.share_twitter %}
+    {%- assign totalShares = totalShares | plus:1 -%}
+{% endif %}
+{% if settings.share_pinterest %}
+    {%- assign totalShares = totalShares | plus:1 -%}
+{% endif %}
+
+{% if type == 'product' %}
+    {%- assign typeClasses = 'social-sharing--product' -%}
+{% elsif type == 'article' %}
+    {%- assign typeClasses = 'social-sharing--article' -%}
+{% else %}
+    {%- assign typeClasses = 'social-sharing--block' -%}
+{% endif %}
+
+
+<div class="social-sharing social-sharing--{{ totalShares }} {{ typeClasses }}">
+    <ul id="social-sharing" class="social-sharing__item-list" aria-hidden=true>
+        {% if settings.share_facebook %}
+            <li class="social-sharing__item">
+                <a target="_blank" href="//www.facebook.com/sharer.php?u={{ shop.url | append: share_permalink }}" class="social-sharing__link" tabindex="-1">
+                    {% include 'icon-facebook' %}
+                    <span class="icon__fallback-text" aria-hidden="true">{{ 'general.social.share_on_facebook' | t }}</span>
+                    <span class="visually-hidden">{{ 'general.social.alt_text.share_on_facebook' | t }}</span>
+                </a>
+            </li>
+        {% endif %}
+        {% if settings.share_twitter %}
+            <li class="social-sharing__item">
+                <a target="_blank" href="//twitter.com/share?text={{ share_title | default: page_description | url_param_escape }}&amp;url={{ shop.url | append: share_permalink }}" class="social-sharing__link" tabindex="-1">
+                    {% include 'icon-twitter' %}
+                    <span class="icon__fallback-text" aria-hidden="true">{{ 'general.social.share_on_twitter' | t }}</span>
+                    <span class="visually-hidden">{{ 'general.social.alt_text.share_on_twitter' | t }}</span>
+                </a>
+            </li>
+        {% endif %}
+
+        {% if settings.share_pinterest %}
+            <li class="social-sharing__item">
+                <a target="_blank" href="//pinterest.com/pin/create/button/?url={{ shop.url | append: share_permalink }}&amp;media={{ share_image | img_url: '1024x1024' }}&amp;description={{ share_title | default: page_description | url_param_escape }}" class="social-sharing__link" tabindex="-1">
+                    {% include 'icon-pinterest' %}
+                    <span class="icon__fallback-text" aria-hidden="true">{{ 'general.social.share_on_pinterest' | t }}</span>
+                    <span class="visually-hidden">{{ 'general.social.alt_text.share_on_pinterest' | t }}</span>
+                </a>
+            </li>
+        {% endif %}
+    </ul>
+</div>
+ <style>
+     .article__share-mobile {
+         display: block !important;
+     }
+     .social-sharing {
+         display: flex !important;
+         flex-direction: row;
+         min-height: 60px;
+     }
+     .social-sharing__item-list {
+         display: flex !important;
+         flex-direction: row;
+         min-height: 60px;
+         gap: 23px;
+     }
+     .social-sharing__item {
+         opacity: 1 !important;
+         position: relative;
+         margin: unset !important;
+         left: unset !important;
+     }
+     .social-sharing__link {
+         border: 1px solid #cdab71;
+     }
+ </style>

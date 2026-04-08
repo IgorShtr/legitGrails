@@ -1,0 +1,400 @@
+<style>
+    .account-pricing_calculator-filters-item {
+    width: calc(50% - 15px)
+}
+.account-pricing_calculator-filters-item-wrapp {
+gap: 12px;
+width: 100%
+}
+    .account-pricing_calculator-select select {
+        border-radius: 8px;
+        background: #F4F4F3;
+        height: 50px;
+        width: calc(100% - 122px);
+        margin: 0;
+        outline: none!important;
+        border: none!important;
+        color: #3C1F1B;
+        padding-right: 40px;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='15' height='10' viewBox='0 0 15 10' fill='none'><path d='M8.0853 9.16691L14.7604 2.49172C14.9149 2.33733 15 2.13124 15 1.91148C15 1.69173 14.9149 1.48563 14.7604 1.33124L14.2689 0.839663C13.9487 0.519787 13.4282 0.519787 13.1084 0.839663L7.50311 6.44498L1.89157 0.833443C1.73706 0.679054 1.53108 0.59381 1.31145 0.59381C1.09158 0.59381 0.885602 0.679054 0.730968 0.833443L0.239632 1.32502C0.0851202 1.47953 -4.77197e-08 1.68551 -5.73254e-08 1.90526C-6.69312e-08 2.12502 0.0851201 2.33111 0.239632 2.4855L6.9208 9.16691C7.0758 9.32167 7.28274 9.40667 7.50274 9.40618C7.7236 9.40667 7.93042 9.32167 8.0853 9.16691Z' fill='%233C1F1B'/></svg>");
+        background-repeat: no-repeat;
+        background-position: right 16px top 19px;
+        background-size: 23px 13.5px;
+        cursor: pointer;
+    }
+    p.account-pricing_calculator-select-result {
+        gap: 8px;
+        height: max-content;
+        align-items: center;
+        line-height: 1;
+    }
+    .account-pricing_calculator-times-btns a {
+        border-radius: 8px;
+        background: #F4F4F3;
+        padding: 12px 24px 12px 24px;
+        width: calc(25% - 11.25px);
+        color: #3C1F1B;
+        text-decoration: none;
+    }
+    .account-pricing_calculator-times-btns a.active {
+        color: #fff;
+        background: #3C1F1B;
+    }
+    .account-pricing_calculator-card {
+        border-radius: 8px;
+border: 1px solid #EAEAEA;
+background: #FFF;
+box-shadow: 0 52px 15px 0 rgba(108, 77, 72, 0.00), 0 33px 13px 0 rgba(108, 77, 72, 0.01), 0 19px 11px 0 rgba(108, 77, 72, 0.03), 0 8px 8px 0 rgba(108, 77, 72, 0.04), 0 2px 5px 0 rgba(108, 77, 72, 0.05);
+padding: 30px;
+width: calc(25% - 11.25px);
+    }
+    .account-pricing_calculator-card-price {
+    position: relative;
+}
+    .account-pricing_calculator-card-price span.account-pricing_calculator-card-price-secondary {
+    font-size: 18px;
+letter-spacing: -0.72px;
+text-decoration-line: line-through;
+opacity: 0.8;
+position: absolute;
+top: 50%;
+margin-top: -8.5px;
+line-height: 1;
+left: 100%;
+margin-left: 10px;
+}
+@media(max-width: 1450px) {
+    .account-pricing_calculator-times {
+        width: calc(58% - 15px);
+    }
+    .account-pricing_calculator-select {
+        width: calc(42% - 15px);
+    }
+}
+@media(max-width: 1250px) {
+.account-pricing_calculator-filters-item {
+    width: 100%!important;
+    text-align: center;
+}
+.account-pricing_calculator-card {
+    width: calc(50% - 7.5px);
+}
+}
+@media(max-width: 750px) {
+    p.account-pricing_calculator-select-result svg {
+    height: 22px;
+}
+.account-pricing_calculator-select select {
+        width: calc(100% - 109px);
+        padding: 13px 40px 13px 20px;
+        line-height: 1;
+        height: 40px;
+        background-position: right 14px top 16px;
+        background-size: 15px 11px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+.account-pricing_calculator-times-btns a {
+    width: calc(50% - 7.5px);
+    line-height: 1;
+}
+.account-pricing_calculator-filters-item {
+gap: 20px;
+}
+.account-pricing_calculator-card {
+    gap: 10px;
+}
+}
+@media(max-width: 600px) {
+.account-pricing_calculator-card {
+    width: 100%;
+}
+}
+</style>
+
+  <div class="container rebranding_container">
+    <div class="block-flex-wrap block-gap-50 w-100">
+        <div class="block-flex-wrap block-gap-15 w-100 tac">
+            <h2 class="h2-heading-ss w-100">
+                Credit Top-Up 
+                <span class="h2-heading-pp">
+                    Calculator
+                </span>
+            </h2>
+        </div>
+        <div class="account-pricing_calculator-filters block-flex-wrap block-flex-start-center block-gap-30">
+            <div class="account-pricing_calculator-filters-item account-pricing_calculator-select block-flex-wrap block-gap-30">
+                <h3 class="h3-heading-pp w-100">
+                    Select Top-Up Amount
+                </h3>
+                <div class="account-pricing_calculator-filters-item-wrapp block-flex-wrap block-flex-center-start">
+                    <select class="body-text">
+                        <option value="15" class="body-text">$15 <span style="color: #7F7F7F">(no bonus)</span></option>
+                        <option value="50" class="body-text">$50 <span style="color: #7F7F7F">(+2 / 4% bonus)</span></option>
+                        <option value="100" class="body-text">$100 <span style="color: #7F7F7F">(+5 / 5% bonus)</span></option>
+                        <option value="150" class="body-text">$150 <span style="color: #7F7F7F">(+10 / 6.7% bonus)</span></option>
+                        <option value="300" class="body-text">$300 <span style="color: #7F7F7F">(+40 / 13.3% bonus)</span></option>
+                        <option value="500" class="body-text">$500 <span style="color: #7F7F7F">(+80 / 16% bonus)</span></option>
+                        <option value="1000" class="body-text">$1000 <span style="color: #7F7F7F">(+250 / 25% bonus)</span></option>
+                        <option value="3000" class="body-text">$3000 <span style="color: #7F7F7F">(+950 / 31.7% bonus)</span></option>
+                        <option value="5000" class="body-text">$5000 <span style="color: #7F7F7F">(+1600 / 32% bonus)</span></option>
+                    </select>
+                    <p class="body-text account-pricing_calculator-select-result block-flex-wrap">
+                        = 
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="13.0003" cy="13" r="11.4583" stroke="black" stroke-width="1.5"/>
+                        <path d="M11.4577 7.30566H12.7207V20.0195C12.6626 19.9912 12.608 19.9534 12.559 19.9061L11.4577 18.8423V7.30566Z" fill="black"/>
+                        <path d="M9.69239 17.1372L10.9554 18.3572V7.30566H9.69239V17.1372Z" fill="black"/>
+                        <path d="M7.92707 15.4322L9.19011 16.6521V7.30566H9.06059C8.896 7.30566 8.73793 7.36991 8.62001 7.48473L7.92707 8.15947V15.4322Z" fill="black"/>
+                        <path d="M6.16206 13.7274L7.42511 14.9473V8.64825L6.16206 9.87813V13.7274Z" fill="black"/>
+                        <path d="M5.65979 10.3672L4.64407 11.3562C4.38876 11.6049 4.38959 12.0154 4.64591 12.2629L5.65979 13.2422V10.3672Z" fill="black"/>
+                        <path d="M13.2227 20.0421V7.30566H16.9371C17.1017 7.30566 17.2597 7.36991 17.3776 7.48473L21.3535 11.3562C21.6089 11.6048 21.608 12.0154 21.3516 12.2629L13.4365 19.9061C13.3731 19.9673 13.3002 20.0126 13.2227 20.0421Z" fill="black"/>
+                        </svg>
+                        <span class="account-pricing_calculator-select-result-span">25</span>
+                    </p>
+                </div>
+            </div>
+            <div class="account-pricing_calculator-filters-item account-pricing_calculator-times block-flex-wrap block-gap-30">
+                <h3 class="h3-heading-pp w-100">
+                    Select The Authentication Answer time
+                </h3>
+                <div class="block-flex-wrap account-pricing_calculator-times-btns w-100 block-gap-15">
+                    <a href="javascript:void(0)" class="active body-text standart-hover account-pricing_calculator-times-btn tac">12 hours</a>
+                    <a href="javascript:void(0)" class="body-text standart-hover account-pricing_calculator-times-btn tac">6 hours</a>
+                    <a href="javascript:void(0)" class="body-text standart-hover account-pricing_calculator-times-btn tac">2 hours</a>
+                    <a href="javascript:void(0)" class="body-text standart-hover account-pricing_calculator-times-btn tac">30 minutes</a>
+                </div>
+            </div>
+        </div>
+        <div class="block-flex-wrap block-gap-15 w-100 block-flex-center-center">
+            <div class="account-pricing_calculator-card block-flex-wrap block-gap-30 block-flex-center-center tac">
+                <h3 class="h3-heading-pp w-100">
+                    Luxury
+                </h3>
+                <div class="block-flex-wrap block-gap-10 block-flex-center-center tac">
+                    <p class="body-text w-100">
+                        22 authentications at
+                    </p>
+                    <h3 class="h3-heading-pp account-pricing_calculator-card-price">
+                        <span class="account-pricing_calculator-card-price-main">
+                            $13.24
+                        </span>
+                        <span class="account-pricing_calculator-card-price-secondary">
+                            $15.00
+                        </span>
+                    </h3>
+                </div>
+            </div>
+            <div class="account-pricing_calculator-card block-flex-wrap block-gap-30 block-flex-center-center tac">
+                <h3 class="h3-heading-pp w-100">
+                    Hype
+                </h3>
+                <div class="block-flex-wrap block-gap-10 block-flex-center-center tac">
+                    <p class="body-text w-100">
+                        22 authentications at
+                    </p>
+                    <h3 class="h3-heading-pp account-pricing_calculator-card-price">
+                        <span class="account-pricing_calculator-card-price-main">
+                            $13.24
+                        </span>
+                        <span class="account-pricing_calculator-card-price-secondary">
+                            $15.00
+                        </span>
+                    </h3>
+                </div>
+            </div>
+            <div class="account-pricing_calculator-card block-flex-wrap block-gap-30 block-flex-center-center tac">
+                <h3 class="h3-heading-pp w-100">
+                    High-End Watches
+                </h3>
+                <div class="block-flex-wrap block-gap-10 block-flex-center-center tac">
+                    <p class="body-text w-100">
+                        22 authentications at
+                    </p>
+                    <h3 class="h3-heading-pp account-pricing_calculator-card-price">
+                        <span class="account-pricing_calculator-card-price-main">
+                            $13.24
+                        </span>
+                        <span class="account-pricing_calculator-card-price-secondary">
+                            $15.00
+                        </span>
+                    </h3>
+                </div>
+            </div>
+            <div class="account-pricing_calculator-card block-flex-wrap block-gap-30 block-flex-center-center tac">
+                <h3 class="h3-heading-pp w-100">
+                    Chanel or Hermès
+                </h3>
+                <div class="block-flex-wrap block-gap-10 block-flex-center-center tac">
+                    <p class="body-text w-100">
+                        22 authentications at
+                    </p>
+                    <h3 class="h3-heading-pp account-pricing_calculator-card-price">
+                        <span class="account-pricing_calculator-card-price-main">
+                            $13.24
+                        </span>
+                        <span class="account-pricing_calculator-card-price-secondary">
+                            $15.00
+                        </span>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="block-flex-wrap block-gap-15 w-100 block-flex-center-center">
+            <a href="https://legitgrails.com/pages/account-brand-coverage" class="rebranding_btn m-0">
+                Brand Coverage
+            </a>
+            <a href="https://account.legitgrails.com/" target="_blank" class="rebranding_btn rebranding_btn-main m-0">
+                Create Free Account
+            </a>
+        </div>
+        <p class="tiny-text product_hero-disclaimer">Price per authentication includes bonuses</p>
+    </div>
+  </div>
+
+  <script>
+(function () {
+  const BONUS_BY_TOPUP = {
+    15: 0,
+    50: 2,
+    100: 5,
+    150: 10,
+    300: 40,
+    500: 80,
+    1000: 250,
+    3000: 950,
+    5000: 1600,
+  };
+
+  const BASE_PRICES = {
+    "luxury":              { "12 hours": 15.00, "6 hours": 20.00, "2 hours": 25.00, "30 minutes": 35.00 },
+    "hype":                { "12 hours": 4.00,  "6 hours": 5.00,  "2 hours": 6.00,  "30 minutes": 7.00  },
+    "high-end watches":    { "12 hours": 50.00, "6 hours": 75.00, "2 hours": 90.00, "30 minutes": 105.00 },
+    "chanel or hermes":    { "12 hours": 25.00, "6 hours": 35.00, "2 hours": 45.00, "30 minutes": 75.00 },
+  };
+
+  const $ = (sel, root = document) => root.querySelector(sel);
+  const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+
+  const selectEl = $('.account-pricing_calculator-select select');
+  const totalSpan = $('.account-pricing_calculator-select-result-span');
+  const timeBtnsContainer = $('.account-pricing_calculator-times-btns');
+  const timeBtns = $$('.account-pricing_calculator-times-btn', timeBtnsContainer);
+  const cards = $$('.account-pricing_calculator-card');
+
+  function normalizeLabel(str) {
+    return (str || '')
+      .toLowerCase()
+      .normalize('NFD').replace(/\p{Diacritic}/gu, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  function formatMoney(n) {
+    return `$${n.toFixed(2)}`;
+  }
+
+  {% comment %} function formatThousands(num, thousandSep='.') {
+    const s = Math.round(num).toString();
+    return s.replace(/\B(?=(\d{3})+(?!\d))/g, thousandSep);
+  } {% endcomment %}
+
+  function getSelectedTopUp() {
+    const rawVal = Number(selectEl.value || 0);
+    const bonus = BONUS_BY_TOPUP[rawVal] || 0;
+    const total = rawVal + bonus;
+    return { rawVal, bonus, total };
+  }
+
+  function getActiveTimeLabel() {
+    const active = $('.account-pricing_calculator-times-btn.active', timeBtnsContainer);
+    return active ? active.textContent.trim() : null;
+  }
+
+  function setActiveTimeButton(btn) {
+    timeBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+
+  function updateTotalSpan() {
+    const { total } = getSelectedTopUp();
+
+    totalSpan.textContent = total;
+  }
+
+  function updateCards() {
+    const { rawVal: started, total: overall } = getSelectedTopUp();
+    const timeLabel = getActiveTimeLabel();
+    if (!timeLabel) return;
+
+    cards.forEach(card => {
+      const titleEl = $('h3.h3-heading-pp', card);
+      const mainPriceEl = $('.account-pricing_calculator-card-price-main', card);
+      const secondaryPriceEl = $('.account-pricing_calculator-card-price-secondary', card);
+      const countTextEl = card.querySelector('.body-text'); 
+
+      if (!titleEl || !mainPriceEl || !secondaryPriceEl) return;
+
+
+      const categoryKey = normalizeLabel(titleEl.textContent);
+
+
+      let mappedKey = categoryKey;
+      if (categoryKey.includes('high-end') && categoryKey.includes('watch')) mappedKey = 'high-end watches';
+      if (categoryKey.includes('chanel') || categoryKey.includes('hermes')) mappedKey = 'chanel or hermes';
+
+      const baseForTime = BASE_PRICES[mappedKey]?.[timeLabel];
+      if (!baseForTime) {
+        console.warn('No base price for:', { mappedKey, timeLabel });
+        return;
+      }
+
+
+secondaryPriceEl.textContent = formatMoney(baseForTime);
+
+
+const count = overall / baseForTime;
+const countInt = Math.floor(count);
+
+
+const main = started / (overall / baseForTime);
+
+if (Math.abs(main - baseForTime) < 0.01) {
+  mainPriceEl.textContent = formatMoney(baseForTime);
+  secondaryPriceEl.textContent = '';
+} else {
+  mainPriceEl.textContent = formatMoney(main);
+  secondaryPriceEl.textContent = formatMoney(baseForTime);
+}
+
+if (countTextEl) {
+  const label = countInt === 1 ? 'authentication' : 'authentications';
+  countTextEl.textContent = `${countInt} ${label} at`;
+}
+    });
+  }
+
+  function updateAll() {
+    updateTotalSpan();
+    updateCards();
+  }
+  selectEl.addEventListener('change', updateAll);
+
+  timeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      setActiveTimeButton(btn);
+      updateAll();
+    });
+  });
+  document.addEventListener('DOMContentLoaded', updateAll);
+  if (document.readyState !== 'loading') updateAll();
+})();
+</script>
+
+{% schema %}
+  {
+    "name": "Account Calculator",
+    "class": "account-pricing_calculator rebranding-section-bottom",
+    "settings": []
+  }
+{% endschema %}

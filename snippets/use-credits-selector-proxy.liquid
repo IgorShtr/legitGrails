@@ -1,0 +1,127 @@
+{{ 'credits-selector.css' | asset_url | stylesheet_tag }}
+
+{%- comment -%}
+  Protected block of code for functionality credits-app-with-db. Do not make changes without consulting the manager."
+{%- endcomment -%}
+
+<div class="cart__credits-selector">
+  {% if customer != blank %}
+    <div class="available-credits">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+        				d="M20 18.0001V20.7079C20 21.1842 19.334 21.6216 18.2222 21.9651C17.83 22.0862 17.3824 22.1957 16.8889 22.2911C16.4748 22.3711 16.0285 22.4412 15.5556 22.5C14.4845 22.6331 13.2772 22.7079 12 22.7079C10.7228 22.7079 9.51552 22.6331 8.44444 22.5C7.94848 22.4384 7.48171 22.3643 7.05075 22.2793C6.58107 22.1867 6.15391 22.0813 5.77778 21.9651C4.66596 21.6216 4 21.1842 4 20.7079V18.0001M20 18.0001C20 18.4763 19.334 18.9137 18.2222 19.2572C17.83 19.3784 17.3824 19.4879 16.8889 19.5833C16.4748 19.6633 16.0285 19.7334 15.5556 19.7922C14.4845 19.9252 13.2772 20.0001 12 20.0001C10.7228 20.0001 9.51552 19.9252 8.44444 19.7922C7.97154 19.7334 7.5252 19.6633 7.11111 19.5833C6.61763 19.4879 6.16996 19.3784 5.77778 19.2572C4.66596 18.9137 4 18.4763 4 18.0001M20 18.0001C20 17.1277 17.7661 16.3858 14.6504 16.1124M4 18.0001C4 17.1277 6.23392 16.3858 9.34959 16.1124"
+        				stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path
+        				d="M13.3333 17C14.8061 17 16 13.4183 16 9C16 4.58172 14.8061 1 13.3333 1M13.3333 17L10.6667 17C10.0316 17 9.44841 16.334 8.99042 15.2222C8.82887 14.83 8.68289 14.3824 8.55572 13.8889C8.449 13.4748 8.35553 13.0285 8.27719 12.5556C8.09976 11.4845 8 10.2772 8 9C8 7.72281 8.09977 6.51552 8.27719 5.44444C8.35935 4.94848 8.45816 4.48171 8.57143 4.05074C8.69487 3.58107 8.83548 3.15391 8.99042 2.77778C9.44841 1.66596 10.0316 1 10.6667 1L13.3333 1M13.3333 17C12.6983 17 12.1151 16.334 11.6571 15.2222C11.4955 14.83 11.3496 14.3824 11.2224 13.8889C11.1157 13.4748 11.0222 13.0285 10.9439 12.5556C10.7664 11.4845 10.6667 10.2772 10.6667 9C10.6667 7.72281 10.7664 6.51552 10.9439 5.44444C11.0222 4.97154 11.1157 4.5252 11.2224 4.11111C11.3496 3.61763 11.4955 3.16996 11.6571 2.77778C12.1151 1.66596 12.6983 1 13.3333 1"
+        				stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="account_sidebar_profile-button_title"> Available credits: </span>
+      <span class="account_sidebar_profile-button_badge"> loading... </span>
+      {% if customer.metafields.credits.totalCredits.value != blank %}
+        <span id="total-credits" style="visibility: hidden;">{{ customer.metafields.credits.totalCredits.value }}</span>
+      {% endif %}
+    </div>
+  {% endif %}
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Function to update the DOM with available credits
+    function updateAvailableCredits(availableCredits, currencyCode) {
+      const creditsElement = document.querySelector(".available-credits");
+      const badgeElement = creditsElement.querySelector(".account_sidebar_profile-button_badge");
+
+      // Format the available credits as currency using the provided currency code
+      const formattedCredits = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: currencyCode,
+      }).format(availableCredits / 100);
+
+      // Update the available credits in the DOM
+      badgeElement.textContent = formattedCredits;
+    }
+
+    const availableCreditsElement = document.getElementById("total-credits");
+
+    if (availableCreditsElement) {
+      // Make an asynchronous request to your app for available credits
+      fetch("/a/proxy/customer")
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("Failed to fetch available credits");
+          }
+          return response.json();
+        })
+        .then(data => {
+          // Extract the available credits from the response data
+          const availableCredits = data.amount;
+          const currencyCode = data.currency_code;
+
+          // Update the DOM with the available credits
+          updateAvailableCredits(availableCredits, currencyCode);
+
+          // Check if the amount is greater than 0
+          if (availableCredits > 0) {
+            // Get the element where you want to append the select
+            const creditsSelectorContainer = document.querySelector(".cart__credits-selector");
+
+            let subtotalElement = document.querySelector(".cart-subtotal__price");
+            if (!subtotalElement) {
+              subtotalElement = document.querySelector(".cart-drawer__subtotal-number");
+												}
+
+            if (subtotalElement) {
+              // Get the inner text of the subtotal element, e.g., "$25.00"
+              const subtotalText = subtotalElement.textContent;
+
+              // Extract the numerical value and format it as a number (2500)
+              const subtotal = parseFloat(subtotalText.replace(/\$/g, ''));
+
+              // Create the select element
+              const selectElement = document.createElement("select");
+              selectElement.id = "credits-selector";
+              selectElement.name = "credits";
+              selectElement.form = "cart";
+              selectElement.style.border = "1px solid #cdab71";
+
+              // Create the "Select credits" option
+              const defaultOption = document.createElement("option");
+              defaultOption.value = "0";
+              defaultOption.textContent = "Select credits";
+
+              // Create the "Use credits" option
+              const useCreditsOption = document.createElement("option");
+
+              console.log('availableCredits: ', availableCredits);
+              console.log('subtotal: ', subtotal);
+
+              if (availableCredits / 100 > subtotal) {
+                // If amount is greater than subtotal, use subtotal as the value and text
+                useCreditsOption.value = subtotal;
+                useCreditsOption.textContent = `Use ${new Intl.NumberFormat("en-US", {
+                  style: "currency",
+                  currency: currencyCode,
+                }).format(subtotal)} credits`;
+              } else {
+                useCreditsOption.value = (availableCredits / 100).toString();
+                useCreditsOption.textContent = `Use ${new Intl.NumberFormat("en-US", {
+                  style: "currency",
+                  currency: currencyCode,
+                }).format(availableCredits / 100)} credits`;
+              }
+
+              // Append the options to the select element
+              selectElement.appendChild(defaultOption);
+              selectElement.appendChild(useCreditsOption);
+
+              // Append the select element to the container
+              creditsSelectorContainer.appendChild(selectElement);
+												}
+          }
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+  });
+</script>

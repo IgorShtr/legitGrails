@@ -1,0 +1,451 @@
+<style>
+  .product_faq {
+    background: #3C1F1B;
+  }
+  .product_faq-wrapper {
+    justify-content: center;
+    gap: 50px;
+  }
+  .product_faq-text {
+    width: 515px;
+  }
+  .product_faq-text h2, .product_faq-text p {
+    color: #F2F2EA;
+  }
+  .product_faq-text p {
+    margin-top: 10px;
+  }
+  .product_faq-items {
+    width: calc(100% - 565px);
+    gap: 10px;
+  }
+  .product_faq-item {
+    border-radius: 12px;
+    background: #fff;
+    transition: 0.3s;
+    width: 100%;
+    padding: 4px 40px;
+  }
+  .product_faq-item:hover {
+    cursor: pointer;
+  }
+  .product_faq-item-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0px;
+  }
+  .product_faq-item-title p {
+    max-width: calc(100% - 38px);
+  }
+  a.product_faq-item-cross {
+    display: block;
+    height: max-content;
+  }
+  .product_faq-item-title a svg {
+      height: 28px;
+      width: auto;
+      transition: .3s;
+      transform: rotate(0deg);
+    display: block;
+  }
+  .product_faq-item-title a svg path {
+    transition: .3s;
+  }
+  .product_faq-item.active .product_faq-item-title a svg {
+      transform: rotate(45deg);
+  }
+  .product_faq-item.active .product_faq-item-title a svg path {
+    stroke: #F24F14;
+  }
+  .product_faq-item-text {
+    height: max-content;
+    max-height: 0px;
+    overflow: hidden;
+    width: 100%;
+    transition: .5s;
+    position: relative;
+  }
+  .product_faq-item-text a {
+    text-decoration: underline;
+    transition: .3s;
+  }
+  .product_faq-item-text a:hover {
+    opacity: .85;
+  }
+  .product_faq-item-text a:active {
+    opacity: .7;
+  }
+  .product_faq-item.active .product_faq-item-text {
+    padding-top: 21px;
+    padding-bottom: 16px;
+    max-height: 300px;
+  }
+  .product_faq-item-text::before {
+    content:'';
+    display: block;
+    height: 100%;
+    max-height: 0px;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    background: rgba(60, 31, 27, 0.30);
+    transition: .5s;
+  }
+  .product_faq-item-text::before {
+    max-height: 1px;
+  }
+  .product_faq-desc {
+    margin-top: 15px;
+  }
+  .product_faq-btns {
+    margin-top: 30px;
+    justify-content: center;
+  }
+  .product_faq-btns a {
+    margin: 0;
+  }
+  .product_faq-a {
+    text-decoration: underline;
+    color: #fff;
+  }
+  .product_faq-btns-desktop-hidden {
+    display: none;
+  }
+  @media(max-width: 1450px) {
+    .product_faq-item {
+        padding: 4px 30px;
+    }
+    .product_faq-item.active .product_faq-item-text {
+      max-height: 350px;
+    }
+  }
+  @media(max-width: 1250px) {
+    .product_faq-btns-mobile-hidden {
+      display: none;
+    }
+    .product_faq-btns-desktop-hidden {
+      display: flex!important;
+    }
+    .product_faq-items {
+      width: 100%;
+    }
+    .product_faq-btns {
+      margin-top: 0;
+      width: 100%;
+    }
+    .product_faq-text {
+        width: 100%;
+        text-align: center;
+    }
+    .product_faq-wrapper {
+      gap: 40px;
+    }
+  }
+  @media(max-width: 750px) {
+    .product_faq {
+      padding: 60px 0;
+    }
+    .product_faq-wrapper a.rebranding_btn {
+      margin: 0px auto;
+    }
+    .product_faq-item-title {
+      padding: 15px 0;
+    }
+    .product_faq-item {
+        padding: 0px 20px;
+    }
+    .product_faq-item.active .product_faq-item-text {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    }
+    .product_faq-item-title a svg {
+      height: 24px;
+    }
+  }
+</style>
+
+<div class="container rebranding_container">
+  <div class="product_faq-wrapper block-flex-wrap">
+    <div class="product_faq-text">
+      <h2 class="h2-heading-ss">
+        Featured
+        <span class="h2-heading-pp">questions</span>
+      </h2>
+      <p class="product_faq-desc body-text">
+        Have more questions? Visit our <a href="https://legitgrails.frontkb.com/en" target="_blank" class="product_faq-a standart-hover">Help Center</a>
+      </p>
+      <div class="product_faq-btns block-flex-wrap block-gap-15 product_faq-btns-mobile-hidden">
+        <a href="https://legitgrails.frontkb.com/en" target="_blank" class="rebranding_btn">
+        Help Center
+      </a>
+        <a href="#product_boxes" class="rebranding_btn rebranding_btn-main product_authenticate-now-btn-track">
+        Authenticate now
+      </a>
+      </div>
+    </div>
+    <div class="product_faq-items block-flex-wrap">
+      <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">How Does LegitGrails Authentication Work?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            At LegitGrails, we use a combination of advanced AI technology and expert human analysis to verify the authenticity of your Dolce & Gabbana items. Start by selecting the product category and your preferred response time on our platform. Next, upload clear, detailed photos of your item, focusing on elements like labels, stitching, logos, and unique design features.
+            <br><br>
+            Our AI system conducts an initial analysis, followed by verification from our team of seasoned experts. This dual-layer process ensures a high level of accuracy. Once completed, you’ll receive a detailed verdict along with a personalized certificate of authenticity, giving you confidence in the legitimacy of your Dolce & Gabbana piece.
+          </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">How Long Does LegitGrails Authentication Take?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            We understand the need for timely authentication. LegitGrails offers flexible response times to suit your schedule, including 24-hour, 12-hour, 2-hour, and even 30-minute options. Simply choose the timeframe that best fits your needs, and our dedicated team will ensure your Dolce & Gabbana item is authenticated within the selected period, delivering prompt and reliable service.
+          </p>
+        </div>
+      </div>
+
+      <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">Who Are Dolce & Gabbana and Where Do They Come From?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            Dolce & Gabbana is an Italian luxury fashion house founded by designers Domenico Dolce and Stefano Gabbana. Domenico Dolce was born on August 13, 1958, in Polizzi Generosa, Sicily, while Stefano Gabbana was born on November 14, 1962, in Milan, Italy. 
+            <br><br>
+            The two met in 1982 while working for the same fashion house and established their own design consulting studio in 1983. By 1985, they had officially launched the Dolce & Gabbana brand, which quickly became a global fashion powerhouse.
+          </p>
+        </div>
+      </div>
+
+      <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">Who Owns Dolce & Gabbana Today?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            As of recent reports, Dolce & Gabbana remains a privately owned company. Domenico Dolce and Stefano Gabbana each hold 40% of the company, with the remaining 20% owned by members of the Dolce family.
+          </p>
+        </div>
+      </div>
+
+      <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">What Is Dolce & Gabbana Best Known For?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            Dolce & Gabbana is renowned for its luxurious and innovative designs, often drawing inspiration from Italian culture, heritage, and tradition. The brand is known for its ready-to-wear clothing, handbags, accessories, fragrances, and cosmetics. Their designs are characterized by bold prints, vibrant colors, and a sensual aesthetic, celebrating Mediterranean style and craftsmanship.
+          </p>
+        </div>
+      </div>
+
+      <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">How Much Does Dolce & Gabbana Perfume Cost?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            The price of Dolce & Gabbana perfumes varies based on the fragrance and bottle size. Typically, prices range from $70 to $150 for standard sizes, while limited-edition or exclusive scents may cost significantly more. For the most up-to-date pricing, it’s best to check with official Dolce & Gabbana retailers or their official website.
+          </p>
+        </div>
+      </div>
+
+      <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">What Is the Average Price of Dolce & Gabbana Products?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text block-flex-wrap block-gap-15">
+          <p class="small-text">
+            Dolce & Gabbana offers a diverse range of products, and prices vary depending on category:
+          </p>
+          <ul>
+            <li>
+              <p class="small-text">Clothing: Ready-to-wear dresses and suits typically range from $1,000 to $5,000.</p>
+            </li>
+            <li>
+              <p class="small-text">Handbags: Prices generally fall between $1,000 and $3,000.</p>
+            </li>
+            <li>
+              <p class="small-text">Shoes: Footwear ranges from $500 to $2,000.</p>
+            </li>
+            <li>
+              <p class="small-text">Accessories: Belts, sunglasses, and small leather goods usually cost between $300 and $1,000.</p>
+            </li>
+          </ul>
+          <p class="small-text">These price points can fluctuate based on design, materials, and exclusivity.</p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">What Makes Dolce & Gabbana Unique?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            Dolce & Gabbana sets itself apart with its deep-rooted connection to Italian culture and its ability to blend traditional craftsmanship with modern fashion seamlessly. The brand is known for its intricate detailing, bold patterns, and opulent fabrics. 
+            <br><br>
+            Dolce & Gabbana also excels in storytelling through fashion, often drawing inspiration from Sicily’s rich heritage. Their ability to evoke emotion, sensuality, and luxury in their designs solidifies their standing in the high-fashion industry.
+          </p>
+        </div>
+      </div>
+    </div>
+      <div class="product_faq-btns block-flex-wrap block-gap-15 product_faq-btns-desktop-hidden">
+        <a href="https://legitgrails.frontkb.com/en" target="_blank" class="rebranding_btn">
+        Help Center
+      </a>
+        <a href="#product_boxes" class="rebranding_btn rebranding_btn-main product_authenticate-now-btn-track">
+        Authenticate now
+      </a>
+      </div>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How Does LegitGrails Authentication Work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "At LegitGrails, we use a combination of advanced AI technology and expert human analysis to verify the authenticity of your Dolce & Gabbana items. Start by selecting the product category and your preferred response time on our platform. Next, upload clear, detailed photos of your item, focusing on elements like labels, stitching, logos, and unique design features. Our AI system conducts an initial analysis, followed by verification from our team of seasoned experts. This dual-layer process ensures a high level of accuracy. Once completed, you’ll receive a detailed verdict along with a personalized certificate of authenticity, giving you confidence in the legitimacy of your Dolce & Gabbana piece."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How Long Does LegitGrails Authentication Take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We understand the need for timely authentication. LegitGrails offers flexible response times to suit your schedule, including 24-hour, 12-hour, 2-hour, and even 30-minute options. Simply choose the timeframe that best fits your needs, and our dedicated team will ensure your Dolce & Gabbana item is authenticated within the selected period, delivering prompt and reliable service."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who Are Dolce & Gabbana and Where Do They Come From?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dolce & Gabbana is an Italian luxury fashion house founded by designers Domenico Dolce and Stefano Gabbana. Domenico Dolce was born on August 13, 1958, in Polizzi Generosa, Sicily, while Stefano Gabbana was born on November 14, 1962, in Milan, Italy. The two met in 1982 while working for the same fashion house and established their own design consulting studio in 1983. By 1985, they had officially launched the Dolce & Gabbana brand, which quickly became a global fashion powerhouse."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who Owns Dolce & Gabbana Today?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As of recent reports, Dolce & Gabbana remains a privately owned company. Domenico Dolce and Stefano Gabbana each hold 40% of the company, with the remaining 20% owned by members of the Dolce family."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What Is Dolce & Gabbana Best Known For?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dolce & Gabbana is renowned for its luxurious and innovative designs, often drawing inspiration from Italian culture, heritage, and tradition. The brand is known for its ready-to-wear clothing, handbags, accessories, fragrances, and cosmetics. Their designs are characterized by bold prints, vibrant colors, and a sensual aesthetic, celebrating Mediterranean style and craftsmanship."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How Much Does Dolce & Gabbana Perfume Cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The price of Dolce & Gabbana perfumes varies based on the fragrance and bottle size. Typically, prices range from $70 to $150 for standard sizes, while limited-edition or exclusive scents may cost significantly more. For the most up-to-date pricing, it’s best to check with official Dolce & Gabbana retailers or their official website."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What Is the Average Price of Dolce & Gabbana Products?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dolce & Gabbana offers a diverse range of products, and prices vary depending on category:
+          Clothing: Ready-to-wear dresses and suits typically range from $1,000 to $5,000.
+          Handbags: Prices generally fall between $1,000 and $3,000.
+          Shoes: Footwear ranges from $500 to $2,000.
+          Accessories: Belts, sunglasses, and small leather goods usually cost between $300 and $1,000.
+          These price points can fluctuate based on design, materials, and exclusivity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What Makes Dolce & Gabbana Unique?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dolce & Gabbana sets itself apart with its deep-rooted connection to Italian culture and its ability to blend traditional craftsmanship with modern fashion seamlessly. The brand is known for its intricate detailing, bold patterns, and opulent fabrics. Dolce & Gabbana also excels in storytelling through fashion, often drawing inspiration from Sicily’s rich heritage. Their ability to evoke emotion, sensuality, and luxury in their designs solidifies their standing in the high-fashion industry."
+      }
+    }
+  ]
+}
+</script>
+
+<script>
+  $( ".product_faq-item" ).on( "click", function() {
+    if ($(this).hasClass("active")) {
+      $(".product_faq-item").removeClass("active");
+    } else {
+      $(".product_faq-item").removeClass("active");
+      $(this).addClass("active");
+    }
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Product FAQ",
+    "class": "product_faq rebranding-section",
+    "settings": []
+  }
+{% endschema %}

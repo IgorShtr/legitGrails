@@ -1,0 +1,183 @@
+<style>
+  .offers-image_wrapp {
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+.offers-image_content {
+    width: calc(52% - 25px);
+    height: max-content;
+}
+  .offers-image_image {
+    width: calc(48% - 25px);
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    border: 1px solid #E0DFDF;
+    height: 620px;
+    background-color: #f2f2f2;
+  }
+  .offers-image_item {
+    width: 100%;
+  }
+  .offers-image_btn {
+    margin: 0;
+  }
+  .offers-image_left-wrapp .offers-image_image {
+    order: 1;
+  }
+  .offers-image_left-wrapp .offers-image_content {
+    order: 2;
+  }
+  p.offers-image_desc {
+    max-width: 440px;
+    margin: 0;
+  }
+  p.left-offers-item-desc {
+    margin-top: 10px;
+}
+  .offers-image_items {
+    gap: 35px 25px;
+  }
+  .offers-image_item svg {
+    width: 30px;
+}
+.bs_verified-btns a {
+  width: calc(50% - 7.5px)
+}
+  @media(max-width: 1450px) {
+    .offers-image_content {
+      width: calc(58% - 25px);
+    }
+    .offers-image_image {
+      width: calc(42% - 25px);
+    }
+  }
+  @media(max-width: 1250px) {
+    p.offers-image_desc {
+        max-width: 100%;
+    }
+    .offers-image_image {
+      width: 100%;
+    }
+    .offers-image_content {
+        justify-content: center;
+        width: 100%;
+    }
+      .left-offers-item-alignment .left-offers-item-text {
+        width: 100%;
+        text-align: center;
+      }
+        .left-offers-item-alignment {
+        justify-content: center;
+    }
+    .offers-image_items {
+      justify-content: center;
+    }
+  }
+  @media(max-width: 950px) {
+    .offers-image_content {
+      width: 100%;
+      padding: 0 15px;
+    }
+    .offers-image_image {
+      width: 100%;
+      height: 400px;
+      border-radius: 0;
+      border: none;
+    }
+    .offers-image_item {
+        justify-content: center;
+        height: max-content;
+    }
+    .offers-image_title, .offers-image_desc {
+      text-align: center;
+    }
+    .offers-image_desc {
+      margin: 10px auto 0 auto;
+    }
+    .offers-image .container {
+      padding: 0;
+    }
+  }
+  @media(max-width: 750px) {
+    .offers-image_image {
+      height: 440px;
+    }
+    .offers-image_items {
+      gap: 40px;
+    }
+    .offers-image_text {
+      text-align: justify;
+    }
+    .bs_verified-btns a {
+      width: 100%
+    }
+  }
+</style>
+
+<div class="container rebranding_container">
+  <div class="offers-image_wrapp offers-image_left-wrapp block-flex-wrap">
+    <div class="offers-image_content block-flex-wrap block-gap-40">
+      <div class="rebranding-section-title rebranding-section-title-left block-gap-15 block-flex-wrap">
+        <h2 class="h2-heading-ss">
+         What is 
+          <span class="h2-heading-pp">
+           LegitGrails Verified?
+          </span>
+        </h2>
+      </div>
+      <div class="offers-image_items block-flex-wrap">
+        <div class="offers-image_item left-offers-item left-offers-item-alignment block-flex-wrap block-gap-15">
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M27.5931 4.73457C21.2803 -1.57819 11.0458 -1.57819 4.73456 4.73457C-1.57819 11.0473 -1.57819 21.2819 4.73456 27.5931C11.0473 33.9059 21.2819 33.9059 27.5931 27.5931C33.9059 21.2803 33.9059 11.0473 27.5931 4.73457ZM10.0734 24.2113C9.94523 24.3406 9.79274 24.4433 9.62472 24.5134C9.4567 24.5834 9.27648 24.6196 9.09442 24.6198C8.91237 24.6199 8.73209 24.584 8.56396 24.5142C8.39583 24.4444 8.24318 24.3419 8.1148 24.2129C6.55259 22.6486 5.47906 20.6638 5.02503 18.5002C4.57101 16.3366 4.75608 14.0877 5.5577 12.0274C5.69072 11.685 5.9543 11.4095 6.29045 11.2615C6.6266 11.1135 7.00778 11.1051 7.35013 11.2381C7.69249 11.3711 7.96798 11.6347 8.116 11.9709C8.26402 12.307 8.27245 12.6882 8.13942 13.0305C7.53211 14.5897 7.39144 16.2919 7.73456 17.9297C8.07768 19.5674 8.88977 21.07 10.0719 22.2543C10.2005 22.3826 10.3027 22.5351 10.3724 22.7029C10.4421 22.8708 10.4781 23.0507 10.4782 23.2325C10.4784 23.4142 10.4427 23.5942 10.3732 23.7622C10.3038 23.9301 10.2019 24.0828 10.0734 24.2113ZM38.6308 32.0626L32.0857 25.5176C31.2977 26.8729 30.3384 28.1212 29.2317 29.2317C28.1331 30.3318 26.8684 31.2641 25.5114 32.0657L32.0765 38.6308C32.5067 39.0634 33.018 39.407 33.5811 39.642C34.1442 39.8769 34.748 39.9986 35.3582 40C35.9683 40.0014 36.5727 39.8826 37.1369 39.6503C37.7011 39.418 38.2139 39.0768 38.6462 38.6462C40.4463 36.8476 40.4463 33.8782 38.6308 32.0626Z" fill="#3C1F1B"/>
+</svg>
+          <div class="left-offers-item-text">
+            <p class="left-offers-item-title h3-heading-pp">Authenticity Guaranteed</p>
+            <p class="left-offers-item-desc small-text">
+              Every Verified Partner actively uses LegitGrails authentication or follows high-resale standards that align with our practices.
+            </p>
+          </div>
+        </div>
+        <div class="offers-image_item left-offers-item left-offers-item-alignment block-flex-wrap block-gap-15">
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M39.1787 6.37634C38.5793 5.70958 37.7318 5.29541 36.8182 5.22277C33.9335 5.00175 31.0905 4.42333 28.3599 3.50188C26.0677 2.73531 23.8709 1.72688 21.8097 0.495047C21.2697 0.171506 20.6461 0 20.0098 0C19.3735 0 18.75 0.171506 18.21 0.495047C16.1399 1.72343 13.937 2.73164 11.6401 3.50188C8.90948 4.42333 6.06652 5.00175 3.18176 5.22277C2.26821 5.29541 1.42072 5.70958 0.821309 6.37634C0.523784 6.70652 0.298931 7.09124 0.160319 7.50727C0.021708 7.9233 -0.0277875 8.36201 0.0148202 8.79694L0.959002 19.7842C1.24373 23.0251 2.33166 26.1533 4.13175 28.9071C5.93184 31.6609 8.39175 33.9602 11.3057 35.6126L18.2493 39.5461C18.7809 39.8434 19.385 40 20 40C20.615 40 21.2191 39.8434 21.7507 39.5461L28.6943 35.6126C31.6083 33.9602 34.0682 31.6609 35.8683 28.9071C37.6683 26.1533 38.7563 23.0251 39.041 19.7842L39.9852 8.79694C40.0278 8.36201 39.9783 7.9233 39.8397 7.50727C39.7011 7.09124 39.4762 6.70652 39.1787 6.37634ZM27.3764 16.2478L19.5082 23.8122C19.2316 24.0778 18.8567 24.227 18.4657 24.227C18.0748 24.227 17.6998 24.0778 17.4232 23.8122L13.4891 20.03C13.23 19.7551 13.0933 19.3935 13.1083 19.0228C13.1233 18.6521 13.2888 18.3018 13.5692 18.047C13.8497 17.7922 14.2228 17.6532 14.6087 17.6597C14.9945 17.6663 15.3623 17.818 15.6332 18.0822L18.5247 20.8621L25.3504 14.3C25.6276 14.1272 25.9572 14.0489 26.2863 14.0776C26.6154 14.1063 26.925 14.2404 27.1653 14.4584C27.4057 14.6764 27.563 14.9657 27.6119 15.2799C27.6609 15.594 27.5988 15.9149 27.4354 16.1911L27.3764 16.2478Z" fill="#3C1F1B"/>
+</svg>
+          <div class="left-offers-item-text">
+            <p class="left-offers-item-title h3-heading-pp">Transparency</p>
+            <p class="left-offers-item-desc small-text">
+              See which brands a partner works with and how long they’ve been part of the program.
+            </p>
+          </div>
+        </div>
+        <div class="offers-image_item left-offers-item left-offers-item-alignment block-flex-wrap block-gap-15">
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M39.9996 27.0704C39.9996 22.1067 37.152 17.6768 32.8871 15.522C32.7548 25.0392 25.0387 32.7553 15.5215 32.8876C17.6763 37.1524 22.1063 40.0001 27.0699 40.0001C29.3973 40.0001 31.6604 39.3803 33.6488 38.2026L39.9431 39.9436L38.2021 33.6494C39.3798 31.6609 39.9996 29.3977 39.9996 27.0704Z" fill="#3C1F1B"/>
+<path d="M30.5469 15.2734C30.5469 6.85156 23.6953 0 15.2734 0C6.85156 0 0 6.85156 0 15.2734C0 18.0182 0.730625 20.6906 2.11797 23.0368L0.0560937 30.4904L7.51 28.429C9.85625 29.8162 12.5287 30.5469 15.2734 30.5469C23.6953 30.5469 30.5469 23.6953 30.5469 15.2734ZM12.9297 11.7188H10.5859C10.5859 9.13391 12.6886 7.03125 15.2734 7.03125C17.8583 7.03125 19.9609 9.13391 19.9609 11.7188C19.9609 13.0307 19.4055 14.2917 18.4366 15.1779L16.4453 17.0004V18.8281H14.1016V15.9684L16.8542 13.4488C17.3462 12.9987 17.6172 12.3844 17.6172 11.7188C17.6172 10.4263 16.5659 9.375 15.2734 9.375C13.981 9.375 12.9297 10.4263 12.9297 11.7188ZM14.1016 21.1719H16.4453V23.5156H14.1016V21.1719Z" fill="#3C1F1B"/>
+</svg>
+          <div class="left-offers-item-text">
+            <p class="left-offers-item-title h3-heading-pp">Support</p>
+            <p class="left-offers-item-desc small-text">
+              We actively collaborate with our Verified Partners, offering tools, feedback, and visibility to help build lasting customer trust.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="bs_verified-btns block-flex-wrap block-gap-15 w-100">
+        <a href="https://legitgrails.com/pages/verified-partners" target="_blank" class="rebranding_btn">Check out our Partners</a>
+        <a href="https://forms.gle/TkK2J53KSrEU88CV6" target="_blank" class="rebranding_btn rebranding_btn-main">Apply to Get Verified</a>
+        </div>
+      </div>
+      <div class="offers-image_image" style="background-image: url('{{ "verified-homepage_hero.webp" | asset_url }}');">
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Offers with image",
+    "class": "offers-image rebranding-section-bottom rebranding-section-bottom-image",
+    "settings": []
+  }
+{% endschema %}

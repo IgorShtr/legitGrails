@@ -1,0 +1,170 @@
+<style>
+    .section-slider--{{ section.id }} {
+        background-color: #161616;
+    }
+    .slide-layout{position:relative;display:flex;flex-direction:column;padding:60px 0;align-items:center;justify-content:center;gap:30px}.slide-layout__content,.slide-layout__image-wrap{padding:0 20px}.slide-layout__image{max-width:100%;width:100%!important;height:auto!important}.slide-layout__title{font-weight:700;font-size:26px;line-height:1;color:#fff;margin-bottom:0}.slide-layout__content{display:flex;flex-direction:column;gap:25px;align-items:center}.section-slider .owl-dots{position:absolute;left:0;bottom:30px;display:flex;gap:15px;z-index:10;right:0;justify-content:center}.section-slider .owl-dots .owl-dot{width:16px;height:16px;background:0 0;border:1px solid #fff;border-radius:50px}.section-slider .owl-dots .owl-dot.active{background-color:#fff}.main-btn:hover{cursor:pointer}.shopify-section-legit-page-teams-slider{background-color:#161616}@media (min-width:750px){.slide-layout{display:flex;flex-direction:row;padding:100px 0}.slide-layout__content{align-items:start}.slide-layout__title{font-size:31px;line-height:36px}}@media (min-width:1024px){.slide-layout{flex-direction:row}.slide-layout__content{flex-basis:750px}.slide-layout__image-wrap{flex-basis:450px}.slide-layout__description{font-size:19px}.section-slider .owl-dots{bottom:50px}}
+.slide-layout.swiper-slide {
+    display: flex !important;
+    height: max-content !important;
+}
+  span.swiper-pagination-bullet {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    opacity: 0.5;
+}
+  span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #cdab71;
+    opacity: 1;
+}
+  .section-slider.section-slider--legit-page-teams-slider {
+    position: relative
+  }
+</style>
+<div class="section-slider section-slider--{{ section.id }} ">
+  <div class="swiper">
+  <div class="swiper-wrapper">
+    {%- for block in section.blocks -%}
+        <div class="slide-layout swiper-slide" style="background-color: {{ block.settings.background_color }}">
+            <div class="slide-layout__content" style="color: {{ block.settings.text_color }}">
+                {%- if block.settings.title != blank -%}
+                    <div class="slide-layout__heading">
+                        {% if block.settings.block-icon != blank %}
+                            {% assign block_icon = block.settings.block-icon | prepend: "icon-" | append: ".svg" %}
+                            <img src="{{ block_icon | asset_url }}" alt="{{ block.settings.title }}" loading="lazy">
+                        {% endif %}
+                        <h2 class="slide-layout__title font-title">{{ block.settings.title | escape }}</h2>
+                    </div>
+                {%- endif -%}
+                {%- if block.settings.text != blank -%}
+                    <div class="slide-layout__description font-description">{{ block.settings.text }}</div>
+                {%- endif -%}
+                {%- if block.settings.link_label != blank -%}
+                    <a class="main-btn font-title slide-layout__cta" target="_blank"
+                       style="background-color: {{ block.settings.text_color }}; color: {{ block.settings.background_color }}"
+                    {% if block.settings.link == blank %}  role="link"
+                        aria-disabled="true"
+                    {% else %} href="{{ block.settings.link }}" {% endif %}>{{ block.settings.link_label | escape }}
+                    </a>
+                {%- endif -%}
+            </div>
+            {%- if block.settings.image != blank -%}
+                <div class="slide-layout__image-wrap">
+                    <img class="slide-layout__image" src="{{ block.settings.image | img_url: 'master' }}" loading="lazy"
+                         alt="{{ block.settings.title }}"/>
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+    </div>
+    </div>
+      <div class="swiper-pagination"></div>
+</div>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+          
+<script>
+const swiper = new Swiper('.swiper', {
+  direction: 'horizontal',
+  loop: true,
+  slidesPerView: 1,
+  spaceBetween: 15,
+  pagination: {
+    el: '.swiper-pagination',
+  },
+});
+</script>
+{% schema %}
+{
+  "name": "Slide blocks",
+  "class": "section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Section Description"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Block content",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#161616"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Column",
+          "label": "Block title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+          "label": "Text with checkmarks"
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "default": "Continue",
+          "label": "Button label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Slide Blocks",
+      "blocks": [
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

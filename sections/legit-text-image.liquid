@@ -1,0 +1,324 @@
+{%- assign image_crop = true -%}
+
+{% if section.settings.image_crop == 'circle' or section.settings.image_crop == 'square' %}
+    {%- assign image_crop = true -%}
+{% endif %}
+
+<style>
+    .row-styled--{{ section.id }} {
+    {% if section.settings.background_color != blank %}
+        background-color: {{ section.settings.background_color }};
+    {% elsif section.settings.background_color == blank and image_crop %}
+        background-color: {{ settings.color_secondary_bg }};
+    {% endif %}
+    }
+
+    {% if image_crop %}
+    {% comment %}
+    @media screen and (min-width: 750px) {
+        .feature-row--{{ section.id }} .feature-row__image-wrapper {
+            background-color: {{ section.settings.background_color | color_lighten: 5 }};
+        }
+    }
+    {% endcomment %}
+    {% endif %}
+</style>
+
+{% if section.settings.image != blank %}
+    <style>
+        .feature-row__image--{{ section.id }} {
+            background-position: {{ section.settings.alignment }};
+        }
+    </style>
+{% endif %}
+
+{% capture image_layout %}
+    <div class="feature-row__item feature-row__image-wrapper feature-row__image-wrapper-styled">
+        {% if section.settings.image != blank %}
+            <div class="feature-row__image-styled feature-row__image--{{ section.id }}" style="background-image: url({{ section.settings.image | img_url: 'master' }})"></div>
+            <noscript>
+                <div class="feature-row__image-styled feature-row__image--{{ section.id }}" style="background-image: url({{ section.settings.image | img_url: 'master' }})"></div>
+            </noscript>
+        {% else %}
+            <div class="feature-row__image feature-row__image--{{ section.id }}">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</div>
+        {% endif %}
+    </div>
+{% endcapture %}
+
+<div class="feature-row feature-row--{{ section.id }} feature-row--{{ section.settings.size }} {% if section.settings.mobile_layout == 'bottom' %} feature-row-mobile--bottom {% endif %}  row-styled--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="feature-row">
+    {% if section.settings.desktop_layout == 'left' %}
+        {{ image_layout }}
+    {% endif %}
+
+    <div class="feature-row__item feature-row__text text-white feature-row__text-styled">
+        <div class="feature-row__text-wrap-styled">
+        {% if section.settings.title != blank %}
+            <h2 class="section-title" data-animate>
+                <span class="text-red font-title">{{ section.settings.text_styled }}</span>
+                <span class="text-white font-title">{{ section.settings.title }} </span> </h2>
+        {% endif %}
+        {% if section.settings.text != blank %}
+            <div class="rte-setting featured-row__subtext section-description text-white font-description">{{ section.settings.text }}</div>
+        {% endif %}
+        {% if section.settings.button_label != blank %}
+            <div class="main-btn-wrap">
+                <a href="{{ section.settings.button_link }}" class="font-title main-btn btn-red {% if section.settings.use_second_button %} btn--secondary{% endif %} feature-row__btn">
+                    {{ section.settings.button_label }}
+                </a>
+            </div>
+        {% endif %}
+        </div>
+    </div>
+
+    {% if section.settings.desktop_layout == 'right' %}
+        {{ image_layout }}
+    {% endif %}
+</div>
+
+{% schema %}
+{
+"name": {
+"en": "Legit styled text&image"
+},
+"class": "index-section index-section--image-with-text",
+"settings": [
+{
+"type": "select",
+"id": "size",
+"label": {
+"en": "Section height"
+},
+"default": "medium",
+"options": [
+{
+"label": {
+"en": "Small"
+},
+"value": "small"
+},
+{
+"label": {
+"en": "Medium"
+},
+"value": "medium"
+},
+{
+"label": {
+"en": "Large"
+},
+"value": "large"
+},
+{
+"label": {
+"en": "Extra Large"
+},
+"value": "x-large"
+}
+]
+},
+{
+"type": "color",
+"id": "background_color",
+"label": {
+"en": "Background color"
+},
+"default": "#f3f4f3"
+},
+{
+"type": "header",
+"content": {
+"en": "Image"
+}
+},
+{
+"type": "image_picker",
+"id": "image",
+"label": {
+"en": "Image"
+}
+},
+{
+"type": "select",
+"id": "alignment",
+"label": {
+"en": "Image position"
+},
+"default": "center center",
+"options": [
+{
+"label": {
+"en": "Top left"
+},
+"value": "top left"
+},
+{
+"label": {
+"en": "Top center"
+},
+"value": "top center"
+},
+{
+"label": {
+"en": "Top right"
+},
+"value": "top right"
+},
+{
+"label": {
+"en": "Middle left"
+},
+"value": "center left"
+},
+{
+"label": {
+"en": "Middle center"
+},
+"value": "center center"
+},
+{
+"label": {
+"en": "Middle right"
+},
+"value": "center right"
+},
+{
+"label": {
+"en": "Bottom left"
+},
+"value": "bottom left"
+},
+{
+"label": {
+"en": "Bottom center"
+},
+"value": "bottom center"
+},
+{
+"label": {
+"en": "Bottom right"
+},
+"value": "bottom right"
+}
+]
+},
+{
+"type": "header",
+"content": {
+"en": "Text"
+}
+},
+{
+"type": "text",
+"id": "text_styled",
+"label": {
+"en": "Styled Heading"
+},
+"default": {
+"en": "Grow your Busines"
+}
+},
+{
+"type": "text",
+"id": "title",
+"label": {
+"en": "Heading"
+},
+"default": {
+"en": "text"
+}
+},
+{
+"type": "richtext",
+"id": "text",
+"label": {
+"en": "Text"
+},
+"default": {
+"en": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+}
+},
+{
+"type": "checkbox",
+"id": "use_second_button",
+"label": {
+"en": "Use secondary button style"
+},
+"default": false
+},
+{
+"type": "text",
+"id": "button_label",
+"label": {
+"en": "Button label"
+}
+},
+{
+"type": "url",
+"id": "button_link",
+"label": {
+"en": "Button link"
+}
+},
+{
+"type": "header",
+"content": {
+"en": "Image alignment"
+}
+},
+{
+"type": "select",
+"id": "desktop_layout",
+"label": {
+"en": "Desktop"
+},
+"default": "right",
+"options": [
+{
+"label": {
+"en": "Left"
+},
+"value": "left"
+},
+{
+"label": {
+"en": "Right"
+},
+"value": "right"
+}
+]
+},
+{
+"type": "select",
+"id": "mobile_layout",
+"label": {
+"en": "Mobile"
+},
+"default": "top",
+"options": [
+{
+"label": {
+"en": "Top"
+},
+"value": "top"
+},
+{
+"label": {
+"en": "Bottom"
+},
+"value": "bottom"
+}
+]
+}
+],
+"presets": [
+{
+"name": {
+"en": "Legit styled text&image"
+},
+"category": {
+"en": "Image"
+}
+}
+]
+}
+{% endschema %}

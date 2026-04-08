@@ -1,0 +1,190 @@
+{%- assign limit = 4 -%}
+{%- assign featuredCollection = collections[section.settings.collection] -%}
+{%- assign totalProducts = featuredCollection.products.size -%}
+{% render 'section-product-featured-collection-eyewear-styles-min' %}
+<div class="featured-collection collection-template" id="general-products" data-section-id="{{ section.id }}" data-section-type="collection-template">
+    <div class="section-container">
+        <div class="featured-collection__heading grid text-center">
+            <div class="grid__item medium-up--ten-twelfths medium-up--push-one-twelfth">
+                <h2 class="hero__overlay-title section-title font-title" data-animate>{{ section.settings.title }}</h2>
+                <p class="section-description font-description">{{ section.settings.description }}</p>
+            </div>
+        </div>
+
+        <div class="authenticate" >
+                {% unless featuredCollection == blank %}
+                    {% for product in featuredCollection.products limit: 4 %}
+                        {% include 'legit-product-card', product: product %}
+                    {% endfor %}
+                {% endunless %}
+        </div>
+
+        {% unless section.settings.collection == blank %}
+            {% if totalProducts == 0 %}
+                <p class="text-center font-description">{{ 'collections.general.no_matches' | t }}</p>
+            {% endif %}
+        {% endunless %}
+
+
+        {% if section.settings.show_view_all %}
+            <div class="authenticate featured-collection__view-all">
+                <a href="https://legitgrails.com/pages/choose-your-brand" class="font-title main-btn{% if section.settings.use_second_button %} btn--secondary{% endif %}">
+                    {{ section.settings.button_text }}
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+{% schema %}
+{
+"name": {
+"en": "Collection Eyewear"
+},
+"class": "index-section index-section--featured-collection",
+"settings": [
+{
+"id": "collection",
+"type": "collection",
+"label": {
+"en": "Collection"
+}
+},
+{
+"type": "checkbox",
+"id": "show_spacing",
+"label": {
+"en": "Enable image spacing"
+}
+},
+{
+"type": "header",
+"content": {
+"en": "Text"
+}
+},
+{
+"type": "text",
+"id": "title",
+"label": {
+"en": "Heading"
+},
+"default": {
+"en": "Legit featured collection"
+}
+},
+{
+"type": "text",
+"id": "description",
+"label": {
+"en": "Description"
+},
+"default": {
+"en": "Collection description"
+}
+},
+{
+"type": "text",
+"id": "button_text",
+"label": {
+"en": "Button text"
+},
+"default": {
+"en": "View all"
+}
+},
+{
+"type": "checkbox",
+"id": "link_target",
+"label": {
+"en": "Open this link in a new window"
+},
+"default": true
+},
+{
+"type": "checkbox",
+"id": "show_vendor",
+"label": {
+"en": "Show product vendors"
+},
+"default": false
+},
+{
+"type": "checkbox",
+"id": "show_view_all",
+"label": {
+"en": "Show 'View all' button"
+},
+"default": false
+},
+{
+"type": "checkbox",
+"id": "use_second_button",
+"label": {
+"en": "Use secondary button style"
+},
+"default": false
+},
+{
+"type": "header",
+"content": {
+"en": "Layout"
+}
+},
+{
+"type": "select",
+"id": "grid_style",
+"label": {
+"en": "Grid style"
+},
+"default": "collage",
+"options": [
+{
+"value": "collage",
+"label": {
+"en": "Collage"
+}
+},
+{
+"value": "grid",
+"label": {
+"en": "Grid"
+}
+}
+]
+},
+{
+"type": "range",
+"id": "products",
+"label": {
+"en": "Products per row"
+},
+"min": 2,
+"max": 4,
+"step": 1,
+"default": 3
+},
+{
+"type": "range",
+"id": "rows",
+"label": {
+"en": "Rows"
+},
+"min": 1,
+"max": 5,
+"step": 1,
+"default": 2
+}
+],
+"presets": [
+{
+"name": {
+"en": "Collection Eyewear"
+},
+"category": {
+"en": "Collection"
+}
+}
+]
+}
+{% endschema %}

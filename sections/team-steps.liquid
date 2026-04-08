@@ -1,0 +1,297 @@
+{% render 'section-team-steps-styles' %}
+{% if section.settings.show_overlay %}
+    <style>
+        .section-steps--{{ section.id }}.section-steps__overlay:before {
+            background-color: {{ section.settings.overlay_color }};
+            opacity: {{ section.settings.overlay_opacity }};
+        }
+        .section-steps--{{ section.id }} .legit-step-horizontal__caption,
+        .section-steps--{{ section.id }} .section-title,
+        .section-steps--{{ section.id }} .section-description,
+        .section-steps--{{ section.id }} .legit-step-horizontal__text p {
+            color: {{ section.settings.overlay_text }};
+        }
+    </style>
+{% endif %}
+<div class="section-steps section-steps--{{ section.id }} {% if section.settings.show_overlay %} section-steps__overlay{% endif %}"
+     data-section-id="{{ section.id }}"
+     data-section-type="step-template">
+    <div class="section-container--{{ section.id }}">
+        <div class="steps-heading grid text-center">
+            <h2 class="hero__overlay-title section-title font-title" data-animate>{{ section.settings.title }}</h2>
+            {% if block.settings.description != blank %}
+                <p class="section-description font-description">{{ section.settings.description }}</p>
+            {% endif %}
+        </div>
+
+        <div class="legit-step-horizontal legit-step-horizontal--{{ section.id }} legit-step-horizontal--{{ section.settings.section_height }}"
+             data-section-id="{{ section.id }}" data-section-type="gallery">
+            {% for block in section.blocks %}
+                <div class="legit-step-horizontal__flex-row legit-step-horizontal__{{ section.blocks.size }}-column">
+                    {% if block.settings.image != blank %}
+                        <div class="legit-step-horizontal__container">
+                            <div class="legit-step-horizontal__item legit-step-horizontal__item--{{ forloop.index }} lazyload" {{ block.shopify_attributes }}
+                                 data-bgset="{% include 'bgset', image: block.settings.image %}">
+                            </div>
+                        </div>
+                    {% endif %}
+                    <div class="legit-step-horizontal__text" data-animate>
+                        {% if block.settings.cta_label != blank %}
+                            <p class="legit-step-horizontal__caption font-title">{{ block.settings.cta_label | escape }}</p>
+                        {% endif %}
+                        {% if block.settings.block_description != blank %}
+                            <div class="legit-step-horizontal__description font-description">{{ block.settings.block_description }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        {% if section.blocks.size == 0 %}
+            {% include 'no-blocks' %}
+        {% endif %}
+
+        {% if section.settings.button_label != blank %}
+            <div class="button-container">
+                <a href="{{ section.settings.button_link }}"
+                   class="font-title main-btn{% if section.settings.use_second_button %} btn--secondary{% endif %} hero__btn">
+                    {{ section.settings.button_label }}
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+
+{% schema %}
+{
+  "name": {
+    "en": "Team steps"
+  },
+  "class": "index-section index-section--blocks",
+  "max_blocks": 5,
+  "settings": [
+    {
+      "type": "select",
+      "id": "section_height",
+      "label": {
+        "en": "Section height"
+      },
+      "default": "medium",
+      "options": [
+        {
+          "label": {
+            "en": "Extra Small"
+          },
+          "value": "x-small"
+        },
+        {
+          "label": {
+            "en": "Small"
+          },
+          "value": "small"
+        },
+        {
+          "label": {
+            "en": "Medium"
+          },
+          "value": "medium"
+        },
+        {
+          "label": {
+            "en": "Large"
+          },
+          "value": "large"
+        },
+        {
+          "label": {
+            "en": "Extra Large"
+          },
+          "value": "x-large"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": {
+        "en": "Heading"
+      },
+      "default": {
+        "en": "Legit Image Text Blocks"
+      }
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": {
+        "en": "Description"
+      }
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": {
+        "en": "Button label"
+      }
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": {
+        "en": "Button link"
+      }
+    },
+    {
+      "type": "checkbox",
+      "id": "show_overlay",
+      "label": {
+        "en": "Show overlay"
+      },
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": {
+        "en": "Overlay Color"
+      },
+      "default": "#242424"
+    },
+    {
+      "type": "color",
+      "id": "overlay_text",
+      "label": {
+        "en": "Text color"
+      },
+      "default": "#ffffff"
+    },
+    {
+      "type": "select",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "default": "0.5",
+      "options": [
+        {
+          "value": "0",
+          "label": "0%"
+        },
+        {
+          "value": "0.1",
+          "label": "10%"
+        },
+        {
+          "value": "0.2",
+          "label": "20%"
+        },
+        {
+          "value": "0.3",
+          "label": "30%"
+        },
+        {
+          "value": "0.4",
+          "label": "40%"
+        },
+        {
+          "value": "0.5",
+          "label": "50%"
+        },
+        {
+          "value": "0.6",
+          "label": "60%"
+        },
+        {
+          "value": "0.7",
+          "label": "70%"
+        },
+        {
+          "value": "0.8",
+          "label": "80%"
+        },
+        {
+          "value": "0.9",
+          "label": "90%"
+        },
+        {
+          "value": "1",
+          "label": "100%"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": {
+        "en": "Image"
+      },
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": {
+            "en": "Image"
+          }
+        },
+        {
+          "type": "header",
+          "content": {
+            "en": "Text"
+          }
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": {
+            "en": "Caption"
+          },
+          "default": {
+            "en": "Talk about your brand"
+          }
+        },
+        {
+          "type": "richtext",
+          "id": "block_description",
+          "label": {
+            "en": "Description"
+          },
+          "default": {
+            "en": "<p>Describe your brand</p>"
+          }
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": {
+            "en": "Link"
+          },
+          "info": {
+            "en": "Optional"
+          }
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "en": "Team steps"
+      },
+      "category": {
+        "en": "Image"
+      },
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

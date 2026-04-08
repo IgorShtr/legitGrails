@@ -1,0 +1,417 @@
+<style>
+ .business-solutions_type-deal {
+        width: 460px;
+        padding: 30px;
+        border-radius: 8px;
+        border: 1px solid #EAEAEA;
+        background: #FFFCF5;
+        box-shadow: 0 2px 5px 0 rgba(108, 77, 72, 0.05);
+    }
+    .bs-slides_container {
+        width: 100%;
+    }
+    .bs-slides_slide-content {
+        width: calc(100% - 510px);
+         max-width: 650px;
+    }
+
+    .bs-slides_select-wrapper {
+        display: none;
+        width: 100%;
+        position: relative;
+    }
+    .bs-slides_select {
+    width: 100%;
+    padding: 10px 41px 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #DADADA;
+    background: #FFF;
+    font-family: Suisse Intl;
+    outline: none !important;
+    font-size: 16px;
+    letter-spacing: -0.32px;
+    margin: 0;
+    color: #3C1F1B;
+    font-weight: 400;
+}
+.bs-slides_select-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    height: 10px;
+    width: 17px;
+    display: block;
+    background-image: url("data:image/svg+xml,%3Csvg width='23' height='14' viewBox='0 0 23 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.3975 13.1454L22.6326 2.91013C22.8695 2.6734 23 2.35739 23 2.02043C23 1.68347 22.8695 1.36746 22.6326 1.13073L21.879 0.376973C21.388 -0.113503 20.5899 -0.113503 20.0996 0.376973L11.5048 8.9718L2.90041 0.367435C2.66349 0.130705 2.34766 -9.02742e-07 2.01089 -9.17463e-07C1.67375 -9.322e-07 1.35792 0.130705 1.12082 0.367435L0.367435 1.12119C0.130518 1.35811 -7.31702e-08 1.67394 -8.7899e-08 2.01089C-1.02628e-07 2.34785 0.130518 2.66386 0.367435 2.90059L10.6119 13.1454C10.8496 13.3827 11.1669 13.513 11.5042 13.5123C11.8428 13.513 12.16 13.3827 12.3975 13.1454Z' fill='%233C1F1B'/%3E%3C/svg%3E%0A");
+    margin-top: -4px;
+    margin-left: -29px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+    @media(max-width: 1450px) {
+        .bs-slides_btn {
+            border: 1px solid #EAEAEA;
+            background: #FFF;
+        }
+        .bs-slides_btn.active {
+            background: #3C1F1B;
+            box-shadow: none;
+            pointer-events: none;
+            color: #fff;
+        }
+        .bs-slides_btns {
+            border-radius: 6px;
+            background: none;
+            padding: 0;
+            width: 100%;
+            gap: 10px;
+        }
+    }
+    @media(max-width: 1250px) {
+      .bs-slides_slide-content {
+          width: 100%;
+          max-width: 100%;
+          justify-content: center;
+          text-align: center;
+      }
+      .business-solutions_type-deal {
+          width: 100%;
+          text-align: center;
+          max-width: 500px;
+      }
+      .bs-slides_slide {
+          justify-content: center;
+      }
+    }
+    @media(max-width: 750px) {
+      .business-solutions_type-deal, .bs-slides_slide-content {
+        gap: 20px;
+      }
+      .business-solutions_type-deal {
+        padding: 20px;
+        }
+      .bs-slides_slide {
+        gap: 30px;
+    }
+    }
+
+    @media (max-width: 650px) {
+      .bs-slides_btns {
+        display: none;
+      }
+      .bs-slides_select-wrapper {
+        display: block;
+      }
+    }
+</style>
+
+<div class="rebranding_container block-flex-wrap block-gap-50 block-flex-center-center">
+  <div class="block-flex-wrap block-gap-30 block-flex-center-center">
+    <div class="block-flex-wrap block-gap-15 block-flex-center-center w-100">
+      <h2 class="h2-heading-ss tac">
+        Business 
+        <span class="h2-heading-pp">Type Overview</span>
+      </h2>
+    </div>
+
+
+    <div class="bs-slides_btns block-flex-wrap block-gap-4 block-flex-center-center">
+      <a href="javascript:void(0)" data-slide="consignment" class="bs-slides_btn standart-hover body-text active">Consignment Stores & Boutiques</a>
+      <a href="javascript:void(0)" data-slide="online" class="bs-slides_btn standart-hover body-text">Online Marketplaces (Seller-to-Buyer)</a>
+      <a href="javascript:void(0)" data-slide="warehouse" class="bs-slides_btn standart-hover body-text">Warehouse-Based Marketplaces</a>
+      <a href="javascript:void(0)" data-slide="pawn" class="bs-slides_btn standart-hover body-text">Pawn Shops</a>
+    </div>
+
+
+    <div class="bs-slides_select-wrapper">
+      <select class="bs-slides_select">
+        <option value="consignment">Consignment Stores & Boutiques</option>
+        <option value="online">Online Marketplaces (Seller-to-Buyer)</option>
+        <option value="warehouse">Warehouse-Based Marketplaces</option>
+        <option value="pawn">Pawn Shops</option>
+      </select>
+    </div>
+  </div>
+
+
+  <div class="bs-slides_slide bs-slides_slide-consignment block-flex-wrap block-gap-50 block-flex-center-sb active">
+        <div class="bs-slides_slide-content block-flex-wrap block-gap-30">
+        <div class="block-flex-wrap block-gap-15">
+            <h3 class="h3-heading-pp w-100">Maintain the highest standards for your curated collections</h3>
+        </div>
+        <ul class="account-slides_slide-offers block-flex-wrap block-gap-10 w-100">
+            <li class="w-100 block-flex-wrap block-gap-10">
+            <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.8261 0.409064C17.2812 -0.136527 16.3964 -0.136183 15.8509 0.409064L6.96095 9.29932L3.00977 5.34817C2.46418 4.80258 1.57978 4.80258 1.03419 5.34817C0.488602 5.89376 0.488602 6.77815 1.03419 7.32374L5.97295 12.2625C6.24558 12.5351 6.60306 12.6718 6.96057 12.6718C7.31808 12.6718 7.6759 12.5355 7.94853 12.2625L17.8261 2.3846C18.3717 1.83939 18.3717 0.95462 17.8261 0.409064Z" fill="#3C1F1B"/>
+            </svg>
+            <p class="body-text"><span class="bold">Quality Assurance:</span> Guarantee that every item on your shelves meets authentic luxury standards</p>
+            </li>
+            <li class="w-100 block-flex-wrap block-gap-10">
+            <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.8261 0.409064C17.2812 -0.136527 16.3964 -0.136183 15.8509 0.409064L6.96095 9.29932L3.00977 5.34817C2.46418 4.80258 1.57978 4.80258 1.03419 5.34817C0.488602 5.89376 0.488602 6.77815 1.03419 7.32374L5.97295 12.2625C6.24558 12.5351 6.60306 12.6718 6.96057 12.6718C7.31808 12.6718 7.6759 12.5355 7.94853 12.2625L17.8261 2.3846C18.3717 1.83939 18.3717 0.95462 17.8261 0.409064Z" fill="#3C1F1B"/>
+            </svg>
+            <p class="body-text"><span class="bold">Customer Trust:</span> Boost shopper confidence and satisfaction with verified products</p>
+            </li>
+            <li class="w-100 block-flex-wrap block-gap-10">
+            <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.8261 0.409064C17.2812 -0.136527 16.3964 -0.136183 15.8509 0.409064L6.96095 9.29932L3.00977 5.34817C2.46418 4.80258 1.57978 4.80258 1.03419 5.34817C0.488602 5.89376 0.488602 6.77815 1.03419 7.32374L5.97295 12.2625C6.24558 12.5351 6.60306 12.6718 6.96057 12.6718C7.31808 12.6718 7.6759 12.5355 7.94853 12.2625L17.8261 2.3846C18.3717 1.83939 18.3717 0.95462 17.8261 0.409064Z" fill="#3C1F1B"/>
+            </svg>
+            <p class="body-text"><span class="bold">Inventory Efficiency:</span> Quickly process and authenticate new consignments to keep your store fresh and appealing</p>
+            </li>
+        </ul>
+        </div>
+        <div class="business-solutions_type-deal block-flex-wrap block-flex-center-center block-gap-30">
+            <p class="caption w-100">
+                Featured Deal
+            </p>
+            <h3 class="h3-heading-ss w-100">
+                Top up 1,000 credits & get
+                <span class="h3-heading-pp">
+                    $250 in free authentications
+                </span>
+            </h3>
+            <p class="body-text w-100 tac">
+                60+ free hype authentications or<br>20+ free luxury authentications*
+            </p>
+            <p class="tiny-text product_hero-disclaimer tac">
+                *12 hour turnaround
+            </p>
+            <div class="block-flex-wrap block-gap-10 w-100">
+              <a href="https://account.legitgrails.com/" class="rebranding_btn rebranding_btn-main w-100">
+                  Create Free Account & Top Up
+              </a>
+              <a href="https://legitgrails.com/pages/schedule-a-call" class="rebranding_btn w-100">
+                  Talk to our team
+              </a>
+            </div>
+        </div>
+  </div>
+
+  <div class="bs-slides_slide bs-slides_slide-online block-flex-wrap block-gap-50 block-flex-center-sb">
+        <div class="bs-slides_slide-content block-flex-wrap block-gap-30">
+        <div class="block-flex-wrap block-gap-15">
+            <h3 class="h3-heading-pp w-100">Build a trustworthy platform where buyers shop with complete confidence</h3>
+        </div>
+        <ul class="account-slides_slide-offers block-flex-wrap block-gap-10 w-100">
+            <li class="w-100 block-flex-wrap block-gap-10">
+            <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.8261 0.409064C17.2812 -0.136527 16.3964 -0.136183 15.8509 0.409064L6.96095 9.29932L3.00977 5.34817C2.46418 4.80258 1.57978 4.80258 1.03419 5.34817C0.488602 5.89376 0.488602 6.77815 1.03419 7.32374L5.97295 12.2625C6.24558 12.5351 6.60306 12.6718 6.96057 12.6718C7.31808 12.6718 7.6759 12.5355 7.94853 12.2625L17.8261 2.3846C18.3717 1.83939 18.3717 0.95462 17.8261 0.409064Z" fill="#3C1F1B"/>
+            </svg>
+            <p class="body-text"><span class="bold">Fraud Prevention:</span> Protect your marketplace from counterfeit listings and fraudulent sellers</p>
+            </li>
+            <li class="w-100 block-flex-wrap block-gap-10">
+            <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.8261 0.409064C17.2812 -0.136527 16.3964 -0.136183 15.8509 0.409064L6.96095 9.29932L3.00977 5.34817C2.46418 4.80258 1.57978 4.80258 1.03419 5.34817C0.488602 5.89376 0.488602 6.77815 1.03419 7.32374L5.97295 12.2625C6.24558 12.5351 6.60306 12.6718 6.96057 12.6718C7.31808 12.6718 7.6759 12.5355 7.94853 12.2625L17.8261 2.3846C18.3717 1.83939 18.3717 0.95462 17.8261 0.409064Z" fill="#3C1F1B"/>
+            </svg>
+            <p class="body-text"><span class="bold">Enhanced Buyer Experience:</span> Increase sales and customer loyalty by ensuring product authenticity</p>
+            </li>
+            <li class="w-100 block-flex-wrap block-gap-10">
+            <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.8261 0.409064C17.2812 -0.136527 16.3964 -0.136183 15.8509 0.409064L6.96095 9.29932L3.00977 5.34817C2.46418 4.80258 1.57978 4.80258 1.03419 5.34817C0.488602 5.89376 0.488602 6.77815 1.03419 7.32374L5.97295 12.2625C6.24558 12.5351 6.60306 12.6718 6.96057 12.6718C7.31808 12.6718 7.6759 12.5355 7.94853 12.2625L17.8261 2.3846C18.3717 1.83939 18.3717 0.95462 17.8261 0.409064Z" fill="#3C1F1B"/>
+            </svg>
+            <p class="body-text"><span class="bold">API Integration:</span> Seamlessly integrate our authentication service into your platform for real-time verification</p>
+            </li>
+            <li class="w-100 block-flex-wrap block-gap-10">
+            <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.8261 0.409064C17.2812 -0.136527 16.3964 -0.136183 15.8509 0.409064L6.96095 9.29932L3.00977 5.34817C2.46418 4.80258 1.57978 4.80258 1.03419 5.34817C0.488602 5.89376 0.488602 6.77815 1.03419 7.32374L5.97295 12.2625C6.24558 12.5351 6.60306 12.6718 6.96057 12.6718C7.31808 12.6718 7.6759 12.5355 7.94853 12.2625L17.8261 2.3846C18.3717 1.83939 18.3717 0.95462 17.8261 0.409064Z" fill="#3C1F1B"/>
+            </svg>
+            <p class="body-text"><span class="bold">Brand Integrity:</span> Strengthen your marketplace's reputation as a reliable source of luxury goods</p>
+            </li>
+        </ul>
+        </div>
+        <div class="business-solutions_type-deal block-flex-wrap block-flex-center-center block-gap-30">
+            <p class="caption w-100">
+                Featured Deal
+            </p>
+            <h3 class="h3-heading-ss w-100">
+                Top up 1,000 credits & get
+                <span class="h3-heading-pp">
+                    $250 in free authentications
+                </span>
+            </h3>
+            <p class="body-text w-100 tac">
+                60+ free hype authentications or<br>20+ free luxury authentications*
+            </p>
+            <p class="tiny-text product_hero-disclaimer tac">
+                *12 hour turnaround
+            </p>
+            <div class="block-flex-wrap block-gap-10 w-100">
+              <a href="https://account.legitgrails.com/" class="rebranding_btn rebranding_btn-main w-100">
+                  Create Free Account & Top Up
+              </a>
+              <a href="https://legitgrails.com/pages/schedule-a-call" class="rebranding_btn w-100">
+                  Talk to our team
+              </a>
+            </div>
+        </div>
+  </div>
+
+  <div class="bs-slides_slide bs-slides_slide-warehouse block-flex-wrap block-gap-50 block-flex-center-sb ">
+        <div class="bs-slides_slide-content block-flex-wrap block-gap-30">
+        <div class="block-flex-wrap block-gap-15">
+            <h3 class="h3-heading-pp w-100">Optimize your inventory with trusted and efficient authentication</h3>
+        </div>
+        <ul class="account-slides_slide-offers block-flex-wrap block-gap-10 w-100">
+            <li class="w-100 block-flex-wrap block-gap-10">
+            <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.8261 0.409064C17.2812 -0.136527 16.3964 -0.136183 15.8509 0.409064L6.96095 9.29932L3.00977 5.34817C2.46418 4.80258 1.57978 4.80258 1.03419 5.34817C0.488602 5.89376 0.488602 6.77815 1.03419 7.32374L5.97295 12.2625C6.24558 12.5351 6.60306 12.6718 6.96057 12.6718C7.31808 12.6718 7.6759 12.5355 7.94853 12.2625L17.8261 2.3846C18.3717 1.83939 18.3717 0.95462 17.8261 0.409064Z" fill="#3C1F1B"/>
+            </svg>
+            <p class="body-text"><span class="bold">Bulk Verification:</span> Efficiently authenticate large volumes of items to keep your inventory accurate and trustworthy</p>
+            </li>
+            <li class="w-100 block-flex-wrap block-gap-10">
+            <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.8261 0.409064C17.2812 -0.136527 16.3964 -0.136183 15.8509 0.409064L6.96095 9.29932L3.00977 5.34817C2.46418 4.80258 1.57978 4.80258 1.03419 5.34817C0.488602 5.89376 0.488602 6.77815 1.03419 7.32374L5.97295 12.2625C6.24558 12.5351 6.60306 12.6718 6.96057 12.6718C7.31808 12.6718 7.6759 12.5355 7.94853 12.2625L17.8261 2.3846C18.3717 1.83939 18.3717 0.95462 17.8261 0.409064Z" fill="#3C1F1B"/>
+            </svg>
+            <p class="body-text"><span class="bold">Operational Efficiency:</span> Reduce processing times and operational costs with our swift authentication services</p>
+            </li>
+            <li class="w-100 block-flex-wrap block-gap-10">
+            <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.8261 0.409064C17.2812 -0.136527 16.3964 -0.136183 15.8509 0.409064L6.96095 9.29932L3.00977 5.34817C2.46418 4.80258 1.57978 4.80258 1.03419 5.34817C0.488602 5.89376 0.488602 6.77815 1.03419 7.32374L5.97295 12.2625C6.24558 12.5351 6.60306 12.6718 6.96057 12.6718C7.31808 12.6718 7.6759 12.5355 7.94853 12.2625L17.8261 2.3846C18.3717 1.83939 18.3717 0.95462 17.8261 0.409064Z" fill="#3C1F1B"/>
+            </svg>
+            <p class="body-text"><span class="bold">Market Credibility:</span> Establish your marketplace as a leading destination for authentic luxury products</p>
+            </li>
+        </ul>
+        </div>
+        <div class="business-solutions_type-deal block-flex-wrap block-flex-center-center block-gap-30">
+            <p class="caption w-100">
+                Featured Deal
+            </p>
+            <h3 class="h3-heading-ss w-100">
+                Top up 1,000 credits & get
+                <span class="h3-heading-pp">
+                    $250 in free authentications
+                </span>
+            </h3>
+            <p class="body-text w-100 tac">
+                60+ free hype authentications or<br>20+ free luxury authentications*
+            </p>
+            <p class="tiny-text product_hero-disclaimer tac">
+                *12 hour turnaround
+            </p>
+            <div class="block-flex-wrap block-gap-10 w-100">
+              <a href="https://account.legitgrails.com/" class="rebranding_btn rebranding_btn-main w-100">
+                  Create Free Account & Top Up
+              </a>
+              <a href="https://legitgrails.com/pages/schedule-a-call" class="rebranding_btn w-100">
+                  Talk to our team
+              </a>
+            </div>
+        </div>
+  </div>
+
+  <div class="bs-slides_slide bs-slides_slide-pawn block-flex-wrap block-gap-50 block-flex-center-sb">
+        <div class="bs-slides_slide-content block-flex-wrap block-gap-30">
+        <div class="block-flex-wrap block-gap-15">
+            <h3 class="h3-heading-pp w-100">Instant authentication for high-volume transactions</h3>
+        </div>
+        <ul class="account-slides_slide-offers block-flex-wrap block-gap-10 w-100">
+            <li class="w-100 block-flex-wrap block-gap-10">
+            <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.8261 0.409064C17.2812 -0.136527 16.3964 -0.136183 15.8509 0.409064L6.96095 9.29932L3.00977 5.34817C2.46418 4.80258 1.57978 4.80258 1.03419 5.34817C0.488602 5.89376 0.488602 6.77815 1.03419 7.32374L5.97295 12.2625C6.24558 12.5351 6.60306 12.6718 6.96057 12.6718C7.31808 12.6718 7.6759 12.5355 7.94853 12.2625L17.8261 2.3846C18.3717 1.83939 18.3717 0.95462 17.8261 0.409064Z" fill="#3C1F1B"/>
+            </svg>
+            <p class="body-text"><span class="bold">Instant Verification:</span> Quickly authenticate luxury items to build trust and avoid costly mistakes</p>
+            </li>
+            <li class="w-100 block-flex-wrap block-gap-10">
+            <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.8261 0.409064C17.2812 -0.136527 16.3964 -0.136183 15.8509 0.409064L6.96095 9.29932L3.00977 5.34817C2.46418 4.80258 1.57978 4.80258 1.03419 5.34817C0.488602 5.89376 0.488602 6.77815 1.03419 7.32374L5.97295 12.2625C6.24558 12.5351 6.60306 12.6718 6.96057 12.6718C7.31808 12.6718 7.6759 12.5355 7.94853 12.2625L17.8261 2.3846C18.3717 1.83939 18.3717 0.95462 17.8261 0.409064Z" fill="#3C1F1B"/>
+            </svg>
+            <p class="body-text"><span class="bold">Enhanced Reputation:</span> Provide your customers with confidence through verified authenticity certificates</p>
+            </li>
+            <li class="w-100 block-flex-wrap block-gap-10">
+            <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.8261 0.409064C17.2812 -0.136527 16.3964 -0.136183 15.8509 0.409064L6.96095 9.29932L3.00977 5.34817C2.46418 4.80258 1.57978 4.80258 1.03419 5.34817C0.488602 5.89376 0.488602 6.77815 1.03419 7.32374L5.97295 12.2625C6.24558 12.5351 6.60306 12.6718 6.96057 12.6718C7.31808 12.6718 7.6759 12.5355 7.94853 12.2625L17.8261 2.3846C18.3717 1.83939 18.3717 0.95462 17.8261 0.409064Z" fill="#3C1F1B"/>
+            </svg>
+            <p class="body-text"><span class="bold">Streamlined Operations:</span> Simplify your intake process with fast and reliable authentication services</p>
+            </li>
+        </ul>
+        </div>
+        <div class="business-solutions_type-deal block-flex-wrap block-flex-center-center block-gap-30">
+            <p class="caption w-100">
+                Featured Deal
+            </p>
+            <h3 class="h3-heading-ss w-100">
+                Top up 1,000 credits & get
+                <span class="h3-heading-pp">
+                    $250 in free authentications
+                </span>
+            </h3>
+            <p class="body-text w-100 tac">
+                60+ free hype authentications or<br>20+ free luxury authentications*
+            </p>
+            <p class="tiny-text product_hero-disclaimer tac">
+                *12 hour turnaround
+            </p>
+            <div class="block-flex-wrap block-gap-10 w-100">
+              <a href="https://account.legitgrails.com/" class="rebranding_btn rebranding_btn-main w-100">
+                  Create Free Account & Top Up
+              </a>
+              <a href="https://legitgrails.com/pages/schedule-a-call" class="rebranding_btn w-100">
+                  Talk to our team
+              </a>
+            </div>
+        </div>
+  </div>
+
+</div>
+
+<script>
+  function setActiveSlide(slideName) {
+    const targetSlideSelector = '.bs-slides_slide-' + slideName;
+
+    // Slides
+    document.querySelectorAll('.bs-slides_slide').forEach(slide => {
+      slide.classList.remove('active');
+    });
+    const slide = document.querySelector(targetSlideSelector);
+    if (slide) {
+      slide.classList.add('active');
+    } else {
+      console.warn('Slide not found for selector:', targetSlideSelector);
+    }
+
+    // Buttons
+    document.querySelectorAll('.bs-slides_btn').forEach(btn => {
+      if (btn.dataset.slide === slideName) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    // Dropdown
+    const select = document.querySelector('.bs-slides_select');
+    if (select && select.value !== slideName) {
+      select.value = slideName;
+    }
+  }
+
+  // Button clicks (desktop)
+  document.querySelectorAll('.bs-slides_btn').forEach(function(button) {
+    button.addEventListener('click', function() {
+      const btnName = this.dataset.slide;
+      setActiveSlide(btnName);
+    });
+  });
+
+  // Dropdown change (mobile)
+  const select = document.querySelector('.bs-slides_select');
+  if (select) {
+    select.addEventListener('change', function() {
+      setActiveSlide(this.value);
+    });
+
+    // Sync initial value with active button
+    const activeBtn = document.querySelector('.bs-slides_btn.active');
+    if (activeBtn) {
+      select.value = activeBtn.dataset.slide;
+    }
+  }
+</script>
+
+{% schema %}
+  {
+    "name": "BS Slides",
+    "class": "bs-slides rebranding-section-bottom",
+    "settings": []
+  }
+{% endschema %}

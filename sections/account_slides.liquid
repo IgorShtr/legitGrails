@@ -1,0 +1,295 @@
+<style>
+  .account-slides_container {
+    max-width: 1072px;
+  }
+  .account-slides_btns, .bs-slides_btns {
+    border-radius: 6px;
+    background: #F0F0F0;
+    padding: 4px;
+    width: max-content;
+  }
+  .account-slides_btn, .bs-slides_btn {
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: .3s;
+    line-height: 1;
+  }
+  .account-slides_btn.active, .bs-slides_btn.active {
+    background: #FFF;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.16);
+    pointer-events: none;
+  }
+  .account-slides_slide, .bs-slides_slide {
+    display: none;
+  }
+  .account-slides_slide.active, .bs-slides_slide.active {
+    display: flex;
+  }
+  .account-slides_slide-offers {
+    padding-left: 0;
+    margin: 0;
+  }
+  .account-slides_slide-offers li svg {
+    margin-top: 5px;
+    width: 17px;
+    height: auto;
+  }
+  .account-slides_slide-offers li {
+    align-items: flex-start;
+  }
+  .account-slides_slide-offers li p {
+    width: calc(100% - 27px);
+  }
+  .account-slides_slide-content {
+    width: calc(100% - 422px);
+  }
+  img.account-slide_slide-image {
+    width: 372px;
+    height: auto;
+  }
+  @media(max-width: 1250px) {
+    .account-slides_container {
+      max-width: 950px;
+    }
+  }
+  @media(max-width: 950px) {
+    .account-slides_slide-content {
+        width: 100%;
+        text-align: center;
+    }
+    ul.account-slides_slide-offers {
+        text-align: left;
+        max-width: 700px;
+        margin: auto;
+    }
+    .account-slides_slide .rebranding_btn {
+      margin: auto;
+    }
+    img.account-slide_slide-image {
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+        margin: auto;
+    }
+  }
+  @media(max-width: 750px) {
+    .account-slides_slide-offers li svg {
+      margin-top: 4px;
+      width: 14px;
+    }
+    .account-slides_slide-content {
+      gap: 30px;
+    }
+    .account-slides_btns {
+        border-radius: 6px;
+        background: none;
+        padding: 0;
+        width: 100%;
+        gap: 10px;
+    }
+    .account-slides_btn {
+        border: 1px solid #EAEAEA;
+        background: #FFF;
+    }
+    .account-slides_btn.active {
+        background: #3C1F1B;
+        box-shadow: none;
+        pointer-events: none;
+        color: #fff;
+    }
+  }
+
+   .business-solutions_type-deal {
+        width: 460px;
+        padding: 30px;
+        border-radius: 8px;
+        border: 1px solid #EAEAEA;
+        background: #FFFCF5;
+        box-shadow: 0 2px 5px 0 rgba(108, 77, 72, 0.05);
+    }
+    .bs-slides_container {
+        width: 100%;
+    }
+    .bs-slides_slide-content {
+        width: calc(100% - 510px);
+         max-width: 650px;
+    }
+    @media(max-width: 1450px) {
+        .bs-slides_btn {
+            border: 1px solid #EAEAEA;
+            background: #FFF;
+        }
+        .bs-slides_btn.active {
+            background: #3C1F1B;
+            box-shadow: none;
+            pointer-events: none;
+            color: #fff;
+        }
+        .bs-slides_btns {
+            border-radius: 6px;
+            background: none;
+            padding: 0;
+            width: 100%;
+            gap: 10px;
+        }
+    }
+    @media(max-width: 1250px) {
+      .bs-slides_slide-content {
+          width: 100%;
+          max-width: 100%;
+          justify-content: center;
+          text-align: center;
+      }
+      .business-solutions_type-deal {
+          width: 100%;
+          text-align: center;
+          max-width: 500px;
+      }
+      .bs-slides_slide {
+          justify-content: center;
+      }
+    }
+    @media(max-width: 750px) {
+      .business-solutions_type-deal, .bs-slides_slide-content {
+        gap: 20px;
+      }
+    }
+</style>
+
+<div class="account-slides_container rebranding_container block-flex-wrap block-gap-50 block-flex-center-center">
+  <div class="block-flex-wrap block-gap-30 block-flex-center-center">
+    <div class="block-flex-wrap block-gap-15 block-flex-center-center w-100">
+      <h2 class="h2-heading-ss tac">
+        Enjoy 
+        <span class="h2-heading-pp">Authentication Upgrades</span>
+      </h2>
+    </div>
+    <div class="account-slides_btns block-flex-wrap block-gap-4 block-flex-center-center">
+      <a href="javascript:void(0)" data-slide="certificate" class="account-slides_btn standart-hover body-text active">Custom Certificate</a>
+      <a href="javascript:void(0)" data-slide="statement" class="account-slides_btn standart-hover body-text">Written Statement</a>
+      <a href="javascript:void(0)" data-slide="labels" class="account-slides_btn standart-hover body-text">Item Labels</a>
+    </div>
+  </div>
+  <div class="account-slides_slide account-slides_slide-certificate block-flex-wrap block-gap-50 block-flex-center-sb active">
+    <div class="account-slides_slide-content block-flex-wrap block-gap-30">
+      <div class="block-flex-wrap block-gap-15">
+        <h3 class="h3-heading-pp w-100">Upgrade to a custom certificate</h3>
+        <p class="body-text w-100">Add your branding, choose a premium layout</p>
+      </div>
+      <ul class="account-slides_slide-offers block-flex-wrap block-gap-10 w-100">
+        <li class="w-100 block-flex-wrap block-gap-10">
+          <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.8261 0.409064C17.2812 -0.136527 16.3964 -0.136183 15.8509 0.409064L6.96095 9.29932L3.00977 5.34817C2.46418 4.80258 1.57978 4.80258 1.03419 5.34817C0.488602 5.89376 0.488602 6.77815 1.03419 7.32374L5.97295 12.2625C6.24558 12.5351 6.60306 12.6718 6.96057 12.6718C7.31808 12.6718 7.6759 12.5355 7.94853 12.2625L17.8261 2.3846C18.3717 1.83939 18.3717 0.95462 17.8261 0.409064Z" fill="#3C1F1B"/>
+          </svg>
+          <p class="body-text">More than the standard certificate: includes model info, photos, and evaluation summary</p>
+        </li>
+        <li class="w-100 block-flex-wrap block-gap-10">
+          <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.8261 0.409064C17.2812 -0.136527 16.3964 -0.136183 15.8509 0.409064L6.96095 9.29932L3.00977 5.34817C2.46418 4.80258 1.57978 4.80258 1.03419 5.34817C0.488602 5.89376 0.488602 6.77815 1.03419 7.32374L5.97295 12.2625C6.24558 12.5351 6.60306 12.6718 6.96057 12.6718C7.31808 12.6718 7.6759 12.5355 7.94853 12.2625L17.8261 2.3846C18.3717 1.83939 18.3717 0.95462 17.8261 0.409064Z" fill="#3C1F1B"/>
+          </svg>
+          <p class="body-text">PDF available right after authentication for instant use</p>
+        </li>
+        <li class="w-100 block-flex-wrap block-gap-10">
+          <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.8261 0.409064C17.2812 -0.136527 16.3964 -0.136183 15.8509 0.409064L6.96095 9.29932L3.00977 5.34817C2.46418 4.80258 1.57978 4.80258 1.03419 5.34817C0.488602 5.89376 0.488602 6.77815 1.03419 7.32374L5.97295 12.2625C6.24558 12.5351 6.60306 12.6718 6.96057 12.6718C7.31808 12.6718 7.6759 12.5355 7.94853 12.2625L17.8261 2.3846C18.3717 1.83939 18.3717 0.95462 17.8261 0.409064Z" fill="#3C1F1B"/>
+          </svg>
+          <p class="body-text">Customize with your logo—perfect for resale or building client trust</p>
+        </li>
+      </ul>
+      <a href="https://account.legitgrails.com/" target="_blank" class="rebranding_btn rebranding_btn-main m-0">Try Now</a>
+    </div>
+    <img class="account-slide_slide-image" src="{{ "account-slides_custom-certificate.svg" | asset_url }}">
+  </div>
+  <div class="account-slides_slide account-slides_slide-statement block-flex-wrap block-gap-50 block-flex-center-sb">
+    <div class="account-slides_slide-content block-flex-wrap block-gap-30">
+      <div class="block-flex-wrap block-gap-15">
+        <h3 class="h3-heading-pp w-100">Get an official PDF with detailed findings</h3>
+        <p class="body-text w-100">Expert-signed report for proof and disputes</p>
+      </div>
+      <ul class="account-slides_slide-offers block-flex-wrap block-gap-10 w-100">
+        <li class="w-100 block-flex-wrap block-gap-10">
+          <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.8261 0.409064C17.2812 -0.136527 16.3964 -0.136183 15.8509 0.409064L6.96095 9.29932L3.00977 5.34817C2.46418 4.80258 1.57978 4.80258 1.03419 5.34817C0.488602 5.89376 0.488602 6.77815 1.03419 7.32374L5.97295 12.2625C6.24558 12.5351 6.60306 12.6718 6.96057 12.6718C7.31808 12.6718 7.6759 12.5355 7.94853 12.2625L17.8261 2.3846C18.3717 1.83939 18.3717 0.95462 17.8261 0.409064Z" fill="#3C1F1B"/>
+          </svg>
+          <p class="body-text">Formal document explaining item evaluation</p>
+        </li>
+        <li class="w-100 block-flex-wrap block-gap-10">
+          <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.8261 0.409064C17.2812 -0.136527 16.3964 -0.136183 15.8509 0.409064L6.96095 9.29932L3.00977 5.34817C2.46418 4.80258 1.57978 4.80258 1.03419 5.34817C0.488602 5.89376 0.488602 6.77815 1.03419 7.32374L5.97295 12.2625C6.24558 12.5351 6.60306 12.6718 6.96057 12.6718C7.31808 12.6718 7.6759 12.5355 7.94853 12.2625L17.8261 2.3846C18.3717 1.83939 18.3717 0.95462 17.8261 0.409064Z" fill="#3C1F1B"/>
+          </svg>
+          <p class="body-text">Helps with refunds, disputes, or proving authenticity</p>
+        </li>
+        <li class="w-100 block-flex-wrap block-gap-10">
+          <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.8261 0.409064C17.2812 -0.136527 16.3964 -0.136183 15.8509 0.409064L6.96095 9.29932L3.00977 5.34817C2.46418 4.80258 1.57978 4.80258 1.03419 5.34817C0.488602 5.89376 0.488602 6.77815 1.03419 7.32374L5.97295 12.2625C6.24558 12.5351 6.60306 12.6718 6.96057 12.6718C7.31808 12.6718 7.6759 12.5355 7.94853 12.2625L17.8261 2.3846C18.3717 1.83939 18.3717 0.95462 17.8261 0.409064Z" fill="#3C1F1B"/>
+          </svg>
+          <p class="body-text">Backed by our trusted experts</p>
+        </li>
+      </ul>
+      <a href="https://account.legitgrails.com/" target="_blank" class="rebranding_btn rebranding_btn-main m-0">Try Now</a>
+    </div>
+    <img class="account-slide_slide-image" src="{{ "account-slides_written-statement.svg" | asset_url }}">
+  </div>
+  <div class="account-slides_slide account-slides_slide-labels block-flex-wrap block-gap-50 block-flex-center-sb">
+    <div class="account-slides_slide-content block-flex-wrap block-gap-30">
+      <div class="block-flex-wrap block-gap-15">
+        <h3 class="h3-heading-pp w-100">Print-ready tag with key authentication details</h3>
+        <p class="body-text w-100">Free and easy to use</p>
+      </div>
+      <ul class="account-slides_slide-offers block-flex-wrap block-gap-10 w-100">
+        <li class="w-100 block-flex-wrap block-gap-10">
+          <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.8261 0.409064C17.2812 -0.136527 16.3964 -0.136183 15.8509 0.409064L6.96095 9.29932L3.00977 5.34817C2.46418 4.80258 1.57978 4.80258 1.03419 5.34817C0.488602 5.89376 0.488602 6.77815 1.03419 7.32374L5.97295 12.2625C6.24558 12.5351 6.60306 12.6718 6.96057 12.6718C7.31808 12.6718 7.6759 12.5355 7.94853 12.2625L17.8261 2.3846C18.3717 1.83939 18.3717 0.95462 17.8261 0.409064Z" fill="#3C1F1B"/>
+          </svg>
+          <p class="body-text">Get a label with QR code linking to your authentication</p>
+        </li>
+        <li class="w-100 block-flex-wrap block-gap-10">
+          <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.8261 0.409064C17.2812 -0.136527 16.3964 -0.136183 15.8509 0.409064L6.96095 9.29932L3.00977 5.34817C2.46418 4.80258 1.57978 4.80258 1.03419 5.34817C0.488602 5.89376 0.488602 6.77815 1.03419 7.32374L5.97295 12.2625C6.24558 12.5351 6.60306 12.6718 6.96057 12.6718C7.31808 12.6718 7.6759 12.5355 7.94853 12.2625L17.8261 2.3846C18.3717 1.83939 18.3717 0.95462 17.8261 0.409064Z" fill="#3C1F1B"/>
+          </svg>
+          <p class="body-text">Great for resale, storage, or display</p>
+        </li>
+        <li class="w-100 block-flex-wrap block-gap-10">
+          <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.8261 0.409064C17.2812 -0.136527 16.3964 -0.136183 15.8509 0.409064L6.96095 9.29932L3.00977 5.34817C2.46418 4.80258 1.57978 4.80258 1.03419 5.34817C0.488602 5.89376 0.488602 6.77815 1.03419 7.32374L5.97295 12.2625C6.24558 12.5351 6.60306 12.6718 6.96057 12.6718C7.31808 12.6718 7.6759 12.5355 7.94853 12.2625L17.8261 2.3846C18.3717 1.83939 18.3717 0.95462 17.8261 0.409064Z" fill="#3C1F1B"/>
+          </svg>
+          <p class="body-text">Trusted way to show verified authenticity</p>
+        </li>
+      </ul>
+      <a href="https://account.legitgrails.com/" target="_blank" class="rebranding_btn rebranding_btn-main m-0">Try Now</a>
+    </div>
+    <img class="account-slide_slide-image" src="{{ "account-slides_item-label.svg" | asset_url }}">
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.account-slides_btn').forEach(function(button) {
+    button.addEventListener('click', function() {
+      document.querySelectorAll('.account-slides_btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      this.classList.add('active');
+      const btnName = this.dataset.slide;
+      const targetSlide = '.account-slides_slide-' + btnName;
+      
+      document.querySelectorAll('.account-slides_slide').forEach(slide => {
+        slide.classList.remove('active');
+      });
+      const slide = document.querySelector(targetSlide);
+      if (slide) {
+        slide.classList.add('active');
+      } else {
+        console.warn(`Slide not found for selector: ${targetSlide}`);
+      }
+    });
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Account Slides",
+    "class": "account-slides rebranding-section",
+    "settings": []
+  }
+{% endschema %}

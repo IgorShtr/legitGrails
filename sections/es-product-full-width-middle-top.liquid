@@ -1,0 +1,51 @@
+<section class="back-section grow-your-business" {% if section.settings.image %} style="background-image: url({{ section.settings.image | img_url : 'master' }} )" {% endif %}>
+    <div class="container">
+        <h2 class="back-section-title font-title">
+            {{ section.settings.title }}
+        </h2>
+        <p class="back-section-desc font-description">
+            {{ section.settings.description }}
+        </p>
+        <a href="{{ section.settings.url }}" class="back-section-a main-btn font-title">
+           {{ section.settings.button_text }}
+        </a>
+    </div>
+</section>
+{% schema %}
+{
+  "name": "Full Middle",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

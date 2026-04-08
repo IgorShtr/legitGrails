@@ -1,0 +1,181 @@
+<style>
+.review-section-wrap{display:flex;flex-direction:column;gap:50px}.review-section__title{font-weight:700;font-size:31px;line-height:36px;text-align:left;margin-top:0;color:#161616}.review-title{font-weight:600;font-size:20px;line-height:20px;text-align:left;color:#161616;margin:5px 0}.review-stars{display:flex;flex-direction:row;gap:3px}.review-brand,.review-rate{flex-direction:row;display:flex}.brand-star,.review-stars .review-star{width:30px;height:30px}.review-brand{gap:8px;align-items:center}.review-brand__text{font-weight:700}.review-content{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:15px}.owl-reviews__slide{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;padding:0 5px}.review-section__slides{width:100%;flex-grow:1;padding:0 70px;overflow-x:hidden}.review-section__content{flex-grow:1;display:flex;flex-direction:column;gap:15px;align-items:center;padding:0 30px}.owl-slideshow__reviews-home .owl-stage-outer .owl-stage{align-items:start}.review-rate{flex-wrap:nowrap;gap:3px}.review-star{width:20px;height:20px;background-image:url("{{ 't-star.svg' | asset_url }}")}.full-star{background-color:#00b67a}.empty-star{background-color:#f2f2f2}.review-author{font-weight:600;color:#737373}.reviev-data{display:flex;flex-direction:row;justify-content:space-between;width:100%;align-items:end;gap:30px}.review-time{white-space:nowrap;color:#737373}.review-description{line-height:22px}.review-section__description{text-align:center}.owl-slideshow__reviews-home .owl-nav{position:absolute;top:25%;width:100%}.owl-slideshow__reviews-home.owl-carousel .owl-nav button.owl-next,.owl-slideshow__reviews-home.owl-carousel .owl-nav button.owl-prev,.owl-slideshow__reviews-home.owl-carousel button.owl-dot{font-size:56px;color:#ccc;position:absolute;width:30px}.owl-slideshow__reviews-home.owl-carousel .owl-nav button.owl-next{right:-50px}.owl-slideshow__reviews-home .owl-nav .owl-prev{left:-50px}.review-section{padding:60px 0}@media (min-width:750px){.review-section-wrap{flex-direction:row;gap:10px}.review-section__title{margin-top:28px}.review-section{padding:109px 0}.review-section__slides{width:73%;flex-grow:1;padding:0 70px}}
+@media(max-width:600px){.review-section__title{text-align:center;}}
+  .review-section__description a {
+    color:#CBAD73;
+  }
+</style>
+<section class="review-section">
+    <div class="container">
+        <div class="review-section-wrap">
+            <div class="review-section__content">
+                <div class="review-section__title font-title">
+                    {{ section.settings.title }}
+                </div>
+                <div class="review-stars">
+                    {% for i in (1..5) %}
+                        <div class="review-star full-star"></div>
+                    {% endfor %}
+                </div>
+                <div class="review-section__description font-description">
+                    {{ section.settings.description }}
+                </div>
+                <div class="review-brand">
+                    <div class="brand-star">
+                        <svg viewBox="-23.336 4.573 68.01 64.155" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 10.65 53.175 L 25.25 49.475 L 31.35 68.275 L 10.65 53.175 Z M 44.25 28.875 L 18.55 28.875 L 10.65 4.675 L 2.75 28.875 L -22.95 28.875 L -2.15 43.875 L -10.05 68.075 L 10.75 53.075 L 23.55 43.875 L 44.25 28.875 Z" id="Shape" fill="#00B67A"/>
+                        </svg>
+                    </div>
+                    <div class="review-brand__text font-title">Trustpilot</div>
+                </div>
+            </div>
+            <div class="review-section__slides">
+                <div class="" data-section-id="{{ section.id }}"
+                     data-section-type="slideshow-section">
+                    <div id="slideshow-{{ section.id }}"
+                         class="owl-slideshow"
+                         role="region"
+                         aria-describedby="slideshow-info"
+                         tabindex="-1"
+                         aria-label="slideshow"
+                    >
+                        {%- if section.blocks.size > 0 -%}
+                            <div class="owl-slideshow__reviews-home owl-carousel owl-theme ">
+                                {%- for block in section.blocks -%}
+                                    <div class="owl-reviews__slide slideshow__slide--{{ block.id }}"
+                                         id="Slide{{ forloop.index0 }}"
+                                            {{ block.shopify_attributes }}>
+                                        <div class="review-content">
+                                            <div class="reviev-data">
+                                                <div class="review-rate">
+                                                    {% for i in (1..5) %}
+                                                        {% assign rate = block.settings.rate | plus: 0 %}
+                                                        {% if i <= rate %}
+                                                            <div class="review-star full-star"></div>
+                                                        {% else %}
+                                                            <div class="review-star empty-star"></div>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </div>
+                                                <div class="review-time font-title">
+                                                    {{ block.settings.date }}
+                                                </div>
+                                            </div>
+                                            {%- if block.settings.text != blank -%}
+                                                <p class="review-title font-title">
+                                                    {{ block.settings.title | escape }}
+                                                </p>
+                                                <div class="review-description font-description">
+                                                    {{ block.settings.text }}
+                                                </div>
+                                                <div class="review-author font-title">{{ block.settings.author }}</div>
+                                            {%- endif -%}
+                                        </div>
+                                    </div>
+                                {%- endfor -%}
+                            </div>
+                        {%- endif -%}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% schema %}
+
+{
+  "name": "Reviews",
+  "class": "section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "default": "<p>Description</p>",
+      "label": "Section Description"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Block content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Column",
+          "label": "Revew title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+          "label": "Revew text"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "default": "Jane Doe",
+          "label": "Review author"
+        },
+        {
+          "type": "select",
+          "id": "rate",
+          "options": [
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            }
+          ],
+          "default": "5",
+          "label": "Rate"
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "default": "4 days ago",
+          "label": "Review date"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Review Blocks",
+      "blocks": [
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,28 @@
+<script>
+  $(window).on('load', function () {
+        setInterval(loop, 6000);
+        setTimeout(function () {
+          $('.resalex_hero-illustration-main-label').addClass('animated');
+        }, 3000);
+        setTimeout(function () {
+          $('.resalex_hero-illustration-main-label').addClass('animated-out');
+        }, 5500);
+        setTimeout(function () {
+          $('.resalex_hero-illustration-main-label').removeClass('animated');
+          $('.resalex_hero-illustration-main-label').removeClass('animated-out');
+        }, 6000);
+
+    function loop(){
+        setTimeout(function () {
+          $('.resalex_hero-illustration-main-label').addClass('animated');
+        }, 3000);
+        setTimeout(function () {
+          $('.resalex_hero-illustration-main-label').addClass('animated-out');
+        }, 5500);
+        setTimeout(function () {
+          $('.resalex_hero-illustration-main-label').removeClass('animated');
+          $('.resalex_hero-illustration-main-label').removeClass('animated-out');
+        }, 6000);
+    }
+});
+</script>

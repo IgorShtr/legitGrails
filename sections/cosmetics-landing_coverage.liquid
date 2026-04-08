@@ -1,0 +1,673 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" integrity="sha512-+EoPw+Fiwh6eSeRK7zwIKG2MA8i3rV/DGa3tdttQGgWyatG/SkncT53KHQaS5Jh9MNOT3dmFL0FjTY08And/Cw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+  div.mfp-content {
+    width: 100%!important;
+  }
+  .hidden {
+    display: none;
+  }
+  .cosmetics_coverage {
+    padding: 0;
+  }
+  .cosmetics_coverage-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  .cosmetics_coverage-item {
+    width: calc(50% - 10px);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #D8D9DE;
+    text-align: center;
+    transition: .5s;
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  .cosmetics_coverage-item.animated {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  img.cosmetics_coverage-item-image {
+    height: 149px;
+    margin: 0 auto 5px auto;
+    display: block;
+    width: auto;
+  }
+  p.cosmetics_coverage-item-title {
+    font-family: "PP Fragment";
+    font-size: 40px;
+  }
+a.cosmetics_coverage-popup-btn {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    align-items: center;
+    font-size: 20px;
+    margin: 0 auto;
+    width: max-content;
+    text-decoration: none;
+    line-height: 1;
+    transition: .3s;
+}
+  a.cosmetics_coverage-popup-btn svg path, a.cosmetics_coverage-popup-btn svg circle {
+    transition: .3s;
+  }
+  a.cosmetics_coverage-popup-btn:hover {
+    color: #F24F14;
+  }
+  a.cosmetics_coverage-popup-btn:hover svg path {
+    fill: #F24F14;
+  }
+  a.cosmetics_coverage-popup-btn:hover svg circle {
+    stroke: #F24F14;
+  }
+  p.cosmetics_coverage-desc {
+    margin-top: 15px;
+    font-size: 22px;
+    line-height: 127.8%; 
+  }
+  .cosmetics_coverage-price {
+    text-align: center;
+    width: max-content; 
+    margin: 15px auto 0 auto;
+  }
+  p.cosmetics_coverage-price-desc {
+    font-size: 20px;
+    line-height: 127.8%;
+  }
+p.cosmetics_coverage-price-title {
+    font-size: 32px;
+    line-height: 1.4;
+    font-family: "PP Fragment";
+}
+  a.cosmetics_coverage-btn {
+    margin: 30px auto 0 auto;
+  }
+  div#cosmetics-coverage, div#perfume-coverage {
+      width: max-content!important;
+      margin: auto!important;
+      position: relative!important;
+  }
+.mfp-content div.coverage_form {
+    background: #fff;
+    width: 100% !important;
+    min-width: 800px;
+    max-width: 800px;
+    padding: 20px 30px 50px 30px;
+    height: 80vh;
+    border-radius: 20px !important;
+    margin: auto;
+    overflow: auto;
+    text-align: center;
+    border: none !important;
+    display: block !important;
+}
+  
+  p.coverage_form-title {
+    font-family: "PP Fragment";
+    font-size: 40px;
+}
+.mfp-content div.coverage_form-item {
+    margin-top: 20px !important;
+    display: block !important;
+    border: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    width: auto !important;
+    background: none !important;
+}
+  p.coverage_form-item-title {
+    font-family: "PP Fragment";
+    font-size: 20px;
+}
+  p.coverage_form-item-desc {
+    font-size: 18px;
+    line-height: 120%;
+  }
+  button.mfp-close {
+    font-weight: 100;
+    font-family: "PP Fragment";
+    font-size: 60px;
+    opacity: 1;
+    color: #3C1F1B;
+    right: 10px;
+    top: 6px;
+    margin: 0;
+    padding: 0;
+    transition: .3s;
+}
+  button.mfp-close:hover {
+    color: #F24F14;
+  }
+  @media(max-width: 1250px) {
+    img.cosmetics_coverage-item-image {
+        height: 90px;
+    }
+    p.cosmetics_coverage-item-title {
+        font-size: 26px;
+    }
+    p.cosmetics_coverage-desc {
+        margin-top: 15px;
+        font-size: 20px;
+        line-height: 105%;
+    }
+    p.cosmetics_coverage-price-desc {
+        font-size: 18px;
+        line-height: 1;
+    }
+    a.cosmetics_coverage-popup-btn {
+      font-size: 18px;
+    }
+    p.cosmetics_coverage-price-title {
+        font-size: 26px;
+    }
+    .cosmetics_coverage-item {
+      padding: 20px;
+      width: calc(50% - 7.5px);
+    }
+    a.cosmetics_coverage-popup-btn svg {
+      height: 15px;
+    }
+    a.cosmetics_coverage-btn {
+    margin: 20px auto 0 auto;
+}
+    .cosmetics_coverage-items {
+    gap: 15px;
+    margin-top: 20px;
+}
+    p.coverage_form-title {
+    font-family: "PP Fragment";
+    font-size: 26px;
+}
+  .mfp-content div.coverage_form-item {
+    margin-top: 15px!important;
+}
+  }
+  @media(max-width: 950px) {
+    .mfp-content div.coverage_form {
+    background: #fff;
+    width: 100% !important;
+    min-width: auto;
+    }
+    .cosmetics_coverage-item {
+      width: 100%;
+    }
+    div#cosmetics-coverage, div#perfume-coverage {
+      width: 95%!important;
+    }
+    .coverage_form {
+      width: 95%!important;
+      height: 90vh!important;
+    padding: 20px 20px 30px 20px!important;
+    }
+    .mfp-close-btn-in .mfp-close {
+        right: 15px;
+        font-size: 54px;
+        top: 0px;
+    }
+  }
+  @media(max-width: 750px) {
+    p.coverage_form-title {
+    font-family: "PP Fragment";
+    font-size: 26px;
+}
+  p.coverage_form-item-title {
+    font-family: "PP Fragment";
+    font-size: 18px;
+}
+  p.coverage_form-item-desc {
+    font-size: 16px;
+  }
+        p.cosmetics_coverage-item-title {
+        font-size: 20px;
+    }
+        a.cosmetics_coverage-popup-btn {
+        font-size: 16px;
+          gap: 3px;
+    }
+        a.cosmetics_coverage-popup-btn svg {
+        height: 14px;
+    }
+    p.cosmetics_coverage-desc {
+      font-size: 16px;
+    }
+        p.cosmetics_coverage-price-desc {
+        font-size: 16px;
+        }
+        p.cosmetics_coverage-price-title {
+        font-size: 18px;
+    }
+        img.cosmetics_coverage-item-image {
+        height: 70px;
+    }
+  }
+  @media(max-width: 400px) {
+        p.cosmetics_coverage-item-title {
+        font-size: 18px;
+    }
+    a.cosmetics_coverage-popup-btn {
+        font-size: 14px;
+          gap: 2px;
+    }
+        a.cosmetics_coverage-popup-btn svg {
+        height: 12px;
+    }
+    p.cosmetics_coverage-desc {
+      font-size: 14px;
+    }
+        p.cosmetics_coverage-price-desc {
+        font-size: 14px;
+        }
+        p.cosmetics_coverage-price-title {
+        font-size: 16px;
+    }
+  }
+</style>
+
+<div class="container">
+  <h2 class="cosmetics_section-title cosmetics_coverage-title">Items <span class="pp-accent">we authenticate</span></h2>
+  <div class="cosmetics_coverage-items">
+    <div class="cosmetics_coverage-item cosmetics_coverage-item-1">
+      <img src="{{ 'cosmetics-landing_authenticate-cosmetics.png' | asset_url }}" class="cosmetics_coverage-item-image">
+      <p class="cosmetics_coverage-item-title">
+        Cosmetics
+      </p>
+      <a href="#cosmetics-coverage" class="cosmetics_coverage-popup-btn popup">
+        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9.52897 6.79941C9.15631 6.79941 8.87897 6.72141 8.69697 6.56541C8.51497 6.40075 8.42397 6.16241 8.42397 5.85041C8.42397 5.52975 8.51497 5.29141 8.69697 5.13541C8.87897 4.97075 9.15631 4.88841 9.52897 4.88841C9.90164 4.88841 10.179 4.97075 10.361 5.13541C10.543 5.29141 10.634 5.52975 10.634 5.85041C10.634 6.16241 10.543 6.40075 10.361 6.56541C10.179 6.72141 9.90164 6.79941 9.52897 6.79941ZM10.413 7.73541V14.2354H8.63197V7.73541H10.413Z" fill="#3C1F1B"/>
+        <circle cx="9.5" cy="9.50012" r="8.5" stroke="#3C1F1B" stroke-width="2"/>
+        </svg>
+        Brand coverage
+      </a>
+      <p class="cosmetics_coverage-desc">
+        Skincare and makeup from top luxury brands.
+      </p>
+      <div class="cosmetics_coverage-price">
+        <p class="cosmetics_coverage-price-desc">
+          Starts from
+        </p>
+        <p class="cosmetics_coverage-price-title">
+          4 USD
+        </p>
+      </div>
+    </div>
+    <div class="cosmetics_coverage-item cosmetics_coverage-item-2">
+      <img src="{{ 'cosmetics-landing_authenticate-perfumes.png' | asset_url }}" class="cosmetics_coverage-item-image">
+      <p class="cosmetics_coverage-item-title">
+        Perfumes
+      </p>
+      <a href="#perfume-coverage" class="cosmetics_coverage-popup-btn popup">
+        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9.52897 6.79941C9.15631 6.79941 8.87897 6.72141 8.69697 6.56541C8.51497 6.40075 8.42397 6.16241 8.42397 5.85041C8.42397 5.52975 8.51497 5.29141 8.69697 5.13541C8.87897 4.97075 9.15631 4.88841 9.52897 4.88841C9.90164 4.88841 10.179 4.97075 10.361 5.13541C10.543 5.29141 10.634 5.52975 10.634 5.85041C10.634 6.16241 10.543 6.40075 10.361 6.56541C10.179 6.72141 9.90164 6.79941 9.52897 6.79941ZM10.413 7.73541V14.2354H8.63197V7.73541H10.413Z" fill="#3C1F1B"/>
+        <circle cx="9.5" cy="9.50012" r="8.5" stroke="#3C1F1B" stroke-width="2"/>
+        </svg>
+        Brand coverage
+      </a>
+      <p class="cosmetics_coverage-desc">
+        High-end fragrances, niche and designer perfumes.
+      </p>
+      <div class="cosmetics_coverage-price">
+        <p class="cosmetics_coverage-price-desc">
+          Starts from
+        </p>
+        <p class="cosmetics_coverage-price-title">
+          4 USD
+        </p>
+      </div>
+    </div>
+  </div>
+  <a href="#product-box_section" class="cosmetics-btn cosmetics-btn-primary cosmetics_coverage-btn">
+      Check my beauty item now
+  </a>
+</div>
+
+
+<div class="hidden">
+         <div id="cosmetics-coverage">
+  <div class="coverage_form">
+    <p class="coverage_form-title">Cosmetics</p>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">3</p>
+      <p class="coverage_form-item-desc">3CE</p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">1</p>
+      <p class="coverage_form-item-desc">16BRAND, 23YEARS OLD, 4711 Acqua Colonia</p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">A</p>
+      <p class="coverage_form-item-desc">
+        Abib, Aesop, AHC, ALBION, Anna Sui, Avene
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">B</p>
+      <p class="coverage_form-item-desc">
+        Banila Co, belif, BIODERMA, Biotherm, Bobbi Brown
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">C</p>
+      <p class="coverage_form-item-desc">
+        C.P. Company, CeraVe, Cerruti 1881, Cetaphil, Chanel,
+        Chantecaille, Charlotte Tilbury, Christian Louboutin, Clarins,
+        Clarisonic, Cle de Peau Beaute, Clinique, CLIO, Cosme Decorte,
+        COSRX, Curel
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">D</p>
+      <p class="coverage_form-item-desc">
+        davidoff, Dermafirm, Dermalogica, Dr.Jart+, Dr.Wu, Drunk Elephant
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">E</p>
+      <p class="coverage_form-item-desc">
+        Elixir, Elizabeth Arden, EltaMD, Embryolisse, Estée Lauder,
+        Etude, Eucerin, Excel
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">F</p>
+      <p class="coverage_form-item-desc">
+        FANCL, FILORGA, Florasis, Foreo, Fresh
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">G</p>
+      <p class="coverage_form-item-desc">
+        Garnier, Giorgio Armani, Givenchy, GLAMGLOW, Goop, Gucci, Guerlain
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">H</p>
+      <p class="coverage_form-item-desc">
+        HABA, Hada Labo, Hair Rituel by Sisley, Hanskin, haruharu wonder,
+        Haus Labs, heimish, Helena Rubinstein, Herborist, Hermès,
+        Honey-Glossy, Huxley
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">J</p>
+      <p class="coverage_form-item-desc">
+        Jill Stuart, Jo Malone London, JUNG SAEM MOOL, Jurlique
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">K</p>
+      <p class="coverage_form-item-desc">
+        Kanebo, Kao, Kat Burki, Kat Von D, Kate Tokyo, Kérastase,
+        Kiehl's, KIKO Milano, Kimtrue, Kiss Me, Kosas
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">L</p>
+      <p class="coverage_form-item-desc">
+        L'Occitane, L'Oréal, La Mer, La Roche-Posay, Labiotte, La'dor,
+        Lalique, Laneige, Lavido, Le Labo, Lilybyred, Lunasol
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">M</p>
+      <p class="coverage_form-item-desc">
+        Ma:nyo, MAC, Maison Francis Kurkdjian, Maison Margiela,
+        Make P:rem, Make Up For Ever, Malin+Goetz, Mama&Kids, Mamonde,
+        Marubi, Matsuyama, Max Factor, Maybelline, Mediheal, Medspa,
+        Memo, Merzy, Miguhara, Milbon, Miller Harris, Miriam Quevedo,
+        Missha, Mistine, Mixim Potion, Molton Brown, Moonshot
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">N</p>
+      <p class="coverage_form-item-desc">
+        NACIFIC, NAMING., Narciso Rodriguez, NARS, Naruko,
+        Natura Bissé, Nature Republic, Neutrogena, NIVEA, No7,
+        Numbuzin, NUXE
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">O</p>
+      <p class="coverage_form-item-desc">
+        Officine Universelle Buly 1803, One Thing, Onsensou, ORBIS,
+        Oribe, Origins, OUAI
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">P</p>
+      <p class="coverage_form-item-desc">
+        Panier des Sens, Pantene, Pat McGrath Labs, Paula's Choice, PDC,
+        Penhaligon's, Perfect Diary, PeriPera, Peter Thomas Roth, Philip B,
+        Philosophy, Physiogel, Pink Bear, PMPM, Primera, PROYA, Purito
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">R</p>
+      <p class="coverage_form-item-desc">
+        RAIP, Rancourt, Redken, REN Clean Skincare, Revive, Rom&nd, Round Lab
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">S</p>
+      <p class="coverage_form-item-desc">
+        Saint Laurent, Senka, Sensai, Shangpree, Shiseido, Shu Uemura,
+        Sisley, SK-II, SkinCeuticals, Skinfood, SNP, Sofina, Some By Mi,
+        SU:M37, Sulwhasoo, Suqqu
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">T</p>
+      <p class="coverage_form-item-desc">
+        Thank You Farmer, The Face Shop, The History of Whoo, The Ordinary,
+        The Saem, The Whoo, TIRTIR, Tom Ford, TonyMoly,
+        Too Cool For School, Treechada, Tula Skincare, Tunemakers
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">U</p>
+      <p class="coverage_form-item-desc">
+        Unny Club, Urban Decay
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">V</p>
+      <p class="coverage_form-item-desc">
+        Valmont, Veol, Versed, Vichy, VIDIVICI, Village 11 Factory,
+        VT Cosmetics
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">W</p>
+      <p class="coverage_form-item-desc">
+        W.Dressroom, W.Lab, Wakemake, wei, Wella, Wellage, WIS,
+        Wonder Bath, Wonjin Effect
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">Y</p>
+      <p class="coverage_form-item-desc">
+        Yadah, YANAGIYA HONTEN, Yurica, Yves Rocher, Yves Saint Laurent
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">Z</p>
+      <p class="coverage_form-item-desc">
+        ZA, Zeesea, Zelens, Zenn.Th
+      </p>
+    </div>
+
+  </div>
+</div>
+
+        </div>
+
+          <div class="hidden">
+          <div id="perfume-coverage">
+  <div class="coverage_form">
+    <p class="coverage_form-title">Perfumes</p>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">A</p>
+      <p class="coverage_form-item-desc">
+        Anna Sui, Armani, Atelier Cologne, Aesop
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">B</p>
+      <p class="coverage_form-item-desc">
+        Burberry, Bvlgari, Byredo, Bobbi Brown, Biotherm
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">C</p>
+      <p class="coverage_form-item-desc">
+        Chanel, Chloé, Creed, Clarins, Cerruti 1881,
+        Chantecaille
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">D</p>
+      <p class="coverage_form-item-desc">
+        Dior, Diptyque, davidoff
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">F</p>
+      <p class="coverage_form-item-desc">
+        Frederic Malle, Fresh, FILORGA
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">G</p>
+      <p class="coverage_form-item-desc">
+        Givenchy, Gucci, Guerlain, Giorgio Armani, Goop
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">H</p>
+      <p class="coverage_form-item-desc">
+        Hermès, Helena Rubinstein
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">J</p>
+      <p class="coverage_form-item-desc">
+        Jo Malone London, Jill Stuart, Jurlique
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">L</p>
+      <p class="coverage_form-item-desc">
+        Lancôme, Lalique, Le Labo, Loewe, Louis Vuitton
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">M</p>
+      <p class="coverage_form-item-desc">
+        Maison Francis Kurkdjian, Maison Margiela, Memo, Miller Harris,
+        Malin+Goetz, Molton Brown
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">N</p>
+      <p class="coverage_form-item-desc">
+        Narciso Rodriguez
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">O</p>
+      <p class="coverage_form-item-desc">
+        Officine Universelle Buly 1803, Oribe 
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">P</p>
+      <p class="coverage_form-item-desc">
+        Penhaligon’s, Prada, Philosophy, Panier des Sens
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">S</p>
+      <p class="coverage_form-item-desc">
+        Serge Lutens, Shiseido, Sisley
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">T</p>
+      <p class="coverage_form-item-desc">
+        Tiffany & Co., Tom Ford, The Body Shop
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">V</p>
+      <p class="coverage_form-item-desc">
+        Versace, Valmont
+      </p>
+    </div>
+
+    <div class="coverage_form-item">
+      <p class="coverage_form-item-title">Y</p>
+      <p class="coverage_form-item-desc">
+        Yves Saint Laurent
+      </p>
+    </div>
+
+  </div>
+</div>
+
+        </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $('.popup').magnificPopup();
+</script>
+{% schema %}
+  {
+    "name": "Cosmetics Coverage",
+    "class": "cosmetics_coverage",
+    "settings": []
+  }
+{% endschema %}

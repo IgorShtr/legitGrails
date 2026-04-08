@@ -1,0 +1,93 @@
+<style>
+  .article_column-image {
+    width: 100%;
+    height: 320px;
+    border-radius: 11px;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+  .article_column {
+      height: max-content;
+  }
+  .article_column-third {
+    width: calc(33.3333334% - 33.3333334px);
+  }
+  @media(max-width: 1450px) {
+    .article_column-third {
+      width: calc(33.3333334% - 20px);
+    }
+    .article_columns-wrapp {
+      gap: 30px;
+    }
+  }
+  @media(max-width: 1250px) {
+    .article_column-third {
+        width: calc(50% - 15px);
+    }
+  }
+  @media(max-width: 750px) {
+    .article_column-third {
+        width: 100%;
+        gap: 30px;
+    }
+    .article_columns-wrapp {
+        gap: 40px;
+    }
+  }
+  @media(max-width: 450px) {
+    .article_column-image {
+      height: 250px;
+    }
+  }
+</style>
+
+<div class="rebranding_container block-flex-wrap block-gap-50">
+  <div class="rebranding-section-title">
+    <h2 class="h2-heading-ss">
+      Signs your 
+      <span class="h2-heading-pp">
+        Dior isn’t authentic
+      </span>
+    </h2>
+  </div>
+  <div class="article_columns-wrapp block-flex-wrap block-gap-50 block-flex-start-center">
+    <div class="article_column article_column-third block-flex-wrap block-gap-30">
+      <img class="article_column-image" src="{{ "dior_sign-1.webp" | asset_url }}" alt="Authentic Dior bag interior label and date code">
+      <div class="article_column-text block-flex-wrap block-gap-15 block-flex-center-center tac">
+        <p class="caption w-100">Sign 1</p>
+        <h3 class="article_column-title h3-heading-pp w-100">Interior Label & Date Code</h3>
+        <p class="article_column-desc body-text taj w-100">
+          Authentic Dior bags have a leather tag inside, usually near the inner zip pocket, embossed with <strong>“Christian Dior PARIS made in Italy”</strong> or <strong>“made in Spain”.</strong>Counterfeit bags often show misspellings or font inconsistencies. Dior also uses date codes—letter and number combinations that show where and when the bag was made. For example, <strong>“01-BO-0129”</strong> means February 2019 in Italy. While helpful for a <strong>Christian Dior authenticity check</strong>, these codes can be copied. It's best to pair them with a <strong>Dior serial number check online</strong> or verify using a <strong>Christian Dior authenticity card</strong>, if available.
+        </p>
+      </div>
+    </div>
+    <div class="article_column article_column-third block-flex-wrap block-gap-30">
+      <img class="article_column-image" src="{{ "dior_sign-2.webp" | asset_url }}" alt="Authentic Dior bag stitching quality and patterns">
+      <div class="article_column-text block-flex-wrap block-gap-15 block-flex-center-center tac">
+        <p class="caption w-100">Sign 2</p>
+        <h3 class="article_column-title h3-heading-pp w-100">Stitching Quality & Patterns</h3>
+        <p class="article_column-desc body-text taj w-100">
+          When examining a Dior bag, stitching quality is a key indicator of authenticity. Real Dior bags have <strong>straight, even stitches</strong> using thread that matches the leather. Loose threads or uneven stitching are common signs of counterfeits. Iconic features like <strong>Cannage quilting</strong> should be perfectly aligned across seams. Mismatched or crooked quilting often signals a fake. These details are important in any <strong>Dior bag authentication</strong> or <strong>vintage Dior authenticity check</strong>, especially for pre-owned pieces.
+        </p>
+      </div>
+    </div>
+    <div class="article_column article_column-third block-flex-wrap block-gap-30">
+      <img class="article_column-image" src="{{ "dior_sign-3.webp" | asset_url }}" alt="Authentic Dior bag hardware details">
+      <div class="article_column-text block-flex-wrap block-gap-15 block-flex-center-center tac">
+        <p class="caption w-100">Sign 3</p>
+        <h3 class="article_column-title h3-heading-pp w-100">Hardware details</h3>
+        <p class="article_column-desc body-text taj w-100">
+          Dior hardware, such as zippers, clasps, and charms, is crafted from high-quality metal and features precise engravings. A clear <strong>“CD” engraving</strong> on clasps or zipper pulls is a reliable sign of authenticity. The hardware should feel solid and add weight to the bag. In contrast, fake hardware is often lightweight, dull, or lacks clean engraving. For added confidence, check that hardware details align with the <strong>authentic Dior serial number check</strong> or match the info on a <strong>real Dior authenticity card</strong>.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Article Three columns",
+    "class": "article_columns article_three-columns",
+    "settings": []
+  }
+{% endschema %}

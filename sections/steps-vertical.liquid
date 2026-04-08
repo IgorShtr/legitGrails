@@ -1,0 +1,87 @@
+<style>
+   .steps-vertical__description,.steps-vertical__title{text-align:center;font-weight:700}.steps-vertical__content{display:flex;flex-direction:column;gap:20px}.steps-vertical.indent{gap:27px}.steps-vertical_item{display:flex;flex-direction:row;gap:25px;align-items:center}.steps-vertical__image{min-width:100px}.steps-vertical__image img{height:80px;width:auto}.steps-vertical{display:flex;flex-direction:column;gap:40px;padding:35px 0;line-height:20px;height:100%}.steps-vertical__title{font-size:22px}.steps-vertical__text-column{display:flex;flex-direction:column;gap:5px}.steps-vertical__caption{font-size:17px;font-weight:700}#shopify-section-product-form-blog{display:flex;justify-content:center}@media (min-width:1024px){.steps-vertical__title{font-size:28px}.steps-vertical__description{font-size:19px;letter-spacing:-.2px}.steps-vertical__caption{font-size:26px}.steps-vertical__text{font-size:18px;line-height:25px}.steps-vertical__image{display:flex;align-items:center;justify-content:center;min-width:180px}.steps-vertical__image img{width:auto;height:138px}.steps-vertical__content{gap:38px}}
+</style>
+<div class="steps-vertical indent">
+    {% unless section.settings.title == blank %}
+        <div class="steps-vertical__title font-title">{{ section.settings.title }}</div>
+    {% endunless %}
+    <div class="steps-vertical__content">
+        {%- for block in section.blocks -%}
+            <div class="steps-vertical_item">
+                <div class="steps-vertical__image">
+                    <img src="{{ block.settings.image | img_url: 'master' }}" alt="form image"
+                         width="50">
+                </div>
+                <div class="steps-vertical__text-column">
+                    <div class="steps-vertical__caption font-title"> {{ block.settings.title }}</div>
+                    <div class="steps-vertical__text font-description">
+                        {{ block.settings.text }}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% if section.settings.description != blank %}
+        <div class="steps-vertical__description font-description">{{ section.settings.description }}</div>
+    {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Steps vertical",
+  "class": "section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "default": "<p>Description</p>",
+      "label": "Section Description"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Block content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+          "label": "Text with checkmarks"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Steps vertical",
+      "blocks": [
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,146 @@
+<style>
+    .categories_steps-line-wrapp {
+        width: max-content;
+        position: relative;
+        gap: 415px;
+    }
+    span.categories_steps-line {
+        display: block;
+        position: absolute;
+        left: 15px;
+        width: calc(100% - 30px);
+        top: 50%;
+        height: 3px;
+        background: #D8D9DE;
+        margin-top: -1.5px;
+        z-index: 0;
+    }
+    span.categories_steps-line-item {
+       position: relative;
+       z-index: 1; 
+       height: 54px;
+       width: 54px;
+       border-radius: 50%;
+        border: 1px solid #D8D9DE;
+        background: linear-gradient(96deg, rgba(230, 231, 235, 0.30) 23.53%, rgba(216, 217, 222, 0.30) 75.95%);
+        box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.10);
+        backdrop-filter: blur(20px);
+    }
+    span.categories_steps-line-item::before {
+        content:'';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        background: #E8E8E8;
+        height: 36px;
+        width: 36px;
+        margin-top: -18px;
+        margin-left: -18px;
+    }
+    span.categories_steps-line-item::after {
+        content:'';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        background: #D8D9DE;
+        height: 18px;
+        width: 18px;
+        margin-top: -9px;
+        margin-left: -9px;
+    }
+    .categories_steps-item {
+        padding: 20px 20px 0 20px;
+        width: calc(33.33334% - 13.333333px);
+    }
+    .categories_steps-item img {
+        width: 90%;
+        height: auto;
+        border-radius: 5px;
+        border: 1px solid rgba(60, 31, 27, 0.10);
+        overflow: hidden;
+    }
+    .categories_steps-item p.caption {
+        display: none;
+    }
+    .categories_steps-item img {
+        width: 100%;
+    }
+    @media(max-width: 1450px) {
+        .categories_steps-line-wrapp {
+            gap: 335px;
+        }
+    }
+    @media(max-width: 1250px) {
+        .categories_steps-line-wrapp {
+            display: none;
+        }
+        .categories_steps-item {
+            padding: 0 0 30px 0;
+            width: calc(50% - 10px);
+        }
+        .categories_steps-item p.caption {
+            display: block;
+        }
+    }
+    @media(max-width: 750px) {
+        .categories_steps-item {
+            width: 100%;
+        }
+    }
+</style>
+
+<div class="rebranding_container block-flex-wrap block-gap-50 block-flex-center-center">
+    <h2 class="h2-heading-ss tac">
+        Get <span class="h2-heading-pp">accurate authentication</span><br>for luxury perfumes in 3 simple steps
+    </h2>
+    <div class="categories_steps-wrapp block-flex-wrap block-flex-center-center">
+        <div class="categories_steps-line-wrapp block-flex-wrap block-flex-center-center">
+            <span class="categories_steps-line"></span>
+            <span class="categories_steps-line-item categories_steps-line-item-1"></span>
+            <span class="categories_steps-line-item categories_steps-line-item-2"></span>
+            <span class="categories_steps-line-item categories_steps-line-item-3"></span>
+        </div>
+        <div class="categories_steps-items block-flex-wrap block-gap-20 block-flex-start-center">
+            <div class="categories_steps-item block-flex-wrap block-flex-start-center block-gap-20">
+                <div class="w-100 block-flex-wrap block-flex-start-center block-gap-15">
+                    <p class="caption w-100">Step 1</p>
+                    <h3 class="h3-heading-ss tac">
+                        <span class="h3-heading-pp">Upload photos</span> of your packaging and details
+                    </h3>
+                </div>
+                <img src="{{ "categories_perfumes-steps-1.webp" | asset_url }}">
+            </div>
+            <div class="categories_steps-item block-flex-wrap block-flex-start-center block-gap-20">
+                <div class="w-100 block-flex-wrap block-flex-start-center block-gap-15">
+                    <p class="caption w-100">Step 2</p>
+                    <h3 class="h3-heading-ss tac">
+                        Experts and AI <span class="h3-heading-pp">verify the authenticity</span> of your item
+                    </h3>
+                </div>
+                <img src="{{ "categories_perfumes-steps-2.webp" | asset_url }}">
+            </div>
+            <div class="categories_steps-item block-flex-wrap block-flex-start-center block-gap-20">
+                <div class="w-100 block-flex-wrap block-flex-start-center block-gap-15">
+                    <p class="caption w-100">Step 3</p>
+                    <h3 class="h3-heading-ss tac">
+                        <span class="h3-heading-pp">Receive your results</span> in 30 minutes or less
+                    </h3>
+                </div>
+                <img src="{{ "categories_perfumes-steps-3.webp" | asset_url }}">
+            </div>
+        </div>
+    </div>
+    <a href="#product_boxes" class="rebranding_btn rebranding_btn-main">Check my beauty item now</a>
+</div>
+
+{% schema %}
+  {
+    "name": "Categories Steps",
+    "class": "categories_steps rebranding-section",
+    "settings": []
+  }
+{% endschema %}

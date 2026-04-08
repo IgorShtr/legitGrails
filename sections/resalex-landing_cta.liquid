@@ -1,0 +1,67 @@
+<style>
+  .resalex_cta-wrapp {
+    border-radius: 18px;
+    border: 1px solid #DADADA;
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+    opacity: 1;
+    transform: translateY(0px);
+    transition: .5s
+  }
+  .resalex_cta-btns {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 15px;
+    margin-top: 30px;
+  }
+  p.resalex_cta-desc {
+    margin-top: 15px;
+  }
+  .resalex_cta-btn {
+    margin: 0;
+  }
+  @media(max-width: 1250px) {
+    .resalex_cta-wrapp {
+      padding: 20px;
+    }
+  }
+  @media(max-width: 750px) {
+    .resalex_cta-wrapp {
+      padding: 15px;
+    }
+    .resalex_cta-btns {
+      gap: 10px;
+    }
+  }
+</style>
+
+<div class="rebranding_container">
+  <div class="resalex_cta-wrapp">
+    <h2 class="resalex_cta-title resalex_section-title h2-heading-ss">
+        Ready to <span class="h2-heading-pp">Elevate Your Marketplace?</span>
+    </h2>
+    <p class="resalex_cta-desc resalex-desc body-text">
+        Reach out for a custom demo or more details 
+    </p>
+    <div class="resalex_cta-btns">
+      <a href="mailto:nchen@legitgrails.com?subject=ResaleX&body=Hi%20there%2C%0AI%20hope%20you%27re%20doing%20well%21%20I%27d%20love%20to%20schedule%20a%20demo%20of%20ResaleX%20to%20explore%20how%20it%20can%20benefit%20my%20business%2E%20Please%20let%20me%20know%20a%20convenient%20time%20that%20works%20for%20you%2E" class="resalex_cta-btn resalex-btn resalex-btn-secondary rebranding_btn">
+        Contact sales
+      </a>
+      <a href="https://playground.resale-x.com/" target="_blank" class="resalex_cta-btn resalex-btn resalex-btn-primary rebranding_btn rebranding_btn-main">
+        Try for free
+      </a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Resalex CTA",
+    "class": "resalex_cta rebranding-wider-section-bottom",
+    "settings": []
+  }
+{% endschema %}

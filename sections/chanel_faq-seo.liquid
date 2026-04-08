@@ -1,0 +1,395 @@
+<style>
+  .product_faq {
+    background: #3C1F1B;
+  }
+  .product_faq-wrapper {
+    justify-content: center;
+    gap: 50px;
+  }
+  .product_faq-text {
+    width: 515px;
+  }
+  .product_faq-text h2, .product_faq-text p {
+    color: #F2F2EA;
+  }
+  .product_faq-text p {
+    margin-top: 10px;
+  }
+  .product_faq-items {
+    width: calc(100% - 565px);
+    gap: 10px;
+  }
+  .product_faq-item {
+    border-radius: 12px;
+    background: #fff;
+    transition: 0.3s;
+    width: 100%;
+    padding: 4px 40px;
+  }
+  .product_faq-item:hover {
+    cursor: pointer;
+  }
+  .product_faq-item-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0px;
+  }
+  .product_faq-item-title p {
+    max-width: calc(100% - 38px);
+  }
+  a.product_faq-item-cross {
+    display: block;
+    height: max-content;
+  }
+  .product_faq-item-title a svg {
+      height: 28px;
+      width: auto;
+      transition: .3s;
+      transform: rotate(0deg);
+    display: block;
+  }
+  .product_faq-item-title a svg path {
+    transition: .3s;
+  }
+  .product_faq-item.active .product_faq-item-title a svg {
+      transform: rotate(45deg);
+  }
+  .product_faq-item.active .product_faq-item-title a svg path {
+    stroke: #F24F14;
+  }
+  .product_faq-item-text {
+    height: max-content;
+    max-height: 0px;
+    overflow: hidden;
+    width: 100%;
+    transition: .5s;
+    position: relative;
+  }
+  .product_faq-item-text a {
+    text-decoration: underline;
+    transition: .3s;
+  }
+  .product_faq-item-text a:hover {
+    opacity: .85;
+  }
+  .product_faq-item-text a:active {
+    opacity: .7;
+  }
+  .product_faq-item.active .product_faq-item-text {
+    padding-top: 21px;
+    padding-bottom: 16px;
+    max-height: 320px;
+  }
+  .product_faq-item-text::before {
+    content:'';
+    display: block;
+    height: 100%;
+    max-height: 0px;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    background: rgba(60, 31, 27, 0.30);
+    transition: .5s;
+  }
+  .product_faq-item-text::before {
+    max-height: 1px;
+  }
+  .product_faq-desc {
+    margin-top: 15px;
+  }
+  .product_faq-btns {
+    margin-top: 30px;
+    justify-content: center;
+  }
+  .product_faq-btns a {
+    margin: 0;
+  }
+  .product_faq-a {
+    text-decoration: underline;
+    color: #fff;
+  }
+  .product_faq-btns-desktop-hidden {
+    display: none;
+  }
+  @media(max-width: 1450px) {
+    .product_faq-item {
+        padding: 4px 30px;
+    }
+  }
+  @media(max-width: 1250px) {
+    .product_faq-btns-mobile-hidden {
+      display: none;
+    }
+    .product_faq-btns-desktop-hidden {
+      display: flex!important;
+    }
+    .product_faq-items {
+      width: 100%;
+    }
+    .product_faq-btns {
+      margin-top: 0;
+      width: 100%;
+    }
+    .product_faq-text {
+        width: 100%;
+        text-align: center;
+    }
+    .product_faq-wrapper {
+      gap: 40px;
+    }
+  }
+  @media(max-width: 750px) {
+    .product_faq {
+      padding: 60px 0;
+    }
+    .product_faq-wrapper a.rebranding_btn {
+      margin: 0px auto;
+    }
+    .product_faq-item-title {
+      padding: 15px 0;
+    }
+    .product_faq-item {
+        padding: 0px 20px;
+    }
+    .product_faq-item.active .product_faq-item-text {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    }
+    .product_faq-item-title a svg {
+      height: 24px;
+    }
+  }
+</style>
+
+<div class="container rebranding_container">
+  <div class="product_faq-wrapper block-flex-wrap">
+    <div class="product_faq-text">
+      <h2 class="h2-heading-ss">
+        Featured
+        <span class="h2-heading-pp">questions</span>
+      </h2>
+      <p class="product_faq-desc body-text">
+        Have more questions? Visit our <a href="https://legitgrails.frontkb.com/en" target="_blank" class="product_faq-a standart-hover">Help Center</a>
+      </p>
+      <div class="product_faq-btns block-flex-wrap block-gap-15 product_faq-btns-mobile-hidden">
+        <a href="https://legitgrails.frontkb.com/en" target="_blank" class="rebranding_btn">
+        Help Center
+      </a>
+        <a href="#product_boxes" class="rebranding_btn rebranding_btn-main product_authenticate-now-btn-track">
+        Authenticate now
+      </a>
+      </div>
+    </div>
+    <div class="product_faq-items block-flex-wrap">
+      <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">How Does LegitGrails’ Chanel Authentication Service Operate?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            LegitGrails uses a Hybrid Authentication process, combining artificial intelligence with human expertise to verify the authenticity of your Chanel items. The process starts with you uploading detailed photos of your item. 
+            <br><br>
+            Our AI system analyzes these images against an extensive database of Chanel products and design details. After the initial scan, our experts carefully examine the images, using their deep knowledge of Chanel’s craftsmanship and materials to confirm authenticity. If additional information is needed, we’ll reach out to ensure a smooth and accurate verification process.
+          </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">Who Owns Chanel?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            Chanel is privately owned by the Wertheimer family. Brothers Alain and Gérard Wertheimer, grandsons of Pierre Wertheimer – who co-founded the company with Coco Chanel in 1924 – currently oversee the brand. Alain serves as the chairman, while Gérard manages the watch division.
+          </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">What Is the Price of a Chanel Bag?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            Chanel bag prices vary depending on the model, materials, and collection. Classic designs like the Chanel 2.55 or Classic Flap Bag typically start at several thousand dollars and can increase significantly for limited editions or exotic materials. For the most accurate pricing, consult Chanel’s official website or visit an authorized boutique.
+          </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">What Does the Chanel Brand Stand For?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            Chanel represents timeless elegance, luxury, and innovation. Founded by Gabrielle “Coco” Chanel in 1910, the brand redefined fashion by introducing designs that combined comfort with sophistication, freeing women from the restrictive clothing of the early 20th century. Chanel’s dedication to quality and exclusivity has made it a symbol of refined taste and enduring style.
+          </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">What Makes Chanel Unique?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            Chanel’s uniqueness lies in its heritage and design influence. With over a century of history, the brand has consistently set fashion trends. Coco Chanel’s innovative designs, such as the little black dress and Chanel No. 5 perfume, remain timeless icons. Chanel maintains exclusivity by carefully controlling distribution and avoiding mass production, ensuring its products remain prestigious and highly sought after.
+          </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">Which Brands Are Part of Chanel’s Portfolio?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+           Chanel’s portfolio extends beyond fashion into various luxury segments. Its fashion offerings include haute couture, ready-to-wear, and accessories. In fragrances and beauty, Chanel No. 5 remains a hallmark of the brand’s identity, alongside a range of skincare and makeup products. Chanel also produces high-end watches and fine jewelry. The brand invests in preserving traditional craftsmanship through Paraffection, which manages specialist workshops like Lesage for embroidery and Massaro for shoemaking.
+          </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">Who Holds a 90% Ownership Stake in Chanel?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            Chanel is fully owned by the Wertheimer brothers, Alain and Gérard, who inherited the company from their grandfather, Pierre Wertheimer. No individual or entity holds a 90% ownership stake – Chanel remains entirely under the control of the Wertheimer family.
+          </p>
+        </div>
+      </div>
+    </div>
+      <div class="product_faq-btns block-flex-wrap block-gap-15 product_faq-btns-desktop-hidden">
+        <a href="https://legitgrails.frontkb.com/en" target="_blank" class="rebranding_btn">
+        Help Center
+      </a>
+        <a href="#product_boxes" class="rebranding_btn rebranding_btn-main product_authenticate-now-btn-track">
+        Authenticate now
+      </a>
+      </div>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How Does LegitGrails’ Chanel Authentication Service Operate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LegitGrails uses a Hybrid Authentication process, combining artificial intelligence with human expertise to verify the authenticity of your Chanel items. The process starts with you uploading detailed photos of your item. Our AI system analyzes these images against an extensive database of Chanel products and design details. After the initial scan, our experts carefully examine the images, using their deep knowledge of Chanel’s craftsmanship and materials to confirm authenticity. If additional information is needed, we’ll reach out to ensure a smooth and accurate verification process."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who Owns Chanel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Chanel is privately owned by the Wertheimer family. Brothers Alain and Gérard Wertheimer, grandsons of Pierre Wertheimer – who co-founded the company with Coco Chanel in 1924 – currently oversee the brand. Alain serves as the chairman, while Gérard manages the watch division."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What Is the Price of a Chanel Bag?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Chanel bag prices vary depending on the model, materials, and collection. Classic designs like the Chanel 2.55 or Classic Flap Bag typically start at several thousand dollars and can increase significantly for limited editions or exotic materials. For the most accurate pricing, consult Chanel’s official website or visit an authorized boutique."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What Does the Chanel Brand Stand For?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Chanel represents timeless elegance, luxury, and innovation. Founded by Gabrielle “Coco” Chanel in 1910, the brand redefined fashion by introducing designs that combined comfort with sophistication, freeing women from the restrictive clothing of the early 20th century. Chanel’s dedication to quality and exclusivity has made it a symbol of refined taste and enduring style."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What Makes Chanel Unique?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Chanel’s uniqueness lies in its heritage and design influence. With over a century of history, the brand has consistently set fashion trends. Coco Chanel’s innovative designs, such as the little black dress and Chanel No. 5 perfume, remain timeless icons. Chanel maintains exclusivity by carefully controlling distribution and avoiding mass production, ensuring its products remain prestigious and highly sought after."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which Brands Are Part of Chanel’s Portfolio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Chanel’s portfolio extends beyond fashion into various luxury segments. Its fashion offerings include haute couture, ready-to-wear, and accessories. In fragrances and beauty, Chanel No. 5 remains a hallmark of the brand’s identity, alongside a range of skincare and makeup products. Chanel also produces high-end watches and fine jewelry. The brand invests in preserving traditional craftsmanship through Paraffection, which manages specialist workshops like Lesage for embroidery and Massaro for shoemaking."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who Holds a 90% Ownership Stake in Chanel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Chanel is fully owned by the Wertheimer brothers, Alain and Gérard, who inherited the company from their grandfather, Pierre Wertheimer. No individual or entity holds a 90% ownership stake – Chanel remains entirely under the control of the Wertheimer family."
+      }
+    }
+  ]
+}
+</script>
+
+<script>
+  $( ".product_faq-item" ).on( "click", function() {
+    if ($(this).hasClass("active")) {
+      $(".product_faq-item").removeClass("active");
+    } else {
+      $(".product_faq-item").removeClass("active");
+      $(this).addClass("active");
+    }
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Product FAQ",
+    "class": "product_faq rebranding-section",
+    "settings": []
+  }
+{% endschema %}

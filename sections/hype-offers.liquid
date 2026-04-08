@@ -1,0 +1,212 @@
+<style>
+  .hype_offers {
+    padding: 0 0 110px 0;
+  }
+  .hype-offers_items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    width: 100%;
+  }
+  .hype-offers_item {
+    border-radius: 12px;
+    border: 1px solid #E9E9E9;
+    height: 315px;
+    padding: 25px;
+    transition: .5s;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  .hype-offers_item.animated {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  .hype-offers_item-text {
+    text-align: center;
+  }
+  img.hype-offers_item-img {
+    margin: auto;
+    display: block;
+  }
+  .hype-offers_item-1 img.hype-offers_item-img {
+        height: 207px;
+    margin-top: 14px;
+  }
+  .hype-offers_item-2 img.hype-offers_item-img {
+    height: 168px;
+  }
+  .hype-offers_item-3 img.hype-offers_item-img {
+    height: 164px;
+  }
+  .hype-offers_item-4 img.hype-offers_item-img {
+    height: 136px;
+    margin-top: 5px;
+    width: calc(100% + 47px);
+    margin-left: -22px;
+    max-width: max-content;
+  }
+  .hype-offers_item-1 {
+    width: calc(45% - 10px);
+  }
+  .hype-offers_item-2 {
+    width: calc(55% - 10px);
+  }
+  .hype-offers_item-3 {
+    width: calc(60% - 10px);
+    height: 258px;
+  }
+  .hype-offers_item-4 {
+    width: calc(40% - 10px);
+    height: 258px;
+  }
+  a.hype-offers_btn {
+    margin: 30px auto 0 auto
+  }
+  @media(max-width: 1250px) {
+    .hype-offers_item-1 img.hype-offers_item-img {
+    height: 184px;
+    margin-top: 14px;
+}
+    .hype-offers_item-3 img.hype-offers_item-img {
+    height: 141px;
+}
+    .hype-offers_item-3 {
+    width: calc(55% - 10px);
+}
+    .hype-offers_item-4 {
+    width: calc(45% - 10px);
+}
+    .hype-offers_item-4 img.hype-offers_item-img {
+    height: 123px;
+    margin-top: 18px;
+    width: calc(100% + 47px);
+    margin-left: -22px;
+    max-width: max-content;
+}
+  }
+  @media(max-width: 950px) {
+    a.hype-offers_btn {
+    margin: 20px auto 0 auto
+  }
+    .hype_offers {
+    padding: 0 0 80px 0;
+  }
+    .hype-offers_items {
+      gap: 15px;
+    }
+    .hype-offers_item-1 {
+    width: calc(45% - 7.5px);
+}
+    .hype-offers_item-2 {
+    width: calc(55% - 7.5px);
+}
+    .hype-offers_item-2 img.hype-offers_item-img {
+    height: 144px;
+}
+    .hype-offers_item-1 img.hype-offers_item-img {
+    height: 173px;
+    margin-top: 13px;
+    max-width: max-content;
+}
+    .hype-offers_item-3 {
+    width: calc(55% - 7.5px);
+    height: 220px;
+}
+    .hype-offers_item-3 img.hype-offers_item-img {
+    height: 115px;
+}
+    .hype-offers_item-4 {
+    width: calc(45% - 7.5px);
+    height: 220px;
+}
+    .hype-offers_item-4 img.hype-offers_item-img {
+    height: 103px;
+    margin-top: 12px;
+    width: calc(100% + 47px);
+    margin-left: -22px;
+    max-width: max-content;
+}
+  }
+  @media(max-width: 750px) {
+    .hype-offers_item {
+    height: auto;
+    width: 100%;
+    padding: 20px;
+}
+    img.hype-offers_item-img {
+      margin-bottom: -20px;
+    }
+.hype-offers_item-4 img.hype-offers_item-img {
+        height: 102px;
+        max-width: 100%;
+        margin: auto;
+        margin-bottom: -20px;
+        margin-top: 12px;
+        width: auto;
+    }
+  }
+  @media(max-width: 600px) {
+    .hype-offers_items {
+      margin-top: 20px;
+    }
+    .hype_offers {
+    padding: 60px 0 60px 0;
+}
+  }
+  @media(max-width: 500px) {
+    .hype-offers_item-4 img.hype-offers_item-img {
+        height: 85px;
+    }
+  }
+</style>
+<div class="container">
+  <div class="section-title">
+    <h2 class="second-title-style">
+      Why LegitGrails is Your Best Choice
+    </h2>
+    <p class="section-desc-style">
+      We get it — authenticity matters. That’s why we mix speed, expertise, and affordability to give you the best legit check experience.
+    </p>
+  </div>
+  <div class="hype-offers_items">
+    <div class="hype-offers_item hype-offers_item-1">
+      <div class="hype-offers_item-text">
+        <p class="card-title">Fast Turnaround</p>
+        <p class="card-desc">Get results starting at 15 mins – we value your time.</p>
+      </div>
+      <img class="hype-offers_item-img" src="{{ 'hype_choice-1.png' | asset_url }}">
+    </div>
+    <div class="hype-offers_item hype-offers_item-2">
+      <div class="hype-offers_item-text">
+        <p class="card-title">Expert Review</p>
+        <p class="card-desc">Verified by real people who know sneakers and streetwear inside and out, combined with AI for extra precision and 99.3% accuracy. No guesswork.</p>
+      </div>
+      <img class="hype-offers_item-img" src="{{ 'hype_choice-2.png' | asset_url }}">
+    </div>
+    <div class="hype-offers_item hype-offers_item-3">
+      <div class="hype-offers_item-text">
+        <p class="card-title">Affordable Pricing</p>
+        <p class="card-desc">Designed for collectors and resellers, we make legit checks accessible.</p>
+      </div>
+      <img class="hype-offers_item-img" src="{{ 'hype_choice-3.png' | asset_url }}">
+    </div>
+    <div class="hype-offers_item hype-offers_item-4">
+      <div class="hype-offers_item-text">
+        <p class="card-title">Global Service</p>
+        <p class="card-desc">Our team can verify your items no matter where you are.</p>
+      </div>
+      <img class="hype-offers_item-img" src="{{ 'hype_choice-4.png' | asset_url }}">
+    </div>
+  </div>
+  <a href="#product-box_section" class="new-main-btn new-btn hype-offers_btn">Start My Legit Check</a>
+</div>
+
+{% schema %}
+  {
+    "name": "Hype Offers",
+    "class": "hype_offers",
+    "settings": []
+  }
+{% endschema %}

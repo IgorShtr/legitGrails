@@ -1,0 +1,32 @@
+<section class="text-section text-section-right">
+    <div class="container">
+        <div class="text-section-wrapp">
+            <div class="text-section_text">
+                <span></span>
+                <h2 class="text-section_text-title font-title">
+                    Luxury Item Verification: Step-by-Step Process
+                </h2>
+                <p class="text-section_text-desc font-description">
+                    {{ product.metafields.custom_fields.step_by_step_image }}
+                </p>
+                <a href="javascript:void(0)" class="font-title text-section_text-a text-section_text-a-scroll">
+                    Authenticate now
+                </a>
+            </div>
+          <img src="{{ product.metafields.custom_fields.step_by_step_image | image_url: width: 590 }}" loading="lazy" class="text-section_img" alt="Luxury Item Verification: Step-by-Step Process">
+        </div>
+
+    </div>
+</section>
+{% schema %}
+  {
+    "name": "Step-by-Step Process",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

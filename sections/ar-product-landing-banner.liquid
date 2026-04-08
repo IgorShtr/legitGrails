@@ -1,0 +1,26 @@
+<section class="main-screen" style="background-image: url({{ product.metafields.custom_fields.banner_image | img_url: 'master' }})">
+    <div class="container">
+        {% if product.metafields.custom_fields.banner_text %}
+        <h1 class="main-screen_title font-title">
+            {{ product.metafields.custom_fields.banner_text }}
+        </h1>
+        {% endif %}
+        {% if product.metafields.custom_fields.banner_description %}
+        <p class="main-screen_desc font-description">
+            {{ product.metafields.custom_fields.banner_description }}
+        </p>
+        {% endif %}
+    </div>
+</section>
+{% schema %}
+{
+"name": "Section Product Banner",
+"settings": []
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

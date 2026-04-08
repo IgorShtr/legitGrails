@@ -1,0 +1,37 @@
+<ul class="slideshow-menu font-title">
+    {% if linklists[section.settings.slider_navigation].links.size > 0 %}
+    {% for link in linklists[section.settings.slider_navigation].links %}
+        <li id="nav-slide-{{- forloop.index0 -}}" class="menu-link">
+            <a href="">{{ link.title }}</a>
+        </li>
+    {% endfor %}
+    {% else %}
+        <li id="nav-slide-0" class="menu-link">
+            <a href="" class="active">Legit check service</a>
+        </li>
+        <li id="nav-slide-1" class="menu-link">
+            <a href="">Reviews</a>
+        </li>
+        <li id="nav-slide-2" class="menu-link">
+            <a href="">How it works</a>
+        </li>
+        <li id="nav-slide-3" class="menu-link">
+            <a href="">Authencity certificate</a>
+        </li>
+        <li id="nav-slide-4" class="menu-link">
+            <a href="">Partner with us</a>
+        </li>
+    {% endif %}
+</ul>
+<style>
+    .slideshow-menu {list-style-type: none;align-items: center;padding: 0;display: flex;}
+    .slideshow-menu a {font-weight: 400;font-size: 13px;line-height: 15px;letter-spacing: 0.055em;color: #FFFFFF;margin: 0px 14px;display: block;position: relative;text-decoration: none;}
+    .slideshow-menu a::after {content: '';height: 2px;background: #CDAB71;width: 0;top: 100%;margin-top: 3px;display: block;transition: 0.5s;}
+    .slideshow-menu li:hover a::after {width: 100%;}
+    .slideshow-menu a.active::after {width: 100%;}
+    .slideshow-menu li:first-child a {margin-left: 0;}
+    .slideshow-menu li:last-child a {margin-right: 0;}
+    .menu-hidden {display: none;visibility: hidden;}
+    .navigation-open .slideshow-menu {display: none;visibility: hidden;}
+    @media (max-width: 1023px) {.slideshow-menu{display: none}}
+</style>

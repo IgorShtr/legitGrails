@@ -1,0 +1,250 @@
+<style>
+  .offers-image_wrapp {
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+.offers-image_content {
+    width: calc(52% - 25px);
+    height: max-content;
+}
+  .offers-image_image {
+    width: calc(48% - 25px);
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    border: 1px solid #E0DFDF;
+    height: 620px;
+    background-color: #f2f2f2;
+  }
+  .offers-image_btn {
+    margin: 0;
+  }
+  .offers-image_left-wrapp .offers-image_image {
+    order: 1;
+  }
+  .offers-image_left-wrapp .offers-image_content {
+    order: 2;
+  }
+  p.offers-image_desc {
+    max-width: 440px;
+    margin: 0;
+  }
+  p.left-offers-item-desc {
+    margin-top: 10px;
+}
+  .offers-image_items {
+    gap: 35px 25px;
+  }
+  .offers-image_item {
+    width: 312px;
+  }
+  .offers-image_item:nth-child(1), .offers-image_item:nth-child(3) {
+    width: 348px;
+  }
+  .offers-image_item svg {
+    width: 30px;
+}
+  .offers-image_btns {
+    width: 100%;
+}
+  @media(max-width: 1450px) {
+    .offers-image_content {
+      width: calc(58% - 25px);
+    }
+    .offers-image_image {
+      width: calc(42% - 25px);
+    }
+    .offers-image_item {
+        width: 294px;
+    }
+    .offers-image_item:nth-child(1), .offers-image_item:nth-child(3) {
+        width: 332px;
+    }
+  }
+  @media(max-width: 1250px) {
+    .offers-image_btns {
+    justify-content: center;
+}
+    .offers-image_left-wrapp .offers-image_image {
+    order: 2;
+}
+    p.offers-image_desc {
+        max-width: 100%;
+    }
+    .offers-image_image {
+      width: 100%;
+    }
+    .offers-image_content {
+        justify-content: center;
+        width: 100%;
+    }
+      .left-offers-item-alignment .left-offers-item-text {
+        width: 100%;
+        text-align: center;
+      }
+        .left-offers-item-alignment {
+        justify-content: center;
+    }
+    .offers-image_items {
+      justify-content: center;
+    }
+  }
+  @media(max-width: 950px) {
+    .offers-image_content {
+      width: 100%;
+      padding: 0 15px;
+    }
+    .offers-image_image {
+      width: 100%;
+      height: 400px;
+      border-radius: 0;
+      border: none;
+    }
+    .offers-image_item {
+        justify-content: center;
+        height: max-content;
+    }
+    .offers-image_title, .offers-image_desc {
+      text-align: center;
+    }
+    .offers-image_desc {
+      margin: 10px auto 0 auto;
+    }
+    .offers-image .container {
+      padding: 0;
+    }
+    .offers-image_item:nth-child(3) .offers-image_item-text, .offers-image_item:nth-child(2) .offers-image_item-text, .offers-image_item:nth-child(1) .offers-image_item-text, .offers-image_item:nth-child(4) .offers-image_item-text {
+    padding-top: 0;
+}
+    .offers-image_left-wrapp .offers-image_image {
+    order: 2;
+  }
+  .offers-image_left-wrapp .offers-image_content {
+    order: 1;
+  }
+    .offers-image {
+      padding-bottom: 0;
+    }
+  }
+  @media(max-width: 750px) {
+    .offers-image_image {
+      height: 440px;
+    }
+    .offers-image_items {
+      gap: 40px;
+    }
+    .offers-image_item, .offers-image_item:nth-child(1), .offers-image_item:nth-child(3) {
+        width: 240px;
+    }
+    .offers-image_item:nth-child(1) {
+      order: 1;
+    }
+    .offers-image_item:nth-child(3) {
+      order: 2;
+    }
+    .offers-image_item:nth-child(2) {
+      order: 3;
+    }
+    .offers-image_item:nth-child(4) {
+      order: 4;
+    }
+  }
+  @media(max-width: 550px) {
+    .offers-image_item:nth-child(1) {
+      order: 1;
+    }
+    .offers-image_item:nth-child(3) {
+      order: 3;
+    }
+    .offers-image_item:nth-child(2) {
+      order: 2;
+    }
+    .offers-image_item:nth-child(4) {
+      order: 4;
+    }
+    .offers-image_item, .offers-image_item:nth-child(1), .offers-image_item:nth-child(3) {
+    width: 100%;
+}
+  }
+</style>
+
+<div class="container rebranding_container">
+  <div class="offers-image_wrapp block-flex-wrap">
+    <div class="offers-image_content block-flex-wrap block-gap-40">
+      <div class="rebranding-section-title rebranding-section-title-left block-gap-15 block-flex-wrap">
+        <h2 class="h2-heading-ss">
+         Why 
+          <span class="h2-heading-pp">
+           LegitGrails?
+          </span>
+        </h2>
+        <p class="body-text offers-image_desc">Blending expert human insight and AI precision for unmatched accuracy of over 99.3%</p>
+      </div>
+      <div class="offers-image_items block-flex-wrap">
+        <div class="offers-image_item left-offers-item left-offers-item-alignment block-flex-wrap block-gap-15">
+<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="30" height="30" rx="5.6" fill="#3C1F1B"/>
+<path d="M14.26 5.78H15.36V7.24C18.08 7.46 19.78 9.14 19.76 11.78H17.88C17.82 9.72 16.66 8.92 15.36 8.76V13.72L15.66 13.8C17.86 14.4 20.1 15.26 20.1 18.02C20.1 20.72 17.94 22.08 15.36 22.24V23.94H14.26V22.24C11.5 22.02 9.6 20.04 9.66 17.4H11.54C11.6 19.52 12.88 20.56 14.26 20.72V15.3L13.82 15.18C11.66 14.6 10.04 13.28 10.04 11.04C10.04 8.74 12.1 7.46 14.26 7.24V5.78ZM18.22 18.3C18.22 16.62 17.12 16.08 15.36 15.6V20.74C16.88 20.64 18.22 19.84 18.22 18.3ZM11.92 11.02C11.92 12.22 12.66 12.96 14.24 13.42L14.26 13.44V8.74C13.08 8.84 11.92 9.52 11.92 11.02Z" fill="white"/>
+</svg>
+          <div class="left-offers-item-text">
+            <p class="left-offers-item-title h3-heading-pp">Refund guarantee</p>
+            <p class="left-offers-item-desc small-text">Get a full refund if there's an error in the authentication process</p>
+          </div>
+        </div>
+        <div class="offers-image_item left-offers-item left-offers-item-alignment block-flex-wrap block-gap-15">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.6948 3.55092C15.9603 -1.18364 8.28434 -1.18364 3.55092 3.55092C-1.18364 8.28549 -1.18364 15.9614 3.55092 20.6948C8.28549 25.4294 15.9614 25.4294 20.6948 20.6948C25.4294 15.9603 25.4294 8.28549 20.6948 3.55092ZM7.55505 18.1585C7.45892 18.2555 7.34455 18.3324 7.21854 18.385C7.09253 18.4376 6.95736 18.4647 6.82082 18.4648C6.68428 18.4649 6.54907 18.438 6.42297 18.3856C6.29687 18.3333 6.18239 18.2565 6.0861 18.1596C4.91444 16.9865 4.1093 15.4979 3.76878 13.8752C3.42825 12.2525 3.56706 10.5657 4.16827 9.02054C4.26804 8.76377 4.46573 8.55715 4.71784 8.44614C4.96995 8.33512 5.25583 8.32881 5.5126 8.42858C5.76937 8.52835 5.97599 8.72603 6.087 8.97814C6.19802 9.23025 6.20433 9.51613 6.10457 9.7729C5.64908 10.9423 5.54358 12.2189 5.80092 13.4472C6.05826 14.6755 6.66733 15.8025 7.5539 16.6907C7.65041 16.787 7.727 16.9013 7.7793 17.0272C7.8316 17.1531 7.85857 17.288 7.85868 17.4244C7.85878 17.5607 7.83202 17.6957 7.77993 17.8216C7.72783 17.9476 7.65141 18.0621 7.55505 18.1585ZM28.9731 24.047L24.0643 19.1382C23.4732 20.1547 22.7538 21.0909 21.9238 21.9238C21.0999 22.7488 20.1513 23.4481 19.1336 24.0493L24.0574 28.9731C24.38 29.2976 24.7635 29.5553 25.1858 29.7315C25.6081 29.9077 26.061 29.9989 26.5186 30C26.9762 30.0011 27.4295 29.9119 27.8527 29.7377C28.2758 29.5635 28.6605 29.3076 28.9846 28.9846C30.3347 27.6357 30.3347 25.4086 28.9731 24.047Z" fill="#3C1F1B"/>
+</svg>
+          <div class="left-offers-item-text">
+            <p class="left-offers-item-title h3-heading-pp">Proven accuracy</p>
+            <p class="left-offers-item-desc small-text">Trusted >99.3% authentication accuracy rate</p>
+          </div>
+        </div>
+        <div class="offers-image_item left-offers-item left-offers-item-alignment block-flex-wrap block-gap-15">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M30.0002 20.3027C30.0002 16.58 27.8645 13.2576 24.6658 11.6414C24.5666 18.7793 18.7795 24.5664 11.6416 24.6656C13.2577 27.8643 16.5802 30 20.3029 30C22.0484 30 23.7458 29.5351 25.2371 28.6519L29.9578 29.9577L28.6521 25.237C29.5353 23.7456 30.0002 22.0482 30.0002 20.3027Z" fill="#3C1F1B"/>
+<path d="M22.9102 11.4551C22.9102 5.13867 17.7715 0 11.4551 0C5.13867 0 0 5.13867 0 11.4551C0 13.5137 0.547969 15.518 1.58848 17.2776L0.0420703 22.8678L5.6325 21.3217C7.39219 22.3622 9.3965 22.9102 11.4551 22.9102C17.7715 22.9102 22.9102 17.7715 22.9102 11.4551ZM9.69727 8.78906H7.93945C7.93945 6.85043 9.51645 5.27344 11.4551 5.27344C13.3937 5.27344 14.9707 6.85043 14.9707 8.78906C14.9707 9.77303 14.5541 10.7188 13.8274 11.3834L12.334 12.7503V14.1211H10.5762V11.9763L12.6407 10.0866C13.0096 9.749 13.2129 9.28828 13.2129 8.78906C13.2129 7.81975 12.4244 7.03125 11.4551 7.03125C10.4858 7.03125 9.69727 7.81975 9.69727 8.78906ZM10.5762 15.8789H12.334V17.6367H10.5762V15.8789Z" fill="#3C1F1B"/>
+</svg>
+
+          <div class="left-offers-item-text">
+            <p class="left-offers-item-title h3-heading-pp">Easy communication</p>
+            <p class="left-offers-item-desc small-text">Live chat or email our authenticators, available 24/7</p>
+          </div>
+        </div>
+        <div class="offers-image_item left-offers-item left-offers-item-alignment block-flex-wrap block-gap-15">
+<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M29.384 4.78225C28.9345 4.28219 28.2988 3.97156 27.6137 3.91708C25.4501 3.75131 23.3179 3.3175 21.27 2.62641C19.5508 2.05148 17.9031 1.29516 16.3573 0.371285C15.9523 0.12863 15.4846 0 15.0074 0C14.5302 0 14.0625 0.12863 13.6575 0.371285C12.1049 1.29257 10.4527 2.04873 8.73004 2.62641C6.68211 3.3175 4.54989 3.75131 2.38632 3.91708C1.70116 3.97156 1.06554 4.28219 0.615982 4.78225C0.392838 5.02989 0.224198 5.31843 0.12024 5.63045C0.016281 5.94247 -0.0208406 6.27151 0.0111151 6.5977L0.719251 14.8381C0.9328 17.2688 1.74874 19.615 3.09881 21.6803C4.44888 23.7457 6.29381 25.4701 8.47925 26.7095L13.687 29.6596C14.0857 29.8825 14.5387 30 15 30C15.4613 30 15.9143 29.8825 16.313 29.6596L21.5208 26.7095C23.7062 25.4701 25.5511 23.7457 26.9012 21.6803C28.2513 19.615 29.0672 17.2688 29.2807 14.8381L29.9889 6.5977C30.0208 6.27151 29.9837 5.94247 29.8798 5.63045C29.7758 5.31843 29.6072 5.02989 29.384 4.78225ZM20.5323 12.1859L14.6312 17.8591C14.4237 18.0584 14.1425 18.1702 13.8493 18.1702C13.5561 18.1702 13.2748 18.0584 13.0674 17.8591L10.1168 15.0225C9.92251 14.8163 9.81999 14.5451 9.83123 14.2671C9.84247 13.989 9.96657 13.7263 10.1769 13.5352C10.3873 13.3441 10.6671 13.2399 10.9565 13.2448C11.2459 13.2497 11.5217 13.3635 11.7249 13.5616L13.8935 15.6466L19.0128 10.725C19.2207 10.5954 19.4679 10.5366 19.7147 10.5582C19.9616 10.5797 20.1937 10.6803 20.374 10.8438C20.5543 11.0073 20.6722 11.2243 20.709 11.4599C20.7457 11.6955 20.6991 11.9362 20.5766 12.1433L20.5323 12.1859Z" fill="#3C1F1B"/>
+</svg>
+          <div class="left-offers-item-text">
+            <p class="left-offers-item-title h3-heading-pp">Global trust</p>
+            <p class="left-offers-item-desc small-text">Relied on by over 100K users worldwide</p>
+          </div>
+        </div>
+      </div>
+  <div class="offers-image_btns block-flex-wrap block-gap-15">
+    <a href="#shopify-section-product_faq" class="offers-image_btn rebranding_btn product_faq-btn-track">Answers to featured questions</a>
+    <a href="#product_hero" class="offers-image_btn rebranding_btn rebranding_btn-main product_authenticate-now-btn-track">Authenticate now</a>
+  </div>
+    </div>
+      <div class="offers-image_image" style="background-image: url('{{ "rebrending_product-offers-2x.webp" | asset_url }}');
+        background-image: -webkit-image-set(
+          url('{{ "rebrending_product-offers-2x.webp" | asset_url }}') 1320px,
+          url('{{ "rebrending_product-offers.webp" | asset_url }}') 660px,
+          url('{{ "rebrending_product-offers-mob.webp" | asset_url }}') 440px);
+        background-image: image-set(
+          url('{{ "rebrending_product-offers-2x.webp" | asset_url }}') 1320px,
+          url('{{ "rebrending_product-offers.webp" | asset_url }}') 660px,
+          url('{{ "rebrending_product-offers-mob.webp" | asset_url }}') 440px);">
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Offers with image btns",
+    "class": "offers-image rebranding-section",
+    "settings": []
+  }
+{% endschema %}

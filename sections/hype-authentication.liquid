@@ -1,0 +1,498 @@
+<style>
+  .hype_authentication {
+    padding: 0 0 110px 0;
+  }
+  .hype_authentication-wrapper {
+    border-radius: 12px;
+    border: 1px solid #E9E9E9;
+    padding: 25px;
+    width: 100%;
+    max-width: 862px;
+    margin: 30px auto 0 auto;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  .hype_authentication-wrapper.animated {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  img.hype_authentication-wrapper-image {
+    height: 113px;
+    display: block; 
+    margin: auto;
+  }
+  .hype_authentication-wrapper-title {
+    width: 100%;
+    margin: 20px auto 0 auto;
+    max-width: 530px;
+  }
+  .hype_authentication-wrapper-price {
+    margin-top: 20px;
+    text-align: center;
+  }
+  p.hype_authentication-wrapper-price-desc {
+    color: #161616;
+    font-family: "Open Sans";
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 127.8%;
+  }
+  p.hype_authentication-wrapper-price-title {
+    color: #161616;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1;
+    margin-top: 2px;
+  }
+  .hype_authentication-wrapper-content {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto 0 auto;
+    gap: 20px;
+    width: 100%;
+    max-width: 640px;
+  }
+  .hype_authentication-wrapper-content-options {
+    width: 194px;
+  }
+  p.hype_authentication-wrapper-content-title {
+    color: #161616;
+    font-family: "Open Sans";
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 127.8%;
+  }
+  .hype_authentication-wrapper-content-options-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .hype_authentication-wrapper-content-options-item {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  p.hype_authentication-wrapper-content-options-item-time {
+    color: #4F4F4F;
+    text-align: right;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 127.8%; 
+  }
+  p.hype_authentication-wrapper-content-options-item-price {
+    color: #161616;
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 127.8%;
+  }
+  span.hype_authentication-wrapper-content-split {
+    display: block;
+    height: auto;
+    width: 1px;
+    background: #DEDEDE;
+  }
+.hype_authentication-wrapper-content-offers {
+    max-width: calc(100% - 255px);
+    width: max-content;
+}
+  .hype_authentication-wrapper-content-offers-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .hype_authentication-wrapper-content-offers-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  .hype_authentication-wrapper-content-offers-item svg {
+    height: 20px;
+  }
+  .hype_authentication-wrapper-content-offers-item img {
+    height: 20px;
+  }
+  p.hype_authentication-wrapper-content-offers-item-text {
+    color: #4F4F4F;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 127.8%;
+    margin-left: 10px;
+    width: calc(100% - 30px);
+  }
+  a.hype_authentication-wrapper-btn {
+    margin: 20px auto 0 auto;
+  }
+  .hype_authentication-wrapper-content-offers-mobile {
+    display: none;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  .hype_authentication-wrapper-content-offers-mobile.animated {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  @media(max-width: 950px) {
+    p.hype_authentication-wrapper-price-desc, p.hype_authentication-wrapper-content-title  {
+      font-size: 18px;
+    }
+    p.hype_authentication-wrapper-content-offers-item-text, p.hype_authentication-wrapper-content-options-item-time, p.hype_authentication-wrapper-content-options-item-price {
+      font-size: 16px;
+    }
+    p.hype_authentication-wrapper-price-title {
+      font-size: 24px;
+    }
+    .hype_authentication {
+    padding: 0 0 80px 0;
+  }
+  }
+  @media(max-width: 750px) {
+    .hype_authentication-wrapper-content-offers-mobile {
+      padding: 20px;
+    }
+    .hype_authentication-wrapper {
+      padding: 20px;
+    }
+  }
+  @media(max-width: 650px) {
+    .hype_authentication-wrapper-content-offers-desk {
+      display: none;
+    }
+    .hype_authentication-wrapper-content-offers-mobile {
+        display: block;
+        border-radius: 12px;
+        border: 1px solid #E9E9E9;
+        width: 100%;
+        margin-top: 20px;
+      max-width: 100%;
+    }
+    span.hype_authentication-wrapper-content-split {
+      display: none;
+    }
+    .hype_authentication-wrapper-content {
+      justify-content: center;
+    }
+    .hype_authentication-wrapper-content-options-item {
+      width: 110px;
+    }
+    p.hype_authentication-wrapper-content-options-item-time {
+        text-align: right;
+        width: 76px;
+    }
+    p.hype_authentication-wrapper-content-title {
+      text-align: center;
+    }
+    .hype_authentication-wrapper-content-options-items {
+    justify-content: center;
+}
+  }
+  @media(max-width: 600px) {
+    .hype_authentication {
+    padding: 0 0 60px 0;
+}
+    .hype_authentication-wrapper {
+        margin: 20px auto 0 auto;
+    }
+    .hype_authentication-wrapper-content-offers-mobile {
+      margin-top: 15px;
+    }
+  }
+</style>
+<div class="container">
+  <div class="section-title">
+    <h2 class="second-title-style">
+      Fast & Reliable Legit Checks
+    </h2>
+  </div>
+  <div class="hype_authentication-wrapper">
+    <img class="hype_authentication-wrapper-image" src="{{ 'hype_authentication.png' | asset_url }}">
+    <div class="hype_authentication-wrapper-title">
+      <p class="card-title">Authentication</p>
+      <p class="card-desc">Designed for collectors and resellers, we make legit checks accessible.</p>
+    </div>
+    <div class="hype_authentication-wrapper-price">
+      <p class="hype_authentication-wrapper-price-desc">Start at</p>
+      <p class="hype_authentication-wrapper-price-title">$4</p>
+    </div>
+    <div class="hype_authentication-wrapper-content">
+      <div class="hype_authentication-wrapper-content-options">
+        <p class="hype_authentication-wrapper-content-title">Time Options</p>
+        <div class="hype_authentication-wrapper-content-options-items">
+          <div class="hype_authentication-wrapper-content-options-item">
+            <p class="hype_authentication-wrapper-content-options-item-time">24 hours</p>
+            <p class="hype_authentication-wrapper-content-options-item-price">$4</p>
+          </div>
+          <div class="hype_authentication-wrapper-content-options-item">
+            <p class="hype_authentication-wrapper-content-options-item-time">12 hours</p>
+            <p class="hype_authentication-wrapper-content-options-item-price">$5</p>
+          </div>
+          <div class="hype_authentication-wrapper-content-options-item">
+            <p class="hype_authentication-wrapper-content-options-item-time">2 hours</p>
+            <p class="hype_authentication-wrapper-content-options-item-price">$6</p>
+          </div>
+          <div class="hype_authentication-wrapper-content-options-item">
+            <p class="hype_authentication-wrapper-content-options-item-time">30 mins</p>
+            <p class="hype_authentication-wrapper-content-options-item-price">$7</p>
+          </div>
+          <div class="hype_authentication-wrapper-content-options-item">
+            <p class="hype_authentication-wrapper-content-options-item-time">15 mins</p>
+            <p class="hype_authentication-wrapper-content-options-item-price">$8</p>
+          </div>
+        </div>
+      </div>
+      <span class="hype_authentication-wrapper-content-split"></span>
+      <div class="hype_authentication-wrapper-content-offers hype_authentication-wrapper-content-offers-desk">
+        <p class="hype_authentication-wrapper-content-title">Includes: </p>
+        <div class="hype_authentication-wrapper-content-offers-items">
+          <div class="hype_authentication-wrapper-content-offers-item">
+            {% render "hype-authentication-offers-icon" %}
+            <p class="hype_authentication-wrapper-content-offers-item-text">Expert and AI authentication</p>
+          </div>
+          <div class="hype_authentication-wrapper-content-offers-item">
+            {% render "hype-authentication-offers-icon" %}
+            <p class="hype_authentication-wrapper-content-offers-item-text">99.3% accuracy</p>
+          </div>
+          <div class="hype_authentication-wrapper-content-offers-item">
+            {% render "hype-authentication-offers-icon" %}
+            <p class="hype_authentication-wrapper-content-offers-item-text">Fast legit check starting from 15 minutes</p>
+          </div>
+          <div class="hype_authentication-wrapper-content-offers-item">
+            {% render "hype-authentication-offers-icon" %}
+            <p class="hype_authentication-wrapper-content-offers-item-text">Verified certificate of authenticity</p>
+          </div>
+          <div class="hype_authentication-wrapper-content-offers-item">
+            {% render "hype-authentication-offers-icon" %}
+            <p class="hype_authentication-wrapper-content-offers-item-text">24/7 customer support</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="hype_authentication-wrapper-btn new-main-btn new-btn">
+      Choose Your Legit Check
+    </a>
+  </div>
+  <div class="hype_authentication-wrapper-content-offers hype_authentication-wrapper-content-offers-mobile">
+        <p class="hype_authentication-wrapper-content-title">Includes: </p>
+        <div class="hype_authentication-wrapper-content-offers-items">
+          <div class="hype_authentication-wrapper-content-offers-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_210_679)">
+            <g filter="url(#filter0_bd_210_679)">
+            <circle cx="10" cy="10" r="10" fill="url(#paint0_linear_210_679)" fill-opacity="0.2"/>
+            <circle cx="10" cy="10" r="9.5" stroke="url(#paint1_linear_210_679)" stroke-opacity="0.2"/>
+            </g>
+            <path d="M15.447 7.0713L8.51839 13.9999C8.23268 14.2856 7.8041 14.2856 7.51839 13.9999L4.44696 10.9284C3.8041 10.2856 4.8041 9.28559 5.44696 9.92845L8.01839 12.4999L14.447 6.0713C15.0898 5.35702 16.0898 6.42845 15.447 7.0713Z" fill="#C7A874"/>
+            </g>
+            <defs>
+            <filter id="filter0_bd_210_679" x="-40" y="-40" width="100" height="100" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feGaussianBlur in="BackgroundImageFix" stdDeviation="20"/>
+            <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_210_679"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feMorphology radius="2" operator="erode" in="SourceAlpha" result="effect2_dropShadow_210_679"/>
+            <feOffset dy="4"/>
+            <feGaussianBlur stdDeviation="12"/>
+            <feComposite in2="hardAlpha" operator="out"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+            <feBlend mode="normal" in2="effect1_backgroundBlur_210_679" result="effect2_dropShadow_210_679"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_210_679" result="shape"/>
+            </filter>
+            <linearGradient id="paint0_linear_210_679" x1="5.20833" y1="1.2464e-06" x2="16.6828" y2="1.22725" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#E0E0E0"/>
+            <stop offset="1" stop-color="#BDBDBD"/>
+            </linearGradient>
+            <linearGradient id="paint1_linear_210_679" x1="1.89167" y1="-0.74074" x2="18.5975" y2="0.400768" gradientUnits="userSpaceOnUse">
+            <stop stop-opacity="0.32"/>
+            <stop offset="0.315" stop-color="#0F0F0F" stop-opacity="0.21"/>
+            <stop offset="0.685" stop-color="#A49685"/>
+            <stop offset="1" stop-color="#C7A874"/>
+            </linearGradient>
+            <clipPath id="clip0_210_679">
+            <rect width="20" height="20" fill="white"/>
+            </clipPath>
+            </defs>
+            </svg>
+            <p class="hype_authentication-wrapper-content-offers-item-text">Expert and AI authentication</p>
+          </div>
+          <div class="hype_authentication-wrapper-content-offers-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_210_679)">
+            <g filter="url(#filter0_bd_210_679)">
+            <circle cx="10" cy="10" r="10" fill="url(#paint0_linear_210_679)" fill-opacity="0.2"/>
+            <circle cx="10" cy="10" r="9.5" stroke="url(#paint1_linear_210_679)" stroke-opacity="0.2"/>
+            </g>
+            <path d="M15.447 7.0713L8.51839 13.9999C8.23268 14.2856 7.8041 14.2856 7.51839 13.9999L4.44696 10.9284C3.8041 10.2856 4.8041 9.28559 5.44696 9.92845L8.01839 12.4999L14.447 6.0713C15.0898 5.35702 16.0898 6.42845 15.447 7.0713Z" fill="#C7A874"/>
+            </g>
+            <defs>
+            <filter id="filter0_bd_210_679" x="-40" y="-40" width="100" height="100" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feGaussianBlur in="BackgroundImageFix" stdDeviation="20"/>
+            <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_210_679"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feMorphology radius="2" operator="erode" in="SourceAlpha" result="effect2_dropShadow_210_679"/>
+            <feOffset dy="4"/>
+            <feGaussianBlur stdDeviation="12"/>
+            <feComposite in2="hardAlpha" operator="out"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+            <feBlend mode="normal" in2="effect1_backgroundBlur_210_679" result="effect2_dropShadow_210_679"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_210_679" result="shape"/>
+            </filter>
+            <linearGradient id="paint0_linear_210_679" x1="5.20833" y1="1.2464e-06" x2="16.6828" y2="1.22725" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#E0E0E0"/>
+            <stop offset="1" stop-color="#BDBDBD"/>
+            </linearGradient>
+            <linearGradient id="paint1_linear_210_679" x1="1.89167" y1="-0.74074" x2="18.5975" y2="0.400768" gradientUnits="userSpaceOnUse">
+            <stop stop-opacity="0.32"/>
+            <stop offset="0.315" stop-color="#0F0F0F" stop-opacity="0.21"/>
+            <stop offset="0.685" stop-color="#A49685"/>
+            <stop offset="1" stop-color="#C7A874"/>
+            </linearGradient>
+            <clipPath id="clip0_210_679">
+            <rect width="20" height="20" fill="white"/>
+            </clipPath>
+            </defs>
+            </svg>
+            <p class="hype_authentication-wrapper-content-offers-item-text">99.3% accuracy</p>
+          </div>
+          <div class="hype_authentication-wrapper-content-offers-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_210_679)">
+            <g filter="url(#filter0_bd_210_679)">
+            <circle cx="10" cy="10" r="10" fill="url(#paint0_linear_210_679)" fill-opacity="0.2"/>
+            <circle cx="10" cy="10" r="9.5" stroke="url(#paint1_linear_210_679)" stroke-opacity="0.2"/>
+            </g>
+            <path d="M15.447 7.0713L8.51839 13.9999C8.23268 14.2856 7.8041 14.2856 7.51839 13.9999L4.44696 10.9284C3.8041 10.2856 4.8041 9.28559 5.44696 9.92845L8.01839 12.4999L14.447 6.0713C15.0898 5.35702 16.0898 6.42845 15.447 7.0713Z" fill="#C7A874"/>
+            </g>
+            <defs>
+            <filter id="filter0_bd_210_679" x="-40" y="-40" width="100" height="100" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feGaussianBlur in="BackgroundImageFix" stdDeviation="20"/>
+            <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_210_679"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feMorphology radius="2" operator="erode" in="SourceAlpha" result="effect2_dropShadow_210_679"/>
+            <feOffset dy="4"/>
+            <feGaussianBlur stdDeviation="12"/>
+            <feComposite in2="hardAlpha" operator="out"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+            <feBlend mode="normal" in2="effect1_backgroundBlur_210_679" result="effect2_dropShadow_210_679"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_210_679" result="shape"/>
+            </filter>
+            <linearGradient id="paint0_linear_210_679" x1="5.20833" y1="1.2464e-06" x2="16.6828" y2="1.22725" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#E0E0E0"/>
+            <stop offset="1" stop-color="#BDBDBD"/>
+            </linearGradient>
+            <linearGradient id="paint1_linear_210_679" x1="1.89167" y1="-0.74074" x2="18.5975" y2="0.400768" gradientUnits="userSpaceOnUse">
+            <stop stop-opacity="0.32"/>
+            <stop offset="0.315" stop-color="#0F0F0F" stop-opacity="0.21"/>
+            <stop offset="0.685" stop-color="#A49685"/>
+            <stop offset="1" stop-color="#C7A874"/>
+            </linearGradient>
+            <clipPath id="clip0_210_679">
+            <rect width="20" height="20" fill="white"/>
+            </clipPath>
+            </defs>
+            </svg>
+            <p class="hype_authentication-wrapper-content-offers-item-text">Fast legit check starting from 15 minutes</p>
+          </div>
+          <div class="hype_authentication-wrapper-content-offers-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_210_679)">
+            <g filter="url(#filter0_bd_210_679)">
+            <circle cx="10" cy="10" r="10" fill="url(#paint0_linear_210_679)" fill-opacity="0.2"/>
+            <circle cx="10" cy="10" r="9.5" stroke="url(#paint1_linear_210_679)" stroke-opacity="0.2"/>
+            </g>
+            <path d="M15.447 7.0713L8.51839 13.9999C8.23268 14.2856 7.8041 14.2856 7.51839 13.9999L4.44696 10.9284C3.8041 10.2856 4.8041 9.28559 5.44696 9.92845L8.01839 12.4999L14.447 6.0713C15.0898 5.35702 16.0898 6.42845 15.447 7.0713Z" fill="#C7A874"/>
+            </g>
+            <defs>
+            <filter id="filter0_bd_210_679" x="-40" y="-40" width="100" height="100" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feGaussianBlur in="BackgroundImageFix" stdDeviation="20"/>
+            <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_210_679"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feMorphology radius="2" operator="erode" in="SourceAlpha" result="effect2_dropShadow_210_679"/>
+            <feOffset dy="4"/>
+            <feGaussianBlur stdDeviation="12"/>
+            <feComposite in2="hardAlpha" operator="out"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+            <feBlend mode="normal" in2="effect1_backgroundBlur_210_679" result="effect2_dropShadow_210_679"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_210_679" result="shape"/>
+            </filter>
+            <linearGradient id="paint0_linear_210_679" x1="5.20833" y1="1.2464e-06" x2="16.6828" y2="1.22725" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#E0E0E0"/>
+            <stop offset="1" stop-color="#BDBDBD"/>
+            </linearGradient>
+            <linearGradient id="paint1_linear_210_679" x1="1.89167" y1="-0.74074" x2="18.5975" y2="0.400768" gradientUnits="userSpaceOnUse">
+            <stop stop-opacity="0.32"/>
+            <stop offset="0.315" stop-color="#0F0F0F" stop-opacity="0.21"/>
+            <stop offset="0.685" stop-color="#A49685"/>
+            <stop offset="1" stop-color="#C7A874"/>
+            </linearGradient>
+            <clipPath id="clip0_210_679">
+            <rect width="20" height="20" fill="white"/>
+            </clipPath>
+            </defs>
+            </svg>
+            <p class="hype_authentication-wrapper-content-offers-item-text">Verified certificate of authenticity</p>
+          </div>
+          <div class="hype_authentication-wrapper-content-offers-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_210_679)">
+            <g filter="url(#filter0_bd_210_679)">
+            <circle cx="10" cy="10" r="10" fill="url(#paint0_linear_210_679)" fill-opacity="0.2"/>
+            <circle cx="10" cy="10" r="9.5" stroke="url(#paint1_linear_210_679)" stroke-opacity="0.2"/>
+            </g>
+            <path d="M15.447 7.0713L8.51839 13.9999C8.23268 14.2856 7.8041 14.2856 7.51839 13.9999L4.44696 10.9284C3.8041 10.2856 4.8041 9.28559 5.44696 9.92845L8.01839 12.4999L14.447 6.0713C15.0898 5.35702 16.0898 6.42845 15.447 7.0713Z" fill="#C7A874"/>
+            </g>
+            <defs>
+            <filter id="filter0_bd_210_679" x="-40" y="-40" width="100" height="100" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feGaussianBlur in="BackgroundImageFix" stdDeviation="20"/>
+            <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_210_679"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feMorphology radius="2" operator="erode" in="SourceAlpha" result="effect2_dropShadow_210_679"/>
+            <feOffset dy="4"/>
+            <feGaussianBlur stdDeviation="12"/>
+            <feComposite in2="hardAlpha" operator="out"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+            <feBlend mode="normal" in2="effect1_backgroundBlur_210_679" result="effect2_dropShadow_210_679"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_210_679" result="shape"/>
+            </filter>
+            <linearGradient id="paint0_linear_210_679" x1="5.20833" y1="1.2464e-06" x2="16.6828" y2="1.22725" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#E0E0E0"/>
+            <stop offset="1" stop-color="#BDBDBD"/>
+            </linearGradient>
+            <linearGradient id="paint1_linear_210_679" x1="1.89167" y1="-0.74074" x2="18.5975" y2="0.400768" gradientUnits="userSpaceOnUse">
+            <stop stop-opacity="0.32"/>
+            <stop offset="0.315" stop-color="#0F0F0F" stop-opacity="0.21"/>
+            <stop offset="0.685" stop-color="#A49685"/>
+            <stop offset="1" stop-color="#C7A874"/>
+            </linearGradient>
+            <clipPath id="clip0_210_679">
+            <rect width="20" height="20" fill="white"/>
+            </clipPath>
+            </defs>
+            </svg>
+            <p class="hype_authentication-wrapper-content-offers-item-text">24/7 customer support</p>
+          </div>
+        </div>
+      </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Hype Authentication",
+    "class": "hype_authentication",
+    "settings": []
+  }
+{% endschema %}

@@ -1,0 +1,46 @@
+{% render 'product-nft-styles-min' %}
+{% section 'product-landing-banner' %}
+<div class="product_checkout page-width" id="product_checkout">
+    <div class="form-row">
+        <div class="form-column">
+            {% section 'product-how-it-works' %}
+        </div>
+        <div class="form-column">
+            <div class="form-column__product-form">
+                {% section 'product-template-nft' %}
+            </div>
+        </div>
+    </div>
+</div>
+{% section 'legit-product-nft-banner' %}
+{% section 'legit-product-nft-blocks' %}
+{% section 'legit-product-nft-services' %}
+{% section 'legit-product-nft-tabs' %}
+{% section 'legit-form-get-personal' %}
+{% section 'legit-page-nft-services-background' %}
+
+
+<script>
+    window.theme = window.theme || {};
+    window.theme.strings = window.theme.strings || {};
+
+    // Override default values of theme.strings for each template.
+    // Values are used by JavaScript only; Liquid must be updated separately
+    window.theme.strings.addToCart = {{ 'products.product.add_to_cart' | t | json }};
+    window.theme.strings.soldOut = {{ 'products.product.sold_out' | t | json }};
+    window.theme.strings.unavailable = {{ 'products.product.unavailable' | t | json }};
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('.product_checkout-cart').click(function () {
+            $(this).text('Adding...');
+            setTimeout(() => {
+                $(this).text('Thank You!');
+                setTimeout(() => {
+                    $(this).parent('.product_checkout-btns').parent('.product_checkout-right').parent('form').submit();
+                }, 1000);
+            }, 1000);
+        });
+    });
+</script>

@@ -1,0 +1,110 @@
+<style>
+  .guides-card {
+    width: calc(33.333334% - 10px);
+    text-decoration: none;
+    height: max-content;
+    display: none;
+  }
+  .guides-card.active {
+    display: flex;
+  }
+  .guides-card_image {
+    width: 100%;
+    padding-top: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border-radius: 11px;
+  }
+  .blog-cards_filter-item {
+    padding: 12px 30px 10px 30px;
+    border: 1px solid #3C1F1B;
+    border-radius: 44px;
+    text-decoration: none;
+    text-transform: capitalize;
+    line-height: 1;
+  }
+  .blog-cards_filter-item.active {
+    background: #F24F14;
+    border: 1px solid #F24F14;
+    color: #fff;
+  }
+  .blog-cards_filter-item.active:hover {
+    pointer-events: none;
+  }
+  .blog-cards_cards {
+    gap: 50px 15px;
+    width: 100%;
+  }
+  @media(max-width: 750px) {
+    .guides-card_image {
+      border-radius: 7px;
+    }
+    .guides-card {
+      width: calc(50% - 7.5px);
+      gap: 20px;
+    }
+    .guides-card h3 {
+      font-size: 20px;
+    }
+    .blog-cards_cards {
+        gap: 40px 15px;
+    }
+  }
+</style>
+
+<div class="rebranding_container">
+  <div class="blog-cards_content block-flex-wrap block-flex-center-center block-gap-40">
+    <div class="blog-cards_filter block-flex-wrap block-gap-10 block-flex-center-center w-100">
+      <a href="javascript:void(0)" class="blog-cards_filter-item body-text active standart-hover" data-tag="all">
+        All
+      </a>
+      {% for btag in blog.tags %}
+      <a href="javascript:void(0)" class="blog-cards_filter-item body-text standart-hover" data-tag="{{ btag | handle }}">{{ btag }}</a>
+      {% endfor %}
+    </div>
+    <div class="blog-cards_cards block-flex-wrap">
+      {% for article in blog.articles %}
+      <a href="{{ article.url }}" class="standart-hover guides-card active block-flex-wrap block-gap-30 {% for btag in article.tags %}{{btag | handle }}{% endfor %}">
+        <div class="guides-card_image" style="background-image: url('{{ article.image.src | image_url }}')"></div>
+        <div class="guides-card_text block-flex-wrap w-100 block-gap-15">
+          <h3 class="h3-heading-pp w-100 tac">
+            {{ article.title }}
+          </h3>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.blog-cards_filter-item').forEach(tag => {
+  tag.addEventListener('click', function () {
+    const selectedTag = this.getAttribute('data-tag');
+    const cards = document.querySelectorAll('.guides-card');
+    const tags = document.querySelectorAll('.blog-cards_filter-item');
+
+    // Update active class on tag-select elements
+    tags.forEach(t => t.classList.remove('active'));
+    this.classList.add('active');
+
+    // Filter cards
+    cards.forEach(card => {
+      card.classList.remove('active');
+
+      if (selectedTag === 'all' || card.classList.contains(selectedTag)) {
+        card.classList.add('active');
+      }
+    });
+  });
+});
+</script>
+
+{% schema %}
+  {
+    "name": "Blog Cards",
+    "class": "blog-cards rebranding-section-bottom",
+    "settings": []
+  }
+{% endschema %}

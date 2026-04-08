@@ -1,0 +1,389 @@
+{%- assign first_variant = product.selected_or_first_available_variant -%}
+{%- assign variants_count = product.variants.size -%}
+{%- assign form_time = false -%}
+{% for tag in product.tags %}
+    {% if tag contains 'time_options' %}
+        {% assign form_time = true %}
+    {% endif %}
+{% endfor %}
+
+{% if form_time %}
+    <div id="product__current-price--{{ product.id }}" class="product__current-price"
+         style="display: block">{{ first_variant.price | money }} </div>
+    {% form 'product', product, class: 'product-form product-form__multiply-options' %}
+        <div id="option-container--{{ product.id }}" class="option-container">
+            {%- for option in product.options_with_values -%}
+                <div class="option-wrapper option-wrapper__{{ option.name | downcase | replace: " ", "-" }}">
+                <p class="pro-option-name product_checkout-answear">{{ option.name }} </p>
+                <div class="{% if option.name contains "Brand" or option.name contains "number of authentications" %} option-dropdown-container{% else %}center-options-container{% endif %}">
+                    {% if option.name contains "Brand" or option.name contains "number of authentications" %}
+                        <div id="option{{- forloop.index -}}"
+                             class="current-option current-option__{{ option.name | downcase | replace: " ", "-" }}">
+                            {{ option.values[0] }}
+                        </div>
+                    {% endif %}
+                    <div id="options{{- forloop.index -}}"
+                         class="{% if option.name contains "Brand" or option.name contains "number of authentications" %}option-dropdown {% endif %}">
+                        {%- capture selector_id -%}
+                            {%- if shop_bar -%}
+                                ShopBar-
+                            {%- else -%}
+                                Product-t
+                            {%- endif -%}
+                            SingleOptionSelector-{{- forloop.index0 -}}-{{- product.id -}}
+                        {%- endcapture -%}
+                        {%- for value in option.values -%}
+                            <div class="radio-options">
+                                <label for="radio_{{ selector_id }}" class="radio radio-wrap">
+                                    {{- value -}}
+                                    <input type="radio" name="{{ option.name | downcase | replace: " ", "-" }}"
+                                           value="{{ value | escape }}" id="radio_{{ selector_id }}"
+                                           data-option="option{{ option.position }}"
+                                           class="radio-option"
+                                            {% if forloop.index == 1 %} checked="checked"{% endif %}
+                                    />
+                                    {% unless option.name contains "Brand" or option.name contains "number of authentications" %}
+                                        <div class="checkmark"></div>{% endunless %}
+                                </label>
+                            </div>
+                        {%- endfor -%}
+                    </div>
+                </div>
+                </div>
+               {%- endfor -%}
+        </div>
+        <div class="hidden" id="selected-options-values--{{ product.id }}" data-option1="{{ first_variant.option1 }}"
+             data-option2="{{ first_variant.option2 }}" data-variant="{{ first_variant.id }}"></div>
+        <label for="product-select--{{ product.id }}"
+               class="hidden accessible-label">Select variant</label>
+        <select
+                name="id" data-productid="{{ product.id }}"
+                id="product-select--{{ product.id }}"
+                class="hidden product-single__variants"
+                data-product-id="{{ product.id }}"
+                data-product-select>
+            {%- for variant in product.variants -%}
+                {%- if variant.available -%}
+                    <option {% if variant == first_variant %} selected="selected" {% endif %}
+                            data-sku="{{ variant.sku }}"
+                            data-price="{{ variant.price | money }}"
+                            value="{{ variant.id }}">{{ variant.title }} --- {{ variant.price | money_with_currency }}</option>
+                {%- else -%}
+                    <option disabled="disabled">{{ variant.title }} - Sold out</option>
+                {%- endif -%}
+            {%- endfor -%}
+        </select>
+        <div class="product_checkout-btns">
+            {% if template.handle contains 'product' %}
+                <button class="product_checkout-cart btn--full product__add-to-cart-button{% if section.settings.enable_payment_button and current_variant.available %} shopify-payment-btn btn--secondary{% endif %}"
+                        data-cart-submit
+                        type="submit" name="add"
+                        {% unless current_variant.available %} disabled="true"{% endunless %}
+                        aria-label="{{ button_text }}"
+                >
+    <span class="primary-text" aria-hidden="false" data-cart-primary-submit-text>
+      {{ button_text }}
+    </span>
+
+                    <span class="secondary-text" aria-hidden=true
+                          data-cart-secondary-submit-text>{{ 'products.product.view_cart' | t }}</span>
+                </button>
+            {% endif %}
+
+            <div class="redirect-checkout-btn">
+                <input type="hidden" name="redirect" id="redirect-addtocart-btn" data-productid="{{ product.id }}"
+                       class="product-select" value="{{ product.selected_or_first_available_variant.id }}"
+                       data-variant-title="{{ product.selected_or_first_available_variant.title }}"/>
+                <input type="submit" value="Add To Cart" class="hidden product_checkout-cart"/>
+                <input type="hidden" name="return_to" value="/checkout"/>
+                <div class="btn-submit-container">
+                    <div class="cart-notification"></div>
+                    <button id="cart___submit--{{ product.id }}" class="custom-cart-button">Add to cart</button>
+                </div>
+            </div>
+            <p class="product__notification text-small text-center" data-cart-notification></p>
+            {% if section.settings.enable_payment_button and current_variant.available %}
+                {{ form | payment_button }}
+            {% endif %}
+        </div>
+    {% endform %}
+{% else %}
+    {% form 'product', product, class: 'product-form product-form__single-option' %}
+        <div id="option-container" class="option-container">
+            <p class="option-name">{{ product.options_with_values[0].name }}:</p>
+            <div class="option-dropdown-container">
+                <div id="option{{- forloop.index -}}"
+                     class="current-option current-option__{{ product.options_with_values[0].name | downcase | replace: " ", "-" }}">
+                    {{ product.options_with_values[0].values[0] }} - {{ product.variants[0].price | money }}
+                </div>
+
+                <div id="options{{- forloop.index -}}" class="option-dropdown">
+                    {%- capture selector_id -%}
+                        {%- if shop_bar -%}
+                            ShopBar-
+                        {%- else -%}
+                            Product-t
+                        {%- endif -%}
+                        SingleOptionSelector-{{- forloop.index0 -}}-{{- product.id -}}
+                    {%- endcapture -%}
+                    {%- for variant in product.variants -%}
+                        <div class="radio-options">
+                            <label for="radio_{{ selector_id }}" class="radio radio-wrap">
+                                {{ variant.title }} - {{ variant.price | money }}
+                                <input type="radio" name="{{ variant.title | downcase | replace: " ", "-" }}"
+                                       value="{{ variant.title }} - {{ variant.price | money }}"
+                                       id="radio_{{ selector_id }}"
+                                       data-option="option{{ option.position }}"
+                                       data-price="{{ variant.price | money }}"
+                                       data-id="{{ variant.id }}"
+                                       class="radio-option"
+                                        {% if forloop.index == 1 %} checked="checked"{% endif %}
+                                />
+                            </label>
+                        </div>
+                    {%- endfor -%}
+                </div>
+            </div>
+        </div>
+
+        <input name="id" data-productid="{{ product.id }}" id="product-select--{{ product.id }}"
+               data-product-id="{{ product.id }}" type="hidden" value="{{ first_variant.id }}">
+        <div id="product__current-price--{{ product.id }}" class="product__current-price"
+             style="display: block">{{ first_variant.price | money }} </div>
+        <div class="product_checkout-btns">
+            {% if template.handle contains 'product' %}
+                <button class="product_checkout-cart btn--full product__add-to-cart-button{% if section.settings.enable_payment_button and current_variant.available %} shopify-payment-btn btn--secondary{% endif %}"
+                        data-cart-submit
+                        type="submit" name="add"
+                        {% unless current_variant.available %} disabled="true"{% endunless %}
+                        aria-label="{{ button_text }}"
+                >
+    <span class="primary-text" aria-hidden="false" data-cart-primary-submit-text>
+      {{ button_text }}
+    </span>
+                    <span class="secondary-text" aria-hidden=true
+                          data-cart-secondary-submit-text>{{ 'products.product.view_cart' | t }}</span>
+                </button>
+            {% endif %}
+
+            <div class="redirect-checkout-btn">
+                <input type="hidden" name="redirect" id="redirect-addtocart-btn" data-productid="{{ product.id }}"
+                       class="product-select" value="{{ product.selected_or_first_available_variant.id }}"
+                       data-variant-title="{{ product.selected_or_first_available_variant.title }}"/>
+                <input type="submit" value="Add To Cart" class="hidden product_checkout-cart"/>
+                <input type="hidden" name="return_to" value="/checkout"/>
+                <a class="learn-more-btn" href="https://legitgrails.com/pages/bundles">Learn more</a>
+                <div class="btn-submit-container">
+                    <div class="cart-notification"></div>
+                    <button id="cart___submit--{{ product.id }}" class="custom-cart-button">Add to cart</button>
+                </div>
+                {% if section.settings.enable_payment_button and current_variant.available %}
+                    {{ form | payment_button }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="hidden" id="selected-options-values--{{ product.id }}"  data-variant="{{ first_variant.id }}"></div>
+    {% endform %}
+{% endif %}
+<style>
+    .product__current-price {
+        text-align: center;
+    }
+    .option-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .pro-option-name {
+        margin: 0;
+        text-align: center;
+        color: #161616;
+        font-weight: 500;
+    }
+    .option-name {
+        margin-bottom: 0;
+        text-align: center;
+    }
+    .uploadkit.uploadkit-injected, .hidden, .product_checkout-cart {
+        display: none;
+    }
+    .option-dropdown-container {
+        position: relative;
+        margin-bottom: 20px;
+        border: 1px solid #e3d2bd;
+        padding: 10px 0;
+    }
+    .center-options-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .center-options-container div .radio-options {
+        width: fit-content;
+    }
+    .option-dropdown {
+        position: absolute;
+        padding: 15px 0;
+        background-color: #fff;
+        min-width: 250px;
+        overflow: auto;
+        box-shadow: 5px 15px 20px 5px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+        border-radius: 8px;
+        margin: 7px auto 0;
+        border: 1px solid #E3D2BD;
+        right: auto;
+        left: auto;
+        opacity: 0;
+        visibility: hidden;
+    }
+    .option-dropdown.show {
+        opacity: 1;
+        visibility: visible;
+    }
+    .current-option {
+        position: relative;
+        min-width: 250px;
+        cursor: pointer;
+        text-align: center;
+        background-image: linear-gradient(45deg, transparent 50%, #cdab71 50%), linear-gradient(135deg, #cdab71 50%, transparent 50%);
+        background-position: calc(100% - 27px) calc(1rem + 10px), calc(100% - 23px) calc(1rem + 10px);
+        background-size: 4px 4px, 4px 4px;
+        background-repeat: no-repeat;
+        background-position-y: center;
+        padding: 0px 45px 0px 18px;
+    }
+    .radio-options {
+        position: relative;
+        min-height: 30px;
+        transition: all 0.2s ease;
+    }
+    .option-dropdown .radio-options:hover {
+        background-color: #f1f1f1;
+    }
+    .radio-options label.radio-wrap {
+        margin: 0;
+        padding: 8px 25px;
+        padding-right: 0;
+    }
+    .product-form-container {
+        min-width: 320px;
+    }
+    .product_checkout-btns {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+    .product-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    .redirect-checkout-btn .product_checkout-cart {
+        width: 100%;
+        background: #161616;
+        border: 1px solid #161616;
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-family: 'Work Sans';
+        border-radius: 5px;
+        transition: ease 0.5s;
+        height: 43px;
+    }
+    .btn-submit-container {
+        position: relative;
+    }
+    .cart-notification {
+        position: absolute;
+        width: 100%;
+        top: -20px;
+        line-height: 16px;
+        color: #E51B24;
+    }
+    .custom-cart-button {
+        width: 100%;
+        background: #161616;
+        border: 1px solid #161616;
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-family: 'Work Sans';
+        border-radius: 5px;
+        transition: ease 0.5s;
+        height: 43px;
+    }
+    .radio-wrap {
+        display: block;
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 16px;
+        line-height: 16px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    .radio-wrap input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        width: 100%;
+        left: 0;
+        top: 0;
+        z-index: 100;
+        height: 30px;
+    }
+    .checkmark {
+        position: absolute;
+        top: 7px;
+        left: 0;
+        height: 16px;
+        width: 16px;
+        background-color: #fff;
+        border-radius: 50%;
+        border: 1px solid #CDAB71;
+    }
+    .radio-wrap:hover input ~ .checkmark {
+        background-color: #f2f2f2;
+    }
+    .radio-wrap input:checked ~ .checkmark {
+        background-color: #fff;
+    }
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+    .radio-wrap input:checked ~ .checkmark:after {
+        display: block;
+    }
+    .radio-wrap .checkmark:after {
+        top: 3px;
+        left: 3px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #CDAB71;
+    }
+    .product_checkout {
+        position: relative;
+        z-index: 10;
+    }
+    .option-wrapper__answer-time {
+        order: 1;
+    }
+    .option-wrapper__number-of-authentications {
+        order: 2;
+    }
+    @media (max-width: 600px) {
+        .option-dropdown {
+            height: 210px;
+            overflow-y: scroll;
+        }
+    }
+</style>

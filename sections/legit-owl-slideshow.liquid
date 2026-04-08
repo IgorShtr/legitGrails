@@ -1,0 +1,250 @@
+<style>
+    @media only screen and (max-width:600px){.slider-height{min-height:700px}}@media only screen and (min-width:601px){.slider-height{min-height:900px}}
+</style>
+{%- if section.settings.show_overlay -%}
+    <style>
+        #Slideshow-{{ section.id }} .slideshow__overlay::before {
+            background-color: {{ section.settings.overlay_color }};
+            opacity: {{ section.settings.overlay_opacity | divided_by: 100.00 }};
+        }
+
+        #Slideshow-{{ section.id }} .legit-slideshow__heading,
+        #Slideshow-{{ section.id }} .slideshow__button-label {
+            color: {{ section.settings.overlay_text }};
+        }
+    </style>
+{%- endif -%}
+
+{%- assign first_block = section.blocks[0] -%}
+
+{%- comment -%}
+A centered call to action button is displayed if the corresponding setting is
+enabled or if there is just one slide with a call to action button.
+{%- endcomment -%}
+{%- assign show_center_cta = section.settings.center_cta -%}
+{%- if section.blocks.size == 1 and first_block.settings.cta_link != blank -%}
+    {%- assign show_center_cta = true -%}
+{%- endif -%}
+
+{%- if section.settings.slider_height == 'adapt' -%}
+    {%- assign wrapper_height = 100  -%}
+    {%- style -%}
+        #Slideshow-{{ section.id }} {
+        height: {{- wrapper_height -}}vh;
+        }
+        .owl-slideshow__slide {
+        height: {{- wrapper_height -}}vh;
+        }
+    {%- endstyle -%}
+{%- endif -%}
+
+<div class="{% if show_center_cta %} slideshow--center-cta{% endif %}" data-section-id="{{ section.id }}" data-section-type="slideshow-section">
+    <div id="Slideshow-{{ section.id }}"
+         class="owl-slideshow owl-slider-height"
+         role="region"
+         aria-describedby="slideshow-info"
+         tabindex="-1"
+         aria-label="slideshow"
+         style="background:url({{section.blocks.first.settings.image | img_url: '1800x'}});
+                 background-repeat: no-repeat;
+                 background-size: cover;
+                 background-position: center center;"
+    >
+        {%- if section.blocks.size > 0 -%}
+            <div class="owl-slideshow__slides owl-carousel owl-theme ">
+
+                {%- for block in section.blocks -%}
+                    {% if forloop.first==true %}
+
+                        <div class="owl-slideshow__slide slideshow__slide--{{ block.id }}{% if forloop.first %} slideshow__slide--active{% endif %}{% if section.settings.show_overlay %} slideshow__overlay{% endif %}"
+                        id="Slide{{ forloop.index0 }}"
+                            {% unless forloop.first %}aria-hidden="true"{% endunless %}
+                        {{ block.shopify_attributes }}>
+
+                    {%else%}
+
+                        <div class="owl-slideshow__slide slideshow__slide--{{ block.id }}{% if forloop.first %} slideshow__slide--active{% endif %}{% if section.settings.show_overlay %} slideshow__overlay{% endif %}"
+                        id="Slide{{ forloop.index0 }}"
+                            {% unless forloop.first %}aria-hidden="true"{% endunless %}
+                        {{ block.shopify_attributes }}>
+
+                    {% endif %}
+                    {%- if block.settings.image == blank -%}
+                        <div class="owl-slideshow__image slideshow__image--{{ block.id }}">
+                            <div class="placeholder-background">
+                                {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+                                {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                            </div>
+                        </div>
+                    {%- else -%}
+                        {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                        <div class="owl-slideshow__image slideshow__image--{{ block.id }} {% unless forloop.first %} lazyload{% endunless %}"
+                             style="background:url({{block.settings.image | img_url: '1800x'}});
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                                background-position: center center;">
+
+                        </div>
+                    {%- endif -%}
+
+                    <div class="slideshow__text-container legit-slideshow__text-container">
+                        <div class="slideshow__text-content">
+                            {%- if block.settings.title != blank -%}
+                                <h2 class="legit-slideshow__heading main-screen_title font-title">
+                                    {{ block.settings.title | escape }}
+                                </h2>
+                                <p class="legit-slideshow__heading main-screen_desc font-description">
+                                    {{ block.settings.button | escape }}
+                                </p>
+                            {%- endif -%}
+                            {%- if block.settings.cta_link != blank -%}
+                                <a href="{{ block.settings.cta_link }}" class="main-btn legit-slideshow__heading-cta font-title">
+                                    {{ block.settings.cta | escape }}
+                                </a>
+                            {%- endif -%}
+                        </div>
+                    </div>
+                    </div>
+                {%- endfor -%}
+            </div>
+        {%- else -%}
+            <div class="slideshow__image slideshow__image--{{ block.id }}{% if section.settings.show_overlay %} slideshow__overlay{% endif %}">
+                <div class="placeholder-background">
+                    {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                </div>
+            </div>
+        {%- endif -%}
+    </div>
+    <div class="scroll-animation animate__animated">
+        <img src="{{ 'scroll_top.png' | asset_url }}" alt="Arrow" class="scroll-animation_top">
+        <img src="{{ 'scroll.png' | asset_url }}" alt="Mouse" class="scroll-animation_main">
+        <img src="{{ 'scroll_down.png' | asset_url }}" alt="Arrow" class="scroll-animation_down">
+    </div>
+</div>
+    <style>
+        .owl-slider-height {display: block;position: relative;max-width: 100%;}
+        .owl-carousel .owl-stage {display: flex;}
+        .owl-carousel .owl-item img {width: auto;height: 100%;}
+        .owl-slideshow__image {width: 100%;height: 100%;}
+    </style>
+{% schema %}
+    {
+    "name": {
+    "en": "Legit Owl Slideshow"
+    },
+    "class": "index-section",
+    "max_blocks": 5,
+    "settings": [
+    {
+    "type": "select",
+    "id": "slider_height",
+    "label": {
+    "en": "Slide height"
+    },
+    "info": {
+    "en": "Learn more about [slideshow guidelines](https://help.shopify.com/en/manual/using-themes/themes-by-shopify/narrative#slideshow-sections-specific)"
+    },
+    "options": [
+    {
+    "value": "adapt",
+    "label": {
+    "en": "Adapt to first slide"
+    }
+    }
+    ]
+    }
+    ],
+    "presets": [
+    {
+    "name": {
+    "en": "Legit Owl Slideshow"
+    },
+    "category": {
+    "en": "Image"
+    },
+    "settings": {
+    "slider_height": "adapt"
+    },
+    "blocks": [
+    {
+    "type": "image"
+    },
+    {
+    "type": "image"
+    }
+    ]
+    }
+    ],
+    "blocks": [
+    {
+    "type": "image",
+    "name": {
+    "en": "Image slide"
+    },
+    "settings": [
+    {
+    "type": "image_picker",
+    "id": "image",
+    "label": {
+    "en": "Image"
+    }
+    },
+    {
+    "type": "header",
+    "content": {
+    "en": "Text"
+    }
+    },
+    {
+    "type": "text",
+    "id": "title",
+    "label": {
+    "en": "Heading"
+    },
+    "default": {
+    "en": "Tell your story"
+    }
+    },
+    {
+    "type": "text",
+    "id": "button",
+    "label": {
+    "en": "Slide title"
+    },
+    "default": {
+    "en": "Slide title"
+    },
+    "info": {
+    "en": "Required if you add more than one slide"
+    }
+    },
+    {
+    "type": "text",
+    "id": "cta",
+    "label": {
+    "en": "Button label"
+    },
+    "default": {
+    "en": "View more"
+    }
+    },
+  {
+"type": "checkbox",
+"id": "link_target",
+"label": {
+"en": "Open this link in a new window"
+},
+"default": true
+},
+    {
+    "type": "url",
+    "id": "cta_link",
+    "label": {
+    "en": "Button link"
+    }
+    }
+    ]
+    }
+    ]
+    }
+{% endschema %}

@@ -1,0 +1,150 @@
+<script>
+  $(window).on('load', function () {
+
+
+   $(".count").each(function () {
+  $(this)
+    .prop("Counter", 2005712)
+    .animate(
+      {
+        Counter: 2039284,
+      },
+      {
+        duration: 3000,
+        easing:"swing",
+        step:function (now) {
+          now = Number(Math.ceil(now)).toLocaleString('en');
+                                $(this).text(now);
+        },
+      }
+    );
+});
+
+
+    
+    if ($(window).width() < 600) {
+        $('.hype_hero-img').removeClass('rellax');
+    } else {
+      var rellax = new Rellax('.rellax');
+    }
+    var winScrollTop = $(this).scrollTop();
+    if (winScrollTop > 1) {
+        $('.site-header').addClass('site-header--fixed');
+    } else {
+        $('.site-header').removeClass('site-header--fixed');
+    };
+
+    let window_height = window.innerHeight
+    let screen1 = document.querySelector('.hype_hero')
+    let screen2 = document.querySelector('.hype_offers')
+    let screen3 = document.querySelector('.hype_coverage')
+    let screen4 = document.querySelector('.hype_authentication')
+    let screen5 = document.querySelector('.hype_steps')
+    let screen6 = document.querySelector('.hype_cta')
+    let screen1_scrolled = false
+    let screen2_scrolled = false
+    let screen3_scrolled = false
+    let screen4_scrolled = false
+    let screen5_scrolled = false
+    let screen6_scrolled = false
+
+
+    if (winScrollTop > screen1.offsetHeight - 200 && !screen1_scrolled) {
+        hypeOffersLoad();
+        screen1_scrolled = true;
+    };
+    if (winScrollTop > screen2.offsetHeight + 400 && !screen2_scrolled) {
+        hypeCoverageLoad();
+        screen2_scrolled = true;
+    };
+    if (winScrollTop > screen3.offsetHeight + 400 && !screen3_scrolled) {
+        hypeAuthenticationLoad();
+        screen3_scrolled = true;
+    };
+    if (winScrollTop > screen4.offsetHeight + 400 && !screen4_scrolled) {
+        hypeStepsLoad();
+        screen4_scrolled = true;
+    };
+    if (winScrollTop > screen5.offsetHeight + 400 && !screen5_scrolled) {
+        hypeCtaLoad();
+        screen5_scrolled = true;
+    };
+
+    window.addEventListener('scroll', () => {
+        if (screen2.offsetTop + 400 < window.pageYOffset + window_height && !screen1_scrolled) {
+            hypeOffersLoad();
+            screen1_scrolled = true;
+        };
+        if (screen3.offsetTop + 300 < window.pageYOffset + window_height && !screen2_scrolled) {
+              hypeCoverageLoad();
+              screen2_scrolled = true;
+          };
+        if (screen4.offsetTop + 500 < window.pageYOffset + window_height && !screen3_scrolled) {
+              hypeAuthenticationLoad();
+              screen3_scrolled = true;
+          };
+      if (screen5.offsetTop + 500 < window.pageYOffset + window_height && !screen4_scrolled) {
+              hypeStepsLoad();
+              screen4_scrolled = true;
+          };
+      if (screen6.offsetTop + 400 < window.pageYOffset + window_height && !screen5_scrolled) {
+              hypeCtaLoad();
+              screen5_scrolled = true;
+          };
+    });
+
+});
+
+function hypeOffersLoad() {
+    $('.hype-offers_item-1').addClass('animated');
+    setTimeout(function () {
+        $('.hype-offers_item-2').addClass('animated');
+    }, 200);
+    setTimeout(function () {
+          $('.hype-offers_item-3').addClass('animated');
+      }, 400);
+    setTimeout(function () {
+          $('.hype-offers_item-4').addClass('animated');
+      }, 600);
+};
+
+function hypeCoverageLoad() {
+    $('.hype_coverage-item-1').addClass('animated');
+    setTimeout(function () {
+        $('.hype_coverage-item-2').addClass('animated');
+    }, 100);
+    setTimeout(function () {
+          $('.hype_coverage-item-3').addClass('animated');
+      }, 200);
+    setTimeout(function () {
+          $('.hype_coverage-item-4').addClass('animated');
+      }, 300);
+  setTimeout(function () {
+          $('.hype_coverage-item-5').addClass('animated');
+      }, 400);
+  setTimeout(function () {
+          $('.hype_coverage-item-6').addClass('animated');
+      }, 500);
+};
+
+  function hypeAuthenticationLoad() {
+    $('.hype_authentication-wrapper').addClass('animated');
+    setTimeout(function () {
+        $('.hype_authentication-wrapper-content-offers-mobile').addClass('animated');
+    }, 200);
+};
+
+  function hypeStepsLoad() {
+    $('.hype_steps-item-1').addClass('animated');
+    setTimeout(function () {
+        $('.hype_steps-item-2').addClass('animated');
+    }, 100);
+    setTimeout(function () {
+        $('.hype_steps-item-3').addClass('animated');
+    }, 200);
+};
+
+  function hypeCtaLoad() {
+    $('.hype_cta-wrapp').addClass('animated');
+};
+</script>

@@ -1,0 +1,38 @@
+{% render 'fonts-trustpilot' %}
+<section class="main-screen" style="background-image: url({{ product.metafields.custom_fields.banner_image | img_url: 'master' }})">
+    <div class="container">
+        {% if product.metafields.custom_fields.banner_text %}
+        <h1 class="main-screen_title font-title">
+            {{ product.metafields.custom_fields.banner_text }}
+        </h1>
+        {% endif %}
+        {% if product.metafields.custom_fields.banner_description %}
+        <p class="main-screen_desc font-description">
+            {{ product.metafields.custom_fields.banner_description }}
+        </p>
+        {% endif %}
+        <!-- TrustBox widget - Mini -->
+          <div class="trustpilot-widget_wrapper" style="height: 112px; width: 200px; margin: auto;">
+                  <div class="trustpilot-widget" data-locale="en-GB" data-template-id="53aa8807dec7e10d38f59f32" data-businessunit-id="5fbebb2d281b010001718c1c" data-style-height="112px" data-style-width="200px" height="112px" width="200px" data-theme="dark">
+                    <a href="https://uk.trustpilot.com/review/legitgrails.com" target="_blank" rel="noopener">Trustpilot</a>
+                  </div>
+                  </div>
+        <!-- End TrustBox widget -->
+    </div>
+</section>
+<style>
+  .trustpilot-widget {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+</style>
+<!-- TrustBox script -->
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<!-- End TrustBox script -->
+{% schema %}
+{
+"name": "Section Product Banner",
+"settings": []
+}
+{% endschema %}

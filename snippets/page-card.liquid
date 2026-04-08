@@ -1,0 +1,14 @@
+<div class="card card-page critical-clear" data-animate>
+  <a href="{{ page.url }}" class="card__wrapper card--article">
+    <div class="card__info">
+      <h3 class="card__name font-title">{{ page.title }}</h3>
+      <div class="card__excerpt rte font-description">
+        {{ page.content | strip_html | truncatewords: 30 }}
+      </div>
+      <span class="card__read-more font-title">
+        {{ 'blogs.article.read_more' | t }}
+        {% include 'icon-arrow-right' %}
+      </span>
+    </div>
+  </a>
+</div>

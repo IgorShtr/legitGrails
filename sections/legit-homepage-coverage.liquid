@@ -1,0 +1,49 @@
+{% render 'section-legit-homepage-coverage-styles' %}
+<div class="section-contaimer">
+            <span class="homepage_item-coverage-razdel"></span>
+            <h2 class="homepage_item-coverage-title font-title">
+                What we authenticate?
+            </h2>
+            <div class="homepage_item-coverage_content">
+                <a href="https://legitgrails.com/products/luxury-bag-authentication"  class="homepage_item-coverage_item">
+                    <img src="{{ 'coverage-1.webp' | asset_url }}" alt="" loading="lazy">
+                    <p class="font-description">Handbags</p>
+                </a>
+                <a href="https://legitgrails.com/products/clothing-authentication" class="homepage_item-coverage_item">
+                    <img src="{{ 'coverage-2.webp' | asset_url }}" alt="" loading="lazy">
+                    <p class="font-description">Clothing</p>
+                </a>
+                <a href="https://legitgrails.com/products/legit-check-shoes" class="homepage_item-coverage_item">
+                    <img src="{{ 'coverage-3.webp' | asset_url }}" alt="" loading="lazy">
+                    <p class="font-description">Shoes</p>
+                </a>
+                <a href="https://legitgrails.com/products/jewelry-authentication-service" class="homepage_item-coverage_item">
+                    <img src="{{ 'coverage-4.webp' | asset_url }}" alt="" loading="lazy">
+                    <p class="font-description">Jewellery</p>
+                </a>
+                <a href="https://legitgrails.com/products/luxury-watch-authentication-service" class="homepage_item-coverage_item">
+                    <img src="{{ 'coverage-5.webp' | asset_url }}" alt="" loading="lazy">
+                    <p class="font-description">Watches</p>
+                </a>
+                <a href="https://legitgrails.com/products/eyewear-authentication" class="homepage_item-coverage_item">
+                    <img src="{{ 'coverage-6.webp' | asset_url }}" alt="" loading="lazy">
+                    <p class="font-description">Eyewear</p>
+                </a>
+            </div>
+            <a href="https://legitgrails.com/pages/choose-your-brand" class="font-title main-btn homepage_other-brands-track">
+                Learn more
+            </a>
+        </div>
+
+{% schema %}
+  {
+    "name": "Legit homepage coverage",
+    "class": "homepage_item-coverage",
+    "tag": "section",
+    "presets": [
+    {
+      "name": "Legit homepage coverage"
+    }
+  ]
+  }
+{% endschema %}

@@ -1,0 +1,140 @@
+{% render 'section-legit-bundles-form-get-personal-styles' %}
+<div class="contact-form-section contact-form-section--{{ section.id }}">
+    <div class="page-width">
+        <div class="form-heading">
+            {%- if section.settings.title != blank -%}
+                <h4 class="form-heading_title section-title featured-blog__heading font-title"
+                    data-animate="true">{{ section.settings.title | escape }}</h4>
+            {%- endif -%}
+            {%- if section.settings.description != blank -%}
+                <div class="form-heading__description section-description font-description">{{ section.settings.description }}</div>
+            {%- endif -%}
+        </div>
+        {% form 'contact' %}
+            <div class="contact-form-row">
+                <div class="form-column order-2">
+                    {% if form.posted_successfully? %}
+                        <p class="form-success">
+                            {{ 'contact.form.post_success' | t }}
+                        </p>
+                    {% endif %}
+
+                    {{ form.errors | default_errors }}
+
+                    <label for="ContactFormName" class="">{{ 'contact.form.name' | t }}*</label>
+                    <input type="text" id="ContactFormName" name="contact[{{ 'contact.form.name' | t }}]"
+                           placeholder="{{ 'contact.form.name' | t }}" autocapitalize="words"
+                           value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+                    <label for="ContactFormEmail" class="">{{ 'contact.form.email' | t }}*</label>
+                    <input type="email" id="ContactFormEmail" name="contact[email]"
+                           placeholder="{{ 'contact.form.email' | t }}"
+                           autocorrect="off" autocapitalize="off"
+                           value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
+                    <label for="ContactFormMessage" class="">{{ 'contact.form.message' | t }}*</label>
+                    <textarea rows="6" id="ContactFormMessage" name="contact[{{ 'contact.form.message' | t }}]"
+                              placeholder="{{ 'contact.form.message' | t }}">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+                </div>
+                <div class="form-column order-1">
+                    <div class="block-inverse">
+                        {% if section.settings.text != blank %}
+                        <div class="block-inverse__title">{{ section.settings.text }}</div>
+                        {% endif %}
+                        {% if section.settings.subtext != blank %}
+                        <div class="block-inverse__subtitle">{{ section.settings.subtext }}</div>
+                        {% endif %}
+                        <div class="block-inverse__content">
+                            {%- for block in section.blocks -%}
+                                <div class="block-inverse_item">
+                                    <div class="block-inverse__image">
+                                        <img src="{{ block.settings.image | img_url: 'master' }}" alt="form image"
+                                             width="50" loading="lazy">
+                                    </div>
+                                    <div class="block-inverse__text-column">
+                                        {% if block.settings.title != blank %}
+                                        <div class="block-inverse__caption"> {{ block.settings.title }}</div>
+                                        {% endif %}
+                                        <div class="block-inverse__text-small">
+                                            {{ block.settings.text }}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <label for="input-submit" class="submit-label">
+                <input id="input-submit" type="submit" class="main-btn" value="Submit request">
+            </label>
+        {% endform %}
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Form & blocks",
+  "class": "section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "default": "<p>Description</p>",
+      "label": "Section Description"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Block text"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Sub text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Block content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Block title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+          "label": "Text with checkmarks"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Form & Blocks",
+      "blocks": [
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,153 @@
+<style>
+  .cosmetics_hero-wrapp {
+    height: calc(100vh - 90px);
+    padding-top: 90px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    display: flex;
+    min-height: 980px
+  }
+  .cosmetics_hero-content {
+    height: max-content;
+    width: max-content;
+  }
+  .cosmetics_hero-text {
+    width: 100%;
+    text-align: center;
+    max-width: 815px;
+    position: relative;
+    margin: auto;
+    z-index: 1;
+  }
+  .cosmetics_hero-text p.cosmetics-desc {
+    margin-top: 15px;
+  }
+  .cosmetics_hero-text a.cosmetics-btn {
+   margin: 20px auto 0 auto;
+  }
+  .cosmetics_hero-text h1 {
+    font-size: 55px;
+  }
+  img.cosmetics_hero-image-mobile {
+    display: none;
+  }
+img.cosmetics_hero-image-desktop {
+    display: block;
+    height: 587px;
+    margin-top: -30px;
+    z-index: 0;
+    position: relative;
+}
+  @media(max-width: 1450px) {
+    img.cosmetics_hero-image-desktop {
+        height: 515px;
+    }
+    .cosmetics_hero-wrapp {
+      min-height: 920px;
+    }
+  }
+  @media(max-width: 1250px) {
+    img.cosmetics_hero-image-desktop {
+      height: 440px;
+      margin-top: -10px;
+    }
+    .cosmetics_hero-text h1 {
+      font-size: 50px;
+    }
+    .cosmetics_hero-wrapp {
+      min-height: 850px;
+    }
+  }
+  @media(max-width: 950px) {
+    .cosmetics_hero-wrapp {
+      min-height: 900px;
+    }
+    .cosmetics_hero-content {
+      width: 100%;
+    }
+    img.cosmetics_hero-image-desktop {
+        margin-top: auto;
+        width: 100%;
+        height: initial;
+}
+    .cosmetics_hero-content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+    .cosmetics_hero-text {
+    max-width: 815px;
+    height: max-content;
+    padding-top: 40px;
+}
+  }
+  @media(max-width: 750px) {
+    .cosmetics_hero-text {
+      margin: auto
+    }
+    .cosmetics_hero-text h1 {
+        font-size: 30px;
+    }
+    .cosmetics_hero-wrapp {
+      min-height: 820px;
+    }
+    img.cosmetics_hero-image-desktop {
+      display: none;
+    }
+    img.cosmetics_hero-image-mobile {
+        display: block;
+        width: 100%;
+        height: initial;
+      margin-top: auto;
+    }
+    .cosmetics_hero-wrapp {
+      min-height: 830px;
+    }
+  }
+  @media(max-width: 600px) {
+    .cosmetics_hero-wrapp {
+      min-height: 780px;
+    }
+  }
+  @media(max-width: 500px) {
+    .cosmetics_hero-wrapp {
+      min-height: 740px;
+    }
+  }
+  @media(max-width: 400px) {
+    .cosmetics_hero-text h1 {
+        font-size: 26px;
+    }
+  }
+</style>
+
+<div class="container">
+  <div class="cosmetics_hero-wrapp">
+    <div class="cosmetics_hero-content">
+      <div class="cosmetics_hero-text">
+        <h1 class="cosmetics-title">
+          <span class="pp-accent">Verify</span> your cosmetics & perfumes <span class="pp-accent">with confidence</span>
+        </h1>
+        <p class="cosmetics-desc">
+          Get trusted verification from beauty experts in as little as 30 minutes
+        </p>
+        <a href="#product-box_section" class="cosmetics-btn cosmetics-btn-primary">
+          Start my beauty check
+        </a>
+      </div>
+      <img src="{{ 'cosmetics-landing_hero-image.png' | asset_url }}" class="cosmetics_hero-image cosmetics_hero-image-desktop">
+      <img src="{{ 'cosmetics-landing_hero-image-mob.png' | asset_url }}" class="cosmetics_hero-image cosmetics_hero-image-mobile">
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Cosmetics Hero",
+    "class": "cosmetics_hero",
+    "settings": []
+  }
+{% endschema %}

@@ -1,0 +1,29 @@
+{% render "rebranding_main-styles" %}
+{% section "brand-search" %}
+{% section "quarter_offers" %}
+{% section "product_steps" %}
+
+<script>
+  $("#shopify-section-quarter_offers .rebranding_btn").attr("href","#search-brand"),$("#shopify-section-product_steps .rebranding_btn").attr("href","#search-brand");
+
+$('#search-brand-input').on('input', function(){
+    if ($(".brand-block").hasClass('active')) {
+      $(".search-brand_zero").removeClass('active');
+      $(".input-search-label").removeClass('zero-active');
+    } else {
+        $(".search-brand_zero").addClass('active');
+        $(".input-search-label").addClass('zero-active');
+    }
+})
+
+  jQuery(function($){
+	$(document).mouseup( function(e){
+		var div = $( "#search-brand-input" );
+		if ( !div.is(e.target)
+		    && div.has(e.target).length === 0 ) {
+			$(".search-brand_zero").removeClass('active');
+          $(".input-search-label").removeClass('zero-active');
+		}
+	});
+});
+</script>

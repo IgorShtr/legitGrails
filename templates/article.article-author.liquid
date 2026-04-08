@@ -1,0 +1,233 @@
+{% assign number_of_comments = article.comments_count %}
+
+{% if comment and comment.status != 'published' %}
+  {% assign number_of_comments = article.comments_count | plus: 1 %}
+{% endif %}
+<article>
+
+  {% section 'article-template' %}
+
+  {% if blog.comments_enabled? and number_of_comments > 0 %}
+    <div class="comments-wrapper">
+      <div class="page-width">
+        <div class="grid">
+          <div class="grid__item medium-up--push-one-twelfth">
+            <h3 class="h4 font-title">{{ 'blogs.comments.with_count' | t: count: number_of_comments }}</h3>
+          </div>
+        </div>
+
+        {% paginate article.comments by 5 %}
+
+          {% comment %}
+            If a comment was just submitted, show it with the appropriate success message.
+          {% endcomment %}
+          <div id="comments" class="grid">
+
+            {% if comment and comment.status and paginate.current_page == 1 %}
+              <div class="grid__item medium-up--ten-twelfths medium-up--push-one-twelfth">
+                <div class="form-success form-success--comment">
+                  {% if blog.moderated? and comment.status != 'published' %}
+                    {{ 'blogs.comments.success_moderated' | t }}
+                  {% else %}
+                    {{ 'blogs.comments.success' | t }}
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+
+            {% if number_of_comments > 0 %}
+              {% if comment and comment.status != 'published' %}
+                {% include 'comment' %}
+              {% endif %}
+
+              {% for comment in article.comments %}
+                {% include 'comment' %}
+              {% endfor %}
+            {% endif %}
+
+            {% if paginate.pages > 1 %}
+              <div class="grid__item">
+                {% include 'pagination' %}
+              </div>
+            {% endif %}
+          </div>
+        {% endpaginate %}
+      </div>
+    </div>
+  {% endif %}
+
+  {% if blog.comments_enabled? %}
+    <div class="comments-form-wrapper">
+      <div class="page-width">
+        <div class="grid">
+          <div class="grid__item medium-up--push-one-twelfth">
+            <h3 class="comments-form__title h4 font-title">{{ 'blogs.comments.title' | t }}</h3>
+          </div>
+
+          {% form 'new_comment', article %}
+
+            <div class="grid__item medium-up--ten-twelfths medium-up--push-one-twelfth">
+              {{ form.errors | default_errors }}
+            </div>
+
+            <div class="grid__item medium-up--five-twelfths medium-up--push-one-twelfth">
+              <label for="CommentAuthor" class="label--hidden">{{ 'blogs.comments.name' | t }}</label>
+              <input type="text" name="comment[author]" id="CommentAuthor" class="{% if form.errors contains 'author' %} input--error{% endif %}" placeholder="{{ 'blogs.comments.name' | t }}" value="{{ form.author }}">
+            </div>
+
+            <div class="grid__item medium-up--five-twelfths medium-up--push-one-twelfth">
+              <label for="CommentEmail" class="label--hidden">{{ 'blogs.comments.email' | t }}</label>
+              <input type="email" name="comment[email]" id="CommentEmail" class="{% if form.errors contains 'email' %} input--error{% endif %}" placeholder="{{ 'blogs.comments.email' | t }}" value="{{ form.email }}" autocorrect="off" autocapitalize="off">
+            </div>
+
+            <div class="grid__item medium-up--ten-twelfths medium-up--push-one-twelfth">
+              <label for="CommentBody" class="label--hidden">{{ 'blogs.comments.message' | t }}</label>
+              <textarea name="comment[body]" id="CommentBody" class="{% if form.errors contains 'body' %} input--error{% endif %}" placeholder="{{ 'blogs.comments.message' | t }}">{{ form.body }}</textarea>
+            </div>
+
+            <div class="grid__item medium-up--push-one-twelfth">
+              <input type="submit" class="btn btn--input" value="{{ 'blogs.comments.post' | t }}">
+            </div>
+
+          {% endform %}
+
+          {% if blog.moderated? %}
+            <div class="grid__item medium-up--push-one-twelfth">
+              <p class="comments__moderated text-small">{{ 'blogs.comments.moderated' | t }}</p>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</article>
+{% render 'article-author-styles' %}
+{%- assign product = all_products[article.metafields.custom.product] -%}
+{% section 'product-form-blog' %}
+{% for tag in product.tags %}
+  {% if tag contains 'uploadcare' %}
+    <script>
+      (function (){
+        const linkContainer = document.getElementById('product-link')
+        const link = document.createElement('a')
+        link.href = '{{ product.url }}'
+        link.innerText = "Need Help Authenticating?"
+        linkContainer.appendChild(link)
+      })();
+    </script>
+  {% endif %}
+{% endfor %}
+{% assign uploadkit = true %}
+{% for tag in product.tags %}
+{% if tag contains "form-cart" %}
+  {% assign uploadkit = false %}
+{% endif %}
+{% endfor %}
+{% if uploadkit %}
+  <script src="https://assets.getuploadkit.com/assets/uploadkit-app.js" defer></script>
+ <!-- <script>
+    $(document).ready(function(){
+      window.UploadKit.manualInit = true;
+    });
+    $( window ).on('load', function() {
+
+      $(".product-box").each(function(i){
+        var index = i+1;
+        var id = 'template_'+index;
+        $(this).attr('id',id);
+        var $this = $(this);
+        var handle = $this.attr('data-handle');
+        var noImage = $this.attr('data-no-image');
+        $this.load('/products/'+ handle +'?view=json #shopify-section-product-template',function() {
+          if(typeof noImage != 'undefined') {
+            $this.find('.product__media-container').hide();
+          }
+
+          // Remove SEO data
+          $('.product-template').removeAttr('itemtype');
+          $('.product__form-container').removeAttr('itemprop');
+          $('.product__form-container').removeAttr('itemtype');
+          $('.product__title').removeAttr('itemprop');
+          $('.product-template meta').remove();
+          $('.product__price').removeAttr('data-product-price');
+          $('.product__current-price').removeAttr('data-regular-price');
+          $('.product__compare-price').removeAttr('data-compare-price');
+
+          $('.product-variants .radio-options').each(function(i){
+            var inp = $(this).find('input');
+            var lbl = $(this).find('label');
+            var inpId = inp.attr('id');
+            var lblFor = lbl.attr('for');
+
+            inp.attr('id', inpId+'-'+i);
+            lbl.attr('for', lblFor+'-'+i);
+          });
+
+          $(this).find('input[type=radio]').on('change', function() {
+            var dataVariantId = $(this).val();
+            var dataVarianttitle = $(this).attr("data-variant-title");
+            var dataVariantprice = $(this).attr("data-price");
+            // console.log('dataId',dataVariantprice,dataVarianttitle);
+            $(this).closest('.product-template').find('.product__current-price').text(dataVariantprice);
+            $(this).closest('.product-template').find('.redirect-checkout-btn').find('input[type=hidden][name=redirect]').val(dataVariantId);
+          });
+
+          $('.product-variants.infiniteoptions label.radio').click(function() {
+            $(this).parent().find('input').click();
+          });
+
+          $(".trigger_popup_fricc").click(function(){
+            $('.hover_bkgr_fricc').show();
+          });
+
+          $('.popupCloseButton').click(function(){
+            $('.hover_bkgr_fricc').hide();
+          });
+
+          $('.popupcontent h3').on('click', function(){
+            $('.popupcontent h3').removeClass('active');
+            var target = $(this).attr('rel');
+            $(this).addClass('active');
+            $("."+target).css('display','flex').siblings("div").css('display','none');
+          });
+
+        });
+      });
+      $(document).on('click','.trigger_popup_fricc', function(){
+        setTimeout(function(){
+          window.UploadKit.init();
+        }, 500);
+      });
+    });
+
+    $(document).on('click','.product-box .trigger_addtocart', function(){
+      $('.hover_bkgr_fricc').hide();
+      $('.vex-dialog-buttons button').click();
+      $('#template_1.product-box .redirect-checkout-btn input').trigger('click');
+    });
+
+    window.UploadKit = window.UploadKit || {}
+    window.UploadKit.callbacks = window.UploadKit.callbacks || {}
+    window.UploadKit.callbacks.dialogDone = function() {
+      $('.trigger_addtocart').show();
+    }
+
+
+    $('body').click(function(e) {
+      //console.log($('.hover_bkgr_fricc').is(':visible'));
+      if(!$(e.target).hasClass('trigger_popup_fricc')) {
+        if($('.hover_bkgr_fricc').is(':visible')) {
+          if (!$(e.target).closest('.hover_bkgr_fricc').length && !$(e.target).closest('.uploadcare--dialog').length && !$(e.target).hasClass('uploadcare--button')){
+            //console.log('in');
+            $(".hover_bkgr_fricc").hide();
+          }
+        }
+      }
+    });
+
+
+  </script>-->
+  <script>
+    $(document).ready(function(){window.UploadKit.manualInit=!0}),$(window).on("load",function(){$(".product-box").each(function(t){$(this).attr("id","template_"+(t+1));var i=$(this),r=i.attr("data-handle"),e=i.attr("data-no-image");i.load("/products/"+r+"?view=json #shopify-section-product-template",function(){void 0!==e&&i.find(".product__media-container").hide(),$(".product-template").removeAttr("itemtype"),$(".product__form-container").removeAttr("itemprop"),$(".product__form-container").removeAttr("itemtype"),$(".product__title").removeAttr("itemprop"),$(".product-template meta").remove(),$(".product__price").removeAttr("data-product-price"),$(".product__current-price").removeAttr("data-regular-price"),$(".product__compare-price").removeAttr("data-compare-price"),$(".product-variants .radio-options").each(function(t){var i=$(this).find("input"),r=$(this).find("label"),e=i.attr("id"),o=r.attr("for");i.attr("id",e+"-"+t),r.attr("for",o+"-"+t)}),$(this).find("input[type=radio]").on("change",function(){var t=$(this).val();$(this).attr("data-variant-title");var i=$(this).attr("data-price");$(this).closest(".product-template").find(".product__current-price").text(i),$(this).closest(".product-template").find(".redirect-checkout-btn").find("input[type=hidden][name=redirect]").val(t)}),$(".product-variants.infiniteoptions label.radio").click(function(){$(this).parent().find("input").click()}),$(".trigger_popup_fricc").click(function(){$(".hover_bkgr_fricc").show()}),$(".popupCloseButton").click(function(){$(".hover_bkgr_fricc").hide()}),$(".popupcontent h3").on("click",function(){$(".popupcontent h3").removeClass("active");var t=$(this).attr("rel");$(this).addClass("active"),$("."+t).css("display","flex").siblings("div").css("display","none")})})}),$(document).on("click",".trigger_popup_fricc",function(){setTimeout(function(){window.UploadKit.init()},500)})}),$(document).on("click",".product-box .trigger_addtocart",function(){$(".hover_bkgr_fricc").hide(),$(".vex-dialog-buttons button").click(),$("#template_1.product-box .redirect-checkout-btn input").trigger("click")}),window.UploadKit=window.UploadKit||{},window.UploadKit.callbacks=window.UploadKit.callbacks||{},window.UploadKit.callbacks.dialogDone=function(){$(".trigger_addtocart").show()},$("body").click(function(t){!$(t.target).hasClass("trigger_popup_fricc")&&$(".hover_bkgr_fricc").is(":visible")&&!$(t.target).closest(".hover_bkgr_fricc").length&&!$(t.target).closest(".uploadcare--dialog").length&&!$(t.target).hasClass("uploadcare--button")&&$(".hover_bkgr_fricc").hide()});
+  </script>
+{% endif %}

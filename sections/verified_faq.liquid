@@ -1,0 +1,496 @@
+<style>
+  .product_faq {
+    background: #3C1F1B;
+  }
+  .product_faq-wrapper {
+    justify-content: center;
+    gap: 50px;
+  }
+  .product_faq-text {
+    width: 515px;
+  }
+  .product_faq-text h2, .product_faq-text p {
+    color: #F2F2EA;
+  }
+  .product_faq-text p {
+    margin-top: 10px;
+  }
+  .product_faq-items {
+    width: calc(100% - 565px);
+    gap: 10px;
+  }
+  .product_faq-item {
+    border-radius: 12px;
+    background: #fff;
+    transition: 0.3s;
+    width: 100%;
+    padding: 4px 40px;
+  }
+  .product_faq-item:hover {
+    cursor: pointer;
+  }
+  .product_faq-item-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0px;
+  }
+  .product_faq-item-title p {
+    max-width: calc(100% - 38px);
+  }
+  a.product_faq-item-cross {
+    display: block;
+    height: max-content;
+  }
+  .product_faq-item-title a svg {
+      height: 28px;
+      width: auto;
+      transition: .3s;
+      transform: rotate(0deg);
+    display: block;
+  }
+  .product_faq-item-title a svg path {
+    transition: .3s;
+  }
+  .product_faq-item.active .product_faq-item-title a svg {
+      transform: rotate(45deg);
+  }
+  .product_faq-item.active .product_faq-item-title a svg path {
+    stroke: #F24F14;
+  }
+  .product_faq-item-text {
+    height: max-content;
+    max-height: 0px;
+    overflow: hidden;
+    width: 100%;
+    transition: .5s;
+    position: relative;
+  }
+  .product_faq-item-text a {
+    text-decoration: underline;
+    transition: .3s;
+  }
+  .product_faq-item-text a:hover {
+    opacity: .85;
+  }
+  .product_faq-item-text a:active {
+    opacity: .7;
+  }
+  .product_faq-item.active .product_faq-item-text {
+    padding-top: 21px;
+    padding-bottom: 16px;
+    max-height: 400px;
+  }
+  .product_faq-item-text::before {
+    content:'';
+    display: block;
+    height: 100%;
+    max-height: 0px;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    background: rgba(60, 31, 27, 0.30);
+    transition: .5s;
+  }
+  .product_faq-item-text::before {
+    max-height: 1px;
+  }
+  .product_faq-desc {
+    margin-top: 15px;
+  }
+  .product_faq-btns {
+    margin-top: 30px;
+  }
+  .product_faq-btns a {
+    margin: 0;
+  }
+  .product_faq-a {
+    text-decoration: underline;
+    color: #fff;
+  }
+  .product_faq-btns-desktop-hidden {
+    display: none;
+  }
+  @media(max-width: 1450px) {
+    .product_faq-item {
+        padding: 4px 30px;
+    }
+    .product_faq-item.active .product_faq-item-text {
+      max-height: 450px;
+    }
+  }
+  @media(max-width: 1250px) {
+    .product_faq-btns-mobile-hidden {
+      display: none;
+    }
+    .product_faq-btns-desktop-hidden {
+      display: flex!important;
+    }
+    .product_faq-items {
+      width: 100%;
+    }
+    .product_faq-btns {
+      margin-top: 0;
+      width: 100%;
+    }
+    .product_faq-text {
+        width: 100%;
+        text-align: center;
+    }
+    .product_faq-wrapper {
+      gap: 40px;
+    }
+  }
+  @media(max-width: 750px) {
+    .product_faq {
+      padding: 60px 0;
+    }
+    .product_faq-wrapper a.rebranding_btn {
+      margin: 0px auto;
+    }
+    .product_faq-item-title {
+      padding: 15px 0;
+    }
+    .product_faq-item {
+        padding: 0px 20px;
+    }
+    .product_faq-item.active .product_faq-item-text {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    }
+    .product_faq-item-title a svg {
+      height: 24px;
+    }
+  }
+</style>
+
+<div class="container rebranding_container">
+  <div class="product_faq-wrapper block-flex-wrap">
+    <div class="product_faq-text">
+      <h2 class="h2-heading-ss">
+        Featured
+        <span class="h2-heading-pp">questions</span>
+      </h2>
+      <p class="product_faq-desc body-text">
+        LegitGrails Verified status isn’t just a badge — it’s a commitment. Here’s everything you need to know. 
+      </p>
+      <div class="product_faq-btns block-flex-wrap block-gap-15 product_faq-btns-mobile-hidden">
+        <a href="mailto:nchen@legitgrails.com" class="rebranding_btn rebranding_btn-main product_authenticate-now-btn-track m-0">
+        Talk to Our Team
+        </a>
+      </div>
+    </div>
+    <div class="product_faq-items block-flex-wrap">
+      <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">What is the LegitGrails Verified Partner Program?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            The Verified Partner Program recognizes trusted resellers who consistently use LegitGrails and uphold high standards of transparency and reliability. Partners receive official verification, marketing exposure, exclusive partner benefits, early access to new features, and access to a private network of Verified businesses for collaboration and communication.
+          </p>
+        </div>
+      </div>
+      <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">Why should I become a Verified Partner?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text block-flex-wrap block-gap-15">
+          <p class="small-text">
+            Verified status helps your business stand out in the luxury resale space. You’ll gain:
+          </p>
+          <ul>
+            <li>
+              <p class="small-text">The official LegitGrails Verified badge (digital and physical);</p>
+            </li>
+            <li>
+              <p class="small-text">Featured placement on our Verified Partners page;</p>
+            </li>
+            <li>
+              <p class="small-text">Opportunities for social media and marketing exposure;</p>
+            </li>
+            <li>
+              <p class="small-text">Invitations to exclusive partnerships and content collaborations;</p>
+            </li>
+            <li>
+              <p class="small-text">Access to a private partner network for growth and support.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">Who can become a Verified Partner?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text block-flex-wrap block-gap-15">
+          <p class="small-text">
+            Any resale business committed to authenticity and customer trust can apply. You’ll need to:
+          </p>
+          <ul>
+            <li>
+              <p class="small-text">Use LegitGrails authentication for at least 3 months;</p>
+            </li>
+            <li>
+              <p class="small-text">Authenticate at least 50 items;</p>
+            </li>
+            <li>
+              <p class="small-text">Maintain a strong reputation with positive customer reviews;</p>
+            </li>
+            <li>
+              <p class="small-text">Display the Verified Partner badge publicly (online and/or in-store);</p>
+            </li>
+            <li>
+              <p class="small-text">Complete a short review process.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">Can I apply now if I’m new to LegitGrails?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            Yes, you can submit your application now. If you haven’t yet met all the requirements, we’ll track your progress and notify you as soon as you’re eligible.
+        </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">How does LegitGrails support my business after I become Verified?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            We provide ongoing co-marketing opportunities, partner-exclusive incentives, early access to new features, and connection to a private network of Verified Partners. You’ll also receive official branding materials and support for implementation.
+          </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">Where will my business be featured?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            Verified Partners appear on our global Verified Partners page and may be included in social media features, educational content, and growth campaigns.
+          </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">Are there brand usage rules?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+           Yes. You will receive official LegitGrails brand assets upon verification. To protect our brand identity, all badge and logo usage must follow our guidelines and may not be altered or self-produced. Unauthorized usage can result in removal from the program.
+          </p>
+        </div>
+      </div>
+      <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">How do I apply?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text block-flex-wrap block-gap-15">
+          <p class="small-text">
+            Fill out our <a href="https://docs.google.com/forms/d/e/1FAIpQLSdbnMcds99-nOSiTz_MydbfporyGcw7ZnGquWyZKjLOVMbznw/viewform?usp=header" target="_blank">Verified Partner application form</a>. Once submitted, our team will review your information and confirm eligibility. If you meet the criteria, we’ll guide you through the onboarding process.
+          </p>
+        </div>
+      </div>
+      <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">Can I collaborate with LegitGrails after joining?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text block-flex-wrap block-gap-15">
+          <p class="small-text">
+            Yes — Verified Partners are our first choice for collaborations. You’ll receive priority access to content features, interviews, resale campaigns, and event partnerships. We regularly highlight partners through free exposure on our social media, website, and email marketing. If you have an idea or want to be featured, we’re always open to collaboration.
+          </p>
+        </div>
+      </div>
+      <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">What if I have more questions or want to discuss the program in detail?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text block-flex-wrap block-gap-15">
+          <p class="small-text">
+            We’re happy to help. For any additional questions or to speak directly with our team, feel free to email us at <a href="mailto:support@legitgrails.com">support@legitgrails.com</a> — we’ll respond as soon as possible.
+          </p>
+        </div>
+      </div>
+    </div>
+      <div class="product_faq-btns block-flex-wrap block-gap-15 product_faq-btns-desktop-hidden block-flex-center-center">
+        <a href="mailto:nchen@legitgrails.com" class="rebranding_btn rebranding_btn-main product_authenticate-now-btn-track">
+        Talk to Our Team
+        </a>
+      </div>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the LegitGrails Verified Partner Program?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Verified Partner Program recognizes trusted resellers who consistently use LegitGrails and uphold high standards of transparency and reliability. Partners receive official verification, marketing exposure, exclusive partner benefits, early access to new features, and access to a private network of Verified businesses for collaboration and communication."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why should I become a Verified Partner?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Verified status helps your business stand out in the luxury resale space. You’ll gain: The official LegitGrails Verified badge (digital and physical); Featured placement on our Verified Partners page; Opportunities for social media and marketing exposure; Invitations to exclusive partnerships and content collaborations; Access to a private partner network for growth and support."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who can become a Verified Partner?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Any resale business committed to authenticity and customer trust can apply. You’ll need to: Use LegitGrails authentication for at least 3 months; Authenticate at least 50 items; Maintain a strong reputation with positive customer reviews; Display the Verified Partner badge publicly (online and/or in-store); Complete a short review process."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I apply now if I’m new to LegitGrails?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, you can submit your application now. If you haven’t yet met all the requirements, we’ll track your progress and notify you as soon as you’re eligible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does LegitGrails support my business after I become Verified?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We provide ongoing co-marketing opportunities, partner-exclusive incentives, early access to new features, and connection to a private network of Verified Partners. You’ll also receive official branding materials and support for implementation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where will my business be featured?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Verified Partners appear on our global Verified Partners page and may be included in social media features, educational content, and growth campaigns."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there brand usage rules?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You will receive official LegitGrails brand assets upon verification. To protect our brand identity, all badge and logo usage must follow our guidelines and may not be altered or self-produced. Unauthorized usage can result in removal from the program."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I apply?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fill out our Verified Partner application form. Once submitted, our team will review your information and confirm eligibility. If you meet the criteria, we’ll guide you through the onboarding process."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I collaborate with LegitGrails after joining?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — Verified Partners are our first choice for collaborations. You’ll receive priority access to content features, interviews, resale campaigns, and event partnerships. We regularly highlight partners through free exposure on our social media, website, and email marketing. If you have an idea or want to be featured, we’re always open to collaboration."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I have more questions or want to discuss the program in detail?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We’re happy to help. For any additional questions or to speak directly with our team, feel free to email us at support@legitgrails.com — we’ll respond as soon as possible."
+      }
+    }
+  ]
+}
+</script>
+
+<script>
+  $( ".product_faq-item" ).on( "click", function() {
+    if ($(this).hasClass("active")) {
+      $(".product_faq-item").removeClass("active");
+    } else {
+      $(".product_faq-item").removeClass("active");
+      $(this).addClass("active");
+    }
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Product FAQ",
+    "class": "product_faq rebranding-section",
+    "settings": []
+  }
+{% endschema %}

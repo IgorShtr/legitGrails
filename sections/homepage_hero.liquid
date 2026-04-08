@@ -1,0 +1,682 @@
+{% comment %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endcomment %}
+<style>
+  .homepage_hero {
+    height: calc(100vh - 135px);
+    min-height: 720px
+  }
+  .homepage_hero .rebranding_container {
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+  }
+  .homepage_hero-content {
+    border-radius: 15px;
+    height: calc(100% - 60px);
+    width: 100%;
+    overflow: hidden;
+  }
+  .homepage_hero-tabs-wrapp {
+    width: 55%;
+    display: flex;
+    align-items: center;
+    padding: 75px;
+    background: #3C1F1B;
+    position: relative;
+    z-index: 5;
+  }
+  .homepage_hero-buttons {
+    gap: 6px;
+    width: 100%;
+  }
+  a.homepage_hero-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "Suisse Intl";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -0.6px;
+    border-radius: 5px;
+    border: 1px solid #F2F2EA;
+    color: #F2F2EA;
+    transition: .3s;
+    width: max-content;
+    text-decoration: none;
+    padding: 12px 20px;
+  }
+  a.homepage_hero-button.active, a.homepage_hero-button:hover {
+    background: #F2F2EA;
+    color: #3C1F1B;
+  }
+  a.homepage_hero-button:active {
+    background: #F2F2EA;
+    color: #3C1F1B;
+    opacity: .7;
+  }
+  .homepage_hero-slide-brands {
+    gap: 30px;
+  }
+  h1.homepage_hero-slide-title, h2.homepage_hero-slide-title, p.homepage_hero-slide-description, .homepage_hero-slide-brands a {
+    color: #F2F2EA
+  }
+  p.homepage_hero-slide-description {
+    width: 100%;
+  }
+  a.homepage_hero-slide-cta {
+      width: 100%;
+      padding: 22px 30px;
+      text-align: center;
+  }
+  .homepage_hero-slider {
+    width: 45%;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  .search-label {
+      width: 100%;
+      margin: 0;
+  }
+  input#product-search {
+      margin: 0;
+      border-radius: 8px;
+      background: #fff;
+      padding: 8px 8px 8px 20px;
+      height: 64px;
+      font-size: 20px;
+      border: none;
+      line-height: 1;
+      color: #3C1F1B;
+      transition: .3s;
+    border: 1px solid #fff;
+  }
+  input#product-search::placeholder {
+    color: rgba(60, 31, 27, 0.50);
+  }
+  input#product-search:focus {
+    outline: none!important;
+    border: none!important;
+  }
+  .homepage_hero-slide-search {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+}
+.products-search_result {
+    position: absolute;
+    width: 100%;
+    top: 57px;
+    display: flex;
+    background: #fff;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    max-height: 235px;
+    overflow: auto;
+}
+  .card-list.grid {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.card-list__column.grid__item.medium-up--one-half {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+  .card {
+    float: none;
+    width: 100%;
+}
+a.card__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    color: #3C1F1B;
+    gap: 15px;
+    transition: .3s;
+}
+  .card__info.card__info--aligned {
+    position: relative;
+    text-align: left;
+    padding: 0;
+    background: none;
+}
+h3.card__name {
+    font-family: "Suisse Intl"!important;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.4px;
+    color: #3C1F1B;
+}
+  .card__price.font-description {
+    display: none;
+}
+  .products-search_result::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    width: calc(100% - 40px);
+    height: 1px;
+    background: #3C1F1B;
+    opacity: .2;
+}
+  .card__image-wrapper.card__image-wrapper--aligned {
+    height: 60px;
+    width: 60px;
+    background: #3c1f1b;
+    display: none;
+}
+  p.card__image-wrapper-title {
+    font-size: 9px;
+}
+  .card-list.grid {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 172px;
+    overflow: auto;
+}
+  a.card__wrapper:hover {
+    opacity: .85;
+  }
+  a.card__wrapper:active {
+    opacity: .7;
+  }
+  /* width */
+.card-list.grid::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.card-list.grid::-webkit-scrollbar-track {
+  background: #F1F1F1;
+}
+
+/* Handle */
+.card-list.grid::-webkit-scrollbar-thumb {
+  background: #3C1F1B;
+}
+
+/* Handle on hover */
+.card-list.grid::-webkit-scrollbar-thumb:hover {
+  background: #3C1F1B;
+}
+  .homepage_hero-slide-item {
+    width: calc(50% - 25px);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    text-decoration: none;
+  }
+  .homepage_hero-slide_learn .homepage_hero-slide-item {
+    width: max-content;
+  }
+  .homepage_hero-slide-item svg {
+    width: 36px;
+    height: auto;
+  }
+  .homepage_hero-slide-item p {
+    width: calc(100% - 51px);
+    color: #F2F2EA;
+    text-align: left;
+  }
+  .homepage_hero-slide {
+    display: none;
+  }
+  .homepage_hero-slide.active {
+    display: flex;
+  }
+  .homepage_hero-slide-items {
+    width: 100%;
+    gap: 30px 50px;
+}
+ul.slick-dots {
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+}
+  ul.slick-dots li button {
+    display: none;
+  }
+  ul.slick-dots li {
+    height: 15px;
+    width: 15px;
+    background: #3C1F1B;
+    display: block;
+    border-radius: 50%;
+    opacity: 0.37;
+    transition: .3s;
+}
+  ul.slick-dots li:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+  ul.slick-dots li.slick-active {
+    opacity: 1;
+  }
+  ul.slick-dots li:active {
+    opacity: 0.7;
+  }
+  .homepage_hero-slider-items {
+    height: 100%;
+    margin: auto 0;
+}
+  .slick-list.draggable {
+    height: 100%;
+}
+  .slick-track {
+    height: 100%;
+}
+  .slick-initialized .slick-slide {
+    display: flex;
+    align-items: center;
+}
+  .homepage_hero-trustpilot-mobile {
+    display: none;
+  }
+   .legal-disclaimer {
+    color: #8d8d8d;
+  }
+  @media(max-width: 1450px) {
+    .homepage_hero {
+      min-height: 1100px;
+    }
+    .legal-disclaimer {
+      text-align: center;
+    }
+    .homepage_hero-tabs-wrapp {
+      padding: 45px;
+    }
+    .homepage_hero-slide-text {
+    text-align: center;
+    justify-content: center;
+}
+    .homepage_hero-buttons, .homepage_hero-slide-items {
+      justify-content: center;
+    }
+    a.homepage_hero-button {
+    width: calc(50% - 3px);
+    }
+  }
+  @media(max-width: 1250px) {
+    a.homepage_hero-button:last-child {
+      width: max-content;
+    }
+    .homepage_hero-slide-item {
+    width: 100%;
+    }
+    .homepage_hero-tabs-wrapp {
+      padding: 30px;
+    }
+    .homepage_hero {
+    min-height: 635px;
+}
+    .homepage_hero-slide_learn .homepage_hero-slide-item {
+    width: 100%;
+  }
+    .homepage_hero-tabs-wrapp {
+      width: 100%;
+    }
+    .homepage_hero-slider {
+      display: none;
+    }
+        a.homepage_hero-button {
+        width: max-content;
+    }
+    .homepage_hero-slide-item {
+        width: 255px;
+    }
+        .homepage_hero-slide_learn .homepage_hero-slide-item {
+        width: max-content;
+    }
+  }
+  @media(max-width: 950px) {
+    .homepage_hero-trustpilot-mobile {
+      display: flex;
+      padding: 40px 0 0 0;
+      width: 100%;
+      justify-content: center;
+    }
+    .homepage_hero-label {
+        display: none !important;
+    }
+    .homepage_hero {
+    height: max-content;
+}
+    .homepage_hero .rebranding_container {
+        height: max-content;
+        padding: 0;
+    }
+    .homepage_hero-tabs-wrapp {
+        width: 100%;
+        text-align: center;
+    }
+    a.homepage_hero-button {
+        width: max-content;
+    }
+    .homepage_hero-buttons {
+        justify-content: center;
+    }
+    .block-gap-30 {
+      gap: 20px;
+    }
+    .block-gap-15 {
+      gap: 10px;
+    }
+    .homepage_hero-slide-text {
+        justify-content: center;
+    }
+    .homepage_hero-slide-search {
+        width: 100%;
+        justify-content: center;
+    }
+    input#product-search {
+      height: 55px;
+    }
+    .products-search_result {
+      top: 47px;
+    }
+    a.homepage_hero-slide-cta {
+        padding: 0;
+        text-align: center;
+        height: 55px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        border-radius: 8px;
+    }
+    .homepage_hero-slide-brands {
+      display: none;
+    }
+    img.homepage_hero-slider-item {
+        height: 100%;
+        width: auto !important;
+        display: block;
+    }
+    .homepage_hero-content {
+        height: max-content;
+        border-radius: 0;
+    }
+    .homepage_hero-tabs-wrapp {
+        padding: 30px 15px 50px 15px;
+      display: block;
+    }
+        .homepage_hero-slider {
+        width: 100%;
+          display: block;
+        height: 600px;
+    }
+    .slick-initialized .slick-slide div {
+      height: 100%;
+      margin: 0 auto;
+    }
+        .homepage_hero-slide-item {
+        width: 285px;
+    }
+  }
+  @media(max-width: 750px) {
+    .homepage_hero-slide-item p {
+        font-size: 16px!important;
+        line-height: 1.2!important;
+    }
+    input#product-search {
+        height: 50px;
+        font-size: 16px;
+        letter-spacing: -0.32px;
+    }
+    h3.card__name {
+      font-size: 16px;
+      letter-spacing: -0.32px;
+    }
+    a.homepage_hero-slide-cta {
+      height: 51px;
+    }
+    .products-search_result {
+      max-height: 205px;
+      top: 42px;
+    }
+    .homepage_hero-tabs {
+    gap: 30px;
+}
+    .homepage_hero-slide {
+    gap: 30px;
+}
+    .homepage_hero-trustpilot-mobile {
+        padding: 30px 0 0 0;
+    }
+    a.homepage_hero-button {
+        font-size: 18px;
+        width: calc(50% - 3px);
+      padding: 12px 10px;
+    }
+    a.homepage_hero-button:last-child {
+        width: max-content;
+        padding: 12px 20px;
+    }
+    a.homepage_hero-slide-cta {
+        height: max-content;
+        padding: 15px;
+    }
+    .homepage_hero-slider {
+      height: 400px;
+    }
+        .homepage_hero-slide-item {
+        width: calc(50% - 25px);
+    }
+  }
+  @media(max-width: 500px) {
+        .homepage_hero-slide-items {
+        gap: 15px;
+    }
+        .homepage_hero-slide-item p {
+        font-size: 15px !important;
+        line-height: 1.2 !important;
+    }
+    .homepage_hero-slide-item {
+        width: calc(50% - 7.5px);
+    }
+    ul.slick-dots {
+      bottom: 20px;
+      gap: 7px;
+    }
+    ul.slick-dots li {
+      height: 10px;
+      width: 10px;
+    }
+  }
+</style> 
+
+<div class="rebranding_container block-flex">
+  <div class="homepage_hero-content block-flex-wrap">
+    <div class="homepage_hero-tabs-wrapp">
+      <div class="homepage_hero-tabs block-gap-50 block-flex-wrap">
+        <div class="homepage_hero-buttons block-flex-wrap">
+          <a href="javascript:void(0)" id="authenticate" class="homepage_hero-button active">
+            Authentication
+          </a>
+          <a href="javascript:void(0)" id="business" class="homepage_hero-button">
+            Business solutions
+          </a>
+          <a href="javascript:void(0)" id="learn" class="homepage_hero-button">
+            LegitGrails Academy
+          </a>
+        </div>
+        <div class="homepage_hero-slide homepage_hero-slide_authenticate block-gap-40 block-flex-wrap active">
+          <div class="homepage_hero-slide-text block-gap-15 block-flex-wrap">
+            <h1 class="h1-heading-ss homepage_hero-slide-title">Luxury designer <span class="h1-heading-pp">authentication service</span></h1>
+            <p class="body-text homepage_hero-slide-description">
+              Our industry experts, backed by over six years of experience and advanced AI technology, will verify the authenticity of your handbags, sneakers, streetwear, and more – all in 30 minutes or less
+            </p>
+          </div>
+          <div class="homepage_hero-slide-search block-gap-15 block-flex-wrap">
+              <label class="search-label font-title" for="product-search"><input type="text" id="product-search" class="input-product-search homepage_slide-input-track body-text" name="q"
+                value="{{ search.terms | escape }}"
+                placeholder="Search your brand"/>
+              </label>
+              <div class="products-search_result font-description" style="display: none"></div>
+                <a href="https://legitgrails.com/pages/choose-your-brand" class="homepage_hero-slide-cta rebranding_btn rebranding_btn-main homepage_slide-authenticate-btn-track">
+                Authenticate now
+              </a>
+          </div>
+        </div>
+
+        <div class="homepage_hero-slide homepage_hero-slide_business block-gap-40 block-flex-wrap">
+          <div class="homepage_hero-slide-text block-gap-15 block-flex-wrap">
+            <h2 class="h1-heading-ss homepage_hero-slide-title">Get <span class="h1-heading-pp">the best</span> value</h2>
+            <p class="body-text homepage_hero-slide-description">
+              Enjoy the peace of mind that comes with authentication services for multiple luxury or hype brands. Suitable for:
+            </p>
+          </div>
+          <div class="homepage_hero-slide-items block-flex-wrap">
+            <a href="https://legitgrails.com/pages/business-solutions#shopify-section-b2b_business-type" class="homepage_hero-slide-item standart-hover">
+            <svg width="35" height="32" viewBox="0 0 35 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M34.9672 10.0091L32.9875 1.73029C32.7447 0.713143 31.8697 0 30.8656 0H4.13656C3.1325 0 2.2575 0.713143 2.0125 1.73029L0.03281 10.0091C0.01094 10.0983 0 10.192 0 10.2857C0 13.4354 2.32969 16 5.19531 16C6.86 16 8.34531 15.1337 9.29688 13.7897C10.2484 15.1337 11.7337 16 13.3984 16C15.0631 16 16.5484 15.1337 17.5 13.7897C18.4516 15.1337 19.9347 16 21.6016 16C23.2684 16 24.7516 15.1337 25.7031 13.7897C26.6547 15.1337 28.1378 16 29.8047 16C32.6703 16 35 13.4354 35 10.2857C35 10.192 34.9891 10.0983 34.9672 10.0091ZM29.8047 18.2857C28.315 18.2857 26.8997 17.8103 25.7031 16.9417C23.31 18.6811 19.8931 18.6811 17.5 16.9417C15.1069 18.6811 11.69 18.6811 9.29688 16.9417C8.10031 17.8103 6.685 18.2857 5.19531 18.2857C4.12125 18.2857 3.10844 18.0229 2.1875 17.5749V29.7143C2.1875 30.976 3.1675 32 4.375 32H13.125V22.8571H21.875V32H30.625C31.8325 32 32.8125 30.976 32.8125 29.7143V17.5749C31.8916 18.0229 30.8787 18.2857 29.8047 18.2857Z" fill="#F2F2EA"/>
+            </svg>
+              <p class="h4-heading-pp">Consignment Stores & Boutiques</p>
+            </a>
+            <a href="https://legitgrails.com/pages/business-solutions#shopify-section-b2b_business-type" class="homepage_hero-slide-item standart-hover">
+            <svg width="36" height="34" viewBox="0 0 36 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 24.9276C0 26.2603 1.1018 27.3405 2.46094 27.3405H33.539C34.8982 27.3405 36 26.2603 36 24.9276V23.5489H0V24.9276ZM25.7344 31.132H23.9765V29.4085H12.0234V31.132H10.2656C9.68316 31.132 9.21094 31.5949 9.21094 32.166C9.21094 32.7371 9.68316 33.2001 10.2656 33.2001H25.7344C26.3168 33.2001 26.789 32.7371 26.789 32.166C26.789 31.5949 26.3168 31.132 25.7344 31.132ZM32.836 0.800049H3.16406C1.4194 0.800049 0 2.19166 0 3.90218V21.481H36V3.90218C36 2.19166 34.5805 0.800049 32.836 0.800049ZM9.5625 17.6894H5.34374C4.76128 17.6894 4.28906 17.2265 4.28906 16.6554C4.28906 16.0843 4.76128 15.6214 5.34374 15.6214H9.5625C10.145 15.6214 10.6172 16.0843 10.6172 16.6554C10.6172 17.2265 10.145 17.6894 9.5625 17.6894ZM9.5625 13.5532H5.34374C4.76128 13.5532 4.28906 13.0902 4.28906 12.5192C4.28906 11.9481 4.76128 11.4852 5.34374 11.4852H9.5625C10.145 11.4852 10.6172 11.9481 10.6172 12.5192C10.6172 13.0902 10.145 13.5532 9.5625 13.5532ZM13.7813 17.6894C13.1988 17.6894 12.7266 17.2265 12.7266 16.6554C12.7266 16.0843 13.1988 15.6214 13.7813 15.6214C14.3638 15.6214 14.836 16.0843 14.836 16.6554C14.836 17.2265 14.3638 17.6894 13.7813 17.6894ZM13.7813 13.5532C13.1988 13.5532 12.7266 13.0902 12.7266 12.5192C12.7266 11.9481 13.1988 11.4852 13.7813 11.4852C14.3638 11.4852 14.836 11.9481 14.836 12.5192C14.836 13.0902 14.3638 13.5532 13.7813 13.5532ZM31.6904 8.58584L30.2842 15.4794C30.2363 15.7138 30.1072 15.9247 29.9186 16.0763C29.73 16.2278 29.4937 16.3106 29.25 16.3106H28.8984V17.3447C28.8984 17.9158 28.4262 18.3787 27.8437 18.3787C27.2612 18.3787 26.789 17.9158 26.789 17.3447V16.3106H21.8672V17.3447C21.8672 17.9158 21.395 18.3787 20.8126 18.3787C20.2301 18.3787 19.7578 17.9158 19.7578 17.3447V16.3106H19.4063C19.1624 16.3106 18.9262 16.2278 18.7376 16.0763C18.549 15.9247 18.4199 15.7138 18.372 15.4794L16.4322 5.97026H13.7813C13.1988 5.97026 12.7266 5.50729 12.7266 4.93622C12.7266 4.36515 13.1988 3.90218 13.7813 3.90218H17.2969C17.5406 3.90217 17.777 3.98499 17.9656 4.13654C18.1541 4.28809 18.2833 4.49901 18.3311 4.73341L18.8646 7.34899H30.6563C31.3218 7.34899 31.821 7.94598 31.6904 8.58584Z" fill="#F2F2EA"/>
+              <path d="M20.271 14.2426H28.3855L29.3699 9.41711H19.2866L20.271 14.2426Z" fill="#F2F2EA"/>
+              <path d="M35 3H11V21.48H35V3Z" fill="#F2F2EA"/>
+              <mask id="mask0_2752_7644" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="15" y="5" width="16" height="16">
+              <path d="M30.6 5H15V20.6H30.6V5Z" fill="white"/>
+              </mask>
+              <g mask="url(#mask0_2752_7644)">
+              <path d="M20.0261 14.1408C20.0268 14.1408 20.0281 14.1406 20.0286 14.1406H28.3148C28.4142 14.1406 28.5108 14.1082 28.59 14.0485C28.6693 13.9886 28.7269 13.9046 28.7543 13.8092L30.5824 7.41072C30.6018 7.34271 30.6052 7.27113 30.5923 7.20159C30.5794 7.13206 30.5504 7.06647 30.5078 7.00999C30.4652 6.95352 30.4102 6.90769 30.3468 6.87613C30.2836 6.84457 30.2137 6.82814 30.1429 6.82813H18.9721L18.6455 5.35789C18.6228 5.25637 18.5664 5.16559 18.4853 5.10052C18.404 5.03546 18.3032 5 18.1992 5H15.4571C15.2046 5 15 5.2046 15 5.45703C15 5.70946 15.2046 5.91406 15.4571 5.91406H17.8326C17.8904 6.17457 19.3961 12.9499 19.4827 13.3396C18.997 13.5507 18.6563 14.035 18.6563 14.5976C18.6563 15.3536 19.2714 15.9687 20.0274 15.9687H28.3148C28.5673 15.9687 28.7719 15.7641 28.7719 15.5118C28.7719 15.2593 28.5673 15.0547 28.3148 15.0547H20.0274C19.7754 15.0547 19.5703 14.8496 19.5703 14.5976C19.5703 14.3461 19.7747 14.1414 20.0261 14.1408ZM29.537 7.74219L27.9701 13.2266H20.394L19.1752 7.74219H29.537ZM19.5703 17.3398C19.5703 18.0958 20.1854 18.711 20.9414 18.711C21.6974 18.711 22.3126 18.0958 22.3126 17.3398C22.3126 16.5838 21.6974 15.9687 20.9414 15.9687C20.1854 15.9687 19.5703 16.5838 19.5703 17.3398ZM20.9414 16.8828C21.1934 16.8828 21.3984 17.0878 21.3984 17.3398C21.3984 17.5918 21.1934 17.7969 20.9414 17.7969C20.6894 17.7969 20.4844 17.5918 20.4844 17.3398C20.4844 17.0878 20.6894 16.8828 20.9414 16.8828ZM26.0297 17.3398C26.0297 18.0958 26.6448 18.711 27.4008 18.711C28.1568 18.711 28.7719 18.0958 28.7719 17.3398C28.7719 16.5838 28.1568 15.9687 27.4008 15.9687C26.6448 15.9687 26.0297 16.5838 26.0297 17.3398ZM27.4008 16.8828C27.6528 16.8828 27.8578 17.0878 27.8578 17.3398C27.8578 17.5918 27.6528 17.7969 27.4008 17.7969C27.1488 17.7969 26.9437 17.5918 26.9437 17.3398C26.9437 17.0878 27.1488 16.8828 27.4008 16.8828Z" fill="#3C1F1B"/>
+              </g>
+              <path d="M25.7291 31.1177H23.9712V29.3944H12.0181V31.1177H10.2603C9.67779 31.1177 9.20557 31.5808 9.20557 32.1518C9.20557 32.7228 9.67779 33.1859 10.2603 33.1859H25.7291C26.3114 33.1859 26.7837 32.7228 26.7837 32.1518C26.7837 31.5808 26.3114 31.1177 25.7291 31.1177Z" fill="#F2F2EA"/>
+              </svg>
+              <p class="h4-heading-pp">Online Marketplaces (Seller-to-Buyer)</p>
+            </a>
+            <a href="https://legitgrails.com/pages/business-solutions#shopify-section-b2b_business-type" class="homepage_hero-slide-item standart-hover">
+              <svg width="36" height="33" viewBox="0 0 36 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M34.8037 10.9407L18.2662 0.47819C18.0821 0.362155 17.864 0.300049 17.6407 0.300049C17.4174 0.300049 17.1994 0.362155 17.0152 0.47819L0.477754 10.9407C0.330319 11.0337 0.209775 11.1583 0.126535 11.3036C0.0432938 11.4489 -0.000100625 11.6107 1.75208e-07 11.775V31.3499C1.75208e-07 31.708 0.154879 32.0514 0.430553 32.3046C0.706231 32.5578 1.08014 32.6999 1.47 32.6999H4.41V16.4999C4.41 16.1419 4.56487 15.7986 4.84055 15.5454C5.11623 15.2922 5.49014 15.1499 5.88 15.1499H29.4001C29.7898 15.1499 30.1638 15.2922 30.4394 15.5454C30.7152 15.7986 30.87 16.1419 30.87 16.4999V32.6999H33.8101C34.1998 32.6999 34.5738 32.5578 34.8494 32.3046C35.1252 32.0514 35.28 31.708 35.28 31.3499V11.775C35.2802 11.6109 35.237 11.4492 35.1539 11.3039C35.0709 11.1586 34.9508 11.0339 34.8037 10.9407Z" fill="#F2F2EA"/>
+              <path d="M13.5975 25.9501V26.9626C13.5975 27.2311 13.4813 27.4886 13.2745 27.6785C13.0678 27.8684 12.7874 27.9751 12.4949 27.9751C12.2025 27.9751 11.9221 27.8684 11.7154 27.6785C11.5086 27.4886 11.3924 27.2311 11.3924 26.9626V25.9501H8.81995C8.62502 25.9501 8.43807 26.0212 8.30024 26.1478C8.16239 26.2744 8.08496 26.4461 8.08496 26.6251V32.0251C8.08496 32.2041 8.16239 32.3758 8.30024 32.5024C8.43807 32.629 8.62502 32.7001 8.81995 32.7001H16.1699C16.3649 32.7001 16.5518 32.629 16.6897 32.5024C16.8275 32.3758 16.9049 32.2041 16.9049 32.0251V26.6251C16.9049 26.4461 16.8275 26.2744 16.6897 26.1478C16.5518 26.0212 16.3649 25.9501 16.1699 25.9501H13.5975ZM23.8874 25.9501V26.9626C23.8874 27.2311 23.7713 27.4886 23.5646 27.6785C23.3578 27.8684 23.0773 27.9751 22.785 27.9751C22.4926 27.9751 22.2122 27.8684 22.0054 27.6785C21.7986 27.4886 21.6824 27.2311 21.6824 26.9626V25.9501H19.11C18.915 25.9501 18.7281 26.0212 18.5903 26.1478C18.4524 26.2744 18.375 26.4461 18.375 26.6251V32.0251C18.375 32.2041 18.4524 32.3758 18.5903 32.5024C18.7281 32.629 18.915 32.7001 19.11 32.7001H26.46C26.6549 32.7001 26.8418 32.629 26.9797 32.5024C27.1175 32.3758 27.195 32.2041 27.195 32.0251V26.6251C27.195 26.4461 27.1175 26.2744 26.9797 26.1478C26.8418 26.0212 26.6549 25.9501 26.46 25.9501H23.8874ZM18.7425 17.8501V18.8626C18.7425 19.1311 18.6263 19.3886 18.4195 19.5785C18.2128 19.7684 17.9324 19.8751 17.64 19.8751C17.3475 19.8751 17.0671 19.7684 16.8604 19.5785C16.6537 19.3886 16.5374 19.1311 16.5374 18.8626V17.8501H13.965C13.7701 17.8501 13.5831 17.9212 13.4452 18.0478C13.3074 18.1744 13.23 18.3461 13.23 18.5251V23.9251C13.23 24.1041 13.3074 24.2758 13.4452 24.4024C13.5831 24.529 13.7701 24.6001 13.965 24.6001H21.3149C21.5099 24.6001 21.6968 24.529 21.8347 24.4024C21.9725 24.2758 22.05 24.1041 22.05 23.9251V18.5251C22.05 18.3461 21.9725 18.1744 21.8347 18.0478C21.6968 17.9212 21.5099 17.8501 21.3149 17.8501H18.7425Z" fill="#F2F2EA"/>
+              </svg>
+              <p class="h4-heading-pp">Warehouse-Based Marketplaces</p>
+            </a>
+            <a href="https://legitgrails.com/pages/business-solutions#shopify-section-b2b_business-type" class="homepage_hero-slide-item standart-hover">
+              <svg width="35" height="32" viewBox="0 0 35 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M33.0556 0.5H1.94444V4.4375H33.0556V0.5ZM35 20.1875V16.25L33.0556 6.40625H1.94444L0 16.25V20.1875H1.94444V32H21.3889V20.1875H29.1667V32H33.0556V20.1875H35ZM17.5 28.0625H5.83333V20.1875H17.5V28.0625Z" fill="#F2F2EA"/>
+              </svg>
+              <p class="h4-heading-pp">Pawn Shops</p>
+            </a>
+          </div>
+          <a href="https://legitgrails.com/pages/business-solutions" class="homepage_hero-slide-cta rebranding_btn rebranding_btn-main homepage_slide-b2b-btn-track">
+            Discover your solution
+          </a>
+        </div>
+
+        <div class="homepage_hero-slide homepage_hero-slide_learn block-gap-40 block-flex-wrap">
+          <div class="homepage_hero-slide-text block-gap-15 block-flex-wrap">
+            <h2 class="h1-heading-ss homepage_hero-slide-title"><span class="h1-heading-pp">Master</span> the art of <span class="h1-heading-pp">authentication</span></h2>
+            <p class="body-text homepage_hero-slide-description">
+              Learn to authenticate luxury goods with ease through our helpful guides or become a master of brand verification
+            </p>
+          </div>
+          <div class="homepage_hero-slide-items block-flex-wrap">
+            <a href="https://legitgrails.com/pages/guides#guides" class="homepage_hero-slide-item standart-hover">
+              <svg width="35" height="32" viewBox="0 0 35 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.32923 0.0738714H5.32629C5.16403 0.0734591 5.00329 0.11092 4.85338 0.184089C4.70346 0.257258 4.56734 0.364685 4.45286 0.500171C4.33615 0.636623 4.24361 0.799032 4.18062 0.977965C4.11763 1.1569 4.08546 1.34879 4.08594 1.54249V23.5643C4.08594 24.3719 4.64582 25.0304 5.33416 25.0325C8.23599 25.0407 13.0977 25.7531 16.4516 29.8878V6.84132C16.4516 6.56758 16.3923 6.31041 16.2802 6.09762C13.5275 0.875343 8.23763 0.0818854 5.32923 0.0738714ZM30.7528 23.5643V1.54235C30.7528 1.14826 30.6225 0.778059 30.3858 0.500032C30.2714 0.364583 30.1353 0.257176 29.9854 0.184009C29.8355 0.110842 29.6747 0.0733627 29.5125 0.0737332H29.5095C26.6012 0.0818854 21.3114 0.875343 18.5585 6.09762C18.4465 6.31041 18.3872 6.56758 18.3872 6.84132V29.8877C21.7412 25.753 26.6029 25.0406 29.5047 25.0324C30.1929 25.0303 30.7528 24.3718 30.7528 23.5643Z" fill="#F2F2EA"/>
+              <path d="M33.5923 5.15234H32.6883V23.5641C32.6883 25.626 31.2623 27.3073 29.5093 27.3124C27.048 27.3194 22.9895 27.8864 20.1153 31.0909C25.0863 29.6572 30.3266 30.5893 33.3132 31.391C33.4961 31.4407 33.6862 31.4409 33.8694 31.3918C34.0524 31.3427 34.2236 31.2454 34.3702 31.1072C34.5167 30.97 34.635 30.7956 34.7162 30.5969C34.7973 30.3982 34.8392 30.1805 34.8387 29.9601V6.62069C34.8388 5.81107 34.2795 5.15234 33.5923 5.15234ZM2.15038 23.5641V5.15234H1.24646C0.559301 5.15234 0 5.81107 0 6.62069V29.9597C0 30.4088 0.170791 30.827 0.468511 31.1067C0.615054 31.245 0.786298 31.3424 0.969364 31.3916C1.15243 31.4407 1.34258 31.4404 1.52552 31.3906C4.51204 30.5887 9.75253 29.6567 14.7233 31.0906C11.8492 27.8861 7.79076 27.3192 5.3294 27.3123C3.57655 27.3073 2.15038 25.626 2.15038 23.5641Z" fill="#F2F2EA"/>
+              </svg>
+              <p class="h4-heading-pp">Library of guides</p>
+            </a>
+            <a href="https://academy.legitgrails.com/" class="homepage_hero-slide-item standart-hover">
+            <svg width="36" height="32" viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M35.6778 0.0737305H10.793V31.9263H35.6778V0.0737305Z" fill="#3C1F1B"/>
+            <path d="M0.838867 23.423C0.838867 24.7127 1.90512 25.758 3.22042 25.758H33.296C34.6113 25.758 35.6776 24.7127 35.6776 23.423V22.0888H0.838867V23.423ZM25.7431 29.4272H24.0419V27.7594H12.4744V29.4272H10.7733C10.2097 29.4272 9.75268 29.8752 9.75268 30.4279C9.75268 30.9805 10.2097 31.4286 10.7733 31.4286H25.7431C26.3068 31.4286 26.7637 30.9805 26.7637 30.4279C26.7637 29.8752 26.3068 29.4272 25.7431 29.4272ZM32.6156 0.0737305H3.90086C2.21248 0.0737305 0.838867 1.42046 0.838867 3.07579V20.0875H35.6776V3.07579C35.6776 1.42046 34.3039 0.0737305 32.6156 0.0737305ZM10.0929 16.4183H6.01023C5.44655 16.4183 4.98957 15.9703 4.98957 15.4176C4.98957 14.865 5.44655 14.4169 6.01023 14.4169H10.0929C10.6566 14.4169 11.1136 14.865 11.1136 15.4176C11.1136 15.9703 10.6566 16.4183 10.0929 16.4183ZM10.0929 12.4155H6.01023C5.44655 12.4155 4.98957 11.9674 4.98957 11.4148C4.98957 10.8622 5.44655 10.4142 6.01023 10.4142H10.0929C10.6566 10.4142 11.1136 10.8622 11.1136 11.4148C11.1136 11.9674 10.6566 12.4155 10.0929 12.4155ZM14.1756 16.4183C13.6119 16.4183 13.1549 15.9703 13.1549 15.4176C13.1549 14.865 13.6119 14.4169 14.1756 14.4169C14.7393 14.4169 15.1962 14.865 15.1962 15.4176C15.1962 15.9703 14.7393 16.4183 14.1756 16.4183ZM14.1756 12.4155C13.6119 12.4155 13.1549 11.9674 13.1549 11.4148C13.1549 10.8622 13.6119 10.4142 14.1756 10.4142C14.7393 10.4142 15.1962 10.8622 15.1962 11.4148C15.1962 11.9674 14.7393 12.4155 14.1756 12.4155ZM31.507 7.60837L30.1461 14.2796C30.0998 14.5064 29.9748 14.7105 29.7924 14.8572C29.6098 15.0039 29.3812 15.084 29.1453 15.084H28.8051V16.0847C28.8051 16.6373 28.3481 17.0854 27.7844 17.0854C27.2207 17.0854 26.7637 16.6373 26.7637 16.0847V15.084H22.0007V16.0847C22.0007 16.6373 21.5437 17.0854 20.9801 17.0854C20.4164 17.0854 19.9593 16.6373 19.9593 16.0847V15.084H19.6191C19.3832 15.084 19.1545 15.0039 18.9721 14.8572C18.7895 14.7105 18.6646 14.5064 18.6182 14.2796L16.741 5.07716H14.1756C13.6119 5.07716 13.1549 4.62912 13.1549 4.07648C13.1549 3.52383 13.6119 3.07579 14.1756 3.07579H17.5778C17.8137 3.07578 18.0425 3.15593 18.2249 3.30259C18.4073 3.44925 18.5324 3.65337 18.5786 3.88021L19.0949 6.41141H30.5062C31.1503 6.41141 31.6334 6.98915 31.507 7.60837Z" fill="#F2F2EA"/>
+            <path d="M20.4555 13.0827H28.3083L29.2609 8.41284H19.5029L20.4555 13.0827Z" fill="#F2F2EA"/>
+            <path d="M35 2H12V20H35V2Z" fill="#F2F2EA"/>
+            <mask id="mask0_2752_7645" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="14" y="2" width="18" height="18">
+            <path d="M31.4194 2H14V19.4194H31.4194V2Z" fill="white"/>
+            </mask>
+            <g mask="url(#mask0_2752_7645)">
+            <path d="M31.2698 13.955L29.9206 12.6057V7.97758L30.8014 7.66006C30.9001 7.6245 30.9855 7.55936 31.0459 7.47353C31.1063 7.38769 31.1387 7.28532 31.1388 7.18037C31.1388 7.07543 31.1065 6.97301 31.0464 6.88709C30.9861 6.80116 30.9007 6.7359 30.8021 6.70022L22.743 3.78159C22.6307 3.74093 22.5077 3.74093 22.3954 3.78159L14.3364 6.70022C14.2382 6.73583 14.1532 6.80077 14.093 6.88624C14.0329 6.97171 14.0004 7.07361 14 7.17813C13.9997 7.28266 14.0314 7.38479 14.0909 7.4707C14.1504 7.55662 14.2349 7.62218 14.3329 7.65852L17.3071 8.76029V12.1233C17.3071 12.2277 17.3392 12.3295 17.3989 12.4151C17.4316 12.4622 17.7426 12.8868 18.5388 13.2876C19.5446 13.7939 20.8639 14.0507 22.4599 14.0507C24.0547 14.0507 25.3805 13.7945 26.4007 13.2891C27.2048 12.8909 27.5261 12.4706 27.5602 12.424C27.6238 12.3367 27.6582 12.2314 27.6582 12.1234V8.79327L28.9001 8.34547V12.6057L27.5508 13.955C27.4551 14.0507 27.4013 14.1804 27.4013 14.3158C27.4013 14.4511 27.4551 14.5809 27.5508 14.6766L28.9001 16.0258V17.1578C28.9001 17.4397 29.1285 17.6681 29.4103 17.6681C29.6921 17.6681 29.9206 17.4397 29.9206 17.1578V16.0258L31.2698 14.6766C31.4691 14.4773 31.4691 14.1542 31.2698 13.955ZM22.5693 4.8041L29.1267 7.17892L22.4623 9.58167L15.9938 7.18543L22.5693 4.8041ZM26.6375 11.9199C24.8931 13.4896 19.7094 13.3096 18.3277 11.925V9.1384L22.2826 10.6035C22.3454 10.6134 22.4046 10.6675 22.6329 10.605L26.6376 9.16128L26.6375 11.9199ZM29.4102 15.0928L28.6332 14.3158L29.4102 13.5386L30.1873 14.3158L29.4102 15.0928Z" fill="#3C1F1B"/>
+            </g>
+            <path d="M25.7376 29.4133H24.0364V27.7456H12.4689V29.4133H10.7677C10.2041 29.4133 9.74707 29.8615 9.74707 30.414C9.74707 30.9667 10.2041 31.4148 10.7677 31.4148H25.7376C26.3011 31.4148 26.7582 30.9667 26.7582 30.414C26.7582 29.8615 26.3011 29.4133 25.7376 29.4133Z" fill="#F2F2EA"/>
+            </svg>
+              <p class="h4-heading-pp">Authentication courses</p>
+            </a>
+          </div>
+          <a href="https://legitgrails.com/pages/guides" class="homepage_hero-slide-cta rebranding_btn rebranding_btn-main homepage_slide-academy-btn-track">
+            Start learning
+          </a>
+        </div>
+
+        
+      </div>
+      <div class="homepage_hero-trustpilot-mobile homepage_trustpilot-btn-track">
+        <div class="rebranding_container">
+        <!-- TrustBox widget - Micro Star -->
+        <div class="trustpilot-widget" data-theme="dark" data-locale="en-GB" data-template-id="5419b732fbfb950b10de65e5" data-businessunit-id="5fbebb2d281b010001718c1c" data-style-height="24px" data-style-width="100%">
+          <a href="https://uk.trustpilot.com/review/legitgrails.com" target="_blank" rel="noopener">Trustpilot</a>
+        </div>
+        <!-- End TrustBox widget -->
+        </div>
+      </div>
+    </div>
+    <div class="homepage_hero-slider" style="background-image: url('{{ "homepage_hero-slide-2x.webp" | asset_url }}');
+        background-image: -webkit-image-set(
+          url('{{ "homepage_hero-slide-2x.webp" | asset_url }}') 1320px,
+          url('{{ "homepage_hero-slide-1x.webp" | asset_url }}') 660px,
+          url('{{ "homepage_hero-slide-mob.webp" | asset_url }}') 440px);
+        background-image: image-set(
+          url('{{ "homepage_hero-slide-2x.webp" | asset_url }}') 1320px,
+          url('{{ "homepage_hero-slide-1x.webp" | asset_url }}') 660px,
+          url('{{ "homepage_hero-slide-mob.webp" | asset_url }}') 440px);">
+    </div>
+  </div>
+</div>
+              
+<script>
+$(function(){let t=$("#product-search"),e=$(".products-search_result");$(".products-wrapp").each(function(){$(this).children().length<1&&$(this).parents(".products-item").find(".products-view").hide()}),t.click(function(t){t.stopPropagation(),e.children().length&&this.value.length>=1&&e.show()}),$(window).click(function(){e.hide()}),t.on("input",function(){this.value.length>=1?$.ajax("/search?q="+this.value+"*&type=product",{type:"GET",success:function(t){e.show();let s=new DOMParser().parseFromString(t,"text/html").getElementsByClassName("card-list");s.item(0).children.item(0).children.length?(e.addClass("list-visible"),e.html(s)):(e.html('<a href="https://legitgrails.com/products/brands-legit-check" class="card__wrapper text-center"><div class="card__info card__info--aligned"><h3 class="card__name h4 font-title">Other Brands Authentication Service</h3></div></a>'),e.removeClass("list-visible"))}}):e.hide()})});
+$(".homepage_hero-button").on("click",function(){$(".homepage_hero-button").removeClass("active"),$(".homepage_hero-slide").removeClass("active"),$(this).addClass("active");var a=$(this).attr("id");return $(".homepage_hero-slide_"+a).addClass("active"),!1});</script>
+{% comment %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  $('.homepage_hero-slider-items').slick({
+  dots: true,
+  infinite: true,
+  speed: 300,
+  arrows: false,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 6500,
+    speed: 1000
+});
+</script>
+{% endcomment %}
+{% schema %}
+  {
+    "name": "Homepage Hero",
+    "class": "homepage_hero",
+    "settings": []
+  }
+{% endschema %}

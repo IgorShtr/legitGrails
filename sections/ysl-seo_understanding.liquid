@@ -1,0 +1,78 @@
+<style>
+  .text-image-block_wrapp-text {
+    width: calc(100% - 710px);
+  }
+  .text-image-block_wrapp-image {
+    width: 660px;
+    height: 560px;
+    object-fit: cover;
+    object-position: 50% 50%;
+    overflow: hidden;
+    border-radius: 11px;
+  }
+  @media(max-width: 1450px) {
+    .text-image-block_wrapp-image {
+      width: 550px;
+    }
+    .text-image-block_wrapp-text {
+        width: calc(100% - 600px);
+    }
+  }
+  @media(max-width: 1250px) {
+    .text-image-block_wrapp {
+      justify-content: center;
+    }
+    .text-image-block_wrapp-text {
+        width: 100%;
+        text-align: center;
+    }
+    .text-image-block_wrapp-image {
+        max-width: 600px;
+        width: 100%;
+    }
+  }
+  @media(max-width: 750px) {
+    .text-image-block .rebranding_container {
+      padding: 0;
+    }
+    .text-image-block_wrapp-text {
+      padding: 0 15px;
+      gap: 20px;
+    }
+    .text-image-block_wrapp-text p {
+      text-align: justify;
+    }
+    .text-image-block_wrapp-image {
+      max-width: 100%;
+      height: 400px;
+      border-radius: 0;
+    }
+  }
+</style>
+
+<div class="rebranding_container">
+  <div class="text-image-block_wrapp block-flex-wrap block-gap-50 block-flex-center-sb">
+    <div class="text-image-block_wrapp-text block-flex-wrap block-gap-30">
+      <h2 class="h2-heading-ss w-100">
+        Understanding   
+        <span class="h2-heading-pp">
+          Saint Laurent authentication
+        </span>
+      </h2>
+      <p class="body-text">
+        Saint Laurent authentication is a crucial process for verifying the legitimacy and authenticity of Saint Laurent bags. The placement of date codes can vary depending on the bag's style. Authenticating both modern and vintage YSL bags is important, as recognizing date codes is essential for collectors and fashion enthusiasts to ensure the authenticity and appreciation of these iconic accessories. 
+<br><br>
+This meticulous process involves examining various elements of the bag, including the interior brand tags, hardware, and overall construction. For fashion enthusiasts and collectors, understanding the authentication process is essential to ensure that their Saint Laurent bags are genuine and not counterfeit. By delving into the world of Saint Laurent authentication, one can appreciate the intricate details and craftsmanship that define an authentic Saint Laurent bag.
+      </p>
+    </div>
+    <img class="text-image-block_wrapp-image" src="{{ "ysl-seo_understanding.webp" | asset_url }}" alt="">
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "SEO Text & image",
+    "class": "text-image-block rebranding-wider-section rebranding-wider-section-bottom-image",
+    "settings": []
+  }
+{% endschema %}

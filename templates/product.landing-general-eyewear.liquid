@@ -1,0 +1,67 @@
+{% render 'product-landing-critical-styles-min' %}
+{% render 'product-landing-general-styles-min' %}
+<div class="form-container">
+    <div class="section-mosaic">
+        <div class="mosaic-block block-image-left">
+            <div class="mosaic-block__content">
+                <div class="mosaic-block__content-wrapper">
+                  {% if product.metafields.custom_fields.banner_text %}
+                   <h1 class="feature-row__heading h3 separator section-title font-title">
+                        {{ product.metafields.custom_fields.banner_text }}
+                    </h1>
+                    {% endif %}
+        
+                    <div class="rte-setting featured-row__subtext section-description font-description">
+                          <p>Authenticate your {{ product.title | remove: "Authentication Service" }} items with our Hybrid Authentication, blending expert human insight and AI precision for unmatched accuracy of over 99.3%</p>
+                      </div>
+
+                 <a href="#general-products" class="mosaic-block-btn main-btn">
+                   Authenticate now
+                 </a>
+                  <!-- TrustBox widget - Mini -->
+                  <div class="trustpilot-widget_wrapper" style="height: 112px; width: 200px; margin: 0;">
+                  <div class="trustpilot-widget" data-locale="en-GB" data-template-id="53aa8807dec7e10d38f59f32" data-businessunit-id="5fbebb2d281b010001718c1c" data-style-height="112px" data-style-width="200px" height="112px" width="200px" data-theme="light">
+                    <a href="https://uk.trustpilot.com/review/legitgrails.com" target="_blank" rel="noopener">Trustpilot</a>
+                  </div>
+                  </div>
+                  <!-- End TrustBox widget -->
+                </div>
+            </div>
+            <div class="mosaic-block__image">
+                {% if product.metafields.custom_fields.banner_image != blank %}
+                    <img class="mosaic-block__image-img" src="{{ product.metafields.custom_fields.banner_image | img_url: 'master' }}">
+                {% else %}
+                    <div class="mosaic-image">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% section 'product-featured-collection-eyewear' %}
+{% section 'product-full-width-meet' %}
+{% section 'product-why-choose'%}
+{% section 'product-full-width-middle-top' %}
+{% section "legit-authentication-benefits" %}
+{% section 'new-faq-eyewear' %}
+{% section 'product-reliable'%}
+{% if product.tags contains "new-reviews-2" %}
+      {% section 'new-reviews' %}
+{% endif %}
+{% unless product.tags contains 'new-reviews-2' %}
+     {% section 'new-reviews-2' %}
+{% endunless %}
+{% section 'product-featured-on' %}
+
+<script>
+  window.theme = window.theme || {};
+  window.theme.strings = window.theme.strings || {};
+
+  // Override default values of theme.strings for each template.
+  // Values are used by JavaScript only; Liquid must be updated separately
+  window.theme.strings.addToCart = {{ 'products.product.add_to_cart' | t | json }};
+  window.theme.strings.soldOut = {{ 'products.product.sold_out' | t | json }};
+  window.theme.strings.unavailable = {{ 'products.product.unavailable' | t | json }};
+</script>
+<!-- TrustBox script -->
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<!-- End TrustBox script -->

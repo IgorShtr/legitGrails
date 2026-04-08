@@ -1,0 +1,328 @@
+{%- assign image_crop = true -%}
+
+{% if section.settings.image_crop == 'middle' or section.settings.image_crop == 'small' %}
+    {%- assign image_crop = true -%}
+{% endif %}
+
+<style>
+    .feature-row__image-wrapper {
+    {% if section.settings.background_color != blank %}
+        background-color: {{ section.settings.background_color }};
+    {% elsif section.settings.background_color == blank and image_crop %}
+        background-color: {{ settings.color_secondary_bg }};
+    {% endif %}
+    }
+
+    {% if image_crop %}
+    .feature-row--{{ section.id }} .feature-row__image-wrapper {
+        background-color: {{ section.settings.background_color | color_lighten: 5 }};
+    }
+    @media screen and (min-width: 750px) {
+        .feature-row--{{ section.id }} .feature-row__image-wrapper {
+            background-color: {{ section.settings.background_color | color_lighten: 5 }};
+        }
+    }
+    {% endif %}
+</style>
+
+{% if section.settings.image != blank %}
+    <style>
+        .feature-row__image--{{ section.id }} {
+            background-position: {{ section.settings.alignment }};
+        }
+    </style>
+{% endif %}
+
+{% capture image_layout %}
+    <div class="feature-row__item feature-row__image-wrapper image-row-section {% if image_crop %} container-row-image-{{ section.settings.image_crop }}{% endif %}">
+        {% if section.settings.image != blank %}
+            <div class="feature-row__image--{{ section.id }}{% if image_crop %} block-image-{{ section.settings.image_crop }}{% endif %} lazyload" data-sizes="auto" data-bgset="{% include 'bgset', image: section.settings.image %}"></div>
+            <noscript>
+                <div class="feature-row__image--{{ section.id }}{% if image_crop %} block-image-{{ section.settings.image_crop }}{% endif %}" style="background-image: {{ section.settings.image | img_url: 'master' }}"></div>
+            </noscript>
+        {% else %}
+            <div class="feature-row__image--{{ section.id }}{% if image_crop %} {% endif %}">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</div>
+        {% endif %}
+        {% if section.settings.image2 != blank %}
+            <div class="feature-row__image--{{ section.id }}{% if image_crop %}  block-image-{{ section.settings.image_crop }}{% endif %} lazyload" data-sizes="auto" data-bgset="{% include 'bgset', image: section.settings.image2 %}"></div>
+
+            <noscript>
+                <div class="feature-row__image--{{ section.id }}{% if image_crop %}  block-image-{{ section.settings.image_crop }}{% endif %}" style="background-image: {{ section.settings.image2 | img_url: 'master' }}"></div>
+            </noscript>
+        {% endif %}
+    </div>
+{% endcapture %}
+
+<div class="feature-row feature-row--{{ section.id }} feature-row--{{ section.settings.size }} feature-row__image-crop--{{ section.settings.image_crop }}{% if section.settings.mobile_layout == 'bottom' %} feature-row-mobile--bottom{% endif %}" data-section-id="{{ section.id }}" data-section-type="feature-row">
+    {% if section.settings.desktop_layout == 'left' %}
+        {{ image_layout }}
+    {% endif %}
+
+    <div class="feature-row__item feature-row__text">
+        <div class="feature-row__text-wrap feature-row__text-wrap--{{ section.id }}">
+            {% if section.settings.title != blank %}
+                <h3 class="feature-row__heading h3 separator section-title font-title" data-animate>{{ section.settings.title | escape }}</h3>
+            {% endif %}
+            {% if section.settings.text != blank %}
+                <p class="rte-setting featured-row__subtext section-description font-description">{{ section.settings.text }}</p>
+            {% endif %}
+            {% if section.settings.button_label != blank %}
+                <a href="{{ section.settings.button_link }}" class="font-title main-btn {% if section.settings.use_second_button %} btn--secondary{% endif %} feature-row__btn">
+                    {{ section.settings.button_label }}
+                </a>
+            {% endif %}
+        </div>
+    </div>
+
+    {% if section.settings.desktop_layout == 'right' %}
+        {{ image_layout }}
+    {% endif %}
+</div>
+{%- if section.settings.border_top -%}
+    <style>
+        @media (min-width: 750px) {
+            .feature-row--{{ section.id }}:before {
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                content: "";
+                background-color: #CBAD73;
+            }
+        }
+    </style>
+{%- endif -%}
+{%- if section.settings.border_bottom -%}
+    <style>
+        @media (min-width: 750px) {
+            .feature-row--{{ section.id }}:after {
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                content: "";
+                bottom: 0px;
+                background-color: #CBAD73;
+            }
+        }
+    </style>
+{%- endif -%}
+{% schema %}
+{
+"name": {
+"en": "Legit Images with text"
+},
+"class": "index-section index-section--image-with-text",
+"settings": [
+{
+"type": "select",
+"id": "size",
+"label": {
+"en": "Section height"
+},
+"default": "medium",
+"options": [
+{
+"label": {
+"en": "Small"
+},
+"value": "small"
+},
+{
+"label": {
+"en": "Medium"
+},
+"value": "medium"
+},
+{
+"label": {
+"en": "Large"
+},
+"value": "large"
+},
+{
+"label": {
+"en": "Extra Large"
+},
+"value": "x-large"
+}
+]
+},
+{
+"type": "color",
+"id": "background_color",
+"label": {
+"en": "Background color"
+},
+"default": "#f3f4f3"
+},
+{
+"type": "header",
+"content": {
+"en": "Image"
+}
+},
+{
+"type": "image_picker",
+"id": "image",
+"label": {
+"en": "Image"
+}
+},
+{
+"type": "image_picker",
+"id": "image2",
+"label": {
+"en": "Image"
+}
+},
+{
+"type": "select",
+"id": "image_crop",
+"label": {
+"en": "Image style"
+},
+"default": "full",
+"options": [
+{
+"label": {
+"en": "Full height"
+},
+"value": "full"
+},
+{
+"label": {
+"en": "Middle height"
+},
+"value": "middle"
+},
+{
+"label": {
+"en": "Small height"
+},
+"value": "small"
+}
+]
+},
+{
+"type": "header",
+"content": {
+"en": "Text"
+}
+},
+{
+"type": "text",
+"id": "title",
+"label": {
+"en": "Heading"
+},
+"default": {
+"en": "Image with text"
+}
+},
+{
+"type": "richtext",
+"id": "text",
+"label": {
+"en": "Text"
+},
+"default": {
+"en": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+}
+},
+{
+"type": "checkbox",
+"id": "use_second_button",
+"label": {
+"en": "Use secondary button style"
+},
+"default": false
+},
+{
+"type": "text",
+"id": "button_label",
+"label": {
+"en": "Button label"
+}
+},
+{
+"type": "url",
+"id": "button_link",
+"label": {
+"en": "Button link"
+}
+},
+{
+"type": "header",
+"content": {
+"en": "Image alignment"
+}
+},
+{
+"type": "select",
+"id": "desktop_layout",
+"label": {
+"en": "Desktop"
+},
+"default": "right",
+"options": [
+{
+"label": {
+"en": "Left"
+},
+"value": "left"
+},
+{
+"label": {
+"en": "Right"
+},
+"value": "right"
+}
+]
+},
+{
+"type": "select",
+"id": "mobile_layout",
+"label": {
+"en": "Mobile"
+},
+"default": "top",
+"options": [
+{
+"label": {
+"en": "Top"
+},
+"value": "top"
+},
+{
+"label": {
+"en": "Bottom"
+},
+"value": "bottom"
+}
+]
+},
+{
+"type": "checkbox",
+"id": "border_top",
+"default": false,
+"label": "Border top"
+},
+{
+"type": "checkbox",
+"id": "border_bottom",
+"default": false,
+"label": "Border bottom"
+}
+],
+"presets": [
+{
+"name": {
+"en": "Legit images with text"
+},
+"category": {
+"en": "Image"
+}
+}
+]
+}
+{% endschema %}

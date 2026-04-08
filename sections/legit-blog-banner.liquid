@@ -1,0 +1,30 @@
+{% render 'section-legit-blog-banner-styles' %}
+<section class="blog-main-screen" {% if article.metafields.custom.blog_banner != blank %}
+    style="background-image: url({{ article.metafields.custom.blog_banner | img_url: 'master' }})" {% endif %}>
+    <div class="container">
+        {% if article.metafields.custom.blog_title != blank %}
+            <h1 class="blog-main-screen__title font-title">
+                {{ article.metafields.custom.blog_title }}
+            </h1>
+        {% endif %}
+        {% if article.metafields.custom.blog_description != blank %}
+            <p class="blog-main-screen__description font-description">
+                {{ article.metafields.custom.blog_description }}
+            </p>
+        {% endif %}
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Section Blog Banner",
+  "settings": []
+}
+{% endschema %}
+
+{% stylesheet %}
+
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

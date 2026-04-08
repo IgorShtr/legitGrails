@@ -1,0 +1,51 @@
+<div class="section-{{ section.id }}">
+    <div class="heading-section">
+        {%- unless section.settings.title == blank -%}
+            <h2 class="section-title text-center featured-blog__heading font-title" data-animate="true">
+                {{ section.settings.title | escape }}
+            </h2>
+        {%- endunless -%}
+        {%- unless section.settings.description == blank -%}
+            <div class="section-description text-center font-description">
+                {{ section.settings.description }}
+            </div>
+        {%- endunless -%}
+    </div>
+</div>
+<style>
+    .heading-section {
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
+    @media (min-width: 1024px) {
+        .heading-section {
+            padding-top: 80px;
+        }
+    }
+</style>
+{% schema %}
+{
+  "name": "Heading Section",
+  "class": "section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "default": "<p>Description</p>",
+      "label": "Section Description"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Heading Section"
+    }
+  ]
+}
+{% endschema %}

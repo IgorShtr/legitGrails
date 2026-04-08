@@ -1,0 +1,276 @@
+<style>
+  .cosmetics_cta {
+    padding: 0 0 150px 0;
+  }
+  .cosmetics_cta-wrapper {
+    width: 100%;
+    height: max-content;
+    border-radius: 14px;
+    border: 1px solid #D8D9DE;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: .3s;
+  }
+  .cosmetics_cta-wrapper.animated {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+.cosmetics_cta-text {
+    padding: 25px 0 30px 35px;
+    width: 100%;
+    max-width: calc(100% - 468px);
+}
+  .cosmetics_cta-text h2 {
+    text-align: left;
+  }
+  p.cosmetics_cta-text-desc {
+    color: #3C1F1B;
+    font-family: "Suisse Intl";
+    font-size: 22px;
+    line-height: 105%;
+    letter-spacing: -0.5px;
+    margin-top: 15px;
+  }
+  a.cosmetics_cta-btn {
+    margin-top: 20px;
+  }
+.cosmetics_cta-circles {
+    height: 223px;
+    width: 468px;
+    position: relative;
+}
+  .cosmetics_cta-circles-items {
+    position: relative;
+    overflow: hidden;
+    width: 320px;
+    height: 223px;
+  } 
+  .cosmetics_cta-circles-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    height: 0;
+    width: 0;
+    transition: .3s;
+    margin-top: 0;
+    margin-left: 0;
+  }
+  .cosmetics_cta-circles-item-1 {
+    background: #D8D9DE;
+    opacity: 0.83;
+    z-index: 3;
+  }
+  .cosmetics_cta-circles-item-1.animated {
+    height: 218px;
+    width: 218px;
+    margin-top: -109px;
+    margin-left: -109px;
+  }
+  .cosmetics_cta-circles-item-2 {
+    opacity: 0.62;
+    background: #D8D9DE;
+    z-index: 2;
+  }
+  .cosmetics_cta-circles-item-2.animated {
+    height: 270px;
+    width: 270px;
+    margin-top: -135px;
+    margin-left: -135px;
+  }
+  .cosmetics_cta-circles-item-3 {
+    opacity: 0.51;
+    background: #E8E9EC;
+    z-index: 1;
+  }
+  .cosmetics_cta-circles-item-3.animated {
+    height: 320px;
+    width: 320px;
+    margin-top: -160px;
+    margin-left: -160px;
+  }
+  img.cosmetics_cta-circles-image {
+    width: 154px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -84px;
+    display: block;
+    height: auto;
+    position: absolute;
+    z-index: 4;
+    opacity: 1;
+    transform: translateY(0px);
+    transition: .5s;
+  }
+.cosmetics_cta-circles-back {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 468px;
+    height: 100%;
+    overflow: hidden;
+    border-bottom-right-radius: 13px;
+    border-top-right-radius: 13px;
+}
+  img.cosmetics_cta-circles-back-image {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 50%;
+    left: 0;
+    margin-top: -205px;
+}
+  @media(max-width: 1450px) {
+    .cosmetics_cta {
+    padding: 0 0 120px 0;
+  }
+   .cosmetics_cta h2.cosmetics_section-title {
+      font-size: 45px;
+    }
+    .cosmetics_cta-circles-items {
+    height: 270px;
+}
+    .cosmetics_cta-circles {
+    height: 270px;
+    }
+  }
+  @media(max-width: 1250px) {
+    p.cosmetics_cta-text-desc {
+      font-size: 20px;
+    }
+    .cosmetics_cta h2.cosmetics_section-title {
+      font-size: 40px;
+    }
+  }
+  @media(max-width: 950px) {
+    img.cosmetics_cta-circles-back-image {
+    margin-top: -110px;
+    }
+    .cosmetics_cta-text {
+    padding: 20px 20px 0 20px;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+}
+    a.cosmetics_cta-btn {
+    margin: 20px auto 0 auto;
+}
+   .cosmetics_cta h2.cosmetics_section-title {
+      text-align: center;
+    }
+    .cosmetics_cta-circles {
+    margin: 70px auto 0 auto;
+}
+    .cosmetics_cta-circles-item {
+      top: 0;
+    }
+    .cosmetics_cta-circles-item-3, .cosmetics_cta-circles-item-3.animated {
+      height: 320px;
+    width: 320px;
+    margin-left: -160px;
+      margin-top: 0;
+    }
+    .cosmetics_cta-circles-item-2, .cosmetics_cta-circles-item-2.animated {
+      height: 270px;
+    width: 270px;
+    margin-left: -135px;
+      margin-top: 26px;
+    }
+    .cosmetics_cta-circles-item-1, .cosmetics_cta-circles-item-1.animated {
+      height: 218px;
+    width: 218px;
+    margin-left: -109px;
+      margin-top: 52px;
+    }
+    .cosmetics_cta-circles-items {
+      height: 210px;
+    }
+    .cosmetics_cta-circles {
+    height: 210px;
+    }
+    img.cosmetics_cta-circles-image {
+    width: 126px;
+    margin-left: -66px;
+    }
+    .cosmetics_cta-circles-back {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+  }
+  @media(max-width: 750px) {
+    p.cosmetics_cta-text-desc {
+      font-size: 16px;
+    }
+    .cosmetics_cta h2.cosmetics_section-title {
+      font-size: 30px;
+    }
+  }
+  @media(max-width: 600px) {
+    .cosmetics_cta {
+    padding: 0 0 80px 0;
+  }
+  }
+  @media(max-width: 500px) {
+    .cosmetics_cta-circles-back {
+    width: 350px;
+}
+        .cosmetics_cta-circles {
+        width: 350px;
+    }
+  }
+  @media(max-width: 400px) {
+        img.cosmetics_cta-circles-back-image {
+        margin-top: -81px;
+    }
+    .cosmetics_cta-circles-back {
+      width: 300px;
+    }
+    .cosmetics_cta-circles {
+        height: 165px;
+        width: 300px;
+    }
+        img.cosmetics_cta-circles-image {
+        width: 100px;
+        margin-left: -54px;
+    }
+    .cosmetics_cta {
+    padding: 0 0 60px 0;
+  }
+    p.cosmetics_cta-text-desc {
+      font-size: 14px;
+    }
+    .cosmetics_cta h2.cosmetics_section-title {
+      font-size: 25px;
+    }
+  }
+</style>
+<div class="container">
+  <div class="cosmetics_cta-wrapper">
+    <div class="cosmetics_cta-text">
+      <h2 class="cosmetics_section-title cosmetics_cta-title">Authenticate <span class="pp-accent">your beauty products</span> now</h2>
+      <p class="cosmetics_cta-text-desc">
+        Get fast, expert results to protect your luxury beauty investments
+      </p>
+      <a href="#product-box_section" class="cosmetics-btn cosmetics-btn-primary cosmetics_cta-btn">
+          Start verification
+      </a>
+    </div>
+    <div class="cosmetics_cta-circles">
+      <img src="{{ 'cosmetics-landing_cta-image.png' | asset_url }}" class="cosmetics_cta-circles-image">
+      <div class="cosmetics_cta-circles-back">
+        <img src="{{ 'cta-image.svg' | asset_url }}" class="cosmetics_cta-circles-back-image">
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Cosmetics CTA",
+    "class": "cosmetics_cta",
+    "settings": []
+  }
+{% endschema %}

@@ -1,0 +1,121 @@
+<style>
+  .article_column-image {
+    width: 100%;
+    height: 320px;
+    border-radius: 11px;
+  }
+  img.article_column-image {
+    overflow: hidden;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+  .article_column-image-border {
+    border: 1px solid rgba(60, 31, 27, 0.30);
+  }
+  .article_column {
+      height: max-content;
+  }
+  .article_column-third {
+    width: calc(33.3333334% - 33.3333334px);
+  }
+  .article_column-half {
+    width: calc(50% - 25px);
+  }
+  .article_column-text-third-top {
+    padding-top: 81px;
+  }
+  @media(max-width: 1450px) {
+    .article_column-quarter {
+      width: calc(25% - 22.5px);
+    }
+    .article_column-half {
+    width: calc(50% - 15px);
+  }
+    .article_columns-wrapp {
+      gap: 30px;
+    }
+    .article_column-text-third-top {
+      padding-top: 114px;
+    }
+  }
+  @media(max-width: 1250px) {
+    .article_column-quarter {
+        width: calc(50% - 15px);
+    }
+    .article_column-third {
+        width: calc(50% - 15px);
+    }
+    .article_column-text-third-top {
+      padding-top: 81px;
+    }
+  }
+  @media(max-width: 950px) {
+    .article_column-text-third-top {
+      padding-top: 114px;
+    }
+  }
+  @media(max-width: 750px) {
+    .article_column-quarter {
+        width: 100%;
+        gap: 30px;
+    }
+    .article_column-text-third-top {
+      padding-top: 0;
+    }
+    .article_column-half {
+      width: 100%
+    }
+    .article_column-third {
+        width: 100%;
+        gap: 30px;
+    }
+    .article_columns-wrapp {
+        gap: 30px;
+    }
+    .rebranding_container {
+        gap: 40px;
+    }
+    .article_column-text .h3-heading-pp, .article_column-text .h3-heading-ss {
+        text-align: center;
+    }
+  }
+  @media(max-width: 450px) {
+    .article_column-image {
+      height: 250px;
+    }
+  }
+</style>
+<div class="rebranding_container block-flex-wrap block-gap-50">
+  <div class="rebranding-section-title block-flex-wrap block-gap-15 block-flex-center-center">
+    <h2 class="h2-heading-ss">
+      <span class="h2-heading-pp">
+       Louis Vuitton 
+      </span>
+      in 2025
+    </h2>
+  </div>
+  <div class="article_columns-wrapp block-flex-wrap block-gap-50 block-flex-start-start">
+    <div class="article_column article_column-half article_column-text-half block-flex-wrap block-gap-30">
+      <div class="article_column-text block-flex-wrap block-gap-15 block-flex-center-center">
+        <p class="article_column-desc body-text taj w-100">
+          The brand that started its history in 1854 is Louis Vuitton (LV). LV is one of the oldest French luxury fashion brands. Its high-quality leather bags and its iconic “LV” chessboard pattern make the brand stand out.
+        </p>
+      </div>
+    </div>
+    <div class="article_column article_column-half article_column-text-half block-flex-wrap block-gap-30">
+      <div class="article_column-text block-flex-wrap block-gap-15 block-flex-center-center">
+        <p class="article_column-desc body-text taj w-100">
+          LV is a big luxury fashion player that faced market headwinds recently. In the first half of 2025, sales fell by 3% and 4% year-on-year revenue decline. However, experts relate this to a general slowdown in the luxury fashion market. LV popularity holds throughout centuries, and it won’t go anywhere anytime soon.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Three text columns",
+    "class": "article_columns article_three-columns article_three-text-columns rebranding-section-top",
+    "settings": []
+  }
+{% endschema %}

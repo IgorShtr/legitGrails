@@ -1,0 +1,226 @@
+{% render 'section-legit-product-search-styles' %}
+<div class="product-search-section--{{ section.id }} product-search-section {% if section.settings.show_overlay %} product-search-section__overlay{% endif %}"
+     style="background-image: url({{ section.settings.image | img_url: 'master' }})">
+    <div class="product-search-section__inner">
+        <div class="search-section-container">
+            {% if section.settings.logo_image != blank %}
+                <img class="search-logo" src="{{ section.settings.logo_image | img_url: '500x500' }}" loading="lazy" alt="{{ section.settings.title }}">
+            {% endif %}
+            <div class="products-search">
+                {% if section.settings.title != blank %}
+                    <div class="section-title text-center font-title">{{ section.settings.title }}</div>
+                {% endif %}
+                <label class="search-label font-title" for="product-search"><input type="text" id="product-search" class="input-product-search" name="q"
+                                                   value="{{ search.terms | escape }}"
+                                                   placeholder="Search Brand"/>
+                </label>
+                <div class="products-search_result font-description"></div>
+            </div>
+            {% if section.settings.url != blank %}
+                <div class="products-search__link-wrap">
+                    <a class="products-search__link font-title" href="{{ section.settings.url }}">{{ section.settings.link_text }}</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!--<script>
+    $(function () {
+        let searchField = $('#product-search')
+        let searchResult = $('.products-search_result')
+        $('.products-wrapp').each(function () {
+            if ($(this).children().length < 3) {
+                $(this).parents('.products-item').find('.products-view').hide();
+            }
+        });
+
+        searchField.click(function (e) {
+            e.stopPropagation();
+            if (searchResult.children().length && this.value.length >= 3) {
+                searchResult.show();
+            }
+        });
+
+        $(window).click(function () {
+            searchResult.hide();
+        });
+
+        searchField.on('input', function () {
+            if (this.value.length >= 2) {
+                $.ajax('/search?q=' + this.value + '*&type=product', {
+                    type: 'GET',
+                    success: function (response) {
+                        searchResult.show();
+                        let searchList = new DOMParser().parseFromString(response, "text/html").getElementsByClassName('card-list');
+                        if (searchList.item(0).children.item(0).children.length) {
+                            searchResult.addClass('list-visible');
+                            searchResult.html(searchList);
+                        } else {
+                            searchResult.html('<div class="no-results" style="text-align: center; margin: 20px; color: #000; font-size: 17px;">Your search for “' + $('#product-search').val() + '” did not yield any results.</div>');
+                            searchResult.removeClass('list-visible')
+                        }
+                    }
+                });
+            } else {
+                searchResult.hide();
+            }
+        });
+
+    });
+</script>-->
+<script>
+$(function(){let t=$("#product-search"),e=$(".products-search_result");$(".products-wrapp").each(function(){$(this).children().length<3&&$(this).parents(".products-item").find(".products-view").hide()}),t.click(function(t){t.stopPropagation(),e.children().length&&this.value.length>=3&&e.show()}),$(window).click(function(){e.hide()}),t.on("input",function(){this.value.length>=2?$.ajax("/search?q="+this.value+"*&type=product",{type:"GET",success:function(t){e.show();let s=new DOMParser().parseFromString(t,"text/html").getElementsByClassName("card-list");s.item(0).children.item(0).children.length?(e.addClass("list-visible"),e.html(s)):(e.html('<div class="no-results" style="text-align: center; margin: 20px; color: #000; font-size: 17px;">Your search for “'+$("#product-search").val()+"” did not yield any results.</div>"),e.removeClass("list-visible"))}}):e.hide()})});
+</script>
+{% if section.settings.show_overlay %}
+    <style>
+        .product-search-section--{{ section.id }}.product-search-section__overlay:before  {
+            background-color: {{ section.settings.overlay_color }};
+            opacity: {{ section.settings.overlay_opacity }};
+        }
+        .product-search-section--{{ section.id }} .products-search__link,
+        .product-search-section--{{ section.id }} .section-title,
+        .product-search-section--{{ section.id }} .input-product-search,
+        .product-search-section--{{ section.id }} input[type="search"].input-product-search::placeholder
+        {
+            color: {{ section.settings.overlay_text }};
+        }
+    </style>
+{% endif %}
+
+{% schema %}
+{
+"name": {
+"en": "Legit search products"
+},
+"class": "index-section",
+"settings": [
+{
+"type": "text",
+"id": "title",
+"label": {
+"en": "Heading"
+},
+"default": {
+"en": "Search Title"
+}
+},
+{
+"type": "url",
+"id": "url",
+"label": {
+"en": "Search Link"
+}
+},
+{
+"type": "text",
+"id": "link_text",
+"label": {
+"en": "Link Text"
+},
+"default": {
+"en": "Search link text"
+}
+},
+{
+"type": "image_picker",
+"id": "logo_image",
+"label": {
+"en": "Logo image"
+}
+},
+{
+"type": "image_picker",
+"id": "image",
+"label": {
+"en": "Background image"
+}
+},
+{
+"type": "checkbox",
+"id": "show_overlay",
+"label": {
+"en": "Show overlay"
+},
+"default": false
+},
+{
+"type": "color",
+"id": "overlay_color",
+"label": {
+"en": "Overlay Color"
+},
+"default": "#242424"
+},
+{
+"type": "color",
+"id": "overlay_text",
+"label": {
+"en": "Text color"
+},
+"default": "#ffffff"
+},
+{
+"type": "select",
+"id": "overlay_opacity",
+"label": "Overlay opacity",
+"default": "0.5",
+"options": [
+{
+"value": "0",
+"label": "0%"
+},
+{
+"value": "0.1",
+"label": "10%"
+},
+{
+"value": "0.2",
+"label": "20%"
+},
+{
+"value": "0.3",
+"label": "30%"
+},        {
+"value": "0.4",
+"label": "40%"
+},
+{
+"value": "0.5",
+"label": "50%"
+},
+{
+"value": "0.6",
+"label": "60%"
+},
+{
+"value": "0.7",
+"label": "70%"
+},
+{
+"value": "0.8",
+"label": "80%"
+},
+{
+"value": "0.9",
+"label": "90%"
+},
+{
+"value": "1",
+"label": "100%"
+}
+]
+}
+],
+"presets": [
+{
+"name": {
+"en": "Legit product search"
+},
+"category": {
+"en": "Image"
+}
+}
+]
+}
+{% endschema %}

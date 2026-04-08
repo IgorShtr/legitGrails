@@ -1,0 +1,28 @@
+{%- comment -%}
+  "Protected block of code for functionality credits-app-with-db. Do not make changes without consulting the manager."
+{%- endcomment -%}
+
+<div class="cart__credits-selector">
+  {% if customer != blank %}
+    {% assign available_credits = 0 %}
+    {% if customer.metafields.credits.totalCredits.value != blank %}
+      {% assign available_credits = customer.metafields.credits.totalCredits.value %}
+      {% assign credits_to_apply = 0 %}
+      {% if available_credits > 0 %}
+        {% if available_credits > cart.total_price %}
+          {% assign credits_to_apply = cart.total_price %}
+        {% else %}
+          {% assign credits_to_apply = available_credits %}
+        {% endif %}
+
+        <label for="credits-selector">Select credits:</label>
+        <select id="credits-selector" name="credits" form="cart" style="border: 1px solid #cdab71;">
+          <option value="0">Select credits</option>
+          <option value="{{ credits_to_apply | money_without_currency }}">
+            Use {{ credits_to_apply | money }}credits
+          </option>
+        </select>
+      {% endif %}
+    {% endif %}
+  {% endif %}
+</div>

@@ -1,0 +1,220 @@
+{% render 'section-legit-page-why-services-background-styles' %}
+<div class="section-services-background" data-section-id="{{ section.id }}"
+     data-bgset="{% include 'bgset', image: section.settings.section_image %}"
+     style="background-image: url({{ section.settings.section_image | img_url: 'master' }})"
+>
+    <div class="section-container {% if section.settings.section_image != blank %} section-services-inversed {% endif %}">
+        <div class="featured-collection__heading grid text-center">
+            <div class="grid__item medium-up--ten-twelfths medium-up--push-one-twelfth">
+                <h2 class="font-title hero__overlay-title section-title" data-animate>{{ section.settings.title }}</h2>
+                <p class="font-description section-description ">{{ section.settings.description }}</p>
+            </div>
+        </div>
+
+        <div class="legit-image-icon legit-image-icon--{{ section.id }} legit-image-icon--{{ section.settings.section_height }}"
+             data-section-id="{{ section.id }}" data-section-type="gallery">
+            {% for block in section.blocks %}
+                <div class="legit-image-icon__flex legit-image-icon__{{ section.blocks.size }}-column">
+                    {% if block.settings.image != blank %}
+                        <div class="legit-image-icon__item legit-image-icon__item--{{ block.id }} lazyload" {{ block.shopify_attributes }}
+                             style="background-image: url({{ block.settings.image | img_url: 'master' }})">
+                        </div>
+                    {% endif %}
+                    <div class="legit-image-icon__text-small" data-animate>
+                        {% if block.settings.cta_label != blank %}
+                            <p class="font-title h2 legit-image-icon__caption">{{ block.settings.cta_label | escape }}</p>
+                        {% endif %}
+                        {% if block.settings.block_description != blank %}
+                            <div class="font-description section-description legit-image-icon__caption">{{ block.settings.block_description }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        {% if section.blocks.size == 0 %}
+            {% include 'no-blocks' %}
+        {% endif %}
+
+        {% if section.settings.button_label != blank %}
+            <div class="button-container">
+                <a href="{{ section.settings.button_link }}"
+                   class="font-title main-btn{% if section.settings.use_second_button %} btn--secondary{% endif %} hero__btn">
+                    {{ section.settings.button_label }}
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% if section.settings.section_image != blank %}
+    <style>
+        .section-services-inversed .legit-image-icon__caption,.section-services-inversed .section-description,.section-services-inversed .section-title,.section-services-inversed p{color:#fff}
+    </style>
+{% endif %}
+
+{% schema %}
+{
+  "name": {
+    "en": "Legit about"
+  },
+  "class": "index-section--services",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "section_image",
+      "label": {
+        "en": "Image"
+      }
+    },
+    {
+      "type": "select",
+      "id": "section_height",
+      "label": {
+        "en": "Section height"
+      },
+      "default": "medium",
+      "options": [
+        {
+          "label": {
+            "en": "Extra Small"
+          },
+          "value": "x-small"
+        },
+        {
+          "label": {
+            "en": "Small"
+          },
+          "value": "small"
+        },
+        {
+          "label": {
+            "en": "Medium"
+          },
+          "value": "medium"
+        },
+        {
+          "label": {
+            "en": "Large"
+          },
+          "value": "large"
+        },
+        {
+          "label": {
+            "en": "Extra Large"
+          },
+          "value": "x-large"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": {
+        "en": "Heading"
+      },
+      "default": {
+        "en": "Legit services"
+      }
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": {
+        "en": "Description"
+      }
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": {
+        "en": "Button label"
+      }
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": {
+        "en": "Button link"
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": {
+        "en": "Image"
+      },
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": {
+            "en": "Image"
+          }
+        },
+        {
+          "type": "header",
+          "content": {
+            "en": "Text"
+          }
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": {
+            "en": "Caption"
+          },
+          "default": {
+            "en": "Talk about your brand"
+          }
+        },
+        {
+          "type": "richtext",
+          "id": "block_description",
+          "label": {
+            "en": "Description"
+          },
+          "default": {
+            "en": "<p>Describe your brand</p>"
+          }
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": {
+            "en": "Link"
+          },
+          "info": {
+            "en": "Optional"
+          }
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "en": "Legit about"
+      },
+      "category": {
+        "en": "Image"
+      },
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

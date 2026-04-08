@@ -1,0 +1,302 @@
+{% render "rebranding_main-styles" %}
+<style>
+  nav.breadcrumbs {
+    display: none;
+}
+  .product_boxes-wrapp {
+      justify-content: center;
+  }
+  .product-box {
+    width: 400px!important;
+    text-align: center;
+}
+  .variant-list {
+    margin: 25px 0;
+  }
+  .product-variants {
+    width: max-content;
+    margin: 0 auto;
+}
+  p.body-text.product-box_variant-price {
+    display: none;
+}
+  .radio-options {
+    width: 129px;
+}
+  button#authenticate-btn {
+    width: 100% !important;
+        border-radius: 8px !important;
+  }
+  .product_box {
+    border-radius: 8px;
+    border: 1px solid rgba(60, 31, 27, 0.20);
+    padding: 20px;
+    width: 400px;
+  }
+  .product_boxes-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+  .product_box-content {
+    height: max-content;
+    justify-content: center;
+  }
+  .product_box-title {
+    text-align: center;
+  }
+  .product_box-steps-items {
+    gap: 25px;
+  }
+  .product_box-steps-item {
+    gap: 15px;
+    align-items: center;
+  }
+  span.product_box-steps-item-circle {
+    justify-content: center;
+    align-items: center;
+    height: 53px;
+    width: 53px;
+    position: relative;
+    border-radius: 50%;
+    background: #F2F2EA;
+  }
+  span.product_box-steps-item-circle::before {
+    content: '';
+    display: block;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    border: 2px solid #3C1F1B;
+    top: 4px;
+    left: 4px;
+    position: absolute;
+  }
+span.product_box-steps-item-circle::after {
+    content: '';
+    position: absolute;
+    display: block;
+    border-radius: 2px;
+    background: #3C1F1B;
+    height: 25px;
+    width: 3px;
+    top: 100%;
+    left: 50%;
+    margin-left: -1.5px;
+}
+  .product_box-steps-item:last-child span.product_box-steps-item-circle::after {
+    display: none;
+  }
+  .product_box-steps-item p {
+    width: calc(100% - 68px);
+}
+  span.product_box-steps-item-circle svg {
+    margin-top: 2px;
+    margin-left: 1px;
+}
+.product_box-reviews-item {
+  gap: 10px;
+  justify-content: center;
+}
+.product_box-reviews-item p {
+  text-align: center;
+  width: 100%;
+}
+  .product_box-reviews-item-clients {
+    justify-content: center;
+  }
+  .product_box-reviews-item-clients img {
+    height:40px;
+    width:40px;
+    border-radius:50%;
+    overflow:hidden;
+    border: 2px solid #fff;
+    margin-left: -10px;
+  }
+  .product_box-reviews-item-logos {
+    justify-content: center;
+    gap: 10px 20px;
+    width: 100%;
+    align-items: center;
+  }
+  .product_box-reviews-item-logos img {
+    height: 18px;
+  }
+  .product_box-reviews-item-logos img:nth-child(3) {
+    height: 22px;
+  }
+  .product_box-reviews-item-logos img:nth-child(4) {
+    height: 27px;
+  }
+  @media(max-width: 1450px) {
+    .product_box {
+      width: 370px;
+    }
+    .product-box {
+      width: 400px!important;
+    }
+    .product_boxes-content {
+      gap: 15px;
+    }
+  }
+  @media(max-width: 1250px) {
+    .product-box {
+      width: 510px !important;
+    }
+    .product_box {
+        width: 400px;
+    }
+    .product_hero-box {
+      order: 1;
+    }
+    .product_box-steps {
+      order: 2;
+    }
+    .product_box-reviews {
+      order: 3;
+    }
+  }
+  @media(max-width: 950px) {
+    .product_box {
+      width: calc(50% - 7.5px);
+    }
+    footer {
+      border-top: 1px solid #3C1F1B;
+    }
+  }
+  @media(max-width: 750px) {
+    .checkmark {
+      margin-top: -1px!important;
+    }
+    .radio-options {
+    width: 109px;
+}
+    .product_box-steps-item {
+      gap: 10px;
+    }
+    span.product_box-steps-item-circle {
+      height: 43px;
+      width: 43px;
+    }
+    span.product_box-steps-item-circle::before {
+      height: 35px;
+      width: 35px;
+    }
+    span.product_box-steps-item-circle svg {
+        margin-top: 0;
+        margin-left: 0px;
+        height: 8px;
+    }
+    .product_box-steps-item:last-child span.product_box-steps-item-circle svg {
+      height: 12px;
+    }
+    .product_box-content {
+      gap: 30px!important;
+    }
+  }
+  @media(max-width: 660px) {
+    .product_box, .product_hero-box {
+      width: 100%;
+    }
+    .product-box {
+      width: 100% !important;
+    }
+    .product_box-steps-items {
+      max-width: 280px;
+    }
+  }
+</style>
+
+{% section "categories_hero-cosmetics" %}
+{% section "categories_steps-cosmetics" %}
+<section id="product_boxes" class="product_boxes rebranding-section-bottom">
+  <div class="container rebranding_container">
+    <div class="product_boxes-wrapp block-flex-wrap">
+      <div id="product_boxes-content" class="product_boxes-content">
+        <div class="product_box product_box-steps">
+          <div class="block-flex-wrap block-gap-40">
+            <div class="product_box-content block-flex-wrap block-gap-30">
+            <p class="h3-heading-ss product_box-title">
+              <span class="h3-heading-pp">Verify</span> any branded item in<br><span class="h3-heading-pp">3 simple steps</span>
+            </p>
+            <div class="product_box-steps-items block-flex-wrap">
+              <div class="product_box-steps-item block-flex-wrap">
+                <span class="product_box-steps-item-circle block-flex">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="6" cy="6" r="6" fill="#3C1F1B"/>
+                  </svg>
+                </span>
+                <p class="body-text">Choose response time & upload photos</p>
+              </div>
+              <div class="product_box-steps-item block-flex-wrap">
+                <span class="product_box-steps-item-circle block-flex">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="6" cy="6" r="6" fill="#3C1F1B"/>
+                  </svg>
+                </span>
+                <p class="body-text">Wait for our team’s review</p>
+              </div>
+              <div class="product_box-steps-item block-flex-wrap">
+                <span class="product_box-steps-item-circle block-flex">
+                  <svg width="21" height="18" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M18.4107 0.457394L6.47734 11.9741L3.31068 8.59073C2.72734 8.04073 1.81068 8.00739 1.14401 8.47406C0.49401 8.9574 0.310676 9.80739 0.710676 10.4907L4.46068 16.5907C4.82734 17.1574 5.46068 17.5074 6.17734 17.5074C6.86068 17.5074 7.51068 17.1574 7.87734 16.5907C8.47734 15.8074 19.9273 2.15739 19.9273 2.15739C21.4273 0.624061 19.6107 -0.725939 18.4107 0.440728V0.457394Z" fill="#3C1F1B"/>
+                  </svg>
+                </span>
+                <p class="body-text">Get the verdict and personal certificate </p>
+              </div>
+            </div>
+            </div>
+            <p class="body-text tac">
+              Want to track your order? Check out our <a href="https://legitgrails.com/pages/account" style="color:#F24F14; text-decoration:underline;" class="standart-hover">LegitGrails Account</a>
+            </p>
+          </div>
+        </div>
+        <div class="product_hero-box">
+          {% section 'product-box_second-test' %}
+        </div>
+        <div class="product_box product_box-reviews">
+          <div class="product_box-content block-flex-wrap block-gap-20">
+            <p class="h3-heading-ss product_box-title">
+              <span class="h3-heading-pp">Authenticate</span> your branded items <span class="h3-heading-pp">with Experts & AI</span>
+            </p>
+            <div class="product_box-reviews-item product_box-reviews-item-rate block-flex-wrap">
+              <svg width="158" height="26" viewBox="0 0 158 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.4335 1L18.3325 8.89905L27.0518 10.1735L20.7426 16.3186L22.2316 25L14.4335 20.8991L6.63538 25L8.12433 16.3186L1.81519 10.1735L10.5344 8.89905L14.4335 1Z" fill="#F24F14" stroke="#F24F14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M47.2623 1L51.1614 8.89905L59.8806 10.1735L53.5715 16.3186L55.0604 25L47.2623 20.8991L39.4642 25L40.9532 16.3186L34.644 10.1735L43.3633 8.89905L47.2623 1Z" fill="#F24F14" stroke="#F24F14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M78.8346 1L82.7337 8.89905L91.4529 10.1735L85.1438 16.3186L86.6327 25L78.8346 20.8991L71.0365 25L72.5255 16.3186L66.2163 10.1735L74.9356 8.89905L78.8346 1Z" fill="#F24F14" stroke="#F24F14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M111.042 1L114.941 8.89905L123.66 10.1735L117.351 16.3186L118.84 25L111.042 20.8991L103.244 25L104.733 16.3186L98.4236 10.1735L107.143 8.89905L111.042 1Z" fill="#F24F14" stroke="#F24F14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M143.566 1L147.465 8.89905L156.185 10.1735L149.875 16.3186L151.364 25L143.566 20.8991L135.768 25L137.257 16.3186L130.948 10.1735L139.667 8.89905L143.566 1Z" fill="#F24F14" stroke="#F24F14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <p class="body-text">rated 4.5/5.0 by more than 100,000 customers</p>
+              <div class="product_box-reviews-item-clients block-flex-wrap">
+                  <img src="{{ "reviews_klients-1.webp" | asset_url }}">
+                  <img src="{{ "reviews_klients-2.webp" | asset_url }}">
+                  <img src="{{ "reviews_klients-3.webp" | asset_url }}">
+                  <img src="{{ "reviews_klients-4.webp" | asset_url }}">
+                  <img src="{{ "reviews_klients-5.webp" | asset_url }}">
+              </div>
+            </div>
+            <div class="product_box-reviews-item product_box-reviews-item-rate block-flex-wrap">
+              <p class="body-text">featured by</p>
+              <div class="product_box-reviews-item-logos block-flex-wrap">
+                <img src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/guide-block_rapaport.svg?v=1702460484">
+                <img src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/guide-block_insider.svg?v=1702460484">
+                <img src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/guide-block_forbes.svg?v=1702460484">
+                <img src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/guide-block_nice.svg?v=1702460484">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% section "categories_wwa-cosmetics" %}
+{% section "product_reviews" %}
+{% section "homepage_partners" %}
+{% section "homepage_partners-label" %}
+
+<!-- TrustBox script -->
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<!-- End TrustBox script -->

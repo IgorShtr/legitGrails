@@ -1,0 +1,309 @@
+<style>
+  .hideview {
+    display: none;
+  }
+  .guides-search {
+    width: 468px;
+    margin: 0;
+    border-radius: 12px;
+    border: 1.5px solid #3C1F1B;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  #blog-search {
+    margin: 0;
+    border: none;
+    height: 60px;
+    padding: 5px 0px 5px 20px;
+    background: #fff;
+    border-radius: 12px;
+    font-family: "Suisse Intl";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.2px;
+    color: #3C1F1B;
+    outline: none;
+  }
+  #blog-search::placeholder {
+    font-family: "Suisse Intl";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.2px;
+    color: #3C1F1B;
+    opacity: 0.5
+  }
+  .guides-search-icon {
+    width: auto;
+    height: auto;
+    padding: 13px 19px;
+    border-radius: 8px;
+    background: #3C1F1B;
+    margin-right: 5px;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+  }
+  .guides-card {
+    width: calc(33.333334% - 10px);
+    text-decoration: none;
+    height: max-content;
+  }
+  .guides-card_image {
+    width: 100%;
+    padding-top: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border-radius: 11px;
+  }
+  .guides_library-item h2 {
+    text-transform: capitalize;
+    max-width: calc(100% - 82px);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 3px 0;
+  }
+  .guides_library-item h2.guides_library-item-wide {
+    max-width: 100%;
+    white-space: normal;
+  }
+  .guides-card p {
+    color: #3C1F1B;
+  }
+  .guides_library-item a.rebranding_btn {
+    margin: 0;
+    padding: 0;
+    background: none;
+    width: max-content;
+    min-width: auto;
+    text-decoration: underline;
+  }
+  .guides-search_result {
+    z-index: 4;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: calc(100% + 3px);
+    margin-top: -10px;
+    background: #fff;
+    padding: 20px 5px 5px 15px;
+    border: 1.5px solid #3c1f1b;
+    max-height: 400px;
+    overflow: auto;
+    border-top: none;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    margin-left: -1.5px;
+  }
+  .card-list__column {
+    padding: 0;
+    width: 100%;
+  }
+  .card {
+    width: 100%;
+    float: none;
+  }
+  .card__wrapper {
+    width: 100%;
+    display: flex;
+    background: #fff;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+  }
+  .card__image-wrapper {
+    padding-top: 0!important;
+    height: 85px;
+    width: 85px;
+    border-radius: 5px;
+  }
+  .card-list {
+    margin: 0;
+    box-sizing: unset;
+  }
+  .card__info {
+    padding: 7px 0 0 0;
+    background: none;
+    width: calc(100% - 100px);
+    height: max-content;
+  }
+  .font-title {
+    font-family: 'PP Fragment' !important;
+    font-weight: 400;
+    letter-spacing: -0.7px;
+    font-size: 22px;
+    margin: 0;
+    color: #3c1f1b;
+  }
+  .card__excerpt {
+    margin: 0;
+    font-family: 'Suisse Intl' !important;
+    letter-spacing: -0.4px;
+    font-size: 18px;
+    color: #3c1f1b;
+    height: max-content;
+  }
+  .card__read-more {
+    display: none;
+  }
+  .card--article .card__info {
+    padding: 4px 10px 0 0;
+  }
+  .card-list {
+    margin: 0;
+  }
+  a.card__wrapper.card--article {
+    margin-bottom: 10px;
+    transition: .3s;
+  }
+  a.card__wrapper.card--article:hover {
+    opacity: 0.85;
+  }
+  a.card__wrapper.card--article:active {
+    opacity: 0.7;
+  }
+  .no-results {
+    text-align: center;
+    margin-top: 0;
+    color: #3c1f1b;
+    font-size: 19px;
+    font-family: 'Suisse Intl';
+    font-weight: 400;
+    padding: 4px 0 10px 0;
+  }
+  @media(max-width: 750px) {
+    .font-title {
+      letter-spacing: -0.4px;
+      font-size: 18px;
+    }
+    .card__excerpt {
+      letter-spacing: -0.2px;
+      font-size: 14px;
+    }
+    .guides-search-icon {
+        padding: 10px 8px;
+        border-radius: 8px;
+    }
+    .guides-card_image {
+      border-radius: 7px;
+    }
+    .guides_library-item h2 {
+        font-size: 28px;
+        letter-spacing: -1.1px;
+    }
+    .guides-card {
+      width: calc(50% - 7.5px);
+      gap: 20px;
+    }
+    .guides_library-item a.rebranding_btn {
+      width: max-content;
+    }
+    .guides-card:nth-child(3) {
+      display: none;
+    }
+    .guides-card h3 {
+      font-size: 20px;
+    }
+    .guides_library-item {
+      gap: 20px;
+    }
+    .guides-search-icon svg {
+      height: 16px;
+    }
+    #blog-search {
+        height: 46px;
+        font-size: 16px;
+        letter-spacing: -0.16px;
+        padding: 5px 0px 5px 15px;
+    }
+    #blog-search::placeholder {
+      font-size: 16px;
+      letter-spacing: -0.16px;
+    }
+    .guides-search {
+      border-radius: 8px;
+    }
+    .guides-search_result {
+      width: calc(100% + 2.5px);
+      margin-top: -6px;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      margin-left: -1px;
+    }
+  }
+</style>
+
+<div class="rebranding_container">
+  <div class="block-flex-wrap block-flex-center-center block-gap-40">
+    <h2 class="h2-heading-ss w-100 tac">
+      <span class="h2-heading-pp">Library</span> of guides
+    </h2>
+    <div class="guides-search">
+        <input type="search" id="blog-search" class="font-description" name="q" value="{{ search.terms | escape }}" placeholder="Search "/>
+        <div class="guides-search_result" style="display: none;"></div>
+        <span class="guides-search-icon">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24.0572 25.7071C24.4477 26.0976 25.0809 26.0976 25.4714 25.7071C25.8619 25.3166 25.8619 24.6834 25.4714 24.2929L24.0572 25.7071ZM18.8728 4.02606L18.1657 4.73317C21.8099 8.3774 21.8099 14.2859 18.1657 17.9301L18.8728 18.6372L19.5799 19.3443C24.0052 14.919 24.0052 7.74423 19.5799 3.31896L18.8728 4.02606ZM18.8728 18.6372L18.1657 17.9301C14.5215 21.5743 8.61299 21.5743 4.96877 17.9301L4.26166 18.6372L3.55455 19.3443C7.97983 23.7696 15.1546 23.7696 19.5799 19.3443L18.8728 18.6372ZM4.26166 18.6372L4.96877 17.9301C1.32454 14.2859 1.32454 8.3774 4.96877 4.73317L4.26166 4.02606L3.55455 3.31896C-0.870723 7.74423 -0.870723 14.919 3.55455 19.3443L4.26166 18.6372ZM4.26166 4.02606L4.96877 4.73317C8.61299 1.08894 14.5215 1.08894 18.1657 4.73317L18.8728 4.02606L19.5799 3.31896C15.1546 -1.10632 7.97983 -1.10632 3.55455 3.31896L4.26166 4.02606ZM18.637 18.8728L17.9299 19.5799L24.0572 25.7071L24.7643 25L25.4714 24.2929L19.3441 18.1656L18.637 18.8728Z" fill="white"/>
+          </svg>
+        </span>
+    </div>
+    <p class="legal-disclaimer tiny-text legal-disclaimer--collapsed">
+                <span class="legal-disclaimer-short">
+                  LegitGrails provides independent authentication and verification services based on expert analysis and industry experience.
+                </span>
+                <span class="legal-disclaimer-rest">
+                  <br><br>
+                  Our assessments and certificates represent our professional opinion only and are not official determinations issued by the respective brands. LegitGrails operates independently and is not affiliated with, endorsed, sponsored, or authorized by any brands featured, mentioned, or authenticated on this website.<br><br>
+                  All trademarks, logos, product names, and distinctive design elements remain the property of their respective owners and are used strictly for identification, descriptive, and educational purposes.<br><br>
+                  Any brand references, comparisons, or illustrative visuals on this website are provided solely for educational and informational purposes and do not imply any cooperation, partnership, or approval from the original brand owners.
+                    </span>
+                <a href="#" class="legal-disclaimer-toggle standart-hover">Expand</a>
+              </p>
+    <div class="guides_library-content block-flex-wrap w-100 block-gap-50">
+      {% assign blog_handles = "adidas,alexander-mcqueen,amina-muaddi,amiri,arcteryx,audemars-piguet,balenciaga,bape,bottega-veneta,burberry,bvlgari,cactus-jack-travis-scott,canada-goose,cartier,casio,case-studies,celine,chanel,chloe,chrome-hearts,christian-louboutin,comme-des-garcons,converse,crocs,dior,dolce-gabbana,fear-of-god,fendi,gallery-dept,givenchy,golden-goose,goyard,gucci,hermes,iwc,jacquemus,jordan,just-don,loewe,louis-vuitton,mach-and-mach,manolo-blahnik,marc-jacobs,mcm,miu-miu,new-balance,news,nike,off-white,palm-angels,patek-philippe,prada,raf-simons,ralph-lauren,ray-ban,rick-owens,rolex,saint-laurent,salvatore-ferragamo,shop-safely,supreme,tag-heuer,the-north-face,timberland,tory-burch,valentino,van-cleef-arpels,vans,versace,vetements,vlone,yeezy" | split: "," %}
+      {% for handle in blog_handles %}
+      <div class="guides_library-item block-flex-wrap block-gap-30 w-100">
+        <div class="block-flex-wrap block-flex-center-sb w-100">
+          <h2 class="h2-heading-pp">{{ handle | split: '-' | join: ' ' }}</h2>
+          <a href="/blogs/{{ handle }}" class="rebranding_btn guides-view">
+            View all
+          </a>
+        </div>
+        <div class="guides_library-item-guides w-100 block-flex-wrap block-gap-15">
+        {% assign c = 0 %}
+                {% for article in blogs[handle].articles %}
+                  {% if c == 3 %}
+	                  {% break %}
+                  {% endif %}
+                  {% assign c = c | plus: 1 %}
+          <a href="{{ article.url }}" class="standart-hover guides-card block-flex-wrap block-gap-30">
+            <div class="guides-card_image" style="background-image: url('{{ article.image.src | image_url }}')"></div>
+            <div class="guides-card_text block-flex-wrap w-100 block-gap-15">
+              <h3 class="h3-heading-pp w-100 tac">
+                {{ article.title }}
+              </h3>
+            </div>
+          </a>
+          {% endfor %}
+        </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<script>
+  $(function(){$(".guides_library-item-guides").each(function(){$(this).children().length<3&&$(this).parents(".guides_library-item").find(".guides-view").addClass("hideview")&&$(this).parents(".guides_library-item").find("h2").addClass("guides_library-item-wide")}),$("#blog-search").click(function(e){e.stopPropagation(),$(".guides-search_result").children().length&&this.value.length>=3&&$(".guides-search_result").show()}),$(window).click(function(){$(".guides-search_result").hide()}),$("#blog-search").on("input",function(){this.value.length>=3?$.ajax("/search?q="+this.value+"*&type=article",{type:"GET",success:function(e){$(".guides-search_result").show();let s=new DOMParser().parseFromString(e,"text/html").getElementsByClassName("card-list");console.log(s.item(0).children.item(0).children.length),s.item(0).children.item(0).children.length?$(".guides-search_result").html(s):$(".guides-search_result").html('<div class="no-results" style="text-align: center; margin-top: 20px; color: #000; font-size: 17px;">Your search for “'+$("#blog-search").val()+"” did not yield any results.</div>")}}):$(".guides-search_result").hide()})});
+</script>
+{% schema %}
+  {
+    "name": "Guides Library",
+    "class": "guides_library rebranding-section",
+    "settings": []
+  }
+{% endschema %}

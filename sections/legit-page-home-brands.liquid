@@ -1,0 +1,436 @@
+{% render 'section-legit-page-home-brands-styles' %}
+<div class="brand-grid-section brand-grid-section--{{ section.id }}" style="background-color:{{ section.settings.background_color }}"
+     data-section-id="{{ section.id }}" data-section-type="logo-gallery">
+    {% if section.settings.title != blank %}
+        <p class="brand__heading section-header__title section-title font-title text-center" style="color: {{ section.settings.overlay_text }} ">{{ section.settings.title }}</p>
+    {% endif %}
+    <div class="brand-grid"
+         style="justify-content: {{ section.settings.items_alignment }}">
+        {% for block in section.blocks %}
+            <div class="brand-grid__flex brand-grid__{{ section.blocks.size }}-column">
+                <div class="brand-grid__text">
+                    {% if block.settings.image != blank %}
+                        {%- assign img_url = block.settings.image | img_url: 'master' %}
+                        <img src="{{ img_url }}" loading="lazy" alt="{{ block.settings.check_label }}"
+                             class="brand-grid__image">
+                    {% endif %}
+                    {% if block.settings.cta_label != blank %}
+                        <p class="h2 font-description text-title brand-grid__caption legit-check"
+                           style="color: {{ section.settings.overlay_text }}">{{ block.settings.cta_label | escape }}</p>
+                    {% endif %}
+                    {% if block.settings.check_label != blank %}
+                        <p class="text-white font-description">{{ block.settings.check_label }}</p>
+                    {% endif %}
+                </div>
+                {% if block.settings.link != blank %}
+                    <a href="{{ block.settings.link }}"
+                       class="brand-grid__link font-title"></a>
+                {% endif %}
+            </div>
+
+        {% endfor %}
+    </div>
+    {% if section.settings.button_text != blank %}
+        <div class="gallery__view-all-wrap">
+            <a href="{{ section.settings.section_link }}"
+               class="main-btn font-title">
+                {{ section.settings.button_text }}
+            </a>
+        </div>
+    {% endif %}
+</div>
+
+{% if section.blocks.size == 0 %}
+    {% include 'no-blocks' %}
+{% endif %}
+{% schema %}
+{
+  "name": {
+    "en": "Legit brands grid"
+  },
+  "class": "index-section index-section--gallery",
+  "max_blocks": 15,
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": {
+        "en": "Background Color"
+      },
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "overlay_text",
+      "label": {
+        "en": "Text color"
+      },
+      "default": "#ffffff"
+    },
+    {
+      "type": "select",
+      "id": "overlay_opacity",
+      "label": {
+        "en": "Opacity"
+      },
+      "default": "0.3",
+      "options": [
+        {
+          "label": {
+            "en": "100%"
+          },
+          "value": "1"
+        },
+        {
+          "label": {
+            "en": "95%"
+          },
+          "value": "0.95"
+        },
+        {
+          "label": {
+            "en": "90%"
+          },
+          "value": "0.9"
+        },
+        {
+          "label": {
+            "en": "85%"
+          },
+          "value": "0.85"
+        },
+        {
+          "label": {
+            "en": "80%"
+          },
+          "value": "0.8"
+        },
+        {
+          "label": {
+            "en": "75%"
+          },
+          "value": "0.75"
+        },
+        {
+          "label": {
+            "en": "70%"
+          },
+          "value": "0.7"
+        },
+        {
+          "label": {
+            "en": "65%"
+          },
+          "value": "0.65"
+        },
+        {
+          "label": {
+            "en": "60%"
+          },
+          "value": "0.6"
+        },
+        {
+          "label": {
+            "en": "55%"
+          },
+          "value": "0.55"
+        },
+        {
+          "label": {
+            "en": "50%"
+          },
+          "value": "0.5"
+        },
+        {
+          "label": {
+            "en": "45%"
+          },
+          "value": "0.45"
+        },
+        {
+          "label": {
+            "en": "40%"
+          },
+          "value": "0.4"
+        },
+        {
+          "label": {
+            "en": "35%"
+          },
+          "value": "0.35"
+        },
+        {
+          "label": {
+            "en": "30%"
+          },
+          "value": "0.3"
+        },
+        {
+          "label": {
+            "en": "25%"
+          },
+          "value": "0.25"
+        },
+        {
+          "label": {
+            "en": "20%"
+          },
+          "value": "0.2"
+        },
+        {
+          "label": {
+            "en": "0%"
+          },
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "items_alignment",
+      "label": {
+        "en": "Alignment"
+      },
+      "default": "space-between",
+      "options": [
+        {
+          "label": {
+            "en": "Space between"
+          },
+          "value": "space-between"
+        },
+        {
+          "label": {
+            "en": "Space around"
+          },
+          "value": "space-around"
+        },
+        {
+          "label": {
+            "en": "Center"
+          },
+          "value": "center"
+        },
+        {
+          "label": {
+            "en": "Left"
+          },
+          "value": "start"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": {
+        "en": "Title"
+      }
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": {
+        "en": "Button text"
+      }
+    },
+    {
+      "type": "url",
+      "id": "section-link",
+      "label": {
+        "en": "Link"
+      },
+      "info": {
+        "en": "Optional"
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": {
+        "en": "Image"
+      },
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": {
+            "en": "Image"
+          }
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": {
+            "en": "Icon"
+          },
+          "default": "checkmark",
+          "options": [
+            {
+              "label": {
+                "en": "None"
+              },
+              "value": "none"
+            },
+            {
+              "label": {
+                "en": "Box"
+              },
+              "value": "box"
+            },
+            {
+              "label": {
+                "en": "Card"
+              },
+              "value": "card"
+            },
+            {
+              "label": {
+                "en": "Cart"
+              },
+              "value": "cart"
+            },
+            {
+              "label": {
+                "en": "Checkmark"
+              },
+              "value": "checkmark"
+            },
+            {
+              "label": {
+                "en": "Checked"
+              },
+              "value": "checked"
+            },
+            {
+              "label": {
+                "en": "Clock"
+              },
+              "value": "clock"
+            },
+            {
+              "label": {
+                "en": "Envelope"
+              },
+              "value": "envelope"
+            },
+            {
+              "label": {
+                "en": "Globe"
+              },
+              "value": "globe"
+            },
+            {
+              "label": {
+                "en": "Leaf"
+              },
+              "value": "leaf"
+            },
+            {
+              "label": {
+                "en": "Padlock"
+              },
+              "value": "padlock"
+            },
+            {
+              "label": {
+                "en": "Price Tag"
+              },
+              "value": "pricetag"
+            },
+            {
+              "label": {
+                "en": "Silhouette"
+              },
+              "value": "silhouette"
+            },
+            {
+              "label": {
+                "en": "Trophy"
+              },
+              "value": "trophy"
+            },
+            {
+              "label": {
+                "en": "Truck"
+              },
+              "value": "truck"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "content": {
+            "en": "Text"
+          }
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": {
+            "en": "Caption"
+          },
+          "default": {
+            "en": "Talk about your brand"
+          }
+        },
+        {
+          "type": "text",
+          "id": "check_label",
+          "label": {
+            "en": "Check label"
+          },
+          "default": {
+            "en": "authentication"
+          }
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": {
+            "en": "Link"
+          },
+          "info": {
+            "en": "Optional"
+          }
+        },
+        {
+          "type": "checkbox",
+          "id": "link_target",
+          "label": {
+            "en": "Open this link in a new window"
+          },
+          "default": true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "en": "Legit brands"
+      },
+      "category": {
+        "en": "Image"
+      },
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

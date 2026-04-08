@@ -1,0 +1,150 @@
+<style>
+  .hype_coverage {
+    padding: 0 0 110px 0;
+  }
+  .hype_coverage-wrapper {
+    width: 100%;
+    border-radius: 19px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: linear-gradient(96deg, rgba(239, 239, 239, 0.20) 23.53%, rgba(214, 214, 214, 0.20) 75.95%);
+    box-shadow: 0px 4px 24px -2px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(20px);
+    padding: 40px;
+  }
+  .hype_coverage-items {
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% - 120px);
+    justify-content: space-between;
+  }
+  .hype_coverage-item-image-wrapp {
+    height: max-content;
+    width: max-content;
+    overflow: hidden;
+    margin: auto;
+  }
+  img.hype_coverage-item-image {
+    height: 100px;
+    width: auto;
+    display: block;
+    transition: .5s;
+    transform: translateY(110px);
+  }
+  .hype_coverage-item.animated img.hype_coverage-item-image {
+    transform: translateY(0px);
+  }
+  p.hype_coverage-item-title {
+    margin-top: 10px;
+  }
+  @media(max-width: 1250px) {
+    .hype_coverage-items {
+      width: 100%;
+    }
+  }
+  @media(max-width: 950px) {
+    img.hype_coverage-item-image {
+      height: 80px;
+    }
+    .hype_coverage-wrapper {
+      padding: 30px 25px;
+    }
+    .hype_coverage {
+    padding: 0 0 80px 0;
+  }
+  }
+  @media(max-width: 800px) {
+    .hype_coverage-items {
+      width: 415px;
+      justify-content: center;
+      gap: 35px;
+    }
+    .hype_coverage-item {
+        width: 115px;
+    }
+  }
+  @media(max-width: 600px) {
+    .hype_coverage-item {
+        width: 98px;
+    }
+    .hype_coverage-items {
+        gap: 30px;
+        width: 354px;
+    }
+    .hype_coverage {
+    padding: 0 0 60px 0;
+}
+  }
+  @media(max-width: 450px) {
+    .hype_coverage-items {
+    gap: 25px;
+    width: 334px;
+}
+    .hype_coverage-wrapper {
+      padding: 30px 20px;
+    }
+  }
+  @media(max-width: 410px) {
+    .hype_coverage-items {
+    gap: 30px;
+    width: 226px;
+}
+  }
+</style> 
+
+<div class="container">
+  <div class="hype_coverage-wrapper">
+    <div class="section-title">
+      <h2 class="second-title-style">
+        We Authenticate
+      </h2>
+    </div>
+    <div class="hype_coverage-items">
+      <div class="hype_coverage-item hype_coverage-item-1">
+        <div class="hype_coverage-item-image-wrapp">
+          <img class="hype_coverage-item-image" src="{{ 'hype_authenticate-1.png' | asset_url }}">
+        </div>
+        <p class="hype_coverage-item-title section-desc-style">Handbags</p>
+      </div>
+      <div class="hype_coverage-item hype_coverage-item-2">
+        <div class="hype_coverage-item-image-wrapp">
+          <img class="hype_coverage-item-image" src="{{ 'hype_authenticate-2.png' | asset_url }}">
+        </div>
+        <p class="hype_coverage-item-title section-desc-style">Clothing</p>
+      </div>
+      <div class="hype_coverage-item hype_coverage-item-3">
+        <div class="hype_coverage-item-image-wrapp">
+          <img class="hype_coverage-item-image" src="{{ 'hype_authenticate-3.png' | asset_url }}">
+        </div>
+        <p class="hype_coverage-item-title section-desc-style">Shoes</p>
+      </div>
+      <div class="hype_coverage-item hype_coverage-item-4">
+        <div class="hype_coverage-item-image-wrapp">
+          <img class="hype_coverage-item-image" src="{{ 'hype_authenticate-4.png' | asset_url }}">
+        </div>
+        <p class="hype_coverage-item-title section-desc-style">Jewelry</p>
+      </div>
+      <div class="hype_coverage-item hype_coverage-item-5">
+        <div class="hype_coverage-item-image-wrapp">
+          <img class="hype_coverage-item-image" src="{{ 'hype_authenticate-5.png' | asset_url }}">
+        </div>
+        <p class="hype_coverage-item-title section-desc-style">Watches</p>
+      </div>
+      <div class="hype_coverage-item hype_coverage-item-6">
+        <div class="hype_coverage-item-image-wrapp">
+          <img class="hype_coverage-item-image" src="{{ 'hype_authenticate-6.png' | asset_url }}">
+        </div>
+        <p class="hype_coverage-item-title section-desc-style">Accessories</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Hype Coverage",
+    "class": "hype_coverage",
+    "settings": []
+  }
+{% endschema %}

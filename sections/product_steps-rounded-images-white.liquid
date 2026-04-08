@@ -1,0 +1,85 @@
+<style>
+  .product_steps h2 {
+    text-align: center;
+  }
+  .product_steps-items {
+    justify-content: center;
+  }
+  .product_steps-item {
+    text-align: center;
+  }
+  img.product_steps-item-image {
+    height: 250px;
+    width: auto;
+  }
+  p.product_steps-item-caption {
+    margin-top: 20px;
+  }
+  p.product_steps-item-title {
+    margin-top: 15px;
+}
+p.product_steps-item-desc {
+    margin-top: 10px;
+}
+  @media(max-width: 1250px) {
+    .product_steps-items {
+      gap: 40px 20px;
+    }
+  }
+  @media(max-width: 750px) {
+    img.product_steps-item-image {
+        height: 200px;
+    }
+  }
+</style>
+
+<div class="container rebranding_container block-container block-flex-wrap">
+  <div class="rebranding-section-title block-gap-15 block-flex-wrap">
+    <h2 class="h2-heading-ss">
+        How it works:
+        <span class="h2-heading-pp">
+         start your authentication
+        </span>
+      </h2>
+  </div>
+  <div class="product_steps-items block-flex-wrap block-gap-20 block-wider-mobile-gap">
+    <div class="product_steps-item block-third-item">
+      <img class="product_steps-item-image" srcset="{{ 'how-it-works-2_step-1-2x.webp' | asset_url }} 500px, {{ 'how-it-works-2_step-1.webp' | asset_url }} 250px, {{ 'how-it-works-2_step-1-mob.webp' | asset_url }} 200px" src="{{ 'how-it-works-2_step-1-2x.webp' | asset_url }}">
+      <p class="caption product_steps-item-caption">Step 1</p>
+      <p class="h3-heading-pp product_steps-item-title">
+        Upload photos
+      </p>
+      <p class="body-text product_steps-item-desc">
+        Begin by uploading images of your item
+      </p>
+    </div>
+    <div class="product_steps-item block-third-item">
+      <img class="product_steps-item-image" srcset="{{ 'how-it-works-2_step-2-2x.webp' | asset_url }} 500px, {{ 'how-it-works-2_step-2.webp' | asset_url }} 250px, {{ 'how-it-works-2_step-2-mob.webp' | asset_url }} 200px" src="{{ 'how-it-works-2_step-2.webp' | asset_url }}">
+      <p class="caption product_steps-item-caption">Step 2</p>
+      <p class="h3-heading-pp product_steps-item-title">
+        We handle it
+      </p>
+      <p class="body-text product_steps-item-desc">
+        Our expert team reviews your item thoroughly
+      </p>
+    </div>
+    <div class="product_steps-item block-third-item">
+      <img class="product_steps-item-image" srcset="{{ 'how-it-works-2_step-3-2x.webp' | asset_url }} 500px, {{ 'how-it-works-2_step-3.webp' | asset_url }} 250px, {{ 'how-it-works-2_step-3-mob.webp' | asset_url }} 200px" src="{{ 'how-it-works-2_step-3.webp' | asset_url }}">
+      <p class="caption product_steps-item-caption">Step 3</p>
+      <p class="h3-heading-pp product_steps-item-title">
+        Receive your certificate
+      </p>
+      <p class="body-text product_steps-item-desc">
+        You’ll receive the results via email, including a unique certificate of authenticity
+      </p>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Product Steps Rounded",
+    "class": "product_steps rebranding-section-bottom",
+    "settings": []
+  }
+{% endschema %}

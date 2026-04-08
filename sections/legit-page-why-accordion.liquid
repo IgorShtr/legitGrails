@@ -1,0 +1,122 @@
+{% render 'section-legit-page-why-accordion-styles' %}
+<div class="section-{{ section.id }} section-accordion">
+    <div class="accordion-section">
+        {%- unless section.settings.title == blank -%}
+            <h2 class="section-title text-center font-title">
+                {{ section.settings.title | escape }}
+            </h2>
+        {%- endunless -%}
+        {%- unless section.settings.description == blank -%}
+            <div class="section-description text-center font-description">
+                {{ section.settings.description }}
+            </div>
+        {%- endunless -%}
+    </div>
+    <div class="section-blocks" id="section-blocks--{{ section.id }}">
+        {%- for block in section.blocks -%}
+            <div id="card-{{ forloop.index }}" class="accordion-card">
+                {%- if block.settings.title != blank -%}
+                    <div class="accordion-card__heading">
+                        <div class="accordion-card__title font-title">{{ block.settings.title | escape }}</div>
+                        <div class="accordion-card__arrow"></div>
+                    </div>
+                {%- endif -%}
+                {%- if block.settings.text != blank -%}
+                    <div class="accordion-card__content font-description" style="height: 0px">
+                        <div>
+                            {{ block.settings.text }}
+                        </div>
+                    </div>
+                {%- endif -%}
+            </div>
+        {%- endfor -%}
+    </div>
+    <!--<script>
+        (function () {
+            const accordion = document.getElementsByClassName("accordion-card__heading");
+            Array.from(accordion).forEach((el) => {
+                el.addEventListener('click', (event) => {
+                    let currentActive = document.getElementById('section-blocks--{{ section.id }}').querySelector('.active')
+                    let panel = el.nextElementSibling
+                    let parent = el.parentElement
+
+                    if (currentActive != null) {
+                        if (el.parentElement.id !== currentActive.id) {
+                            console.log(el.parentElement.id, currentActive.id)
+                            currentActive.classList.remove('active')
+                            document.getElementById(currentActive.id).querySelector('.expand').style.height = 0
+                            document.getElementById(currentActive.id).querySelector('.expand').classList.remove('expand')
+                            panel.classList.add('expand')
+                            parent.classList.add('active')
+                            panel.style.height = panel.firstElementChild.clientHeight + "px"
+                        } else {
+                            parent.classList.remove('active')
+                            panel.classList.remove('expand')
+                            panel.style.height = 0
+                        }
+                    } else {
+                        panel.classList.add('expand')
+                        parent.classList.add('active')
+                        panel.style.height = panel.firstElementChild.clientHeight + "px"
+                    }
+                })
+            })
+        })();
+    </script>-->
+  <script>
+    !function(){let e=document.getElementsByClassName("accordion-card__heading");Array.from(e).forEach(e=>{e.addEventListener("click",t=>{let i=document.getElementById("section-blocks--{{ section.id }}").querySelector(".active"),l=e.nextElementSibling,s=e.parentElement;null!=i?e.parentElement.id!==i.id?(console.log(e.parentElement.id,i.id),i.classList.remove("active"),document.getElementById(i.id).querySelector(".expand").style.height=0,document.getElementById(i.id).querySelector(".expand").classList.remove("expand"),l.classList.add("expand"),s.classList.add("active"),l.style.height=l.firstElementChild.clientHeight+"px"):(s.classList.remove("active"),l.classList.remove("expand"),l.style.height=0):(l.classList.add("expand"),s.classList.add("active"),l.style.height=l.firstElementChild.clientHeight+"px")})})}();
+  </script>
+    {% schema %}
+    {
+      "name": "Accordion blocks",
+      "class": "section",
+      "tag": "section",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "default": "<p>Description</p>",
+          "label": "Section Description"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "column",
+          "name": "Block content",
+          "settings": [
+            {
+              "type": "text",
+              "id": "title",
+              "default": "Column",
+              "label": "Block title"
+            },
+            {
+              "type": "richtext",
+              "id": "text",
+              "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+              "label": "Text"
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Accordion Blocks",
+          "blocks": [
+            {
+              "type": "column"
+            },
+            {
+              "type": "column"
+            }
+          ]
+        }
+      ]
+    }
+    {% endschema %}

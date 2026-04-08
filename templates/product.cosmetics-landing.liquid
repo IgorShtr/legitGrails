@@ -1,0 +1,78 @@
+{% render 'fonts-rebrand' %}
+{% render 'cosmetics-landing-styles' %}
+{% render 'cosmetics-landing_authentication-styles' %}
+{% section 'cosmetics-landing_hero' %}
+{% section 'cosmetics-landing_steps' %}
+{% section 'cosmetics-landing_coverage' %}
+
+<section class="product-box_section cosmetics-landing_authentication" id="product-box_section">
+  <div class="container">
+  <div class="cosmetics-landing_authentication-wrapper">
+    <img class="cosmetics-landing_authentication-wrapper-image" src="{{ 'cosmetics-landing_authentication.png' | asset_url }}">
+    {%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- assign current_variant_sale = false -%}
+{% if current_variant.compare_at_price > current_variant.price %}
+    {%- assign current_variant_sale = true -%}
+{% endif %}
+{% assign featured_media = current_variant.featured_media | default: product.featured_media %}
+
+<div class="product_checkout-right" data-section-id="{{ section.id }}" data-section-type="product-template"
+     data-variant-id="{{ current_variant.id }}" itemscope itemtype="http://schema.org/Product">
+    <meta itemprop="name" content="{{ product.title }}">
+    <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+    <meta itemprop="image" content="{{ featured_media | img_url: 'grande' }}">
+    
+    <div class="cosmetics-landing_authentication-wrapper-title">
+      <h2 class="cosmetics_section-title"><span class="pp-accent">Quick & trusted</span> beauty authentication</h2>
+      <p class="cosmetics-landing_authentication-wrapper-desc">Skincare and makeup from top luxury brands.</p>
+    </div>
+    <div class="cosmetics-landing_authentication-wrapper-content">
+      <div id="cosmetics_product-form" class="cosmetics-landing_authentication-wrapper-content-options">
+        <p class="cosmetics-landing_authentication-wrapper-content-title">Time Options</p>
+        <div class="cosmetics-landing_authentication-wrapper-content-options-items">
+          <meta itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
+                <meta itemprop="priceCurrency" content="{{ cart.currency.iso_code }}">
+                <link itemprop="availability"
+                      href="http://schema.org/{% if current_variant.available %}InStock{% else %}OutOfStock{% endif %}">
+              {% render 'product-form-upload-hype' %}
+        </div>
+      </div>
+      <span class="cosmetics-landing_authentication-wrapper-content-split"></span>
+      <div class="cosmetics-landing_authentication-wrapper-content-offers hype_authentication-wrapper-content-offers-desk">
+        <p class="cosmetics-landing_authentication-wrapper-content-title">All Services Included:</p>
+        <div class="cosmetics-landing_authentication-wrapper-content-offers-items">
+          <div class="cosmetics-landing_authentication-wrapper-content-offers-item">
+            {% render "cosmetics-landing_authentication-offers-icon" %}
+            <p class="cosmetics-landing_authentication-wrapper-content-offers-item-text">99.3% accuracy</p>
+          </div>
+          <div class="cosmetics-landing_authentication-wrapper-content-offers-item">
+            {% render "cosmetics-landing_authentication-offers-icon" %}
+            <p class="cosmetics-landing_authentication-wrapper-content-offers-item-text">Verified certificate of authenticity</p>
+          </div>
+          <div class="cosmetics-landing_authentication-wrapper-content-offers-item">
+            {% render "cosmetics-landing_authentication-offers-icon" %}
+            <p class="cosmetics-landing_authentication-wrapper-content-offers-item-text">24/7 customer support</p>
+          </div>
+        </div>
+      </div>
+    </div>
+     <div class="uploadcare">
+     <button id="authenticate-btn" class="authenticate-btn cosmetics-btn-primary cosmetics-btn">Upload photos to authenticate</button>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+{% section 'cosmetics-landing_cta' %}
+
+
+{% if product.tags contains "uploadcare" %}
+    {% render 'uploadcare-fields' %}
+{% endif %}
+<script type="application/json" data-product-json>
+    {{ product | json }}
+    </script>
+    <script type="application/json" data-model-json="{{ section.id }}">
+    {{ product.media | where: 'media_type', 'model' | json }}
+    </script>
+{% render 'cosmetics-landing-scripts' %}

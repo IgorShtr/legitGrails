@@ -1,0 +1,55 @@
+<style>
+    .account-video_wrapp {
+    border-radius: 16px;
+    border: 2px solid var(--Chocolate, #3C1F1B);
+    padding: 48px;
+}
+.account-video_wrapp-video {
+    width: 100%;
+align-self: stretch;
+aspect-ratio: 16/9;
+border-radius: 16px;
+background: #D9D9D9;
+}
+@media(max-width: 1250px) {
+ .account-video_wrapp {
+    padding: 30px;
+}
+}
+@media(max-width: 750px) {
+.account-video_wrapp {
+padding: 0;
+border: none;
+border-radius: 0;
+}
+}
+</style>
+
+<div class="rebranding_container block-flex-wrap block-flex-center-center">
+    <div class="account-video_wrapp block-flex-wrap block-gap-30">
+        <div class="block-flex-wrap block-gap-15 block-flex-center-center tac w-100">
+            <h1 class="h1-heading-ss w-100">
+                See 
+                <span class="h2-heading-pp">
+                    LegitGrails
+                </span>
+                 in Action — 
+                 <span class="h2-heading-pp">
+                    Fast, Simple & Scalable
+                </span>
+            </h1>
+            <p class="body-text w-100">
+                Watch our CEO, Nikita Chen, walk you through the LegitGrails Account. Authenticate items in seconds, track your progress in real time, and unlock exclusive upgrades designed to save you time and money.
+            </p>
+        </div>
+        <div class="account-video_wrapp-video"></div>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Account Video",
+    "class": "account-video rebranding-section",
+    "settings": []
+  }
+{% endschema %}

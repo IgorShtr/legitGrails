@@ -1,0 +1,108 @@
+<style>
+    main {
+    justify-content: flex-start!important;
+}
+.schedule-call {
+    padding-top: 75px;
+    padding-bottom: 110px;
+}
+nav.breadcrumbs {
+    display: none !important;
+}
+    .schedule-call_wrapper {
+        border-radius: 45px;
+        background: #3C1F1B;
+        padding: 35px;
+        width: 100%;
+        height: calc(100vh - 200px);
+        min-height: 850px;
+    }
+    .schedule-call_wrapper-frame {
+        width: 770px;
+        height: 442px;
+        overflow: auto;
+        overflow: hidden;
+    }
+    .schedule-call_wrapper-image {
+        height: -webkit-fill-available;
+        width: calc(40% - 25px);
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        display: block;
+        border-radius: 20px;
+    }
+    .schedule-call_wrapper-text {
+        width: calc(60% - 25px);
+    }
+    @media(max-width: 1450px) {
+        .schedule-call_wrapper-image {
+        display: none;
+    }
+    .schedule-call_wrapper-text {
+        width: 100%
+    }
+    }
+    @media(max-width: 950px) {
+    .schedule-call_wrapper-frame {
+        width: 100%;
+        height: 453px;
+    }
+        .schedule-call_wrapper {
+            height: max-content;
+            padding: 40px 20px;
+            min-height: max-content;
+        }
+    }
+    @media(max-width: 840px) {
+        .schedule-call_wrapper-frame {
+        height: max-content;
+        }
+    }
+</style>
+
+<div class="rebranding_container">
+    <div class="schedule-call_wrapper block-flex-wrap block-gap-50 block-flex-center-center">
+        <div class="schedule-call_wrapper-image" style="background-image: url({{ "schedule-a-call_hero.webp" | asset_url }})"></div>
+        <div class="schedule-call_wrapper-text block-flex-wrap block-gap-40 block-flex-center-center">
+            <div class="block-flex-wrap block-gap-15 block-flex-start-start w-100">
+                <h1 class="h1-heading-ss w-100 ivory-text tac">
+                    Let’s 
+                    <span class="h1-heading-pp">Connect</span>
+                </h1>
+                <p class="body-text w-100 ivory-text tac">
+                    Schedule a short call to explore collaboration or discuss how we can support your authentication needs
+                </p>
+            </div>
+            <div class="schedule-call_wrapper-frame">
+<!-- Cal inline embed code begins -->
+<!-- Cal inline embed code begins -->
+<div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-30min"></div>
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "30min", {origin:"https://app.cal.com"});
+
+  Cal.ns["30min"]("inline", {
+    elementOrSelector:"#my-cal-inline-30min",
+    config: {"layout":"month_view"},
+    calLink: "legitgrails/30min",
+  });
+
+  Cal.ns["30min"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#3C1F1B"},"dark":{"cal-brand":"#F2F2EA"}},"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+  <!-- Cal inline embed code ends -->
+            </div>
+            <p class="tiny-text w-100 ivory-text tac">
+                    For general questions that don’t require a call, please use our 24/7 live chat or email us at <a style="text-decoration: underline;color: #F24F14;" href="mailto:support@legitgrails.com">support@legitgrails.com</a>
+                </p>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Schedule a call",
+    "class": "schedule-call",
+    "settings": []
+  }
+{% endschema %}

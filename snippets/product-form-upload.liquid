@@ -1,0 +1,194 @@
+{% form 'product', product, class:'product-form' %}
+
+    {% unless current_variant.available %}
+        {% assign button_text = 'products.product.sold_out' | t %}
+    {% else %}
+        {% assign button_text = 'products.product.add_to_cart' | t %}
+    {% endunless %}
+    
+    <div class="uploadkit" data-uploadkit-product-json="{{ product | json | escape }}" data-uploadkit-collections-json="{{ product.collections | json | escape }}"></div>
+
+    {% if template.handle contains 'product' %}
+
+        {% unless product.has_only_default_variant %}
+            {% for option in product.options_with_values %}
+                <div class="product-form__item supports-js">
+                    {% if option.name != 'default' %}
+                        <label class="single-option-selector__label{% unless section.settings.show_variant_labels %} single-option-selector__label--hidden{% endunless %}" for="{{ option.name | escape }}">{{ option.name }}</label>
+                    {% endif %}
+
+                    <select id="{{ option.name | escape }}" name="{{ option.name | escape }}" class="single-option-selector" data-option-input>
+                        {% for value in option.values %}
+                            {% assign safeValue = value | replace: '"', '&quot;' %}
+                            <option value="{{ safeValue }}" {% if option.selected_value == value %}selected{% endif %}>{{ value }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            {% endfor %}
+        {% endunless %}
+
+        <label>
+            <select name="id" class="product-form__master-select supports-no-js" data-master-select>
+                {% for variant in product.variants %}
+                    {% if variant.available %}
+                        {% comment %}
+                        Note: if you use option_selection.js, your select tag will be overwritten, meaning what you have inside <option> will not reflect what you coded below.
+                        {% endcomment %}
+                        <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+                    {% else %}
+                        <option disabled="disabled">
+                            {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                        </option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </label>
+
+    {% endif %}
+
+    <div class="variant-list ">
+        {% for product_option in product.options_with_values %}
+            <p class="pro-option-name product_checkout-answear">Results in:</p>
+        {% endfor %}
+        <div class="product-variants infiniteoptions product_checkout-radio">
+            {% for variant in product.variants %}
+                {% capture random %}{{ 'now' | date: "%09N" }}{% endcapture %}
+                <div class="radio-options">
+                    {% if variant.available %}
+                        <label class="radio radio-wrap" for="radio_{{random}}">
+                            {{ variant.title | escape }}
+                            {% if variant.price < variant.compare_at_price %}<del>{{ variant.compare_at_price | money }}</del>{% endif %}
+                            <input type="radio" name="id" id="radio_{{random}}" value="{{ variant.id }}" data-price="{{ variant.price | money }}" data-variant-title="{{ variant.title }}" {% if forloop.first %}checked="checked"{% endif %} class="radio-option"/>
+                            <div class="checkmark"></div>
+                        </label>
+
+                    {% else %}
+                        <label for="radio_{{ random }}" class="radio">
+                            {{ variant.title }} is temporarily unavailable
+                            <input type="radio" name="id" value="{{ variant.id }}" id="radio_{{ random }}" disabled="disabled" />
+                            <div class="checkmark"></div>
+                        </label>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    {% if section.settings.show_quantity_selector %}
+        <div class="product-form__item product-form__quantity-selector">
+            <label class="product-form__quantity-label{% unless section.settings.show_variant_labels %} product-form__quantity-label--hidden{% endunless %}" for="Quantity-{{ section.id }}">{{ 'products.product.quantity' | t }}</label>
+            <input class="product-form__quantity-input" type="number" id="Quantity-{{ section.id }}" name="quantity" value="1" min="1" pattern="[0-9]*">
+        </div>
+    {% endif %}
+    <div class="product_checkout-btns">
+        {% if template.handle contains 'product' %}
+            <button class="product_checkout-cart btn--full product__add-to-cart-button{% if section.settings.enable_payment_button and current_variant.available %} shopify-payment-btn btn--secondary{% endif %}"
+                    data-cart-submit
+                    type="submit" name="add"
+                    {% unless current_variant.available %} disabled="true"{% endunless %}
+                    aria-label="{{ button_text }}"
+            >
+    <span class="primary-text" aria-hidden="false" data-cart-primary-submit-text>
+      {{ button_text }}
+    </span>
+                <span class="secondary-text" aria-hidden=true data-cart-secondary-submit-text>{{ 'products.product.view_cart' | t }}</span>
+            </button>
+        {% endif %}
+
+            <div class="redirect-checkout-btn">
+                <input type="hidden" name="redirect" id="redirect-addtocart-btn" data-productid="{{product.id}}" class="product-select" value="{{ product.selected_or_first_available_variant.id }}" data-variant-title="{{ product.selected_or_first_available_variant.title }}" />
+                <input type="submit" value="Add To Cart" class="hidden product_checkout-cart" />
+                <input type="hidden" name="return_to" value="/checkout" />
+                <div class="btn-submit-container">
+                     <div class="cart-notification"></div>
+                     <button id="cart___submit" class="custom-cart-button">Add to cart</button>
+                     </div>
+            </div>
+
+        <p class="product__notification text-small text-center" data-cart-notification></p>
+        {% if section.settings.enable_payment_button and current_variant.available %}
+            {{ form | payment_button }}
+        {% endif %}
+      <!--<a class="product_checkout-alternative" href="{{ product.metafields.custom_fields.alternative }}">Free alternative</a>-->
+    </div>
+        {% if product.tags contains "uploadcare" %}
+              <div class="uploadcare-attributes hidden"></div>
+        {% endif %}
+{% endform %}
+<style>
+    .product_checkout-btns{display:flex;flex-direction:column;gap:15px;width:100%}.product-form{display:flex;flex-direction:column;gap:20px;align-items:center}.radio-wrap,.radio-wrap input:checked~.checkmark:after{display:block}.custom-cart-button,.redirect-checkout-btn .product_checkout-cart{width:100%;background:#161616;border:1px solid #161616;color:#fff;font-weight:700;text-transform:uppercase;font-family:'Work Sans';border-radius:5px;transition:.5s;height:43px}.btn-submit-container{position:relative}.cart-notification{position:absolute;width:100%;top:-20px;line-height:16px;color:#e51b24}.radio-wrap{position:relative;padding-left:25px;margin-bottom:12px;cursor:pointer;font-size:16px;line-height:16px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.radio-wrap input{position:absolute;opacity:0;cursor:pointer}.checkmark{position:absolute;top:0;left:0;height:16px;width:16px;background-color:#fff;border-radius:50%;border:1px solid #cdab71}.radio-wrap:hover input~.checkmark{background-color:#f2f2f2}.radio-wrap input:checked~.checkmark{background-color:#fff}.checkmark:after{content:"";position:absolute;display:none}.radio-wrap .checkmark:after{top:3px;left:3px;width:8px;height:8px;border-radius:50%;background:#cdab71}@media (min-width:425px){.product_checkout-btns{min-width:320px}}
+</style>
+
+    <script src="https://assets.getuploadkit.com/assets/uploadkit-app.js" defer ></script>
+    <script>
+    $( document ).ready(function() {
+        $('#product_form_{{ product.id }} ').on('change', function () {
+            let price = $('input:checked').attr('data-price')
+            $('.product__current-price').html(price)
+        });
+
+        const messages = {
+            empty: 'Please upload photos before purchasing',
+            wait: 'Adding...',
+            thanks: 'Thank You!'
+        }
+        
+        $('#cart___submit').on('click', function (e) {
+            e.preventDefault()
+
+            let images
+            if ( $('.uploadcare-attributes').length) {
+                images = $('.uploadcare-attributes').children()
+            } else {
+                images = $('.uploadkit-attribute-container').children()
+            }
+            let properties = {}
+
+
+            if (images.length) {
+                $('#cart___submit').html(messages.wait)
+              
+                sessionStorage.removeItem('uploadcare_{{ product.id }}')
+              
+                for (item of images) {
+                  // Remove 'property' from item key to exclude cart properties from checkout end cart
+                  let propertyName = item.name.substring(
+                        item.name.indexOf("[") + 1,
+                        item.name.lastIndexOf("]")
+                  );
+                  properties[propertyName] = item.value;
+                 
+                }
+              
+                let formData = {
+                    items: [{
+                        'id': $('input.radio-option:checked').val(),
+                        'quantity': 1,
+                        'properties': properties,
+                    }]
+                };
+
+                let form = $('#product_form_{{ product.id }}');
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/cart/add.js',
+                    dataType: 'json',
+                    data: JSON.stringify(formData),
+                    contentType: 'application/json',
+                    processData: false,
+                    success: function(data) {
+                        $('#cart___submit').html(messages.thanks)
+                        document.location.href = '/cart/checkout';
+                        //document.location.href = '/cart/';
+                    }
+                });
+            } else {
+                $('.cart-notification').html(messages.empty)
+                setTimeout(function () {
+                    $('.cart-notification').html('')
+                }, 2000)
+            }
+        });
+    });
+    </script>

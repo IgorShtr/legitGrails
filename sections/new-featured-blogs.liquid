@@ -1,0 +1,139 @@
+<div class="featured-blog legit-featured-blog featured-blog--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="featured-blog">
+    <div class="section-container">
+        {% if section.settings.title != blank %}
+            <h3 class="featured-blog__heading section-header__title section-title  text-center" data-animate>{{ section.settings.title | escape }}</h3>
+        {% endif %}
+        
+<div class="card-list grid">
+                        {%- if section.blocks.size > 0 -%}
+                          {%- for block in section.blocks -%}
+                         <div class="card critical-clear" data-animate>
+                           <a href="{{ block.settings.blog-link }}" class="card__wrapper card--article"  >
+                            <div class="card__image-wrapper" style="padding-top:100.0%">
+                                <img src="{{ block.settings.blog-image | img_url: 'master' }}" width="400" height="400" loading="lazy" alt="{{ block.settings.blog-title }}" class="card__image">
+                            </div>
+                            <div class="card__info blog-info">
+                              <h3 class="blog-info__title font-title">{{ block.settings.blog-title }}</h3>
+                              <div class="blog-info__description blog-info__minutes font-description">
+                                 {{ block.settings.blog-desc }}
+                              </div>
+                
+                                <span class="card__read-more">
+                                  Read more
+                                  <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-arrow-right" viewBox="0 0 4 7"><path fill="#444" d="M4 3.5L0 7V0z"/></svg>
+                                </span>
+                              </div>
+                            </a>
+                          </div>
+                          {%- endfor -%}
+                        {%- endif -%}
+        
+                        
+                    </div>
+        {% if section.settings.show_view_all %}
+            <div class="featured-blog__view-all-wrap">
+                <a href="https://legitgrails.com/pages/guides" class="main-btn{% if section.settings.use_second_button %} btn--secondary{% endif %}">
+                    {{ 'collections.general.view_all' | t }}
+                </a>
+            </div>
+        {% endif %}
+
+    </div>
+</div>
+
+<style>
+    .featured-blog--b9340af1-3fda-4b57-aa20-679e4cbcfd83 .card-list {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 15px;
+          width: 100%;
+          margin: 0;
+    }         
+    .featured-blog--b9340af1-3fda-4b57-aa20-679e4cbcfd83 .card {
+      float: none;
+      width: calc(33.33333% - 10px);
+    }
+  .featured-blog--b9340af1-3fda-4b57-aa20-679e4cbcfd83 .card__wrapper {
+    margin-bottom: 0;
+  }
+  @media(max-width: 750px) {
+    .featured-blog--b9340af1-3fda-4b57-aa20-679e4cbcfd83 .card {
+      float: none;
+      width: calc(50% - 10px);
+    }
+    .featured-blog--b9340af1-3fda-4b57-aa20-679e4cbcfd83 .card:nth-child(5), .featured-blog--b9340af1-3fda-4b57-aa20-679e4cbcfd83 .card:nth-child(6) {
+      display: none;
+    }
+  }
+</style>
+
+                                    
+{% schema %}
+{
+"name": {
+"en": "New Legit featured blog"
+},
+"class": "index-section",
+"settings": [
+{
+"type": "text",
+"id": "title",
+"label": {
+"en": "Heading"
+},
+"default": {
+"en": "Blog"
+}
+},
+{
+"type": "checkbox",
+"id": "show_view_all",
+"label": {
+"en": "Show 'View all' button"
+},
+"default": false
+}
+],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Block content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "blog-title",
+          "default": "Column",
+          "label": "Blog title"
+        },
+        {
+          "type": "text",
+          "id": "blog-desc",
+          "default": "Desc",
+          "label": "Blog desc"
+        },
+        {
+          "type": "text",
+          "id": "blog-link",
+          "default": "Link",
+          "label": "Blog link"
+        },
+        {
+          "type": "image_picker",
+          "id": "blog-image",
+          "label": {
+            "en": "Image"
+          }
+        }
+      ]
+    }
+  ],
+"presets": [
+{
+"name": {
+"en": "New Legit featured blogs"
+}
+}
+]
+}
+{% endschema %}
+

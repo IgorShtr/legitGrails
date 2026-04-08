@@ -1,0 +1,1143 @@
+{% assign items = product.metafields.test.form_settings.value %}
+{% assign fastProductItem = product.metafields.test.fast_check.value %}
+{% for tag in product.tags %}
+  {% assign tag_split = tag | split: '_' %}
+  {% if tag_split.first == 'type' %}
+    {% assign type = tag_split.last %}
+  {% endif %}
+{% endfor %}
+<div
+  id="product-uploads"
+  class="popup-overlay hidden {% if product.tags contains "form-cart" %} form-cart{% endif %}"
+  data-type="{{ type }}"
+>
+  <div class="popup-container transparent">
+    <div class="container-popup-header">
+      <a class="popup-btn__close"></a>
+    </div>
+    <div class="popup-sections">
+      <div class="popup-sections__row">
+        <div class="form-block step-first">
+          <div class="form-block__title">Step 1</div>
+          <div class="form-block__description">Choose your item</div>
+          <div class="form-block__content">
+            <div class="scroll-container upload-options">
+              {% for fastItem in fastProductItem[0].categories %}
+                <div class="radio-option-type option-{{ fastItem.id }}">
+                  <label class="radio radio-wrap" for="{{ fastItem.id }}">
+                    <span>{{ fastItem.name }}</span>
+                    <input
+                      id="{{ fastItem.id }}"
+                      class="radio-option-input"
+                      type="radio"
+                      name="types"
+                      {% if forloop.index == 1 %}
+                        checked
+                      {% endif %}
+                    >
+                    <div class="checkmark"></div>
+                  </label>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="form-block block-tips">
+          <div class="form-block__title">Tips on how to speed up your authentication</div>
+          <div class="form-block__content">
+            <div class="tips">
+              <div class="tip-section tip-active" id="tip-custom">
+                {% assign customTips = 'Take close-up and focused photos in natural light,Focus the camera on the area under the insole'
+                  | split: ','
+                %}
+                {% for tip in customTips %}
+                  <div class="tip-section__content">
+                    <div class="tip-section__text">
+                      {{ tip }}
+                    </div>
+                  </div>
+                {% endfor %}
+                <div class="tip-section__content">
+                  <div class="tip-section__text">
+                    Explore model specific
+                    <a
+                      href="https://legitgrails.zendesk.com/hc/en-us/categories/5306328467345-Photos-Needed-for-Authentication"
+                      target="_blank"
+                      >photo examples</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional step for fastProductItem selection -->
+      {% for fastItem in fastProductItem[0].categories %}
+        <div id="additional-step-{{ fastItem.id }}" class="{% if forloop.first %}visible{% else %}hidden{% endif %}">
+          <div class="form-block step-additional">
+            <div class="form-block__title">Step 2</div>
+            <div class="form-block__description">
+              Choose a model from the dropdown or <b>All series</b> option if you can’t find your model.
+            </div>
+            <div class="form-block__content">
+              <div class="scroll-container model-options">
+                <!-- Display models for the selected fast item category -->
+                <div class="select-option-model" style="width: 220px;">
+                  <select id="{{ fastItem.id }}_model" name="models" style="border: 1px solid #cdab71;">
+                    {% for model in fastItem.models %}
+                      <option
+                        value="{{ model.id }}"
+                        {% if forloop.first %}
+                          selected
+                        {% endif %}
+                      >
+                        {{ model.name }}
+                      </option>
+                    {% endfor %}
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+      <!-- End of additional step -->
+
+      <div class="popup-sections__row">
+        <div class="form-block form-block-tabs">
+          <div class="form-block__title">Step 3</div>
+          <div class="form-block__description">
+            Upload the photos of your <span id="collection-title" class="form-block__item-title">item</span> one by one.
+          </div>
+
+          <div class="tabs">
+            {% assign first_model = true %}
+            {% for category in fastProductItem[0].categories %}
+              {% for model in category.models %}
+                <div
+                  class="tab-section{% if first_model %} tab-active{% endif %}"
+                  id="tab-{{ category.id }}_{{ model.id }}"
+                >
+                  {% assign indexes = model.indexes %}
+                  {% for index in indexes %}
+                    <label
+                      for="{{ category.id }}_{{ model.id }}_{{ index.point_id }}"
+                      class="tab-section__content tab-{{ index.point_id }}"
+                    >
+                      <div
+                        id="counter-tab-{{ category.id }}_{{ model.id }}_{{ index.point_id }}"
+                        class="tab-section__counter"
+                      ></div>
+                      <div class="tab-section__image-container blinking">
+                        <div
+                          class="tab-section__image"
+                          data-src="{{ index.example_img }}"
+                        ></div>
+                        <!-- Success image -->
+                        <div
+                          class="tab-section__image-success"
+                          style="background-color: rgba(59, 249, 76, 0.5); height: 100%; background-position: center; background-size: contain; visibility: hidden;"
+                        ></div>
+                        <!-- Reject image -->
+                        <div
+                          class="tab-section__image-reject"
+                          style="
+                            background-color: rgba(255, 5, 5, 0.5);
+                            height: 100%;
+                            background-position: center;
+                            background-size: contain;
+                            visibility: hidden;
+                            bottom: 0;
+                            left: 0;
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                            width: 100%;
+                          "
+                        ></div>
+
+                        <!-- Tooltip element -->
+                        <div class="tooltip-fast tooltip-fast-error">
+                          <i class="tooltip-icon">i</i>
+                          <span class="tooltip-text"
+                            >Please submit a new photo, ensuring it's clear and captures the specific part of the item
+                            in question.</span
+                          >
+                        </div>
+                        <!-- Tooltip image size element -->
+                        <div class="tooltip-fast tooltip-fast-size">
+                          <i class="tooltip-icon">i</i>
+                          <span class="tooltip-text"
+                            >Something went wrong, please try uploading the same photo again.</span
+                          >
+                        </div>
+
+                        <!-- Loader element -->
+                        <div
+                          class="loader-line"
+                          style="position: absolute; top: 0; left: 0; width: 100%; background: rgba(0, 0, 0, 0.4);"
+                        >
+                          <i class="loader spin"></i>
+                        </div>
+                      </div>
+
+                      <div class="tab-section__title">
+                        {{ index.point_name -}}
+                        {%- if index.required == true -%}
+                          <span style="color: red;"> *</span>
+                        {%- endif %}
+                      </div>
+
+                      <input
+                        class="file-input-fast-check"
+                        id="{{ category.id }}_{{ model.id }}_{{ index.point_id }}"
+                        {% if index.required == true %}
+                          required
+                        {% endif %}
+                        type="file"
+                        hidden
+                        accept=".png,.jpg,.jpeg,.heic,.heif"
+                      >
+                    </label>
+                  {% endfor %}
+                </div>
+                {% if first_model %}
+                  {% assign first_model = false %}
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="popup-sections__row">
+        <div class="buttton-wrap">
+          <div id="upload-messages" class="upload-messages"></div>
+          {% if product.tags contains 'form-cart' %}
+            <button id="upladcare-cart" class="btn main-btn disabled" name="" style="max-width: 250px">
+              <span>Submit</span>
+            </button>
+          {% else %}
+            <button id="upload_submit" class="btn main-btn disabled" name="" style="max-width: 250px">
+              <span>Submit</span>
+            </button>
+          {% endif %}
+        </div>
+      </div>
+      <div class="popup-sections__row">
+        <p class="popup-terms">
+          By submitting an order you agree with the
+          <a href="https://legitgrails.com/policies/terms-of-service" target="_blank">Terms and Conditions</a> and
+          <a href="https://legitgrails.com/policies/refund-policy" target="_blank">Refund policy</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="hidden uploadcare-product-hidden" id="product-data" data-product="{{ product | json | escape }}">
+  {{ product.id }}
+</div>
+{% for variant in product.variants %}
+  {% if forloop.index == 1 %}
+    <input id="selected-variant" class="hidden" type="hidden" value="{{ variant.id }}">
+  {% endif %}
+{% endfor %}
+
+<script>
+  // Check if the browser supports Intersection Observer
+  if (!('IntersectionObserver' in window)) {
+      // If not, load the polyfill dynamically
+      const script = document.createElement('script');
+      script.src = 'https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver';
+      script.async = true;
+      document.head.appendChild(script);
+  }
+</script>
+
+{{ 'ai-form.js' | asset_url | script_tag }}
+
+<style>
+    .tooltip-fast {
+        position: absolute;
+        top: 5px;
+        left: 10px;
+        z-index: 100;
+        background-color: white;
+        padding: 3px 8px;
+        max-width: 143px;
+        border: 1px solid black;
+        border-radius: 12px;
+        font-family: "Open Sans", sans-serif;
+        color: black;
+        font-size: 11px;
+        line-height: 13px;
+        font-weight: 400;
+        margin: 0px;
+
+        display: none;
+    }
+
+    /* For screens smaller than 769px */
+    @media (max-width: 768px) {
+        .tooltip-fast {
+            left: 5px;
+            max-width: 109px;
+        }
+
+        .tooltip-fast .tooltip-text {
+            display: inline;
+        }
+
+        .tooltip-fast .tooltip-icon {
+            display: none;
+        }
+    }
+
+    /* For screens 769px and larger */
+    @media (min-width: 769px) {
+        .tooltip-fast .tooltip-text {
+            display: none;
+            transition: display 0.3s ease;
+        }
+
+        .tooltip-fast .tooltip-icon {
+            display: inline;
+            transition: display 0.3s ease;
+        }
+
+        .tooltip-fast:hover .tooltip-text {
+            display: block;
+        }
+
+        .tooltip-fast:hover .tooltip-icon {
+            display: none;
+        }
+    }
+
+    /* Define the keyframes animation */
+    @keyframes gradientAnimation {
+      to {
+        background-position-x: -20%;
+      }
+    }
+
+    /* Apply the animation to the .blinking class */
+    .blinking {
+      background: linear-gradient(
+        100deg,
+        rgba(255, 255, 255, 0) 40%,
+        rgba(255, 255, 255, 0.5) 50%,
+        rgba(255, 255, 255, 0) 60%
+      );
+      background-size: 200% 100%;
+      background-position-x: 180%;
+      animation: gradientAnimation 1s ease-in-out infinite;
+    }
+  }
+</style>
+
+{% if product.tags contains 'form-cart' %}
+  <style>
+    .authenticate-btn {
+        min-width: 250px !important;
+        border-radius: 5px !important;
+    }
+
+    .product__form-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .checkout_required-photos {
+        display: none;
+    }
+
+    .product-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .checkout_required-photos {
+        display: none !important;
+    }
+  </style>
+{% endif %}
+
+<style>
+  .scroll-container.upload-options {
+      display: flex;
+      flex-wrap: wrap;
+      width: 300px;
+  }
+
+  .radio-option-type {
+      width: 100%
+  }
+
+  @media (max-width: 1340px) {
+      .scroll-container.upload-options {
+          width: 210px
+      }
+
+      .tip-section {
+          gap: 15px;
+      }
+
+      .tip-section__content {
+          padding: 12px;
+      }
+  }
+
+  @media (max-width: 1000px) {
+      .scroll-container.upload-options {
+          width: 100%;
+      }
+  }
+</style>
+
+<style>
+  p.popup-terms {
+      font-size: 15px;
+      display: block;
+      color: #161616;
+      font-style: normal;
+      font-weight: 400;
+      text-align: center;
+      line-height: 22px;
+      margin: auto;
+      width: 320px;
+  }
+
+  p.popup-terms a {
+      color: #cbad73;
+      text-decoration: none;
+  }
+
+  p.popup-terms a:hover {
+      text-decoration: underline
+  }
+
+  @media (max-width: 600px) {
+      p.popup-terms {
+          width: 100%;
+      }
+  }
+</style>
+<style>
+  .loader, .loader-line {
+      display: grid;
+      place-items: center
+  }
+
+  .popup-overlay.open, .tab-section.tab-active, .tip-section.tip-active {
+      visibility: visible;
+      opacity: 1
+  }
+
+  .hidden, .tab-section, .tab-section__image-success, .tip-section {
+      visibility: hidden
+  }
+
+  .btn.disabled, .popup-container.disable {
+      pointer-events: none
+  }
+
+  .loader-line.visible, .popup-overlay {
+      opacity: 1
+  }
+
+  .loader-line {
+      background: rgba(255, 255, 255, .3);
+      border-radius: 4px;
+      height: 100%;
+      opacity: 0;
+      transition: opacity .4s
+  }
+
+  .loader {
+      height: 2px;
+      position: relative;
+      width: 50%
+  }
+
+  .loader::after, .loader::before {
+      box-sizing: border-box;
+      content: '';
+      position: absolute
+  }
+
+  .loader.spin::before {
+      animation: .8s cubic-bezier(0, 0, .03, .9) infinite loader-4;
+      background-color: #cdab71;
+      height: 2px;
+      width: 6vmin
+  }
+
+  @keyframes loader-4 {
+      0%, 100%, 44%, 88.1% {
+          transform-origin: left
+      }
+      0%, 100%, 88% {
+          transform: scaleX(0)
+      }
+      44.1%, 88% {
+          transform-origin: right
+      }
+      33%, 44% {
+          transform: scaleX(1)
+      }
+  }
+
+  .hidden {
+      display: none
+  }
+
+  .uploadcare--dialog__container {
+      transform: scale(.001)
+  }
+
+  .upload-options .radio-option-type .radio {
+      margin-bottom: 0
+  }
+
+  .radio-option-type .checkmark {
+      top: 3px
+  }
+
+  .popup-container.transparent, .popup-overlay.hiding {
+      opacity: 0
+  }
+
+  .popup-container {
+      opacity: 1;
+      transition: opacity .3s
+  }
+
+  .authenticate-btn {
+      background: #cdab71;
+      border-radius: 0;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 21px;
+      margin: auto auto 20px;
+      text-align: center;
+      text-transform: uppercase;
+      transition: .5s;
+      width: max-content;
+      cursor: pointer;
+      height: 37px;
+      min-width: 166px
+  }
+
+  .checkmark, .popup-container, .radio-wrap input:checked ~ .checkmark {
+      background-color: #fff
+  }
+
+  .form-block__title, .uploadcare--text.uploadcare--text_size_extra-large {
+      font-size: 26px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 30px;
+      text-align: center
+  }
+
+  .buttton-wrap {
+      display: flex;
+      justify-content: center;
+      width: 100%
+  }
+
+  .checkmark {
+      border: 1px solid #cdab71;
+      border-radius: 50%;
+      height: 16px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 16px
+  }
+
+  .checkmark:after {
+      content: "";
+      display: none;
+      position: absolute
+  }
+
+  .container-popup-header {
+      position: absolute;
+      right: 0;
+      top: 0
+  }
+
+  .form-block-tabs, .item-required, .popup-btn__close, .popup-container {
+      position: relative
+  }
+
+  .form-block.block-tips {
+      flex-grow: 1;
+      max-width: 787px
+  }
+
+  .form-block.step-first {
+      min-width: 210px
+  }
+
+  .form-block__description {
+      margin-bottom: 20px;
+      text-align: center
+  }
+
+  .form-block__title {
+      font-family: 'Work Sans', sans-serif;
+      margin-bottom: 5px
+  }
+
+  .form-block-tabs {
+      width: 100%
+  }
+
+  .item-required:after {
+      color: red;
+      content: "*";
+      display: block;
+      height: 15px;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      width: 15px
+  }
+
+  .options-disable, .upload-options.disabled {
+      opacity: .8;
+      pointer-events: none
+  }
+
+  .popup-btn__close {
+      cursor: pointer;
+      display: block;
+      height: 40px;
+      opacity: .8;
+      right: 20px;
+      top: 20px;
+      transition: .3s;
+      width: 40px
+  }
+
+  .popup-btn__close:after {
+      transform: rotate(-45deg)
+  }
+
+  .popup-btn__close:before {
+      transform: rotate(45deg)
+  }
+
+  .popup-btn__close:after, .popup-btn__close:before {
+      background-color: #cdab71;
+      content: "";
+      height: 30px;
+      position: absolute;
+      right: 18px;
+      top: 10px;
+      width: 3px
+  }
+
+  .popup-btn__close:hover {
+      opacity: 1
+  }
+
+  .popup-container {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 17px;
+      color: #161616;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 22px;
+      margin: 5% auto;
+      max-width: 1317px;
+      min-height: 600px;
+      overscroll-behavior: none;
+      padding: 45px 30px;
+      width: 90%
+  }
+
+  .popup-overlay {
+      align-items: center;
+      background-color: rgba(0, 0, 0, .7);
+      bottom: 0;
+      display: none;
+      justify-content: center;
+      left: 0;
+      max-height: 100vh;
+      opacity: 0;
+      overflow: hidden;
+      overflow-y: auto;
+      overscroll-behavior: none;
+      position: fixed;
+      right: 0;
+      top: 0;
+      transition: opacity .3s;
+      z-index: -1
+  }
+
+  .product_checkout, .radio-wrap, .tabs {
+      position: relative
+  }
+
+  .popup-overlay.open {
+      display: block;
+      z-index: 9999
+  }
+
+  .popup-page {
+      height: auto;
+      max-height: 100%;
+      max-width: 100%;
+      min-height: 0;
+      min-width: 0;
+      overflow: hidden;
+      width: auto
+  }
+
+  .popup-page .main-content {
+      position: relative;
+      z-index: 1111
+  }
+
+  .popup-sections__row {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin-bottom: 20px
+  }
+
+  .radio-wrap, .radio-wrap input:checked ~ .checkmark::after {
+      display: block
+  }
+
+  .product_checkout {
+      z-index: 10
+  }
+
+  .radio-wrap {
+      margin-bottom: 12px;
+      moz-user-select: none;
+      ms-user-select: none;
+      padding-left: 25px;
+      user-select: none;
+      webkit-user-select: none;
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 16px
+  }
+
+  .radio-wrap .checkmark::after {
+      background: #cdab71;
+      border-radius: 50%;
+      height: 8px;
+      left: 3px;
+      top: 3px;
+      width: 8px
+  }
+
+  .radio-wrap input {
+      cursor: pointer;
+      opacity: 0;
+      position: absolute
+  }
+
+  .scroll-container {
+      direction: ltr;
+      overflow-y: auto;
+      scrollbar-color: #CDAB71 #f2f2f2;
+      scrollbar-width: 3px;
+  }
+
+  .scroll-container .radio-option-type .radio-wrap {
+      font-size: 17px;
+      height: 26px;
+      padding: 3px 0 3px 28px;
+      color: #161616
+  }
+
+  .scroll-container.upload-options {
+      max-height: 142px
+  }
+
+  .scroll-container::-webkit-scrollbar {
+      width: 7px
+  }
+
+  .scroll-container::-webkit-scrollbar-thumb {
+      background-color: #cdab71;
+      border: 6px solid #cdab71;
+      border-left: 0;
+      border-radius: 100px;
+      border-right: 0;
+      width: 3px
+  }
+
+  .scroll-container::-webkit-scrollbar-track {
+      background-color: #e4e4e4;
+      border-radius: 20px;
+      width: 7px
+  }
+
+  .scroll-container:-webkit-scrollbar-color {
+      color: #cdab71
+  }
+
+  .scroll-wrapper {
+      height: 142px;
+      overflow: hidden
+  }
+
+  .tabs {
+      min-height: 164px;
+      transition: .3s
+  }
+
+  .tab-section {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 36px;
+      justify-content: center;
+      opacity: 0;
+      position: absolute;
+      transition: opacity .4s
+  }
+
+  .tab-section.scroll-container {
+      max-height: 380px;
+      padding-right: 10px;
+      padding-top: 5px
+  }
+
+  .tab-section__content {
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      flex-basis: 95px;
+      flex-direction: column;
+      min-height: 90px;
+      min-width: 95px;
+      position: relative
+  }
+
+  .tab-section__content.uploaded .tab-section__image {
+      display: none;
+      visibility: hidden
+  }
+
+  .tab-section__content.uploaded .tab-section__image-success {
+      background-color: #cbeec9;
+      visibility: visible
+  }
+
+  .tab-section__counter {
+      padding: 15px;
+      position: absolute;
+      right: 0;
+      z-index: 10
+  }
+
+  .tab-section__image, .tab-section__image-success {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%
+  }
+
+  .tab-section__image-container {
+      background-color: #eedbc9;
+      border: 1px dashed #000;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      min-height: 100px;
+      overflow: hidden;
+      position: relative;
+      width: 100%
+  }
+
+  .tab-section__title {
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 21px;
+      text-align: center
+  }
+
+  .tips {
+      min-height: 160px;
+      padding-top: 25px;
+      position: relative
+  }
+
+  .tip-section {
+      opacity: 0;
+      position: absolute;
+      transition: opacity .3s;
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      justify-content: space-between;
+      width: 100%
+  }
+
+  .tip-section__content {
+      align-items: center;
+      border: 1px solid #cdab71;
+      border-radius: 12px;
+      display: flex;
+      flex-basis: 180px;
+      flex-grow: 1;
+      min-height: 160px;
+      padding: 18px;
+      text-align: center;
+      justify-content: center
+  }
+
+  .uploadcare--powered-by.uploadcare--dialog__powered-by, .uploadcare--widget__button, .uploadkit {
+      display: none
+  }
+
+  .tip-section__text {
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 23px;
+      text-align: center;
+      color: #161616
+  }
+
+  .uploadcare--button {
+      border: 1px solid #cdab71;
+      border-radius: 0
+  }
+
+  .uploadcare--button.uploadcare--button_icon.uploadcare--dialog__close {
+      cursor: pointer;
+      outline: 0
+  }
+
+  .uploadcare--button.uploadcare--button_icon.uploadcare--dialog__close:active .uploadcare--icon, .uploadcare--button.uploadcare--button_icon.uploadcare--dialog__close:focus .uploadcare--icon, .uploadcare--button.uploadcare--button_icon.uploadcare--dialog__close:hover .uploadcare--icon {
+      color: #cbad73;
+      fill: #CBAD73
+  }
+
+  .uploadcare--button.uploadcare--button_size_big.uploadcare--button_primary.uploadcare--tab__action-button, .uploadcare--widget__button.uploadcare--widget__button_type_open {
+      background: #cbad73;
+      border: 1px solid #cbad73;
+      border-radius: 0;
+      height: 60px;
+      outline: 0
+  }
+
+  .uploadcare--button.uploadcare--camera__button.uploadcare--camera__button_type_retry, .uploadcare--button.uploadcare--footer__button.uploadcare--panel__show-files, .uploadcare--button.uploadcare--footer__button.uploadcare--preview__back {
+      border-color: #cdab71;
+      color: #cdab71
+  }
+
+  .uploadcare--button.uploadcare--footer__button.uploadcare--preview__back:active, .uploadcare--button.uploadcare--footer__button.uploadcare--preview__back:hover {
+      border-color: #cdab71;
+      outline: 0
+  }
+
+  .uploadcare--button_muted:focus, .uploadcare--button_muted:hover {
+      color: #cdab71
+  }
+
+  .uploadcare--button_primary, .uploadcare--button_primary:focus, .uploadcare--button_primary:hover {
+      background: #cdab71;
+      border-color: #cdab71;
+      color: #fff
+  }
+
+  .uploadcare--file:hover {
+      background: rgba(205, 171, 113, .1)
+  }
+
+  .uploadcare--file__description:focus, .uploadcare--file__description:focus .uploadcare--file__preview, .uploadcare--file__description:hover, .uploadcare--file__description:hover .uploadcare--file__preview {
+      color: #cdab71
+  }
+
+  .uploadcare--icon.uploadcare--menu__icon:hover, .uploadcare--menu__item:hover .uploadcare--icon.uploadcare--menu__icon {
+      color: #cbad73;
+      fill: #CBAD73
+  }
+
+  .uploadcare--file_status_uploading .uploadcare--file__preview {
+      background: #cdab71;
+      color: #cdab71 !important
+  }
+
+  .uploadcare--menu__item:focus, .uploadcare--menu__item:hover, .uploadcare--progress_type_canvas {
+      color: #cdab71
+  }
+
+  .uploadcare--input:focus {
+      outline: rgb(205, 171, 113) solid 2px;
+      outline-offset: 1px
+  }
+
+  .uploadcare--menu.uploadcare--panel__menu {
+      background-color: #eddbcd !important
+  }
+
+  .uploadcare--menu__item {
+      background-color: #eddbcd
+  }
+
+  .uploadcare--menu__item.uploadcare--menu__item_current {
+      background-color: #fff
+  }
+
+  .uploadcare--menu__item:focus {
+      box-shadow: inset 0 0 0 2px #cdab71;
+      outline: 0
+  }
+
+  .uploadcare--menu__items {
+      background-color: #eddbcd !important
+  }
+
+  .uploadcare--page .popup-overlay.open, .uploaded:after {
+      opacity: 0
+  }
+
+  .uploadcare--panel__footer {
+      background: #f5e1d4
+  }
+
+  .uploadcare--progressbar__value {
+      background-color: #cdab71
+  }
+
+  .uploadcare--text.uploadcare--text_size_extra-large {
+      color: #161616
+  }
+
+  .upload-options .radio-option-type {
+      min-height: 35px
+  }
+
+  @media (max-width: 1000px) {
+      .block-tips {
+          display: none
+      }
+
+      .form-block.step-first {
+          min-width: 100%
+      }
+  }
+
+  @media (min-width: 1340px) {
+      .form-block.step-first {
+          min-width: 310px
+      }
+
+      .popup-container {
+          padding: 46px 70px 26px;
+          width: 1317px
+      }
+  }
+
+  @media (max-width: 485px) {
+      .tab-section__content {
+          flex-basis: 30%;
+          min-height: 100px;
+          min-width: 30%
+      }
+
+      .tab-section__image-container {
+          margin-bottom: 11px;
+          min-height: 88px
+      }
+
+      .tab-section__title {
+          font-size: 15px;
+          line-height: 18px
+      }
+  }
+
+  @media (min-width: 760px) {
+      .uploadcare--dialog__container {
+          border-radius: 0
+      }
+  }
+
+  @media (min-width: 768px) {
+      .form-block__description, .form-block__title {
+          text-align: left
+      }
+
+      .popup-btn__close {
+          right: 30px;
+          top: 20px
+      }
+
+      .popup-sections__row {
+          flex-direction: row
+      }
+
+      .tab-section__content {
+          flex-basis: 164px;
+          min-height: 125px;
+          min-width: 164px
+      }
+
+      .tab-section__image-container {
+          min-height: 125px
+      }
+  }
+
+  @media (max-width: 768px) {
+      .tab-section {
+          gap: 15px
+      }
+
+      .popup-sections__row {
+          margin-bottom: 30px
+      }
+
+      .popup-container {
+          padding: 30px 30px 10px
+      }
+
+      .tab-section__title {
+          font-size: 17px
+      }
+
+      .scroll-container.upload-options {
+          max-height: 100%
+      }
+  }
+
+  @media (max-width: 400px) {
+      .tab-section__content {
+          flex-basis: 46%;
+          min-height: 100px;
+          min-width: 46%
+      }
+  }
+
+  input[type=checkbox], input[type=radio] {
+      display: inline-block;
+      margin-right: 5px
+  }
+
+  .product-box {
+      display: flex;
+      justify-content: center;
+  }
+</style>

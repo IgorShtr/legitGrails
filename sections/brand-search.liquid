@@ -1,0 +1,446 @@
+{% render 'rebranding_main-styles' %}
+{% render 'fonts-rebrand' %}
+{%- assign featuredCollection = collections[section.settings.collection] -%}
+{%- assign totalProducts = featuredCollection.products.size -%}
+<style>
+  .brand-search {
+    padding-top: 50px;
+  }
+  .brand-search_disclaimer {
+    color: rgba(60, 31, 27, 0.30);
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto 0 auto;
+    text-align: center;
+  }
+  .input-search-label {
+    position: relative;
+  }
+  a.brand-block__link {
+    height: 100% !important;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+}
+.search-brand_zero {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    left: -1px;
+    padding: 18px 11px 12px 11px;
+    width: calc(100% + 2px);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid #3c1f1b;
+    top: 100%;
+    background: #fff;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    border-top: none;
+    margin-top: -6px;
+}
+  .search-brand_zero p {
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin-bottom: 15px;
+    color: #3C1F1B;
+}
+.brand-block_logo {
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    background: #F2F2EA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  .brand-block_logo img {
+    width: 100%;
+    height: 100%;
+    transition: all .5s ease-out;
+    top: 0;
+    position: absolute;
+    left: 0;
+  }
+  .brand-block:hover img {
+    transform: scale(1.1);
+  }
+  .search-brand_zero.active {
+    display: flex;
+}
+.brand-block_title {
+    color: #3C1F1B;
+    font-family: "PP Fragment" !important;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%;
+    letter-spacing: 0.37px;
+    margin: 0;
+    padding: 0 20px;
+    transition: .3s;
+  text-align: center;
+}
+  .brands-container {
+    gap: 20px;
+  }
+  .brand-search_search {
+    width: 100%;
+    justify-content: center;
+}
+  .brand-search_title {
+    width: 100%;
+    justify-content: center;
+}
+  .brand-search_title h1 {
+    margin: 0;
+    color: #3C1F1B;
+  }
+label.input-search-label {
+    width: 495px;
+    border-radius: 12px;
+    border: 1px solid #3C1F1B;
+    display: block;
+    padding: 6px 68px 6px 20px;
+    position: relative;
+  margin: 0;
+}
+  svg.icon.icon-search {
+    display: block;
+  }
+  .search-brand-input-svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 62px;
+    height: 52px;
+    border-radius: 8px;
+    background: #3C1F1B;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+  }
+  .brand-block {
+    position: relative;
+    display: none;
+    transition: .3s;
+  }
+  .brand-block:hover .brand-block_title {
+    transform: scale(1.1);
+  }
+  .brand-block:hover {
+    opacity: 0.85
+  }
+  .brand-block:active {
+    opacity: 0.7
+  }
+  .brand-block.active {
+      display: block;
+        width: calc(25% - 15px);
+        margin: 0;
+        height: 246px;
+    }
+  .filter-buttons {
+    width: 100%;
+    justify-content: center;
+}
+  .brand-type {
+    border-radius: 44px;
+    border: 1px solid #3C1F1B;
+    padding: 10px 30px;
+    line-height: 1;
+    transition: .3s;
+    color: #3C1F1B;
+}
+  .brand-type.active {
+    border: 1px solid #F24F14;
+    background: #F24F14;
+    color: #fff;
+  }
+  .brand-type.active:hover {
+    pointer-event: none;
+    opacity: 1;
+  }
+  .brands-wrap {
+    margin-top: 40px;
+}
+  .brands-container {
+    justify-content: center;
+}
+  input#search-brand-input {
+      margin: 0;
+      height: 52px;
+      padding: 0 20px 0 0;
+      outline: none;
+    font-family: "Suisse Intl"!important;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.4px;
+    color: #3C1F1B;
+  }
+  input#search-brand-input::placeholder {
+    font-family: "Suisse Intl"!important;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.4px;
+    opacity: .5;
+    color: #3C1F1B;
+  }
+  .input-search-label.zero-active {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  @media(max-width: 1400px) {
+    .brand-block.active {
+    width: calc(33.3333333334% - 13.333333334px);
+    margin: 0;
+    height: 246px;
+}
+  }
+  @media(max-width: 1250px) {
+    .brand-block_title {
+      font-size: 22px;
+    }
+    .brands-container {
+    gap: 15px;
+}
+        .brand-block.active {
+        width: calc(33.3333333334% - 10px);
+        margin: 0;
+        height: 200px;
+    }
+  }
+  @media(max-width: 1024px) {
+    .brands-container {
+        width: 100%;
+    }
+  }
+  @media(max-width: 750px) {
+    .brand-block_title {
+      font-size: 17px;
+    }
+    .search-brand-input, .search-brand-input::placeholder {
+      font-size: 16px;
+      letter-spacing: -0.32px;
+    }
+    label.input-search-label {
+        padding: 4px 46px 4px 16px;
+    }
+    .search-brand-input-svg {
+      width: 42px;
+      height: 35px;
+      top: 4px;
+      right: 4px;
+    }
+    .search-brand-input-svg svg {
+        height: 16px;
+        width: auto;
+    }
+    input#search-brand-input {
+      height: 35px;
+    }
+    input#search-brand-input, input#search-brand-input::placeholder {
+        font-size: 16px;
+        letter-spacing: -0.16px;
+    }
+    .brands-wrap {
+        margin-top: 30px;
+    }
+    .search-brand_zero {
+      margin-top: -4px;
+    }
+  }
+  @media(max-width: 680px) {
+        .brand-block.active {
+        width: calc(50% - 7.5px);
+    }
+  }
+  @media(max-width: 600px) {
+    .brand-block.active {
+    width: calc(50% - 7.5px);
+      margin: 0;
+}
+  }
+  @media(max-width: 500px) {
+    p.search-brand_zero-text {
+      font-size: 13px;
+    }
+  }
+  @media(max-width: 450px) {
+        .brand-block_title {
+        font-size: 16px;
+    }
+    .brand-block.active {
+      height: 170px;
+    }
+  }
+  @media(max-width: 400px) {
+    .brands-container {
+    gap: 10px;
+}
+    .brand-block_title {
+      font-size: 14px;
+    }
+        .brand-block.active {
+        width: calc(50% - 5px);
+        margin: 0;
+        height: 150px;
+    }
+  }
+</style>
+<div class="rebranding_container">
+<div id="search-brand" class="search-brand">
+    <div class="brand-search_title block-flex-wrap block-gap-30">
+    <h1 class="h1-heading-ss">
+      Choose 
+      <span class="h1-heading-pp">your brand</span>
+    </h1>
+    <div class="brand-search_search block-flex-wrap block-gap-20">
+      <label for="search-brand-input" class="input-search-label font-description">
+        <input id="search-brand-input" class="search-brand-input body-text" type="text" placeholder="Search"/>
+        <div class="search-brand-input-svg">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24.0574 25.7071C24.448 26.0976 25.0811 26.0976 25.4716 25.7071C25.8622 25.3166 25.8622 24.6834 25.4716 24.2929L24.0574 25.7071ZM18.1659 4.73317C21.8102 8.3774 21.8102 14.2859 18.1659 17.9301L19.5801 19.3443C24.0054 14.919 24.0054 7.74423 19.5801 3.31896L18.1659 4.73317ZM18.1659 17.9301C14.5217 21.5743 8.61324 21.5743 4.96901 17.9301L3.5548 19.3443C7.98007 23.7696 15.1549 23.7696 19.5801 19.3443L18.1659 17.9301ZM4.96901 17.9301C1.32478 14.2859 1.32478 8.3774 4.96901 4.73317L3.5548 3.31896C-0.870479 7.74423 -0.870479 14.919 3.5548 19.3443L4.96901 17.9301ZM4.96901 4.73317C8.61324 1.08894 14.5217 1.08894 18.1659 4.73317L19.5801 3.31896C15.1549 -1.10632 7.98007 -1.10632 3.5548 3.31896L4.96901 4.73317ZM17.9302 19.5799L24.0574 25.7071L25.4716 24.2929L19.3444 18.1656L17.9302 19.5799Z" fill="white"/>
+          </svg>
+        </div>
+        <div class="search-brand_zero">
+          <p class="body-text">Didn’t find your brand? Don’t worry, we can help anyway!</p>
+          <a href="https://legitgrails.com/products/brands-legit-check" class="rebranding_btn-main rebranding_btn">Other Brands</a>
+        </div>
+      </label>
+      <div class="filter-buttons block-flex-wrap block-gap-10">
+          <button id="btn-all" class="brand-type standart-hover active body-text">All</button>
+          <button id="btn-luxury" class="brand-type standart-hover body-text">Luxury</button>
+          <button id="btn-other" class="brand-type standart-hover body-text">Hype</button>
+      </div>
+      <p class="legal-disclaimer tiny-text legal-disclaimer--collapsed tac">
+                <span class="legal-disclaimer-short">
+                  LegitGrails provides independent authentication and verification services based on expert analysis and industry experience.
+                </span>
+                <span class="legal-disclaimer-rest">
+                  <br><br>
+                  Our assessments and certificates represent our professional opinion only and are not official determinations issued by the respective brands. LegitGrails operates independently and is not affiliated with, endorsed, sponsored, or authorized by any brands featured, mentioned, or authenticated on this website.<br><br>
+                  All trademarks, logos, product names, and distinctive design elements remain the property of their respective owners and are used strictly for identification, descriptive, and educational purposes.<br><br>
+                  Any brand references, comparisons, or illustrative visuals on this website are provided solely for educational and informational purposes and do not imply any cooperation, partnership, or approval from the original brand owners.
+                    </span>
+                <a href="#" class="legal-disclaimer-toggle standart-hover">Expand</a>
+              </p>
+            </div>
+  </div>
+    <div class="brands-wrap">
+    <div class="brands-container  block-flex-wrap block-gap-20">
+
+                {% unless featuredCollection == blank %}
+                  {% paginate featuredCollection.products by 1000 %}
+                    {% for product in featuredCollection.products %}
+                        <div id="{{ product.id }}" class="brand-block active" data-type="{% if product.tags contains 'hype' %}hype{% endif %}{% if product.tags contains 'luxury' %}luxury{% endif %}"
+                             data-name="{{ product.title | downcase }}">
+                            <div class="brand-block_logo">
+                              <h2 class="brand-block_title">
+                                {{ product.title | remove: "Authentication Service" }}
+                                </h2>
+                            </div>
+                            <a class="brand-block__link font-description" href="{{ product.url }}">{{ product.title }}</a>
+                        </div>
+                    {% endfor %}
+                    {% endpaginate %}
+                {% endunless %}
+    </div>
+    </div>
+  
+</div>
+</div>
+<script>
+    (function () {
+        const searchField = document.getElementById('search-brand-input')
+        const brands = Array.from(document.getElementsByClassName('brand-block'))
+        const filterButtons = document.querySelector('.filter-buttons')
+        const brandContainer = document.querySelector('.brands-wrap')
+
+        let type = 'all'
+        let searchString = ''
+
+        function searchBrand(type, string) {
+            document.querySelector('.brands-wrap').classList.add('searching')
+            console.log(brandContainer)
+            brands.forEach((block) => {
+                if (string.length === 0) {
+                    if (type === block.dataset.type || type === 'all') {
+                        block.classList.add('active')
+                    } else {
+                        block.classList.remove('active')
+                    }
+                } else if (string.length > 0) {
+                    if ((type === block.dataset.type || type === 'all') && (block.dataset.name.includes(string.toLowerCase()))) {
+                        block.classList.add('active')
+                    } else {
+                        block.classList.remove('active')
+                    }
+                } else {
+                    block.classList.remove('active')
+                }
+            })
+            setTimeout(()=> {
+                document.querySelector('.brands-wrap').classList.remove('searching')
+            }, 400)
+        }
+
+        function setActiveBtn(id) {
+            let activeID = document.querySelector('.filter-buttons').querySelector('.active')
+            activeID.classList.remove('active')
+            document.getElementById(id).classList.add('active')
+        }
+
+        Array.from(filterButtons.children).forEach((button) => {
+            button.addEventListener('click', () => {
+                type = button.innerText.toLowerCase()
+                searchBrand(button.innerText.toLowerCase(), searchString)
+                setActiveBtn(button.id)
+            })
+        })
+
+        searchField.addEventListener('input', (event) => {
+            searchString = event.target.value
+            searchBrand(type, event.target.value)
+        })
+
+        searchField.addEventListener('click', () => {
+            searchField.parentElement.classList.add('focused')
+        })
+
+        searchField.addEventListener('blur', () => {
+            searchField.parentElement.classList.remove('focused')
+        })
+
+    })();
+</script>
+<!--<script>
+  !function(){let e=document.getElementById("search-brand-input"),t=Array.from(document.getElementsByClassName("brand-block")),a=document.querySelector(".filter-buttons"),s=document.querySelector(".brands-wrap"),r="all",l="";function c(e,a){document.querySelector(".brands-wrap").classList.add("searching"),console.log(s),t.forEach(t=>{0===a.length?e===t.dataset.type||"all"===e?t.classList.add("active"):t.classList.remove("active"):a.length>0&&(e===t.dataset.type||"all"===e)&&t.dataset.name.includes(a.toLowerCase())?t.classList.add("active"):t.classList.remove("active")}),setTimeout(()=>{document.querySelector(".brands-wrap").classList.remove("searching")},400)}Array.from(a.children).forEach(e=>{e.addEventListener("click",()=>{var t;r=e.innerText.toLowerCase(),c(e.innerText.toLowerCase(),l);t=e.id,document.querySelector(".filter-buttons").querySelector(".active").classList.remove("active"),document.getElementById(t).classList.add("active")})}),e.addEventListener("input",e=>{l=e.target.value,c(r,e.target.value)}),e.addEventListener("click",()=>{e.parentElement.classList.add("focused")}),e.addEventListener("blur",()=>{e.parentElement.classList.remove("focused")})}();
+</script>-->
+{% schema %}
+{
+  "name": "Brand blocks",
+  "class": "section brand-search",
+  "tag": "section",
+  "settings": [
+    {
+    "id": "collection",
+    "type": "collection",
+    "label": {
+    "en": "Collection"
+    }
+    }
+  ]
+}
+{% endschema %}

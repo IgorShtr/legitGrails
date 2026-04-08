@@ -1,0 +1,54 @@
+<style>
+    .popup-notofocation {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        padding: 15px 20px;
+        position: absolute;
+        left: 50%;
+        top: 38px;
+        transform: translateX(-50%);
+        border: 1px solid rgba(242, 79, 20, 1);
+        background-color: rgba(255, 238, 229, 1);
+        border-radius: 13px;
+    }
+    .popup-notofocation svg {
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+    @media only screen and (max-width: 750px) {
+        .popup-notofocation {
+            max-width: calc(100% - 30px);
+            width: 100%;
+        }
+    }
+</style>
+
+<div class="alert-msg" id="js-alert-msg"></div>
+
+<script>
+  function showJsAlert(message, duration = 4000) {
+    const $alert = $(".popup-notofocation");
+
+    if (!$alert.length) return;
+
+    $alert.stop(true, true);
+
+    $alert
+      .html(message)
+      .css("display", "none")
+      .fadeIn(300);
+
+    setTimeout(() => {
+      $alert.fadeOut(300, function () {
+        $alert.html("");
+      });
+    }, duration);
+  }
+
+  $(document).on("click", ".popup-notofocation svg", function () {
+    $(".popup-notofocation").stop(true, true).fadeOut(300, function () {
+      $(this).html("");
+    });
+  });
+</script>

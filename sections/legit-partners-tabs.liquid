@@ -1,0 +1,415 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" integrity="sha512-+EoPw+Fiwh6eSeRK7zwIKG2MA8i3rV/DGa3tdttQGgWyatG/SkncT53KHQaS5Jh9MNOT3dmFL0FjTY08And/Cw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% render 'section-legit-partners-tabs-styles-min' %}
+<div class="section-container">
+            <h2 class="partners_tabs-title font-title">
+                Find a suitable solution for your business
+            </h2>
+            <div class="partners_tabs-wrapp">
+                <a href="javascript:void(0)" id="tab-1" class="partners_tab active font-title">
+                    Bundle<br>Credits
+                </a>
+              <a href="javascript:void(0)" id="tab-3" class="partners_tab font-title">
+                    Authentication<br>
+                    Platform
+                </a>
+                <a href="javascript:void(0)" id="tab-2" class="partners_tab font-title">
+                    API<br>
+                    Integration
+                </a>
+                
+            </div>
+            <div class="partners_tabs-item partners_tabs-item_tab-1 active">
+              <div class="form-container">
+                <div class="product-bundles">
+                    {% for product in page.metafields.custom.bundle_products.value %}
+                        <div class="product-bundles__item">
+                            <p class="product-bundles__title font-title">{{ product.title }}</p>
+                            <a href="{{ product.metafields.custom.popup }}" class="font-description product-bundles__coverage popup">
+                              
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.9983 7.42C10.5683 7.42 10.2483 7.33 10.0383 7.15C9.8283 6.96 9.7233 6.685 9.7233 6.325C9.7233 5.955 9.8283 5.68 10.0383 5.5C10.2483 5.31 10.5683 5.215 10.9983 5.215C11.4283 5.215 11.7483 5.31 11.9583 5.5C12.1683 5.68 12.2733 5.955 12.2733 6.325C12.2733 6.685 12.1683 6.96 11.9583 7.15C11.7483 7.33 11.4283 7.42 10.9983 7.42ZM12.0183 8.5V16H9.9633V8.5H12.0183Z" fill="#161616"/>
+                            <circle cx="11" cy="11" r="10" stroke="black" stroke-width="2"/>
+                            </svg>
+
+                            Brand coverage</a>
+                            <span class="product-bundles__line"></span>
+                            {% render 'product-form-bundle', product: product  %}
+                        </div>
+                    {% endfor %}
+                </div>
+              </div>
+            </div>
+            <div class="partners_tabs-item partners_tabs-item_tab-2">
+                <p class="partners_tabs-item-text font-title">
+                    Access streamlined authentication processes, enhanced efficiency, customization, real-time updates, and secure data transmission for a seamless and reliable authentication experience.
+                </p>
+                <div class="partners_tabs-item_punkts">
+                    <div class="partners_tabs-item_punkt">
+                        <img src="{{ "scalability.webp" | asset_url }}" alt="" loading="lazy" class="partners_tabs-item_punkts-img">
+                        <p class="partners_tabs-item_punkts-title font-title">
+                            Scalability
+                        </p>
+                        <p class="partners_tabs-item_punkts-desc font-description">
+                            Seamlessly submit and manage large volumes of authentications without manual intervention
+                        </p>
+                    </div>
+                    <div class="partners_tabs-item_punkt">
+                        <img src="{{ "efficiency.webp" | asset_url }}" alt="" loading="lazy" class="partners_tabs-item_punkts-img">
+                        <p class="partners_tabs-item_punkts-title font-title">
+                            Efficiency
+                        </p>
+                        <p class="partners_tabs-item_punkts-desc font-description">
+                            Automate tasks such as submitting authentications, receiving photo requests, and retrieving outcomes
+                        </p>
+                    </div>
+                    <div class="partners_tabs-item_punkt">
+                        <img src="{{ "customization.webp" | asset_url }}" alt="" loading="lazy" class="partners_tabs-item_punkts-img">
+                        <p class="partners_tabs-item_punkts-title font-title">
+                            Customization
+                        </p>
+                        <p class="partners_tabs-item_punkts-desc font-description">
+                            Tailor your API integration to match your unique business needs, aligning with your company goals
+                        </p>
+                    </div>
+                </div>
+                <a href="https://b2b.legitgrails.com/api" class="font-title main-btn">
+                    EXPLORE API INTEGRATION
+                </a>
+            </div>
+            <div class="partners_tabs-item partners_tabs-item_tab-3">
+                <div class="partners_tabs-item_platform">
+                    <div class="partners_tabs-item_platform-text">
+                       <p class="partners_tabs-item_platform-title font-title">
+                            Market leading solution designed for advanced verification of branded items.
+                        </p>
+                        <ul class="partners_tabs-item_platform-ul">
+                            <li>
+                                <img src="{{ "login-arrow.svg" | asset_url }}" loading="lazy" alt="">
+                                <p class="font-description">Submit and track authentication orders conveniently</p>
+                            </li>
+                            <li>
+                                <img src="{{ "login-arrow.svg" | asset_url }}" loading="lazy" alt="">
+                                <p class="font-description">Dashboard analytics and easy top up process</p>
+                            </li>
+                            <li>
+                                <img src="{{ "login-arrow.svg" | asset_url }}" loading="lazy" alt="">
+                                <p class="font-description">24/7 Customer Support</p>
+                            </li>
+                          <li>
+                                <img src="{{ "login-arrow.svg" | asset_url }}" loading="lazy" alt="">
+                                <p class="font-description">Mobile and Desktop versions available</p>
+                            </li>
+                        </ul> 
+                    </div>
+                    <img src="{{ "partners_pc-mob.webp" | asset_url }}" loading="lazy" alt="" class="partners_tabs-item_platform-image">
+                </div>
+                <a href="http://b2b.legitgrails.com/" class="font-title main-btn">
+                    EXPLORE PLATFORM
+                </a>
+            </div>
+         </div>
+
+        <div class="hidden">
+          <div id="luxury_coverage">
+            <div class="coverage_form">
+              <p class="coverage_form-title">Luxury Brands</p>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">#</p>
+                <p class="coverage_form-item-desc">7 FOR ALL MANKIND</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">A</p>
+                <p class="coverage_form-item-desc">ACNE STUDIOS, ACW, ALAÏA, ALBERTA FERRETTI, ALESSANDRO DELL'ACQUA, ALEXANDER MCQUEEN, ALEXANDER WANG, ALYX, AMBUSH, AMI ALEXANDRE MATTIUSSI, AMINA MUADDI, AMIRI, ANN DEMEULEMEESTER, AQUAZZURA, ARC’TERYX, ARCTERYX VEILANCE</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">B</p>
+                <p class="coverage_form-item-desc">BALDESSARINI, BALDININI, BALENCIAGA, BALLY, BALMAIN, BAPE, BEAMS, BERLUTI, BILLIONAIRE, BLUMARINE, BOGNER, BOSS, BOTTEGA VENETA, BOY LONDON, BREGUET, BREITLING, BRIONI, BRUNELLLO CUCINELLI, BUGATTI, BURBERRY, BVLGARI</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">C</p>
+                <p class="coverage_form-item-desc">CANADA GOOSE, CARHARTT, CAROLINA HERRERA, CARTIER, CASHEMERE, CAVEMPT, CELINE, CERRUTI, CHAMPION, CHARLIE LUCIANO, CHAUMET, CHLOE, CHRISTIAN LOUBOUTIN, CHROME HEARTS, COACH, COCCINELLE, COMME DES GARCONS, COMMON PROJECTS, COPERNI, CORNELIANI</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">D</p>
+                <p class="coverage_form-item-desc">D.EXTERIOR, DELVAUX, DESCENDANT, DIANE VON FURSTENBERG, DIESEL, DIOR, DOLCE&GABBANA, DONDUP, DONNA KARAN, DOUBLE RL, DREW HOUSE, DRIES VAN NOTEN, DRKSHDW, DSQUARED2</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">E</p>
+                <p class="coverage_form-item-desc">ELIE SAAB, ELISABETTA FRANCHI, EMILIO PUCCI, ENFANTS RICHES DEPRIMES, ERMANNO SCERVINO, ESCADA, ESSENTIALS, ETRO, EVISU</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">F</p>
+                <p class="coverage_form-item-desc">FAITH CONNEXION, FENDI, FR2, FRAGMENT, FURLA</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">G</p>
+                <p class="coverage_form-item-desc">GCDS, GIUSEPPE ZANOTTI, GIVENCHY, GOLDEN GOOSE, GOSHA RUBCHINSKIY, GOYARD, GUCCI, GUIDI</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">H</p>
+                <p class="coverage_form-item-desc">HUGO BOSS, HUMAN MADE</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">I</p>
+                <p class="coverage_form-item-desc">IH NOM UH NIT, IRO, ISABEL MARANT, ISSEY MIYAKE, IWC, IZZUE</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">J</p>
+                <p class="coverage_form-item-desc">JACOB COHEN, JACQUEMUS, JAEGER LECOULTRE, JEAN PAUL GAULTIER, JIL SANDER, JIMMY CHOO, JOHN GALLIANO, JOHN RICHMOND, JOSEPH, JUST CAVALLI</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">K</p>
+                <p class="coverage_form-item-desc">KAPITAL, KARL LAGERFELD, KATE SPADE, KENZO, KHAITE, KITH, KITON</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">L</p>
+                <p class="coverage_form-item-desc">L'AUTRE CHOSE, LACOSTE, LANVIN, LEE, LEVIS, LIU JO, LOEWE, LONG CHAMP, LONGINES, LORO PIANA, LOUIS VUITTON, LOVE MOSCHINO, LUISA SPAGNOLI, LULULEMON</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">M</p>
+                <p class="coverage_form-item-desc">MACH & MACH, MADNESS, MAISON MARGIELA, MAJE, MAMMUT, MANOLO BLAHNIK, MARC JACOBS, MARCELO BURLON, MARELLA, MARINE SERRE, MARNI, MASTERMIND JAPAN, MAX MARA, MAX&CO, MCM, MICHAEL KORS, MIU MIU, MONTBLANC, MOSCHINO, MOYNAT, MSGM, MULBERRY</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">N-O</p>
+                <p class="coverage_form-item-desc">NAMACHEKO, NEEDLES, NEIGHBORHOOD, NEIL BARRETT, NINA RICCI, NOAH, OAKLEY, OSCAR DE LA RENTA</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">P</p>
+                <p class="coverage_form-item-desc">PACO RABANNE, PALACE, PALM ANGELS, PATAGONIA, PATRIZIA PEPE, PEUTEREY, PHILIPP PLEIN, PIETRO BRUNELLI, PINKO, POIVRE BLANC, POLLINI, PRADA</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">R</p>
+                <p class="coverage_form-item-desc">RAF SIMONS, REEBOK, RICK OWENS, RIMOWA, ROBERTO CAVALLI, ROGER VIVIER</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">S</p>
+                <p class="coverage_form-item-desc">SAINT LAURENT, SALOMON, SANDRO, SCHIAPARELLI, SERGIO ROSSI, SIMONETTA, SONIA RYKIEL, STUART WEITZMAN, STUSSY</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">T</p>
+                <p class="coverage_form-item-desc">THE NORTH FACE, THOM BROWNE, THRASHER, TIFFANY & CO, TIMBERLAND, TOM FORD, TORY BURCH, TRUSSARDI, TUDOR</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">U</p>
+                <p class="coverage_form-item-desc">ULYSSE NARDIN, UNDEFEATED, UNDERCOVER, UNRAVEL PROJECT</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">V</p>
+                <p class="coverage_form-item-desc">VACHERON CONSTANTIN, VALENTINO, VALEXTRA, VAN CLEEF & ARPELS, VERSACE, VERSUS, VETEMENTS, VILEBREQUIN, VISVIM, VIVIENNE WESTWOOD, VLONE</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">W-Z-#</p>
+                <p class="coverage_form-item-desc">WACKO MARIA, WE11 DONE, WTAPS, XVESSEL, YOHJI YAMAMOTO, ZEGNA, ZUHAIR MURAD</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hidden">
+          <div id="hype_coverage">
+            <div class="coverage_form">
+              <p class="coverage_form-title">Hype Brands</p>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">A</p>
+                <p class="coverage_form-item-desc">ADIDAS, AIR JORDAN, ASICS</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">C</p>
+                <p class="coverage_form-item-desc">Cactus Jack Travis Scott, CONVERSE</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">D</p>
+                <p class="coverage_form-item-desc">DR. MARTENS</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">F</p>
+                <p class="coverage_form-item-desc">FEAR OF GOD</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">H</p>
+                <p class="coverage_form-item-desc">HERON PRESTON, HOGAN</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">N</p>
+                <p class="coverage_form-item-desc">NEW BALANCE, NIKE</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">O</p>
+                <p class="coverage_form-item-desc">OFF-WHITE</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">P</p>
+                <p class="coverage_form-item-desc">Puma</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">S</p>
+                <p class="coverage_form-item-desc">STELLA MCCARTNEY, SUPREME</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">T-V</p>
+                <p class="coverage_form-item-desc">TOD'S, UGG, UNDER ARMOUR, VANS</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">Y</p>
+                <p class="coverage_form-item-desc">YEEZY</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hidden">
+          <div id="flexible_coverage">
+            <div class="coverage_form">
+              <p class="coverage_form-title">Flexible Brands</p>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">#</p>
+                <p class="coverage_form-item-desc">7 FOR ALL MANKIND</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">A</p>
+                <p class="coverage_form-item-desc">ACNE STUDIOS, ACW, ADIDAS, AIR JORDAN, ALAÏA, ALBERTA FERRETTI, ALESSANDRO DELL’ACQUA, ALEXANDER MCQUEEN, ALEXANDER WANG, ALYX, AMBUSH, AMI ALEXANDRE MATTIUSSI, AMINA MUADDI, AMIRI, ANN DEMEULEMEESTER, AQUAZZURA, ARC’TERYX, ARCTERYX VEILANCE, ASICS</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">B</p>
+                <p class="coverage_form-item-desc">BALDESSARINI, BALDININI, BALENCIAGA, BALLY, BALMAIN, BAPE, BEAMS, BERLUTI, BILLIONAIRE, BLUMARINE, BOGNER, BOSS, BOTTEGA VENETA, BOY LONDON, BREGUET, BREITLING, BRIONI, BRUNELLLO CUCINELLI, BRUNELLO CUCINELLI, BUGATTI, BURBERRY, BVLGARI</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">C</p>
+                <p class="coverage_form-item-desc">CACTUS JACK/TRAVIS SCOTT, CANADA GOOSE, CARHARTT, CAROLINA HERRERA, CARTIER, CASHEMERE, CAVEMPT, CELINE, CERRUTI, CHAMPION, CHARLIE LUCIANO, CHAUMET, CHLOE, CHRISTIAN LOUBOUTIN, CHROME HEARTS, COACH, COCCINELLE, COMME DES GARCONS, COMMON PROJECTS, CONVERSE, COPERNI, CORNELIANI</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">D</p>
+                <p class="coverage_form-item-desc">D.EXTERIOR, DELVAUX, DESCENDANT, DIANE VON FURSTENBERG, DIESEL, DIOR, DOLCE&GABBANA, DONDUP, DONNA KARAN, DOUBLE RL, DR. MARTENS, DREW HOUSE, DRIES VAN NOTEN, DRKSHDW, DSQUARED2</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">E</p>
+                <p class="coverage_form-item-desc">ELIE SAAB, ELISABETTA FRANCHI, EMILIO PUCCI,ERMANNO SCERVINO, ESCADA, ESSENTIALS, ETRO, EVISU</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">F</p>
+                <p class="coverage_form-item-desc">FAITH CONNEXION, FEAR OF GOD, FENDI, FR2, FRAGMENT, FURLA</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">G</p>
+                <p class="coverage_form-item-desc">GCDS, GIUSEPPE ZANOTTI, GIVENCHY, GOLDEN GOOSE, GOSHA RUBCHINSKIY, GOYARD, GUCCI, GUIDI</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">H</p>
+                <p class="coverage_form-item-desc">HERMÈS, HERON PRESTON, HOGAN, HUGO BOSS, HUMAN MADE</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">I</p>
+                <p class="coverage_form-item-desc">IH NOM UH NIT, IRO, ISABEL MARANT, ISSEY MIYAKE, IWC, IZZUE</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">J</p>
+                <p class="coverage_form-item-desc">JACOB COHEN, JACQUEMUS, JAEGER LECOULTRE, JEAN PAUL GAULTIER, JIL SANDER, JIMMY CHOO, JOHN GALLIANO, JOHN RICHMOND, JOSEPH, JUST CAVALLI</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">K</p>
+                <p class="coverage_form-item-desc">KAPITAL, KARL LAGERFELD, KATE SPADE, KENZO, KHAITE, KITH, KITON</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">L</p>
+                <p class="coverage_form-item-desc">L'AUTRE CHOSE, LACOSTE, LANVIN, LEE, LEVIS, LIU JO, LOEWE, LONG CHAMP, LONGINES, LORO PIANA, LOUIS VUITTON, LOVE MOSCHINO, LUISA SPAGNOLI, LULULEMON</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">M</p>
+                <p class="coverage_form-item-desc">MACH & MACH, MADNESS, MAISON MARGIELA, MAJE, MAMMUT, MANOLO BLAHNIK, MARC JACOBS, MARCELO BURLON, MARELLA, MARNI, MASTERMIND JAPAN, MAX MARA, MAX&CO, MCM, MICHAEL KORS, MIU MIU, MONTBLANC, MOSCHINO, MOYNAT, MSGM, MULBERRY</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">N</p>
+                <p class="coverage_form-item-desc">NAMACHEKO, NEEDLES, NEIGHBORHOOD, NEIL BARRETT, NEW BALANCE, NIKE, NINA RICCI, NOAH</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">O</p>
+                <p class="coverage_form-item-desc">OAKLEY, OFF-WHITE, OSCAR DE LA RENTA</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">P</p>
+                <p class="coverage_form-item-desc">PACO RABANNE, PALACE, PALM ANGELS, PATAGONIA, PATRIZIA PEPE, PEUTEREY, PIETRO BRUNELLI, PINKO, POIVRE BLANC, POLLINI, PRADA, PUMA</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">R</p>
+                <p class="coverage_form-item-desc">RAF SIMONS, REEBOK, RICK OWENS, ROBERTO CAVALLI, ROGER VIVIER</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">S</p>
+                <p class="coverage_form-item-desc">SAINT LAURENT, SALOMON, SANDRO, SCHIAPARELLI, SERGIO ROSSI, SIMONETTA, SONIA RYKIEL, STELLA MCCARTNEY, STUART WEITZMAN, STUSSY, SUPREME</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">T</p>
+                <p class="coverage_form-item-desc">THE NORTH FACE, THOM BROWNE, THRASHER, TIFFANY & CO, TIMBERLAND, TOD’S, TOM FORD, TORY BURCH, TRUSSARDI, TUDOR</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">U</p>
+                <p class="coverage_form-item-desc">UGG, ULYSSE NARDIN, UNDEFEATED, UNDER ARMOUR, UNDERCOVER, UNRAVEL PROJECT</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">V</p>
+                <p class="coverage_form-item-desc">VACHERON CONSTANTIN, VALENTINO, VALEXTRA, VAN CLEEF & ARPELS, VANS, VERSACE, VERSUS, VETEMENTS, VILEBREQUIN, VISVIM, VIVIENNE WESTWOOD, VLONE</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">W-Z-#</p>
+                <p class="coverage_form-item-desc">WACKO MARIA, WE11 DONE, WTAPS, XVESSEL, YEEZY, YOHJI YAMAMOTO, ZEGNA, ZUHAIR MURAD</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hidden">
+          <div id="watch_coverage">
+            <div class="coverage_form">
+              <p class="coverage_form-title">"High End Watches" Brands</p>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">A</p>
+                <p class="coverage_form-item-desc">Audemars Piguet</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">C</p>
+                <p class="coverage_form-item-desc">Chopard</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">H</p>
+                <p class="coverage_form-item-desc">Hublot</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">O</p>
+                <p class="coverage_form-item-desc">Omega</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">P</p>
+                <p class="coverage_form-item-desc">Patek Philippe, Piaget</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">R</p>
+                <p class="coverage_form-item-desc">Rolex</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">T</p>
+                <p class="coverage_form-item-desc">TAG Heuer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <script>
+          $(document).ready(function(){$(".section-steps--legit-steps-bundle").addClass("active")}),$(".partners_tab").on("click",function(){$(".partners_tab").removeClass("active"),$(".partners_tabs-item").removeClass("active"),$(this).addClass("active");var t=$(this).attr("id");return $(".partners_tabs-item_"+t).addClass("active"),$(".section-steps--legit-steps-bundle").removeClass("active"),!1}),$("a#tab-1").on("click",function(){$(".partners_tab").removeClass("active"),$(".partners_tabs-item").removeClass("active"),$(this).addClass("active");var t=$(this).attr("id");return $(".partners_tabs-item_"+t).addClass("active"),$(".section-steps--legit-steps-bundle").addClass("active"),!1});
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+          $('.popup').magnificPopup();
+        </script>
+                              
+{% schema %}
+  {
+    "name": "Legit partners tabs",
+    "class": "partners_tabs",
+    "tag": "section",
+    "presets": [
+    {
+      "name": "Legit partners tabs"
+    }
+  ]
+  }
+{% endschema %}

@@ -1,0 +1,101 @@
+{% render 'section-legit-page-partners-our-partners-styles-min' %}
+<div class="new-container">
+            <div class="partnets-logo_wrapp">
+                <h2 class="partnets-logo_title font-title second-title-style animation-title" data-animate>
+                        {{ section.settings.title }}
+                    </h2>
+                    {% if section.settings.description != blank %}
+                    <div class="partnets-logo_desc common-desc-style font-description">
+                        <p>{{ section.settings.description }}</p>
+                    </div>
+                    {% endif %}
+                    
+              <div class="partnets-logo_items">
+                <div class="partnets-logo_item">
+                  <a href="https://www.facebook.com/TheTrunkLadies/" target="_blank"><img src="{{ "our-partners_the-trunk-ladies.svg" | asset_url }}" loading="lazy" alt=""></a>
+                </div>
+                <div class="partnets-logo_item">
+                  <a href="https://virtualiconvintage.com/" target="_blank"><img src="{{ "our-partners_virual-icon-vintage.svg" | asset_url }}" loading="lazy" alt=""></a>
+                </div>
+                <div class="partnets-logo_item">
+                  <a href="https://www.goodwillsew.com/" target="_blank"><img src="{{ "our-partners_goodwill.svg" | asset_url }}" loading="lazy" alt=""></a>
+                </div>
+                <div class="partnets-logo_item">
+                  <a href="https://ldj.com/" target="_blank"><img src="{{ "our-partners_luxe-de-jour.svg" | asset_url }}" loading="lazy" alt=""></a>
+                </div>
+                <div class="partnets-logo_item">
+                  <a href="https://thenold.com/" target="_blank"><img src="{{ "our-partners_nold.png" | asset_url }}" loading="lazy" alt=""></a>
+                </div>
+                <div class="partnets-logo_item">
+                  <a href="https://www.luxclusif.com/" target="_blank"><img src="{{ "our-partners_luxclusif.png" | asset_url }}" loading="lazy" alt=""></a>
+                </div>
+                <div class="partnets-logo_item">
+                  <a href="https://swop.net.au/" target="_blank"><img src="{{ "our-partners_swop.svg" | asset_url }}" loading="lazy" alt=""></a>
+                </div>
+                <div class="partnets-logo_item">
+                  <a href="https://www.narts.org/i4a/pages/index.cfm?pageid=1" target="_blank"><img src="{{ "our-partners_narts.svg" | asset_url }}" loading="lazy" alt=""></a>
+                </div>
+                <div class="partnets-logo_item">
+                  <a href="https://handbagspa.de/" target="_blank"><img src="{{ "our-partners_handbag-spa-shop.svg" | asset_url }}" loading="lazy" alt=""></a>
+                </div>
+                <div class="partnets-logo_item">
+                  <a href="https://www.style-encore.com/home" target="_blank"><img src="{{ "our-partners_style-encore.svg" | asset_url }}" loading="lazy" alt=""></a>
+                </div>
+                <div class="partnets-logo_item">
+                  <a href="https://www.rila.org/" target="_blank"><img src="{{ "our-partners_real-inductry-leaders-association.png" | asset_url }}" loading="lazy" alt=""></a>
+                </div>
+                <div class="partnets-logo_item">
+                  <a href="https://lesrichards.com/" target="_blank"><img src="{{ "our-partners_lr-2.svg" | asset_url }}" loading="lazy" alt=""></a>
+                </div>
+              </div>
+
+
+              {% if section.settings.button_label != blank %}
+                      <a href="{{ section.settings.button_link }}" class="main-btn font-title">
+                          {{ section.settings.button_label }}
+                      </a>
+                    {% endif %}
+            </div>
+        </div>
+
+{% schema %}
+{
+"name": {
+"en": "B2B Partners"
+},
+"class" : "partners-logos",
+"settings": [
+{
+"type": "text",
+"id": "title",
+"label": {
+"en": "Heading"
+},
+"default": {
+"en": "Meet Our Partners"
+}
+},
+{
+"type": "text",
+"id": "description",
+"label": {
+"en": "Description"
+}
+},
+{
+"type": "text",
+"id": "button_label",
+"label": {
+"en": "Button label"
+}
+},
+{
+"type": "url",
+"id": "button_link",
+"label": {
+"en": "Button link"
+}
+}
+]
+}
+{% endschema %}

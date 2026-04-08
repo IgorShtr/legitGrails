@@ -1,0 +1,172 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+  .account-loyalty_slider-wrapp {
+    width: 100%;
+    position: relative;
+  }
+  .account-loyalty_card {
+    width: calc(25% - 11.25px);
+    display: flex!important;
+    height: 320px;
+    align-items: flex-start;
+  }
+  .account-loyalty_card img {
+    height: 100px;
+    width: auto;
+    margin: 0;
+  }
+  .account-loyalty ul.slick-dots {
+    padding: 0;
+    margin: 20px 0 0 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+}
+  .account-loyalty ul.slick-dots li {
+    height: max-content;
+    display: block;
+}
+  .account-loyalty ul.slick-dots button {
+    font-size: 0px;
+    margin: 0;
+    height: 15px;
+    width: 15px;
+    background: #3C1F1B;
+    border-radius: 50%;
+    opacity: 0.37;
+    display: block;
+    transition: .3s;
+}
+  .account-loyalty ul.slick-dots button:hover {
+    opacity: .85
+  }
+  .account-loyalty ul.slick-dots button:active {
+    opacity: .7
+  }
+  .account-loyalty ul.slick-dots li  {
+    list-style-type: none;
+  }
+  .account-loyalty ul.slick-dots li:nth-child(1).slick-active button {
+    background: #F9741F;
+}
+.account-loyalty ul.slick-dots li:nth-child(2).slick-active button {
+    background: #389E53;
+}
+.account-loyalty ul.slick-dots li:nth-child(3).slick-active button {
+    background: #4C8BEF;
+}
+.account-loyalty ul.slick-dots li:nth-child(4).slick-active button {
+    background: #A85AE2;
+}
+ .account-loyalty ul.slick-dots .slick-active button {
+    opacity: 1;
+}
+ .account-loyalty .slick-slide {
+    margin: 0 10px;
+  }
+  @media(max-width: 1450px) {
+    .account-loyalty_card {
+      width: calc(33.333334% - 10px);
+    }
+  }
+  @media(max-width: 1250px) {
+    .account-loyalty_card {
+      width: calc(50% - 7.5px);
+    }
+    .account-loyalty_card {
+      height: max-content;
+    }
+  }
+  @media(max-width: 750px) {
+    .account-loyalty_card {
+      box-shadow: none;
+    }
+  }
+</style>
+
+<div class="rebranding_container block-flex-wrap block-flex-center-center block-gap-50">
+  <div class="block-flex-wrap block-flex-center-center block-gap-15">
+    <h2 class="h2-heading-ss">
+      Get <span class="h2-heading-pp tac w-100">Loyalty Rewards</span>
+    </h2>
+    <p class="body-text tac w-100">Our loyalty program rewards you as you grow—unlock exclusive discounts and perks just by using LegitGrails</p>
+  </div>
+  <div class="account-loyalty_slider-wrapp">
+    <div class="account-loyalty_slider block-flex-wrap block-flex-center-center block-gap-15">
+      <div class="account-loyalty_card card-with-shadow block-flex-wrap block-flex-center-center block-gap-20">
+        <img src="{{ "account_loyalty-insider.webp" | asset_url }}">
+        <p class="caption w-100 tac">5-50 orders</p>
+        <div class="block-flex-wrap block-flex-center-center block-gap-15">
+        <h3 class="h3-heading-pp w-100 tac">Insider</h3>
+        <p class="body-text w-100 tac">Up to $35 worth of credits</p>
+        </div>
+      </div>
+      <div class="account-loyalty_card card-with-shadow block-flex-wrap block-flex-center-center block-gap-20">
+        <img src="{{ "account_loyalty-pro.webp" | asset_url }}">
+        <p class="caption w-100 tac">50-200 orders</p>
+        <div class="block-flex-wrap block-flex-center-center block-gap-15">
+        <h3 class="h3-heading-pp w-100 tac">Pro</h3>
+        <p class="body-text w-100 tac">Up to $240 worth of credits</p>
+        </div>
+      </div>
+      <div class="account-loyalty_card card-with-shadow block-flex-wrap block-flex-center-center block-gap-20">
+        <img src="{{ "account_loyalty-elite.webp" | asset_url }}">
+        <p class="caption w-100 tac">200-700 orders</p>
+        <div class="block-flex-wrap block-flex-center-center block-gap-15">
+        <h3 class="h3-heading-pp w-100 tac">Elite</h3>
+        <p class="body-text w-100 tac">
+         -5% on balance top up<br>
+         Up to $1015 worth of credits
+        </p>
+        </div>
+      </div>
+      <div class="account-loyalty_card card-with-shadow block-flex-wrap block-flex-center-center block-gap-20">
+        <img src="{{ "account_loyalty-legend.webp" | asset_url }}">
+        <p class="caption w-100 tac">700+ orders</p>
+        <div class="block-flex-wrap block-flex-center-center block-gap-15">
+        <h3 class="h3-heading-pp w-100 tac">Legend</h3>
+        <p class="body-text w-100 tac">
+          -10% on balance top up<br>
+          Up to $4020 worth of credits
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+function applyResponsiveClasses() {
+      const screenWidth = window.innerWidth;
+      const box1 = document.querySelector('.account-loyalty_slider');
+
+      if (screenWidth < 750) {
+        box1.classList.add('account-loyalty_slider-active');
+      } else {
+        box1.classList.remove('account-loyalty_slider-active');
+      }
+    }
+    applyResponsiveClasses();
+    window.addEventListener('resize', applyResponsiveClasses);
+
+  $('.account-loyalty_slider-active').slick({
+  dots: true,
+  infinite: true,
+  speed: 300,
+  arrows: false,
+  slidesToShow: 1,
+  slidesToScroll: 1
+});
+</script>
+
+{% schema %}
+  {
+    "name": "Account Loyalty",
+    "class": "account-loyalty rebranding-section-bottom",
+    "settings": []
+  }
+{% endschema %}

@@ -1,0 +1,299 @@
+{% if template contains 'article' %}
+    {%- assign product = all_products[article.metafields.custom.product] -%}
+{% elsif template contains 'page' %}
+    {%- assign product = all_products[page.metafields.custom.product] -%}
+{% elsif template contains 'blogs' %}
+    {%- assign product = all_products[blogs.metafields.custom.product] -%}
+{% endif %}
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- assign current_variant_sale = false -%}
+{% if current_variant.compare_at_price > current_variant.price %}
+    {%- assign current_variant_sale = true -%}
+{% endif %}
+{% assign featured_media = current_variant.featured_media | default: product.featured_media %}
+{% assign items = product.metafields.custom.form_settings.value %}
+{% render 'section-product-form-blog-styles-min' %}
+{% render 'uploadcare-styles' %}
+<div id="product-card-container" {% if template contains 'article' %} style="display: none" {% endif %}>
+    <div class="product-card">
+      <div class="guides-block">
+<div class="guides-block_item">
+<p class="guides-block_item-title">Verify any branded item in 3&nbsp;simple steps</p>
+<div class="guides-block_item-steps">
+<div class="guides-block_item-step"><span> <img src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/guide-block_round.svg?v=1702460484" loading="lazy" alt=""> </span>
+<p>Choose response time &amp; upload photos</p>
+</div>
+<div class="guides-block_item-step"><span> <img src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/guide-block_round.svg?v=1702460484" loading="lazy" alt=""> </span>
+<p>Wait for AI & Human Experts decision</p>
+</div>
+<div class="guides-block_item-step"><span> <img src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/guide-block_checkmark.svg?v=1702460484" loading="lazy" alt=""> </span>
+<p>Get the verdict and personal certificate</p>
+</div>
+</div>
+</div>
+<div class="guides-block_item guides-block_item-product">
+        <p class="product_card-title font-title" itemprop="name">{{ product.title }}</p>
+        {% unless article.tags contains "remove-price" %}
+          <p class="font-description product_card-price{% if current_variant_sale %} product__price--sale{% endif %}" aria-live="polite">
+            <span class="product__current-price">{{ current_variant.price | money }}</span>
+            </p>
+          {% endunless %}
+        
+
+        {% form 'product', product, class: 'product-form' %}
+            {% unless current_variant.available %}
+                {% assign button_text = 'products.product.sold_out' | t %}
+            {% else %}
+                {% assign button_text = 'products.product.add_to_cart' | t %}
+            {% endunless %}
+            {% if template.handle contains 'product' %}
+                {% unless product.has_only_default_variant %}
+                    {% for option in product.options_with_values %}
+                        <div class="product-form__item supports-js">
+                            {% if option.name != 'default' %}
+                                <label class="font-description single-option-selector__label{% unless section.settings.show_variant_labels %} single-option-selector__label--hidden{% endunless %}"
+                                       for="{{ option.name | escape }}">{{ option.name }}</label>
+                            {% endif %}
+                            <select id="{{ option.name | escape }}" name="{{ option.name | escape }}"
+                                    class="single-option-selector" data-option-input>
+                                {% for value in option.values %}
+                                    {% assign safeValue = value | replace: '"', '&quot;' %}
+                                    <option value="{{ safeValue }}"
+                                            {% if option.selected_value == value %}selected{% endif %}>{{ value }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    {% endfor %}
+                {% endunless %}
+                <label>
+                    <select name="id" class="product-form__master-select supports-no-js" data-master-select>
+                        {% for variant in product.variants %}
+                            {% if variant.available %}
+                                <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %}
+                                        data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }}
+                                    - {{ variant.price | money_with_currency }}</option>
+                            {% else %}
+                                <option disabled="disabled">
+                                    {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                                </option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </label>
+
+            {% endif %}
+
+            <div class="variant-list ">
+                {% for product_option in product.options_with_values %}
+                    <p class="pro-option-name product_card-answear font-description">Results in:</p>
+                {% endfor %}
+                <div class="product-variants infiniteoptions product_card-radio">
+                    {% for variant in product.variants %}
+                        {% capture random %}{{ 'now' | date: "%09N" }}{% endcapture %}
+                        <div class="radio-options font-description">
+                            {% if variant.available %}
+                                <label class="radio radio-wrap" for="radio_{{ random }}">
+                                    {{ variant.title | escape }}
+                                    {% if variant.price < variant.compare_at_price %}
+                                        <del>{{ variant.compare_at_price | money }}</del>{% endif %}
+                                    <input type="radio" name="id" id="radio_{{ random }}" value="{{ variant.id }}"
+                                           data-price="{{ variant.price | money }}"
+                                           data-variant-title="{{ variant.title }}"
+                                           {% if forloop.first %}checked="true"{% endif %} class="radio-option"/>
+                                    <div class="checkmark"></div>
+                                </label>
+
+                            {% else %}
+                                <label for="radio_{{ random }}" class="radio">
+                                    {{ variant.title }} is temporarily unavailable
+                                    <input type="radio" name="id" value="{{ variant.id }}" id="radio_{{ random }}"
+                                           disabled="disabled"/>
+                                    <div class="checkmark"></div>
+                                </label>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="product_card-btns">
+                <div class="redirect-checkout-btn">
+                    <input type="hidden" name="redirect" id="redirect-addtocart-btn" data-productid="{{ product.id }}"
+                           class="product-select" value="{{ product.selected_or_first_available_variant.id }}"
+                           data-variant-title="{{ product.selected_or_first_available_variant.title }}"/>
+                    <input type="submit" value="Add To Cart" class="hidden product_card-cart"/>
+                    <div class="btn-submit-container">
+                        <div class="cart-notification"></div>
+                        <button id="cart___submit" class="font-title custom-cart-button">Add to cart</button>
+                    </div>
+                </div>
+                <p class="product__notification text-small text-center font-description" data-cart-notification></p>
+            </div>
+            <div class="uploadcare-attributes hidden"></div>
+        {% endform %}
+        <div class="uploadcare">
+            <p class="authenticate-btn font-title" style="">Upload Photos</p>
+        </div>
+          <!--{% if product.tags contains 'partner-link-guide' %}
+           <a class="legit-link partner-link" href="https://legitgrails.com/pages/partner-with-legitgrails">aneed multiple authentications?</a>
+          {% endif %}-->
+  </div>
+<div class="guides-block_item">
+<p class="guides-block_item-title">Authenticate your branded items with Experts & AI</p>
+<div class="guides-block_item-advantages">
+<div class="guides-block_item-advantages-reviews">
+        <div class="guides-block_item-advantages-reviews-stars">
+          <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.9895 1L14.0762 7.25342L20.979 8.26236L15.9842 13.1272L17.163 20L10.9895 16.7534L4.81598 20L5.99474 13.1272L1 8.26236L7.90273 7.25342L10.9895 1Z" fill="#CBAD73" stroke="#CBAD73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.9895 1L14.0762 7.25342L20.979 8.26236L15.9842 13.1272L17.163 20L10.9895 16.7534L4.81598 20L5.99474 13.1272L1 8.26236L7.90273 7.25342L10.9895 1Z" fill="#CBAD73" stroke="#CBAD73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.9895 1L14.0762 7.25342L20.979 8.26236L15.9842 13.1272L17.163 20L10.9895 16.7534L4.81598 20L5.99474 13.1272L1 8.26236L7.90273 7.25342L10.9895 1Z" fill="#CBAD73" stroke="#CBAD73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.9895 1L14.0762 7.25342L20.979 8.26236L15.9842 13.1272L17.163 20L10.9895 16.7534L4.81598 20L5.99474 13.1272L1 8.26236L7.90273 7.25342L10.9895 1Z" fill="#CBAD73" stroke="#CBAD73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.9895 1L14.0762 7.25342L20.979 8.26236L15.9842 13.1272L17.163 20L10.9895 16.7534L4.81598 20L5.99474 13.1272L1 8.26236L7.90273 7.25342L10.9895 1Z" fill="#CBAD73" stroke="#CBAD73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p class="guides-block_item-advantages-reviews-desc">rated 4.7/5.0 by more than 100,000 customers</p>
+        <div class="guides-block_item-advantages-reviews-imgs">
+          <div class="guides-block_item-advantages-reviews-img">
+            <img src="//legitgrails.com/cdn/shop/t/168/assets/reviews_klients-1.webp?v=74878100532075713011746166976">
+          </div>
+          <div class="guides-block_item-advantages-reviews-img">
+            <img src="{{ "reviews_klients-2.webp" | asset_url }}" loading="lazy">
+          </div>
+          <div class="guides-block_item-advantages-reviews-img">
+            <img src="{{ "reviews_klients-3.webp" | asset_url }}" loading="lazy">
+          </div>
+          <div class="guides-block_item-advantages-reviews-img">
+            <img src="{{ "reviews_klients-4.webp" | asset_url }}" loading="lazy">
+          </div>
+          <div class="guides-block_item-advantages-reviews-img">
+            <img src="{{ "reviews_klients-5.webp" | asset_url }}" loading="lazy">
+          </div>
+        </div>
+      </div>
+<div class="guides-block_item-advantages-featured">
+<p class="guides-block_item-advantages-featured-desc">featured by</p>
+<div class="guides-block_item-advantages-featured-images"><img src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/guide-block_rapaport.svg?v=1702460484" loading="lazy" alt=""> <img src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/guide-block_insider.svg?v=1702460484" loading="lazy" alt=""> <img src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/guide-block_forbes.svg?v=1702460484" loading="lazy" alt=""> <img src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/guide-block_nice.svg?v=1702460484" loading="lazy" alt=""></div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </div>
+<div class="hidden" id="product-data">{{ product.id }}</div>
+
+{% render 'uploadcare-fields-rebranding', product: product  %}
+
+<!--<script>
+    $(document).ready(function () {
+        $(".blok-4-wrapper").prev("p").css( "display", "none" );
+        $(".blok-4-wrapper").next("p").css( "display", "none" );
+        $(".blok-3-wrapper").prev("p").css( "display", "none" );
+        $(".blok-3-wrapper").next("p").css( "display", "none" );
+        $(".blok-2-wrapper").prev("p").css( "display", "none" );
+        $(".blok-2-wrapper").next("p").css( "display", "none" );
+        $(".blok-1-wrapper").prev("p").css( "display", "none" );
+        $(".blok-1-wrapper").next("p").css( "display", "none" );
+      
+          $('.product-card__1').children('.guides-block').children('.guides-block_item-product').children('form').children('.variant-list').children('.product-variants').children('.radio-options').each(function(i){
+            var inp = $(this).find('input');
+            var lbl = $(this).find('label');
+            var inpId = inp.attr('id');
+            var lblFor = lbl.attr('for');
+
+            inp.attr('id', inpId+'_1');
+            lbl.attr('for', lblFor+'_1');
+
+          });
+
+      
+        if ($('.template-page').length) {
+            $('#product_form_{{ product.id }} ').on('change', function () {
+                let price = $('input:checked').attr('data-price')
+                $('.product__current-price').html(price)
+            });
+        } else {
+            $('.product-form').on('change', function (event) {
+                console.log(this)
+                let currentClass = '.' + event.target.form.closest('.product-card').classList[1]
+                let price = $(currentClass).find('input.radio-option:checked').attr('data-price')
+                $(currentClass).find('.product__current-price').html(price)
+            });
+        }
+
+        const messages = {
+            empty: 'Please upload photos before purchasing',
+            wait: 'Adding...',
+            thanks: 'Thank You!'
+        }
+
+        $('.custom-cart-button').on('click', function (event) {
+            event.preventDefault()
+            let currentClass = '.' + event.target.form.parentElement.classList[1]
+
+            let images
+            if ($('.uploadcare-attributes').length) {
+                images = $('.uploadcare-attributes').children()
+            } else {
+                images = $('.uploadkit-attribute-container').children()
+            }
+            let properties = {}
+
+
+            if (images.length) {
+                $('.custom-cart-button').html(messages.wait)
+
+                sessionStorage.removeItem('uploadcare_{{ product.id }}')
+
+                for (item of images) {
+                    // Remove 'property' from item key to exclude cart properties from checkout end cart
+                    let propertyName = item.name.substring(
+                        item.name.indexOf("[") + 1,
+                        item.name.lastIndexOf("]")
+                    );
+                    properties[propertyName] = item.value;
+
+                }
+
+                let formData = {
+                    items: [{
+                        'id': $(currentClass).find('input.radio-option:checked').val(),
+                        'quantity': 1,
+                        'properties': properties,
+                    }]
+                };
+
+                let form = $('#product_form_{{ product.id }}');
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/cart/add.js',
+                    dataType: 'json',
+                    data: JSON.stringify(formData),
+                    contentType: 'application/json',
+                    processData: false,
+                    success: function () {
+                        $(currentClass).find('.custom-cart-button').html(messages.thanks)
+                        document.location.href = '/cart/checkout';
+                        //document.location.href = '/cart/';
+                    }
+                });
+            } else {
+                $('.cart-notification').html(messages.empty)
+                setTimeout(function () {
+                    $('.cart-notification').html('')
+                }, 2000)
+            }
+        });
+    });
+</script>-->
+
+<script>
+  $(document).ready(function(){$(".blok-4-wrapper").prev("p").css("display","none"),$(".blok-4-wrapper").next("p").css("display","none"),$(".blok-3-wrapper").prev("p").css("display","none"),$(".blok-3-wrapper").next("p").css("display","none"),$(".blok-2-wrapper").prev("p").css("display","none"),$(".blok-2-wrapper").next("p").css("display","none"),$(".blok-1-wrapper").prev("p").css("display","none"),$(".blok-1-wrapper").next("p").css("display","none"),$(".product-card__1").children(".guides-block").children(".guides-block_item-product").children("form").children(".variant-list").children(".product-variants").children(".radio-options").each(function(t){var e=$(this).find("input"),r=$(this).find("label"),n=e.attr("id"),a=r.attr("for");e.attr("id",n+"_1"),r.attr("for",a+"_1")}),$(".template-page").length?$("#product_form_{{ product.id }} ").on("change",function(){let t=$("input:checked").attr("data-price");$(".product__current-price").html(t)}):$(".product-form").on("change",function(t){console.log(this);let e="."+t.target.form.closest(".product-card").classList[1],r=$(e).find("input.radio-option:checked").attr("data-price");$(e).find(".product__current-price").html(r)});let t={empty:"Please upload photos before purchasing",wait:"Adding...",thanks:"Thank You!"};$(".custom-cart-button").on("click",function(e){e.preventDefault();let r="."+e.target.form.parentElement.classList[1],n;n=$(".uploadcare-attributes").length?$(".uploadcare-attributes").children():$(".uploadkit-attribute-container").children();let a={};if(n.length){for(item of($(".custom-cart-button").html(t.wait),sessionStorage.removeItem("uploadcare_{{ product.id }}"),n))a[item.name.substring(item.name.indexOf("[")+1,item.name.lastIndexOf("]"))]=item.value;let o={items:[{id:$(r).find("input.radio-option:checked").val(),quantity:1,properties:a}]};$("#product_form_{{ product.id }}"),$.ajax({type:"POST",url:"/cart/add.js",dataType:"json",data:JSON.stringify(o),contentType:"application/json",processData:!1,success:function(){$(r).find(".custom-cart-button").html(t.thanks),document.location.href="/cart/checkout"}})}else $(".cart-notification").html(t.empty),setTimeout(function(){$(".cart-notification").html("")},2e3)})});
+</script>

@@ -1,0 +1,86 @@
+{% render 'section-cookie-styles-min' %}
+<div class="section-container">
+            <h1>{{ section.settings.title }}</h1>
+                        {%- if section.blocks.size > 0 -%}
+                                {%- for block in section.blocks -%}
+                                            {%- if block.settings.title != blank -%}
+                                                <h2 class="font-title">
+                                                    {{ block.settings.title | escape }}
+                                                </h2>
+                                              {%- endif -%}
+                                              {%- if block.settings.text != blank -%}
+                                                <p class="font-description">
+                                                    {{ block.settings.text }}
+                                                </p>
+                                                {%- endif -%}      
+                                                  {%- if block.settings.dropdown != blank -%}
+                                                    <div class="cookie-box">
+                                                    {{ block.settings.dropdown }}
+                                                  </div>
+                                                  {%- endif -%}
+                                {%- endfor -%}
+                        {%- endif -%}
+</div>
+
+
+<script>
+$(".cookie-box").on("click",function(){$(this).toggleClass("active")});
+</script>
+
+{% schema %}
+  {
+  "name": "Cookie Policy",
+  "class": "cookie-policy",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Title",
+      "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Block content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Column",
+          "label": "Block title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+          "label": "Block text"
+        },
+        {
+          "type": "richtext",
+          "id": "dropdown",
+          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+          "label": "Block dropdown"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cookie Blocks",
+      "blocks": [
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

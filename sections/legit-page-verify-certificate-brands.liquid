@@ -1,0 +1,314 @@
+<style>
+    #shopify-section-legit-page-home-brands .featured-on__image{max-width:200px;max-height:unset}.featured-on{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:space-between;gap:40px 2%;margin-bottom:23px}.featured-on__flex{display:flex;gap:3px 0;flex-direction:column;justify-content:center;position:relative;cursor:pointer}.featured-on__flex .featured-on__text .icon{border:none;width:33px;height:33px;margin-bottom:5px}.featured-on__flex:hover .legit-check{text-decoration:underline}.featured-on__text{display:flex;flex-direction:column;align-items:center;justify-content:center}.featured-on__link{position:absolute;display:block;top:0;bottom:0;left:0;right:0;z-index:10}.featured-on__text p{font-size:15px;display:none}.featured-on__image{max-width:123px;max-height:41px}.featured-on-section{background-position:center;background-repeat:no-repeat;background-size:cover;display:flex;flex-direction:column;padding:50px 15px}.featured-on-section__heading{display:block;width:100%;margin-bottom:50px}.gallery__view-all-wrap{display:flex;justify-content:center;margin-top:80px}.featured-on__secondary-text{text-align:center}@media (min-width:768px){.featured-on{gap:65px 3%}.featured-on__flex .featured-on__text .icon{width:55px;height:55px}}@media (min-width:1024px){.section-title{font-size:31px;line-height:36px;margin-bottom:23px}.featured-on__flex{flex-basis:45%;flex-basis:10%}.featured-on{gap:100px 2%}.featured-on-section{padding:109px 70px}.featured-on__flex .featured-on__text .icon{margin-bottom:36px}.featured-on__text p{font-size:19px;margin:0;display:none}.featured-on__image{max-width:100%;max-height:none}}@media (max-width:767px){.featured-on__flex.featured-on__15-column:last-child{display:none}}
+</style>
+
+<div class="featured-on-section featured-on-section--{{ section.id }}"
+     style="background-color:{{ section.settings.background_color }}; background-image: url({{ section.settings.background | img_url: 'master' }})"
+     data-section-id="{{ section.id }}" data-section-type="logo-gallery">
+    {% if section.settings.title != blank %}
+        <p class="featured-on__heading section-header__title section-title font-title text-center"
+           style="color: {{ section.settings.overlay_text }} ">{{ section.settings.title }}</p>
+    {% endif %}
+    <div class="featured-on"
+         style="justify-content: {{ section.settings.items_alignment }}">
+        {% for block in section.blocks %}
+            <div class="featured-on__flex featured-on__{{ section.blocks.size }}-column">
+                <div class="featured-on__text">
+                    {% if block.settings.image != blank %}
+                        {%- assign img_url = block.settings.image | img_url: 'master' %}
+                        <img src="{{ img_url }}" alt="{{ block.settings.check_label }}" loading="lazy"
+                             class="featured-on__image"/>
+                    {% endif %}
+                    {% if block.settings.cta_label != blank %}
+                        <p class="h2 text-title featured-on__caption legit-check font-title"
+                           style="color: {{ section.settings.overlay_text }}">{{ block.settings.cta_label | escape }}</p>
+                    {% endif %}
+                    {% if block.settings.check_label != blank %}
+                        <p class="text-white font-description">{{ block.settings.check_label }}</p>
+                    {% endif %}
+                </div>
+                {% if block.settings.link != blank %}
+                    <a href="{{ block.settings.link }}"
+                       class="font-title featured-on__link"></a>
+                {% endif %}
+            </div>
+
+        {% endfor %}
+    </div>
+    {% if section.settings.secondary_text != blank %}
+        <p class="featured-on__secondary-text font-description"
+           style="color: {{ section.settings.overlay_text }} ">{{ section.settings.secondary_text }}</p>
+    {% endif %}
+    {% if section.settings.button_text != blank %}
+        <div class="gallery__view-all-wrap">
+            <a href="{{ section.settings.section_link }}"
+               class="font-title main-btn">
+                {{ section.settings.button_text }}
+            </a>
+        </div>
+    {% endif %}
+</div>
+{% if section.blocks.size == 0 %}
+    {% include 'no-blocks' %}
+{% endif %}
+
+{% schema %}
+{
+  "name": {
+    "en": "Legit featured-on"
+  },
+  "class": "index-section index-section--gallery",
+  "max_blocks": 15,
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": {
+        "en": "Background Color"
+      },
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "overlay_text",
+      "label": {
+        "en": "Text color"
+      },
+      "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "background",
+      "label": {
+        "en": "Background"
+      }
+    },
+    {
+      "type": "select",
+      "id": "overlay_opacity",
+      "label": {
+        "en": "Opacity"
+      },
+      "default": "0.3",
+      "options": [
+        {
+          "label": {
+            "en": "100%"
+          },
+          "value": "1"
+        },
+        {
+          "label": {
+            "en": "95%"
+          },
+          "value": "0.95"
+        },
+        {
+          "label": {
+            "en": "90%"
+          },
+          "value": "0.9"
+        },
+        {
+          "label": {
+            "en": "85%"
+          },
+          "value": "0.85"
+        },
+        {
+          "label": {
+            "en": "80%"
+          },
+          "value": "0.8"
+        },
+        {
+          "label": {
+            "en": "75%"
+          },
+          "value": "0.75"
+        },
+        {
+          "label": {
+            "en": "70%"
+          },
+          "value": "0.7"
+        },
+        {
+          "label": {
+            "en": "65%"
+          },
+          "value": "0.65"
+        },
+        {
+          "label": {
+            "en": "60%"
+          },
+          "value": "0.6"
+        },
+        {
+          "label": {
+            "en": "55%"
+          },
+          "value": "0.55"
+        },
+        {
+          "label": {
+            "en": "50%"
+          },
+          "value": "0.5"
+        },
+        {
+          "label": {
+            "en": "45%"
+          },
+          "value": "0.45"
+        },
+        {
+          "label": {
+            "en": "40%"
+          },
+          "value": "0.4"
+        },
+        {
+          "label": {
+            "en": "35%"
+          },
+          "value": "0.35"
+        },
+        {
+          "label": {
+            "en": "30%"
+          },
+          "value": "0.3"
+        },
+        {
+          "label": {
+            "en": "25%"
+          },
+          "value": "0.25"
+        },
+        {
+          "label": {
+            "en": "20%"
+          },
+          "value": "0.2"
+        },
+        {
+          "label": {
+            "en": "0%"
+          },
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "items_alignment",
+      "label": {
+        "en": "Alignment"
+      },
+      "default": "space-between",
+      "options": [
+        {
+          "label": {
+            "en": "Space between"
+          },
+          "value": "space-between"
+        },
+        {
+          "label": {
+            "en": "Space around"
+          },
+          "value": "space-around"
+        },
+        {
+          "label": {
+            "en": "Center"
+          },
+          "value": "center"
+        },
+        {
+          "label": {
+            "en": "Left"
+          },
+          "value": "start"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": {
+        "en": "Title"
+      }
+    },
+    {
+      "type": "text",
+      "id": "secondary_text",
+      "label": {
+        "en": "Secondary text"
+      }
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": {
+        "en": "Button text"
+      }
+    },
+    {
+      "type": "url",
+      "id": "section-link",
+      "label": {
+        "en": "Link"
+      },
+      "info": {
+        "en": "Optional"
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": {
+        "en": "Image"
+      },
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": {
+            "en": "Image"
+          }
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": {
+            "en": "Link"
+          }
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "en": "Legit featured on"
+      },
+      "category": {
+        "en": "Image"
+      },
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

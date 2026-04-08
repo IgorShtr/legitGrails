@@ -1,0 +1,569 @@
+[
+  {
+    "name": "sneakers",
+    "title": "Sneakers",
+    "types": [
+      {
+        "name": "overall-picture",
+        "title": "Overall picture",
+        "required": "true",
+        "image": "sneakers_overall.svg",
+        "success_image": "sneakers_overall-success.svg"
+      },
+      {
+        "name": "size-tag",
+        "title": "Size tag",
+        "required": "true",
+        "image": "sneakers_size_printing.svg",
+        "success_image": "sneakers_size_printing-success.svg"
+      },
+      {
+        "name": "insole-front-side",
+        "title": "Insole (front side)",
+        "required": "true",
+        "image": "shoes_insole_front.svg",
+        "success_image": "shoes_insole_front-success.svg"
+      },
+      {
+        "name": "insole-back-side",
+        "title": "Insole (back side)",
+        "required": "true",
+        "image": "shoes_insole_back.svg",
+        "success_image": "shoes_insole_back-success.svg"
+      },
+      {
+        "name": "inside-stitching",
+        "title": "Inside Stitching",
+        "required": "true",
+        "image": "shoes_inside_stitching.svg",
+        "success_image": "shoes_inside_stitching-success.svg"
+      },
+      {
+        "name": "outsole",
+        "title": "Outsole",
+        "required": "false",
+        "image": "shoes_outsole_logo.svg",
+        "success_image": "shoes_outsole_logo-success.svg"
+      },
+      {
+        "name": "box-label",
+        "title": "Box label",
+        "required": "false",
+        "image": "shoes_box_label.svg",
+        "success_image": "shoes_box_label-success.svg"
+      },
+      {
+        "name": "box-data-code",
+        "title": "Box data code",
+        "required": "false",
+        "image": "sneakers_box_date_code.svg",
+        "success_image": "sneakers_box_date_code-success.svg"
+      },
+      {
+        "name": "1st-optional-photo",
+        "title": "1st optional photo",
+        "required": "false",
+        "image": "",
+        "success_image": ""
+      },
+      {
+        "name": "2nd-optional-photo",
+        "title": "2nd optional photo",
+        "required": "false",
+        "image": "",
+        "success_image": ""
+      }
+    ],
+    "tips": [
+      "Take close-up and focused photos in natural light",
+      "Use a hairdryer if the insole is stuck inside the shoe",
+      "Focus the camera on the area under the insole"
+    ]
+  },
+  {
+    "name": "other-shoes",
+    "title": "Other shoes",
+    "types": [
+      {
+        "name": "overall-picture",
+        "title": "Overall picture",
+        "required": "true",
+        "image": "shoes_overall.svg",
+        "success_image": "shoes_overall-success.svg"
+      },
+      {
+        "name": "insole-front-side",
+        "title": "Insole (front side)",
+        "required": "true",
+        "image": "shoes_insole_front.svg",
+        "success_image": "shoes_insole_front-success.svg"
+      },
+      {
+        "name": "outsole",
+        "title": "Outsole",
+        "required": "true",
+        "image": "shoes_outsole_logo.svg",
+        "success_image": "shoes_outsole_logo-success.svg"
+      },
+      {
+        "name": "model-stamp",
+        "title": "Size\/Model Stamp",
+        "required": "true",
+        "image": "shoes_model_code.svg",
+        "success_image": "shoes_model_code-success.svg"
+      },
+      {
+        "name": "insole-back-side",
+        "title": "Insole (back side)",
+        "required": "false",
+        "image": "shoes_insole_back.svg",
+        "success_image": "shoes_insole_back-success.svg"
+      },
+      {
+        "name": "inside-stitching",
+        "title": "Inside Stitching",
+        "required": "false",
+        "image": "shoes_inside_stitching.svg",
+        "success_image": "shoes_inside_stitching-success.svg"
+      },
+      {
+        "name": "box-label",
+        "title": "Box label",
+        "required": "false",
+        "image": "shoes_box_label.svg",
+        "success_image": "shoes_box_label-success.svg"
+      },
+      {
+        "name": "1st-optional-photo",
+        "title": "1st optional photo",
+        "required": "false",
+        "image": "",
+        "success_image": ""
+      },
+      {
+        "name": "2nd-optional-photo",
+        "title": "2nd optional photo",
+        "required": "false",
+        "image": "",
+        "success_image": ""
+      }
+    ],
+    "tips": [
+      "Take close-up and focused photos in natural light",
+      "Verify whether your pair has a removable insole",
+      "Focus the camera on the logo and size stamps"
+    ]
+  },
+  {
+    "name": "bag",
+    "title": "Bag",
+    "types": [
+      {
+        "name": "overall-picture",
+        "title": "Overall picture",
+        "required": "true",
+        "image": "bag_overall.svg",
+        "success_image": "bag_overall-success.svg"
+      },
+      {
+        "name": "brand-logo",
+        "title": "Brand logo",
+        "required": "true",
+        "image": "bag_logo_label.svg",
+        "success_image": "bag_logo_label-success.svg"
+      },
+      {
+        "name": "inside-label",
+        "title": "Inside label",
+        "required": "true",
+        "image": "bag_inside_label.svg",
+        "success_image": "bag_inside_label-success.svg"
+      },
+      {
+        "name": "serial-number",
+        "title": "Serial number",
+        "required": "false",
+        "image": "date-code.svg",
+        "success_image": "date-code-success.svg"
+      },
+      {
+        "name": "madein-label",
+        "title": "Made in label",
+        "required": "false",
+        "image": "bag_made_in_label.svg",
+        "success_image": "bag_made_in_label-success.svg"
+      },
+      {
+        "name": "hologram-Label",
+        "title": "Hologram Label",
+        "required": "false",
+        "image": "bag_hologram.svg",
+        "success_image": "bag_hologram-success.svg"
+      },
+      {
+        "name": "zipper-head-front",
+        "title": "Zipper head (front)",
+        "required": "false",
+        "image": "bag_zipper_front.svg",
+        "success_image": "bag_zipper_front-success.svg"
+      },
+      {
+        "name": "zipper-head-back",
+        "title": "Zipper head (back)",
+        "required": "false",
+        "image": "bag_zipper_back.svg",
+        "success_image": "bag_zipper_back-success.svg"
+      },
+      {
+        "name": "hardware-engravings",
+        "title": "Hardware engravings",
+        "required": "false",
+        "image": "accessory_engravings.svg",
+        "success_image": "accessory_engravings-success.svg"
+      },
+      {
+        "name": "button",
+        "title": "Button",
+        "required": "false",
+        "image": "bag_button_engravings.svg",
+        "success_image": "bag_button_engravings-success.svg"
+      },
+      {
+        "name": "authenticity-card",
+        "title": "Authenticity card",
+        "required": "false",
+        "image": "bag_authenticity_card.svg",
+        "success_image": "bag_authenticity_card-success.svg"
+      },
+      {
+        "name": "dust-bag",
+        "title": "Dust bag",
+        "required": "false",
+        "image": "bag_dust_bag.svg",
+        "success_image": "bag_dust_bag-success.svg"
+      },
+      {
+        "name": "1st-optional-photo",
+        "title": "1st optional photo",
+        "required": "false",
+        "image": "",
+        "success_image": ""
+      },
+      {
+        "name": "2nd-optional-photo",
+        "title": "2nd optional photo",
+        "required": "false",
+        "image": "",
+        "success_image": ""
+      }
+    ],
+    "tips": [
+      "Take close-up and focused photos in natural light",
+      "Include photos of all the available labels",
+      "Take clearest possible photos of the series code"
+    ]
+  },
+  {
+    "name": "wallet",
+    "title": "Wallet",
+    "types": [
+      {
+        "name": "overall-picture",
+        "title": "Overall picture",
+        "required": "true",
+        "image": "bag_overall.svg",
+        "success_image": "bag_overall-success.svg"
+      },
+      {
+        "name": "brand-logo",
+        "title": "Brand logo",
+        "required": "true",
+        "image": "bag_logo_label.svg",
+        "success_image": "bag_logo_label-success.svg"
+      },
+      {
+        "name": "inside-label",
+        "title": "Inside label",
+        "required": "true",
+        "image": "bag_inside_label.svg",
+        "success_image": "bag_inside_label-success.svg"
+      },
+      {
+        "name": "serial-number",
+        "title": "Serial number",
+        "required": "false",
+        "image": "accessory_watch_series_code.svg",
+        "success_image": "accessory_watch_series_code-success.svg"
+      },
+      {
+        "name": "zipper-head-front",
+        "title": "Zipper head (front)",
+        "required": "false",
+        "image": "bag_zipper_front.svg",
+        "success_image": "bag_zipper_front-success.svg"
+      },
+      {
+        "name": "zipper-head-back",
+        "title": "Zipper head (back)",
+        "required": "false",
+        "image": "bag_zipper_back.svg",
+        "success_image": "bag_zipper_back-success.svg"
+      },
+      {
+        "name": "button",
+        "title": "Button",
+        "required": "false",
+        "image": "bag_button_engravings.svg",
+        "success_image": "bag_button_engravings-success.svg"
+      },
+      {
+        "name": "authenticity-card",
+        "title": "Authenticity card",
+        "required": "false",
+        "image": "bag_authenticity_card.svg",
+        "success_image": "bag_authenticity_card-success.svg"
+      },
+      {
+        "name": "dust-bag",
+        "title": "Dust bag",
+        "required": "false",
+        "image": "bag_dust_bag.svg",
+        "success_image": "bag_dust_bag-success.svg"
+      },
+      {
+        "name": "1st-optional-photo",
+        "title": "1st optional photo",
+        "required": "false",
+        "image": "",
+        "success_image": ""
+      },
+      {
+        "name": "2nd-optional-photo",
+        "title": "2nd optional photo",
+        "required": "false",
+        "image": "",
+        "success_image": ""
+      }
+    ],
+    "tips": [
+      "Take close-up and focused photos in natural light",
+      "Include photos of all the available logos",
+      "Take clearest possible photos of the series code"
+    ]
+  },
+  {
+    "name": "clothing",
+    "title": "Clothing",
+    "types": [
+      {
+        "name": "overall-picture",
+        "title": "Overall picture",
+        "required": "true",
+        "image": "clothing_overall.svg",
+        "success_image": "clothing_overall-success.svg"
+      },
+      {
+        "name": "collar-label-front",
+        "title": "Collar label (front)",
+        "required": "true",
+        "image": "clothing_neck_label_front.svg",
+        "success_image": "clothing_neck_label_front-success.svg"
+      },
+      {
+        "name": "size-tag",
+        "title": "Size tag",
+        "required": "true",
+        "image": "clothing_size_label.svg",
+        "success_image": "clothing_size_label-success.svg"
+      },
+      {
+        "name": "washing-label-front",
+        "title": "Washing label (front)",
+        "required": "false",
+        "image": "clothing_care_label_1st.svg",
+        "success_image": "clothing_care_label_1st-success.svg"
+      },
+      {
+        "name": "washing-label-second-page",
+        "title": "Washing label (second page)",
+        "required": "false",
+        "image": "clothing_care_label_2nd.svg",
+        "success_image": "clothing_care_label_2nd-success.svg"
+      },
+      {
+        "name": "hologram-Label",
+        "title": "Hologram Label",
+        "required": "false",
+        "image": "bag_hologram.svg",
+        "success_image": "bag_hologram-success.svg"
+      },
+      {
+        "name": "zipper-head-front",
+        "title": "Zipper head (front)",
+        "required": "false",
+        "image": "bag_zipper_front.svg",
+        "success_image": "bag_zipper_front-success.svg"
+      },
+      {
+        "name": "zipper-head-back",
+        "title": "Zipper head (back)",
+        "required": "false",
+        "image": "bag_zipper_back.svg",
+        "success_image": "bag_zipper_back-success.svg"
+      },
+      {
+        "name": "hardware-engravings",
+        "title": "Hardware engravings",
+        "required": "false",
+        "image": "bag_button_engravings.svg",
+        "success_image": "bag_button_engravings-success.svg"
+      },
+      {
+        "name": "packaging",
+        "title": "Packaging",
+        "required": "false",
+        "image": "clothing_dust_bag.svg",
+        "success_image": "clothing_dust_bag-success.svg"
+      },
+      {
+        "name": "1st-optional-photo",
+        "title": "1st optional photo",
+        "required": "false",
+        "image": "",
+        "success_image": ""
+      },
+      {
+        "name": "2nd-optional-photo",
+        "title": "2nd optional photo",
+        "required": "false",
+        "image": "",
+        "success_image": ""
+      }
+    ],
+    "tips": [
+      "Take close-up and focused photos in natural light",
+      "Include photos of all the available labels",
+      "Take photos of all labels’ pages"
+    ]
+  },
+  {
+    "name": "accessory",
+    "title": "Accessory",
+    "types": [
+      {
+        "name": "overall-picture",
+        "title": "Overall picture",
+        "required": "true",
+        "image": "accessory_jewellery_overall.svg",
+        "success_image": "accessory_jewellery_overall-success.svg"
+      },
+      {
+        "name": "logo-stamp",
+        "title": "Logo stamp",
+        "required": "false",
+        "image": "accessory_belt_stamp.svg",
+        "success_image": "accessory_belt_stamp-success.svg"
+      },
+      {
+        "name": "engravings",
+        "title": "Engravings",
+        "required": "false",
+        "image": "bag_button_engravings.svg",
+        "success_image": "bag_button_engravings-success.svg"
+      },
+      {
+        "name": "packaging",
+        "title": "Packaging",
+        "required": "false",
+        "image": "accessory_jewellery_packaging.svg",
+        "success_image": "accessory_jewellery_packaging-success.svg"
+      },
+      {
+        "name": "1st-optional-photo",
+        "title": "1st optional photo",
+        "required": "false",
+        "image": "",
+        "success_image": ""
+      },
+      {
+        "name": "2nd-optional-photo",
+        "title": "2nd optional photo",
+        "required": "false",
+        "image": "",
+        "success_image": ""
+      }
+    ],
+    "tips": [
+      "Take close-up and focused photos in natural light",
+      "Include all the available engravings",
+      "Take macro quality photos of the mechanical details and stamps"
+    ]
+  },
+  {
+    "name": "watch",
+    "title": "Watch",
+    "types": [
+      {
+        "name": "overall-picture",
+        "title": "Overall picture",
+        "required": "true",
+        "image": "accessory_watch_overall.svg",
+        "success_image": "accessory_watch_overall-success.svg"
+      },
+      {
+        "name": "back-panel",
+        "title": "Back panel",
+        "required": "true",
+        "image": "accessory_watch_back_panel.svg",
+        "success_image": "accessory_watch_back_panel-success.svg"
+      },
+      {
+        "name": "face",
+        "title": "Face",
+        "required": "true",
+        "image": "accessory_watch_face.svg",
+        "success_image": "accessory_watch_face-success.svg"
+      },
+      {
+        "name": "crown",
+        "title": "Crown",
+        "required": "true",
+        "image": "accessory_watch_crown.svg",
+        "success_image": "accessory_watch_crown-success.svg"
+      },
+      {
+        "name": "series-code",
+        "title": "Series code",
+        "required": "true",
+        "image": "accessory_watch_series_code.svg",
+        "success_image": "accessory_watch_series_code-success.svg"
+      },
+      {
+        "name": "clasp-marking",
+        "title": "Clasp marking",
+        "required": "true",
+        "image": "accessory_watch_buckle.svg",
+        "success_image": "accessory_watch_buckle-success.svg"
+      },
+      {
+        "name": "1st-optional-photo",
+        "title": "1st optional photo",
+        "required": "false",
+        "image": "",
+        "success_image": ""
+      },
+      {
+        "name": "2nd-optional-photo",
+        "title": "2nd optional photo",
+        "required": "false",
+        "image": "",
+        "success_image": ""
+      }
+    ],
+    "tips": [
+      "Take close-up and focused photos in natural light",
+      "Include all the available engravings",
+      "Take clearest possible photos of the stamps"
+    ]
+  }
+]

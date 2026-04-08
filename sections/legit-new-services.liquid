@@ -1,0 +1,194 @@
+{% render 'section-legit-new-services-styles-min' %}
+<div class="featured-collection homepage_advanced-service collection-template" data-section-id="{{ section.id }}"
+     data-section-type="collection-template">
+    <div class="section-container">
+        <div class="featured-collection__heading grid text-center">
+            <div class="grid__item medium-up--ten-twelfths medium-up--push-one-twelfth">
+                <h2 class="hero__overlay-title section-title" data-animate>{{ section.settings.title }}</h2>
+                <!--<p class="section-description ">{{ section.settings.description }}</p>-->
+            </div>
+        </div>
+
+
+            <div class="homepage_advanced-service-wrapp">
+
+                <ul class="homepage_advanced-service-wrapp-items">
+
+                  {% for block in section.blocks %}
+                    <li class="homepage_advanced-service-wrapp-item">
+                        {% if block.settings.image != blank %}
+                            <span>
+                                <img src="{{ block.settings.image | img_url: 'master' }}" loading="lazy" alt="">
+                            </span>
+                        {% endif %}
+                        {% if block.settings.block_description != blank %}
+                           <div class="section-description font-description">{{ block.settings.block_description }}</div>
+                        {% endif %}
+                    </li>
+                  {% endfor %}
+                    
+                </ul>
+
+              
+                <img src="{{ section.settings.image | img_url: 'master' }}" loading="lazy" alt="" class="homepage_advanced-service-wrapp-image">
+            </div>
+
+
+        {% if section.blocks.size == 0 %}
+            {% include 'no-blocks' %}
+        {% endif %}
+
+        {% if section.settings.button_label != blank %}
+            <div class="button-container">
+                <a href="{{ section.settings.button_link }}" class="main-btn{% if section.settings.use_second_button %} btn--secondary{% endif %} hero__btn">
+                    {{ section.settings.button_label }}
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+{% schema %}
+{
+"name": {
+"en": "Legit New Services"
+},
+"class" : "index-section index-section--services",
+"max_blocks": 4,
+"settings": [
+{
+"type": "select",
+"id": "section_height",
+"label": {
+"en": "Section height"
+},
+"default": "medium",
+"options": [
+{
+"label": {
+"en": "Extra Small"
+},
+"value": "x-small"
+},
+{
+"label": {
+"en": "Small"
+},
+"value": "small"
+},
+{
+"label": {
+"en": "Medium"
+},
+"value": "medium"
+},
+{
+"label": {
+"en": "Large"
+},
+"value": "large"
+},
+{
+"label": {
+"en": "Extra Large"
+},
+"value": "x-large"
+}
+]
+},
+{
+"type": "text",
+"id": "title",
+"label": {
+"en": "Heading"
+},
+"default": {
+"en": "Legit services"
+}
+},
+{
+"type": "text",
+"id": "description",
+"label": {
+"en": "Description"
+}
+},
+{
+"type": "image_picker",
+"id": "image",
+"label": "Main image"
+},
+{
+"type": "text",
+"id": "button_label",
+"label": {
+"en": "Button label"
+}
+},
+{
+"type": "url",
+"id": "button_link",
+"label": {
+"en": "Button link"
+}
+}
+],
+"blocks": [
+{
+"type": "image",
+"name": {
+"en": "Image"
+},
+"settings": [
+{
+"type": "image_picker",
+"id": "image",
+"label": {
+"en": "Image"
+}
+},
+{
+"type": "header",
+"content": {
+"en": "Text"
+}
+},
+{
+"type": "richtext",
+"id": "block_description",
+"label": {
+"en": "Description"
+},
+"default": {
+"en": "<p>Describe your brand</p>"
+}
+}
+]
+}
+],
+"presets": [
+{
+"name": {
+"en": "Legit new services"
+},
+"category": {
+"en": "Image"
+},
+"blocks": [
+{
+"type": "image"
+},
+{
+"type": "image"
+},
+{
+"type": "image"
+},
+{
+"type": "image"
+}
+]
+}
+]
+}
+{% endschema %}

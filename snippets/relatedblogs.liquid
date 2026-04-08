@@ -1,0 +1,326 @@
+<style>
+  #relatedblogs li {
+    height: max-content!important;
+    row-gap: 15px!important;
+  }
+  .rb_contents {
+    margin: 0!important;
+}
+  h5.rb_title {
+    font-family: Montserrat, sans-serif !important;
+    font-size: 2rem!important;
+    font-weight: 500!important;
+    color: #000!important;
+    line-height: 1.2!important;
+    margin-bottom: 5px!important;
+}
+  h5.rb_title a {
+    color: #000!important;
+}
+  @media(max-width: 600px) {
+    div#relatedblogs ul {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))!important;
+    column-gap: 15px!important;
+}
+    #relatedblogs .rb_image_wrap {
+    border-radius: 7px!important;
+}
+  }
+  
+</style>
+        
+        {%- assign timestamp = 'now' | date : "%s" -%}
+        {%- assign ex_ids = ""-%}
+  {%- assign ex_frmpool_id = article.id | append: '"' | prepend: '"' -%}
+
+{%- assign ex_tags = "" | split: "," -%}
+{%- assign no_post_display = 8 -%}
+
+{%- assign b_id = blog.id  -%}
+
+  {%- assign blog_ids = "97963999557,51527614542,78578876494,77242728526,77370884174,51546259534,77179551822,51557269582,51549470798,51553271886,78831059022,50822512718,51538952270,26961510478,51514966094,51554222158,50822545486,51529777230,51528564814,50911805518,50822611022,50822643790,51520634958,51536986190,51515129934,50822578254,51541278798,51529547854,51543343182,50822447182,51534954574,50847645774,51517849678,50822873166,51554713678,51554320462,77172801614,51553861710,78431748174,51559333966,51550748750,77182337102,77261701198,77370818638,77370851406,78862385230,78431125582,92089352506"  -%}
+
+      {%- assign blog_handle_arr = blog.handle -%}
+  
+{%- assign blog_flag = "false" -%}
+
+{%- unless blog_ids contains b_id -%}
+{%- assign blog_flag = "true" -%}
+{%- endunless -%}
+
+{%- unless ex_ids contains article.id -%}
+
+{%- if blog_flag == "false" -%}
+
+{%- assign article_temp = article.id -%}
+
+{%- assign related_posts = "" -%}
+{%- assign curr_blog = blog.handle -%}
+
+{%- for article in blogs[curr_blog].articles -%}
+{%- if article.id == article_temp -%}
+{%- assign current_post_tags = article.tags -%}
+{%- assign article_author = article.author -%}
+{%- assign article_title = article.title -%}
+{%- assign article_title_arr = article_title | remove : " " | split: "" -%}
+{%- endif -%}
+{%- endfor -%}
+
+{%- assign main_flag = "true" -%}
+{%- for tag in ex_tags -%}
+{%- assign ex_tags_temp = tag | strip -%}
+{%- if current_post_tags contains ex_tags_temp -%}
+{%- assign main_flag = "false" -%}
+{%- endif -%}
+{%- endfor -%}
+
+{%- if main_flag == "true" -%}
+
+  
+
+    {%- for blog in blog_handle_arr -%}
+
+    {%- assign blog_temp = blog -%}
+
+    {%- for article in blogs[blog_temp].articles -%}
+    {%- unless ex_frmpool_id contains article.id -%}
+
+    
+      {%- assign atitle_temp = article.title | remove : " " | split: "" -%}
+      {%- assign flag = "false" -%}
+      {%- for word in atitle_temp -%}
+      {%- if article_title_arr contains word -%}
+      {%- assign flag = "true" -%}
+      {%- break -%}
+      {%- endif -%}
+      {%- endfor -%}
+
+      {%- assign t_flag = "false" -%}
+      {%- for tag in current_post_tags -%}
+      {%- if article.tags contains tag -%}
+      {%- assign t_flag = "true" -%}
+      {%- break -%}
+      {%- endif -%}
+      {%- endfor -%}
+
+      {%- if t_flag == "true"  or article_author ==  article.author or flag == "true" -%}
+      {%- assign related_posts = related_posts | append:article.id | append : ","-%}
+      {%- endif -%}
+    
+    {%- endunless -%}
+    {%- endfor -%}
+
+
+    {%- endfor -%}
+
+    {%- if related_posts.size > 0 -%}
+  
+    {%- assign tsl = timestamp | slice : -1,1 | times:1 -%}
+
+    {%- assign rids = related_posts | split: ',' -%}
+
+
+    {%- assign rindex = tsl -%}
+
+    {%- if tsl > rids.size or tsl < 0 -%}
+    {%- assign time_arr = timestamp | split: '' -%}
+    {%- for t in time_arr reversed -%}
+    {%- assign ti = t | times:1 -%}
+    {%- if ti < rids.size -%}
+    {%- assign rindex = forloop.index -%}
+    {%- break -%}
+    {%- endif -%}
+    {%- endfor -%}
+    {%- endif -%}
+
+    {%- if rindex == rids.size -%}
+    {%- assign rindex = rindex | minus : 1-%}
+    {%- endif -%}
+
+    {%- assign articleids = '' -%}
+    {%- for rid in rids offset:rindex -%}
+    {%- assign articleids = articleids | append:rid | append : "," -%}
+    {%- endfor -%}
+
+    {%- assign rsize = articleids | split:","  -%}
+
+    {%- if rsize.size < no_post_display -%}
+    {%- for rid in rids -%}
+    {%- unless articleids contains rid -%}
+    {%- assign articleids = articleids | append:rid | append : "," -%}
+    {%- endunless -%}
+    {%- endfor -%}
+    {%- endif -%}
+
+    {%- assign rsize = articleids | size | minus:1 -%}
+    {%- assign articleids = articleids | slice: 0, rsize | split:"," -%}
+
+    {%- assign article_ids = articleids | uniq -%}
+<div id="relatedblogs">
+    <h3>Related Posts</h3>    <ul>    {%- assign count = 0 -%}
+    {%- for aid in article_ids -%}
+    {%- assign rflag = "false" -%}
+    {%- for blog in blog_handle_arr -%}
+    {%- assign blog_temp = blog -%}
+
+    {%- for article in blogs[blog_temp].articles -%}
+    {%- if count == no_post_display -%}
+    {%- break -%}
+    {%- endif -%}
+    {%- if aid contains article.id -%}
+
+    {%- assign ex_frmpool_tags = "" | split: "," -%}
+    {%- assign ex_frmpool_main_flag = "true" -%}
+    {%- for tag in ex_frmpool_tags -%}
+    {%- assign ex_frmpool_ex_tags_temp = tag | strip -%}
+    {%- if article.tags contains ex_frmpool_ex_tags_temp -%}
+    {%- assign ex_frmpool_main_flag = "false" -%}
+    {%- endif -%}
+    {%- endfor -%}
+
+    {%- if ex_frmpool_main_flag == "true" -%}
+    <li>
+          {%- if article.image -%}
+      <div class="rb_image_wrap">
+        <a href="{{ article.url }}"><img src="{{ article.image.src | img_url: 'grande' }}" alt="{{ article.title }}" class="rb_image" /></a>
+      </div>
+      {%- else -%}
+      <div class="rb_image_wrap">
+        <div class="rb_no_image"></div>
+      </div>
+      {%- endif -%}
+        <div class="rb_contents">
+      <h5 class="rb_title h4-heading-pp"><a class="h4-heading-pp" href='{{ article.url }}'>{{ article.title }}</a></h5>
+
+              {%- if article.excerpt != "" -%}
+        <p class="body-text">{{ article.excerpt | strip_html | strip | truncate: 120, "" }}</p>
+        {%- endif -%}
+      
+    </div>
+
+    </li>    {%- endif -%}
+
+    {%- assign rflag = "true" -%}
+    {%- assign count = count | plus:1 -%}
+    {%- break -%}
+    {%- endif -%}
+    {%- endfor -%}
+    {%- if rflag == "true" -%}
+    {%- break -%}
+    {%- endif -%}
+    {%- endfor -%}
+    {%- endfor -%}
+    </ul> </div>   {%- else -%}
+
+    
+      
+    
+    {%- endif -%}
+
+
+    <style type="text/css">
+      .rb_contents {
+        display: inline-block
+      }
+
+      .rb_no_image {
+        height: 100%;
+        width: 100%;
+        background-color: rgb(128, 128, 128);
+        display: inline-block
+      }
+
+     /* img.rb_image {
+        max-height: 75px;
+        max-width: 100px;
+        height: auto;
+        width: auto
+      }*/
+
+      /*.rb_image_wrap {
+        float: left;
+        width: 105px
+      }*/
+
+      .rb_contents {
+        margin: 0 0 0 20px
+      }
+
+      #relatedblogs li {
+        margin: 0 0 15px;
+        clear: both
+      }
+      #relatedblogs li {
+        display: block;
+      }
+
+      div#relatedblogs ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+      column-gap: 20px;
+      }
+
+      #relatedblogs li {
+      display: grid !important;
+      grid-template-columns: 1fr;
+      row-gap: 20px;
+      }
+
+     
+
+      div#relatedblogs .rb_contents {
+      display: grid;
+      grid-template-columns: 1fr;
+      }
+
+
+      #relatedblogs .rb_image_wrap {
+      float: left;
+      width: 100%;
+      text-align: center;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 10px;    
+    }
+
+      #relatedblogs .rb_image_wrap a {
+      display: block;
+      float: left;
+      width: 100%;
+      height: 100%;
+      }
+
+
+      #relatedblogs img.rb_image {
+      max-height: 100%;
+      max-width: 100%;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      margin: 0;
+      }
+
+
+      #relatedblogs li::before {
+   
+          opacity: 0;
+      }
+      .article__content.rte {
+    font-size: inherit;
+}
+
+      #relatedblogs li {
+        display: block;
+      }
+@media(max-width: 450px) {
+    #relatedblogs .rb_image_wrap {
+  height: 150px;
+}
+  }
+          </style>
+
+
+
+{%- endif -%}
+{%- endif -%}
+{%- endunless -%}

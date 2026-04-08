@@ -1,0 +1,693 @@
+<style>
+  .account_steps {
+    background: #F2F2EA;
+  }
+  .resalex_steps-wrapp {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+    position: relative;
+  }
+.resalex_steps-text {
+width: 100%;
+max-width: 745px;
+text-align: left;
+position: absolute;
+height: max-content;
+left: 0;
+top: 0;
+}
+  .resalex_steps-text.animation {
+    position: fixed;
+    top: 150px;
+  }
+  .resalex_steps-text.animated {
+    position: absolute;
+    bottom: 504px;
+  }
+  h2.resalex_steps-title {
+    text-align: left;
+  }
+  p.resalex_steps-desc {
+    margin-top: 15px;
+  }
+  a.resalex_steps-btn {
+    margin-top: 30px;
+    margin-left: 0;
+  }
+  .resalex_steps-path {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-left: auto;
+    justify-content: flex-end;
+  }
+  .resalex_steps-line {
+    width: 53px;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -26.5px;
+  }
+  span.resalex_steps-line-main {
+    display: block;
+    width: 3px;
+    background: #3C1F1B;
+    height: 0;
+    position: relative;
+    top: 25px;
+    left: 50%;
+    margin-left: -1.5px;
+    z-index: 0;
+    transition: 7.5s
+  }
+  span.resalex_steps-line-main.animated {
+      height: 1604px;
+  }
+  .resalex_steps-line-item {
+    display: block;
+    height: 53px;
+    width: 53px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+.resalex_steps-line-item-2 {
+top: 406px;
+}
+.resalex_steps-line-item-3 {
+top: 804px;
+}
+.resalex_steps-line-item-4 {
+top: 1204px;
+}
+.resalex_steps-line-item-5 {
+top: 1605px;
+}
+  span.resalex_steps-line-item-circle {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  span.resalex_steps-line-item-circle-1 {
+    border-radius: 54.418px;
+    border: 1px solid rgba(172, 172, 172, 0.20);
+    background: #C7BEBD;
+    box-shadow: 0px 4px 24px -2px rgba(0, 0, 0, 0.10);
+    backdrop-filter: blur(20px);
+    z-index: 1;
+    margin-top: 0;
+    margin-left: 0;
+    height: 0;
+    width: 0;
+    transition: .5s;
+  }
+  .resalex_steps-line-item.animated span.resalex_steps-line-item-circle-1 {
+    margin-top: -26.5px;
+    margin-left: -26.5px;
+    height: 53px;
+    width: 53px;
+  }
+  span.resalex_steps-line-item-circle-2 {
+    border-radius: 36.279px;
+    background: #8A7876;
+    z-index: 2;
+    margin-top: 0;
+    margin-left: 0;
+    height: 0;
+    width: 0;
+    transition: .5s;
+  }
+  .resalex_steps-line-item.animated span.resalex_steps-line-item-circle-2 {
+    margin-top: -18px;
+    margin-left: -18px;
+    height: 36px;
+    width: 36px;
+  }
+  span.resalex_steps-line-item-circle-3 {
+    border-radius: 18.139px;
+    background: #3C1F1B;
+    margin-top: 0;
+    margin-left: 0;
+    height: 0;
+    width: 0;
+    transition: .5s;
+    z-index: 3;
+  }
+  .resalex_steps-line-item.animated span.resalex_steps-line-item-circle-3 {
+    margin-top: -9px;
+    margin-left: -9px;
+    height: 18px;
+    width: 18px;
+  }
+p.resalex_steps-pretitle.resalex-pretitle.caption {
+    margin-bottom: 15px;
+    text-align: left;
+}
+  .resalex_steps-items {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 0px;
+      margin-top: 92px;
+  }
+  .resalex_steps-item {
+    width: calc(50% - 94px);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: .5s;
+    margin-top: -80px;
+  }
+  .resalex_steps-item-left {
+    text-align: right;
+  }
+  .resalex_steps-item-right {
+    margin-left: calc(50% + 94px);
+  }
+  .resalex_steps-item.animated {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  p.resalex_steps-item-desc {
+    margin-top: 15px;
+  }
+  .resalex_steps-item-content {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 15px;
+    padding: 10px 20px 10px 10px;
+    align-items: center;
+    border-radius: 12px;
+box-shadow: 151px 292px 92px 0 rgba(0, 0, 0, 0.00), 97px 187px 84px 0 rgba(0, 0, 0, 0.01), 54px 105px 71px 0 rgba(0, 0, 0, 0.05), 24px 47px 53px 0 rgba(0, 0, 0, 0.09), 6px 12px 29px 0 rgba(0, 0, 0, 0.10);
+  }
+  .resalex_steps-item-content img {
+    border-radius: 6px;
+    border: 1px solid #E8E8E8;
+    height: 98px;
+    width: 98px;
+  }
+  .resalex_steps-item-content-images {
+    gap: 10px;
+    max-width: 376px;
+    padding: 10px;
+  }
+  .resalex_steps-item-content-text-wrapp {
+      width: calc(100% - 126px);
+  }
+  a.resalex_steps-mobile-btn, .resalex_steps-line-item-mobile {
+      display: none;
+  }
+  .resalex_steps-item-content-text-wrapp-items {
+      margin-top: 10px;
+      gap: 5px;
+  }
+  .resalex_steps-item-content-text-wrapp-items p {
+      width: 100%;
+  }
+  .resalex_steps-item-content-text-wrapp-items p span {
+      color: rgba(60, 31, 27, 0.75);
+  }
+  .resalex_steps-item-content-top {
+      align-items: flex-start;
+  }
+  .resalex_steps-item-content-top p.resalex_steps-item-content-desc {
+      margin-top: 15px;
+  }
+  p.resalex_steps-item-content-title {
+      margin-top: 5px;
+  }
+   .resalex_steps-item-market-table {
+    paddind-top: 10px;
+  }
+  .resalex_steps-item-market-table-item {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #E8E8E8;
+  }
+  .resalex_steps-item-market-table-item:last-child {
+    border: none;
+  }
+  .resalex_steps-item-content-single-image {
+    padding: 0px;
+    overflow: hidden;
+  }
+  .resalex_steps-item-content-single-image img {
+    width: 100%;
+    height: auto;
+    border: none;
+  }
+  .resalex_steps-item-market-table-item img {
+    height: 18px;
+    width: auto;
+    border: none;
+}
+  .resalex-v2_bag-item-market {
+    border: none;
+    padding: 0;
+    box-shadow: none;
+  }
+  .resalex-v2_bag-item-market img {
+    border: none;
+    height: max-content;
+  }
+  @media(max-width: 1450px) {
+    .resalex_steps-text {
+        max-width: 571px;
+    }
+    .resalex_steps-text.animated {
+        bottom: 484px;
+    }
+    span.resalex_steps-line-main.animated {
+      height: 1389px;
+    }
+  .resalex_steps-line-item-2 {
+      top: 359px;
+  }
+.resalex_steps-line-item-3 {
+    top: 711px;
+}
+    .resalex_steps-line-item-4 {
+        top: 1040px;
+    }
+    .resalex_steps-line-item-5 {
+    top: 1391px;
+}
+  }
+  @media(max-width: 1250px) {
+    .resalex_steps-item {
+        margin-top: -280px;
+    }
+    .resalex_steps-items {
+    margin-top: 292px;
+}
+    p.resalex_steps-desc, p.resalex_steps-item-desc {
+      margin-top: 10px;
+    }
+    .resalex_steps-text {
+        max-width: 361px;
+    }
+    .resalex_steps-items {
+        gap: 237px;
+    }
+        .resalex_steps-line-item-2 {
+        top: 311px;
+    }
+        .resalex_steps-line-item-3 {
+        top: 613px;
+        }
+            .resalex_steps-line-item-4 {
+        top: 923px;
+    }
+        .resalex_steps-line-item-5 {
+        top: 1224px;
+    }
+        span.resalex_steps-line-main.animated {
+        height: 1231px;
+        }
+  }
+  @media(max-width: 950px) {
+    .resalex_steps-item {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+    span.resalex_steps-line-item-circle-1 {
+    margin-top: -26.5px;
+    margin-left: -26.5px;
+    height: 53px;
+    width: 53px;
+  }
+  span.resalex_steps-line-item-circle-2 {
+    margin-top: -18px;
+    margin-left: -18px;
+    height: 36px;
+    width: 36px;
+  }
+  span.resalex_steps-line-item-circle-3 {
+    margin-top: -9px;
+    margin-left: -9px;
+    height: 18px;
+    width: 18px;
+  }
+    p.resalex_steps-pretitle.resalex-pretitle.caption {
+        text-align: center;
+    }
+    a.resalex_steps-btn {
+        margin: 0 auto;
+    }
+    .resalex_steps-wrapp {
+        gap: 50px;
+    }
+    .resalex_steps-line-item {
+        display: block;
+        position: relative;
+    }
+    .resalex_steps-item-content {
+        max-width: 421px;
+        margin: 20px auto 0 auto;
+    }
+    .resalex_steps-text {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+        position: relative;
+    }
+    h2.resalex_steps-title {
+        text-align: center;
+    }
+    .resalex_steps-line {
+      display: none;
+    }
+    .resalex_steps-path {
+        width: 100%;
+        gap: 25px;
+        justify-content: center;
+          margin-top: 10px;
+    }
+    .resalex_steps-items {
+        width: 100%;
+        margin-top: 0;
+        gap: 50px;
+        justify-content: center;
+    }
+    .resalex_steps-item {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+     .resalex_steps-item-content {
+        gap: 10px;
+        max-width: 600px;
+        text-align: left;
+    }
+    .resalex_steps-item-content-images {
+        gap: 5px;
+        max-width: 355px;
+        padding: 5px;
+        margin: 15px auto 0 auto;
+    }
+    a.resalex_steps-mobile-btn, .resalex_steps-line-item {
+      display: block;
+    }
+    .resalex_steps-line-item {
+      margin: 0 auto 15px auto;
+    }
+    a.resalex_steps-desktop-btn {
+      display: none;
+    }
+  }
+  @media(max-width: 750px) {
+    .resalex_steps-item-content {
+    margin: 15px auto 0 auto;
+    }
+    .resalex_steps-item-content img {
+        height: 90px;
+        width: 90px;
+    }
+    .resalex_steps-item-content {
+        max-width: 100%;
+    }
+    .resalex_steps-item-content-images {
+        max-width: 292px;
+    }
+    .resalex_steps-item-content-text-wrapp {
+        width: calc(100% - 100px);
+    }
+    span.resalex_steps-line-item-circle-3 {
+        height: 14px;
+        width: 14px;
+        margin-top: -7px;
+        margin-left: -7px;
+    }
+    span.resalex_steps-line-item-circle-2 {
+        height: 32px;
+        width: 32px;
+        z-index: 2;
+        margin-top: -16px;
+        margin-left: -16px;
+    }
+    span.resalex_steps-line-item-circle-1 {
+        height: 48px;
+        width: 48px;
+        margin-top: -24px;
+        margin-left: -24px;
+    }
+    .resalex_steps-line-item {
+        height: 48px;
+        width: 48px;
+    }
+    .resalex_steps-item-market-table-item img {
+        height: 15px;
+        width: auto;
+    }
+    .resalex_steps-item-content-single-image img {
+        width: 100%;
+        height: auto;
+    }
+  }
+  @media(max-width: 550px) {
+    span.resalex_steps-line-item-circle-3 {
+    height: 10px;
+    width: 10px;
+    margin-top: -5px;
+    margin-left: -5px;
+    }
+    span.resalex_steps-line-item-circle-2 {
+    height: 24px;
+    width: 24px;
+    z-index: 2;
+    margin-top: -12px;
+    margin-left: -12px;
+}
+    span.resalex_steps-line-item-circle-1 {
+    height: 40px;
+    width: 40px;
+    margin-top: -20px;
+    margin-left: -20px;
+}
+    .resalex_steps-line-item {
+      height: 40px;
+    width: 40px;
+    }
+  }
+  @media(max-width: 400px) {
+    .resalex_steps-item-content img {
+        height: 70px;
+        width: 70px;
+    }
+    .resalex_steps-item-content {
+        max-width: 333px;
+    }
+     .resalex_steps-item-content-images {
+        max-width: 232px;
+    }
+    .resalex_steps-item-market-table-item img {
+        height: 15px;
+        width: auto;
+    }
+    .resalex_steps-item-content-single-image img {
+        width: 100%;
+        height: auto;
+    }
+  }
+</style>
+
+<div class="rebranding_container">
+  <div class="resalex_steps-wrapp">
+    <div class="resalex_steps-text">
+      <p class="resalex_steps-pretitle resalex-pretitle caption">
+        How it works?
+      </p>
+      <h2 class="resalex_steps-title resalex_section-title h2-heading-ss">
+        <span class="h2-heading-pp">Authentication & More,</span><br> All in One Place
+      </h2>
+      <a href="https://account.legitgrails.com/" target="_blank" class="resalex_steps-btn resalex_steps-desktop-btn resalex-btn resalex-btn-primaryx rebranding_btn rebranding_btn-main">
+       Create free account
+      </a>
+    </div>
+    <div class="resalex_steps-path">
+      <div class="resalex_steps-line">
+        <span class="resalex_steps-line-main"></span>
+        <div class="resalex_steps-line-item resalex_steps-line-item-1">
+          <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-1"></span>
+          <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-2"></span>
+          <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-3"></span>
+        </div>
+        <div class="resalex_steps-line-item resalex_steps-line-item-2">
+          <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-1"></span>
+          <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-2"></span>
+          <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-3"></span>
+        </div>
+        <div class="resalex_steps-line-item resalex_steps-line-item-3">
+          <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-1"></span>
+          <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-2"></span>
+          <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-3"></span>
+        </div>
+        <div class="resalex_steps-line-item resalex_steps-line-item-4">
+          <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-1"></span>
+          <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-2"></span>
+          <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-3"></span>
+        </div>
+        <div class="resalex_steps-line-item resalex_steps-line-item-5">
+          <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-1"></span>
+          <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-2"></span>
+          <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-3"></span>
+        </div>
+      </div>
+      <div class="resalex_steps-items">
+        <div class="resalex_steps-item resalex_steps-item-1 resalex_steps-item-right">
+          <div class="resalex_steps-line-item resalex_steps-line-item-mobile">
+            <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-1"></span>
+            <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-2"></span>
+            <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-3"></span>
+          </div>
+          <p class="resalex_steps-item-title h3-heading-pp">
+            Dashboard
+          </p>
+          <p class="resalex_steps-item-desc body-text">
+            Track all authentications in one place with statuses and certificates.
+          </p>
+          <div class="resalex_steps-item-content resalex_steps-item-content-single-image block-flex-wrap block-flex-center-center">
+            <img src="{{ 'account_steps-1.webp' | asset_url }}">
+          </div>
+        </div>
+        <div class="resalex_steps-item resalex_steps-item-2 resalex_steps-item-left">
+          <div class="resalex_steps-line-item resalex_steps-line-item-mobile">
+            <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-1"></span>
+            <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-2"></span>
+            <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-3"></span>
+          </div>
+          <p class="resalex_steps-item-title h3-heading-pp">
+            Start Authentication
+          </p>
+          <p class="resalex_steps-item-desc body-text">
+           Select brand, category and turnaround time to begin authentication.
+          </p>
+          <div class="resalex_steps-item-content resalex_steps-item-content-single-image block-flex-wrap block-flex-center-center">
+            <img src="{{ 'account_steps-2.webp' | asset_url }}">
+          </div>
+        </div>
+        <div class="resalex_steps-item resalex_steps-item-3 resalex_steps-item-right">
+          <div class="resalex_steps-line-item resalex_steps-line-item-mobile">
+            <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-1"></span>
+            <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-2"></span>
+            <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-3"></span>
+          </div>
+          <p class="resalex_steps-item-title h3-heading-pp">
+            Upload Photos
+          </p>
+          <p class="resalex_steps-item-desc body-text">
+            Add clear photos of all details for accurate checks.
+          </p>
+          <div class="resalex_steps-item-content resalex_steps-item-content-single-image block-flex-wrap block-flex-center-center">
+            <img src="{{ 'account_steps-3.webp' | asset_url }}">
+          </div>
+        </div>
+        <div class="resalex_steps-item resalex_steps-item-4 resalex_steps-item-left">
+          <div class="resalex_steps-line-item resalex_steps-line-item-mobile">
+            <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-1"></span>
+            <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-2"></span>
+            <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-3"></span>
+          </div>
+          <p class="resalex_steps-item-title h3-heading-pp">
+            Receive Your Certificate
+          </p>
+          <p class="resalex_steps-item-desc body-text">
+            Download a certificate with images, expert notes, and final decision.
+          </p>
+          <div class="resalex_steps-item-content resalex_steps-item-content-single-image block-flex-wrap block-flex-center-center">
+            <img src="{{ 'account_steps-4.webp' | asset_url }}">
+          </div>
+        </div>
+        <div class="resalex_steps-item resalex_steps-item-5 resalex_steps-item-right">
+          <div class="resalex_steps-line-item resalex_steps-line-item-mobile">
+            <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-1"></span>
+            <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-2"></span>
+            <span class="resalex_steps-line-item-circle resalex_steps-line-item-circle-3"></span>
+          </div>
+          <p class="resalex_steps-item-title h3-heading-pp">
+            All Authentications in One Place
+          </p>
+          <p class="resalex_steps-item-desc body-text">
+            View progress, results, and certificates from all your authentications.
+          </p>
+          <div class="resalex_steps-item-content resalex_steps-item-content-single-image block-flex-wrap block-flex-center-center">
+            <img src="{{ 'account_steps-5.webp' | asset_url }}">
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="https://account.legitgrails.com/" target="_blank" class="resalex_steps-btn resalex_steps-mobile-btn resalex-btn resalex-btn-primary rebranding_btn rebranding_btn-main">
+       Create free account
+      </a>
+  </div>
+</div>
+
+<script>
+  $(window).on('load', function () {
+    
+    var winScrollTop = $(this).scrollTop();
+    let window_height = window.innerHeight
+    let screen1 = document.querySelector('.account_steps')
+    let screenBefore = document.querySelector('.account-loyalty')
+    let screenBefore_scrolled = false
+
+    if (winScrollTop > screenBefore.offsetHeight + 200 && !screenBefore_scrolled) {
+        resalexStepsLoad();
+        screen1_scrolled = true;
+    };
+
+    window.addEventListener('scroll', () => {
+      if (screen1.offsetTop + 800 < window.pageYOffset + window_height && !screenBefore_scrolled) {
+            resalexStepsLoad();
+            screenBefore_scrolled = true;
+        };
+      });
+
+});
+
+  function resalexStepsLoad() {
+    if ($(window).width() > 950) {
+      $('span.resalex_steps-line-main').addClass('animated');
+      $('.resalex_steps-line-item-1').addClass('animated');
+      setTimeout(function () {
+          $('.resalex_steps-item-1').addClass('animated');
+      }, 500);
+      setTimeout(function () {
+          $('.resalex_steps-line-item-2').addClass('animated');
+      }, 1500);
+      setTimeout(function () {
+          $('.resalex_steps-item-2').addClass('animated');
+      }, 2000);
+      setTimeout(function () {
+          $('.resalex_steps-line-item-3').addClass('animated');
+      }, 3000);
+      setTimeout(function () {
+          $('.resalex_steps-item-3').addClass('animated');
+      }, 3500);
+      setTimeout(function () {
+          $('.resalex_steps-line-item-4').addClass('animated');
+      }, 4000);
+      setTimeout(function () {
+          $('.resalex_steps-item-4').addClass('animated');
+      }, 4500);
+      setTimeout(function () {
+          $('.resalex_steps-line-item-5').addClass('animated');
+      }, 5000);
+      setTimeout(function () {
+          $('.resalex_steps-item-5').addClass('animated');
+      }, 5500);
+    }
+};
+</script>
+{% schema %}
+  {
+    "name": "Account Steps",
+    "class": "account_steps rebranding-section",
+    "settings": []
+  }
+{% endschema %}

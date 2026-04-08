@@ -1,0 +1,31 @@
+{% render 'product-landing-book-styles-min' %}
+{% section 'product-landing-banner' %}
+{% section 'product-reliable-book'%}
+<section class="product_checkout" id="product_checkout">
+    <div class="container">
+        <div class="product_checkout-wrapp">
+            {% section 'product-form-block-inverse'%}
+            {% section 'product-form-book-typeform' %}
+        </div>
+    </div>
+</section>
+{% section 'product-why-choose-books'%}
+{% if product.tags contains "new-reviews-2" %}
+      {% section 'new-reviews' %}
+{% endif %}
+{% unless product.tags contains 'new-reviews-2' %}
+     {% section 'new-reviews-2' %}
+{% endunless %}
+
+{% section 'product-recommendations' %}
+
+<script>
+  window.theme = window.theme || {};
+  window.theme.strings = window.theme.strings || {};
+
+  // Override default values of theme.strings for each template.
+  // Values are used by JavaScript only; Liquid must be updated separately
+  window.theme.strings.addToCart = {{ 'products.product.add_to_cart' | t | json }};
+  window.theme.strings.soldOut = {{ 'products.product.sold_out' | t | json }};
+  window.theme.strings.unavailable = {{ 'products.product.unavailable' | t | json }};
+</script>

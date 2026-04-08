@@ -1,0 +1,110 @@
+{% render 'section-legit-product-bundles-compare-styles' %}
+<div class="compare-blocks compare-blocks--{{ section.id }} page-width">
+    <div class="compare-heading">
+        {%- unless section.settings.title == blank -%}
+            <h2 class="compare-heading__title section-title featured-blog__heading font-title" data-animate="true">
+                {{ section.settings.title | escape }}
+            </h2>
+        {%- endunless -%}
+        {%- unless section.settings.description == blank -%}
+            <div class="compare-heading__description section-description font-description">
+                {{ section.settings.description }}
+            </div>
+        {%- endunless -%}
+    </div>
+    <div class="compare-content">
+        <div class="compare__vs">vs</div>
+        {%- for block in section.blocks -%}
+            <div class="compare compare--{{ forloop.index }}">
+                <div class="compare__image">
+                    <img src="{{ block.settings.image | img_url: 'master' }}" loading="lazy" alt="{{ block.settings.title }}">
+                </div>
+                <div class="compare__title font-title">{{ block.settings.title }}</div>
+                <div class="compare__text font-description">{{ block.settings.text }}</div>
+            </div>
+        {% endfor %}
+    </div>
+  
+    {%- unless section.settings.button_label == blank -%}
+        <div class="compare-button">
+            <a id="compareButton" class="font-title main-btn" href="javascript:void(0)">{{ section.settings.button_label }}</a>
+        </div>
+    {%- endunless -%}
+</div>
+<script>
+$("#compareButton").click(function(){scrollTop:$("#bundles-product").offset().top});
+</script>
+
+
+{% schema %}
+{
+  "name": "Half blocks compare",
+  "class": "section",
+  "tag": "section",
+  "max_blocks": 2,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Section Description"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": {
+        "en": "Button label"
+      }
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": {
+        "en": "Button link"
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Block content",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Block image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Column",
+          "label": "Block title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Pair text with an image, style, or even provide a review.</p>",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Half Blocks Compare",
+      "blocks": [
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

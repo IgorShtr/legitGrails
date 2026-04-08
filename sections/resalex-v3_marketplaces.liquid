@@ -1,0 +1,86 @@
+<style>
+    .resalex_marketplaces-wrapper {
+        gap: 40px 100px;
+    }
+    @media(max-width: 1450px) {
+        .resalex_marketplaces-wrapper img {
+            height: 30px;
+            opacity: 0.8
+        }
+        .resalex_marketplaces-wrapper img:nth-child(9), .resalex_marketplaces-wrapper img:nth-child(10), .resalex_marketplaces-wrapper img:nth-child(11), .resalex_marketplaces-wrapper img:nth-child(12), .resalex_marketplaces-wrapper img:nth-child(13), .resalex_marketplaces-wrapper img:nth-child(14), .resalex_marketplaces-wrapper img:nth-child(16) {
+            height: 20px;
+        }
+        .resalex_marketplaces-wrapper img:nth-child(17), .resalex_marketplaces-wrapper img:nth-child(18), .resalex_marketplaces-wrapper img:nth-child(19) {
+            height: 15px;
+        }
+        .resalex_marketplaces-wrapper {
+            gap: 40px 80px;
+        }
+    }
+    @media(max-width: 950px) {
+        .resalex_marketplaces-wrapper img {
+            height: 20px;
+        }
+        .resalex_marketplaces-wrapper img:nth-child(9), .resalex_marketplaces-wrapper img:nth-child(10), .resalex_marketplaces-wrapper img:nth-child(11), .resalex_marketplaces-wrapper img:nth-child(12), .resalex_marketplaces-wrapper img:nth-child(13), .resalex_marketplaces-wrapper img:nth-child(14), .resalex_marketplaces-wrapper img:nth-child(16) {
+            height: 15px;
+        }
+        .resalex_marketplaces-wrapper img:nth-child(17), .resalex_marketplaces-wrapper img:nth-child(18), .resalex_marketplaces-wrapper img:nth-child(19) {
+            height: 13px;
+        }
+    }
+    @media(max-width: 500px) {
+            .resalex_marketplaces-wrapper {
+        gap: 30px 50px;
+    }
+    .resalex_marketplaces-wrapper img {
+            height: 15px;
+        }
+        .resalex_marketplaces-wrapper img:nth-child(9), .resalex_marketplaces-wrapper img:nth-child(10), .resalex_marketplaces-wrapper img:nth-child(11), .resalex_marketplaces-wrapper img:nth-child(12), .resalex_marketplaces-wrapper img:nth-child(13), .resalex_marketplaces-wrapper img:nth-child(14), .resalex_marketplaces-wrapper img:nth-child(16) {
+            height: 12px;
+        }
+        .resalex_marketplaces-wrapper img:nth-child(17), .resalex_marketplaces-wrapper img:nth-child(18), .resalex_marketplaces-wrapper img:nth-child(19) {
+            height: 10px;
+        }
+    }
+</style>
+
+<div class="rebranding_container">
+    <div class="block-flex-wrap block-gap-50 block-flex-center-center">
+        <div class="block-flex-wrap block-gap-30 block-flex-center-center">
+            <p class="caption w-100 tac">listings</p>
+            <div class="block-flex-wrap block-gap-15 block-flex-center-center">
+                <h2 class="h2-heading-ss tac w-100">
+                   Available on <span class="h2-heading-pp">Leading Marketplaces</span>
+                </h2>
+            </div>
+        </div>
+        <div class="resalex_marketplaces-wrapper block-flex-wrap block-flex-center-center">
+            <img src="{{ "resalex-v3_marketplaces-1.svg" | asset_url }}">
+            <img src="{{ "resalex-v3_marketplaces-2.svg" | asset_url }}">
+            <img src="{{ "resalex-v3_marketplaces-3.svg" | asset_url }}">
+            <img src="{{ "resalex-v3_marketplaces-5.svg" | asset_url }}">
+            <img src="{{ "resalex-v3_marketplaces-6.svg" | asset_url }}">
+            <img src="{{ "resalex-v3_marketplaces-7.svg" | asset_url }}">
+            <img src="{{ "resalex-v3_marketplaces-8.svg" | asset_url }}">
+            <img src="{{ "resalex-v3_marketplaces-9.svg" | asset_url }}">
+            <img src="{{ "resalex-v3_marketplaces-10.svg" | asset_url }}">
+            <img src="{{ "resalex-v3_marketplaces-11.svg" | asset_url }}">
+            <img src="{{ "resalex-v3_marketplaces-12.svg" | asset_url }}">
+            <img src="{{ "resalex-v3_marketplaces-13.svg" | asset_url }}">
+            <img src="{{ "resalex-v3_marketplaces-14.svg" | asset_url }}">
+            <img src="{{ "resalex-v3_marketplaces-15.svg" | asset_url }}">
+            <img src="{{ "resalex-v3_marketplaces-16.svg" | asset_url }}">
+            <img src="{{ "resalex-v3_marketplaces-17.svg" | asset_url }}">
+            <img src="{{ "resalex-v3_marketplaces-18.svg" | asset_url }}">
+            <img src="{{ "resalex-v3_marketplaces-19.svg" | asset_url }}">
+        </div>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "ResaleX V3 Reviews",
+    "class": "resalex_marketplaces rebranding-section-bottom",
+    "settings": []
+  }
+{% endschema %}

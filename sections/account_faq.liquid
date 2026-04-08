@@ -1,0 +1,408 @@
+<style>
+  .product_faq-wrapper {
+    justify-content: center;
+    gap: 50px;
+  }
+  .product_faq-text {
+    width: 515px;
+  }
+  .product_faq-text p {
+    margin-top: 10px;
+  }
+  .product_faq-items {
+    width: calc(100% - 565px);
+    gap: 10px;
+  }
+  .product_faq-item {
+    border-radius: 12px;
+    transition: 0.3s;
+    width: 100%;
+    padding: 4px 40px;
+    border: 1px solid rgba(60, 31, 27, 0.30);
+  }
+  .product_faq-item:hover {
+    cursor: pointer;
+  }
+  .product_faq-item-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0px;
+  }
+  .product_faq-item-title p {
+    max-width: calc(100% - 38px);
+  }
+  a.product_faq-item-cross {
+    display: block;
+    height: max-content;
+  }
+  .product_faq-item-title a svg {
+      height: 28px;
+      width: auto;
+      transition: .3s;
+      transform: rotate(0deg);
+    display: block;
+  }
+  .product_faq-item-title a svg path {
+    transition: .3s;
+  }
+  .product_faq-item.active .product_faq-item-title a svg {
+      transform: rotate(45deg);
+  }
+  .product_faq-item.active .product_faq-item-title a svg path {
+    stroke: #F24F14;
+  }
+  .product_faq-item-text {
+    height: max-content;
+    max-height: 0px;
+    overflow: hidden;
+    width: 100%;
+    transition: .5s;
+    position: relative;
+  }
+  .product_faq-item-text a {
+    text-decoration: underline;
+    transition: .3s;
+    color: #F24F14;
+  }
+  .product_faq-item-text a:hover {
+    opacity: .85;
+  }
+  .product_faq-item-text a:active {
+    opacity: .7;
+  }
+  .product_faq-item.active .product_faq-item-text {
+    padding-top: 21px;
+    padding-bottom: 16px;
+    max-height: 164px;
+  }
+  .product_faq-item-text::before {
+    content:'';
+    display: block;
+    height: 100%;
+    max-height: 0px;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    background: rgba(60, 31, 27, 0.30);
+    transition: .5s;
+  }
+  .product_faq-item-text::before {
+    max-height: 1px;
+  }
+  .product_faq-desc {
+    margin-top: 15px;
+  }
+  .product_faq-btns {
+    margin-top: 30px;
+  }
+  .product_faq-btns a {
+    margin: 0;
+  }
+  .product_faq-a {
+    text-decoration: underline;
+    color: #fff;
+  }
+  .product_faq-btns-desktop-hidden {
+    display: none;
+  }
+  @media(max-width: 1450px) {
+    .product_faq-item {
+        padding: 4px 30px;
+    }
+    .product_faq-item.active .product_faq-item-text {
+      max-height: 222px;
+    }
+  }
+  @media(max-width: 1250px) {
+    .product_faq-btns-mobile-hidden {
+      display: none;
+    }
+    .product_faq-btns-desktop-hidden {
+      display: flex!important;
+    }
+    .product_faq-items {
+      width: 100%;
+    }
+    .product_faq-btns {
+      margin-top: 0;
+      width: 100%;
+      justify-content: center;
+    }
+    .product_faq-text {
+        width: 100%;
+        text-align: center;
+    }
+    .product_faq-wrapper {
+      gap: 40px;
+    }
+  }
+  @media(max-width: 750px) {
+    .product_faq {
+      padding: 60px 0;
+    }
+    .product_faq-wrapper a.rebranding_btn {
+      margin: 0px auto;
+    }
+    .product_faq-item-title {
+      padding: 15px 0;
+    }
+    .product_faq-item {
+        padding: 0px 20px;
+    }
+    .product_faq-item.active .product_faq-item-text {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    }
+    .product_faq-item-title a svg {
+      height: 24px;
+    }
+  }
+</style>
+
+<div class="container rebranding_container">
+  <div class="product_faq-wrapper block-flex-wrap">
+    <div class="product_faq-text">
+      <h2 class="h2-heading-ss">
+        Featured
+        <span class="h2-heading-pp">questions</span>
+      </h2>
+      <p class="product_faq-desc body-text">
+        Have more questions? Visit our <a href="https://help.legitgrails.com/" target="_blank" class="product_faq-a standart-hover">Help Center</a>
+      </p>
+      <div class="product_faq-btns block-flex-wrap block-gap-15 product_faq-btns-mobile-hidden w-100 block-flex-start-start">
+        <a href="https://help.legitgrails.com/" target="_blank" class="rebranding_btn rebranding_btn-main m-0">
+        Help Center
+      </a>
+      </div>
+    </div>
+    <div class="product_faq-items block-flex-wrap">
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">How do we verify your items?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            Every item submitted to LegitGrails is carefully reviewed by two independent authenticators, each with over six years of experience. Their assessments are compared, and if there’s any disagreement, a senior lead authenticator makes the final call. After the human review, the item goes through our AI verification system for an extra layer of verification. Once all results match, the authentication is finalized and delivered to you with confidence.
+          </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">Can I track my authentication orders?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            Yes, all your orders are tracked in real time directly from your dashboard.
+          </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">Do I get a certificate with my authentication?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            Yes, if your item is marked Authentic or Fake, you can download a certificate for free. You can also upgrade it with your business logo or choose a premium layout. Need a more detailed report? You can get a Written Statement – a longer document explaining the result, which is useful for disputes or proof of authenticity.
+          </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">Can I get discounts using the Account?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            Yes. When you use the LegitGrails account and top up credits, you unlock discounted authentication rates. The more credits you add, the more bonus credits you get. See full details about our <a href="https://legitgrails.com/pages/account-pricing">Pricing</a>.
+          </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">What are LegitGrails Credits?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+           Credits are the currency used on the LegitGrails Account to pay for authentications. 1 credit = 1 USD. See full details about our <a href="https://legitgrails.com/pages/account-pricing">Pricing</a>.
+          </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">What payment methods are accepted?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            All users worldwide can pay securely through Stripe using Visa, Mastercard, American Express and other supported cards. If you are interested in direct bank transfers as a business, talk to our team at <a href="mailto:partners@legitgrails.com">partners@legitgrails.com</a>.
+          </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">Do you provide invoices for businesses?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+           Yes, we do. You can register your business or update your details in Account Settings. We use Stripe, which supports automatic invoicing with your company info.
+          </p>
+        </div>
+      </div>
+            <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <p class="body-text">Are there automation options for business?</p>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            We have an [API] available for each integration and automation. Contact <a href="mailto:partners@legitgrails.com">partners@legitgrails.com</a> to explore automated options.
+          </p>
+        </div>
+      </div>
+    </div>
+      <div class="product_faq-btns block-flex-wrap block-gap-15 product_faq-btns-desktop-hidden">
+        <a href="https://help.legitgrails.com/" target="_blank" class="rebranding_btn rebranding_btn-main m-0">
+        Help Center
+      </a>
+      </div>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are there automation options for business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We have an API available for each integration and automation. Contact partners@legitgrails.com to explore automated options."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do we verify your items?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every item submitted to LegitGrails is carefully reviewed by two independent authenticators, each with over six years of experience. Their assessments are compared, and if there’s any disagreement, a senior lead authenticator makes the final call. After the human review, the item goes through our AI verification system for an extra layer of verification. Once all results match, the authentication is finalized and delivered to you with confidence."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I track my authentication orders?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, all your orders are tracked in real time directly from your dashboard."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I get a certificate with my authentication?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, if your item is marked Authentic or Fake, you can download a certificate for free. You can also upgrade it with your business logo or choose a premium layout. Need a more detailed report? You can get a Written Statement – a longer document explaining the result, which is useful for disputes or proof of authenticity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get discounts using the Account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. When you use the LegitGrails account and top up credits, you unlock discounted authentication rates. The more credits you add, the more bonus credits you get. See full details about our [Pricing]."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are LegitGrails Credits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Credits are the currency used on the LegitGrails Account to pay for authentications. 1 credit = 1 USD. See full details about our [Pricing]."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What payment methods are accepted?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All users worldwide can pay securely through Stripe using Visa, Mastercard, American Express and other supported cards. If you are interested in direct bank transfers as a business, talk to our team at partners@legitgrails.com."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide invoices for businesses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we do. You can register your business or update your details in Account Settings. We use Stripe, which supports automatic invoicing with your company info."
+      }
+    }
+  ]
+}
+</script>
+<script>
+  $( ".product_faq-item" ).on( "click", function() {
+    if ($(this).hasClass("active")) {
+      $(".product_faq-item").removeClass("active");
+    } else {
+      $(".product_faq-item").removeClass("active");
+      $(this).addClass("active");
+    }
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Account FAQ",
+    "class": "product_faq rebranding-section",
+    "settings": []
+  }
+{% endschema %}

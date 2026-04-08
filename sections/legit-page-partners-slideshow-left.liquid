@@ -1,0 +1,28 @@
+<div class="certificate-block-slides owl-carousel owl-theme">
+    {%- for block in section.blocks -%}
+        <div class="certificate-image image--{{ section.id }} lazyload">
+            <img src="{{ block.settings.image | img_url: 'master' }}" loading="lazy" alt="">
+        </div>
+    {% endfor %}
+</div>
+{% schema %}
+
+{
+  "name": "Certificate slides",
+  "class": "section",
+  "tag": "section",
+  "blocks": [
+    {
+      "type": "certificate",
+      "name": "Block content",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Slide"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,97 @@
+{% assign img_url = type | img_url: '540x' %}
+
+{% if item.object_type == 'product' %}
+  {% render 'fonts-rebrand' %}
+<style>
+  .card__image-wrapper {
+    background: #161616;
+    border-radius: 8px;
+    padding: 0;
+    height: 280px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  p.card__image-wrapper-title {
+    color: #FFF;
+    text-align: center;
+    font-family: "PP Fragment";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%; /* 38.85px */
+    letter-spacing: 0.37px;
+    transition: .3s;
+    padding: 0 15px;
+  }
+  .predictive-search__item:hover p.card__image-wrapper-title {
+    transform: scale(1.1) !important;
+  }
+  .product-search-section p.card__image-wrapper-title {
+    font-size: 15px;
+    padding: 0 3px;
+    transition: .3s;
+}
+  .products-search_result .card-list .card.card-product a.card__wrapper:hover p.card__image-wrapper-title {
+        transform: scale(1.1);
+}
+  @media(max-width: 1250px) {
+    p.card__image-wrapper-title {
+      font-size: 22px;
+    }
+    .card__image-wrapper {
+        height: 200px;
+    }
+  }
+   @media(max-width: 750px) {
+    p.card__image-wrapper-title {
+      font-size: 17px;
+    }
+  }
+  @media(max-width: 450px) {
+    p.card__image-wrapper-title {
+        font-size: 16px;
+    }
+    .card__image-wrapper {
+      height: 170px;
+    }
+  }
+  @media(max-width: 400px) {
+    p.card__image-wrapper-title {
+      font-size: 14px;
+    }
+    .card__image-wrapper {
+        height: 150px;
+    }
+  }
+</style>
+
+<div class="card__image-wrapper card__image-wrapper--aligned">
+    <p class="card__image-wrapper-title">
+      {{ product.title | remove: "Authentication Service" }}
+    </p>
+</div>
+
+  {% else %}
+    {% if grid_style == 'grid' %}
+  <div class="card__image-wrapper card__image-wrapper--aligned">
+
+    <img class="card__image card__image--align fade-in"
+      src="{{ type | img_url: '540x'}}" width="1024px" loading="lazy" style="opacity:1;">
+  </div>
+{% else %}
+  <div class="card__image-wrapper" style="padding-top:{{ 1 | divided_by: type.aspect_ratio | times: 100}}%">
+    <img class="card__image fade-in"
+      src="{{ img_url }}" width="540x" style="opacity:1;" loading="lazy">
+
+
+    <noscript>
+      {% assign card_image = type | img_url: '540x' %}
+      <img src="{{ card_image }}" alt="{{ type.alt | escape }}" class="card__image" style="opacity:1;" loading="lazy">
+    </noscript>
+  </div>
+{% endif %}
+
+  {% endif %}
+

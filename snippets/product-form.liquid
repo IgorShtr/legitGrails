@@ -1,0 +1,619 @@
+{% form 'product', product, class:'product-form' %}
+
+  {% unless current_variant.available %}
+    {% assign button_text = 'products.product.sold_out' | t %}
+  {% else %}
+    {% assign button_text = 'products.product.add_to_cart' | t %}
+  {% endunless %}
+
+
+  {% if product.type contains 'Service' %}
+  <a class="need-link" href="/pages/photo-examples">Needed Photos</a>
+  {% endif %}
+
+  <div>
+    <a class="trigger_popup_fricc btn">UPLOAD PHOTOS HERE</a>
+
+    <div class="hover_bkgr_fricc  ee">
+      <span class="helper"></span>
+      <div>
+        <div class="popupCloseButton">&times;</div>
+
+        {% if settings.heading != blank %}
+        <h2 class="section-header__title h2">{{ settings.heading }}</h2>
+        {% endif %}
+
+        {% if settings.content != blank %}
+        <p><center>{{ settings.content }}</center> </p>
+        {% endif %}
+
+          <div class="popupcontent">
+            <div class="topheader">
+              
+              
+              {% if settings.image5_bags != blank or settings.title5_bags != blank or settings.image6_bags != blank or settings.title6_bags != blank or settings.image7_bags != blank or settings.title7_bags != blank or settings.image8_bags != blank or settings.title8_bags != blank or settings.image9_bags != blank or settings.title9_bags != blank %}
+              <div class="title first-child">
+                <h3 rel="bags" class="active" >{{ settings.title_bags }}</h3>
+              </div>
+              {% endif %}
+              
+              
+              {% if settings.image5 != blank or settings.title5 != blank or settings.image6 != blank or settings.title6 != blank or settings.image7 != blank or settings.title7 != blank or settings.image8 != blank or settings.title8 != blank or settings.image9 != blank or settings.title9 != blank %}
+              <div class="title">
+                <h3 rel="snekers">{{ settings.title }}</h3>
+              </div>
+              {% endif %}
+              
+              
+              
+              {% if settings.image5_cloth != blank or settings.title5_cloth != blank or settings.image6_cloth != blank or settings.title6_cloth != blank or settings.image7_cloth != blank or settings.title7_cloth != blank or settings.image8_cloth != blank or settings.title8_cloth != blank or settings.image9_cloth != blank or settings.title9_cloth != blank %}
+              <div class="title">
+                <h3 rel="cloth">{{ settings.title_cloth }}</h3>
+              </div>
+              {% endif %}
+              
+              {% if settings.image5_accessories != blank or settings.title5_accessories != blank or settings.image6_accessories != blank or settings.title6_accessories != blank or settings.image7_accessories != blank or settings.title7_accessories != blank or settings.image8_accessories != blank or settings.title8_accessories != blank or settings.image9_accessories != blank or settings.title9_accessories != blank %}
+              <div class="title">
+                <h3 rel="accessories">{{ settings.title_accessories }}</h3>
+              </div>
+              {% endif %}
+            </div>
+            <div class="bottomTab">
+              
+              <div class="bottomheader bags">
+
+                {% if settings.title5_bags != blank %}
+                <div class="list">
+                  <div class="imagewrapper">
+                    <div class="imageswrap">
+                      <div class="imagesinner">
+                        {% if settings.image5_bags != blank %}
+                        <div class="image">
+                          <img src="{{ settings.image5_bags | img_url:'170x170' }}" alt="" />
+                        </div>
+                        {% endif %}
+                        {% if settings.title5_bags != blank %}
+                        <div class="title">
+                          <p>{{ settings.title5_bags }}</p>
+                        </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+
+                {% if settings.title6_bags != blank %}
+                <div class="list">
+                  <div class="imagewrapper">
+
+                    <div class="imageswrap">
+                      <div class="imagesinner">
+                        {% if settings.image6_bags != blank %}
+                        <div class="image">
+                          <img src="{{ settings.image6_bags | img_url:'170x170' }}" alt="" />
+                        </div>
+                        {% endif %}
+                        {% if settings.title6_bags != blank %}
+                        <div class="title">
+                          <p>{{ settings.title6_bags }}</p>
+                        </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+
+                {% if settings.title7_bags != blank %}
+                <div class="list">
+                  <div class="imagewrapper">
+
+                    <div class="imageswrap">
+                      <div class="imagesinner">
+                        {% if settings.image7_bags != blank %}
+                        <div class="image">
+                          <img src="{{ settings.image7_bags | img_url:'170x170' }}" alt="" />
+                        </div>
+                        {% endif %}
+                        {% if settings.title7_bags != blank %}
+                        <div class="title">
+                          <p>{{ settings.title7_bags }}</p>
+                        </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+
+                {% if settings.title8_bags != blank %}
+                <div class="list">
+                  <div class="imagewrapper">
+
+                    <div class="imageswrap">
+                      <div class="imagesinner">
+                        {% if settings.image8_bags != blank %}
+                        <div class="image">
+                          <img src="{{ settings.image8_bags | img_url:'170x170' }}" alt="" />
+                        </div>
+                        {% endif %}
+                        {% if settings.title8_bags != blank %}
+                        <div class="title">
+                          <p>{{ settings.title8_bags }}</p>
+                        </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+
+                {% if settings.title9_bags != blank %}
+                <div class="list">
+                  <div class="imagewrapper">
+                    <div class="imageswrap">
+                      <div class="imagesinner">
+                        {% if settings.image9_bags != blank %}
+                        <div class="image">
+                          <img src="{{ settings.image9_bags | img_url:'170x170' }}" alt="" />
+                        </div>
+                        {% endif %}
+                        {% if settings.title9_bags != blank %}
+                        <div class="title">
+                          <p>{{ settings.title9_bags }}</p>
+                        </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+              </div>
+              
+              
+              <div class="bottomheader snekers" style="display: none">
+                {% if settings.title5 != blank %}
+                <div class="list">
+                  <div class="imagewrapper">
+                    <div class="imageswrap">
+                      <div class="imagesinner">
+                        {% if settings.image5 != blank %}
+                        <div class="image">
+                          <img src="{{ settings.image5 | img_url:'170x170' }}" alt="" />
+                        </div>
+                        {% endif %}
+                        {% if settings.title5 != blank %}
+                        <div class="title">
+                          <p>{{ settings.title5 }}</p>
+                        </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+
+                {% if settings.title6 != blank %}
+                <div class="list">
+                  <div class="imagewrapper">
+
+                    <div class="imageswrap">
+                      <div class="imagesinner">
+                        {% if settings.image6 != blank %}
+                        <div class="image">
+                          <img src="{{ settings.image6 | img_url:'170x170' }}" alt="" />
+                        </div>
+                        {% endif %}
+                        {% if settings.title6 != blank %}
+                        <div class="title">
+                          <p>{{ settings.title6 }}</p>
+                        </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+
+                {% if settings.title7 != blank %}
+                <div class="list">
+                  <div class="imagewrapper">
+
+                    <div class="imageswrap">
+                      <div class="imagesinner">
+                        {% if settings.image7 != blank %}
+                        <div class="image">
+                          <img src="{{ settings.image7 | img_url:'170x170' }}" alt="" />
+                        </div>
+                        {% endif %}
+                        {% if settings.title7 != blank %}
+                        <div class="title">
+                          <p>{{ settings.title7 }}</p>
+                        </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+
+                {% if settings.title8 != blank %}
+                <div class="list">
+                  <div class="imagewrapper">
+                    <div class="imageswrap">
+                      <div class="imagesinner">
+                        {% if settings.image8 != blank %}
+                        <div class="image">
+                          <img src="{{ settings.image8 | img_url:'170x170' }}" alt="" />
+                        </div>
+                        {% endif %}
+                        {% if settings.title8 != blank %}
+                        <div class="title">
+                          <p>{{ settings.title8 }}</p>
+                        </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+
+                {% if settings.title9 != blank %}
+                <div class="list">
+                  <div class="imagewrapper">
+                    <div class="imageswrap">
+                      <div class="imagesinner">
+                        {% if settings.image9 != blank %}
+                        <div class="image">
+                          <img src="{{ settings.image9 | img_url:'170x170' }}" alt="" />
+                        </div>
+                        {% endif %}
+                        {% if settings.title9 != blank %}
+                        <div class="title">
+                          <p>{{ settings.title9 }}</p>
+                        </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+              </div>
+
+              <div class="bottomheader cloth" style="display: none">
+
+                {% if settings.title5_cloth != blank %}
+                <div class="list">
+                  <div class="imagewrapper">
+                    <div class="imageswrap">
+                      <div class="imagesinner">
+                        {% if settings.image5_cloth != blank %}
+                        <div class="image">
+                          <img src="{{ settings.image5_cloth | img_url:'170x170' }}" alt="" />
+                        </div>
+                        {% endif %}
+                        {% if settings.title5_cloth != blank %}
+                        <div class="title">
+                          <p>{{ settings.title5_cloth }}</p>
+                        </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+
+                {% if settings.title6_cloth != blank %}
+                <div class="list">
+                  <div class="imagewrapper">
+
+                    <div class="imageswrap">
+                      <div class="imagesinner">
+                        {% if settings.image6_cloth != blank %}
+                        <div class="image">
+                          <img src="{{ settings.image6_cloth | img_url:'170x170' }}" alt="" />
+                        </div>
+                        {% endif %}
+                        {% if settings.title6_cloth != blank %}
+                        <div class="title">
+                          <p>{{ settings.title6_cloth }}</p>
+                        </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+
+                {% if settings.title7_cloth != blank %}
+                <div class="list">
+                  <div class="imagewrapper">
+
+                    <div class="imageswrap">
+                      <div class="imagesinner">
+                        {% if settings.image6_cloth != blank %}
+                        <div class="image">
+                          <img src="{{ settings.image7_cloth | img_url:'170x170' }}" alt="" />
+                        </div>
+                        {% endif %}
+                        {% if settings.title7_cloth != blank %}
+                        <div class="title">
+                          <p>{{ settings.title7_cloth }}</p>
+                        </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+
+                {% if settings.title8_cloth != blank %}
+                <div class="list">
+                  <div class="imagewrapper">
+
+                    <div class="imageswrap">
+                      <div class="imagesinner">
+                        {% if settings.image8_cloth != blank %}
+                        <div class="image">
+                          <img src="{{ settings.image8_cloth | img_url:'170x170' }}" alt="" />
+                        </div>
+                        {% endif %}
+                        {% if settings.title8_cloth != blank %}
+                        <div class="title">
+                          <p>{{ settings.title8_cloth }}</p>
+                        </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+
+                {% if settings.title9_cloth != blank %}
+                <div class="list">
+                  <div class="imagewrapper">
+                    <div class="imageswrap">
+                      <div class="imagesinner">
+                        {% if settings.image9_cloth != blank %}
+                        <div class="image">
+                          <img src="{{ settings.image9_cloth | img_url:'170x170' }}" alt="" />
+                        </div>
+                        {% endif %}
+                        {% if settings.title9_cloth != blank %}
+                        <div class="title">
+                          <p>{{ settings.title9_cloth }}</p>
+                        </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+
+              
+
+              {% if settings.title5_accessories != blank %}
+              <div class="bottomheader accessories" style="display: none">
+                <div class="list">
+                  <div class="imagewrapper">
+
+                    <div class="imageswrap">
+                      <div class="imagesinner">
+                        {% if settings.image5_accessories != blank %}
+                        <div class="image">
+                          <img src="{{ settings.image5_accessories | img_url:'170x170' }}" alt="" />
+                        </div>
+                        {% endif %}
+                        {% if settings.title5_accessories != blank %}
+                        <div class="title">
+                          <p>{{ settings.title5_accessories }}</p>
+                        </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+
+                {% if settings.title6_accessories != blank %}
+                <div class="list">
+                  <div class="imagewrapper">
+
+                    <div class="imageswrap">
+                      <div class="imagesinner">
+                        {% if settings.image6_accessories != blank %}
+                        <div class="image">
+                          <img src="{{ settings.image6_accessories | img_url:'170x170' }}" alt="" />
+                        </div>
+                        {% endif %}
+                        {% if settings.title6_accessories != blank %}
+                        <div class="title">
+                          <p>{{ settings.title6_accessories }}</p>
+                        </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+
+                {% if settings.title7_accessories != blank %}
+                <div class="list">
+                  <div class="imagewrapper">
+
+                    <div class="imageswrap">
+                      <div class="imagesinner">
+                        {% if settings.image6_accessories != blank %}
+                        <div class="image">
+                          <img src="{{ settings.image7_accessories | img_url:'170x170' }}" alt="" />
+                        </div>
+                        {% endif %}
+                        {% if settings.title7_accessories != blank %}
+                        <div class="title">
+                          <p>{{ settings.title7_accessories }}</p>
+                        </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+
+                {% if settings.title8_accessories != blank %}
+                <div class="list">
+                  <div class="imagewrapper">
+
+                    <div class="imageswrap">
+                      <div class="imagesinner">
+                        {% if settings.image8_accessories != blank %}
+                        <div class="image">
+                          <img src="{{ settings.image8_accessories | img_url:'170x170' }}" alt="" />
+                        </div>
+                        {% endif %}
+                        {% if settings.title8_accessories != blank %}
+                        <div class="title">
+                          <p>{{ settings.title8_accessories }}</p>
+                        </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+
+                {% if settings.image9_accessories != blank %}
+                <div class="list">
+                  <div class="imagewrapper">
+                    <div class="imageswrap">
+                      <div class="imagesinner">
+                        {% if settings.image9_accessories != blank %}
+                        <div class="image">
+                          <img src="{{ settings.image9_accessories | img_url:'170x170' }}" alt="" />
+                        </div>
+                        {% endif %}
+                        {% if settings.title9_accessories != blank %}
+                        <div class="title">
+                          <p>{{ settings.title9_accessories }}</p>
+                        </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+
+              </div>
+            </div>
+            <div class="uploadbutton_wrapper">
+              <div class="uploadkit" data-uploadkit-product-json="{{ product | json | escape }}" data-uploadkit-collections-json="{{ product.collections | json | escape }}"></div>
+              <input type="button" value="Add To Cart" class="trigger_addtocart btn btn btn-default article-add-to-cart-btn" />
+            </div>
+          </div>
+      </div>
+    </div>
+
+
+  {% if template.handle contains 'product' %}
+
+    {% unless product.has_only_default_variant %}
+    {% for option in product.options_with_values %}
+    <div class="product-form__item supports-js">
+      {% if option.name != 'default' %}
+      <label class="single-option-selector__label{% unless section.settings.show_variant_labels %} single-option-selector__label--hidden{% endunless %}" for="{{ option.name | escape }}">{{ option.name }}</label>
+      {% endif %}
+
+      <select id="{{ option.name | escape }}" name="{{ option.name | escape }}" class="single-option-selector" data-option-input>
+        {% for value in option.values %}
+        {% assign safeValue = value | replace: '"', '&quot;' %}
+        <option value="{{ safeValue }}" {% if option.selected_value == value %}selected{% endif %}>{{ value }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    {% endfor %}
+    {% endunless %}
+
+    <select name="id" class="product-form__master-select supports-no-js" data-master-select>
+      {% for variant in product.variants %}
+      {% if variant.available %}
+      {% comment %}
+      Note: if you use option_selection.js, your select tag will be overwritten, meaning what you have inside <option> will not reflect what you coded below.
+      {% endcomment %}
+      <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+      {% else %}
+      <option disabled="disabled">
+        {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+      </option>
+      {% endif %}
+      {% endfor %}
+    </select>
+
+  {% endif %}
+
+  <div class="varient-list">
+    {% for product_option in product.options_with_values %}
+    <div class="pro-option-name">{{ product_option.name }} </div>
+    {% endfor %}
+    <div class="product-variants infiniteoptions">
+      {% for variant in product.variants %}
+      {% capture random %}{{ 'now' | date: "%09N" }}{% endcapture %}
+      <div class="radio-options">
+        {% if variant.available %}
+        <input type="radio" name="id" id="radio_{{random}}" value="{{ variant.id }}" data-price="{{ variant.price | money }}" data-variant-title="{{ variant.title }}" {% if forloop.first %}checked="checked"{% endif %} />
+        <label class="radio" for="radio_{{random}}">
+          {{ variant.title | escape }}
+          {% if variant.price < variant.compare_at_price %}<del>{{ variant.compare_at_price | money }}</del>{% endif %}
+        </label>
+        {% else %}
+        <input type="radio" name="id" value="{{ variant.id }}" id="radio_{{ random }}" disabled="disabled" />
+        <label for="radio_{{ random }}" class="radio">
+          {{ variant.title }} is temporarily unavailable
+        </label>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  {% if section.settings.show_quantity_selector %}
+  <div class="product-form__item product-form__quantity-selector">
+    <label class="product-form__quantity-label{% unless section.settings.show_variant_labels %} product-form__quantity-label--hidden{% endunless %}" for="Quantity-{{ section.id }}">{{ 'products.product.quantity' | t }}</label>
+    <input class="product-form__quantity-input" type="number" id="Quantity-{{ section.id }}" name="quantity" value="1" min="1" pattern="[0-9]*">
+  </div>
+  {% endif %}
+
+  {% if template.handle contains 'product' %}
+  <button class="btn btn--to-secondary btn--full product__add-to-cart-button{% if section.settings.enable_payment_button and current_variant.available %} shopify-payment-btn btn--secondary{% endif %}"
+          data-cart-submit
+          type="submit" name="add"
+          {% unless current_variant.available %} disabled="true"{% endunless %}
+          aria-label="{{ button_text }}"
+          >
+    <span class="primary-text" aria-hidden="false" data-cart-primary-submit-text>
+      {{ button_text }}
+    </span>
+    <span class="secondary-text" aria-hidden=true data-cart-secondary-submit-text>{{ 'products.product.view_cart' | t }}</span>
+  </button>
+  {% endif %}
+
+  {% unless template.handle contains 'product' %}
+  <div class="redirect-checkout-btn" style="display:none;">
+    <input type="hidden" name="redirect" id="redirect-addtocart-btn" data-productid="{{product.id}}" class="product-select" value="{{ product.selected_or_first_available_variant.id }}" data-variant-title="{{ product.selected_or_first_available_variant.title }}" />
+    <input type="submit" value="Add To Cart" class="btn btn btn-default article-add-to-cart-btn" />
+    <input type="hidden" name="return_to" value="/checkout/" />
+  </div>
+  {% endunless %}
+
+    <p class="product__notification text-small text-center" data-cart-notification></p>
+    {% if section.settings.enable_payment_button and current_variant.available %}
+      {{ form | payment_button }}
+    {% endif %}
+
+  {% comment %}
+  {% if product.type contains 'Service' %}
+  <a class="guides-page" href="/pages/guides">Looking for a free alternative?</a>
+  {% endif %}
+  {% endcomment %}
+
+{% endform %}

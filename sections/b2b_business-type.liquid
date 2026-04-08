@@ -1,0 +1,664 @@
+<style>
+  .b2b_business-type {
+    padding: 110px 0;
+  }
+  .b2b_business-type_wrapp-title {
+    margin-bottom: 30px;
+  }
+  .b2b_business-type_wrapp-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  a.b2b_business-type_wrapp-btn {
+    padding: 8px 30px;
+    min-height: 60px;
+    border: 1px solid #DBDBDB;
+    border-radius: 9px;
+    color: #000;
+    font-family: "Open Sans";
+    font-size: 22px;
+    font-weight: 600;
+    width: max-content;
+    transition: .3s;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  a.b2b_business-type_wrapp-btn:hover {
+    border: 1px solid #CDAB71;
+  }
+  a.b2b_business-type_wrapp-btn.active {
+    border: 1px solid #CDAB71;
+    background: #FAF7F1;
+  }
+  .b2b_business-type_wrapp-item {
+    display: none;
+  }
+  .b2b_business-type_wrapp-item.active {
+    display: block;
+  }
+  .b2b_business-type_wrapp-item-consignment-stores-wrapp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .b2b_business-type_wrapp-item-consignment-stores-text {
+    width: calc(100% - 453px);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .b2b_business-type_wrapp-item-consignment-stores-text-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .b2b_business-type_wrapp-item-consignment-stores-text-item {
+    width: 100%;
+    display: flex;
+  }
+  .b2b_business-type_wrapp-item-consignment-stores-text-item-round {
+    height: 28px;
+    width: 28px;
+    min-height: 28px;
+    min-width: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FAF7F1;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  .b2b_business-type_wrapp-item-consignment-stores-text-item-round-circle {
+    height: 24px;
+    width: 24px;
+    min-height: 24px;
+    min-width: 24px;
+    border: 2px solid #CBAD73;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .b2b_business-type_wrapp-item-consignment-stores-text-item-round-circle span {
+    display: block;
+    background: #CBAD73;
+    height: 8px;
+    width: 8px;
+    min-height: 8px;
+    min-width: 8px;
+    border-radius: 50%;
+  }
+  p.b2b_business-type_wrapp-item-consignment-stores-text-item-text {
+    width: calc(100% - 36px);
+  }
+  .b2b_business-type_wrapp-item-consignment-stores-text-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+  }
+  img.b2b_business-type_wrapp-item-consignment-stores-img {
+    width: 490px;
+    height: auto;
+    margin-right: -57px;
+  }
+  span.bold {
+    color: #000;
+    font-weight: 600;
+  }
+  .b2b_business-type_wrapp-item-online-marketplaces-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+  }
+  p.b2b_business-type_wrapp-item-online-marketplaces-title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .b2b_business-type_wrapp-item-online-marketplaces-item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: calc(50% - 10px);
+    align-items: center;
+  }
+  img.b2b_business-type_wrapp-item-online-marketplaces-item-img {
+    width: 85px;
+    height: auto;
+  }
+  p.b2b_business-type_wrapp-item-online-marketplaces-item-text-title {
+    color: #000;
+    font-family: "Open Sans";
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 140%;
+  }
+  .b2b_business-type_wrapp-item-online-marketplaces-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+    margin-top: 30px;
+  }
+  .b2b_business-type_wrapp-item-online-marketplaces-item-text {
+    width: calc(100% - 100px);
+}
+  .b2b_business-type_wrapp-item-warehouse-wrapp {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+  }
+  .b2b_business-type_wrapp-item-warehouse-wrapp-text {
+    width: calc(100% - 357px);
+  }
+  .b2b_business-type_wrapp-item-warehouse-title {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .b2b_business-type_wrapp-item-warehouse-wrapp-text-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .b2b_business-type_wrapp-item-warehouse-wrapp-text-item {
+    display: flex;
+    width: 100%;
+  }
+  span.b2b_business-type_wrapp-item-warehouse-wrapp-text-item-circle {
+    width: 12px;
+    height: 12px;
+    margin-right: 10px;
+    display: block;
+    background: #CBAD73;
+    border-radius: 50%;
+    margin-top: 8px;
+  }
+  .b2b_business-type_wrapp-item-warehouse-wrapp-text-item p {
+    width: calc(100% - 22px)
+  }
+  .b2b_business-type_wrapp-item-warehouse-wrapp-text-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  .b2b_business-type_wrapp-item-warehouse-wrapp-img {
+    width: 337px;
+    height: auto;
+    margin: auto;
+  }
+  .b2b_business-type_wrapp-item-pawn-shops-title {
+    margin-bottom: 30px;
+    width: 100%; text-align: center;
+  }
+  .b2b_business-type_wrapp-item-pawn-shops-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-end;
+    text-align: center;
+    justify-content: center;
+  }
+  .b2b_business-type_wrapp-item-pawn-shops-item {
+    width: calc(33.333334% - 13.33333334px);
+  }
+  img.b2b_business-type_wrapp-item-pawn-shops-item-img {
+    width: 194px;
+    height: auto;
+    margin: auto;
+    margin-bottom: 10px;
+    display: block;
+  }
+  p.b2b_business-type_wrapp-item-pawn-shops-item-title {
+    color: #000;
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 140%;
+  }
+  .b2b_business-type_wrapp-item-pawn-shops-btns {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: center;
+  }
+
+  select.b2b_business-type_wrapp-select {
+    border-radius: 9px;
+    border: 1px solid #CDAB71;
+    background: #FAF7F1;
+    text-align: center;
+    color: #000;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: 600;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none !important;
+}
+  .b2b_business-type_wrapp-select-wrapp {
+        border-radius: 9px;
+        border: 1px solid #CDAB71;
+        background: #FAF7F1;
+        text-align: center;
+        position: relative;
+        min-height: 50px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+  }
+.b2b_business-type_wrapp-select-wrapp-main {
+    width: max-content;
+    max-width: calc(100% - 51px);
+    color: #000;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: 600;
+    padding-right: 22px;
+}
+.b2b_business-type_wrapp-select-wrapp-main p {
+  white-space: nowrap;
+    overflow: hidden;
+  text-overflow: ellipsis;
+}
+.b2b_business-type_wrapp-select-wrapp::after {
+    content: url("data:image/svg+xml,%3Csvg width='18' height='10' viewBox='0 0 18 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17 1.5L9 8.5L1 1.5' stroke='%23CBAD73' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    display: block;
+    position: absolute;
+    right: 20px;
+    padding-top: 4px;
+    transition: .7s
+}
+  .b2b_business-type_wrapp-select-wrapp.active::after {
+    transform: rotate(180deg);
+  }
+  .b2b_business-type_wrapp-select-wrapp-options {
+    position: absolute;
+    top: 48px;
+    width: 100%;
+    height: max-content;
+    background: #fff;
+    border: 1px solid #cdab71;
+    border-radius: 9px;
+    display: none;
+}
+  .b2b_business-type_wrapp-select-wrapp-options.active {
+    display: block;
+  }
+  a.b2b_business-type_wrapp-select-wrapp-option {
+    color: #000;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    padding-top: 13px;
+}
+  a.b2b_business-type_wrapp-select-wrapp-option:hover {
+    text-decoration: underline;
+  }
+  a.b2b_business-type_wrapp-select-wrapp-option:last-child {
+    padding-bottom: 13px;
+  }
+  .b2b_business-type_wrapp-select-wrapp:hover {
+    cursor: pointer;
+  }
+  @media(max-width: 1250px) {
+    .b2b_business-type_wrapp-item-consignment-stores-text {
+      width: 100%;
+    }
+    p.b2b_business-type_wrapp-item-consignment-stores-text-title.third-title-style {
+    text-align: center;
+    width: 100%;
+}
+    .b2b_business-type_wrapp-item-consignment-stores-text-btns {
+          justify-content: center;
+    }
+    img.b2b_business-type_wrapp-item-consignment-stores-img {
+      margin: auto;
+      padding-left: 40px;
+    }
+  }
+  @media(max-width: 950px) {
+    a.b2b_business-type_wrapp-btn {
+    padding: 8px 30px;
+    min-height: 50px;
+    font-size: 18px;
+}
+    .b2b_business-type_wrapp-btns {
+    gap: 10px;
+    margin-bottom: 20px;
+}
+    .b2b_business-type_wrapp-title {
+    margin-bottom: 20px;
+}
+    p.b2b_business-type_wrapp-item-online-marketplaces-item-text-title {
+      font-size: 20px;
+    }
+    img.b2b_business-type_wrapp-item-online-marketplaces-item-img {
+      width: 60px;
+    }
+    .b2b_business-type_wrapp-item-online-marketplaces-item {
+    width: 100%;
+    align-items: flex-start;
+}
+    .b2b_business-type_wrapp-item-online-marketplaces-item-text {
+    width: calc(100% - 75px);
+}
+    .b2b_business-type_wrapp-item-warehouse-wrapp-text {
+    width: 100%;
+}
+    .b2b_business-type_wrapp-item-warehouse-wrapp-text-btns {
+    justify-content: center;
+}
+    .b2b_business-type_wrapp-item-warehouse-title {
+      margin-bottom: 20px;
+    }
+    .b2b_business-type_wrapp-item-pawn-shops-item {
+    width: calc(50% - 7.5px);
+}
+    p.b2b_business-type_wrapp-item-online-marketplaces-title, .b2b_business-type_wrapp-item-pawn-shops-title {
+      margin-bottom: 20px;
+    }
+    .b2b_business-type_wrapp-item-online-marketplaces-items, .b2b_business-type_wrapp-item-pawn-shops-items {
+      gap: 15px;
+    }
+    .b2b_business-type_wrapp-item-pawn-shops-items {
+      gap: 15px;
+    }
+    .b2b_business-type_wrapp-item-pawn-shops-btns, .b2b_business-type_wrapp-item-online-marketplaces-btns {
+      margin-top: 20px;
+    }
+  }
+  @media(max-width: 750px) {
+    .b2b_business-type_wrapp-btns {
+      display: none;
+    }
+    .b2b_business-type_wrapp-select-wrapp {
+      display: flex;
+    }
+    .b2b_business-type {
+      padding: 60px 0;
+    }
+    img.b2b_business-type_wrapp-item-consignment-stores-img {
+      width: 100%;
+    }
+    .b2b_business-type_wrapp-item-pawn-shops-item {
+    width: 100%;
+}
+    img.b2b_business-type_wrapp-item-pawn-shops-item-img {
+    width: 150px;
+    margin-bottom: 5px;
+}
+    .b2b_business-type_wrapp-item-pawn-shops-title {
+      margin-bottom: 20px;
+    }
+  }
+  @media(max-width: 600px) {
+    .b2b_business-type_wrapp-item-consignment-stores-text-btns, .b2b_business-type_wrapp-item-online-marketplaces-btns, .b2b_business-type_wrapp-item-warehouse-wrapp-text-btns, .b2b_business-type_wrapp-item-pawn-shops-btns {
+      gap: 10px;
+    }
+    .b2b_business-type_wrapp-item-warehouse-wrapp-img {
+        min-width: 300px;
+        height: auto;
+        margin: auto;
+        width: 80%;
+    }
+  }
+  @media(max-width: 450px) {
+    .b2b_business-type_wrapp-item-warehouse-wrapp-img {
+      width: 100%;
+    }
+  }
+</style>
+<div class="new-container">
+  <div class="b2b_business-type_wrapp">
+    {% if section.settings.title != blank %}
+        <h2 class="b2b_business-type_wrapp-title second-title-style animation-title" data-animate>{{ section.settings.title }}</h2>
+      {% endif %}
+      <div class="b2b_business-type_wrapp-select-wrapp">
+        <div class="b2b_business-type_wrapp-select-wrapp-main">
+          <p>Consignment Stores & Boutiques</p>
+        </div>
+        <div class="b2b_business-type_wrapp-select-wrapp-options">
+          <a href="javascript:void(0)" id="consignment-stores" class="b2b_business-type_wrapp-select-wrapp-option">
+            Consignment Stores & Boutiques
+          </a>
+          <a href="javascript:void(0)" id="online-marketplaces" class="b2b_business-type_wrapp-select-wrapp-option">
+            Online Marketplaces (Seller-to-Buyer)
+          </a>
+          <a href="javascript:void(0)" id="warehouse" class="b2b_business-type_wrapp-select-wrapp-option">
+            Warehouse-Based Marketplaces
+          </a>
+          <a href="javascript:void(0)" id="pawn-shops" class="b2b_business-type_wrapp-select-wrapp-option">
+            Pawn Shops
+          </a>
+        </div>
+        <!--<select class="b2b_business-type_wrapp-select" name="b2b_business-type_wrapp-select">
+          <option value="consignment-stores" selected>Consignment Stores & Boutiques</option>
+          <option value="online-marketplaces">Online Marketplaces (Seller-to-Buyer)</option>
+          <option value="warehouse">Warehouse-Based Marketplaces</option>
+          <option value="pawn-shops">Pawn Shops</option>
+        </select>-->
+      </div>
+      <div class="b2b_business-type_wrapp-btns">
+        <a href="javascript:void(0)" id="consignment-stores" class="b2b_business-type_wrapp-btn active">Consignment Stores & Boutiques</a>
+        <a href="javascript:void(0)" id="online-marketplaces" class="b2b_business-type_wrapp-btn">Online Marketplaces (Seller-to-Buyer)</a>
+        <a href="javascript:void(0)" id="warehouse" class="b2b_business-type_wrapp-btn">Warehouse-Based Marketplaces</a>
+        <a href="javascript:void(0)" id="pawn-shops" class="b2b_business-type_wrapp-btn">Pawn Shops</a>
+      </div>
+      <div class="b2b_business-type_wrapp-item b2b_business-type_wrapp-item-consignment-stores active">
+        <div class="b2b_business-type_wrapp-item-consignment-stores-wrapp">
+          <div class="b2b_business-type_wrapp-item-consignment-stores-text">
+            <p class="b2b_business-type_wrapp-item-consignment-stores-text-title third-title-style">Maintain the highest standards for your curated collections</p>
+            <div class="b2b_business-type_wrapp-item-consignment-stores-text-items">
+              <div class="b2b_business-type_wrapp-item-consignment-stores-text-item">
+                <div class="b2b_business-type_wrapp-item-consignment-stores-text-item-round">
+                  <div class="b2b_business-type_wrapp-item-consignment-stores-text-item-round-circle"><span></span></div>
+                </div>
+                <p class="b2b_business-type_wrapp-item-consignment-stores-text-item-text common-desc-style">
+                  <span class="bold">Quality Assurance:</span> Guarantee that every item on your shelves meets authentic luxury standards
+                </p>
+              </div>
+              <div class="b2b_business-type_wrapp-item-consignment-stores-text-item">
+                <div class="b2b_business-type_wrapp-item-consignment-stores-text-item-round">
+                  <div class="b2b_business-type_wrapp-item-consignment-stores-text-item-round-circle"><span></span></div>
+                </div>
+                <p class="b2b_business-type_wrapp-item-consignment-stores-text-item-text common-desc-style">
+                  <span class="bold">Customer Trust:</span> Boost shopper confidence and satisfaction with verified products
+                </p>
+              </div>
+              <div class="b2b_business-type_wrapp-item-consignment-stores-text-item">
+                <div class="b2b_business-type_wrapp-item-consignment-stores-text-item-round">
+                  <div class="b2b_business-type_wrapp-item-consignment-stores-text-item-round-circle"><span></span></div>
+                </div>
+                <p class="b2b_business-type_wrapp-item-consignment-stores-text-item-text common-desc-style">
+                  <span class="bold">Inventory Efficiency:</span> Quickly process and authenticate new consignments to keep your store fresh and appealing
+                </p>
+              </div>
+            </div>
+            <div class="b2b_business-type_wrapp-item-consignment-stores-text-btns">
+              <a href="https://legitgrails.com/pages/schedule-a-call" class="new-btn new-secondary-btn">Contact us</a>
+              <a href="#shopify-section-b2b_bundles-block" class="new-btn new-main-btn">choose your bundle</a>
+            </div>
+          </div>
+          <img src="{{ 'b2b_consignment-stores-photo.png' | asset_url }}" class="b2b_business-type_wrapp-item-consignment-stores-img">
+        </div>
+      </div>
+      <div class="b2b_business-type_wrapp-item b2b_business-type_wrapp-item-online-marketplaces">
+      <p class="b2b_business-type_wrapp-item-online-marketplaces-title third-title-style">Build a trustworthy platform where buyers shop with complete confidence</p>
+      <div class="b2b_business-type_wrapp-item-online-marketplaces-items">
+        <div class="b2b_business-type_wrapp-item-online-marketplaces-item">
+          <img src="{{ 'b2b_online-marketplaces_fraud.svg' | asset_url }}" class="b2b_business-type_wrapp-item-online-marketplaces-item-img">
+          <div class="b2b_business-type_wrapp-item-online-marketplaces-item-text">
+            <p class="b2b_business-type_wrapp-item-online-marketplaces-item-text-title">Fraud Prevention</p>
+            <p class="b2b_business-type_wrapp-item-online-marketplaces-item-text-desc common-desc-style">Protect your marketplace from counterfeit listings and fraudulent sellers</p>
+          </div>
+        </div>
+        <div class="b2b_business-type_wrapp-item-online-marketplaces-item">
+          <img src="{{ 'b2b_online-marketplaces_buyer.svg' | asset_url }}" class="b2b_business-type_wrapp-item-online-marketplaces-item-img">
+          <div class="b2b_business-type_wrapp-item-online-marketplaces-item-text">
+            <p class="b2b_business-type_wrapp-item-online-marketplaces-item-text-title">Enhanced Buyer Experience</p>
+            <p class="b2b_business-type_wrapp-item-online-marketplaces-item-text-desc common-desc-style">Increase sales and customer loyalty by ensuring product authenticity</p>
+          </div>
+        </div>
+        <div class="b2b_business-type_wrapp-item-online-marketplaces-item">
+          <img src="{{ 'b2b_online-marketplaces_api.svg' | asset_url }}" class="b2b_business-type_wrapp-item-online-marketplaces-item-img">
+          <div class="b2b_business-type_wrapp-item-online-marketplaces-item-text">
+            <p class="b2b_business-type_wrapp-item-online-marketplaces-item-text-title">API Integration</p>
+            <p class="b2b_business-type_wrapp-item-online-marketplaces-item-text-desc common-desc-style">Seamlessly integrate our authentication service into your platform for real-time verification</p>
+          </div>
+        </div>
+        <div class="b2b_business-type_wrapp-item-online-marketplaces-item">
+          <img src="{{ 'b2b_online-marketplaces_brand.svg' | asset_url }}" class="b2b_business-type_wrapp-item-online-marketplaces-item-img">
+          <div class="b2b_business-type_wrapp-item-online-marketplaces-item-text">
+            <p class="b2b_business-type_wrapp-item-online-marketplaces-item-text-title">Brand Integrity</p>
+            <p class="b2b_business-type_wrapp-item-online-marketplaces-item-text-desc common-desc-style">Strengthen your marketplace's reputation as a reliable source of luxury goods</p>
+          </div>
+        </div>
+      </div>
+      <div class="b2b_business-type_wrapp-item-online-marketplaces-btns">
+        <a href="https://legitgrails.com/pages/schedule-a-call" class="new-btn new-secondary-btn">Contact us</a>
+          <a href="#shopify-section-b2b_bundles-block" class="new-btn new-main-btn">choose your bundle</a>
+      </div>
+    </div>
+      <div class="b2b_business-type_wrapp-item b2b_business-type_wrapp-item-warehouse">
+        <p class="b2b_business-type_wrapp-item-warehouse-title third-title-style">Optimize your inventory with trusted and efficient authentication</p>
+        <div class="b2b_business-type_wrapp-item-warehouse-wrapp">
+          <div class="b2b_business-type_wrapp-item-warehouse-wrapp-text">
+            <div class="b2b_business-type_wrapp-item-warehouse-wrapp-text-items">
+              <div class="b2b_business-type_wrapp-item-warehouse-wrapp-text-item">
+                <span class="b2b_business-type_wrapp-item-warehouse-wrapp-text-item-circle"></span>
+                <p class="common-desc-style"><span class="bold">Bulk Verification:</span> Efficiently authenticate large volumes of items to keep your inventory accurate and trustworthy</p>
+              </div>
+              <div class="b2b_business-type_wrapp-item-warehouse-wrapp-text-item">
+                <span class="b2b_business-type_wrapp-item-warehouse-wrapp-text-item-circle"></span>
+                <p class="common-desc-style"><span class="bold">Operational Efficiency:</span> Reduce processing times and operational costs with our swift authentication services</p>
+              </div>
+              <div class="b2b_business-type_wrapp-item-warehouse-wrapp-text-item">
+                <span class="b2b_business-type_wrapp-item-warehouse-wrapp-text-item-circle"></span>
+                <p class="common-desc-style"><span class="bold">Market Credibility:</span> Establish your marketplace as a leading destination for authentic luxury products</p>
+              </div>
+            </div>
+            <div class="b2b_business-type_wrapp-item-warehouse-wrapp-text-btns">
+              <a href="https://legitgrails.com/pages/schedule-a-call" class="new-btn new-secondary-btn">Contact us</a>
+          <a href="#shopify-section-b2b_bundles-block" class="new-btn new-main-btn">choose your bundle</a>
+            </div>
+          </div>
+          <img src="{{ 'b2b_warehouse-based-marketplaces-img.png' | asset_url }}" class="b2b_business-type_wrapp-item-warehouse-wrapp-img">
+        </div>
+      </div>
+      <div class="b2b_business-type_wrapp-item b2b_business-type_wrapp-item-pawn-shops">
+        <p class="b2b_business-type_wrapp-item-pawn-shops-title third-title-style">Instant authentication for high-volume transactions</p>
+        <div class="b2b_business-type_wrapp-item-pawn-shops-items">
+          <div class="b2b_business-type_wrapp-item-pawn-shops-item">
+            <img src="{{ 'b2b_pawn-shops_verification.png' | asset_url }}" class="b2b_business-type_wrapp-item-pawn-shops-item-img">
+            <p class="b2b_business-type_wrapp-item-pawn-shops-item-title">Instant Verification</p>
+            <p class="b2b_business-type_wrapp-item-pawn-shops-item-desc common-desc-style">Quickly authenticate luxury items to build trust and avoid costly mistakes</p>
+          </div>
+          <div class="b2b_business-type_wrapp-item-pawn-shops-item">
+            <img src="{{ 'b2b_pawn-shops_reputation.png' | asset_url }}" class="b2b_business-type_wrapp-item-pawn-shops-item-img">
+            <p class="b2b_business-type_wrapp-item-pawn-shops-item-title">Enhanced Reputation</p>
+            <p class="b2b_business-type_wrapp-item-pawn-shops-item-desc common-desc-style">Provide your customers with confidence through verified authenticity certificates</p>
+          </div>
+          <div class="b2b_business-type_wrapp-item-pawn-shops-item">
+            <img src="{{ 'b2b_pawn-shops_operations.png' | asset_url }}" class="b2b_business-type_wrapp-item-pawn-shops-item-img">
+            <p class="b2b_business-type_wrapp-item-pawn-shops-item-title">Streamlined Operations</p>
+            <p class="b2b_business-type_wrapp-item-pawn-shops-item-desc common-desc-style">Simplify your intake process with fast and reliable authentication services</p>
+          </div>
+        </div>
+        <div class="b2b_business-type_wrapp-item-pawn-shops-btns">
+          <a href="https://legitgrails.com/pages/schedule-a-call" class="new-btn new-secondary-btn">Contact us</a>
+          <a href="#shopify-section-b2b_bundles-block" class="new-btn new-main-btn">choose your bundle</a>
+        </div>
+      </div>
+  </div>
+</div>
+
+<script>
+  $(document).mouseup( function(e){
+      var div = $( ".b2b_business-type_wrapp-select-wrapp" );
+    	if ( !div.is(e.target)
+		&& div.has(e.target).length === 0 ) {
+		div.children('.b2b_business-type_wrapp-select-wrapp-options').hide();
+	}
+  });
+  $('.b2b_business-type_wrapp-select-wrapp').on('click', function() {
+    $('.b2b_business-type_wrapp-select-wrapp-options').toggleClass('active');
+    $(this).toggleClass('active');
+  });
+  $('.b2b_business-type_wrapp-select-wrapp-option').on('click', function() {
+    $('.b2b_business-type_wrapp-item').removeClass('active');
+    var optionName = $(this).text();
+    $('.b2b_business-type_wrapp-select-wrapp-main p').html(optionName);
+    var NameBlock = $(this).attr('id');
+    var TargetBlock = ".b2b_business-type_wrapp-item-" + NameBlock;
+    $(TargetBlock).addClass('active');
+  });
+  
+  $(document).ready(function () {
+    
+    $('.b2b_business-type_wrapp-btn').on('click', function() {
+        $('.b2b_business-type_wrapp-btn').removeClass('active');
+        $('.b2b_business-type_wrapp-item').removeClass('active');
+        var NameBlock = $(this).attr('id');
+        var TargetBlock = ".b2b_business-type_wrapp-item-" + NameBlock;
+        $(TargetBlock).addClass('active');
+        $(this).addClass('active');
+      });
+    
+    $('.b2b_business-type_wrapp-select').on('change', function() {
+        $('.b2b_business-type_wrapp-item').removeClass('active');
+        var block = $(this).val();
+        var chosenBlock = ".b2b_business-type_wrapp-item-" + block;
+        $(chosenBlock).addClass('active');
+      });
+    
+      $('.b2b_business-type_wrapp-select.option').on('click', function() {
+        $('.b2b_business-type_wrapp-item').removeClass('active');
+        if ($(this).text() === "Consignment Stores & Boutiques") {
+          $('.b2b_business-type_wrapp-item-consignment-stores').addClass('active');
+        } else if ($(this).text() === "Online Marketplaces (Seller-to-Buyer)") {
+          $('.b2b_business-type_wrapp-item-online-marketplaces').addClass('active');
+        } else if ($(this).text() === "Warehouse-Based Marketplaces") {
+          $('.b2b_business-type_wrapp-item-warehouse').addClass('active');
+        } else if ($(this).text() === "Pawn Shops") {
+          $('.b2b_business-type_wrapp-item-pawn-shops').addClass('active');
+        }
+      });
+
+    
+  });
+</script>
+{% schema %}
+  {
+    "name": "Business type",
+    "class": "b2b_business-type",
+    "settings": [
+        {
+        "type": "text",
+        "id": "title",
+        "label": {
+        "en": "Heading"
+        }
+        }
+    ]
+  }
+{% endschema %}

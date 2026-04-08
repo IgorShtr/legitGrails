@@ -1,0 +1,1309 @@
+{
+  "store": {
+    "id": 9463070798,
+    "plan": "plus",
+    "theme": "shopify\/main",
+    "primaryLocale": "en",
+    "adminMode": false,
+    "headless": false,
+    "storefrontRootDomain": "",
+    "checkoutRootDomain": "",
+    "storefrontAccessToken": ""
+  },
+  "tsPublished": 1768402509,
+  "declaration": {
+    "showPurpose": false,
+    "showProvider": false,
+    "declIntroText": "We use cookies to optimize website functionality, analyze the performance, and provide personalized experience to you. Some cookies are essential to make the website operate and function correctly. Those cookies cannot be disabled. In this window you can manage your preference of cookies.",
+    "showDateGenerated": true
+  },
+  "language": {
+    "unpublished": [],
+    "languageMode": "Single",
+    "fallbackLanguage": "en",
+    "languageDetection": "browser",
+    "languagesSupported": []
+  },
+  "texts": {
+    "managed": {
+      "headerText": {
+        "en": "We respect your privacy"
+      },
+      "consentText": {
+        "en": "This website uses cookies to ensure you get the best experience."
+      },
+      "linkText": {
+        "en": "Learn more"
+      },
+      "imprintText": {
+        "en": "Imprint"
+      },
+      "googleLinkText": {
+        "en": "Google's Privacy Terms"
+      },
+      "allowButtonText": {
+        "en": "Accept"
+      },
+      "denyButtonText": {
+        "en": "Decline"
+      },
+      "dismissButtonText": {
+        "en": "Ok"
+      },
+      "leaveSiteButtonText": {
+        "en": "Leave this site"
+      },
+      "preferencesButtonText": {
+        "en": "Preferences"
+      },
+      "cookiePolicyText": {
+        "en": "Cookie policy"
+      },
+      "preferencesPopupTitleText": {
+        "en": "Manage consent preferences"
+      },
+      "preferencesPopupIntroText": {
+        "en": "We use cookies to optimize website functionality, analyze the performance, and provide personalized experience to you. Some cookies are essential to make the website operate and function correctly. Those cookies cannot be disabled. In this window you can manage your preference of cookies."
+      },
+      "preferencesPopupSaveButtonText": {
+        "en": "Save preferences"
+      },
+      "preferencesPopupCloseButtonText": {
+        "en": "Close"
+      },
+      "preferencesPopupAcceptAllButtonText": {
+        "en": "Accept all"
+      },
+      "preferencesPopupRejectAllButtonText": {
+        "en": "Reject all"
+      },
+      "cookiesDetailsText": {
+        "en": "Cookies details"
+      },
+      "preferencesPopupAlwaysAllowedText": {
+        "en": "Always allowed"
+      },
+      "accessSectionParagraphText": {
+        "en": "You have the right to request access to your data at any time."
+      },
+      "accessSectionTitleText": {
+        "en": "Data portability"
+      },
+      "accessSectionAccountInfoActionText": {
+        "en": "Personal data"
+      },
+      "accessSectionDownloadReportActionText": {
+        "en": "Request export"
+      },
+      "accessSectionGDPRRequestsActionText": {
+        "en": "Data subject requests"
+      },
+      "accessSectionOrdersRecordsActionText": {
+        "en": "Orders"
+      },
+      "rectificationSectionParagraphText": {
+        "en": "You have the right to request your data to be updated whenever you think it is appropriate."
+      },
+      "rectificationSectionTitleText": {
+        "en": "Data Rectification"
+      },
+      "rectificationCommentPlaceholder": {
+        "en": "Describe what you want to be updated"
+      },
+      "rectificationCommentValidationError": {
+        "en": "Comment is required"
+      },
+      "rectificationSectionEditAccountActionText": {
+        "en": "Request an update"
+      },
+      "erasureSectionTitleText": {
+        "en": "Right to be forgotten"
+      },
+      "erasureSectionParagraphText": {
+        "en": "You have the right to ask all your data to be erased. After that, you will no longer be able to access your account."
+      },
+      "erasureSectionRequestDeletionActionText": {
+        "en": "Request personal data deletion"
+      },
+      "consentDate": {
+        "en": "Consent date"
+      },
+      "consentId": {
+        "en": "Consent ID"
+      },
+      "consentSectionChangeConsentActionText": {
+        "en": "Change consent preference"
+      },
+      "consentSectionConsentedText": {
+        "en": "You consented to the cookies policy of this website on"
+      },
+      "consentSectionNoConsentText": {
+        "en": "You have not consented to the cookies policy of this website."
+      },
+      "consentSectionTitleText": {
+        "en": "Your cookie consent"
+      },
+      "consentStatus": {
+        "en": "Consent preference"
+      },
+      "confirmationFailureMessage": {
+        "en": "Your request was not verified. Please try again and if problem persists, contact store owner for assistance"
+      },
+      "confirmationFailureTitle": {
+        "en": "A problem occurred"
+      },
+      "confirmationSuccessMessage": {
+        "en": "We will soon get back to you as to your request."
+      },
+      "confirmationSuccessTitle": {
+        "en": "Your request is verified"
+      },
+      "guestsSupportEmailFailureMessage": {
+        "en": "Your request was not submitted. Please try again and if problem persists, contact store owner for assistance."
+      },
+      "guestsSupportEmailFailureTitle": {
+        "en": "A problem occurred"
+      },
+      "guestsSupportEmailPlaceholder": {
+        "en": "E-mail address"
+      },
+      "guestsSupportEmailSuccessMessage": {
+        "en": "If you are registered as a customer of this store, you will soon receive an email with instructions on how to proceed."
+      },
+      "guestsSupportEmailSuccessTitle": {
+        "en": "Thank you for your request"
+      },
+      "guestsSupportEmailValidationError": {
+        "en": "Email is not valid"
+      },
+      "guestsSupportInfoText": {
+        "en": "Please login with your customer account to further proceed."
+      },
+      "submitButton": {
+        "en": "Submit"
+      },
+      "submittingButton": {
+        "en": "Submitting..."
+      },
+      "cancelButton": {
+        "en": "Cancel"
+      },
+      "declIntroText": {
+        "en": "We use cookies to optimize website functionality, analyze the performance, and provide personalized experience to you. Some cookies are essential to make the website operate and function correctly. Those cookies cannot be disabled. In this window you can manage your preference of cookies."
+      },
+      "declName": {
+        "en": "Name"
+      },
+      "declPurpose": {
+        "en": "Purpose"
+      },
+      "declType": {
+        "en": "Type"
+      },
+      "declRetention": {
+        "en": "Retention"
+      },
+      "declProvider": {
+        "en": "Provider"
+      },
+      "declFirstParty": {
+        "en": "First-party"
+      },
+      "declThirdParty": {
+        "en": "Third-party"
+      },
+      "declSeconds": {
+        "en": "seconds"
+      },
+      "declMinutes": {
+        "en": "minutes"
+      },
+      "declHours": {
+        "en": "hours"
+      },
+      "declWeeks": {
+        "en": "week(s)"
+      },
+      "declDays": {
+        "en": "days"
+      },
+      "declMonths": {
+        "en": "months"
+      },
+      "declYears": {
+        "en": "years"
+      },
+      "declSession": {
+        "en": "Session"
+      },
+      "declDomain": {
+        "en": "Domain"
+      },
+      "declPath": {
+        "en": "Path"
+      }
+    },
+    "categories": {
+      "strictlyNecessaryCookiesTitleText": {
+        "en": "Strictly necessary cookies"
+      },
+      "strictlyNecessaryCookiesDescriptionText": {
+        "en": "These cookies are essential in order to enable you to move around the website and use its features, such as accessing secure areas of the website. The website cannot function properly without these cookies."
+      },
+      "functionalityCookiesTitleText": {
+        "en": "Functional cookies"
+      },
+      "functionalityCookiesDescriptionText": {
+        "en": "These cookies enable the site to provide enhanced functionality and personalisation. They may be set by us or by third party providers whose services we have added to our pages. If you do not allow these cookies then some or all of these services may not function properly."
+      },
+      "performanceCookiesTitleText": {
+        "en": "Performance cookies"
+      },
+      "performanceCookiesDescriptionText": {
+        "en": "These cookies enable us to monitor and improve the performance of our website. For example, they allow us to count visits, identify traffic sources and see which parts of the site are most popular."
+      },
+      "targetingCookiesTitleText": {
+        "en": "Targeting cookies"
+      },
+      "targetingCookiesDescriptionText": {
+        "en": "These cookies may be set through our site by our advertising partners. They may be used by those companies to build a profile of your interests and show you relevant adverts on other sites.    They do not store directly personal information, but are based on uniquely identifying your browser and internet device. If you do not allow these cookies, you will experience less targeted advertising."
+      },
+      "unclassifiedCookiesTitleText": {
+        "en": "Unclassified cookies"
+      },
+      "unclassifiedCookiesDescriptionText": {
+        "en": "Unclassified cookies are cookies that we are in the process of classifying, together with the providers of individual cookies."
+      }
+    },
+    "auto": {}
+  },
+  "library": {
+    "previewMode": false,
+    "fadeInTimeout": 0,
+    "defaultBlocked": 7,
+    "showLink": true,
+    "showImprintLink": false,
+    "showGoogleLink": false,
+    "enabled": true,
+    "cookie": {
+      "expiryDays": 365,
+      "secure": true,
+      "domain": ""
+    },
+    "dismissOnScroll": false,
+    "dismissOnWindowClick": false,
+    "dismissOnTimeout": false,
+    "palette": {
+      "popup": {
+        "background": "#FFFFFF",
+        "backgroundForCalculations": {
+          "a": 1,
+          "b": 255,
+          "g": 255,
+          "r": 255
+        },
+        "text": "#000000"
+      },
+      "button": {
+        "background": "transparent",
+        "backgroundForCalculations": {
+          "a": 1,
+          "b": 255,
+          "g": 255,
+          "r": 255
+        },
+        "text": "#000000",
+        "textForCalculation": {
+          "a": 1,
+          "b": 0,
+          "g": 0,
+          "r": 0
+        },
+        "border": "#000000"
+      }
+    },
+    "content": {
+      "href": "https:\/\/legitgrails.myshopify.com\/policies\/privacy-policy",
+      "imprintHref": "\/",
+      "close": "&#10005;",
+      "target": "",
+      "logo": "<img class=\"cc-banner-logo\" style=\"max-height: 35px;\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0094\/6307\/0798\/t\/177\/assets\/pandectes-logo.png?v=1768402238\" alt=\"Cookie banner\" \/>"
+    },
+    "window": "<div role=\"dialog\" aria-label=\"{{header}}\" aria-describedby=\"cookieconsent:desc\" id=\"pandectes-banner\" class=\"cc-window-wrapper cc-bottom-left-wrapper\"><div class=\"pd-cookie-banner-window cc-window {{classes}}\">{{children}}<\/div><\/div>",
+    "compliance": {
+      "opt-both": "<div class=\"cc-compliance cc-highlight\">{{deny}}{{allow}}<\/div>"
+    },
+    "type": "opt-both",
+    "layouts": {
+      "basic": "{{logo}}{{messagelink}}{{compliance}}{{close}}"
+    },
+    "position": "bottom-left",
+    "theme": "wired",
+    "revokable": false,
+    "animateRevokable": false,
+    "revokableReset": false,
+    "revokableLogoUrl": "https:\/\/cdn.shopify.com\/s\/files\/1\/0094\/6307\/0798\/t\/177\/assets\/pandectes-reopen-logo.png?v=1768402238",
+    "revokablePlacement": "bottom-left",
+    "revokableMarginHorizontal": 15,
+    "revokableMarginVertical": 15,
+    "static": false,
+    "autoAttach": true,
+    "hasTransition": true,
+    "blacklistPage": [
+      ""
+    ],
+    "elements": {
+      "close": "<button aria-label=\"Close\" type=\"button\" class=\"cc-close\">{{close}}<\/button>",
+      "dismiss": "<button type=\"button\" class=\"cc-btn cc-btn-decision cc-dismiss\">{{dismiss}}<\/button>",
+      "allow": "<button type=\"button\" class=\"cc-btn cc-btn-decision cc-allow\">{{allow}}<\/button>",
+      "deny": "<button type=\"button\" class=\"cc-btn cc-btn-decision cc-deny\">{{deny}}<\/button>",
+      "preferences": "<button type=\"button\" class=\"cc-btn cc-settings\" aria-controls=\"pd-cp-preferences\" onclick=\"Pandectes.fn.openPreferences()\">{{preferences}}<\/button>"
+    }
+  },
+  "geolocation": {
+    "brOnly": false,
+    "caOnly": false,
+    "chOnly": false,
+    "euOnly": false,
+    "jpOnly": false,
+    "thOnly": false,
+    "zaOnly": false,
+    "canadaOnly": false,
+    "canadaLaw25": false,
+    "canadaPipeda": false,
+    "globalVisibility": true
+  },
+  "dsr": {
+    "guestsSupport": false,
+    "accessSectionDownloadReportAuto": false
+  },
+  "banner": {
+    "resetTs": 1710214174,
+    "extraCss": "        .cc-banner-logo {max-width: 24em!important;}    @media(min-width: 768px) {.cc-window.cc-floating{max-width: 24em!important;width: 24em!important;}}    .cc-message, .pd-cookie-banner-window .cc-header, .cc-logo {text-align: left}    .cc-window-wrapper{z-index: 2147483647;}    .cc-window{z-index: 2147483647;font-family: inherit;}    .pd-cookie-banner-window .cc-header{font-family: inherit;}    .pd-cp-ui{font-family: inherit; background-color: #FFFFFF;color:#000000;}    button.pd-cp-btn, a.pd-cp-btn{}    input + .pd-cp-preferences-slider{background-color: rgba(0, 0, 0, 0.3)}    .pd-cp-scrolling-section::-webkit-scrollbar{background-color: rgba(0, 0, 0, 0.3)}    input:checked + .pd-cp-preferences-slider{background-color: rgba(0, 0, 0, 1)}    .pd-cp-scrolling-section::-webkit-scrollbar-thumb {background-color: rgba(0, 0, 0, 1)}    .pd-cp-ui-close{color:#000000;}    .pd-cp-preferences-slider:before{background-color: #FFFFFF}    .pd-cp-title:before {border-color: #000000!important}    .pd-cp-preferences-slider{background-color:#000000}    .pd-cp-toggle{color:#000000!important}    @media(max-width:699px) {.pd-cp-ui-close-top svg {fill: #000000}}    .pd-cp-toggle:hover,.pd-cp-toggle:visited,.pd-cp-toggle:active{color:#000000!important}    .pd-cookie-banner-window {box-shadow: 0 0 18px rgb(0 0 0 \/ 20%);}  ",
+    "customJavascript": {},
+    "showPoweredBy": false,
+    "logoHeight": 35,
+    "revokableTrigger": false,
+    "hybridStrict": false,
+    "cookiesBlockedByDefault": "7",
+    "isActive": true,
+    "implicitSavePreferences": false,
+    "cookieIcon": false,
+    "blockBots": false,
+    "showCookiesDetails": false,
+    "hasTransition": true,
+    "blockingPage": false,
+    "showOnlyLandingPage": false,
+    "leaveSiteUrl": "https:\/\/www.google.com",
+    "linkRespectStoreLang": false
+  },
+  "cookies": {
+    "0": [
+      {
+        "name": "secure_customer_sig",
+        "type": "http",
+        "domain": "legitgrails.com",
+        "path": "\/",
+        "provider": "Shopify",
+        "firstParty": true,
+        "retention": "1 year(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declYears",
+        "purpose": {
+          "en": "Used in connection with customer login."
+        }
+      },
+      {
+        "name": "keep_alive",
+        "type": "http",
+        "domain": "legitgrails.com",
+        "path": "\/",
+        "provider": "Shopify",
+        "firstParty": true,
+        "retention": "30 minute(s)",
+        "session": false,
+        "expires": 30,
+        "unit": "declMinutes",
+        "purpose": {
+          "en": "Used in connection with buyer localization."
+        }
+      },
+      {
+        "name": "localization",
+        "type": "http",
+        "domain": "legitgrails.com",
+        "path": "\/",
+        "provider": "Shopify",
+        "firstParty": true,
+        "retention": "1 year(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declYears",
+        "purpose": {
+          "en": "Shopify store localization"
+        }
+      },
+      {
+        "name": "_cmp_a",
+        "type": "http",
+        "domain": ".legitgrails.com",
+        "path": "\/",
+        "provider": "Shopify",
+        "firstParty": true,
+        "retention": "1 day(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declDays",
+        "purpose": {
+          "en": "Used for managing customer privacy settings."
+        }
+      },
+      {
+        "name": "__cfruid",
+        "type": "http",
+        "domain": ".legitgrails.zendesk.com",
+        "path": "\/",
+        "provider": "HubSpot",
+        "firstParty": false,
+        "retention": "Session",
+        "session": true,
+        "expires": -54,
+        "unit": "declYears",
+        "purpose": {
+          "en": "This is set by HubSpot’s CDN provider because of their rate limiting policies."
+        }
+      },
+      {
+        "name": "wpm-domain-test",
+        "type": "http",
+        "domain": "com",
+        "path": "\/",
+        "provider": "Shopify",
+        "firstParty": false,
+        "retention": "Session",
+        "session": true,
+        "expires": 1,
+        "unit": "declSeconds",
+        "purpose": {
+          "en": "Used to test the storage of parameters about products added to the cart or payment currency"
+        }
+      },
+      {
+        "name": "_tracking_consent",
+        "type": "http",
+        "domain": ".legitgrails.com",
+        "path": "\/",
+        "provider": "Shopify",
+        "firstParty": true,
+        "retention": "1 year(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declYears",
+        "purpose": {
+          "en": "Tracking preferences."
+        }
+      },
+      {
+        "name": "_secure_session_id",
+        "type": "http",
+        "domain": "legitgrails.com",
+        "path": "\/",
+        "provider": "Shopify",
+        "firstParty": true,
+        "retention": "1 month(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declMonths",
+        "purpose": {
+          "en": "Used in connection with navigation through a storefront."
+        }
+      }
+    ],
+    "1": [
+      {
+        "name": "wpm-domain-test",
+        "type": "http",
+        "domain": "legitgrails.com",
+        "path": "\/",
+        "provider": "Shopify",
+        "firstParty": true,
+        "retention": "Session",
+        "session": true,
+        "expires": 1,
+        "unit": "declSeconds",
+        "purpose": {
+          "en": "Used to test the storage of parameters about products added to the cart or payment currency"
+        }
+      },
+      {
+        "name": "li_gc",
+        "type": "http",
+        "domain": ".linkedin.com",
+        "path": "\/",
+        "provider": "LinkedIn",
+        "firstParty": false,
+        "retention": "6 month(s)",
+        "session": false,
+        "expires": 6,
+        "unit": "declMonths",
+        "purpose": {
+          "en": ""
+        }
+      }
+    ],
+    "2": [
+      {
+        "name": "_shopify_y",
+        "type": "http",
+        "domain": ".legitgrails.com",
+        "path": "\/",
+        "provider": "Shopify",
+        "firstParty": true,
+        "retention": "1 year(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declYears",
+        "purpose": {
+          "en": "Shopify analytics."
+        }
+      },
+      {
+        "name": "_orig_referrer",
+        "type": "http",
+        "domain": ".legitgrails.com",
+        "path": "\/",
+        "provider": "Shopify",
+        "firstParty": true,
+        "retention": "2 ",
+        "session": false,
+        "expires": 2,
+        "unit": "declSession",
+        "purpose": {
+          "en": "Tracks landing pages."
+        }
+      },
+      {
+        "name": "_shopify_s",
+        "type": "http",
+        "domain": ".legitgrails.com",
+        "path": "\/",
+        "provider": "Shopify",
+        "firstParty": true,
+        "retention": "30 minute(s)",
+        "session": false,
+        "expires": 30,
+        "unit": "declMinutes",
+        "purpose": {
+          "en": "Shopify analytics."
+        }
+      },
+      {
+        "name": "_landing_page",
+        "type": "http",
+        "domain": ".legitgrails.com",
+        "path": "\/",
+        "provider": "Shopify",
+        "firstParty": true,
+        "retention": "2 ",
+        "session": false,
+        "expires": 2,
+        "unit": "declSession",
+        "purpose": {
+          "en": "Tracks landing pages."
+        }
+      },
+      {
+        "name": "_shopify_sa_p",
+        "type": "http",
+        "domain": ".legitgrails.com",
+        "path": "\/",
+        "provider": "Shopify",
+        "firstParty": true,
+        "retention": "30 minute(s)",
+        "session": false,
+        "expires": 30,
+        "unit": "declMinutes",
+        "purpose": {
+          "en": "Shopify analytics relating to marketing & referrals."
+        }
+      },
+      {
+        "name": "_shopify_sa_t",
+        "type": "http",
+        "domain": ".legitgrails.com",
+        "path": "\/",
+        "provider": "Shopify",
+        "firstParty": true,
+        "retention": "30 minute(s)",
+        "session": false,
+        "expires": 30,
+        "unit": "declMinutes",
+        "purpose": {
+          "en": "Shopify analytics relating to marketing & referrals."
+        }
+      },
+      {
+        "name": "_gat",
+        "type": "http",
+        "domain": ".legitgrails.com",
+        "path": "\/",
+        "provider": "Google",
+        "firstParty": true,
+        "retention": "1 minute(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declMinutes",
+        "purpose": {
+          "en": "Cookie is placed by Google Analytics to filter requests from bots."
+        }
+      },
+      {
+        "name": "_gid",
+        "type": "http",
+        "domain": ".legitgrails.com",
+        "path": "\/",
+        "provider": "Google",
+        "firstParty": true,
+        "retention": "1 day(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declDays",
+        "purpose": {
+          "en": "Cookie is placed by Google Analytics to count and track pageviews."
+        }
+      },
+      {
+        "name": "_ga",
+        "type": "http",
+        "domain": ".legitgrails.com",
+        "path": "\/",
+        "provider": "Google",
+        "firstParty": true,
+        "retention": "1 year(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declYears",
+        "purpose": {
+          "en": "Cookie is set by Google Analytics with unknown functionality"
+        }
+      },
+      {
+        "name": "AWSALBCORS",
+        "type": "http",
+        "domain": "widget-mediator.zopim.com",
+        "path": "\/",
+        "provider": "Amazon",
+        "firstParty": false,
+        "retention": "1 ",
+        "session": false,
+        "expires": 1,
+        "unit": "declSession",
+        "purpose": {
+          "en": "Used as a second stickiness cookie by Amazon that has additionally the SameSite attribute."
+        }
+      },
+      {
+        "name": "_clck",
+        "type": "http",
+        "domain": ".legitgrails.com",
+        "path": "\/",
+        "provider": "Microsoft",
+        "firstParty": true,
+        "retention": "1 year(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declYears",
+        "purpose": {
+          "en": "Used by Microsoft Clarity to store a unique user ID."
+        }
+      },
+      {
+        "name": "_clsk",
+        "type": "http",
+        "domain": ".legitgrails.com",
+        "path": "\/",
+        "provider": "Microsoft",
+        "firstParty": true,
+        "retention": "1 day(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declDays",
+        "purpose": {
+          "en": "Used by Microsoft Clarity to store a unique user ID.\t"
+        }
+      },
+      {
+        "name": "_shopify_s",
+        "type": "http",
+        "domain": "com",
+        "path": "\/",
+        "provider": "Shopify",
+        "firstParty": false,
+        "retention": "Session",
+        "session": true,
+        "expires": 1,
+        "unit": "declSeconds",
+        "purpose": {
+          "en": "Shopify analytics."
+        }
+      },
+      {
+        "name": "_gat_gtag_UA_149941762_1",
+        "type": "http",
+        "domain": ".legitgrails.com",
+        "path": "\/",
+        "provider": "Google",
+        "firstParty": true,
+        "retention": "1 minute(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declMinutes",
+        "purpose": {
+          "en": ""
+        }
+      },
+      {
+        "name": "_ga_33VD8FF72D",
+        "type": "http",
+        "domain": ".legitgrails.com",
+        "path": "\/",
+        "provider": "Google",
+        "firstParty": true,
+        "retention": "1 year(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declYears",
+        "purpose": {
+          "en": ""
+        }
+      },
+      {
+        "name": "_ga_MWKDGN707C",
+        "type": "http",
+        "domain": ".legitgrails.com",
+        "path": "\/",
+        "provider": "Google",
+        "firstParty": true,
+        "retention": "1 year(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declYears",
+        "purpose": {
+          "en": ""
+        }
+      }
+    ],
+    "4": [
+      {
+        "name": "_uetvid",
+        "type": "http",
+        "domain": ".legitgrails.com",
+        "path": "\/",
+        "provider": "Bing",
+        "firstParty": true,
+        "retention": "1 year(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declYears",
+        "purpose": {
+          "en": "Used to track visitors on multiple websites, in order to present relevant advertisement based on the visitor's preferences."
+        }
+      },
+      {
+        "name": "_gcl_au",
+        "type": "http",
+        "domain": ".legitgrails.com",
+        "path": "\/",
+        "provider": "Google",
+        "firstParty": true,
+        "retention": "3 month(s)",
+        "session": false,
+        "expires": 3,
+        "unit": "declMonths",
+        "purpose": {
+          "en": "Cookie is placed by Google Tag Manager to track conversions."
+        }
+      },
+      {
+        "name": "_uetsid",
+        "type": "http",
+        "domain": ".legitgrails.com",
+        "path": "\/",
+        "provider": "Bing",
+        "firstParty": true,
+        "retention": "1 day(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declDays",
+        "purpose": {
+          "en": "This cookie is used by Bing to determine what ads should be shown that may be relevant to the end user perusing the site."
+        }
+      },
+      {
+        "name": "test_cookie",
+        "type": "http",
+        "domain": ".doubleclick.net",
+        "path": "\/",
+        "provider": "Google",
+        "firstParty": false,
+        "retention": "15 minute(s)",
+        "session": false,
+        "expires": 15,
+        "unit": "declMinutes",
+        "purpose": {
+          "en": "To measure the visitors’ actions after they click through from an advert. Expires after each visit."
+        }
+      },
+      {
+        "name": "MUID",
+        "type": "http",
+        "domain": ".bing.com",
+        "path": "\/",
+        "provider": "Microsoft",
+        "firstParty": false,
+        "retention": "1 year(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declYears",
+        "purpose": {
+          "en": "Cookie is placed by Microsoft to track visits across websites."
+        }
+      },
+      {
+        "name": "_ttp",
+        "type": "http",
+        "domain": ".tiktok.com",
+        "path": "\/",
+        "provider": "TikTok",
+        "firstParty": false,
+        "retention": "1 year(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declYears",
+        "purpose": {
+          "en": "To measure and improve the performance of your advertising campaigns and to personalize the user's experience (including ads) on TikTok."
+        }
+      },
+      {
+        "name": "_fbp",
+        "type": "http",
+        "domain": ".legitgrails.com",
+        "path": "\/",
+        "provider": "Facebook",
+        "firstParty": true,
+        "retention": "3 month(s)",
+        "session": false,
+        "expires": 3,
+        "unit": "declMonths",
+        "purpose": {
+          "en": "Cookie is placed by Facebook to track visits across websites."
+        }
+      },
+      {
+        "name": "_tt_enable_cookie",
+        "type": "http",
+        "domain": ".legitgrails.com",
+        "path": "\/",
+        "provider": "TikTok",
+        "firstParty": true,
+        "retention": "1 year(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declYears",
+        "purpose": {
+          "en": "Used to identify a visitor."
+        }
+      },
+      {
+        "name": "_ttp",
+        "type": "http",
+        "domain": ".legitgrails.com",
+        "path": "\/",
+        "provider": "TikTok",
+        "firstParty": true,
+        "retention": "1 year(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declYears",
+        "purpose": {
+          "en": "To measure and improve the performance of your advertising campaigns and to personalize the user's experience (including ads) on TikTok."
+        }
+      },
+      {
+        "name": "MUID",
+        "type": "http",
+        "domain": ".clarity.ms",
+        "path": "\/",
+        "provider": "Microsoft",
+        "firstParty": false,
+        "retention": "1 year(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declYears",
+        "purpose": {
+          "en": "Cookie is placed by Microsoft to track visits across websites."
+        }
+      },
+      {
+        "name": "IDE",
+        "type": "http",
+        "domain": ".doubleclick.net",
+        "path": "\/",
+        "provider": "Google",
+        "firstParty": false,
+        "retention": "1 year(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declYears",
+        "purpose": {
+          "en": "To measure the visitors’ actions after they click through from an advert. Expires after 1 year."
+        }
+      },
+      {
+        "name": "bcookie",
+        "type": "http",
+        "domain": ".linkedin.com",
+        "path": "\/",
+        "provider": "LinkedIn",
+        "firstParty": false,
+        "retention": "1 year(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declYears",
+        "purpose": {
+          "en": ""
+        }
+      },
+      {
+        "name": "lidc",
+        "type": "http",
+        "domain": ".linkedin.com",
+        "path": "\/",
+        "provider": "LinkedIn",
+        "firstParty": false,
+        "retention": "1 day(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declDays",
+        "purpose": {
+          "en": ""
+        }
+      }
+    ],
+    "8": [
+      {
+        "name": "li_sugr",
+        "type": "http",
+        "domain": ".linkedin.com",
+        "path": "\/",
+        "provider": "Unknown",
+        "firstParty": false,
+        "retention": "3 month(s)",
+        "session": false,
+        "expires": 3,
+        "unit": "declMonths",
+        "purpose": {
+          "en": ""
+        }
+      },
+      {
+        "name": "AnalyticsSyncHistory",
+        "type": "http",
+        "domain": ".linkedin.com",
+        "path": "\/",
+        "provider": "Unknown",
+        "firstParty": false,
+        "retention": "1 month(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declMonths",
+        "purpose": {
+          "en": ""
+        }
+      },
+      {
+        "name": "CLID",
+        "type": "http",
+        "domain": "www.clarity.ms",
+        "path": "\/",
+        "provider": "Unknown",
+        "firstParty": false,
+        "retention": "1 year(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declYears",
+        "purpose": {
+          "en": ""
+        }
+      },
+      {
+        "name": "SNS",
+        "type": "http",
+        "domain": "legitgrails.com",
+        "path": "\/",
+        "provider": "Unknown",
+        "firstParty": true,
+        "retention": "Session",
+        "session": true,
+        "expires": -54,
+        "unit": "declYears",
+        "purpose": {
+          "en": ""
+        }
+      },
+      {
+        "name": "UserMatchHistory",
+        "type": "http",
+        "domain": ".linkedin.com",
+        "path": "\/",
+        "provider": "Unknown",
+        "firstParty": false,
+        "retention": "1 month(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declMonths",
+        "purpose": {
+          "en": ""
+        }
+      },
+      {
+        "name": "bscookie",
+        "type": "http",
+        "domain": ".www.linkedin.com",
+        "path": "\/",
+        "provider": "Unknown",
+        "firstParty": false,
+        "retention": "1 year(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declYears",
+        "purpose": {
+          "en": ""
+        }
+      },
+      {
+        "name": "_sn_m",
+        "type": "http",
+        "domain": "legitgrails.com",
+        "path": "\/",
+        "provider": "Unknown",
+        "firstParty": true,
+        "retention": "1 year(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declYears",
+        "purpose": {
+          "en": ""
+        }
+      },
+      {
+        "name": "_drip_client_4652354",
+        "type": "http",
+        "domain": ".legitgrails.com",
+        "path": "\/",
+        "provider": "Unknown",
+        "firstParty": true,
+        "retention": "1 year(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declYears",
+        "purpose": {
+          "en": ""
+        }
+      },
+      {
+        "name": "_sn_a",
+        "type": "http",
+        "domain": "legitgrails.com",
+        "path": "\/",
+        "provider": "Unknown",
+        "firstParty": true,
+        "retention": "1 year(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declYears",
+        "purpose": {
+          "en": ""
+        }
+      },
+      {
+        "name": "_sn_n",
+        "type": "http",
+        "domain": "legitgrails.com",
+        "path": "\/",
+        "provider": "Unknown",
+        "firstParty": true,
+        "retention": "1 year(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declYears",
+        "purpose": {
+          "en": ""
+        }
+      },
+      {
+        "name": "MR",
+        "type": "http",
+        "domain": ".c.clarity.ms",
+        "path": "\/",
+        "provider": "Unknown",
+        "firstParty": false,
+        "retention": "1 ",
+        "session": false,
+        "expires": 1,
+        "unit": "declSession",
+        "purpose": {
+          "en": ""
+        }
+      },
+      {
+        "name": "ANONCHK",
+        "type": "http",
+        "domain": ".c.clarity.ms",
+        "path": "\/",
+        "provider": "Unknown",
+        "firstParty": false,
+        "retention": "10 minute(s)",
+        "session": false,
+        "expires": 10,
+        "unit": "declMinutes",
+        "purpose": {
+          "en": ""
+        }
+      },
+      {
+        "name": "MR",
+        "type": "http",
+        "domain": ".c.bing.com",
+        "path": "\/",
+        "provider": "Unknown",
+        "firstParty": false,
+        "retention": "1 ",
+        "session": false,
+        "expires": 1,
+        "unit": "declSession",
+        "purpose": {
+          "en": ""
+        }
+      },
+      {
+        "name": "SM",
+        "type": "http",
+        "domain": ".c.clarity.ms",
+        "path": "\/",
+        "provider": "Unknown",
+        "firstParty": false,
+        "retention": "Session",
+        "session": true,
+        "expires": -54,
+        "unit": "declYears",
+        "purpose": {
+          "en": ""
+        }
+      },
+      {
+        "name": "SRM_B",
+        "type": "http",
+        "domain": ".c.bing.com",
+        "path": "\/",
+        "provider": "Unknown",
+        "firstParty": false,
+        "retention": "1 year(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declYears",
+        "purpose": {
+          "en": ""
+        }
+      },
+      {
+        "name": "MSPTC",
+        "type": "http",
+        "domain": ".bing.com",
+        "path": "\/",
+        "provider": "Unknown",
+        "firstParty": false,
+        "retention": "1 year(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declYears",
+        "purpose": {
+          "en": ""
+        }
+      },
+      {
+        "name": "__zlcmid",
+        "type": "http",
+        "domain": ".legitgrails.com",
+        "path": "\/",
+        "provider": "Unknown",
+        "firstParty": true,
+        "retention": "1 year(s)",
+        "session": false,
+        "expires": 1,
+        "unit": "declYears",
+        "purpose": {
+          "en": ""
+        }
+      }
+    ]
+  },
+  "blocker": {
+    "isActive": false,
+    "googleConsentMode": {
+      "id": "",
+      "analyticsId": "",
+      "adwordsId": "",
+      "isActive": false,
+      "adStorageCategory": 4,
+      "analyticsStorageCategory": 2,
+      "personalizationStorageCategory": 1,
+      "functionalityStorageCategory": 1,
+      "customEvent": false,
+      "securityStorageCategory": 0,
+      "redactData": true,
+      "urlPassthrough": false,
+      "dataLayerProperty": "dataLayer",
+      "waitForUpdate": 2000
+    },
+    "facebookPixel": {
+      "id": "",
+      "isActive": false,
+      "ldu": false
+    },
+    "microsoft": {},
+    "rakuten": {
+      "isActive": false,
+      "cmp": false,
+      "ccpa": false
+    },
+    "klaviyoIsActive": false,
+    "gpcIsActive": false,
+    "clarity": {},
+    "defaultBlocked": 7,
+    "patterns": {
+      "whiteList": [],
+      "blackList": {
+        "1": [],
+        "2": [],
+        "4": [],
+        "8": []
+      },
+      "iframesWhiteList": [],
+      "iframesBlackList": {
+        "1": [],
+        "2": [],
+        "4": [],
+        "8": []
+      },
+      "beaconsWhiteList": [],
+      "beaconsBlackList": {
+        "1": [],
+        "2": [],
+        "4": [],
+        "8": []
+      }
+    }
+  }
+}

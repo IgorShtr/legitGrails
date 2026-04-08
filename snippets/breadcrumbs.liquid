@@ -1,0 +1,296 @@
+<style>
+  nav.breadcrumbs {
+    display: flex!important;
+  }
+  .breadcrumbs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 76px;
+    width: 100%;
+    background: #3C1F1B;
+    padding: 20px 15px!important;
+    position: relative;
+    z-index: 10;
+  }
+  .breadcrumbs ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .breadcrumbs ol p, .breadcrumbs ol a {
+    color: #fff;
+    text-decoration: none;
+    line-height: 1;
+    display: block;
+  }
+  .breadcrumbs ol li a {
+    text-decoration: underline;
+  }
+  .breadcrumbs ol li:last-child a {
+    pointer-events: none;
+    text-decoration: none;
+  }
+  .breadcrumbs ol li {
+    transition: .3s;
+  }
+  .breadcrumbs ol li a:hover {
+    opacity: 0.85;
+  }
+  .breadcrumbs ol li a:active {
+    opacity: 0.7;
+  }
+  .breadcrumbs ol li:last-child a:hover {
+    opacity: 1;
+  }
+  .breadcrumbs ol li:last-child a:active {
+    opacity: 1;
+  }
+  .breadcrumbs svg {
+      height: 12px;
+      width: auto;
+    }
+  .breadcrumbs ol li:last-child {
+    max-width: calc(100% - 16px);
+    overflow: hidden;
+  }
+  .breadcrumbs ol li:last-child p {
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+.breadcrumbs ol li a {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+  @media(max-width: 750px) {
+    .breadcrumbs svg {
+      height: 9px;
+      width: auto;
+    }
+    .breadcrumbs {
+      padding: 15px!important;
+      margin-top: 54px;
+    }
+  }
+</style>
+{% unless template == 'index' %}
+<nav class="breadcrumbs block-flex-wrap block-flex-center-center" aria-label="breadcrumb">
+  <ol class="block-flex-wrap block-gap-10 block-flex-center-center">
+    <li><a href="{{ shop.url }}" class="tiny-text">Homepage</a></li>
+    <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8.28279 6.45372L2.22295 0.223657C2.0828 0.0794465 1.8957 0 1.6962 0C1.49671 0 1.30961 0.0794465 1.16945 0.223657L0.723188 0.682352C0.4328 0.981244 0.4328 1.46703 0.723188 1.76547L5.81178 6.9971L0.717542 12.2345C0.577385 12.3787 0.5 12.571 0.5 12.776C0.5 12.9812 0.577385 13.1734 0.717542 13.3178L1.16381 13.7763C1.30407 13.9206 1.49106 14 1.69056 14C1.89005 14 2.07715 13.9206 2.21731 13.7763L8.28279 7.54059C8.42328 7.39592 8.50044 7.20277 8.5 6.99744C8.50044 6.79131 8.42328 6.59827 8.28279 6.45372Z" fill="#fff"/>
+    </svg>
+      
+    {% if template contains 'guides' %}
+      <li><p class="tiny-text">Library of guides</p></li>
+    {% elsif template contains 'article' %}
+      <li><a class="tiny-text" href="https://legitgrails.com/pages/guides">Library of guides</a></li>
+      <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8.28279 6.45372L2.22295 0.223657C2.0828 0.0794465 1.8957 0 1.6962 0C1.49671 0 1.30961 0.0794465 1.16945 0.223657L0.723188 0.682352C0.4328 0.981244 0.4328 1.46703 0.723188 1.76547L5.81178 6.9971L0.717542 12.2345C0.577385 12.3787 0.5 12.571 0.5 12.776C0.5 12.9812 0.577385 13.1734 0.717542 13.3178L1.16381 13.7763C1.30407 13.9206 1.49106 14 1.69056 14C1.89005 14 2.07715 13.9206 2.21731 13.7763L8.28279 7.54059C8.42328 7.39592 8.50044 7.20277 8.5 6.99744C8.50044 6.79131 8.42328 6.59827 8.28279 6.45372Z" fill="#fff"/>
+      </svg>
+      <li><a class="tiny-text" href="{{ blog.url }}">{{ blog.title }}</a></li>
+      <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8.28279 6.45372L2.22295 0.223657C2.0828 0.0794465 1.8957 0 1.6962 0C1.49671 0 1.30961 0.0794465 1.16945 0.223657L0.723188 0.682352C0.4328 0.981244 0.4328 1.46703 0.723188 1.76547L5.81178 6.9971L0.717542 12.2345C0.577385 12.3787 0.5 12.571 0.5 12.776C0.5 12.9812 0.577385 13.1734 0.717542 13.3178L1.16381 13.7763C1.30407 13.9206 1.49106 14 1.69056 14C1.89005 14 2.07715 13.9206 2.21731 13.7763L8.28279 7.54059C8.42328 7.39592 8.50044 7.20277 8.5 6.99744C8.50044 6.79131 8.42328 6.59827 8.28279 6.45372Z" fill="#fff"/>
+      </svg>
+      <li><p class="tiny-text">{{ article.title }}</p></li>
+    {% elsif template contains 'blog' %}
+      <li><a class="tiny-text" href="https://legitgrails.com/pages/guides">Library of guides</a></li>
+      <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8.28279 6.45372L2.22295 0.223657C2.0828 0.0794465 1.8957 0 1.6962 0C1.49671 0 1.30961 0.0794465 1.16945 0.223657L0.723188 0.682352C0.4328 0.981244 0.4328 1.46703 0.723188 1.76547L5.81178 6.9971L0.717542 12.2345C0.577385 12.3787 0.5 12.571 0.5 12.776C0.5 12.9812 0.577385 13.1734 0.717542 13.3178L1.16381 13.7763C1.30407 13.9206 1.49106 14 1.69056 14C1.89005 14 2.07715 13.9206 2.21731 13.7763L8.28279 7.54059C8.42328 7.39592 8.50044 7.20277 8.5 6.99744C8.50044 6.79131 8.42328 6.59827 8.28279 6.45372Z" fill="#fff"/>
+      </svg>
+      <li><p class="tiny-text">{{ blog.title }}</p></li>
+    {% elsif template contains 'product' %}
+      <li><a href="/pages/choose-your-brand" class="tiny-text">Choose your brand</a></li>
+      <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8.28279 6.45372L2.22295 0.223657C2.0828 0.0794465 1.8957 0 1.6962 0C1.49671 0 1.30961 0.0794465 1.16945 0.223657L0.723188 0.682352C0.4328 0.981244 0.4328 1.46703 0.723188 1.76547L5.81178 6.9971L0.717542 12.2345C0.577385 12.3787 0.5 12.571 0.5 12.776C0.5 12.9812 0.577385 13.1734 0.717542 13.3178L1.16381 13.7763C1.30407 13.9206 1.49106 14 1.69056 14C1.89005 14 2.07715 13.9206 2.21731 13.7763L8.28279 7.54059C8.42328 7.39592 8.50044 7.20277 8.5 6.99744C8.50044 6.79131 8.42328 6.59827 8.28279 6.45372Z" fill="#fff"/>
+      </svg>
+      <li><p class="tiny-text">{{ product.title }}</p></li>
+    {% elsif template contains 'verified-partners' %}
+      <li><a href="/pages/verified" class="tiny-text">Verified</a></li>
+      <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8.28279 6.45372L2.22295 0.223657C2.0828 0.0794465 1.8957 0 1.6962 0C1.49671 0 1.30961 0.0794465 1.16945 0.223657L0.723188 0.682352C0.4328 0.981244 0.4328 1.46703 0.723188 1.76547L5.81178 6.9971L0.717542 12.2345C0.577385 12.3787 0.5 12.571 0.5 12.776C0.5 12.9812 0.577385 13.1734 0.717542 13.3178L1.16381 13.7763C1.30407 13.9206 1.49106 14 1.69056 14C1.89005 14 2.07715 13.9206 2.21731 13.7763L8.28279 7.54059C8.42328 7.39592 8.50044 7.20277 8.5 6.99744C8.50044 6.79131 8.42328 6.59827 8.28279 6.45372Z" fill="#fff"/>
+      </svg>
+      <li><p class="tiny-text">Verified Partners</p></li>
+    {% elsif template contains 'verified-partner' %}
+      <li><a href="/pages/verified" class="tiny-text">Verified</a></li>
+      <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8.28279 6.45372L2.22295 0.223657C2.0828 0.0794465 1.8957 0 1.6962 0C1.49671 0 1.30961 0.0794465 1.16945 0.223657L0.723188 0.682352C0.4328 0.981244 0.4328 1.46703 0.723188 1.76547L5.81178 6.9971L0.717542 12.2345C0.577385 12.3787 0.5 12.571 0.5 12.776C0.5 12.9812 0.577385 13.1734 0.717542 13.3178L1.16381 13.7763C1.30407 13.9206 1.49106 14 1.69056 14C1.89005 14 2.07715 13.9206 2.21731 13.7763L8.28279 7.54059C8.42328 7.39592 8.50044 7.20277 8.5 6.99744C8.50044 6.79131 8.42328 6.59827 8.28279 6.45372Z" fill="#fff"/>
+      </svg>
+      <li><a href="/pages/verified-partners" class="tiny-text">Verified Partners</a></li>
+      <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8.28279 6.45372L2.22295 0.223657C2.0828 0.0794465 1.8957 0 1.6962 0C1.49671 0 1.30961 0.0794465 1.16945 0.223657L0.723188 0.682352C0.4328 0.981244 0.4328 1.46703 0.723188 1.76547L5.81178 6.9971L0.717542 12.2345C0.577385 12.3787 0.5 12.571 0.5 12.776C0.5 12.9812 0.577385 13.1734 0.717542 13.3178L1.16381 13.7763C1.30407 13.9206 1.49106 14 1.69056 14C1.89005 14 2.07715 13.9206 2.21731 13.7763L8.28279 7.54059C8.42328 7.39592 8.50044 7.20277 8.5 6.99744C8.50044 6.79131 8.42328 6.59827 8.28279 6.45372Z" fill="#fff"/>
+      </svg>
+      <li><p class="tiny-text">{{ page.title }}</p></li>
+    {% elsif template contains 'account_how-it-works' or template contains 'account_brand-coverage' or template contains 'account-pricing' %}
+      <li><a href="/pages/account" class="tiny-text">Account</a></li>
+      <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8.28279 6.45372L2.22295 0.223657C2.0828 0.0794465 1.8957 0 1.6962 0C1.49671 0 1.30961 0.0794465 1.16945 0.223657L0.723188 0.682352C0.4328 0.981244 0.4328 1.46703 0.723188 1.76547L5.81178 6.9971L0.717542 12.2345C0.577385 12.3787 0.5 12.571 0.5 12.776C0.5 12.9812 0.577385 13.1734 0.717542 13.3178L1.16381 13.7763C1.30407 13.9206 1.49106 14 1.69056 14C1.89005 14 2.07715 13.9206 2.21731 13.7763L8.28279 7.54059C8.42328 7.39592 8.50044 7.20277 8.5 6.99744C8.50044 6.79131 8.42328 6.59827 8.28279 6.45372Z" fill="#fff"/>
+      </svg>
+      <li><p class="tiny-text">{{ page.title }}</p></li>
+    {% elsif template contains 'page' %}
+      <li><p class="tiny-text">{{ page.title }}</p></li>
+    {% endif %}
+  </ol>
+</nav>
+{% endunless %}
+
+{% assign position = 1 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": {{ position }},
+      "name": "Homepage",
+      "item": "{{ shop.url }}"
+    }
+    {% assign position = position | plus: 1 %}
+
+    {% if template contains 'guides' %}
+    ,{
+      "@type": "ListItem",
+      "position": {{ position }},
+      "name": "Library of guides"
+    }
+
+    {% elsif template contains 'article' %}
+    ,{
+      "@type": "ListItem",
+      "position": {{ position }},
+      "name": "Library of guides",
+      "item": "https://legitgrails.com/pages/guides"
+    }
+    {% assign position = position | plus: 1 %}
+    ,{
+      "@type": "ListItem",
+      "position": {{ position }},
+      "name": "{{ blog.title }}",
+      "item": "{{ shop.url }}{{ blog.url }}"
+    }
+    {% assign position = position | plus: 1 %}
+    ,{
+      "@type": "ListItem",
+      "position": {{ position }},
+      "name": "{{ article.title }}"
+    }
+
+    {% elsif template contains 'blog' %}
+    ,{
+      "@type": "ListItem",
+      "position": {{ position }},
+      "name": "Library of guides",
+      "item": "https://legitgrails.com/pages/guides"
+    }
+    {% assign position = position | plus: 1 %}
+    ,{
+      "@type": "ListItem",
+      "position": {{ position }},
+      "name": "{{ blog.title }}"
+    }
+
+    {% elsif template contains 'product' %}
+    ,{
+      "@type": "ListItem",
+      "position": {{ position }},
+      "name": "Choose your brand",
+      "item": "https://legitgrails.com/pages/choose-your-brand"
+    }
+    {% assign position = position | plus: 1 %}
+    ,{
+      "@type": "ListItem",
+      "position": {{ position }},
+      "name": "{{ product.title }}"
+    }
+
+  {% elsif template contains 'page.verified-partners' %}
+    ,{
+      "@type": "ListItem",
+      "position": {{ position }},
+      "name": "Verified",
+      "item": "https://legitgrails.com/pages/verified"
+    }
+    {% assign position = position | plus: 1 %}
+    ,{
+      "@type": "ListItem",
+      "position": {{ position }},
+      "name": "Verified Partners",
+    }
+
+  {% elsif template contains 'verified-partner' %}
+    ,{
+      "@type": "ListItem",
+      "position": {{ position }},
+      "name": "Verified",
+      "item": "https://legitgrails.com/pages/verified"
+    }
+    {% assign position = position | plus: 1 %}
+    ,{
+      "@type": "ListItem",
+      "position": {{ position }},
+      "name": "Verified Partners",
+      "item": "https://legitgrails.com/pages/verified-partners"
+    }
+    {% assign position = position | plus: 1 %}
+    ,{
+      "@type": "ListItem",
+      "position": {{ position }},
+      "name": "{{ page.title }}"
+    }
+
+  {% elsif template contains 'account_brand-coverage' %}
+    ,{
+      "@type": "ListItem",
+      "position": {{ position }},
+      "name": "Account",
+      "item": "https://legitgrails.com/pages/account"
+    }
+    {% assign position = position | plus: 1 %}
+    ,{
+      "@type": "ListItem",
+      "position": {{ position }},
+      "name": "Brand Coverage",
+    }
+
+  {% elsif template contains 'account_how-it-works' %}
+    ,{
+      "@type": "ListItem",
+      "position": {{ position }},
+      "name": "Account",
+      "item": "https://legitgrails.com/pages/account"
+    }
+    {% assign position = position | plus: 1 %}
+    ,{
+      "@type": "ListItem",
+      "position": {{ position }},
+      "name": "Account | How it works",
+    }
+
+    {% elsif template contains 'account-pricing' %}
+    ,{
+      "@type": "ListItem",
+      "position": {{ position }},
+      "name": "Account",
+      "item": "https://legitgrails.com/pages/account"
+    }
+    {% assign position = position | plus: 1 %}
+    ,{
+      "@type": "ListItem",
+      "position": {{ position }},
+      "name": "Account | Pricing",
+    }
+
+    {% elsif template contains 'page' %}
+    ,{
+      "@type": "ListItem",
+      "position": {{ position }},
+      "name": "{{ page.title }}"
+    }
+    {% endif %}
+  ]
+}
+</script>

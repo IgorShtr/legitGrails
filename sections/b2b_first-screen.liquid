@@ -1,0 +1,439 @@
+<style>
+  .b2b_first-screen_mobile-back {
+    display: none;
+  }
+  .b2b_first-screen {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    margin-top: -123px;
+    min-height: 700px;
+}
+  .b2b_first-screen .new-container {
+    height: 100%;
+    z-index: 1;
+    position: relative;
+}
+  .b2b_first-screen-wrapp {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+ .b2b_first-screen-wrapp_content {
+    width: 100%;
+    max-width: 866px;
+    height: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+  .b2b_first-screen-wrapp_content-text {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+  h1.b2b_first-screen-wrapp_content-title {
+    line-height: 1.1;
+    margin: 0;
+}
+  .b2b_first-screen-wrapp_content-desc {
+    width: 100%;
+    max-width: 580px;
+    margin-top: -5px;
+    display: block;
+}
+  .b2b_first-screen-wrapp_content-btns {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+  }
+ .b2b_first-screen-wrapp_content-steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+  .b2b_first-screen-wrapp_content-steps-item {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+  .b2b_first-screen-wrapp_content-steps-item-icon {
+    border-radius: 50%;
+    background: #FAF7F1;
+    display: flex;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+  .b2b_first-screen-wrapp_content-steps-item-icon::after {
+    content: '';
+    display: block;
+    height: 34px;
+    width: 34px;
+    border: 2px solid #cdab71;
+    border-radius: 50%;
+    position: absolute;
+}
+  .b2b_first-screen-wrapp_content-steps-item-icon img {
+    height: 16px;
+    width: auto;
+    display: block;
+}
+  .b2b_first-screen-wrapp_content-steps img.b2b_first-screen-wrapp_content-steps-arrow:last-child {
+    display: none;
+  }
+  .b2b_first-screen-wrapp_content-offers {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+  span.b2b_first-screen-wrapp_content-offers-span {
+    display: block;
+    width: 1px;
+    height: 32px;
+    background: #CDAB71;
+  }
+  .b2b_first-screen-wrapp_content-offers-item p {
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+  .b2b_first-screen-wrapp_content-offers-item p span {
+    font-weight: 700;
+    font-size: 32px;
+    font-family: 'Montserrat';
+    line-height: 1;
+}
+img.b2b_first-screen_back {
+    position: absolute;
+    height: calc(100% + 123px);
+    width: auto;
+    display: block;
+    z-index: 0;
+    bottom: 0;
+}
+  img.b2b_first-screen_back-left {
+    right: 50%;
+    margin-right: 433px;
+  }
+img.b2b_first-screen_back-right {
+    left: 50%;
+    margin-left: 433px;
+}
+  @media(max-width: 1100px) {
+    img.b2b_first-screen_back {
+      opacity: 0.6;
+    }
+    img.b2b_first-screen_back-left {
+    right: 50%;
+    margin-right: 287px;
+}
+    img.b2b_first-screen_back-right {
+    left: 50%;
+    margin-left: 318px;
+}
+  }
+  @media(max-width: 950px) {
+    .b2b_first-screen-wrapp_content-offers-item p span {
+      font-size: 26px;
+    }
+    .b2b_first-screen-wrapp_content {
+      gap: 20px;
+    }
+  }
+  @media(max-width: 750px) {
+    .b2b_first-screen {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    margin-top: -129px;
+    min-height: 584px;
+    padding-top: 107px;
+}
+    img.b2b_first-screen_back-left {
+    right: 50%;
+    margin-right: 178px;
+}
+    img.b2b_first-screen_back-right {
+    left: 50%;
+    margin-left: 159px;
+}
+    .b2b_first-screen-wrapp_content-steps-item {
+    width: 200px;
+    justify-content: flex-start;
+}
+    .b2b_first-screen-wrapp_content-steps {
+      gap: 5px;
+    }
+    img.b2b_first-screen-wrapp_content-steps-arrow {
+      display: none;
+    }
+    .b2b_first-screen-wrapp_content-steps {
+    gap: 15px;
+    width: 200px;
+}
+    .b2b_first-screen-wrapp_content-steps-item-icon::before {
+    content: '';
+    display: block;
+    height: 27px;
+    width: 2px;
+    background: #cdab71;
+    position: absolute;
+    top: 100%;
+    margin-top: -6px;
+    z-index: 2;
+    left: 50%;
+    margin-left: -1px;
+}
+   div.b2b_first-screen-wrapp_content-steps-item:last-of-type .b2b_first-screen-wrapp_content-steps-item-icon::before {
+     display: none;
+   }
+    .b2b_first-screen-wrapp_content-offers {
+      width: 100%;
+      justify-content: center;;
+    }
+    .b2b_first-screen-wrapp_content-offers {
+      flex-wrap: wrap;
+    }
+    .b2b_first-screen-wrapp_content-offers {
+      gap: 15px;
+    }
+    .b2b_first-screen-wrapp_content-btns {
+      gap: 15px;
+    }
+      span.b2b_first-screen-wrapp_content-offers-span {
+        display: none;
+    }
+        .b2b_first-screen-wrapp_content-offers-item {
+        order: 2;
+          width: max-content;
+    display: flex;
+    justify-content: center;
+    }
+  }
+  @media(max-width: 600px) {
+    .b2b_first-screen {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    margin-top: -129px;
+    min-height: 696px;
+    padding-top: 107px;
+}
+    .b2b_first-screen_mobile-back {
+        display: block;
+        position: absolute;
+        height: calc(100% + -107px);
+        width: auto;
+        display: block;
+        z-index: 0;
+        bottom: 0;
+        opacity: 0.8;
+    }
+       .b2b_first-screen_mobile-back-left {
+        left: 0%;
+        margin-right: 0px;
+    }
+         .b2b_first-screen_mobile-back-right {
+        right: 0;
+        margin-left: 0;
+    }
+    img.b2b_first-screen_back {
+      display: none;
+    }
+    .b2b_first-screen-wrapp_content-btns {
+        gap: 10px;
+    }
+        .b2b_first-screen-wrapp_content-offers-item p span {
+        font-size: 24px;
+    }
+    .b2b_first-screen-wrapp_content-offers-item {
+      width: 100%;
+    }
+  }
+  
+</style>
+<img class="b2b_first-screen_back b2b_first-screen_back-left" src="{{ 'b2b-first-screen_back-left.svg' | asset_url }}">
+<img class="b2b_first-screen_mobile-back b2b_first-screen_mobile-back-left" src="{{ 'b2b_mobile-back-left.svg' | asset_url }}">
+<div class="new-container">
+<div class="b2b_first-screen-wrapp">
+  <div class="b2b_first-screen-wrapp_content">
+    <div class="b2b_first-screen-wrapp_content-text">
+      {% if section.settings.title != blank %}
+        <h1 class="font-title b2b_first-screen-wrapp_content-title animation-title main-title-style" data-animate>{{ section.settings.title | escape }}</h1>
+    {% endif %}
+    {% if section.settings.description != blank %}
+        <div class="font-description b2b_first-screen-wrapp_content-desc">
+          <p class="common-desc-style">{{ section.settings.description }}</p>
+        </div>
+    {% endif %}
+        <div class="b2b_first-screen-wrapp_content-steps">
+    {% for block in section.blocks %}
+        <div class="b2b_first-screen-wrapp_content-steps-item">
+            {% if block.settings.image != blank %}
+                <div class="b2b_first-screen-wrapp_content-steps-item-icon">
+                    <img class="b2b_first-screen-wrapp_content-steps-item-img" src="{{ block.settings.image | img_url }}">
+                </div>
+            {% endif %}
+            <div class="b2b_first-screen-wrapp_content-steps-item-desc">
+                {% if block.settings.block_description != blank %}
+                    <p class="common-desc-style">{{ block.settings.block_description }}</p>
+                {% endif %}
+            </div>
+        </div>
+        <img class="b2b_first-screen-wrapp_content-steps-arrow" src="{{ 'first-screen_steps-arrow.svg' | asset_url }}">
+    {% endfor %}
+    </div>
+        <div class="b2b_first-screen-wrapp_content-btns">
+          {% if section.settings.first-button_label != blank %}
+              <a href="{{ section.settings.first-button_link }}" class="b2b_first-screen-wrapp_content-btns new-btn new-secondary-btn">{{ section.settings.first-button_label }}</a>
+          {% endif %}
+          {% if section.settings.second-button_label != blank %}
+              <a href="{{ section.settings.second-button_link }}" class="b2b_first-screen-wrapp_content-btns new-btn new-main-btn">{{ section.settings.second-button_label }}</a>
+          {% endif %}
+        </div>
+    </div>
+    <div class="b2b_first-screen-wrapp_content-offers">
+      {% if section.settings.first-offer_number != blank %}
+        <div class="b2b_first-screen-wrapp_content-offers-item">
+          <p class="common-desc-style"><span>{{ section.settings.first-offer_number }}</span> {{ section.settings.first-offer_desc }}</p>
+        </div>
+      {% endif %}
+      <span class="b2b_first-screen-wrapp_content-offers-span"></span>
+      {% if section.settings.second-offer_number != blank %}
+        <div class="b2b_first-screen-wrapp_content-offers-item">
+          <p class="common-desc-style"><span>{{ section.settings.second-offer_number }}</span> {{ section.settings.second-offer_desc }}</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+</div>
+<img class="b2b_first-screen_back b2b_first-screen_back-right" src="{{ 'b2b-first-screen_back-right.svg' | asset_url }}">
+<img class="b2b_first-screen_mobile-back b2b_first-screen_mobile-back-right" src="{{ 'b2b_mobile-back-right.svg' | asset_url }}">
+<script>
+  if ($(window).width() < 600) {
+   $('.b2b_first-screen-wrapp_content-title').html('Authenticate with Confidence and Elevate Your Luxury Business')
+  }
+  else {
+  }
+</script>
+{% schema %}
+  {
+    "name": "B2B First Screen",
+    "class": "b2b_first-screen",
+    "settings": [
+        {
+        "type": "text",
+        "id": "title",
+        "label": {
+        "en": "Heading"
+        }
+        },
+        {
+        "type": "text",
+        "id": "description",
+        "label": {
+        "en": "Description"
+        }
+        },
+        {
+        "type": "text",
+        "id": "first-button_label",
+        "label": {
+        "en": "First button label"
+        }
+        },
+        {
+        "type": "url",
+        "id": "first-button_link",
+        "label": {
+        "en": "First button link"
+        }
+        },
+        {
+        "type": "text",
+        "id": "second-button_label",
+        "label": {
+        "en": "Second button label"
+        }
+        },
+        {
+        "type": "url",
+        "id": "second-button_link",
+        "label": {
+        "en": "Second button link"
+        }
+        },
+        {
+        "type": "text",
+        "id": "first-offer_number",
+        "label": {
+        "en": "First Offer Number"
+        }
+        },
+      {
+        "type": "text",
+        "id": "first-offer_desc",
+        "label": {
+        "en": "First Offer Description"
+        }
+        },
+      {
+        "type": "text",
+        "id": "second-offer_number",
+        "label": {
+        "en": "First Offer Number"
+        }
+        },
+      {
+        "type": "text",
+        "id": "second-offer_desc",
+        "label": {
+        "en": "Second Offer Description"
+        }
+        }
+    ],
+    "blocks": [
+            {
+            "type": "image",
+            "name": {
+            "en": "Image"
+            },
+            "settings": [
+            {
+            "type": "image_picker",
+            "id": "image",
+            "label": {
+            "en": "Image"
+            }
+            },
+            {
+            "type": "text",
+            "id": "block_description",
+            "label": {
+            "en": "Description"
+            },
+            "default": {
+            "en": "Describe the step"
+            }
+            }
+      ]
+      }
+    ]
+  }
+{% endschema %}

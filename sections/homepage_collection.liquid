@@ -1,0 +1,116 @@
+<style>
+  .homepage_collection-title {
+    width: 100%;
+  }
+  .homepage_collection-desc {
+    max-width: 762px;
+    margin: 0 auto;
+  }
+  .homepage_collection-items {
+    width: 100%;
+  }
+  .homepage_collection-item-card {
+    width: calc(25% - 11.25px);
+    border-radius: 8px;
+    background: #F2F2EA;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 245px;
+    text-decoration: none;
+  }
+  p.homepage_collection-item-title {
+    font-family: "PP Fragment";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.37px;
+  }
+  p.homepage_collection-item-desc {
+    margin-top: 10px;
+  }
+  .homepage_collection-item-card-text {
+    transition: 0.5s;
+  }
+  .homepage_collection-item-card:hover .homepage_collection-item-card-text {
+    transform: scale(1.1)
+  }
+  @media(max-width: 1250px) {
+    .homepage_collection-item-card {
+      height: 200px;
+    }
+    p.homepage_collection-item-title {
+      font-size: 24px;
+    }
+  }
+  @media(max-width: 750px) {
+    .homepage_collection-item-card {
+      width: calc(50% - 7.5px);
+    }
+        p.homepage_collection-item-title {
+        font-size: 22px;
+    }
+    p.homepage_collection-item-desc {
+    margin-top: 5px;
+}
+  }
+  @media(max-width: 550px) {
+    .homepage_collection-item-card {
+      height: 150px;
+    }
+  }
+</style>
+
+<div class="rebranding_container">
+  <div class="block-container block-flex-wrap block-gap-50">
+    <div class="rebranding-section-title block-gap-15 block-flex-wrap">
+      <h2 class="homepage_collection-title h2-heading-ss">
+        <span class="h2-heading-pp">
+         Authenticate
+        </span>
+         an item
+      </h2>
+      <p class="homepage_collection-desc body-text">
+        Legit check your luxury, hype or streetwear item online with the help of our fashion industry experts & advanced AI technology
+      </p>
+    </div>
+    <div class="homepage_collection-items block-flex-wrap block-gap-15">
+        <a href="https://legitgrails.com/products/louis-vuitton-legit-check" class="homepage_collection-item-card block-flex homepage_collection-click-track">
+          <div class="homepage_collection-item-card-text">
+            <p class="homepage_collection-item-title">Louis Vuitton</p>
+            <p class="homepage_collection-item-desc small-text">from 15$</p>
+          </div>
+        </a>
+        <a href="https://legitgrails.com/products/gucci-legit-check" class="homepage_collection-item-card block-flex homepage_collection-click-track">
+          <div class="homepage_collection-item-card-text">
+            <p class="homepage_collection-item-title">Gucci</p>
+            <p class="homepage_collection-item-desc small-text">from 15$</p>
+          </div>
+        </a>
+        <a href="https://legitgrails.com/products/chanel-authentication" class="homepage_collection-item-card block-flex homepage_collection-click-track">
+          <div class="homepage_collection-item-card-text">
+            <p class="homepage_collection-item-title">Chanel</p>
+            <p class="homepage_collection-item-desc small-text">from 25$</p>
+          </div>
+        </a>
+        <a href="https://legitgrails.com/products/hermes-legit-check" class="homepage_collection-item-card block-flex homepage_collection-click-track">
+          <div class="homepage_collection-item-card-text">
+            <p class="homepage_collection-item-title">Hermes</p>
+            <p class="homepage_collection-item-desc small-text">from 25$</p>
+          </div>
+        </a>
+    </div>
+    <a href="https://legitgrails.com/pages/choose-your-brand" class="homepage_other-brands-track rebranding_btn-main rebranding_btn">
+      Other brands
+    </a>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Section name",
+    "class": "homepage_collection rebranding-section",
+    "settings": []
+  }
+{% endschema %}

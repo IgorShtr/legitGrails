@@ -1,0 +1,21 @@
+<style>
+    .steps-heading{margin-bottom:35px}.legit-step-horizontal{display:flex;flex-direction:column;justify-content:space-between;gap:30px}.legit-step-horizontal__flex-row{display:flex;flex-direction:row;gap:5px}.legit-step-horizontal__container{position:relative;display:flex}.legit-step-horizontal__flex-row .legit-step-horizontal__container{min-width:100px;min-height:100px}.legit-step-horizontal__item{position:absolute;top:0;bottom:0;left:0;right:0;background-repeat:no-repeat;background-position:center;background-size:100%}.section-steps{padding:60px 0;position:relative}.section-steps__overlay:before{position:absolute;top:0;left:0;right:0;bottom:0;content:""}.legit-step-horizontal__text{display:flex;flex-direction:column;justify-content:center}.legit-step-horizontal__text p.legit-step-horizontal__caption{font-size:22px;font-weight:700;margin-bottom:5px;line-height:26px}.legit-step-horizontal__description{line-height:26px}@media (min-width:750px){.legit-step-horizontal__container{height:180px}.section-steps{padding:86px 0}.legit-step-horizontal__flex-row .legit-step-horizontal__container{min-height:184px;min-width:184px}}@media (min-width:1024px){.legit-step-horizontal{flex-direction:row;gap:10px}.legit-step-horizontal__text p.legit-step-horizontal__caption{font-size:26px;margin-bottom:10px;line-height:30px}.legit-step-horizontal__text p{font-size:19px}.steps-heading{margin-bottom:55px}}@media (min-width:750px) and (max-width:1023px){.legit-step-horizontal__container{min-height:180px}.legit-step-horizontal__item{height:180px;min-width:180px}}@media (min-width:1024px) and (max-width:1440px){.legit-step-horizontal__flex-row .legit-step-horizontal__container{min-height:184px}.legit-step-horizontal__item{background-size:contain}}
+  .section-container--{{ section.id }} {
+        position: relative;
+        padding: 0 10px;
+    }
+    @media (min-width: 1200px) {
+        .legit-step-horizontal__flex-row .legit-step-horizontal__container {
+            min-height: 250px;
+            min-width: 250px;
+            flex-basis: 100%;
+        }
+    }
+    @media (min-width: 1530px) {
+        .section-container--{{ section.id }} {
+            width: 1500px;
+            margin: 0 auto;
+            padding: 0;
+        }
+    }
+</style>

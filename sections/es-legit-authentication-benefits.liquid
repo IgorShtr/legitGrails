@@ -1,0 +1,290 @@
+  <!--  <section class="why-choose">
+        <div class="container">
+            <div class="why-choose_title">
+                <span></span>
+                <h2>How We Ensure the Highest Accuracy</h2>
+            </div>
+
+            <div class="why-choose_wrapp">
+                <div class="why-choose_item">
+                    <img src="{{ 'why-1.png' | asset_url }}" alt="">
+                    <p class="why-choose_item-title">
+                        Experienced Industry Professionals
+                    </p>
+                    <p class="why-choose_item-desc">
+                      Trained and certified authenticators with an accuracy rate of over 99% and an experience in reselling and working directly with well-known brands.
+                    </p>
+                </div>
+                <div class="why-choose_item">
+                    <img src="{{ 'why-2-refund.png' | asset_url }}" alt="">
+                    <p class="why-choose_item-title">
+                        Peer Review System
+                    </p>
+                    <p class="why-choose_item-desc">
+                      Each item is checked by 2 to 4 professional authenticators, the system assigns the best authenticators based on specific brands and individual KPIs.
+                    </p>
+                </div>
+                <div class="why-choose_item">
+                    <img src="{{ 'why-3-refund.png' | asset_url }}" alt="">
+                    <p class="why-choose_item-title">
+                        Tracking Key Performance Indicators
+                    </p>
+                    <p class="why-choose_item-desc">
+                      Complex system created by our team tracks authenticator success metrics, average response times, and double-checking request statistics.
+                    </p>
+                </div>
+                <div class="why-choose_item">
+                    <img src="{{ 'benefit-4.png' | asset_url }}" alt="">
+                    <p class="why-choose_item-title">
+                        Testing & Improving Knowledge
+                    </p>
+                    <p class="why-choose_item-desc">
+                      Bi-weekly authentication tests are conducted in-house to ensure authenticators' high accuracy for brands they specialise in and to spot potential issues.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+
+
+    <section class="about-us about-us-none">
+        <div class="section-container">
+            <div class="partner_title">
+                <span></span>
+                <h2 class="partner_title-title font-title">
+                    Cómo aseguramos la máxima precisión
+                </h2>
+            </div>
+
+            <div class="about-us_line">
+                <div class="about-us_line-item">
+                    <img src="{{ 'why-1.png' | asset_url }}" alt="">
+                    <h2 class="about-us_line-item-title font-title">
+                        Profesionales de la industria con experiencia
+                    </h2>
+                    <p class="about-us_line-item-desc font-description">
+                        Autenticadores capacitados y certificados con una tasa de precisión superior al 99% y una experiencia en la reventa y el trabajo directo con marcas reconocidas.
+                    </p>
+                </div>
+                <div class="about-us_line-item">
+                    <img src="{{ 'why-2-refund.png' | asset_url }}" alt="">
+                    <h2 class="about-us_line-item-title font-title">
+                        Sistema de revisión por pares
+                    </h2>
+                    <p class="about-us_line-item-desc font-description">
+                        Cada elemento es verificado por 2 a 4 autenticadores profesionales, el sistema asigna los mejores autenticadores en función de marcas específicas y KPI individuales.
+                    </p>
+                </div>
+                <div class="about-us_line-item">
+                    <img src="{{ 'why-3-refund.png' | asset_url }}" alt="">
+                    <h2 class="about-us_line-item-title font-title">
+                        Seguimiento de indicadores clave de rendimiento
+                    </h2>
+                    <p class="about-us_line-item-desc font-description">
+                       El complejo sistema creado por nuestro equipo rastrea las métricas de éxito del autenticador, los tiempos de respuesta promedio y las estadísticas de solicitud de doble verificación.
+                    </p>
+                </div>
+              <div class="about-us_line-item">
+                    <img src="{{ 'benefit-4.png' | asset_url }}" alt="">
+                    <h2 class="about-us_line-item-title font-title">
+                        Prueba y mejora del conocimiento
+                    </h2>
+                    <p class="about-us_line-item-desc font-description">
+                       Las pruebas de autenticación quincenales se realizan internamente para garantizar la alta precisión de los autenticadores para las marcas en las que se especializan y para detectar posibles problemas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+      
+.partner_title span {
+    width: 80px;
+    height: 6px;
+    margin: auto;
+    background: #CDAB71;
+    display: block;
+}
+
+.partner_title-title {
+    font-weight: 700;
+    font-size: 31px;
+    line-height: 36px;
+    text-align: center;
+    margin-top: 28px;
+    color: #161616;
+}
+      
+/* about us */
+
+.about-us {
+    padding: 0 0 108px 0;
+    background-image: url({{ 'about-us.png' | asset_url }});
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.about-us .partner_title-title {
+    color: #fff;
+}
+
+.about-us_line {
+    margin: 90px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-us_line-item {
+    width: 22%;
+    display: block;
+}
+
+.about-us_line-item img {
+    display: block;
+    margin: auto
+}
+
+.about-us-none .about-us_line-item img {
+    height:85px;
+}
+      
+.about-us_line-item-title {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 36px;
+    color: #FFFFFF;
+    margin: 26px 0px 16px 0px;
+    text-align: center;
+}
+
+.about-us_line-item-desc {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 147.3%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+a.about-us_btn {
+    margin: auto;
+}
+
+      .about-us-none {
+    background:none;
+  }
+  .about-us-none .partner_title-title {
+    color:#161616;
+  }
+  .about-us-none .about-us_line-item-title {
+    color:#161616;
+    margin-bottom:0;
+    font-size: 26px;
+    line-height: 27px;
+    margin-bottom: 10px;
+  }
+  .about-us-none .about-us_line-item-desc {
+    color:#161616;
+    font-size:18px;
+  }
+ .about-us-none .about-us_line {
+  margin: 50px 0px 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+ .about-us-none a.main-btn:hover {
+  box-shadow: 0px 1px 4px rgba(1, 1, 1, 0.4);
+}
+
+      /* about us */
+
+@media(max-width:1200px) {
+    .about-us-none  .about-us_line-item {
+        width: 29%;
+      }
+      .about-us-none .about-us_line {
+  margin: 50px 0;
+      }
+      }
+      
+@media(max-width:900px) {
+  .partner_title-title {
+        font-size: 26px;
+        margin-top: 20px;
+        line-height: 1;
+    }
+    .about-us {
+        padding: 0 0 60px 0;
+        background: #161616;
+    }
+      .about-us-none {
+      background: none;
+      }
+    .about-us_line {
+        margin: 40px 0;
+        display: block;
+    }
+    .about-us_line-item {
+        margin: auto;
+        margin-bottom: 50px;
+        width: 60%;
+    }
+    .about-us_line-item-title {
+        font-size: 21px;
+        line-height: 23px;
+        color: #FFFFFF;
+        margin: 18px 0px 6px 0px;
+    }
+      .about-us-none .about-us_line-item-title {
+      font-size:21px;
+        margin-bottom:5px;
+      }
+    .about-us-none  .about-us_line-item {
+      margin-top:0;
+      margin-bottom:0;
+      }
+      .about-us-none .about-us_line-item-desc {
+  font-size: 15px;
+  margin-top: 10px;
+}
+      .about-us-none .main-btn {
+      max-width: 100%;
+text-align: center;
+      }
+  .about-us-none .about-us_line-item img {
+    height:65px;
+}
+}
+
+@media(max-width: 500px) {
+    .about-us_line-item {
+        width: 100%;
+    }
+      .about-us-none .about-us_line-item {
+      width:100%;
+      margin-bottom:30px;
+      }
+      .about-us-none .about-us_line {
+      display:block;
+      }
+      .about-us-none .about-us_line {
+      margin-bottom:50px;
+      }
+}
+      
+    </style>
+{% schema %}
+  {
+    "name": "Benefits",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+

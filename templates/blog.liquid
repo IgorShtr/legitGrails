@@ -1,0 +1,31 @@
+<style>
+          p, a, h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            padding: 0;
+            color: #3C1F1B;
+          }
+          main#MainContent {
+    min-height: calc(100vh - 130px);
+}
+div#shopify-section-disclaimer {
+    padding: 0 0 30px 0;
+    text-align: center;
+}
+        </style>
+{%- assign product = all_products[blog.metafields.custom.product] -%}
+{% section 'blog-hero' %}
+{% section 'disclaimer' %}
+{% section 'blog-cards' %}
+{% if product.title contains "Balenciaga" %}
+   {% section 'balenciaga-blogs_seo' %}
+   {% section 'balenciaga-blogs_cta' %}
+{% elsif product.title contains "Chanel" %}
+   {% section 'chanel-blogs_seo' %}
+   {% section 'chanel-blogs_cta' %}
+{% elsif product.title contains "Louis Vuitton" %}
+   {% section 'lv-blogs_seo' %}
+   {% section 'lv-blogs_cta' %}
+{% endif %}
+<!-- TrustBox script -->
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<!-- End TrustBox script -->

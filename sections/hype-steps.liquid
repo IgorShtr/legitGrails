@@ -1,0 +1,121 @@
+<style>
+  .hype_steps {
+    padding: 0 0 110px 0;
+  }
+  .hype_steps-items {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+  }
+  .hype_steps-item {
+    width: calc(33.333334% - 13.333334px);
+    border-radius: 12px;
+    border: 1px solid #E9E9E9;
+    padding: 25px 25px 0 25px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: .5s;
+  }
+  .hype_steps-item.animated {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  .hype_steps-item:nth-child(2) .hype_steps-item-title {
+    max-width: 285px;
+    margin: auto;
+  }
+  img.hype_steps-item-image {
+    margin: 20px auto 0 auto;
+    height: 260px;
+    display: block;
+}
+  @media(max-width: 1250px) {
+    p.hype_steps-item-title.card-title {
+        font-size: 24px;
+    }
+    .hype_steps-item:nth-child(2) .hype_steps-item-title {
+        max-width: 201px;
+    }
+    img.hype_steps-item-image {
+      height: 202px;
+    }
+  }
+  @media(max-width: 950px) {
+    .hype_steps {
+    padding: 0 0 80px 0;
+  }
+    .hype_steps-item {
+    width: calc(50% - 10px);
+}
+    img.hype_steps-item-image {
+        height: 202px;
+        width: auto;
+    }
+  }
+  @media(max-width: 750px) {
+    .hype_steps-item {
+    padding: 20px 20px 0 20px;
+}
+  }
+  @media(max-width: 650px) {
+    .hype_steps-item {
+      width: 100%;
+    }
+        .hype_steps-item:nth-child(2) .hype_steps-item-title {
+        max-width: 100%;
+    }
+    img.hype_steps-item-image {
+    margin: 15px auto 0 auto;
+    }
+  }
+  @media(max-width: 600px) {
+    .hype_steps-items {
+    margin-top: 20px;
+    }
+    .hype_steps {
+    padding: 0 0 60px 0;
+}
+    .hype_steps-items {
+      gap: 15px;
+    }
+  }
+</style>
+
+<div class="container">
+  <div class="section-title">
+    <h2 class="second-title-style">
+      3 Easy Steps
+    </h2>
+  </div>
+  <div class="hype_steps-items">
+    <div class="hype_steps-item hype_steps-item-1">
+      <p class="hype_steps-item-title card-title">
+        Upload clear photos of your item
+      </p>
+      <img class="hype_steps-item-image" src="{{ 'hype_steps-1.png' | asset_url }}">
+    </div>
+    <div class="hype_steps-item hype_steps-item-2">
+      <p class="hype_steps-item-title card-title">
+        Our experts verify it
+      </p>
+      <img class="hype_steps-item-image" src="{{ 'hype_steps-2.png' | asset_url }}">
+    </div>
+    <div class="hype_steps-item hype_steps-item-3">
+      <p class="hype_steps-item-title card-title">
+        Get your certificate starting at 15 mins
+      </p>
+      <img class="hype_steps-item-image" src="{{ 'hype_steps-3.png' | asset_url }}">
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Hype Steps",
+    "class": "hype_steps",
+    "settings": []
+  }
+{% endschema %}

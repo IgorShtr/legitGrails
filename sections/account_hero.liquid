@@ -1,0 +1,311 @@
+<style>
+  .account-hero {
+    padding: 30px 0;
+    overflow: hidden;
+  }
+  .product_hero-wrapp {
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    height: 100%;
+  }
+  .product_hero-content {
+    width: calc(35% - 25px);
+    height: max-content;
+  }
+  .product_hero-text {
+    width: 100%;
+  }
+  .product_hero-text p, .product_hero-text h1 {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .tp-widget-wrapper {
+    margin: 0;
+  }
+  .product_hero-trustpilot-widget {
+    margin: 0 auto;
+    width: max-content;
+    height: 97px;
+    width: 200px;
+}
+  .product_hero-image {
+    height: 100%;
+    width: calc(65% - 25px);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-radius: 20px;
+    border: 1px solid #E0DFDF;
+  }
+  .account-hero_image {
+    width: calc(65% + 63px);
+    height: auto;
+    margin-right: -88px;
+  }
+  .product_hero-label {
+    width: 100%;
+    background: #3C1F1B;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    margin-top: 20px;
+  }
+  .product_hero-label p {
+    color: #F2F2EA;
+  }
+  .product_hero-label-items {
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .product-box {
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    border: 1px solid rgba(60, 31, 27, 0.30);
+    width: max-content;
+    padding: 20px;
+    width: 300px;
+    border: 1px solid #F6ECD5;
+    background: #FFFCF5;
+  }
+p.pro-option-name {
+    text-align: center;
+    margin-bottom: 15px;
+}
+  .checkmark {
+    border: 1px solid #3C1F1B!important;
+    height: 18px!important;
+    width: 18px!important;
+    margin-top: 2px;
+    background: #FFFCF5;
+}
+  .radio-wrap .checkmark::after {
+    background: #3C1F1B!important;
+    border-radius: 50%;
+    height: 10px!important;
+    left: 3px;
+    top: 3px;
+    width: 10px!important;
+}
+  .radio-option {
+    width: 100%;
+    margin: 0;
+}
+  .product-form-container {
+    width: 100%;
+}
+  .product-box_title {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .radio-wrap {
+    font-family: "Suisse Intl"!important;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.4px;
+  }
+  label.radio.radio-wrap {
+    color: #3C1F1B;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    transition: .3s;
+}
+  label.radio.radio-wrap:hover {
+    opacity: .85;
+  }
+  label.radio.radio-wrap:active {
+    opacity: .7;
+  }
+  .btn-submit-container {
+    display: none;
+  }
+  .product-box_price {
+    text-align: center;
+  }
+  .product-box_button {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+  button#authenticate-btn {
+    background: #F24F14;
+    color: #fff;
+    height: max-content;
+    border-radius: 8px;
+    font-size: 20px;
+    text-transform: none;
+    font-weight: 400;
+    line-height: 1;
+    margin: 25px auto 0 auto;
+    transition: .5s;
+    min-width: auto;
+    width: max-content;
+    padding: 13px 10px;
+}
+  label.radio.radio-wrap.body-text {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+  .product_hero-label-items svg {
+      width: auto;
+    }
+  .product_hero-image-pointers {
+    background-size: contain;
+    background-color: #f2f2f2;
+  }
+  .product_hero-disclaimer {
+    color: rgba(60, 31, 27, 0.30);
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .product_hero-image-smaller {
+    height: 500px;
+  }
+  @media(max-width: 1450px) {
+    .product_hero-content a.rebranding_btn {
+      width: 100%;
+    }
+    .account-hero_image {
+        width: calc(60% + 41px);
+        margin-right: -66px;
+    }
+    .product_hero-content {
+      width: calc(40% - 25px);
+    }
+    .account-hero {
+    padding: 80px 0;
+    }
+  }
+    @media(max-width: 1250px) {
+      .account-hero_image, .product_hero-content {
+        width: 100%;
+      }
+      .account-hero_image {
+      margin-right: 0;
+    }
+    }
+    @media(max-width: 950px) {
+      .product_hero {
+    padding-top: 50px;
+  }
+    .product_hero-disclaimer {
+      max-width: 100%;
+      text-align: center;
+    }
+    .product_hero-content {
+      width: 100%;
+      text-align: center;
+    }
+    div#shopify-section-product-box {
+        display: flex;
+        justify-content: center;
+    }
+    .product_hero-image {
+        height: 400px;
+        width: 100%;
+        border-radius: 0;
+        border: none;
+    }
+    .product_hero .container {
+      padding: 0;
+    }
+    .product_hero-content {
+      padding: 0 15px;
+    }
+    .product_hero-label {
+      margin: 0;
+    }
+  }
+  @media(max-width: 750px) {
+    .product_hero {
+      padding-top: 40px;
+    }
+    label.radio.radio-wrap.body-text {
+    font-size: 16px;
+}
+    .radio-wrap {
+      font-size: 16px;
+      letter-spacing: -0.32px;
+    }
+    .product-box {
+      padding: 15px;
+      width: 290px;
+    }
+    .product_hero-text {
+      gap: 10px;
+    }
+    .product_hero-label-items svg:nth-child(1), .product_hero-label-items svg:nth-child(2) {
+      height: 10px;
+    }
+    .product_hero-label-items svg:nth-child(3) {
+      height: 11px;
+    }
+    .product_hero-label-items svg:nth-child(4) {
+      height: 15px;
+    }
+    .product_hero-label-items {
+      width: 100%;
+    }
+    .product_hero-label {
+      gap: 5px;
+      padding: 15px 0;
+    }
+    .product_hero-image {
+        height: 350px;
+    }
+    p.product_steps-item-caption {
+      margin-top: 10px;
+    }
+  }
+</style>
+
+  <div class="container rebranding_container">
+    <div class="product_hero-wrapp block-flex-wrap">
+      <div id="product_hero-content" class="product_hero-content block-flex-wrap block-gap-30">
+        <div class="product_hero-text block-flex-wrap block-gap-15">
+          <h1 class="h1-heading-ss tac">
+            It’s Time to Create Your<br>
+            <span class="h1-heading-pp">LegitGrails Account</span>
+          </h1>
+          <p class="body-text tac">
+              Authenticate items quickly, track progress, unlock special upgrades and save on every order
+          </p>
+        </div>
+        <div class="block-flex-wrap block-gap-15 w-100">
+          <a href="https://account.legitgrails.com/" target="_blank" class="rebranding_btn rebranding_btn-main">Create a Free Account</a>
+        </div>
+        <p class="tiny-text product_hero-disclaimer w-100">LegitGrails operates independently and is not associated<br>with any brands it authenticates</p>
+        <div class="product_hero-trustpilot-widget w-100">
+          <!-- TrustBox widget - Mini -->
+          <div class="trustpilot-widget" data-locale="en-GB" data-template-id="53aa8807dec7e10d38f59f32" data-businessunit-id="5fbebb2d281b010001718c1c" data-style-height="97" data-style-width="200">
+          <a href="https://uk.trustpilot.com/review/legitgrails.com" target="_blank" rel="noopener">Trustpilot</a>
+          </div>
+          <!-- End TrustBox widget -->
+        </div>
+      </div>
+      <img class="account-hero_image" src="{{ "account_hero.webp" | asset_url }}">
+    </div>
+  </div>
+<!-- TrustBox script -->
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<!-- End TrustBox script -->
+{% schema %}
+  {
+    "name": "Account Hero",
+    "class": "account-hero rebranding-section",
+    "settings": []
+  }
+{% endschema %}

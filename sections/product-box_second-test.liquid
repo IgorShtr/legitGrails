@@ -1,0 +1,46 @@
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- assign current_variant_sale = false -%}
+{% if current_variant.compare_at_price > current_variant.price %}
+    {%- assign current_variant_sale = true -%}
+{% endif %}
+{% assign featured_media = current_variant.featured_media | default: product.featured_media %}
+
+<div class="product-box" data-variant-id="{{ current_variant.id }}">
+  <meta itemprop="name" content="{{ product.title }}">
+  <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+  <meta itemprop="image" content="{{ featured_media | img_url: 'grande' }}">
+  <div class="product-form-container">
+    <div class="product__form-wrapper">
+          <meta itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
+          <meta itemprop="priceCurrency" content="{{ cart.currency.iso_code }}">
+                <h2 class="h2-heading-ss product-form_title"><span class="h2-heading-pp">{{ product.title | remove: "Authentication Service" }}</span><br>authentication service</h2>
+                {% render 'product-form-upload-rebranding_second-test' %}
+                <p class="caption product-box_title">Price</p>
+                <p class="h3-heading-pp product-box_price" data-product-price aria-live="polite">
+                    <span id="product__current-price--{{ product.id }}" class="product__current-price" data-regular-price>{{ current_variant.price | money }}</span>
+                </p>
+                <div class="uploadcare">
+                    <button id="authenticate-btn" class="rebranding_btn rebranding_btn-main product-box_button authenticate-btn product_upload-photos-btn-track">
+                      Upload Photos
+                      <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M21 15.1514V19.1514C21 19.6818 20.7893 20.1905 20.4142 20.5656C20.0391 20.9407 19.5304 21.1514 19 21.1514H5C4.46957 21.1514 3.96086 20.9407 3.58579 20.5656C3.21071 20.1905 3 19.6818 3 19.1514V15.1514M17 8.15137L12 3.15137M12 3.15137L7 8.15137M12 3.15137V15.1514" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </button>
+                </div>
+            </div>
+  </div>
+</div>
+  
+{% render 'uploadcare-fields-rebranding' %}
+<script type="application/json" data-product-json>
+    {{ product | json }}
+    </script>
+    <script type="application/json" data-model-json="{{ section.id }}">
+    {{ product.media | where: 'media_type', 'model' | json }}
+    </script>
+{% schema %}
+  {
+    "name": "Product Box",
+    "settings": []
+  }
+{% endschema %}

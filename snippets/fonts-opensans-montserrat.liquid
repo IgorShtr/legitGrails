@@ -1,0 +1,213 @@
+<style>
+     @font-face {
+    font-family: 'Open Sans';
+    src: url({{ 'OpenSans-Regular.ttf' | file_url }});
+    src: url({{ 'OpenSans-Regular.ttf' | file_url }}) format('truetype');
+    font-style: normal;
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: 'Open Sans';
+    src: url({{ 'OpenSans-LightItalic.ttf' | file_url }});
+    src: url({{ 'OpenSans-LightItalic.ttf' | file_url }}) format('truetype');
+    font-style: italic;
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: 'Open Sans';
+    src: url({{ 'OpenSans-Bold.ttf' | file_url }});
+    src: url({{ 'OpenSans-Bold.ttf' | file_url }}) format('truetype');
+    font-style: normal;
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: 'Open Sans';
+    src: url({{ 'OpenSans-Light.ttf' | file_url }});
+    src: url({{ 'OpenSans-Light.ttf' | file_url }}) format('truetype');
+    font-style: normal;
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: 'Open Sans';
+    src: url({{ 'OpenSans-SemiBoldItalic.ttf' | file_url }});
+    src: url({{ 'OpenSans-SemiBoldItalic.ttf' | file_url }}) format('truetype');
+    font-style: italic;
+    font-weight: 600;
+  }
+  @font-face {
+    font-family: 'Open Sans';
+    src: url({{ 'OpenSans-Italic.ttf' | file_url }});
+    src: url({{ 'OpenSans-Italic.ttf' | file_url }}) format('truetype');
+    font-style: italic;
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: 'Open Sans';
+    src: url({{ 'OpenSans-ExtraBoldItalic.ttf' | file_url }});
+    src: url({{ 'OpenSans-ExtraBoldItalic.ttf' | file_url }}) format('truetype');
+    font-style: italic;
+    font-weight: 800;
+  }
+  @font-face {
+    font-family: 'Open Sans';
+    src: url({{ 'OpenSans-Medium.ttf' | file_url }});
+    src: url({{ 'OpenSans-Medium.ttf' | file_url }}) format('truetype');
+    font-style: normal;
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: 'Open Sans';
+    src: url({{ 'OpenSans-MediumItalic.ttf' | file_url }});
+    src: url({{ 'OpenSans-MediumItalic.ttf' | file_url }}) format('truetype');
+    font-style: italic;
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: 'Open Sans';
+    src: url({{ 'OpenSans-BoldItalic.ttf' | file_url }});
+    src: url({{ 'OpenSans-BoldItalic.ttf' | file_url }}) format('truetype');
+    font-style: italic;
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: 'Open Sans';
+    src: url({{ 'OpenSans-ExtraBold.ttf' | file_url }});
+    src: url({{ 'OpenSans-ExtraBold.ttf' | file_url }}) format('truetype');
+    font-style: normal;
+    font-weight: 800;
+  }
+  @font-face {
+    font-family: 'Open Sans';
+    src: url({{ 'OpenSans-SemiBold.ttf' | file_url }});
+    src: url({{ 'OpenSans-SemiBold.ttf' | file_url }}) format('truetype');
+    font-style: normal;
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: 'Montserrat';
+    src: url({{ 'Montserrat-Italic.ttf' | file_url }});
+    src: url({{ 'Montserrat-Italic.ttf' | file_url }}) format('truetype');
+    font-style: italic;
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: 'Montserrat';
+    src: url({{ 'Montserrat-ExtraBold.ttf' | file_url }});
+    src: url({{ 'Montserrat-ExtraBold.ttf' | file_url }}) format('truetype');
+    font-style: normal;
+    font-weight: 800;
+  }
+  @font-face {
+    font-family: 'Montserrat';
+    src: url({{ 'Montserrat-BlackItalic.ttf' | file_url }});
+    src: url({{ 'Montserrat-BlackItalic.ttf' | file_url }}) format('truetype');
+    font-style: italic;
+    font-weight: 900;
+  }
+  @font-face {
+    font-family: 'Montserrat';
+    src: url({{ 'Montserrat-Black.ttf' | file_url }});
+    src: url({{ 'Montserrat-Black.ttf' | file_url }}) format('truetype');
+    font-style: normal;
+    font-weight: 900;
+  }
+  @font-face {
+    font-family: 'Montserrat';
+    src: url({{ 'Montserrat-MediumItalic.ttf' | file_url }});
+    src: url({{ 'Montserrat-MediumItalic.ttf' | file_url }}) format('truetype');
+    font-style: italic;
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: 'Montserrat';
+    src: url({{ 'Montserrat-BoldItalic.ttf' | file_url }});
+    src: url({{ 'Montserrat-BoldItalic.ttf' | file_url }}) format('truetype');
+    font-style: italic;
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: 'Montserrat';
+    src: url({{ 'Montserrat-Regular.ttf' | file_url }});
+    src: url({{ 'Montserrat-Regular.ttf' | file_url }}) format('truetype');
+    font-style: normal;
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: 'Montserrat';
+    src: url({{ 'Montserrat-Medium.ttf' | file_url }});
+    src: url({{ 'Montserrat-Medium.ttf' | file_url }}) format('truetype');
+    font-style: normal;
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: 'Montserrat';
+    src: url({{ 'Montserrat-LightItalic.ttf' | file_url }});
+    src: url({{ 'Montserrat-LightItalic.ttf' | file_url }}) format('truetype');
+    font-style: italic;
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: 'Montserrat';
+    src: url({{ 'Montserrat-ThinItalic.ttf' | file_url }});
+    src: url({{ 'Montserrat-ThinItalic.ttf' | file_url }}) format('truetype');
+    font-style: italic;
+    font-weight: 100;
+  }
+  @font-face {
+    font-family: 'Montserrat';
+    src: url({{ 'Montserrat-ExtraBoldItalic.ttf' | file_url }});
+    src: url({{ 'Montserrat-ExtraBoldItalic.ttf' | file_url }}) format('truetype');
+    font-style: italic;
+    font-weight: 800;
+  }
+  @font-face {
+    font-family: 'Montserrat';
+    src: url({{ 'Montserrat-SemiBold.ttf' | file_url }});
+    src: url({{ 'Montserrat-SemiBold.ttf' | file_url }}) format('truetype');
+    font-style: normal;
+    font-weight: 600;
+  }
+  @font-face {
+    font-family: 'Montserrat';
+    src: url({{ 'Montserrat-Thin.ttf' | file_url }});
+    src: url({{ 'Montserrat-Thin.ttf' | file_url }}) format('truetype');
+    font-style: normal;
+    font-weight: 100;
+  }
+  @font-face {
+    font-family: 'Montserrat';
+    src: url({{ 'Montserrat-Bold.ttf' | file_url }});
+    src: url({{ 'Montserrat-Bold.ttf' | file_url }}) format('truetype');
+    font-style: normal;
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: 'Montserrat';
+    src: url({{ 'Montserrat-ExtraLightItalic.ttf' | file_url }});
+    src: url({{ 'Montserrat-ExtraLightItalic.ttf' | file_url }}) format('truetype');
+    font-style: italic;
+    font-weight: 200;
+  }
+  @font-face {
+    font-family: 'Montserrat';
+    src: url({{ 'Montserrat-Light.ttf' | file_url }});
+    src: url({{ 'Montserrat-Light.ttf' | file_url }}) format('truetype');
+    font-style: normal;
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: 'Montserrat';
+    src: url({{ 'Montserrat-SemiBoldItalic.ttf' | file_url }});
+    src: url({{ 'Montserrat-SemiBoldItalic.ttf' | file_url }}) format('truetype');
+    font-style: italic;
+    font-weight: 600;
+  }
+  @font-face {
+    font-family: 'Montserrat';
+    src: url({{ 'Montserrat-ExtraLight.ttf' | file_url }});
+    src: url({{ 'Montserrat-ExtraLight.ttf' | file_url }}) format('truetype');
+    font-style: normal;
+    font-weight: 200;
+  }
+
+  </style>

@@ -1,0 +1,335 @@
+{% if section.settings.image != blank %}
+    <style>
+        .hero--{{ section.id }} {
+            background-position: {{ section.settings.alignment }};
+        }
+        .hero-section .section-title, .hero-section .section-description {
+            color: #FFFFFF;
+        }
+    </style>
+{% endif %}
+
+{% if section.settings.show_overlay %}
+    <style>
+        .hero--{{ section.id }}.hero__overlay::before {
+            background-color: {{ section.settings.overlay_color }};
+            opacity: {{ section.settings.overlay_opacity }};
+        }
+
+        .hero--{{ section.id }} .hero__overlay-title--overlay,
+        .hero--{{ section.id }} .mega-subtitle {
+            color: {{ section.settings.overlay_text }};
+        }
+    </style>
+{% endif %}
+
+<div class="hero hero--{{ section.id }} hero--{{ section.settings.hero_size }}{% if section.settings.show_overlay %} hero__overlay{% endif %} lazyload" data-bgset="{% include 'bgset', image: section.settings.image %}" data-section-id="{{ section.id }}" data-section-type="hero">
+    <div class="hero__inner legit-hero__inner">
+        <div class="hero-section section-container text-center">
+            {% if section.settings.title != blank %}
+                <h1 class="font-title section-title {% if section.settings.show_overlay %} hero__overlay-title--overlay{% endif %}{% if section.settings.text_size == 'large' %} h1{% endif %}" data-animate>{{ section.settings.title | escape }}</h1>
+            {% endif %}
+            {% if section.settings.text != blank %}
+                <div class="font-description section-description {% if section.settings.text_size == 'large' %} mega-subtitle--large{% endif %}">{{ section.settings.text }}</div>
+            {% endif %}
+            {% if section.settings.button_label != blank %}
+                <a href="{{ section.settings.button_link }}" class="font-title main-btn{% if section.settings.use_second_button %} btn--secondary{% endif %} hero__btn">
+                    {{ section.settings.button_label }}
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<style>
+    .hero__inner.legit-hero__inner {
+        padding: 60px 0;
+    }
+    @media (min-width: 1024px) {
+        .hero.hero--legit-page-home-banner .section-title  {
+            font-size: 51px;
+        }
+        .hero__inner.legit-hero__inner {
+            padding: 109px 0;
+        }
+    }
+</style>
+{% schema %}
+{
+  "name": {
+    "en": "Legit page bundles banner"
+  },
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": {
+        "en": "Image"
+      }
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": {
+        "en": "Image alignment"
+      },
+      "default": "center center",
+      "options": [
+        {
+          "label": {
+            "en": "Top left"
+          },
+          "value": "top left"
+        },
+        {
+          "label": {
+            "en": "Top center"
+          },
+          "value": "top center"
+        },
+        {
+          "label": {
+            "en": "Top right"
+          },
+          "value": "top right"
+        },
+        {
+          "label": {
+            "en": "Middle left"
+          },
+          "value": "center left"
+        },
+        {
+          "label": {
+            "en": "Middle center"
+          },
+          "value": "center center"
+        },
+        {
+          "label": {
+            "en": "Middle right"
+          },
+          "value": "center right"
+        },
+        {
+          "label": {
+            "en": "Bottom left"
+          },
+          "value": "bottom left"
+        },
+        {
+          "label": {
+            "en": "Bottom center"
+          },
+          "value": "bottom center"
+        },
+        {
+          "label": {
+            "en": "Bottom right"
+          },
+          "value": "bottom right"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": {
+        "en": "Text"
+      }
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": {
+        "en": "Heading"
+      },
+      "default": {
+        "en": "Talk about your brand"
+      }
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": {
+        "en": "Text"
+      },
+      "default": {
+        "en": "<p>Use this text.</p>"
+
+      }
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": {
+        "en": "Button label"
+      }
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": {
+        "en": "Button link"
+      }
+    },
+    {
+      "type": "header",
+      "content": {
+        "en": "Overlay"
+      }
+    },
+    {
+      "type": "checkbox",
+      "id": "show_overlay",
+      "label": {
+        "en": "Show overlay"
+      },
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": {
+        "en": "Overlay Color"
+      },
+      "default": "#242424"
+    },
+    {
+      "type": "color",
+      "id": "overlay_text",
+      "label": {
+        "en": "Text color"
+      },
+      "default": "#ffffff"
+    },
+    {
+      "type": "select",
+      "id": "overlay_opacity",
+      "label": {
+        "en": "Opacity"
+      },
+      "default": "0.5",
+      "options": [
+        {
+          "label": {
+            "en": "100%"
+          },
+          "value": "1"
+        },
+        {
+          "label": {
+            "en": "95%"
+          },
+          "value": "0.95"
+        },
+        {
+          "label": {
+            "en": "90%"
+          },
+          "value": "0.9"
+        },
+        {
+          "label": {
+            "en": "85%"
+          },
+          "value": "0.85"
+        },
+        {
+          "label": {
+            "en": "80%"
+          },
+          "value": "0.8"
+        },
+        {
+          "label": {
+            "en": "75%"
+          },
+          "value": "0.75"
+        },
+        {
+          "label": {
+            "en": "70%"
+          },
+          "value": "0.7"
+        },
+        {
+          "label": {
+            "en": "65%"
+          },
+          "value": "0.65"
+        },
+        {
+          "label": {
+            "en": "60%"
+          },
+          "value": "0.6"
+        },
+        {
+          "label": {
+            "en": "55%"
+          },
+          "value": "0.55"
+        },
+        {
+          "label": {
+            "en": "50%"
+          },
+          "value": "0.5"
+        },
+        {
+          "label": {
+            "en": "45%"
+          },
+          "value": "0.45"
+        },
+        {
+          "label": {
+            "en": "40%"
+          },
+          "value": "0.4"
+        },
+        {
+          "label": {
+            "en": "35%"
+          },
+          "value": "0.35"
+        },
+        {
+          "label": {
+            "en": "30%"
+          },
+          "value": "0.3"
+        },
+        {
+          "label": {
+            "en": "25%"
+          },
+          "value": "0.25"
+        },
+        {
+          "label": {
+            "en": "20%"
+          },
+          "value": "0.2"
+        },
+        {
+          "label": {
+            "en": "0%"
+          },
+          "value": "0"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "en": "Legit page bundles banner"
+      },
+      "category": {
+        "en": "Legit Image"
+      }
+    }
+  ]
+}
+{% endschema %}

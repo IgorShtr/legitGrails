@@ -1,0 +1,159 @@
+{% render 'section-legit-search-brand-2-styles' %}
+<div class="search-brand">
+    <div class="brands-wrap">
+    <div class="brands-container">
+        {%- for block in section.blocks -%}
+            <div id="{{ block.id }}" class="brand-block active" data-type="{{ block.settings.brand_type | downcase }}"
+                 data-name="{{ block.settings.title | downcase }}">
+                <div class="brand-block_logo"
+                     style="background-image: url({{ block.settings.brand_logo | img_url: '400x' }})">
+                </div>
+                <h2 class="brand-block_title font-title">
+                    {{ block.settings.title }}
+                </h2>
+                {%- unless block.settings.link == blank -%}
+                <a class="brand-block__link font-description" href="{{ block.settings.link }}">{{ block.settings.title }}</a>
+                {%- endunless -%}
+            </div>
+        {% endfor %}
+    </div>
+    </div>
+  
+</div>
+
+<!--<script>
+    (function () {
+        const searchField = document.getElementById('search-brand-input')
+        const brands = Array.from(document.getElementsByClassName('brand-block'))
+        const filterButtons = document.querySelector('.filter-buttons')
+        const brandContainer = document.querySelector('.brands-wrap')
+
+        let type = 'all'
+        let searchString = ''
+
+        function searchBrand(type, string) {
+            document.querySelector('.brands-wrap').classList.add('searching')
+            console.log(brandContainer)
+            brands.forEach((block) => {
+                if (string.length === 0) {
+                    if (type === block.dataset.type || type === 'all') {
+                        block.classList.add('active')
+                    } else {
+                        block.classList.remove('active')
+                    }
+                } else if (string.length > 0) {
+                    if ((type === block.dataset.type || type === 'all') && (block.dataset.name.includes(string.toLowerCase()))) {
+                        block.classList.add('active')
+                    } else {
+                        block.classList.remove('active')
+                    }
+                } else {
+                    block.classList.remove('active')
+                }
+            })
+            setTimeout(()=> {
+                document.querySelector('.brands-wrap').classList.remove('searching')
+            }, 400)
+        }
+
+        function setActiveBtn(id) {
+            let activeID = document.querySelector('.filter-buttons').querySelector('.active')
+            activeID.classList.remove('active')
+            document.getElementById(id).classList.add('active')
+        }
+
+        Array.from(filterButtons.children).forEach((button) => {
+            button.addEventListener('click', () => {
+                type = button.innerText.toLowerCase()
+                searchBrand(button.innerText.toLowerCase(), searchString)
+                setActiveBtn(button.id)
+            })
+        })
+
+        searchField.addEventListener('input', (event) => {
+            searchString = event.target.value
+            searchBrand(type, event.target.value)
+        })
+
+        searchField.addEventListener('click', () => {
+            searchField.parentElement.classList.add('focused')
+        })
+
+        searchField.addEventListener('blur', () => {
+            searchField.parentElement.classList.remove('focused')
+        })
+
+    })();
+</script>-->
+<script>
+  !function(){let e=document.getElementById("search-brand-input"),t=Array.from(document.getElementsByClassName("brand-block")),a=document.querySelector(".filter-buttons"),s=document.querySelector(".brands-wrap"),r="all",l="";function c(e,a){document.querySelector(".brands-wrap").classList.add("searching"),console.log(s),t.forEach(t=>{0===a.length?e===t.dataset.type||"all"===e?t.classList.add("active"):t.classList.remove("active"):a.length>0&&(e===t.dataset.type||"all"===e)&&t.dataset.name.includes(a.toLowerCase())?t.classList.add("active"):t.classList.remove("active")}),setTimeout(()=>{document.querySelector(".brands-wrap").classList.remove("searching")},400)}Array.from(a.children).forEach(e=>{e.addEventListener("click",()=>{var t;r=e.innerText.toLowerCase(),c(e.innerText.toLowerCase(),l);t=e.id,document.querySelector(".filter-buttons").querySelector(".active").classList.remove("active"),document.getElementById(t).classList.add("active")})}),e.addEventListener("input",e=>{l=e.target.value,c(r,e.target.value)}),e.addEventListener("click",()=>{e.parentElement.classList.add("focused")}),e.addEventListener("blur",()=>{e.parentElement.classList.remove("focused")})}();
+</script>
+{% schema %}
+{
+  "name": "Brand blocks 2",
+  "class": "section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "default": "<p>Description</p>",
+      "label": "Section Description"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Block content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Column",
+          "label": "Block title"
+        },
+        {
+          "type": "image_picker",
+          "id": "brand_logo",
+          "label": "Brand logo"
+        },
+        {
+          "type": "text",
+          "id": "brand_type",
+          "label": "Brand type"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "default": "Continue",
+          "label": "Link text"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Search Brand 2",
+      "blocks": [
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

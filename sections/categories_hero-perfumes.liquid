@@ -1,0 +1,309 @@
+<style>
+  .product_hero {
+    height: 750px;
+    padding: 20px 0 85px 0;
+  }
+  .product_hero .container {
+    height: 100%;
+  }
+  .product_hero-wrapp {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    height: 100%;
+  }
+  .product_hero-content {
+    width: calc(46% - 25px);
+    height: max-content;
+  }
+  .product_hero-text {
+    width: 100%;
+    text-align: center;
+  }
+  .product_hero-text p, .product_hero-text h1 {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .tp-widget-wrapper {
+    margin: 0;
+  }
+  .product_hero-trustpilot-widget {
+    margin: 0 auto;
+    width: max-content;
+    height: 97px;
+    width: 200px;
+}
+  .product_hero-image {
+    height: 100%;
+    width: calc(54% - 25px);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-radius: 20px;
+    border: 1px solid #E0DFDF;
+  }
+  .product_hero-label {
+    width: 100%;
+    background: #3C1F1B;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    margin-top: 20px;
+  }
+  .product_hero-label p {
+    color: #F2F2EA;
+  }
+  .product_hero-label-items {
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .product-box {
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    border: 1px solid rgba(60, 31, 27, 0.30);
+    width: max-content;
+    padding: 20px;
+    width: 300px;
+    border: 1px solid #F6ECD5;
+    background: #FFFCF5;
+  }
+p.pro-option-name {
+    text-align: center;
+    margin-bottom: 15px;
+}
+  .checkmark {
+    border: 1px solid #3C1F1B!important;
+    height: 18px!important;
+    width: 18px!important;
+    margin-top: 2px;
+    background: #FFFCF5;
+}
+  .radio-wrap .checkmark::after {
+    background: #3C1F1B!important;
+    border-radius: 50%;
+    height: 10px!important;
+    left: 3px;
+    top: 3px;
+    width: 10px!important;
+}
+  .radio-option {
+    width: 100%;
+    margin: 0;
+}
+  .product-form-container {
+    width: 100%;
+}
+  .product-box_title {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .radio-wrap {
+    font-family: "Suisse Intl"!important;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.4px;
+  }
+  label.radio.radio-wrap {
+    color: #3C1F1B;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    transition: .3s;
+}
+  label.radio.radio-wrap:hover {
+    opacity: .85;
+  }
+  label.radio.radio-wrap:active {
+    opacity: .7;
+  }
+  .btn-submit-container {
+    display: none;
+  }
+  .product-box_price {
+    text-align: center;
+  }
+  .product-box_button {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+  button#authenticate-btn {
+    background: #F24F14;
+    color: #fff;
+    height: max-content;
+    border-radius: 8px;
+    font-size: 20px;
+    text-transform: none;
+    font-weight: 400;
+    line-height: 1;
+    margin: 25px auto 0 auto;
+    transition: .5s;
+    min-width: auto;
+    width: max-content;
+    padding: 13px 10px;
+}
+  label.radio.radio-wrap.body-text {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+  .product_hero-label-items svg {
+      width: auto;
+    }
+  .product_hero-image-pointers {
+    background-size: contain;
+    background-color: #f2f2f2;
+  }
+  .product_hero-disclaimer {
+    color: rgba(60, 31, 27, 0.30);
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  @media(max-width: 1450px) {
+    .two-buttons {
+      gap: 10px;
+    }
+    .two-buttons a {
+      width: 100%;
+    }
+  }
+    @media(max-width: 1250px) {
+      .product_hero-image, .product_hero-content {
+        width: calc(50% - 25px);
+      }
+    }
+    @media(max-width: 950px) {
+    .product_hero-disclaimer {
+      max-width: 100%;
+      text-align: center;
+    }
+    .product_hero {
+      min-height: auto;
+      height: max-content;
+      padding: 77px 0 0 0;
+    }
+    .product_hero-content {
+      width: 100%;
+      text-align: center;
+    }
+    div#shopify-section-product-box {
+        display: flex;
+        justify-content: center;
+    }
+    .product_hero-image {
+        height: 400px;
+        width: 100%;
+        border-radius: 0;
+        border: none;
+    }
+    .product_hero .container {
+      padding: 0;
+    }
+    .product_hero-content {
+      padding: 0 15px;
+    }
+    .product_hero-label {
+      margin: 0;
+    }
+  }
+  @media(max-width: 750px) {
+    .product_hero {
+      padding-top: 50px;
+    }
+    label.radio.radio-wrap.body-text {
+    font-size: 16px;
+}
+    .radio-wrap {
+      font-size: 16px;
+      letter-spacing: -0.32px;
+    }
+    .product-box {
+      padding: 15px;
+      width: 290px;
+    }
+    .product_hero-text {
+      gap: 10px;
+    }
+    .product_hero-label-items svg:nth-child(1), .product_hero-label-items svg:nth-child(2) {
+      height: 10px;
+    }
+    .product_hero-label-items svg:nth-child(3) {
+      height: 11px;
+    }
+    .product_hero-label-items svg:nth-child(4) {
+      height: 15px;
+    }
+    .product_hero-label-items {
+      width: 100%;
+    }
+    .product_hero-label {
+      gap: 5px;
+      padding: 15px 0;
+    }
+    .product_hero-image {
+        height: 350px;
+    }
+    p.product_steps-item-caption {
+      margin-top: 10px;
+    }
+  }
+  #upladcare-cart {
+    font-family: "Suisse Intl" !important;
+  }
+</style>
+
+<section id="product_hero" class="product_hero">
+  <div class="container rebranding_container">
+    <div class="product_hero-wrapp block-flex-wrap">
+      <div id="product_hero-content" class="product_hero-content block-flex-wrap block-gap-30">
+        <div class="product_hero-text block-flex-wrap block-gap-15">
+        <h1 class="h1-heading-ss">
+            <span class="h1-heading-pp">Verify</span> your luxury perfumes <span class="h1-heading-pp">with confidence</span>
+        </h1>
+          
+          <p class="body-text">Get trusted verification from beauty experts in as little as 30 minutes</p>
+        </div>
+        <div class="block-flex-wrap block-gap-15 two-buttons w-100 block-flex-center-center">
+            <a href="#shopify-section-categories_wwa-perfumes" class="rebranding_btn">Brand coverage</a>
+            <a href="#product_boxes" class="rebranding_btn rebranding_btn-main">Start my beauty check</a>
+        </div>
+        <p class="tiny-text product_hero-disclaimer">LegitGrails operates independently and is not associated with any brands it authenticates</p>
+        <div class="product_hero-trustpilot-widget">
+          <!-- TrustBox widget - Mini -->
+          <div class="trustpilot-widget" data-locale="en-GB" data-template-id="53aa8807dec7e10d38f59f32" data-businessunit-id="5fbebb2d281b010001718c1c" data-style-height="97" data-style-width="200">
+          <a href="https://uk.trustpilot.com/review/legitgrails.com" target="_blank" rel="noopener">Trustpilot</a>
+          </div>
+          <!-- End TrustBox widget -->
+        </div>
+      </div>
+      <div class="product_hero-image" style="background-image: url({{ "perfumes_hero-image.webp" | asset_url }})"></div>
+    </div>
+  </div>
+  <div class="product_hero-label block-flex-wrap">
+    <p class="body-text">Featured by</p>
+    <div class="product_hero-label-items block-flex-wrap">
+      {% render "icon-rapaport" %}
+      {% render "icon-insider" %}
+      {% render "icon-forbes" %}
+      {% render "icon-nice" %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Product Hero",
+    "settings": []
+  }
+{% endschema %}

@@ -1,0 +1,72 @@
+{% render 'section-product-how-it-works-styles' %}
+<div class="block-inverse">
+    <div class="block-inverse__title font-title">{{ section.settings.title }}</div>
+    <div class="block-inverse__content">
+        {%- for block in section.blocks -%}
+            <div class="block-inverse_item">
+                <div class="block-inverse__image">
+                    <img src="{{ block.settings.image | img_url: 'master' }}" alt="form image"
+                         width="50" loading="lazy">
+                </div>
+                <div class="block-inverse__text font-description">
+                    {{ block.settings.text }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="block-inverse__description font-description">{{ section.settings.description }}</div>
+</div>
+
+{% schema %}
+{
+  "name": "How it works blocks",
+  "class": "section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "default": "<p>Description</p>",
+      "label": "Section Description"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Block content",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+          "label": "Text with checkmarks"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Scroll Blocks",
+      "blocks": [
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

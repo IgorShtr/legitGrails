@@ -1,0 +1,33 @@
+{% render 'product-landing-critical-styles-min' %}
+{% section 'page-product-landing-banner' %}
+<section class="product_checkout" id="product_checkout">
+    <div class="form-container">
+        <div class="product_checkout-wrapp">
+            {% section 'product-landing-steps' %}
+            {% section 'product-form-blog_one-block' %}
+        </div>
+    </div>
+</section>
+{% section 'product-full-width-meet' %}
+{% section 'product-why-choose-ai'%}
+{% section 'product-full-width-middle-top' %}
+{% section "legit-authentication-benefits" %}
+{% section 'page-product-reliable'%}
+{% section 'product-full-width-middle' %}
+{% section 'new-reviews-2' %}
+{% section 'product-featured-on' %}
+{% section 'product-image-text-bottom' %}
+{% render 'page-landing-page-styles' %}
+<script>
+  window.theme = window.theme || {};
+  window.theme.strings = window.theme.strings || {};
+
+  // Override default values of theme.strings for each template.
+  // Values are used by JavaScript only; Liquid must be updated separately
+  window.theme.strings.addToCart = {{ 'products.product.add_to_cart' | t | json }};
+  window.theme.strings.soldOut = {{ 'products.product.sold_out' | t | json }};
+  window.theme.strings.unavailable = {{ 'products.product.unavailable' | t | json }};
+</script>
+<script>
+  $(document).ready(function(){let t=document.querySelector(".product_checkout");$(".text-section_text-a-scroll").on("click",function(){$([document.documentElement,document.body]).animate({scrollTop:t.offsetTop},1e3)}),$(".product_checkout-radio-item").click(function(){let t=$(this).index(),e=$($(".product_checkout-radio-item input").get(t));e.data("price"),$(".product_checkout-right").parents("form").find('input[name="id"]').val(e.data("variant-id"))}),$(".product_checkout-cart").click(function(){$(this).text("Adding..."),setTimeout(()=>{$(this).text("Thank You!"),setTimeout(()=>{$(this).parent(".product_checkout-btns").parent(".product_checkout-right").parent("form").submit()},1e3)},1e3)}),$(".faq_wrapp-questions-item").click(function(){$(this).hasClass("active")?$(this).removeClass("active"):($(".faq_wrapp-questions-item").removeClass("active"),$(this).addClass("active"))})}),function(){let t=document.getElementById("product-link"),e=document.createElement("a");e.href="https://legitgrails.com/pages/partner-with-legitgrails",e.innerText="Need more than one authentication?",t.appendChild(e)}();
+</script>

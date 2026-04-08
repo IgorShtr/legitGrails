@@ -1,0 +1,778 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" integrity="sha512-+EoPw+Fiwh6eSeRK7zwIKG2MA8i3rV/DGa3tdttQGgWyatG/SkncT53KHQaS5Jh9MNOT3dmFL0FjTY08And/Cw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="new-container">
+      <div class="b2b_bundles-screen_wrapp">
+        {% if section.settings.title != blank %}
+        <h2 class="b2b_bundles-screen_wrapp-title second-title-style animation-title" data-animate>{{ section.settings.title }}</h2>
+        {% endif %}
+       
+        <div class="b2b_bundles-screen_wrapp-slider">
+          <div class="b2b_bundles-screen_wrapp_bundles">
+              {% for product in page.metafields.custom.bundle_products.value %}
+                  <div class="b2b_bundles-screen_wrapp_bundles-item">
+                      <p class="b2b_bundles-screen_wrapp_bundles-item-title font-title">{{ product.title }}</p>
+                      <a href="{{ product.metafields.custom.popup }}" class="font-description b2b_bundles-screen_wrapp_bundles-item-coverage popup">
+                              
+                      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.9983 7.42C10.5683 7.42 10.2483 7.33 10.0383 7.15C9.8283 6.96 9.7233 6.685 9.7233 6.325C9.7233 5.955 9.8283 5.68 10.0383 5.5C10.2483 5.31 10.5683 5.215 10.9983 5.215C11.4283 5.215 11.7483 5.31 11.9583 5.5C12.1683 5.68 12.2733 5.955 12.2733 6.325C12.2733 6.685 12.1683 6.96 11.9583 7.15C11.7483 7.33 11.4283 7.42 10.9983 7.42ZM12.0183 8.5V16H9.9633V8.5H12.0183Z" fill="#161616"/>
+                        <circle cx="11" cy="11" r="10" stroke="black" stroke-width="2"/>
+                      </svg>
+
+                      Brand coverage</a>
+                      <span class="b2b_bundles-screen_wrapp_bundles-item-line"></span>
+                      {% render 'product-form-bundle', product: product  %}
+                  </div>
+            {% endfor %}
+        </div>
+         <div class="swiper-pagination"></div>
+        </div>
+        
+        <div class="b2b_bundles-screen_wrapp-form">
+          <div class="b2b_bundles-screen_wrapp-form-text">
+            {% if section.settings.form-title != blank %}
+                <p class="b2b_bundles-screen_wrapp-form-title third-title-style">{{ section.settings.form-title }}</p>
+            {% endif %}
+            {% if section.settings.form-desc != blank %}
+                <p class="b2b_bundles-screen_wrapp-form-title common-desc-style">{{ section.settings.form-desc }}</p>
+            {% endif %}
+          </div>
+          {% if section.settings.form-button-title != blank %}
+              <a href="{{ section.settings.form-button-url }}" target="_blank" class="new-btn new-main-btn">{{ section.settings.form-button-title }}</a>
+          {% endif %}
+        </div>
+        
+      </div>
+</div>
+
+      <div class="hidden">
+          <div id="luxury_coverage">
+            <div class="coverage_form">
+              <p class="coverage_form-title">Luxury Brands</p>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">#</p>
+                <p class="coverage_form-item-desc">7 FOR ALL MANKIND</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">A</p>
+                <p class="coverage_form-item-desc">acne studios, acw, alaia, alberta ferretti, alessandro dell'acqua, alexander mcqueen, alexander wang, alyx, ami alexandre mattiussi, amina muaddi, amiri, ann demeulemeester, aquazzura, armani exchange</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">B</p>
+                <p class="coverage_form-item-desc">baldessarini, baldinini, balenciaga, bally, balmain, beams, berluti, billionaire, blumarine, bogner, boss, bottega veneta, boy london, breguet, breitling, brioni, brunello cucinelli, bugatti, burberry, bvlgari</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">C</p>
+                <p class="coverage_form-item-desc">c.p. company, canada goose, carolina herrera, cartier, casio, cashemere, celine, cerruti, charlie luciano, chaumet, chloe, christian louboutin, chrome hearts, clot, columbia, coach, coccinelle, comme des garcons, common projects, coperni, corneliani</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">D</p>
+                <p class="coverage_form-item-desc">d.exterior, delvaux, descendant, diane von furstenberg, diesel, dior, dolce gabbana, dondup, donna karan, double rl, dries van noten, drkshdw</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">E</p>
+                <p class="coverage_form-item-desc">elie saab, elisabetta franchi, emilio pucci, emporio armani, enfants riches deprimes, ermanno scervino, escada, etro, evisu</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">F</p>
+                <p class="coverage_form-item-desc">faith connexion, fendi, fr2, fragment, furla</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">G</p>
+                <p class="coverage_form-item-desc">giorgio armani, giuseppe zanotti, givenchy, golden goose, gosha rubchinskiy, goyard, gucci, guidi, guido</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">H</p>
+                <p class="coverage_form-item-desc">helmut lang, hugo boss</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">I</p>
+                <p class="coverage_form-item-desc">ih nom uh nit, iro, isabel marant, issey miyake, iwc, izzue</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">J</p>
+                <p class="coverage_form-item-desc">jacob cohen, jacquemus, jaeger lecoultre, jean paul gaultier, jil sander, jimmy choo, john galliano, john richmond, joseph, just cavalli, just don</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">K</p>
+                <p class="coverage_form-item-desc">karl lagerfeld, kate spade, kenzo, khaite, kith, kiton</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">L</p>
+                <p class="coverage_form-item-desc">l'autre chose, lanvin, lee, levis, liu jo, loewe, long champ, longines, loro piana, louis vuitton, love moschino, luisa spagnoli</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">M</p>
+                <p class="coverage_form-item-desc">mach & mach, madness, maison margiela, maje, mammut, manolo blahnik, marc jacobs, marella, marine serre, marni, mastermind japan, max mara, max&co, mcm, michael kors, mido, mitchell ness, miu miu, mlb, montblanc, Moose Knuckles, mr&mrs, moschino, moynat, msgm, mulberry</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">N-O</p>
+                <p class="coverage_form-item-desc">namacheko, neil barrett, nina ricci, oakley, onitsuka tiger, oscar de la renta</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">P</p>
+                <p class="coverage_form-item-desc">paco rabanne, patrizia pepe, peuterey, philipp plein, pietro brunelli, pinko, poivre blanc, pollini, prada</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">R</p>
+                <p class="coverage_form-item-desc">raf simons, rick owens, roberto cavalli, roger vivier, rhude</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">S</p>
+                <p class="coverage_form-item-desc">saint laurent, saint michael, salvatore ferragamo, sandro, schiaparelli, sergio rossi, simonetta, sonia rykiel, stuart weitzman</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">T</p>
+                <p class="coverage_form-item-desc">thom browne, tissot, tiffany & co., tom ford, tory burch, trussardi, tudor</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">U</p>
+                <p class="coverage_form-item-desc">ulysse nardin, undercover, unravel project</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">V</p>
+                <p class="coverage_form-item-desc">vacheron constantin, valentino, valextra, van cleef & arpels, versace, versus, vilebrequin, visvim, vivienne westwood</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">W-Z-#</p>
+                <p class="coverage_form-item-desc">wacko maria, y-3, yohji yamamoto, zegna, zenith, zuhair murad</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hidden">
+          <div id="hype_coverage">
+            <div class="coverage_form">
+              <p class="coverage_form-title">Hype Brands</p>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">A</p>
+                <p class="coverage_form-item-desc">adidas, air jordan, ambush, arc'teryx, arcteryx veilance, asics</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">B</p>
+                <p class="coverage_form-item-desc">bape, beams</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">C</p>
+                <p class="coverage_form-item-desc">cactus jack/travis scott, carhartt, cavempt, champion, converse</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">D</p>
+                <p class="coverage_form-item-desc">dr. martens, drew house, dsquared2</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">E</p>
+                <p class="coverage_form-item-desc">essentials fear of god</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">F</p>
+                <p class="coverage_form-item-desc">FEAR OF GOD, FILA</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">G</p>
+                <p class="coverage_form-item-desc">GALLERY DEPT, gcds</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">H</p>
+                <p class="coverage_form-item-desc">heron preston, hogan, human made</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">K</p>
+                <p class="coverage_form-item-desc">kapital</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">L</p>
+                <p class="coverage_form-item-desc">lacoste, lululemon</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">M</p>
+                <p class="coverage_form-item-desc">marcelo burlon</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">N</p>
+                <p class="coverage_form-item-desc">needles, neighborhood, new balance, nike,noah</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">O</p>
+                <p class="coverage_form-item-desc">OFF-WHITE</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">P</p>
+                <p class="coverage_form-item-desc">palace, palm angels, patagonia, puma</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">R</p>
+                <p class="coverage_form-item-desc">reebok</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">S</p>
+                <p class="coverage_form-item-desc">salomon, stella mccartney, stussy, supreme</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">T</p>
+                <p class="coverage_form-item-desc">the north face, thrasher, timberland, tod's</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">U</p>
+                <p class="coverage_form-item-desc">ugg, undefeated, under armour</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">V</p>
+                <p class="coverage_form-item-desc">vans, vetements, vlone</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">W</p>
+                <p class="coverage_form-item-desc">we11done, wtaps</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">X</p>
+                <p class="coverage_form-item-desc">xvessel</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">Y</p>
+                <p class="coverage_form-item-desc">yeezy</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hidden">
+          <div id="flexible_coverage">
+            <div class="coverage_form">
+              <p class="coverage_form-title">Flexible Brands</p>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">#</p>
+                <p class="coverage_form-item-desc">7 FOR ALL MANKIND</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">A</p>
+                <p class="coverage_form-item-desc">ACNE STUDIOS, ACW, ADIDAS, AIR JORDAN, ALAÏA, ALBERTA FERRETTI, ALESSANDRO DELL’ACQUA, ALEXANDER MCQUEEN, ALEXANDER WANG, ALYX, AMBUSH, AMI ALEXANDRE MATTIUSSI, AMINA MUADDI, AMIRI, ANN DEMEULEMEESTER, AQUAZZURA, ARC’TERYX, ARCTERYX VEILANCE, ASICS</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">B</p>
+                <p class="coverage_form-item-desc">BALDESSARINI, BALDININI, BALENCIAGA, BALLY, BALMAIN, BAPE, BEAMS, BERLUTI, BILLIONAIRE, BLUMARINE, BOGNER, BOSS, BOTTEGA VENETA, BOY LONDON, BREGUET, BREITLING, BRIONI, BRUNELLLO CUCINELLI, BRUNELLO CUCINELLI, BUGATTI, BURBERRY, BVLGARI</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">C</p>
+                <p class="coverage_form-item-desc">CACTUS JACK/TRAVIS SCOTT, CANADA GOOSE, CARHARTT, CAROLINA HERRERA, CARTIER, CASHEMERE, CAVEMPT, CELINE, CERRUTI, CHAMPION, CHARLIE LUCIANO, CHAUMET, CHLOE, CHRISTIAN LOUBOUTIN, CHROME HEARTS, COACH, COCCINELLE, COMME DES GARCONS, COMMON PROJECTS, CONVERSE, COPERNI, CORNELIANI</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">D</p>
+                <p class="coverage_form-item-desc">D.EXTERIOR, DELVAUX, DESCENDANT, DIANE VON FURSTENBERG, DIESEL, DIOR, DOLCE&GABBANA, DONDUP, DONNA KARAN, DOUBLE RL, DR. MARTENS, DREW HOUSE, DRIES VAN NOTEN, DRKSHDW, DSQUARED2</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">E</p>
+                <p class="coverage_form-item-desc">ELIE SAAB, ELISABETTA FRANCHI, EMILIO PUCCI,ERMANNO SCERVINO, ESCADA, ESSENTIALS, ETRO, EVISU</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">F</p>
+                <p class="coverage_form-item-desc">FAITH CONNEXION, FEAR OF GOD, FENDI, FR2, FRAGMENT, FURLA</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">G</p>
+                <p class="coverage_form-item-desc">GCDS, GIUSEPPE ZANOTTI, GIVENCHY, GOLDEN GOOSE, GOSHA RUBCHINSKIY, GOYARD, GUCCI, GUIDI</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">H</p>
+                <p class="coverage_form-item-desc">HERMÈS, HERON PRESTON, HOGAN, HUGO BOSS, HUMAN MADE</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">I</p>
+                <p class="coverage_form-item-desc">IH NOM UH NIT, IRO, ISABEL MARANT, ISSEY MIYAKE, IWC, IZZUE</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">J</p>
+                <p class="coverage_form-item-desc">JACOB COHEN, JACQUEMUS, JAEGER LECOULTRE, JEAN PAUL GAULTIER, JIL SANDER, JIMMY CHOO, JOHN GALLIANO, JOHN RICHMOND, JOSEPH, JUST CAVALLI</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">K</p>
+                <p class="coverage_form-item-desc">KAPITAL, KARL LAGERFELD, KATE SPADE, KENZO, KHAITE, KITH, KITON</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">L</p>
+                <p class="coverage_form-item-desc">L'AUTRE CHOSE, LACOSTE, LANVIN, LEE, LEVIS, LIU JO, LOEWE, LONG CHAMP, LONGINES, LORO PIANA, LOUIS VUITTON, LOVE MOSCHINO, LUISA SPAGNOLI, LULULEMON</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">M</p>
+                <p class="coverage_form-item-desc">MACH & MACH, MADNESS, MAISON MARGIELA, MAJE, MAMMUT, MANOLO BLAHNIK, MARC JACOBS, MARCELO BURLON, MARELLA, MARNI, MASTERMIND JAPAN, MAX MARA, MAX&CO, MCM, MICHAEL KORS, MIU MIU, MONTBLANC, MOSCHINO, MOYNAT, MSGM, MULBERRY</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">N</p>
+                <p class="coverage_form-item-desc">NAMACHEKO, NEEDLES, NEIGHBORHOOD, NEIL BARRETT, NEW BALANCE, NIKE, NINA RICCI, NOAH</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">O</p>
+                <p class="coverage_form-item-desc">OAKLEY, OFF-WHITE, OSCAR DE LA RENTA</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">P</p>
+                <p class="coverage_form-item-desc">PACO RABANNE, PALACE, PALM ANGELS, PATAGONIA, PATRIZIA PEPE, PEUTEREY, PIETRO BRUNELLI, PINKO, POIVRE BLANC, POLLINI, PRADA, PUMA</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">R</p>
+                <p class="coverage_form-item-desc">RAF SIMONS, REEBOK, RICK OWENS, ROBERTO CAVALLI, ROGER VIVIER</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">S</p>
+                <p class="coverage_form-item-desc">SAINT LAURENT, SALOMON, SANDRO, SCHIAPARELLI, SERGIO ROSSI, SIMONETTA, SONIA RYKIEL, STELLA MCCARTNEY, STUART WEITZMAN, STUSSY, SUPREME</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">T</p>
+                <p class="coverage_form-item-desc">THE NORTH FACE, THOM BROWNE, THRASHER, TIFFANY & CO, TIMBERLAND, TOD’S, TOM FORD, TORY BURCH, TRUSSARDI, TUDOR</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">U</p>
+                <p class="coverage_form-item-desc">UGG, ULYSSE NARDIN, UNDEFEATED, UNDER ARMOUR, UNDERCOVER, UNRAVEL PROJECT</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">V</p>
+                <p class="coverage_form-item-desc">VACHERON CONSTANTIN, VALENTINO, VALEXTRA, VAN CLEEF & ARPELS, VANS, VERSACE, VERSUS, VETEMENTS, VILEBREQUIN, VISVIM, VIVIENNE WESTWOOD, VLONE</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">W-Z-#</p>
+                <p class="coverage_form-item-desc">WACKO MARIA, WE11 DONE, WTAPS, XVESSEL, YEEZY, YOHJI YAMAMOTO, ZEGNA, ZUHAIR MURAD</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hidden">
+          <div id="watch_coverage">
+            <div class="coverage_form">
+              <p class="coverage_form-title">Watches Brands</p>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">A</p>
+                <p class="coverage_form-item-desc">Audemars Piguet</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">C</p>
+                <p class="coverage_form-item-desc">Chopard</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">H</p>
+                <p class="coverage_form-item-desc">Hublot</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">O</p>
+                <p class="coverage_form-item-desc">Omega</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">P</p>
+                <p class="coverage_form-item-desc">Patek Philippe, Piaget</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">R</p>
+                <p class="coverage_form-item-desc">Rolex</p>
+              </div>
+              <div class="coverage_form-item">
+                <p class="coverage_form-item-title">T</p>
+                <p class="coverage_form-item-desc">TAG Heuer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+          $('.popup').magnificPopup();
+        </script>
+        <style>
+  .b2b_bundles-screen {
+    padding: 110px 0;
+  }
+  .b2b_bundles-screen_wrapp_bundles {
+    display: flex;
+    gap: 23px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  .b2b_bundles-screen_wrapp_bundles-item {
+    width: calc(33.333334% - 15.3333334px);
+    background: #fff;
+    border: 1px solid #EFEFEF;
+    padding: 20px;
+    border-radius: 20px;
+    filter: drop-shadow(0 4px 4.9px rgb(0, 0, 0, 0.03));
+    position: relative;
+    z-index: 10;
+}
+  p.b2b_bundles-screen_wrapp_bundles-item-title {
+    font-weight: 600;
+    font-size: 30px;
+    color: #000;
+    text-align: center;
+    line-height: 1.2;
+    margin: 0;
+}
+  a.b2b_bundles-screen_wrapp_bundles-item-coverage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    margin: auto;
+    margin-top: 5px;
+    gap: 5px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #222;
+}
+a.b2b_bundles-screen_wrapp_bundles-item-coverage:hover {
+  text-decoration: underline;
+}
+  a.b2b_bundles-screen_wrapp_bundles-item-coverage svg {
+    height: 18px;
+}
+  .product__current-price {
+    margin-top: 15px;
+    font-family: 'Montserrat';
+    color: #000;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1;
+}
+  p.pro-option-name.product_checkout-answear {
+    font-size: 20px;
+    color: #222;
+    margin-top: 15px;
+    line-height: 1;
+    font-weight: 400;
+}
+  .center-options-container {
+    margin-top: 5px;
+}
+  label.radio.radio-wrap {
+    font-size: 20px;
+    color: #222;
+    margin-top: 0;
+    line-height: 1;
+    font-weight: 400;
+    font-family: 'Open Sans';
+    padding: 5px 0 7px 25px;
+  }
+  .option-container {
+    width: 100%;
+  }
+  .option-wrapper__number-of-authentications p.pro-option-name.product_checkout-answear {
+    margin-top: 0;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+  }
+  .option-dropdown-container {
+    position: relative;
+    margin-bottom: 0;
+    border: 1px solid #CDAB71;
+    padding: 3px 0;
+    border-radius: 3px;
+}
+  .option-dropdown {
+    position: absolute;
+    padding: 0;
+    background-color: #fff;
+    min-width: 250px;
+    overflow: auto;
+    box-shadow: 0px 0px 9px 5px rgba(0, 0, 0, 0.01);
+    z-index: 9999;
+    border-radius: 3px;
+    margin: 2px auto 0;
+    border: 1px solid #cdab71;
+    right: auto;
+    left: auto;
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+}
+  .option-wrapper__number-of-authentications label.radio.radio-wrap {
+    padding: 10px 0 10px 0px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Open Sans';
+    color: #000;
+}
+  .current-option {
+    padding: 0 45px;
+    font-size: 20px;
+    font-family: 'Open Sans';
+  }
+  .product-form {
+    gap: 5px;
+  }
+  .custom-cart-button {
+    width: 100%;
+    background: #cdab71;
+    border: 1px solid #cdab71;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 3px;
+    transition: ease 0.5s;
+    height: 40px;
+    font-size: 20px;
+}
+  p.product__notification.text-small.text-center {
+    display: none;
+}
+          .b2b_bundles-screen_wrapp-form {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #EFEFEF;
+    padding: 20px;
+    border-radius: 12px;
+    filter: drop-shadow(0 4px 15.5px rgb(0, 0, 0, 0.03));
+    margin-top: 23px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+div#luxury_coverage, div#hype_coverage, div#watch_coverage {
+      width: 800px;
+    max-height: 80vh;
+  height: max-content;
+    margin: auto;
+    background: #fff;
+    overflow: auto;
+    border-radius: 20px;
+    padding: 30px;
+  position: relative;
+}
+.coverage_form-item {
+    margin-top: 20px;
+}
+p.coverage_form-title {
+  font-family: 'Montserrat';
+    font-size: 25px;
+    color: #000;
+    font-weight: 600;
+}
+p.coverage_form-item-title {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.27;
+  color: #000;
+  font-family: 'Open Sans';
+  text-transform: uppercase;
+}
+p.coverage_form-item-desc {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.27;
+  color: #222;
+  font-family: 'Open Sans';
+  text-transform: uppercase;
+}
+.mfp-close-btn-in .mfp-close {
+    color: #333;
+    font-family: 'Open Sans';
+    opacity: 1;
+    color: #000;
+    font-size: 50px;
+}
+.b2b_bundles-screen_wrapp-form-text {
+    width: 100%;
+    max-width: calc(100% - 230px);
+}
+.option-dropdown {
+  height: max-content;
+}
+p.b2b_bundles-screen_wrapp-form-title {
+    margin-top: 5px;
+}
+.coverage_form {
+    text-align: center;
+}
+@media(max-width: 1250px) {
+  .b2b_bundles-screen_wrapp_bundles {
+    gap: 20px;
+  }
+  .b2b_bundles-screen_wrapp_bundles-item {
+    width: calc(50% - 10px);
+  }
+  .b2b_bundles-screen_wrapp-form {
+    margin-top: 20px;
+  }
+}
+@media(max-width: 950px) {
+    p.b2b_bundles-screen_wrapp_bundles-item-title, .product__current-price {
+        font-size: 25px;
+    }
+  a.b2b_bundles-screen_wrapp_bundles-item-coverage, p.pro-option-name.product_checkout-answear, label.radio.radio-wrap, .current-option, .option-wrapper__number-of-authentications label.radio.radio-wrap {
+    font-size: 18px;
+  }
+  .b2b_bundles-screen_wrapp_bundles-item:last-child {
+    z-index: 8;
+  }
+  div#luxury_coverage, div#hype_coverage, div#watch_coverage {
+        width: calc(100% - 30px);
+        max-height: 90vh;
+        height: max-content;
+  }
+  p.coverage_form-title {
+    font-size: 22px;
+  }
+  p.coverage_form-item-title {
+    font-size: 20px;
+  }
+  p.coverage_form-item-desc {
+    font-size: 18px;
+  }
+}
+@media(max-width: 750px) {
+  .b2b_bundles-screen_wrapp-form-text {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+  .b2b_bundles-screen_wrapp-form a {
+    margin: auto;
+    margin-top: 15px;
+}
+  .b2b_bundles-screen {
+    padding: 60px 0;
+}
+}
+@media(max-width: 600px) {
+  .swiper-wrapper {
+    z-index: 2!important;
+  }
+  .swiper {
+    overflow: visible!important;
+  }
+  .b2b_bundles-screen_wrapp {
+    overflow: hidden;
+  }
+  .option-dropdown {
+    height: max-content;
+    max-height: 184px;
+}
+  .swiper-pagination {
+    position: relative!important;
+    margin-top: 20px!important;
+    bottom: 0!important;
+    z-index: 1!important;
+  }
+  .swiper-pagination-bullet {
+    width: 12px!important;
+    height: 12px!important;
+    background: #CECECE!important;
+    border-radius: 50%!important;
+    opacity: 1!important;
+  }
+  .swiper-pagination-bullet-active {
+    background: #CDAB71!important;
+  }
+  .b2b_bundles-screen_wrapp_bundles-desktop {
+    display: none;
+  }
+  .b2b_bundles-screen_wrapp-slider {
+    display: block!important;
+  }
+  .b2b_bundles-screen_wrapp_bundles {
+      flex-wrap: nowrap;
+      gap: 0;
+    justify-content: flex-start;
+  }
+  p.b2b_bundles-screen_wrapp_bundles-item-title, .product__current-price {
+        font-size: 22px;
+    }
+      .b2b_bundles-screen_wrapp_bundles-item {
+        width: 100%;
+    }
+  .b2b_bundles-screen_wrapp_bundles {
+    margin-top: 20px;
+  }
+      a.b2b_bundles-screen_wrapp_bundles-item-coverage, p.pro-option-name.product_checkout-answear, label.radio.radio-wrap, .current-option, .option-wrapper__number-of-authentications label.radio.radio-wrap {
+        font-size: 16px;
+    }
+  .option-dropdown-container {
+    padding: 5px 0;
+  }
+  .b2b_bundles-screen_wrapp_bundles-item:nth-child(2) {
+    z-index: 9;
+  }
+  .option-dropdown {
+    margin: 5px auto 0;
+  }
+  .custom-cart-button {
+    height: 50px;
+  }
+  p.coverage_form-item-title {
+    font-size: 18px;
+  }
+  p.coverage_form-item-desc {
+    font-size: 16px;
+  }
+      .custom-cart-button {
+        height: max-content;
+        padding: 12px 20px;
+        font-size: 18px;
+        line-height: 1;
+    }
+}
+</style>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+                          
+<script>
+$(document).ready(function () {
+  if ($(window).width() < 960) {
+    $('.b2b_bundles-screen_wrapp-slider').addClass('swiper');
+    $('.b2b_bundles-screen_wrapp_bundles').addClass('swiper-wrapper');
+    $('.b2b_bundles-screen_wrapp_bundles-item').addClass('swiper-slide');
+    const swiper = new Swiper('.swiper', {
+    direction: 'horizontal',
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 15,
+    pagination: {
+      el: '.swiper-pagination',
+    }
+  });
+  }
+else {
+}
+});
+</script>
+{% schema %}
+  {
+    "name": "B2B Bundles",
+    "class": "b2b_bundles-screen",
+    "settings": [
+        {
+        "type": "text",
+        "id": "title",
+        "label": {
+        "en": "Heading"
+        }
+        },
+        {
+        "type": "text",
+        "id": "form-title",
+        "label": {
+        "en": "Form Title"
+        }
+        },
+        {
+        "type": "text",
+        "id": "form-desc",
+        "label": {
+        "en": "Form Description"
+        }
+        },
+        {
+        "type": "text",
+        "id": "form-button-title",
+        "label": {
+        "en": "Form Button Title"
+        }
+        },
+        {
+        "type": "url",
+        "id": "form-button-url",
+        "label": {
+        "en": "Form Button URL"
+        }
+        }
+    ]
+  }
+{% endschema %}

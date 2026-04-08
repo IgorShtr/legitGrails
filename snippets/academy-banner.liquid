@@ -1,0 +1,85 @@
+<style>
+  .academy-banner {
+    display: none;
+    position: fixed;
+    z-index: 100000000;
+    top: 100vh;
+    padding: 30px 50px;
+    border-radius: 33px 33px 0px 0px;
+    background: #DFE7FF;
+    width: 100%;
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    border-top: 1px solid #CBD8FF;
+  }
+  .academy-banner_btn-main {
+    background: #3B6AF6;
+  }
+  .academy-banner_text {
+    width: calc(100% - 324px)
+  }
+  .academy-banner_text p a {
+    text-decoration: underline;
+    color: #3B6AF6;
+  }
+  @media(max-width: 1250px) {
+    .academy-banner {
+      padding: 30px;
+    }
+  }
+  @media(max-width: 850px) {
+    .academy-banner {
+      justify-content: center;
+      gap: 20px;
+      padding: 25px;
+      border-radius: 26px 26px 0px 0px;
+    }
+    .academy-banner_text {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+    }
+    .academy-banner_btn-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
+    .academy-banner_text .h3-heading-pp {
+      padding: 0 30px;
+    }
+  }
+  @media(max-width: 750px) {
+    .academy-banner_btns {
+      width: 100%;
+    }
+  }
+</style>
+
+<div id="academy-banner" class="academy-banner block-flex-wrap block-flex-center-sb">
+  <div class="academy-banner_text block-flex-wrap block-gap-10">
+    <h3 class="h3-heading-pp">New LegitGrails Academy</h3>
+    <p class="body-text w-100">Become an expert in Chanel and Gucci authentication — pre-order Hermès and Rolex now. Get 20% off with code <a href="https://academy.legitgrails.com" target="_blank">COURSE20</a>.</p>
+  </div>
+  <div class="academy-banner_btns block-flex-wrap block-gap-20 block-flex-center-center">
+    <a href="https://academy.legitgrails.com" target="_blank" class="rebranding_btn rebranding_btn-main academy-banner_btn-main">Learn Now – 20% Off</a>
+    <a href="javascript:void(0)" id="academy-banner_btn-close" class="academy-banner_btn-close standart-hover block-flex-wrap block-flex-center-center">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M25.5146 8.51465L8.54409 25.4852" stroke="#3B6AF6" stroke-width="3" stroke-linecap="round"/>
+      <path d="M8.54395 8.51465L25.5145 25.4852" stroke="#3B6AF6" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+    </a>
+  </div>
+</div>
+
+<script>
+  window.onload = function () {
+  if (!localStorage.getItem('promoClosed')) {
+    document.getElementById('academy-banner').style.display = 'flex';
+  }
+
+  document.getElementById('academy-banner_btn-close').addEventListener('click', function () {
+    document.getElementById('academy-banner').style.display = 'none';
+    localStorage.setItem('promoClosed', 'true');
+  });
+};
+</script>

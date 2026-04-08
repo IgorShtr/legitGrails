@@ -1,0 +1,613 @@
+{% assign items = product.metafields.custom.form_settings.value %}
+
+{% for tag in product.tags %}
+  {% assign tag_split = tag | split: '_' %}
+  {% if tag_split.first == 'type' %}
+    {% assign type = tag_split.last %}
+  {% endif %}
+{% endfor %}
+
+<style>
+  .mfp-wrap {
+    z-index: 10000!important;
+    background: rgb(0, 0, 0, 0.5);
+  }
+  .mfp-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  .mfp-content {
+    width: max-content !important;
+    height: max-content !important;
+    min-height: auto !important;
+}
+  .mfp-content div {
+    width: max-content !important;
+    border-radius: 30px !important;
+    border: 1px solid #3C1F1B !important;
+    background: #FFF;
+    padding: 15px;
+    height: max-content;
+    min-height: auto;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+}
+  .mfp-content div img {
+    border-radius: 20px;
+    width: 400px;
+}
+  .mfp-close-btn-in .mfp-close {
+    color: #3C1F1B;
+    opacity: 1;
+    font-size: 56px;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-weight: 300;
+    font-family: 'Open Sans';
+}
+  .tip-section__text a:hover{
+    color: #3C1F1B;
+    text-decoration: underline;
+  }
+  .tip-section__text a:focus {
+    color: #3C1F1B;
+    text-decoration: underline;
+    opacity: .75;
+  }
+  .form-block__description, .tip-section__text, .scroll-container .radio-option-type .radio-wrap, p.popup-terms {
+    color: #3C1F1B;
+}
+  p.popup-terms a {
+    transition: .3s;
+  }
+  p.popup-terms a:hover {
+    opacity: 0.85;
+  }
+  p.popup-terms a:active {
+    opacity: .7;
+  }
+    .popup-container {
+        padding: 50px;
+        width: max-content;
+        border-radius: 17px;
+        position: relative;
+    }
+    .form-block.block-tips {
+        flex-grow: 1;
+        max-width: initial;
+        min-width: max-content;
+    }
+    .tip-section__content {
+      border-radius: 11px;
+      padding: 30px 20px;
+      border: 1px solid #3C1F1B;
+      width: 182px;
+      height: 174px;
+      min-width: 182px;
+      min-height: 174px;
+  }
+  .tip-section.tip-active {
+    position: relative;
+}
+  .tip-section {
+    gap: 20px;
+  }
+      .tab-section__image-container {
+        min-height: 158px !important;
+        min-width: 174px !important;
+        height: 158px !important;
+        width: 174px !important;
+    }
+      .tab-section__content {
+        flex-basis: 174px !important;
+        min-height: max-content !important;
+        min-width: 174px !important;
+        height: max-content !important;
+        transition: .3s;
+        order: 2;
+    }
+  .tab-section__content {
+    opacity: 1;
+  }
+  .tab-section__content:hover {
+    opacity: .85
+  }
+  .tab-section__content:active {
+    opacity: .7;
+  }
+  .tips {
+    padding-top: 10px;
+  }
+  .form-block__description {
+    margin-bottom: 15px;
+  }
+  .tip-section__text a {
+    text-decoration: underline;
+    color: #3C1F1B;
+    transition: .3s;
+  }
+  .tip-section__text a:hover {
+    opacity: .85;
+  }
+  .tip-section__text a:focus {
+    opacity: .7;
+  }
+  .tab-section {
+    gap: 18px;
+  }
+  p.popup-terms {
+    text-align: center;
+    margin: 0 auto;
+}
+  .tab-section__image-container {
+    background-color: #f2f2ea !important;
+}
+  .upload-options .radio-option-type {
+    min-height: 35px;
+    width: 100%;
+}
+  .scroll-container.upload-options {
+    display: flex;
+    flex-wrap: wrap;
+}
+  .form-block.step-first {
+    width: 310px;
+}
+  .tab-section__content.uploaded .tab-section__image-success {
+    background-color: #dcffe0;
+}
+  .popup-container {
+    width: 1238px;
+  }
+  .popup-overlay {
+    height: max-content;
+    padding: 0;
+    min-height: 100vh;
+  }
+  .popup-btn__close {
+      height: max-content;
+      display: block;
+      width: max-content;
+      right: 20px;
+      top: 23px;
+      opacity: 1;
+      transition: .3s;
+  }
+  .popup-btn__close:hover {
+    opacity: .85;
+  }
+  .popup-btn__close:active {
+    opacity: .7;
+  }
+  .popup-btn__close::after, .popup-btn__close::before {
+    display: none;
+  }
+  .popup-btn__close svg {
+    height: 23px;
+    width: auto;
+}
+    .scroll-container::-webkit-scrollbar {
+      width: 7px;
+    }
+    .scroll-container::-webkit-scrollbar-track {
+      border-radius: 5px;
+      background: #EEEEEE;
+    }
+    .scroll-container::-webkit-scrollbar-thumb {
+      background: #3C1F1B;
+    }
+    .scroll-container::-webkit-scrollbar-thumb:hover {
+      background: #65433E;
+    }
+  .scroll-container {
+    scrollbar-color: #3c1f1b #eeeeee;
+    scrollbar-width: thin;
+}
+    a.tab-section_example {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 3px;
+      justify-content: center;
+      line-height: 1;
+      margin-top: 5px;
+      transition: .3s;
+      color: #3C1F1B;
+  }
+  a.tab-section_example:hover {
+    opacity: .85;
+  }
+  a.tab-section_example:active {
+    opacity: .7;
+  }
+  a.tab-section_example svg, a.tab-section_example img {
+    height: 15px;
+    margin-top: -3px;
+}
+  .tab-section__title {
+    color: #3C1F1B;
+  }
+  @media(max-width: 1300px) {
+    .popup-container {
+    width: 1042px;
+}
+    .form-block.step-first {
+    width: 210px;
+}
+    .tip-section__content {
+    width: 158px;
+    height: 165px;
+    min-width: 158px;
+    min-height: 165px;
+}
+  }
+  @media(max-width: 1100px) {
+    .popup-container {
+    width: 850px;
+}
+    .block-tips {
+    display: none;
+}
+        .form-block.step-first {
+        width: 100%;
+    }
+  }
+  @media(max-width: 950px) {
+    .popup-container {
+        width: 100%;
+        border-radius: 0;
+        margin: 0;
+  }
+    .tab-section {
+    gap: 15px;
+}
+    .tab-section__content {
+    flex-basis: calc(25% - 11.25px) !important;
+    min-height: max-content !important;
+    min-width: calc(25% - 11.25px) !important;
+    height: max-content !important;
+    width: calc(25% - 11.25px) !important;
+}
+    .tab-section__image-container {
+    min-height: 158px !important;
+    min-width: 100% !important;
+    height: 158px !important;
+    width: 100% !important;
+}
+    .popup-container {
+    padding: 50px 15px 100px 15px;
+}
+  }
+  @media(max-width: 750px) {
+    .scroll-container .radio-option-type .radio-wrap {
+    height: 30px;
+    padding: 3px 0 3px 25px;
+}
+        .tab-section__content {
+        flex-basis: calc(33.333334% - 10px) !important;
+        min-height: max-content !important;
+        min-width: calc(33.333334% - 10px) !important;
+        height: max-content !important;
+        width: calc(33.333334% - 10px) !important;
+    }
+  }
+  @media(max-width: 700px) {
+        .mfp-content div {
+        width: 320px !important;
+        padding: 8px !important;
+    }
+        .mfp-content div img.example-popup-img {
+        width: 100%;
+    }
+        .mfp-close-btn-in .mfp-close {
+        color: #000;
+        opacity: 1;
+        font-size: 50px;
+        margin-top: 10px;
+        margin-right: 10px;
+        font-weight: 300;
+        font-family: 'Open Sans';
+    }
+  }
+  @media(max-width: 500px) {
+    .tab-section__content {
+        flex-basis: calc(50% - 7.5px) !important;
+        min-height: max-content !important;
+        min-width: calc(50% - 7.5px) !important;
+        height: max-content !important;
+        width: calc(50% - 7.5px) !important;
+    }
+  }
+  .tab-section__content.item-required {
+    order: 1;
+  }p.pro-option-name {font-family: "Geist Mono"!important;}
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" integrity="sha512-+EoPw+Fiwh6eSeRK7zwIKG2MA8i3rV/DGa3tdttQGgWyatG/SkncT53KHQaS5Jh9MNOT3dmFL0FjTY08And/Cw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div
+  id="product-uploads"
+  class="popup-overlay popup-overlay-u hidden {% if product.tags contains "form-cart"%} form-cart{% endif %}"
+  data-type="{{ type }}"
+>
+  <div class="popup-container popup-container-u transparent">
+    <div class="container-popup-header">
+      <a class="popup-btn__close">
+        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.02954 17.9707L18.0001 1.00014" stroke="#3C1F1B" stroke-width="2" stroke-linecap="round"/>
+        <path d="M1.02954 1L18.0001 17.9706" stroke="#3C1F1B" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </a>
+    </div>
+    <div class="popup-sections">
+      <div class="popup-sections__row">
+        <div class="form-block step-first">
+          <div class="form-block__title h3-heading-pp">Step 1</div>
+          <div class="form-block__description body-text">Choose your item</div>
+          <div class="form-block__content">
+            <div class="scroll-container upload-options upload-options-u">
+              {% for item in items %}
+                {% unless item.name == 'belt' %}
+                  <div class="radio-option-type option-{{ item.name }}">
+                    <label class="radio radio-wrap" for="{{ item.name }}">
+                      <span class="small-text">{{ item.title }}</span>
+                      <input
+                        id="{{ item.name }}"
+                        class="radio-option-input"
+                        type="radio"
+                        name="types"
+                        {% if forloop.index == 1 %}
+                          checked
+                        {% endif %}
+                      >
+                      <div class="checkmark"></div>
+                    </label>
+                  </div>
+                {% endunless %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="form-block block-tips">
+          <div class="form-block__title h3-heading-pp">Tips on how to speed up your authentication</div>
+          <div class="form-block__content">
+            <div class="tips">
+              {% for item in items %}
+                <div class="tip-section {% if forloop.index == 1 %} tip-active {% endif %}" id="tip-{{ item.name }}">
+                  {% for tip in item.tips limit: 3 %}
+                    <div class="tip-section__content">
+                      <div class="tip-section__text small-text">
+                        {{ tip }}
+                      </div>
+                    </div>
+                  {% endfor %}
+                  <div class="tip-section__content">
+                    <div class="tip-section__text small-text">
+                      Explore model specific
+                      <a
+                        href="https://legitgrails.frontkb.com/en/categories/604802-general-photos"
+                        target="_blank"
+                        >photo examples</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="popup-sections__row">
+        <div class="form-block form-block-tabs">
+          <div class="form-block__title h3-heading-pp">Step 2</div>
+          <div class="form-block__description body-text">
+            Upload the photos of your <span id="collection-title" class="form-block__item-title">item</span> one by one
+          </div>
+          <div class="tabs tabs-u">
+            {% for tab in items %}
+              <div
+                class="tab-section tab-section-u {% if forloop.index == 1 %} tab-active {% endif %}"
+                id="tab-{{ tab.name }}"
+              >
+                {% assign types = tab.types %}
+                {% assign sorted_types = types | sort: 'required' %}
+                {% for type in sorted_types %}
+                  <label
+                    id="{{ tab.name }}_{{ type.name }}"
+                    data-block-id="{{ tab.name }}_{{ type.name }}"
+                    class="tab-section__content tab-section-u__content tab-{{ type.name }} {% if type.required == "true" %} item-required {% endif %}"
+                  >
+                    <div
+                      id="counter-tab-{{ tab.name }}_{{ type.name }}"
+                      class="tab-section__counter tiny-text"
+                    ></div>
+
+                    <div class="tab-section__image-container">
+                      {% if type.image.size > 0 %}
+                        <div
+                          class="tab-section__image"
+                          style="background-image: url({{ type.image | asset_url }})"
+                        ></div>
+                      {% else %}
+                        <div class="tab-section__image" style="background-image: url({{ type.image_url }})"></div>
+                      {% endif %}
+                      <!--
+                        <div
+                          class="tab-section__image"
+                          {% if type.image.size > 0 %}
+                            style="background-image: url({{ type.image }})"
+                          {% endif %}
+                        ></div>
+                      -->
+                      {% if type.success_image.size > 0 %}
+                        <div
+                          class="tab-section__image-success"
+                          style="background-image: url({{ type.success_image | asset_url }})"
+                        ></div>
+                      {% else %}
+                        <div
+                          class="tab-section__image-success"
+                          style="background-image: url({{ type.image_url }}); background-color: #c7f5cb; background-blend-mode: luminosity; -webkit-background-blend-mode: luminosity; -moz-background-blend-mode: luminosity; -ms-background-blend-mode: luminosity; -o-background-blend-mode: luminosity;"
+                        ></div>
+                      {% endif %}
+                      <!--
+                        <div
+                          class="tab-section__image-success"
+                          {% if type.success_image.size > 0 %}
+                            style="background-image: url({{ type.success_image }}); background-color: #c7f5cb; background-blend-mode: luminosity; -webkit-background-blend-mode: luminosity; -moz-background-blend-mode: luminosity; -ms-background-blend-mode: luminosity; -o-background-blend-mode: luminosity;"
+                          {% endif %}
+                        ></div>
+                      -->
+
+                      <div class="loader-line">
+                        <i class="loader spin"></i>
+                      </div>
+                    </div>
+
+                    <div class="tab-section__title h4-heading-pp">
+                      {{ type.title }}
+                    </div>
+                  <p class="cart-attribute__field uploader-dawn hidden">
+                      <input
+                        id="native-uploader-{{ tab.name }}_{{ type.name }}"
+                        class="native-uploader"
+                        type="file"
+                        multiple
+                        accept="image/*"
+                        data-block-id="{{ tab.name }}_{{ type.name }}"
+                      >
+                    </p>
+
+                    {% if product.tags contains 'example-images' %}
+                      {% if type.example_image.size > 0 %}
+                        <a href="#example-{{ tab.name }}_{{ type.name }}" class="tab-section_example tiny-text popup">
+                          <svg
+                            width="14"
+                            height="13"
+                            viewBox="0 0 14 13"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M7.00188 4.41598C6.82188 4.41598 6.67521 4.36264 6.56188 4.25598C6.45521 4.14264 6.40188 3.99598 6.40188 3.81598C6.40188 3.63598 6.45521 3.49264 6.56188 3.38598C6.67521 3.27264 6.82188 3.21598 7.00188 3.21598C7.18188 3.21598 7.32521 3.27264 7.43188 3.38598C7.54521 3.49264 7.60188 3.63598 7.60188 3.81598C7.60188 3.99598 7.54521 4.14264 7.43188 4.25598C7.32521 4.36264 7.18188 4.41598 7.00188 4.41598ZM7.40188 5.37598V10.376H6.60188V5.37598H7.40188Z" fill="#C6BA7B"/>
+                            <circle cx="7" cy="6.5" r="6" stroke="#C6BA7B"/>
+                          </svg>
+                          Example
+                        </a>
+                      {% endif %}
+                    {% endif %}
+                  </label>
+                {% endfor %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+                              
+      <div class="popup-sections__row">
+        <div class="buttton-wrap">
+          <div id="upload-messages" class="upload-messages"></div>
+          {% if product.tags contains 'form-cart' %}
+            <button id="upladcare-cart" class="btn main-btn disabled rebranding_btn rebranding_btn-main" name="" style="max-width: 250px">
+              <span>Submit</span>
+            </button>
+          {% else %}
+            <button id="upload_submit" class="btn main-btn disabled rebranding_btn rebranding_btn-main" name="" style="max-width: 250px">
+              <span>Submit</span>
+            </button>
+          {% endif %}
+        </div>
+      </div>
+      <div class="popup-sections__row">
+        <p class="popup-terms tiny-text">
+          By submitting an order you agree with the
+          <a href="https://legitgrails.com/policies/terms-of-service" target="_blank">Terms and Conditions</a> and
+          <a href="https://legitgrails.com/policies/refund-policy" target="_blank">Refund policy</a>
+        </p>
+      </div>
+    </div>
+    <div class="popup-notofocation" style="display: none;">
+      <span>The upload limit is <b>3 photos per upload</b> window. Additional files will not be accepted.</span>
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M25.4558 8.48528L8.48523 25.4558" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+        <path d="M8.48533 8.48528L25.4559 25.4558" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+</div>
+<div class="hidden uploadcare-product-hidden" id="product-data" data-product="{{ product | json | escape }}">
+  {{ product.id }}
+</div>
+
+{% if product.tags contains 'example-images' %}
+  {% for tab in items %}
+    {% assign types = tab.types %}
+    {% assign sorted_types = types | sort: 'required' %}
+    {% for type in sorted_types %}
+      {% if type.example_image.size > 0 %}
+      <div class="hidden">
+        <div id="example-{{ tab.name }}_{{ type.name }}">
+          <img src="{{ type.example_image }}" class="example-popup-img">
+        </div>
+      </div>
+        {% endif %}
+    {% endfor %}
+  {% endfor %}
+{% endif %}
+
+{% for variant in product.variants %}
+  {% if forloop.index == 1 %}
+    <input id="selected-variant" class="hidden" type="hidden" value="{{ variant.id }}">
+  {% endif %}
+{% endfor %}
+<script>
+    $( document ).ready(function() {
+      $("label[for='other-shoes-luxury'] span").text("Other shoes");
+      $("label[for='other-shoes-hype'] span").text("Other shoes");
+      $("label[for='sneakers-luxury'] span").text("Sneakers");
+      $("label[for='sneakers-hype'] span").text("Sneakers");
+  });
+</script>
+                        
+{% for variant in product.variants %}
+  {% if forloop.index == 1 %}
+    <input id="selected-variant" class="hidden" type="hidden" value="{{ variant.id }}">
+  {% endif %}
+{% endfor %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+          $('.popup').magnificPopup();
+        </script>
+
+
+{{ 'uploadcare.full.min.js' | asset_url | script_tag }}
+<!-- <script>
+  UPLOADCARE_PUBLIC_KEY = "ad3d10f764f69a907860";
+  UPLOADCARE_TABS = "file";
+  UPLOADCARE_SYSTEM_DIALOG = true
+</script> -->
+{{ 'uploadcare-form-full.js' | asset_url | script_tag }}
+{% if product.tags contains 'form-cart' %}
+  <style>
+    .authenticate-btn {
+        min-width: 250px !important;
+        border-radius: 5px !important;
+    }
+    .product__form-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    .checkout_required-photos {
+        display: none;
+    }
+    .product-card {
+        display: flex;
+        flex-direction: column;
+    }
+    .checkout_required-photos {
+        display: none !important;
+    }
+  </style>
+{% endif %}

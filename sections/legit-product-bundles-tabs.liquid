@@ -1,0 +1,112 @@
+{% render 'section-legit-product-bundles-tabs-styles' %}
+<style>
+    .scroll-blocks-card__check-text p:after {
+        -webkit-mask-image: url('{{ "icon-checkmark.svg" | asset_url }}');
+        mask-image: url('{{ "icon-checkmark.svg" | asset_url }}');
+    }
+</style>
+<div class="section-tabs section-tabs--{{ section.id }}">
+    <div class="page-width">
+        <div class="tabs-heading">
+            {%- unless section.settings.title == blank -%}
+                <h4 class="font-title tabs-heading__title section-title featured-blog__heading" data-animate="true">
+                    {{ section.settings.title | escape }}
+                </h4>
+            {%- endunless -%}
+            {%- unless section.settings.description == blank -%}
+                <div class="font-description tabs-heading__description section-description">
+                    {{ section.settings.description }}
+                </div>
+            {%- endunless -%}
+        </div>
+        <div class="tabs-section">
+            <div id="nav-blocks" class="tabs-navigation">
+                {%- for block in section.blocks -%}
+                    <div id="navigation-{{ block.id }}"
+                         class="tabs-nav__item {% if forloop.index == 1 %} active {% endif %}">
+                        {% unless block.settings.block-icon == blank %}
+                            <div class="tabs-nav__img"
+                                 style="-webkit-mask-image: url('{{ block.settings.block-icon | img_url: "master" }}'); mask-image: url('{{ block.settings.block-icon | img_url: "master" }}');">
+                            </div>
+                        {% endunless %}
+                        <div class="tabs-nav__title font-title">{{ block.settings.title }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="tabs-content">
+                {%- for block in section.blocks -%}
+                    <div class="tabs-content__item {% if forloop.index == 1 %} active {% endif %}"
+                         id="tab-{{ block.id }}">
+                        <div class="tabs-content__heading font-title">{{ block.settings.title }}</div>
+                        <div class="tabs-content__text font-description">
+                            {{ block.settings.text }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    !function(){let e=document.getElementById("nav-blocks");Array.from(e.children).forEach(t=>{t.addEventListener("click",()=>{let a=e.querySelector(".active"),i=document.getElementById(a.id.replace("navigation","tab"));a.classList.remove("active"),i.classList.remove("active"),t.classList.add("active"),document.getElementById(t.id.replace("navigation","tab")).classList.add("active")})})}();
+</script>
+{% schema %}
+{
+  "name": "Bundle Tabs",
+  "class": "section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "default": "<p>Description</p>",
+      "label": "Section Description"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Block content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "tab title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+          "label": "Text with checkmarks"
+        },
+        {
+          "type": "image_picker",
+          "id": "block-icon",
+          "label": "Block icon"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bundle Tabs",
+      "blocks": [
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

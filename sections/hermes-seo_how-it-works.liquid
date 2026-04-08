@@ -1,0 +1,675 @@
+<style>
+  .hiw-animated_steps-wrapp {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .hiw-animated_steps-text {
+    width: 100%;
+    max-width: 745px;
+    text-align: left;
+    height: max-content;
+  }
+  .hiw-animated_steps-text.animation {
+    position: fixed;
+    top: 150px;
+  }
+  .hiw-animated_steps-text.animated {
+    position: absolute;
+    bottom: 504px;
+  }
+  h2.hiw-animated_steps-title {
+    text-align: left;
+  }
+  p.hiw-animated_steps-desc {
+    margin-top: 15px;
+  }
+  a.hiw-animated_steps-btn {
+    margin-top: 30px;
+    margin-left: 0;
+  }
+  .hiw-animated_steps-path {
+    width: calc(100% - 795px);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-left: auto;
+    justify-content: flex-end;
+  }
+  .hiw-animated_steps-line {
+    width: 53px;
+    height: auto;
+    position: relative;
+  }
+  span.hiw-animated_steps-line-main {
+    display: block;
+    width: 3px;
+    background: #3C1F1B;
+    height: 0;
+    position: relative;
+    top: 25px;
+    left: 50%;
+    margin-left: -1.5px;
+    z-index: 0;
+    transition: 3.5s
+  }
+span.hiw-animated_steps-line-main.animated {
+    height: 1263px;
+}
+  .hiw-animated_steps-line-item {
+    display: block;
+    height: 53px;
+    width: 53px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+.hiw-animated_steps-line-item-2 {
+    top: 639px;
+}
+.hiw-animated_steps-line-item-3 {
+    top: 1245px;
+}
+  span.hiw-animated_steps-line-item-circle {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  span.hiw-animated_steps-line-item-circle-1 {
+    border-radius: 54.418px;
+    border: 1px solid rgba(172, 172, 172, 0.20);
+    background: #C7BEBD;
+    box-shadow: 0px 4px 24px -2px rgba(0, 0, 0, 0.10);
+    backdrop-filter: blur(20px);
+    z-index: 1;
+    margin-top: 0;
+    margin-left: 0;
+    height: 0;
+    width: 0;
+    transition: .5s;
+  }
+  .hiw-animated_steps-line-item.animated span.hiw-animated_steps-line-item-circle-1 {
+    margin-top: -26.5px;
+    margin-left: -26.5px;
+    height: 53px;
+    width: 53px;
+  }
+  span.hiw-animated_steps-line-item-circle-2 {
+    border-radius: 36.279px;
+    background: #8A7876;
+    z-index: 2;
+    margin-top: 0;
+    margin-left: 0;
+    height: 0;
+    width: 0;
+    transition: .5s;
+  }
+  .hiw-animated_steps-line-item.animated span.hiw-animated_steps-line-item-circle-2 {
+    margin-top: -18px;
+    margin-left: -18px;
+    height: 36px;
+    width: 36px;
+  }
+  span.hiw-animated_steps-line-item-circle-3 {
+    border-radius: 18.139px;
+    background: #3C1F1B;
+    margin-top: 0;
+    margin-left: 0;
+    height: 0;
+    width: 0;
+    transition: .5s;
+    z-index: 3;
+  }
+  .hiw-animated_steps-line-item.animated span.hiw-animated_steps-line-item-circle-3 {
+    margin-top: -9px;
+    margin-left: -9px;
+    height: 18px;
+    width: 18px;
+  }
+p.hiw-animated_steps-pretitle.resalex-pretitle.caption {
+    margin-bottom: 15px;
+    text-align: left;
+}
+  .hiw-animated_steps-items {
+      display: flex;
+      flex-wrap: wrap;
+      width: calc(100% - 119px);
+      gap: 237px;
+      margin-top: 14px;
+  }
+  .hiw-animated_steps-item {
+    width: 100%;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: .5s;
+  }
+  .hiw-animated_steps-item.animated {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  p.hiw-animated_steps-item-desc {
+    margin-top: 15px;
+  }
+  .hiw-animated_steps-item-content {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 436px;
+    gap: 15px;
+    padding: 10px 20px 10px 10px;
+    align-items: center;
+    border-radius: 13px;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    background: linear-gradient(96deg, rgba(224, 224, 224, 0.03) 23.53%, rgba(189, 189, 189, 0.03) 75.95%);
+    box-shadow: 0px 4px 24px -2px rgba(0, 0, 0, 0.10);
+    backdrop-filter: blur(20px);
+  }
+  .hiw-animated_steps-item-content img {
+    border-radius: 6px;
+    border: 1px solid #E8E8E8;
+    height: 98px;
+    width: 98px;
+  }
+  .hiw-animated_steps-item-content-images {
+    gap: 10px;
+    max-width: 338px;
+    padding: 10px;
+  }
+  .hiw-animated_steps-item-content-text-wrapp {
+      width: calc(100% - 126px);
+  }
+  a.hiw-animated_steps-mobile-btn, .hiw-animated_steps-line-item-mobile {
+      display: none;
+  }
+  .hiw-animated_steps-item-content-text-wrapp-items {
+      margin-top: 10px;
+      gap: 5px;
+  }
+  .hiw-animated_steps-item-content-text-wrapp-items p {
+      width: 100%;
+  }
+  .hiw-animated_steps-item-content-text-wrapp-items p span {
+      color: rgba(60, 31, 27, 0.75);
+  }
+  .hiw-animated_steps-item-content-top {
+      align-items: flex-start;
+  }
+  .hiw-animated_steps-item-content-top p.hiw-animated_steps-item-content-desc {
+      margin-top: 15px;
+  }
+  p.hiw-animated_steps-item-content-title {
+      margin-top: 5px;
+  }
+   .hiw-animated_steps-item-market-table {
+    paddind-top: 10px;
+  }
+  .hiw-animated_steps-item-market-table-item {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #E8E8E8;
+  }
+  .hiw-animated_steps-item-market-table-item:last-child {
+    border: none;
+  }
+  .hiw-animated_steps-item-content-single-image {
+    padding: 0px;
+    overflow: hidden;
+  }
+  .hiw-animated_steps-item-content-single-image img {
+    width: 100%;
+    height: auto;
+    border: none;
+  }
+  .hiw-animated_steps-item-market-table-item img {
+    height: 18px;
+    width: auto;
+    border: none;
+}
+  .hiw-animated_bag-item-market {
+    border: none;
+    padding: 0;
+    box-shadow: none;
+  }
+  .hiw-animated_bag-item-market img {
+    border: none;
+    height: max-content;
+  }
+  .hiw-animated_last-text {
+    margin: 50px auto 0 auto;
+    width: 100%;
+  }
+  @media(max-width: 1450px) {
+    .hiw-animated_steps-text {
+        max-width: 571px;
+    }
+    .hiw-animated_steps-text.animated {
+        bottom: 484px;
+    }
+    .hiw-animated_steps-path {
+        width: calc(100% - 615px);
+    }
+    span.hiw-animated_steps-line-main.animated {
+      height: 1870px;
+    }
+    .hiw-animated_steps-line-item-2 {
+        top: 636px;
+    }
+    .hiw-animated_steps-line-item-3 {
+        top: 1244px;
+    }
+    .hiw-animated_steps-items {
+        margin-top: 11px;
+    }
+    span.hiw-animated_steps-line-main.animated {
+        height: 1238px;
+    }
+  }
+  @media(max-width: 1250px) {
+    .hiw-animated_steps-items {
+        margin-top: 12px;
+    }
+        .hiw-animated_steps-text.animated {
+        bottom: 454px;
+    }
+    p.hiw-animated_steps-desc, p.hiw-animated_steps-item-desc {
+      margin-top: 10px;
+    }
+    .hiw-animated_steps-path {
+        width: calc(100% - 365px);
+        gap: 25px;
+    }
+    .hiw-animated_steps-text {
+        max-width: 361px;
+    }
+    .hiw-animated_steps-items {
+        gap: 237px;
+    }
+    .hiw-animated_steps-line-item-2 {
+        top: 632px;
+    }
+    .hiw-animated_steps-line-item-3 {
+        top: 1234px;
+    }
+  }
+  @media(max-width: 950px) {
+    .hiw-animated_steps-item {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+    span.hiw-animated_steps-line-item-circle-1 {
+    margin-top: -26.5px;
+    margin-left: -26.5px;
+    height: 53px;
+    width: 53px;
+  }
+  span.hiw-animated_steps-line-item-circle-2 {
+    margin-top: -18px;
+    margin-left: -18px;
+    height: 36px;
+    width: 36px;
+  }
+  span.hiw-animated_steps-line-item-circle-3 {
+    margin-top: -9px;
+    margin-left: -9px;
+    height: 18px;
+    width: 18px;
+  }
+    p.hiw-animated_steps-pretitle.resalex-pretitle.caption {
+        text-align: center;
+    }
+    a.hiw-animated_steps-btn {
+        margin: 0 auto;
+    }
+    .hiw-animated_steps-wrapp {
+        gap: 40px;
+    }
+    .hiw-animated_steps-line-item {
+        display: block;
+        position: relative;
+    }
+    .hiw-animated_steps-item-content {
+        max-width: 421px;
+        margin: 20px auto 0 auto;
+    }
+    .hiw-animated_steps-text {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+    h2.hiw-animated_steps-title {
+        text-align: center;
+    }
+    .hiw-animated_steps-line {
+      display: none;
+    }
+    .hiw-animated_steps-path {
+        width: 100%;
+        gap: 25px;
+        justify-content: center;
+          margin-top: 10px;
+    }
+    .hiw-animated_steps-items {
+        width: 100%;
+        margin-top: 0;
+        gap: 50px;
+        justify-content: center;
+    }
+    .hiw-animated_steps-item {
+        width: 100%;
+        text-align: center;
+    }
+     .hiw-animated_steps-item-content {
+        gap: 10px;
+        padding: 5px 10px 5px 5px;
+        text-align: left;
+    }
+    .hiw-animated_steps-item-content-images {
+        gap: 5px;
+        max-width: 318px;
+        padding: 5px;
+        margin: 15px auto 0 auto;
+    }
+    a.hiw-animated_steps-mobile-btn, .hiw-animated_steps-line-item {
+      display: block;
+    }
+    .hiw-animated_steps-line-item {
+      margin: 0 auto 15px auto;
+    }
+    a.hiw-animated_steps-desktop-btn {
+      display: none;
+    }
+  }
+  @media(max-width: 750px) {
+    .hiw-animated_steps-item-content {
+    margin: 15px auto 0 auto;
+    }
+    .hiw-animated_steps-item-content img {
+        height: 90px;
+        width: 90px;
+    }
+    .hiw-animated_steps-item-content {
+        max-width: 333px;
+    }
+    .hiw-animated_steps-item-content-images {
+        max-width: 294px;
+    }
+    .hiw-animated_steps-item-content-text-wrapp {
+        width: calc(100% - 100px);
+    }
+    span.hiw-animated_steps-line-item-circle-3 {
+        height: 14px;
+        width: 14px;
+        margin-top: -7px;
+        margin-left: -7px;
+    }
+    span.hiw-animated_steps-line-item-circle-2 {
+        height: 32px;
+        width: 32px;
+        z-index: 2;
+        margin-top: -16px;
+        margin-left: -16px;
+    }
+    span.hiw-animated_steps-line-item-circle-1 {
+        height: 48px;
+        width: 48px;
+        margin-top: -24px;
+        margin-left: -24px;
+    }
+    .hiw-animated_steps-line-item {
+        height: 48px;
+        width: 48px;
+    }
+    .hiw-animated_steps-item-market-table-item img {
+        height: 15px;
+        width: auto;
+    }
+    .hiw-animated_steps-item-content-single-image img {
+        width: 100%;
+        height: auto;
+    }
+  }
+  @media(max-width: 550px) {
+    span.hiw-animated_steps-line-item-circle-3 {
+    height: 10px;
+    width: 10px;
+    margin-top: -5px;
+    margin-left: -5px;
+    }
+    span.hiw-animated_steps-line-item-circle-2 {
+    height: 24px;
+    width: 24px;
+    z-index: 2;
+    margin-top: -12px;
+    margin-left: -12px;
+}
+    span.hiw-animated_steps-line-item-circle-1 {
+    height: 40px;
+    width: 40px;
+    margin-top: -20px;
+    margin-left: -20px;
+}
+    .hiw-animated_steps-line-item {
+      height: 40px;
+    width: 40px;
+    }
+  }
+  @media(max-width: 400px) {
+    .hiw-animated_steps-item-content img {
+        height: 70px;
+        width: 70px;
+    }
+    .hiw-animated_steps-item-content {
+        max-width: 333px;
+    }
+     .hiw-animated_steps-item-content-images {
+        max-width: 233px;
+    }
+    .hiw-animated_steps-item-market-table-item img {
+        height: 15px;
+        width: auto;
+    }
+    .hiw-animated_steps-item-content-single-image img {
+        width: 100%;
+        height: auto;
+    }
+  }
+</style>
+
+<div class="rebranding_container">
+  <div class="hiw-animated_steps-wrapp">
+    <div class="hiw-animated_steps-text">
+      <p class="hiw-animated_steps-pretitle resalex-pretitle caption">
+        How it works?
+      </p>
+      <h2 class="hiw-animated_steps-title hiw-animated_section-title h2-heading-ss">
+        <span class="h2-heading-pp">Start your authentication</span>
+      </h2>
+      <a href="https://legitgrails.com/products/hermes-legit-check" class="hiw-animated_steps-btn hiw-animated_steps-desktop-btn resalex-btn resalex-btn-primaryx rebranding_btn rebranding_btn-main">
+        Authenticate now
+      </a>
+    </div>
+    <div class="hiw-animated_steps-path">
+      <div class="hiw-animated_steps-line">
+        <span class="hiw-animated_steps-line-main"></span>
+        <div class="hiw-animated_steps-line-item hiw-animated_steps-line-item-1">
+          <span class="hiw-animated_steps-line-item-circle hiw-animated_steps-line-item-circle-1"></span>
+          <span class="hiw-animated_steps-line-item-circle hiw-animated_steps-line-item-circle-2"></span>
+          <span class="hiw-animated_steps-line-item-circle hiw-animated_steps-line-item-circle-3"></span>
+        </div>
+        <div class="hiw-animated_steps-line-item hiw-animated_steps-line-item-2">
+          <span class="hiw-animated_steps-line-item-circle hiw-animated_steps-line-item-circle-1"></span>
+          <span class="hiw-animated_steps-line-item-circle hiw-animated_steps-line-item-circle-2"></span>
+          <span class="hiw-animated_steps-line-item-circle hiw-animated_steps-line-item-circle-3"></span>
+        </div>
+        <div class="hiw-animated_steps-line-item hiw-animated_steps-line-item-3">
+          <span class="hiw-animated_steps-line-item-circle hiw-animated_steps-line-item-circle-1"></span>
+          <span class="hiw-animated_steps-line-item-circle hiw-animated_steps-line-item-circle-2"></span>
+          <span class="hiw-animated_steps-line-item-circle hiw-animated_steps-line-item-circle-3"></span>
+        </div>
+      </div>
+      <div class="hiw-animated_steps-items">
+        <div class="hiw-animated_steps-item hiw-animated_steps-item-1">
+          <div class="hiw-animated_steps-line-item hiw-animated_steps-line-item-mobile">
+            <span class="hiw-animated_steps-line-item-circle hiw-animated_steps-line-item-circle-1"></span>
+            <span class="hiw-animated_steps-line-item-circle hiw-animated_steps-line-item-circle-2"></span>
+            <span class="hiw-animated_steps-line-item-circle hiw-animated_steps-line-item-circle-3"></span>
+          </div>
+          <p class="hiw-animated_steps-item-title h3-heading-pp">
+            Upload photos
+          </p>
+          <p class="hiw-animated_steps-item-desc body-text">
+            Begin by uploading images of your item. Knowing where you purchased the item is crucial to ensure its authenticity, especially if it was bought from the secondary market.
+          </p>
+          <div class="hiw-animated_steps-item-content hiw-animated_steps-item-content-images">
+            <img src="{{ 'hermes-seo_step-1-1.webp' | asset_url }}">
+            <img src="{{ 'hermes-seo_step-1-2.webp' | asset_url }}">
+            <img src="{{ 'hermes-seo_step-1-3.webp' | asset_url }}">
+            <img src="{{ 'hermes-seo_step-1-4.webp' | asset_url }}">
+            <img src="{{ 'hermes-seo_step-1-5.webp' | asset_url }}">
+            <img src="{{ 'hermes-seo_step-1-6.webp' | asset_url }}">
+          </div>
+        </div>
+        <div class="hiw-animated_steps-item hiw-animated_steps-item-2">
+          <div class="hiw-animated_steps-line-item hiw-animated_steps-line-item-mobile">
+            <span class="hiw-animated_steps-line-item-circle hiw-animated_steps-line-item-circle-1"></span>
+            <span class="hiw-animated_steps-line-item-circle hiw-animated_steps-line-item-circle-2"></span>
+            <span class="hiw-animated_steps-line-item-circle hiw-animated_steps-line-item-circle-3"></span>
+          </div>
+          <p class="hiw-animated_steps-item-title h3-heading-pp">
+            We handle it
+          </p>
+          <p class="hiw-animated_steps-item-desc body-text">
+            Our expert team, alongside advanced AI, reviews your item thoroughly.
+          </p>
+          <div class="hiw-animated_steps-item-content hiw-animated_steps-item-content-single-image block-flex-wrap block-flex-center-center">
+            <img src="{{ 'hermes-seo_handle.webp' | asset_url }}">
+          </div>
+        </div>
+        <div class="hiw-animated_steps-item hiw-animated_steps-item-3">
+          <div class="hiw-animated_steps-line-item hiw-animated_steps-line-item-mobile">
+            <span class="hiw-animated_steps-line-item-circle hiw-animated_steps-line-item-circle-1"></span>
+            <span class="hiw-animated_steps-line-item-circle hiw-animated_steps-line-item-circle-2"></span>
+            <span class="hiw-animated_steps-line-item-circle hiw-animated_steps-line-item-circle-3"></span>
+          </div>
+          <p class="hiw-animated_steps-item-title h3-heading-pp">
+            Receive your certificate
+          </p>
+          <p class="hiw-animated_steps-item-desc body-text">
+            You’ll receive the results via email, including a unique certificate of authenticity.
+          </p>
+          <div class="hiw-animated_steps-item-content hiw-animated_steps-item-content-single-image block-flex-wrap block-flex-center-center">
+            <img src="{{ 'hermes-seo_certificate.webp' | asset_url }}">
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="body-text tac hiw-animated_last-text">
+      LegitGrails' expertise and technology ensure a fast and efficient service that provides peace of mind for fashion enthusiasts and collectors.
+    </p>
+    <a href="https://legitgrails.com/products/hermes-legit-check" class="hiw-animated_steps-btn hiw-animated_steps-mobile-btn resalex-btn resalex-btn-primary rebranding_btn rebranding_btn-main">
+      Authenticate now
+    </a>
+  </div>
+</div>
+
+<script>
+  $(window).on('load', function () {
+    
+    var winScrollTop = $(this).scrollTop();
+    let window_height = window.innerHeight
+    let hiw = document.querySelector('.hiw-animated')
+    let hiw_scrolled = false
+
+
+    if (winScrollTop > hiw.offsetTop + 150 && !hiw_scrolled) {
+        hiwStepsLoad();
+        hiw_scrolled = true;
+    };
+
+    window.addEventListener('scroll', () => {
+      if (hiw.offsetTop + 150 < window.pageYOffset + window_height && !hiw_scrolled) {
+            hiwStepsLoad();
+            hiw_scrolled = true;
+        };
+      
+      if ($(window).width() > 1450) {
+        if (hiw.offsetTop - 150 > window.pageYOffset ) {
+              $('.hiw-animated_steps-text').removeClass('animation');
+              $('.hiw-animated_steps-text').removeClass('animated');
+          };
+          if (hiw.offsetTop - 150 < window.pageYOffset && hiw.offsetTop + 950 > window.pageYOffset ) {
+              $('.hiw-animated_steps-text').removeClass('animated');
+              $('.hiw-animated_steps-text').addClass('animation');
+          };
+          if (hiw.offsetTop + 950 < window.pageYOffset) {
+              $('.hiw-animated_steps-text').removeClass('animation');
+              $('.hiw-animated_steps-text').addClass('animated');
+          };
+      } else if (($(window).width() > 1250) && ($(window).width() < 1450)) {
+        if (hiw.offsetTop - 150 > window.pageYOffset ) {
+              $('.hiw-animated_steps-text').removeClass('animation');
+              $('.hiw-animated_steps-text').removeClass('animated');
+          };
+          if (hiw.offsetTop - 150 < window.pageYOffset && hiw.offsetTop + 990 > window.pageYOffset ) {
+              $('.hiw-animated_steps-text').removeClass('animated');
+              $('.hiw-animated_steps-text').addClass('animation');
+          };
+          if (hiw.offsetTop + 990 < window.pageYOffset) {
+              $('.hiw-animated_steps-text').removeClass('animation');
+              $('.hiw-animated_steps-text').addClass('animated');
+          };
+      } else if (($(window).width() < 1250) && ($(window).width() > 950)) {
+          if (hiw.offsetTop - 150 > window.pageYOffset ) {
+                $('.hiw-animated_steps-text').removeClass('animation');
+                $('.hiw-animated_steps-text').removeClass('animated');
+            };
+            if (hiw.offsetTop - 150 < window.pageYOffset && hiw.offsetTop + 958 > window.pageYOffset ) {
+                $('.hiw-animated_steps-text').removeClass('animated');
+                $('.hiw-animated_steps-text').addClass('animation');
+            };
+            if (hiw.offsetTop + 958 < window.pageYOffset) {
+                $('.hiw-animated_steps-text').removeClass('animation');
+                $('.hiw-animated_steps-text').addClass('animated');
+            };
+        } else {
+            $('.hiw-animated_steps-text').removeClass('animation');
+            $('.hiw-animated_steps-text').removeClass('animated');
+        }
+    });
+
+});
+
+  function hiwStepsLoad() {
+    if ($(window).width() > 950) {
+      $('span.hiw-animated_steps-line-main').addClass('animated');
+      $('.hiw-animated_steps-line-item-1').addClass('animated');
+      setTimeout(function () {
+          $('.hiw-animated_steps-item-1').addClass('animated');
+      }, 500);
+      setTimeout(function () {
+          $('.hiw-animated_steps-line-item-2').addClass('animated');
+      }, 1500);
+      setTimeout(function () {
+          $('.hiw-animated_steps-item-2').addClass('animated');
+      }, 2000);
+      setTimeout(function () {
+          $('.hiw-animated_steps-line-item-3').addClass('animated');
+      }, 3000);
+      setTimeout(function () {
+          $('.hiw-animated_steps-item-3').addClass('animated');
+      }, 3500);
+    } else {
+    }
+};
+</script>
+                  
+{% schema %}
+  {
+    "name": "How it works Animated",
+    "class": "hiw-animated rebranding-section-bottom",
+    "settings": []
+  }
+{% endschema %}

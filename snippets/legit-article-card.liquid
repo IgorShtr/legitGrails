@@ -1,0 +1,63 @@
+<div class="card critical-clear" data-animate>
+    <a href="{{ article.url }}" class="card__wrapper card--article" {% if section.settings.link_target %}  target="_blank"{% endif %} >
+        {% if article.image %}
+            {% assign article_image = article.image %}
+        {% else %}
+            {% assign article_image = article.products.first %}
+        {% endif %}
+
+        {% if article_image != blank and section.settings.blog_show_image %}
+            {% if blog.articles.size == 1 or section.settings.post_limit == 1 %}
+                <div class="medium-up--one-half card-list__column--half-left">
+            {% endif %}
+
+            {% include 'card-image', type: article_image %}
+
+            {% if blog.articles.size == 1 or section.settings.post_limit == 1 %}
+                </div>
+            {% endif %}
+        {% endif %}
+
+    {% if section.settings.blog_show_image %}
+    {% if blog.articles.size == 1 or section.settings.post_limit == 1 %}
+        <div class="medium-up--one-half card-list__column--half-right">
+            {% endif %}
+            {% endif %}
+
+            <div class="card__info blog-info">
+                {% if section.settings.blog_show_date %}
+                    <span class="article__date text-small--uppercase font-title">
+          {{ article.published_at | time_tag: format: 'date' }}
+        </span>
+                {% endif %}
+                {% if section.settings.blog_show_author %}
+                    <span class="article__author text-small--uppercase font-title">
+          {{ article.author }}
+        </span>
+                {% endif %}
+                <h3 class="blog-info__title font-title">{{ article.title }}</h3>
+                {% if section.settings.blog_show_excerpt %}
+                    <div class="blog-info__description blog-info__minutes font-description">
+                        {% if article.excerpt.size > 0 %}
+                            {{ article.excerpt }}
+                        {% else %}
+                            {{ article.content | strip_html | truncatewords: 30 }}
+                        {% endif %}
+                    </div>
+                {% endif %}
+                {%- if article.metafields.custom.reading != blank -%}
+                    <p class="blog-info__minutes font-description">{{ article.metafields.custom.reading }} minutes read </p>
+                {%- endif -%}
+                <span class="card__read-more">
+        {{ 'blogs.article.read_more' | t }}
+                    {% include 'icon-arrow-right' %}
+      </span>
+            </div>
+
+            {% if section.settings.blog_show_image %}
+            {% if blog.articles.size == 1 or section.settings.post_limit == 1 %}
+        </div>
+        {% endif %}
+        {% endif %}
+    </a>
+</div>

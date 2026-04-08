@@ -1,0 +1,41 @@
+{% include 'schema-code-homepage-review-page' %}
+{{ page.content }}
+<div class="page-width">
+  <header class="section-header text-center">
+    <h1 class="section-header__title h2 font-title">What Photos are Needed?</h1>
+    <p class="font-description"><center>please follow these instructions to avoid delays we might not be able to verify your item without all the details shown below</center> </p>
+  </header>
+  <div class="grid">
+    <div class="grid__item">
+       <img src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/upload.png?v=1636515057" alt="" /> 
+      {% assign products = all_products['nike-legit-check'] %}
+      <ul>
+        {% for product in products %}
+        <li class="font-description">{{ product.title }}<li>
+        {% endfor %}
+      </ul> 
+    </div>
+    
+<!--     <div class="grid__item medium-up--one-fifth">
+       ddsf 
+    </div>
+    <div class="grid__item medium-up--one-fifth">
+       ddsf 
+    </div>
+    <div class="grid__item medium-up--one-fifth">
+       ddsf 
+    </div>
+    <div class="grid__item medium-up--one-fifth">
+       ddsf 
+    </div>
+    <div class="grid__item medium-up--one-fifth">
+       ddsf 
+    </div> -->
+  </div>
+</div>
+<style>
+  html{background-color:#fff}
+</style>
+<!-- TrustBox script -->
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<!-- End TrustBox script -->

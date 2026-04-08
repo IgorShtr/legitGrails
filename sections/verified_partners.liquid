@@ -1,0 +1,115 @@
+<style>
+  .verified-partners_card {
+    border-radius: 11px;
+    border: 1px solid #D4D4D4;
+    padding: 30px 20px;
+    height: 524px;
+  }
+  .verified-partners_card-image-wrapp {
+    height: 200px;
+  }
+  .verified-partners_card-image {
+height: auto;
+max-height: 100%;
+width: auto;
+  }
+  .verified-partners_card {
+    width: calc(33.33334% - 13.33334px);
+  }
+  .verified-partners_card-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+  }
+.verified-partners_card-location p {
+max-width: calc(100% - 100px);
+text-align: center;
+}
+  .verified-partners_card-location svg {
+    margin-top: -1px;
+  }
+  a.verified-partners_card-btn-website {
+    min-width: auto;
+    width: 84px;
+    padding: 12px 28px;
+    height: 50px;
+  }
+  a.verified-partners_card-btn-more {
+    width: calc(100% - 94px);
+    min-width: auto;
+  }
+  a.verified-partners_card-btn-website svg {
+    height: 22px;
+  }
+  @media(max-width: 1250px) {
+    .verified-partners_card {
+      width: calc(50% - 10px);
+    }
+  }
+  @media(max-width: 750px) {
+    .verified-partners_card {
+      width: 100%;
+      height: max-content;
+    }
+    .verified-partners_card-image-wrapp {
+      height: 130px;
+    }
+    a.verified-partners_card-btn-website {
+      width: 80px;
+    }
+    a.verified-partners_card-btn-more {
+      width: calc(100% - 90px);
+    }
+  }
+</style>
+
+<div class="rebranding_container">
+  <div class="block-flex-wrap block-gap-40 block-flex-center-center">
+    <div class="block-flex-wrap w-100 block-flex-center-center">
+      <h2 class="h2-heading-ss tac">Explore <span class="h2-heading-pp">Verified Stores</span> Worldwide</h2>
+    </div>
+    <div class="block-flex-wrap w-100 block-flex-center-center block-gap-20">
+      {% for page in pages %}
+        {%- if page.metafields.custom.verified_partner_main_landing == true -%}
+         <div class="verified-partners_card block-flex-wrap block-gap-30 block-flex-center-center tac">
+           <div class="verified-partners_card-image-wrapp block-flex-wrap block-flex-center-center">
+             <img class="verified-partners_card-image" src="{{ page.metafields.custom.verified_partner_logo.value | image_url }}">
+           </div>
+           <div class="w-100 block-flex-wrap block-gap-20 block-flex-center-center">
+               <h3 class="h3-heading-pp w-100 tac">{{ page.title }}</h3>
+               <p class="body-text w-100">LegitGrails client since: {{ page.metafields.custom.verified_partner_verified_since }}</p>
+               <div class="w-100 verified-partners_card-location block-flex-wrap block-flex-start-center block-gap-10">
+                  <svg width="18" height="24" viewBox="0 0 18 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.99998 0C6.61401 0.00317495 4.32668 0.952405 2.63954 2.63954C0.952404 4.32668 0.00317495 6.61402 0 8.99999C0 15.4612 8.38498 23.5537 8.74123 23.895C8.81053 23.9623 8.90335 24 8.99998 24C9.09661 24 9.18944 23.9623 9.25873 23.895C9.61498 23.5537 18 15.4612 18 8.99999C17.9968 6.61402 17.0476 4.32668 15.3604 2.63954C13.6733 0.952405 11.3859 0.00317495 8.99998 0ZM8.99998 13.125C8.18413 13.125 7.38661 12.8831 6.70826 12.4298C6.02991 11.9765 5.5012 11.3323 5.18899 10.5786C4.87678 9.82481 4.79509 8.99541 4.95425 8.19524C5.11341 7.39507 5.50628 6.66007 6.08317 6.08318C6.66006 5.50629 7.39506 5.11342 8.19523 4.95426C8.9954 4.79509 9.8248 4.87678 10.5785 5.18899C11.3323 5.5012 11.9765 6.02991 12.4298 6.70827C12.883 7.38662 13.125 8.18414 13.125 8.99999C13.1243 10.0938 12.6895 11.1426 11.916 11.916C11.1426 12.6895 10.0938 13.1243 8.99998 13.125Z" fill="#3C1F1B"/>
+                  </svg>
+                  <p class="body-text">{{ page.metafields.custom.verified_partner_location }}</p>
+               </div>
+             </div>
+            <div class="verified-partners_card-btns block-flex-wrap block-gap-10 w-100">
+               <a href="{{ page.url }}" class="verified-partners_card-btn-more rebranding_btn w-100">Learn more</a>
+              <a target="_blank" href="{{ page.metafields.custom.verified_partner_website }}" class="verified-partners_card-btn-website rebranding_btn rebranding_btn-main w-100">
+                 <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M16.4527 3.80527C16.7295 3.51874 17.0605 3.29019 17.4265 3.13297C17.7925 2.97574 18.1862 2.89298 18.5845 2.88952C18.9829 2.88606 19.3779 2.96196 19.7466 3.11281C20.1153 3.26365 20.4502 3.48641 20.7319 3.76809C21.0136 4.04976 21.2364 4.38472 21.3872 4.75341C21.538 5.1221 21.6139 5.51714 21.6105 5.91548C21.607 6.31381 21.5243 6.70747 21.367 7.07349C21.2098 7.4395 20.9813 7.77053 20.6947 8.04727L16.1947 12.5473C15.6321 13.1097 14.8692 13.4256 14.0737 13.4256C13.2782 13.4256 12.5153 13.1097 11.9527 12.5473C11.6698 12.274 11.2909 12.1228 10.8976 12.1263C10.5043 12.1297 10.1281 12.2874 9.85 12.5655C9.57189 12.8437 9.41414 13.2199 9.41072 13.6132C9.4073 14.0065 9.55849 14.3854 9.83173 14.6683C10.9569 15.7931 12.4827 16.425 14.0737 16.425C15.6647 16.425 17.1906 15.7931 18.3157 14.6683L22.8157 10.1683C23.9087 9.03666 24.5134 7.52104 24.4998 5.94786C24.4861 4.37468 23.8551 2.86981 22.7426 1.75736C21.6302 0.644911 20.1253 0.0138973 18.5521 0.000226816C16.979 -0.0134437 15.4633 0.591323 14.3317 1.68427L12.0817 3.93427C11.9385 4.07264 11.8242 4.23816 11.7456 4.42116C11.667 4.60417 11.6256 4.801 11.6239 5.00017C11.6221 5.19934 11.6601 5.39686 11.7355 5.5812C11.8109 5.76555 11.9223 5.93302 12.0631 6.07386C12.204 6.2147 12.3715 6.32608 12.5558 6.4015C12.7401 6.47693 12.9377 6.51488 13.1368 6.51315C13.336 6.51142 13.5328 6.47004 13.7158 6.39142C13.8988 6.31281 14.0644 6.19854 14.2027 6.05527L16.4527 3.80527ZM8.95273 11.3053C9.51531 10.7429 10.2782 10.4269 11.0737 10.4269C11.8692 10.4269 12.6321 10.7429 13.1947 11.3053C13.3331 11.4485 13.4986 11.5628 13.6816 11.6414C13.8646 11.72 14.0615 11.7614 14.2606 11.7631C14.4598 11.7649 14.6573 11.7269 14.8417 11.6515C15.026 11.5761 15.1935 11.4647 15.3343 11.3239C15.4752 11.183 15.5865 11.0155 15.662 10.8312C15.7374 10.6469 15.7753 10.4493 15.7736 10.2502C15.7719 10.051 15.7305 9.85417 15.6519 9.67116C15.5733 9.48816 15.459 9.32264 15.3157 9.18427C14.1906 8.05944 12.6647 7.42755 11.0737 7.42755C9.48274 7.42755 7.9569 8.05944 6.83173 9.18427L2.33173 13.6843C1.75867 14.2378 1.30157 14.8998 0.987121 15.6318C0.672667 16.3639 0.507149 17.1512 0.500227 17.9479C0.493304 18.7445 0.645114 19.5346 0.946799 20.272C1.24848 21.0094 1.694 21.6793 2.25736 22.2426C2.82072 22.806 3.49063 23.2515 4.22801 23.5532C4.96538 23.8549 5.75546 24.0067 6.55214 23.9998C7.34881 23.9929 8.13613 23.8273 8.86816 23.5129C9.60018 23.1984 10.2622 22.7413 10.8157 22.1683L13.0657 19.9183C13.209 19.7799 13.3233 19.6144 13.4019 19.4314C13.4805 19.2484 13.5219 19.0515 13.5236 18.8524C13.5253 18.6532 13.4874 18.4557 13.412 18.2713C13.3365 18.087 13.2252 17.9195 13.0843 17.7787C12.9435 17.6378 12.776 17.5265 12.5917 17.451C12.4073 17.3756 12.2098 17.3377 12.0106 17.3394C11.8115 17.3411 11.6146 17.3825 11.4316 17.4611C11.2486 17.5397 11.0831 17.654 10.9447 17.7973L8.69473 20.0473C8.41799 20.3338 8.08695 20.5623 7.72094 20.7196C7.35493 20.8768 6.96127 20.9596 6.56293 20.963C6.1646 20.9665 5.76956 20.8906 5.40087 20.7397C5.03218 20.5889 4.69722 20.3661 4.41554 20.0845C4.13387 19.8028 3.91111 19.4678 3.76026 19.0991C3.60942 18.7304 3.53352 18.3354 3.53698 17.9371C3.54044 17.5387 3.6232 17.1451 3.78043 16.7791C3.93765 16.413 4.1662 16.082 4.45273 15.8053L8.95273 11.3053Z" fill="white"/>
+                  </svg>
+               </a>
+            </div>
+         </div>
+         {%- endif -%}
+      {% endfor %}
+    </div>
+    <div class="block-flex-wrap block-flex-center-center block-gap-10 w-100">
+      <a href="https://legitgrails.com/pages/verified-partners" class="rebranding_btn rebranding_btn-main">View all</a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Verified Partners",
+    "class": "rebranding-section",
+    "settings": []
+  }
+{% endschema %}

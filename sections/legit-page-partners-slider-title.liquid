@@ -1,0 +1,111 @@
+<style>.section-description {font-weight:400}</style>
+<div class="legit-partners-slider-title-p" data-section-id="{{ section.id }}"
+     data-section-type="collection-template">
+    <div class="section-container">
+        <div class="featured-collection__heading grid text-center">
+            <div class="grid__item medium-up--ten-twelfths medium-up--push-one-twelfth">
+                <h2 class="font-title hero__overlay-title section-title" data-animate>{{ section.settings.title }}</h2>
+                <p class="font-description section-description ">{{ section.settings.description }}</p>
+            </div>
+        </div>
+        {% if section.settings.button_label != blank %}
+            <div class="button-container">
+                <a href="{{ section.settings.button_link }}"
+                   class="font-title main-btn{% if section.settings.use_second_button %} btn--secondary{% endif %} hero__btn">
+                    {{ section.settings.button_label }}
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% schema %}
+{
+  "name": {
+    "en": "Partners slider title"
+  },
+  "class": "section-title",
+  "settings": [
+    {
+      "type": "select",
+      "id": "section_height",
+      "label": {
+        "en": "Section height"
+      },
+      "default": "medium",
+      "options": [
+        {
+          "label": {
+            "en": "Extra Small"
+          },
+          "value": "x-small"
+        },
+        {
+          "label": {
+            "en": "Small"
+          },
+          "value": "small"
+        },
+        {
+          "label": {
+            "en": "Medium"
+          },
+          "value": "medium"
+        },
+        {
+          "label": {
+            "en": "Large"
+          },
+          "value": "large"
+        },
+        {
+          "label": {
+            "en": "Extra Large"
+          },
+          "value": "x-large"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": {
+        "en": "Heading"
+      },
+      "default": {
+        "en": "Legit services"
+      }
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": {
+        "en": "Description"
+      }
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": {
+        "en": "Button label"
+      }
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": {
+        "en": "Button link"
+      }
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "en": "Partners slider title"
+      },
+      "category": {
+        "en": "Image"
+      }
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,52 @@
+<section class="back-section nft-block" {% if section.settings.image %} style="background-image: url({{ section.settings.image | img_url : 'master'}} )" {% endif %}>
+    <div class="container">
+        <p class="back-section-title font-title">
+            {{ section.settings.title}}
+        </p>
+        <p class="back-section-desc font-description">
+            <!--{{ section.settings.description }}--> Store information about your item’s authenticity on a blockchain and prove that your item is real to anyone online
+        </p>
+        {% if section.settings.url %}
+            <a href="{{ section.settings.url }}" class="font-title back-section-a nft-btn main-btn">
+                Learn more
+            </a>
+        {% else %}
+            <a href="https://legitgrails.com/products/nft-authenticity-certificate" class="font-title back-section-a nft-btn main-btn">
+                Learn more
+            </a>
+        {% endif %}
+    </div>
+</section>
+{% schema %}
+{
+  "name": "Full Middle",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

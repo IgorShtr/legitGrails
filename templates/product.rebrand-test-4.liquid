@@ -1,0 +1,362 @@
+{% render "rebranding_main-styles" %}
+<style>
+  .product_hero {
+    height: 100vh;
+    padding: 77px 0 84px 0;
+    min-height: 830px;
+  }
+  .product_hero .container {
+    height: 100%;
+  }
+  .product_hero-wrapp {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    height: 100%;
+  }
+  .product_hero-content {
+    width: calc(50% - 25px);
+    height: max-content;
+  }
+  .product_hero-text {
+    width: 100%;
+    text-align: center;
+  }
+  .product_hero-text p, .product_hero-text h1 {
+    width: 100%;
+  }
+  .product_hero-box {
+    margin: 20px auto 0 auto;
+    width: max-content;
+}
+  .tp-widget-wrapper {
+    margin: 0;
+  }
+  .product_hero-trustpilot-widget {
+    margin: 20px auto 0 auto;
+    width: max-content;
+    height: 97px;
+}
+  .product_hero-image {
+    height: 100%;
+    width: calc(50% - 25px);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-radius: 20px;
+    border: 1px solid #E0DFDF;
+  }
+  .product_hero-label {
+    width: 100%;
+    background: #3C1F1B;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    margin-top: 20px;
+  }
+  .product_hero-label p {
+    color: #F2F2EA;
+  }
+  .product_hero-label-items {
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .product-box {
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    border: 1px solid rgba(60, 31, 27, 0.30);
+    width: max-content;
+    padding: 20px;
+    width: 300px;
+  }
+p.pro-option-name {
+    text-align: center;
+    margin-bottom: 10px;
+}
+  .checkmark {
+    border: 1px solid #3C1F1B!important;
+    height: 18px!important;
+    width: 18px!important;
+    margin-top: 2px;
+}
+  .radio-wrap .checkmark::after {
+    background: #3C1F1B!important;
+    border-radius: 50%;
+    height: 10px!important;
+    left: 3px;
+    top: 3px;
+    width: 10px!important;
+}
+  .radio-option {
+    width: 100%;
+    margin: 0;
+}
+  .product-form-container {
+    width: 100%;
+}
+  .product-box_title {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .radio-wrap {
+    font-family: "Suisse Intl"!important;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.4px;
+  }
+  label.radio.radio-wrap {
+    color: #3C1F1B;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    transition: .3s;
+}
+  label.radio.radio-wrap:hover {
+    opacity: .85;
+  }
+  label.radio.radio-wrap:active {
+    opacity: .7;
+  }
+  .btn-submit-container {
+    display: none;
+  }
+  .product-box_price {
+    text-align: center;
+  }
+  .product-box_button {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+  button#authenticate-btn {
+    background: #F24F14;
+    color: #fff;
+    height: max-content;
+    border-radius: 8px;
+    font-size: 20px;
+    text-transform: none;
+    font-weight: 400;
+    line-height: 1;
+    margin: 20px auto 0 auto;
+    transition: .5s;
+    min-width: auto;
+    width: max-content;
+}
+  label.radio.radio-wrap.body-text {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+  .product_hero-label-items svg {
+      width: auto;
+    }
+  .product_hero-image-pointers {
+    background-size: contain;
+    background-color: #f2f2f2;
+  }
+  .product_hero-disclaimer {
+    color: rgba(60, 31, 27, 0.30);
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto 0 auto;
+    text-align: center;
+  }
+  {% if product.tags contains 'product-hero-pointers' %}
+    @media(max-width: 1250px) {
+    .product_hero {
+      min-height: auto;
+      height: max-content;
+      padding: 77px 0 0 0;
+    }
+    .product_hero-content {
+      width: 100%;
+      text-align: center;
+    }
+    div#shopify-section-product-box {
+        display: flex;
+        justify-content: center;
+    }
+    .product_hero-trustpilot-widget {
+        margin: 20px auto 0 auto;
+    }
+    .product_hero-image {
+        height: 400px;
+        width: 100%;
+        border-radius: 0;
+        border: none;
+    }
+    .product_hero .container {
+      padding: 0;
+      max-width: 100%;
+    }
+    .product_hero-content {
+      padding: 0 15px;
+    }
+    .product_hero-label {
+      margin: 0;
+    }
+    .product_hero-wrapp {
+      gap: 30px;
+    }
+  }
+  {% else %}
+    @media(max-width: 950px) {
+    .product_hero {
+      min-height: auto;
+      height: max-content;
+      padding: 77px 0 0 0;
+    }
+    .product_hero-content {
+      width: 100%;
+      text-align: center;
+    }
+    div#shopify-section-product-box {
+        display: flex;
+        justify-content: center;
+    }
+    .product_hero-trustpilot-widget {
+        margin: 20px auto 0 auto;
+    }
+    .product_hero-image {
+        height: 400px;
+        width: 100%;
+        border-radius: 0;
+        border: none;
+    }
+    .product_hero .container {
+      padding: 0;
+    }
+    .product_hero-content {
+      padding: 0 15px;
+    }
+    .product_hero-label {
+      margin: 0;
+    }
+    .product_hero-wrapp {
+      gap: 30px;
+    }
+  }
+  {% endif %}
+  @media(max-width: 750px) {
+    label.radio.radio-wrap.body-text {
+    font-size: 16px;
+}
+    .radio-wrap {
+      font-size: 16px;
+      letter-spacing: -0.32px;
+    }
+    .product-box {
+      padding: 15px;
+      width: 290px;
+    }
+    .product_hero-text {
+      gap: 10px;
+    }
+    .product_hero-box {
+        margin-top: 15px;
+    }
+    .product_hero-trustpilot-widget {
+        margin: 15px auto 0 auto;
+    }
+    .product_hero-label-items svg:nth-child(1), .product_hero-label-items svg:nth-child(2) {
+      height: 10px;
+    }
+    .product_hero-label-items svg:nth-child(3) {
+      height: 11px;
+    }
+    .product_hero-label-items svg:nth-child(4) {
+      height: 15px;
+    }
+    .product_hero-label-items {
+      width: 100%;
+    }
+    .product_hero-label {
+      gap: 5px;
+      padding: 15px 0;
+    }
+    .product_hero-image {
+        height: 350px;
+    }
+    p.product_steps-item-caption {
+      margin-top: 10px;
+    }
+  }
+  #upladcare-cart {
+    font-family: "Suisse Intl" !important;
+  }
+</style>
+
+<section id="product_hero" class="product_hero">
+  <div class="container rebranding_container">
+    <div class="product_hero-wrapp block-flex-wrap">
+      <div id="product_hero-content" class="product_hero-content">
+        <div class="product_hero-text block-flex-wrap block-gap-15">
+          <h1 class="h1-heading-ss">
+            <span class="h1-heading-pp">{{ product.title | remove: "Authentication Service" }}</span> Authentication Service
+          </h1>
+          <p class="body-text">Authenticate your {{ product.title | remove: "Authentication Service" }} items with our Hybrid Authentication, blending expert human insight and AI precision for unmatched accuracy of over 99.3%</p>
+        </div>
+        <div class="product_hero-trustpilot-widget">
+          <!-- TrustBox widget - Mini -->
+          <div class="trustpilot-widget" data-locale="en-GB" data-template-id="53aa8807dec7e10d38f59f32" data-businessunit-id="5fbebb2d281b010001718c1c" data-style-height="97" data-style-width="200">
+          <a href="https://uk.trustpilot.com/review/legitgrails.com" target="_blank" rel="noopener">Trustpilot</a>
+          </div>
+          <!-- End TrustBox widget -->
+        </div>
+        <p class="tiny-text product_hero-disclaimer">LegitGrails operates independently and is not associated with any brands it authenticates</p>
+      </div>
+      {% if product.metafields.custom.hero_image != blank %}
+        <div class="product_hero-image{% if product.tags contains 'product-hero-pointers' %} product_hero-image-pointers{% endif %}" style="background-image: url({{ product.metafields.custom.hero_image | image_url }})"></div>
+      {% else %}
+        <div class="product_hero-image" style="background-image: url({{ "product_hero-images.jpg" | asset_url }})"></div>
+      {% endif %}
+    </div>
+  </div>
+  <div class="product_hero-label block-flex-wrap">
+    <p class="body-text">Featured by</p>
+    <div class="product_hero-label-items block-flex-wrap">
+      {% render "icon-rapaport" %}
+      {% render "icon-insider" %}
+      {% render "icon-forbes" %}
+      {% render "icon-nice" %}
+    </div>
+  </div>
+</section>
+<section id="product_boxes" class="product_boxes">
+  <div class="container rebranding_container">
+    <div class="product_boxes-wrapp block-flex-wrap">
+      <div id="product_boxes-content" class="product_boxes-content">
+        <div class="product_hero-box">
+          {% section 'product-box' %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="product_hero-label block-flex-wrap">
+    <p class="body-text">Featured by</p>
+    <div class="product_hero-label-items block-flex-wrap">
+      {% render "icon-rapaport" %}
+      {% render "icon-insider" %}
+      {% render "icon-forbes" %}
+      {% render "icon-nice" %}
+    </div>
+  </div>
+</section>
+{% section "product_steps" %}
+{% section "product_offers" %}
+{% section "product_reviews" %}
+{% section "product_offers-left" %}
+{% section "product_faq" %}
+
+
+<!-- TrustBox script -->
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<!-- End TrustBox script -->

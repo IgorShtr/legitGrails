@@ -1,0 +1,729 @@
+<style>
+  label.input-search-label, label.input-code-label {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #3C1F1B;
+    display: block;
+    padding: 6px 68px 6px 20px;
+    position: relative;
+    margin: 0;
+  }
+  .input-search-label.zero-active, .input-code-label.zero-active {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .search-brand_zero {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    left: -1px;
+    padding: 18px 11px 12px 11px;
+    width: calc(100% + 2px);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid #3c1f1b;
+    top: 100%;
+    background: #fff;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    border-top: none;
+    margin-top: -6px;
+}
+  .search-brand_zero p {
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin-bottom: 15px;
+    color: #3C1F1B;
+}
+  .search-brand_zero.active {
+    display: flex;
+  }
+  .search-brand-input-svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 62px;
+    height: 52px;
+    border-radius: 8px;
+    background: #3C1F1B;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+  }
+  input#search-brand-input, input#search-code-input {
+      margin: 0;
+      height: 52px;
+      padding: 0 20px 0 0;
+      outline: none;
+    font-family: "Suisse Intl"!important;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.4px;
+    color: #3C1F1B;
+  }
+  input#search-brand-input::placeholder, input#search-code-input::placeholder {
+    font-family: "Suisse Intl"!important;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.4px;
+    opacity: .5;
+    color: #3C1F1B;
+  }
+  .input-search-label.zero-active, .input-code-label.zero-active {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .brand-type {
+    border-radius: 44px;
+    border: 1px solid #3C1F1B;
+    padding: 10px 30px;
+    line-height: 1;
+    transition: .3s;
+    color: #3C1F1B;
+}
+  .brand-type.active {
+    border: 1px solid #F24F14;
+    background: #F24F14;
+    color: #fff;
+  }
+  .brand-type.active:hover {
+    pointer-event: none;
+    opacity: 1;
+  }
+  .filter-buttons {
+    max-width: 100%;
+  }
+  .text-filter-buttons {
+    gap: 0;
+    justify-content: space-between;
+  }
+  .text-filter-button {
+    text-decoration: none;
+  }
+  .text-filter-button.active {
+    text-decoration: underline;
+  }
+.search-brand-type {
+width: 270px;
+height: 66px;
+margin: 0;
+}
+  @media(max-width: 1250px) {
+    .text-filter-buttons {
+    gap: 30px 50px;
+    justify-content: center;
+    }
+  }
+  @media(max-width: 750px) {
+    .search-brand-input, .search-brand-input::placeholder, .search-code-input, .search-code-input::placeholder {
+      font-size: 16px;
+      letter-spacing: -0.32px;
+    }
+    label.input-search-label {
+        padding: 4px 46px 4px 16px;
+        border-radius: 8px;
+    }
+    .search-brand-input-svg {
+      width: 42px;
+      height: 36px;
+      top: 4px;
+      right: 4px;
+    }
+    .search-brand-input-svg svg {
+        height: 16px;
+        width: auto;
+    }
+    input#search-brand-input, input#search-code-input {
+      height: 36px;
+      line-height: 36px;
+    }
+    input#search-brand-input, input#search-brand-input::placeholder, input#search-code-input, input#search-code-input::placeholder {
+        font-size: 16px;
+        letter-spacing: -0.16px;
+    }
+    .search-brand_zero {
+      margin-top: -4px;
+    }
+    .search-bc_search {
+      padding: 40px 0 80px 0;
+    }
+    .rebranding_container {
+      gap: 30px;
+    }
+    .text-filter-buttons {
+      gap: 30px 40px;
+    }
+    .search-bc_title {
+      order: 1;
+    }
+    .input-search-label {
+      order: 4;
+    }
+    .filter-buttons {
+      order: 2;
+    }
+    .text-filter-buttons {
+      order: 3;
+    }
+    .search-bc_search-items {
+      order: 5;
+    }
+    .search-input-type {
+    order: 3;
+  }
+  .search-bc_wrapp .product_hero-disclaimer {
+  order: 2;
+}
+  .search-input-type label {
+    order: 1;
+  }
+  }
+  @media(max-width: 500px) {
+    p.search-brand_zero-text {
+      font-size: 13px;
+    }
+  }
+.sr-only {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  margin: -1px; padding: 0; border: 0;
+  clip: rect(0 0 0 0); overflow: hidden;
+}
+a.search-bc_search-item-brand {
+    height: 260px;
+    padding: 30px 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(60, 31, 27, 0.30);
+    width: calc(20% - 16px);
+    text-decoration: none;
+    transition: .3s;
+}
+a.search-bc_search-item-brand:hover {
+  text-decoration: underline;
+}
+a.search-bc_search-item-brand img {
+  height: 130px;
+  width: auto;
+}
+@media(max-width: 1450px) {
+  a.search-bc_search-item-brand {
+    width: calc(25% - 15px);
+  }
+}
+@media(max-width: 1250px) {
+  a.search-bc_search-item-brand {
+    width: calc(33.33334% - 13.33334px);
+  }
+}
+@media(max-width: 750px) {
+  a.search-bc_search-item-brand img {
+    height: 100px;
+}
+.search-bc_search-item-brands {
+gap: 15px;
+}
+a.search-bc_search-item-brand {
+    height: 215px;
+    width: calc(33.33334% - 10px);
+  }
+}
+@media(max-width: 600px) {
+  a.search-bc_search-item-brand {
+    width: calc(50% - 7.5px);
+    padding: 15px;
+  }
+}
+a[data-global-show-more] {
+  background: #FFEEE5;
+  border: 1px solid #FFEEE5;
+  color: #F24F14;
+}
+.search-bc_wrapp .product_hero-disclaimer {
+  max-width: 100%!important;
+}
+</style>
+
+<div class="search-bc_wrapp rebranding_container block-flex-wrap block-gap-50 block-flex-center-center">
+  <h2 class="search-bc_title h2-heading-ss w-100 tac">
+    What we <span class="h2-heading-pp">authenticate for Saint Laurent</span>
+  </h2>
+  <div class="search-input-type block-flex-wrap block-gap-10 block-flex-center-center w-100">
+  <label for="search-brand-input" class="search-brand-input-label input-search-label font-description">
+        <input id="search-brand-input" class="search-brand-input body-text" type="text" placeholder="Search"/>
+        <div class="search-brand-input-svg">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24.0574 25.7071C24.448 26.0976 25.0811 26.0976 25.4716 25.7071C25.8622 25.3166 25.8622 24.6834 25.4716 24.2929L24.0574 25.7071ZM18.1659 4.73317C21.8102 8.3774 21.8102 14.2859 18.1659 17.9301L19.5801 19.3443C24.0054 14.919 24.0054 7.74423 19.5801 3.31896L18.1659 4.73317ZM18.1659 17.9301C14.5217 21.5743 8.61324 21.5743 4.96901 17.9301L3.5548 19.3443C7.98007 23.7696 15.1549 23.7696 19.5801 19.3443L18.1659 17.9301ZM4.96901 17.9301C1.32478 14.2859 1.32478 8.3774 4.96901 4.73317L3.5548 3.31896C-0.870479 7.74423 -0.870479 14.919 3.5548 19.3443L4.96901 17.9301ZM4.96901 4.73317C8.61324 1.08894 14.5217 1.08894 18.1659 4.73317L19.5801 3.31896C15.1549 -1.10632 7.98007 -1.10632 3.5548 3.31896L4.96901 4.73317ZM17.9302 19.5799L24.0574 25.7071L25.4716 24.2929L19.3444 18.1656L17.9302 19.5799Z" fill="white"/>
+          </svg>
+        </div>
+        <div class="search-brand_zero">
+          <p class="body-text">Didn’t find your item? Don’t worry, we can help anyway!</p>
+          <a href="#product_boxes" class="rebranding_btn-main rebranding_btn">Authenticate Other Items</a>
+        </div>
+  </label>
+  </div>
+  <p class="tiny-text product_hero-disclaimer">LegitGrails operates independently and is not associated with any brands it authenticates</p>
+  <div class="search-bc_search-items block-flex-wrap block-gap-40 w-100">
+    <div class="search-bc_search-item block-flex-wrap block-gap-30 w-100">
+      <h2 class="h2-heading-pp w-100">Handbags</h2>
+      <div class="search-bc_search-item-brands block-flex-wrap block-gap-20 w-100">
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_sac-de-jour-bag.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Sac de Jour Bag                
+            </span>
+        </a>
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_classic-monogram-wallet-on-chain.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Classic Monogram Wallet on Chain
+            </span>
+        </a>
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_monogram-cabas.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Monogram Cabas
+            </span>
+        </a>
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_classic-monogram-crossbody-bag.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Classic Monogram Crossbody Bag
+            </span>
+        </a><a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_classic-monogram-tassel-crossbody-bag.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Classic Monogram Tassel Crossbody Bag
+            </span>
+        </a>
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_sac-de-jour-nm-bag.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Sac de Jour NM Bag
+            </span>
+        </a>
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_classic-monogram-envelope-satchel.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Classic Monogram Envelope Satchel
+            </span>
+        </a>
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_belle-de-jour-clutch.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Belle de Jour Clutch
+            </span>
+        </a>
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_classic-monogram-college-bag.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Classic Monogram College Bag
+            </span>
+        </a>
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_shopper-tote.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Shopper Tote
+            </span>
+        </a>
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_loulou-shoulder-bag.webp" | asset_url }}">
+            <span class="body-text w-100">
+                LouLou Shoulder Bag
+            </span>
+        </a>
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_classic-y-cabas.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Classic Y Cabas
+            </span>
+        </a>
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_classic-duffle-bag.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Classic Duffle Bag
+            </span>
+        </a>
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_lou-camera-bag.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Lou Camera Bag
+            </span>
+        </a>
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_classic-monogram-clutch.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Classic Monogram Clutch
+            </span>
+        </a>
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_monogram-cabas-downtown.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Monogram Cabas Downtown
+            </span>
+        </a>
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_city-backpack.webp" | asset_url }}">
+            <span class="body-text w-100">
+                City Backpack
+            </span>
+        </a>
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_chyc-cabas-tote.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Chyc Cabas Tote
+            </span>
+        </a>
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_classic-baby-duffle-bag.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Classic Baby Duffle Bag
+            </span>
+        </a>
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_muse-shoulder-bag.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Muse Shoulder Bag
+            </span>
+        </a>
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_bags-other.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Other
+            </span>
+        </a>
+      </div>
+    </div>
+    <div class="search-bc_search-item block-flex-wrap block-gap-30 w-100">
+      <h2 class="h2-heading-pp w-100">Clothing</h2>
+      <div class="search-bc_search-item-brands block-flex-wrap block-gap-20 w-100">
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_clothing.webp" | asset_url }}">
+            <span class="body-text w-100">
+                All
+            </span>
+        </a>
+      </div>
+    </div>
+    <div class="search-bc_search-item block-flex-wrap block-gap-30 w-100">
+      <h2 class="h2-heading-pp w-100">Shoes</h2>
+      <div class="search-bc_search-item-brands block-flex-wrap block-gap-20 w-100">
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_shoes.webp" | asset_url }}">
+            <span class="body-text w-100">
+                All
+            </span>
+        </a>
+      </div>
+    </div>
+    <div class="search-bc_search-item block-flex-wrap block-gap-30 w-100">
+      <h2 class="h2-heading-pp w-100">Accessories</h2>
+      <div class="search-bc_search-item-brands block-flex-wrap block-gap-20 w-100">
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_earrings.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Earrings
+            </span>
+        </a>
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_ring.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Ring                
+            </span>
+        </a>
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_bracelet.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Bracelet
+            </span>
+        </a>
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_necklace.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Necklace
+            </span>
+        </a>
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_brooch.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Brooch
+            </span>
+        </a>
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_scarf.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Scarf
+            </span>
+        </a>
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_hat.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Hat
+            </span>
+        </a>
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_belt.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Belt
+            </span>
+        </a>
+      </div>
+    </div>
+    <div class="search-bc_search-item block-flex-wrap block-gap-30 w-100">
+      <h2 class="h2-heading-pp w-100">Watches</h2>
+      <div class="search-bc_search-item-brands block-flex-wrap block-gap-20 w-100">
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_watches.webp" | asset_url }}">
+            <span class="body-text w-100">
+                All
+            </span>
+        </a>
+      </div>
+    </div>
+    <div class="search-bc_search-item block-flex-wrap block-gap-30 w-100">
+      <h2 class="h2-heading-pp w-100">Cosmetic Products</h2>
+      <div class="search-bc_search-item-brands block-flex-wrap block-gap-20 w-100">
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_perfume.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Perfume
+            </span>
+        </a>
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_lipstick.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Lipstick
+            </span>
+        </a>
+        <a href="#product_boxes" class="standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac">
+          <img src="{{ "ysl-wwa_skincare.webp" | asset_url }}">
+            <span class="body-text w-100">
+                Skincare
+            </span>
+        </a>
+      </div>
+    </div>
+    <div class="search-bc_search-item-empty block-flex-wrap block-gap-20 block-flex-center-center w-100">
+      <p class="body-text w-100 tac">
+        Didn’t find your item? Don’t worry, we can help anyway!
+      </p>
+      <a href="#product_boxes" class="rebranding_btn rebranding_btn-main">Authenticate Other Items</a>
+    </div>
+  </div>
+</div>
+<script>
+(() => {
+  'use strict';
+
+  // ===== Utilities (shared) =====
+  const norm = (s) => (s || '').toLowerCase().trim().replace(/\s+/g, ' ');
+  const debounce = (fn, ms=150) => { let t; return (...a)=>{ clearTimeout(t); t=setTimeout(()=>fn(...a), ms); }; };
+
+  // Two rows by breakpoints for BRANDS
+  function twoRowLimit() {
+    const w = window.innerWidth || document.documentElement.clientWidth;
+    if (w > 1450) return 10;     // 5/row → 10
+    if (w > 1250) return 8;      // 4/row → 8
+    if (w > 600)  return 6;      // 3/row → 6
+    return 4;                    // 2/row → 4
+  }
+
+  // ===== BRANDS: Global "Show more" with last-tile placement =====
+  function setupBrandBlock(wrapper) {
+    if (!wrapper || wrapper.dataset.brandInit === '1') return;
+    const input = wrapper.querySelector('#search-brand-input');
+    if (!input) return; // this wrapper is not the brands block
+    wrapper.dataset.brandInit = '1';
+
+    const categories = Array.from(wrapper.querySelectorAll('.search-bc_search-item'));
+    const emptyBlock = wrapper.querySelector('.search-bc_search-item-empty');
+    if (!categories.length) return;
+
+    // Primary category = “Handbags” if present, else first
+    const primary =
+      categories.find(c => norm(c.querySelector('h2')?.textContent).includes('handbags')) ||
+      categories[0];
+
+    let expanded = false;
+
+    const getCards = (cat) =>
+      Array.from(cat.querySelectorAll('.search-bc_search-item-brand'))
+        .filter(el => !el.hasAttribute('data-global-show-more'));
+
+    function getOrCreateShowMore() {
+      let btn = primary.querySelector('[data-global-show-more]');
+      if (btn) return btn;
+      btn = document.createElement('a');
+      btn.href = '';
+      btn.setAttribute('data-global-show-more', '1');
+      btn.className = 'standart-hover search-bc_search-item-brand block-flex-wrap block-flex-center-center block-gap-20 tac';
+      btn.innerHTML = '<span class="body-text w-100">Show more</span>';
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        expanded = true;
+        render(input.value || '');
+      });
+      return btn;
+    }
+
+    function renderCollapsed() {
+      // Hide non-primary categories
+      categories.forEach(cat => { cat.style.display = (cat === primary) ? '' : 'none'; });
+
+      const brandWrap = primary.querySelector('.search-bc_search-item-brands');
+      if (!brandWrap) return;
+
+      const cards = getCards(primary);
+      const limit = twoRowLimit();
+
+      // Reset all to visible, remove any old Show more
+      cards.forEach(c => { c.style.display = ''; });
+      brandWrap.querySelector('[data-global-show-more]')?.remove();
+
+      if (cards.length > limit) {
+        // Show (limit-1) real cards, and put Show more as the Nth tile
+        cards.forEach((c, i) => { c.style.display = i < (limit - 1) ? '' : 'none'; });
+
+        const showMore = getOrCreateShowMore();
+        const anchor = cards[limit - 1] || null; // hidden real Nth card
+        if (anchor) brandWrap.insertBefore(showMore, anchor);
+        else brandWrap.appendChild(showMore);
+        showMore.style.display = '';
+      } else {
+        // Not enough items to need Show more
+        brandWrap.querySelector('[data-global-show-more]')?.remove();
+      }
+
+      if (emptyBlock) emptyBlock.style.display = cards.length ? 'none' : '';
+    }
+
+    function renderExpandedWithQuery(qRaw) {
+      const q = norm(qRaw);
+      let anyVisible = false;
+
+      // Remove Show more in expanded/search modes
+      primary.querySelector('[data-global-show-more]')?.remove();
+
+      categories.forEach(cat => {
+        const titleText = norm(cat.querySelector('h2')?.textContent);
+        const cards = getCards(cat);
+
+        if (!q) {
+          // Expanded without search → show everything
+          cards.forEach(c => { c.style.display = ''; });
+          cat.style.display = cards.length ? '' : 'none';
+          if (cards.length) anyVisible = true;
+          return;
+        }
+
+        // With search: show matching cards; if none but title matches, show all in that category
+        let matchedAny = false;
+        cards.forEach(card => {
+          const labelText = norm(card.querySelector('span')?.textContent);
+          const matched = labelText.includes(q);
+          card.style.display = matched ? '' : 'none';
+          if (matched) matchedAny = true;
+        });
+
+        if (!matchedAny && titleText.includes(q)) {
+          cards.forEach(c => { c.style.display = ''; });
+          matchedAny = cards.length > 0;
+        }
+
+        cat.style.display = matchedAny ? '' : 'none';
+        if (matchedAny) anyVisible = true;
+      });
+
+      if (emptyBlock) emptyBlock.style.display = anyVisible ? 'none' : '';
+    }
+
+    function render(qRaw) {
+      const hasQuery = !!norm(qRaw);
+      if (!expanded && !hasQuery) {
+        renderCollapsed();
+      } else {
+        renderExpandedWithQuery(qRaw);
+      }
+    }
+
+    // Hook up events
+    input.addEventListener('input', (e) => render(e.target.value));
+    const onResize = debounce(() => {
+      if (!expanded && !norm(input.value)) renderCollapsed();
+      else renderExpandedWithQuery(input.value || '');
+    }, 150);
+    window.addEventListener('resize', onResize);
+
+    // First paint
+    render('');
+  }
+
+  // ===== CODES: Per-category filtering + empty toggle =====
+  function setupCodesBlock(wrapper) {
+    if (!wrapper || wrapper.dataset.codesInit === '1') return;
+    const input = wrapper.querySelector('#search-code-input');
+    if (!input) return; // this wrapper is not the codes block
+    wrapper.dataset.codesInit = '1';
+
+    const codeCategories = Array.from(
+      wrapper.querySelectorAll('.search-bc_search-item')
+    ).filter(cat => cat.querySelector('.search-bc_search-item-codes'));
+
+    const getCodeText = (item) => {
+      const t1 = item.querySelector('.search-bc_search-item-code-text p')?.textContent;
+      const t2 = item.querySelector('.search-bc_search-item-code-code p')?.textContent; // alternative class
+      return norm(t1 || t2 || '');
+    };
+
+    function applyFilter(qRaw) {
+      const q = norm(qRaw);
+      codeCategories.forEach((cat) => {
+        const items = Array.from(cat.querySelectorAll('.search-bc_search-item-code'));
+        const emptyBlock = cat.querySelector('.search-bc_search-item-empty');
+
+        let visibleCount = 0;
+
+        items.forEach((item) => {
+          if (!q) {
+            item.style.display = '';
+            visibleCount++;
+            return;
+          }
+          const yearText = norm(item.querySelector('.search-bc_search-item-code-year p')?.textContent);
+          const codeText = getCodeText(item);
+          const match = yearText.includes(q) || codeText.includes(q);
+          item.style.display = match ? '' : 'none';
+          if (match) visibleCount++;
+        });
+
+        if (emptyBlock) emptyBlock.style.display = (visibleCount === 0) ? '' : 'none';
+      });
+    }
+
+    input.addEventListener('input', (e) => applyFilter(e.target.value));
+    applyFilter(input.value || '');
+  }
+
+  // ===== Initialize BOTH blocks safely (no collisions) =====
+  document.querySelectorAll('.search-bc_wrapp').forEach((wrap) => {
+    if (wrap.querySelector('#search-brand-input')) setupBrandBlock(wrap);
+    if (wrap.querySelector('#search-code-input'))  setupCodesBlock(wrap);
+  });
+
+})();
+</script>
+
+
+{% schema %}
+  {
+    "name": "Brand Coverage Search",
+    "class": "search-bc_search rebranding-section",
+    "settings": []
+  }
+{% endschema %}

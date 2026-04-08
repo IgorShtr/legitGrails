@@ -1,0 +1,47 @@
+<!-- /templates/customers/register.liquid -->
+<script>
+  window.location.href = 'https://account.legitgrails.com/signup';
+</script>
+
+<script>
+  // Function to get URL parameter value by name
+  const getParameterByName = (name, url) => {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+    const results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+  };
+
+  // Function to extract checkout ID from checkout_url parameter
+  const extractCheckoutId = (checkoutUrl) => {
+    const match = checkoutUrl.match(/\/c\/([^/?]+)/);
+    return match ? match[1] : null;
+  };
+  
+  // Get the checkout URL parameter
+  const checkoutUrl = getParameterByName('checkout_url');
+
+  // Extract the checkout ID from the checkout URL
+  const checkoutId = checkoutUrl ? extractCheckoutId(checkoutUrl) : null;
+
+  // Redirect URL
+  let redirectUrl = 'https://account.legitgrails.com/signup';
+  
+  // Add checkout_id and shopify parameters to the redirect URL
+  if (checkoutId) {
+    redirectUrl += `?checkout_id=${checkoutId}&shopify=true`;
+  } else {
+    redirectUrl += '?shopify=true'; // If checkout_id is not available
+  }
+
+  // Redirect the user to the constructed URL
+  window.location.href = redirectUrl;
+</script>
+
+<div
+  id="white-screen"
+  style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: white; z-index: 9999;"
+></div>

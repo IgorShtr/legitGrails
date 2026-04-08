@@ -1,0 +1,212 @@
+<style>
+  .offers-image_wrapp {
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+.offers-image_content {
+    width: calc(52% - 25px);
+    height: max-content;
+}
+  .offers-image_image {
+    width: calc(48% - 25px);
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    border: 1px solid #E0DFDF;
+    height: 620px;
+    background-color: #f2f2f2;
+  }
+  .offers-image_btn {
+    margin: 0;
+  }
+  .offers-image_left-wrapp .offers-image_image {
+    order: 1;
+  }
+  .offers-image_left-wrapp .offers-image_content {
+    order: 2;
+  }
+  p.offers-image_desc {
+    max-width: 440px;
+    margin: 0;
+  }
+  p.left-offers-item-desc {
+    margin-top: 10px;
+}
+  .offers-image_items {
+    gap: 20px;
+  }
+  .offers-image_item {
+    width: 100%;
+  }
+  .offers-image_item svg {
+    width: 30px;
+}
+  @media(max-width: 1450px) {
+    .offers-image_content {
+      width: calc(58% - 25px);
+    }
+    .offers-image_image {
+      width: calc(42% - 25px);
+    }
+  }
+  @media(max-width: 1250px) {
+    .offers-image_left-wrapp .offers-image_image {
+    order: 2;
+}
+    p.offers-image_desc {
+        max-width: 100%;
+    }
+    .offers-image_image {
+      width: 100%;
+    }
+    .offers-image_content {
+        justify-content: center;
+        width: 100%;
+    }
+      .left-offers-item-alignment .left-offers-item-text {
+        width: 100%;
+        text-align: center;
+      }
+        .left-offers-item-alignment {
+        justify-content: center;
+    }
+    .offers-image_items {
+      justify-content: center;
+    }
+  }
+  @media(max-width: 950px) {
+    .offers-image_content {
+      width: 100%;
+      padding: 0 15px;
+    }
+    .offers-image_image {
+      width: 100%;
+      height: 400px;
+      border-radius: 0;
+      border: none;
+    }
+    .offers-image_item {
+        justify-content: center;
+        height: max-content;
+    }
+    .offers-image_title, .offers-image_desc {
+      text-align: center;
+    }
+    .offers-image_desc {
+      margin: 10px auto 0 auto;
+    }
+    .offers-image .container {
+      padding: 0;
+    }
+    .offers-image_left-wrapp .offers-image_image {
+    order: 2;
+  }
+  .offers-image_left-wrapp .offers-image_content {
+    order: 1;
+  }
+    .offers-image {
+      padding-bottom: 0;
+    }
+  }
+  @media(max-width: 750px) {
+    .offers-image_image {
+      height: 440px;
+    }
+    .offers-image_items {
+      gap: 20px;
+    }
+    .offers-image_item {
+        width: 100%;
+    }
+    .offers-image_item:nth-child(1) {
+      order: 1;
+    }
+    .offers-image_item:nth-child(3) {
+      order: 2;
+    }
+    .offers-image_item:nth-child(2) {
+      order: 3;
+    }
+    .offers-image_item:nth-child(4) {
+      order: 4;
+    }
+    .offers-image_text {
+      text-align: justify;
+    }
+  }
+  @media(max-width: 550px) {
+    .offers-image_item:nth-child(1) {
+      order: 1;
+    }
+    .offers-image_item:nth-child(3) {
+      order: 3;
+    }
+    .offers-image_item:nth-child(2) {
+      order: 2;
+    }
+    .offers-image_item:nth-child(4) {
+      order: 4;
+    }
+    .offers-image_item, .offers-image_item:nth-child(1), .offers-image_item:nth-child(3) {
+    width: 100%;
+}
+  }
+</style>
+
+<div class="container rebranding_container">
+  <div class="offers-image_wrapp block-flex-wrap">
+    <div class="offers-image_content block-flex-wrap block-gap-40">
+      <div class="rebranding-section-title rebranding-section-title-left block-gap-15 block-flex-wrap">
+        <h2 class="h2-heading-ss">
+         LegitGrails 
+          <span class="h2-heading-pp">
+           Experts
+          </span>
+        </h2>
+      </div>
+      <div class="offers-image_items block-flex-wrap">
+        <div class="offers-image_item left-offers-item left-offers-item-alignment block-flex-wrap block-gap-15">
+          <div class="left-offers-item-text">
+            <p class="left-offers-item-title h3-heading-pp">The Luxury Team</p>
+            <p class="left-offers-item-desc small-text">From Chanel, Gucci and Louis Vuitton to Amiri and Valentino - we provide luxury items authentication for any luxury brand out there!</p>
+          </div>
+        </div>
+        <div class="offers-image_item left-offers-item left-offers-item-alignment block-flex-wrap block-gap-15">
+          <div class="left-offers-item-text">
+            <p class="left-offers-item-title h3-heading-pp">The Hype Team</p>
+            <p class="left-offers-item-desc small-text">Our experts will authenticate any of your Jordans, Yeezys or Travis Scott collabs! Any hype brand you can think of - we authenticate it.</p>
+          </div>
+        </div>
+        <div class="offers-image_item left-offers-item left-offers-item-alignment block-flex-wrap block-gap-15">
+          <div class="left-offers-item-text">
+            <p class="left-offers-item-title h3-heading-pp">The Streetwear Team</p>
+            <p class="left-offers-item-desc small-text">Want to get your Supreme Bogo or Vlone Love t-shirts authenticated? Our streetwear authentication team has got your back!</p>
+          </div>
+        </div>
+        </div>
+        <a class="rebranding_btn rebranding_btn-main" href="https://uk.trustpilot.com/review/legitgrails.com?utm_medium=trustbox&utm_source=MicroStar" target="_blank">
+          Check Reviews
+        </a>
+    </div>
+      <div class="offers-image_image" style="background-image: url('{{ "rebrending_product-offers-2x.webp" | asset_url }}');
+        background-image: -webkit-image-set(
+          url('{{ "rebrending_product-offers-2x.webp" | asset_url }}') 1320px,
+          url('{{ "rebrending_product-offers.webp" | asset_url }}') 660px,
+          url('{{ "rebrending_product-offers-mob.webp" | asset_url }}') 440px);
+        background-image: image-set(
+          url('{{ "rebrending_product-offers-2x.webp" | asset_url }}') 1320px,
+          url('{{ "rebrending_product-offers.webp" | asset_url }}') 660px,
+          url('{{ "rebrending_product-offers-mob.webp" | asset_url }}') 440px);">
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Offers with image",
+    "class": "offers-image rebranding-section-bottom",
+    "settings": []
+  }
+{% endschema %}

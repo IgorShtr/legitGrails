@@ -1,0 +1,16 @@
+<style>
+   .preloader-screen{bottom:0;display:block;left:0;overflow:hidden;position:fixed;right:0;top:0;z-index:99999;transition:opacity .8s 2.4s}#preloader.transparent,.preloader-screen.transparent{opacity:0}#preloader{left:50%;position:absolute;top:50%;transform:translate(-50%,-50%);width:160px;opacity:1;transition:opacity .8s 2.2s}#preloader.end .path-1,#preloader.end .path-2,#preloader.end .path-3,#preloader.end .path-4{stroke-dashoffset:0}.path{fill:none;stroke:#CDAB71;stroke-linecap:round;stroke-width:10px}.path-1{stroke-dasharray:680 2000;stroke-dashoffset:700;stroke-linejoin:miter;transition:1.2s linear .1s}.path-3,.path-4{stroke-linejoin:bevel}.path-2{stroke-dasharray:260 1000;stroke-dashoffset:261;transition:.2s linear 1.1s}.path-3{stroke-dasharray:300 1000;stroke-dashoffset:301;transition:.5s linear 1.3s}.path-4{stroke-dasharray:600 1000;stroke-dashoffset:601;transition:.4s linear 1.5s}.preloader-screen.hidden{display:none}.page-preloader{overflow:hidden}@media (prefers-color-scheme:light){.preloader-screen{background-color:#fff}}@media (prefers-color-scheme:dark){.preloader-screen{background-color:#000}}
+</style>
+<div class="preloader-screen">
+    <div id="preloader">
+        <svg id="legit-svg" data-name="legit" xmlns="http://www.w3.org/2000/svg" viewBox="6.935 66.925 254.142 223.633">
+            <path class="path path-1" d="M 134.234 281.876 L 13.627 138.131 L 59.359 75.506 L 208.267 75.506 L 254.362 137.593 L 134.234 281.876 Z"></path>
+            <path class="path path-2" d="M 17.328 137.781 L 249.381 137.781"></path>
+            <path class="path path-3" d="M 60.833 78.306 L 91.892 139.654 L 134.386 73.204 L 177.449 138.918 L 207.799 78.417"></path>
+            <path class="path path-4" d="M 178.843 137.838 L 134.234 275.154 L 89.9 136.133"></path>
+        </svg>
+    </div>
+</div>
+<script>
+    (function () {function animationStart() {document.body.classList.add('page-preloader');document.getElementById('preloader').classList.add('end');document.getElementById('preloader').classList.add('transparent');document.querySelector('.preloader-screen').classList.add('transparent');sessionStorage.setItem('preloader', 'loaded')}function animationEnd() {document.body.classList.remove('page-preloader');document.querySelector('.preloader-screen').classList.add('hidden');}if (sessionStorage.getItem('preloader') !== null) {document.querySelector('.preloader-screen').classList.add('hidden') } else {setTimeout(animationStart, 250);setTimeout(animationEnd, 3400);}})();
+</script>

@@ -1,0 +1,661 @@
+{% if template.name == "index" or template contains "homepage-rebranding" or template contains "product" or template contains "brand" %} 
+        <style>
+          p, a, h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            padding: 0;
+            color: #3C1F1B;
+          }
+        </style>
+      {% endif %}
+  <style>
+    p.body-text a {
+      text-decoration: underline;
+      color: #F24F14;
+    }
+    .block-max-width {
+      max-width: 890px;
+    }
+    .block-bottom-text {
+      max-width: 890px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .back-image-style {
+      background-position: 50% 50%;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    p {
+      margin: 0;
+    }
+    .italic {
+      font-style: italic;
+    }
+    .content-for-layout {
+  padding-bottom: 0;
+}
+    .left-offers-item {
+      width: calc(50% - 10px);
+      text-align: left;
+    }
+    .left-offers-item-image {
+      width: 30px;
+    }
+    .left-offers-item-text {
+      width: calc(100% - 45px);
+      margin-top: 2px;
+    }
+    .standart-hover {
+      transition: .3s;
+    }
+    .standart-hover:hover {
+      opacity: .85;
+    }
+    .standart-hover:active {
+      opacity: .7;
+    }
+    .underline-hover {
+      text-decoration: none;
+      transition: .3s;
+    }
+    .underline-hover:hover {
+      text-decoration: underline;
+    }
+    .underline-hover:active {
+      text-decoration: underline;
+      opacity: 0.7;
+    }
+  .rebranding-section-title {
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+  }
+  .rebranding-section-title p {
+    width: 100%;
+  }
+.rebranding-section-title-left {
+    text-align: left;
+    justify-content: flex-start;
+}
+  .dark-background {
+    background: #3C1F1B;
+  }
+  .ivory-background {
+    background: #F2F2EA;
+  }
+  .ivory-text {
+    color: #F2F2EA;
+  }
+  .icon-center {
+    height: 56px;
+    width: auto;
+  }
+  header .rebranding_container {
+    padding: 20px 15px;
+  }
+  .rebranding-section {
+    padding: 110px 0;
+  }
+    .rebranding-section-bottom {
+    padding: 0 0 110px 0;
+  }
+  .rebranding-section-top {
+    padding: 110px 0 0 0;
+  }
+    .rebranding-wider-section {
+      padding: 150px 0;
+    }
+    .rebranding-wider-section-bottom {
+      padding: 0 0 150px 0;
+    }
+    .rebranding-wider-section-top {
+      padding-top: 40px;
+    }
+    .rebranding-wider-section-top-only {
+      padding: 150px 0 0 0;
+    }
+  .block-quarter-item {
+    width: calc(25% - 23px);
+  }
+  .block-quarter-item-20 {
+    width: calc(25% - 15px);
+  }
+  .block-third-item {
+    width: calc(33.33334% - 20px);
+  }
+  .block-container {
+    justify-content: center;
+    gap: 50px;
+  }
+    .block-gap-15 {
+      gap: 15px;
+    }
+  .rebranding_container {
+    width: 100%;
+    padding: 0px 15px;
+    max-width: 1430px;
+    margin: auto;
+    transition: .5s;
+  }
+  .block-flex {
+    display: flex;
+  }
+  .block-flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+    .block-gap-50 {
+      gap: 50px;
+    }
+    .block-gap-40 {
+      gap: 40px;
+    }
+  .block-gap-30 {
+    gap: 30px;
+  }
+  .block-gap-20 {
+    gap: 20px;
+  }
+  .block-gap-15 {
+    gap: 15px;
+  }
+    .block-gap-12 {
+    gap: 12px;
+  }
+  .block-gap-10 {
+    gap: 10px;
+  }
+  .block-gap-5 {
+    gap: 5px;
+  }
+    .block-gap-4 {
+    gap: 4px;
+  }
+  .icon-center-item {
+    text-align: center;
+    justify-content: center;
+    height: max-content;
+  }
+  .icon-center-item-text {
+    width: 100%;
+    justify-content: center;
+  }
+  .icon-center-item-text p {
+    width: 100%;
+  }
+  .body-text {
+    font-family: "Suisse Intl"!important;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: -0.4px;
+  }
+  .tiny-text {
+    font-family: "Suisse Intl"!important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.16px;
+  }
+  .small-text {
+    font-family: "Suisse Intl"!important;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.36px;
+  }
+  .h1-heading-pp {
+    font-family: "PP Fragment"!important;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -1.76px;
+  }
+  .h1-heading-ss {
+    font-family: "Suisse Intl"!important;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 110%;
+    letter-spacing: -1.2px;
+  }
+  .h2-heading-pp {
+    font-family: "PP Fragment"!important;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -1.6px;
+  }
+  .h2-heading-ss {
+    font-family: "Suisse Intl"!important;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 110%; /* 36px */
+    letter-spacing: -1.08px;
+  }
+  .h3-heading-pp {
+    font-family: "PP Fragment"!important;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -1.2px;
+  }
+  .h3-heading-ss {
+    font-family: "Suisse Intl"!important;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 110%;
+    letter-spacing: -0.84px;
+  }
+    .h3-heading-pp-small {
+    font-family: "PP Fragment"!important;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -1.2px;
+  }
+  .h3-heading-ss-small {
+    font-family: "Suisse Intl"!important;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 110%;
+    letter-spacing: -0.84px;
+  }
+  .h4-heading-pp {
+    font-family: "PP Fragment"!important;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -0.8px;
+  }
+  .h4-heading-ss {
+    font-family: "Suisse Intl"!important;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 110%;
+    letter-spacing: -0.54px;
+  }
+   .rebranding_btn {
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-family: "Suisse Intl" !important;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.4px;
+    text-transform: none;
+    border: none;
+    margin: 0 auto;
+    transition: .3s;
+    text-decoration: none;
+    display: block;
+    width: max-content;
+    color: #F24F14;
+    min-width: 250px;
+    height: max-content;
+    text-align: center;
+    background: #FFEEE5;
+  }
+    .rebranding_main-a {
+      text-decoration: underline;
+      color: #F24F14;
+    }
+  p.caption {
+    color: var(--Chocolate, #3C1F1B);
+    text-align: center;
+    font-family: "Geist Mono";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 18px */
+    letter-spacing: -0.36px;
+    text-transform: uppercase;
+  }
+  .rebranding_btn-main {
+    background: #F24F14;
+    color: #FFF;
+  }
+  .rebranding_btn-main.disabled {
+    background: #CCC;
+    opacity: 1;
+    border: 1px solid #CCC;
+  }
+    .rebranding_btn:hover {
+    opacity: .85;
+  }
+  .rebranding_btn:active {
+    opacity: .7;
+  }
+    .square-btn {
+      border-radius: 8px;
+      border: 1px solid #3C1F1B;
+      padding: 10px 30px;
+      color: #3C1F1B;
+      font-family: "Suisse Intl";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+      letter-spacing: -0.2px;
+      transition: .3s;
+      text-decoration: none;
+    }
+    .square-btn.active {
+      color: #fff;
+      background: #3C1F1B;
+    }
+    .w-100 {
+      width: 100%;
+    }
+    .h-100 {
+      height: 100%;
+    }
+    .block-flex-center-center {
+      align-items: center;
+      justify-content: center;
+    }
+    .block-flex-center-sb {
+      align-items: center;
+      justify-content: space-between;
+    }
+    .block-flex-sb-center {
+      align-items: space-between;
+      justify-content: center;
+    }
+    .block-flex-start-start {
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+    .block-flex-center-start {
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .block-flex-start-center {
+      align-items: flex-start;
+      justify-content: center;
+    }
+    .block-flex-start-left {
+      align-items: flex-start;
+      justify-content: left;
+    }
+    .block-flex-start-right {
+      align-items: flex-start;
+      justify-content: right;
+    }
+    .m-0 {
+      margin: 0;
+    }
+    .m-auto {
+      margin: auto;
+    }
+    .bold {
+      font-weight: 500;
+    }
+    .additional-text-color {
+      color: rgba(60, 31, 27, 0.30);
+    }
+    .inf-btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      border: 1px solid rgba(60, 31, 27, 0.30);
+      background: #FFF;
+      color: #3C1F1B;
+      font-family: "Suisse Intl";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 100%;
+      letter-spacing: -0.2px;
+      transition: .3s;
+      text-decoration: none;
+    }
+    .inf-btn:hover {
+      opacity: 0.85;
+      border: 1px solid rgba(60, 31, 27, 1);
+      border: 1px solid rgba(60, 31, 27, 0.30);
+    }
+    .inf-btn:active {
+      opacity: 0.7;
+    }
+    .inf-btn.active {
+      border: 1px solid #3C1F1B;
+      background: #3C1F1B;
+      color: #fff;
+      pointer-events: none;
+    }
+    .tac {
+      text-align: center;
+    }
+    .taj {
+      text-align: justify;
+    }
+    .tal {
+      text-align: left;
+    }
+    .tar {
+      text-align: right;
+    }
+    .legal-disclaimer {
+      color: rgba(60, 31, 27, 0.30);
+    }
+    .legal-disclaimer a {
+    color: #F24F14;
+  }
+  .legal-disclaimer-rest {
+  display: none;
+}
+
+.legal-disclaimer-toggle {
+  margin-left: 4px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.two-buttons a {
+  margin: 0;
+}
+  @media(max-width: 1450px) {
+    .rebranding_container {
+      max-width: 1200px;
+    }
+  }
+  @media(max-width: 1250px) {
+    .block-third-item {
+    width: calc(50% - 15px);
+    }
+    .rebranding_container {
+      max-width: 950px;
+    }
+    .block-quarter-item {
+        width: calc(50% - 15px);
+    }
+    .block-quarter-item-20 {
+      width: calc(33.333334% - 13.3333334px);
+    }
+    .rebranding-section-title-left {
+      text-align: center;
+      justify-content: center;
+    }
+    .left-offers-item-text {
+        width: 100%;
+        margin-top: 0px;
+        text-align: center;
+        justify-content: center;
+    }
+    .left-offers-item {
+        text-align: center;
+        justify-content: center;
+    }
+    .left-offers-item-alignment {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .left-offers-item-alignment .left-offers-item-text {
+        width: calc(100% - 45px);
+        text-align: left;
+        justify-content: flex-start;
+    }
+  }
+  @media(max-width: 950px) { 
+    .left-offers-item-alignment {
+        width: calc(50% - 10px);
+        justify-content: center;
+    }
+    .left-offers-item-alignment .left-offers-item-text {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+    .block-quarter-item-20 {
+      width: calc(50% - 7.5px);
+    }
+    .rebranding-section {
+        padding: 80px 0;
+    }
+    .rebranding-section-bottom {
+    padding: 0 0 80px 0;
+  }
+  .rebranding-section-top {
+    padding: 80px 0 0 0;
+  }
+    .rebranding-wider-section {
+      padding: 100px 0;
+    }
+    .rebranding-wider-section-bottom {
+      padding: 0 0 100px 0;
+    }
+    .rebranding-wider-section-top {
+      padding-top: 20px;
+    }
+    .rebranding-wider-section-top-only {
+      padding: 100px 0 0 0;
+    }
+    .block-container {
+      gap: 40px;
+    }
+    .icon-center {
+      height: 40px;
+      width: auto;
+    }
+  }
+  @media(max-width: 750px) {
+    .block-third-item {
+      width: 100%;
+    }
+    .rebranding-wider-section-bottom-image {
+      padding-bottom: 0;
+    }
+    .rebranding-wider-section-top-image {
+      padding-top: 100px;
+    }
+    .rebranding-section-top-image {
+      padding-top: 80px;
+    }
+    .rebranding-section-bottom-image {
+      padding-bottom: 80px;
+    }
+    .square-btn {
+      font-size: 18px;
+    }
+    .left-offers-item {
+      width: 100%;
+    }
+    .block-quarter-item {
+        width: 100%;
+    }
+    header .rebranding_container {
+      padding: 11px 15px;
+    }
+    .body-text {
+      font-size: 16px;
+      letter-spacing: -0.32px;
+    }
+    .tiny-text {
+      font-size: 14px;
+      letter-spacing: -0.28px;
+    }
+    .h1-heading-pp {
+      font-size: 36px;
+      letter-spacing: -1.44px;
+    }
+    .h1-heading-ss {
+      font-size: 34px;
+      letter-spacing: -1.02px;
+    }
+    .h2-heading-pp {
+      font-size: 34px;
+      letter-spacing: -1.36px;
+    }
+    .h2-heading-ss {
+      font-size: 32px;
+      letter-spacing: -0.96px;
+    }
+    .h3-heading-pp {
+      font-size: 26px;
+      letter-spacing: -1.04px;
+    }
+    .h3-heading-ss {
+      font-size: 24px;
+      letter-spacing: -0.72px;
+    }
+    .h3-heading-pp-small {
+      font-size: 22px;
+      letter-spacing: -1.04px;
+    }
+    .h3-heading-ss-small {
+      font-size: 20px;
+      letter-spacing: -0.72px;
+    }
+    .h4-heading-pp {
+      font-size: 20px;
+      letter-spacing: -0.8px;
+    }
+    .h4-heading-ss {
+      font-size: 18px;
+      letter-spacing: -0.54px;
+    }
+    .small-text {
+      font-size: 14px;
+      letter-spacing: -0.28px;
+    }
+    .block-wider-mobile-gap {
+      gap: 40px!important;
+    }
+    a.rebranding_btn {
+      width: 100%;
+      text-align: center;
+    }
+    a.rebranding_btn-width {
+      width: max-content;
+    }
+    p.caption {
+      letter-spacing: -0.32px;
+      font-size: 16px;
+    }
+  }
+    @media(max-width: 550px) {
+      .square-btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+      .block-third-item {
+        width: 100%;
+    }
+    }
+    @media(max-width: 400px) {
+    a.rebranding_btn {
+      font-size: 18px;
+    }
+  }
+</style>

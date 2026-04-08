@@ -1,0 +1,128 @@
+{% render 'styles-product-landing-page-min' %}
+{% render 'page-product-landing-2-styles-min' %}
+{% render 'fonts-trustpilot' %}
+{%- assign product = all_products[page.metafields.custom.product] -%}
+{%- assign items = product.metafields.custom.form_settings.value -%}
+{% if custom.show_page_content == true %}
+    <div class="page-width">
+        <header class="section-header text-center">
+            <h1 class="section-header__title h2 font-title">{{ page.title }}</h1>
+        </header>
+        <div class="grid">
+            <div class="grid__item medium-up--four-fifths medium-up--push-one-tenth">
+                <div class="rte font-description">
+                    {{ page.content }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+<div class="form-container">
+    <div class="section-mosaic">
+        <div class="mosaic-block block-image-left">
+            <div class="mosaic-block__content">
+                <div class="mosaic-block__content-wrapper">
+                    {% if page.metafields.custom.product_title != blank %}
+                        <p class="feature-row__heading h3 separator section-title font-title"
+                           data-animate>{{ page.metafields.custom.product_title }}</p>
+                    {% endif %}
+                    {% if page.metafields.custom.product_description != blank %}
+                        <div class="rte-setting featured-row__subtext section-description font-description">{{ page.metafields.custom.product_description }}</div>
+                    {% endif %}
+                    <!-- TrustBox widget - Mini -->
+                  <div class="trustpilot-widget" data-locale="en-GB" data-template-id="53aa8807dec7e10d38f59f32" data-businessunit-id="5fbebb2d281b010001718c1c" data-style-height="112px" data-style-width="200px" data-theme="light">
+                    <a href="https://uk.trustpilot.com/review/legitgrails.com" target="_blank" rel="noopener">Trustpilot</a>
+                  </div>
+                  <!-- End TrustBox widget -->
+                </div>
+            </div>
+            <div class="mosaic-block__image">
+                {% if page.metafields.custom.product_image != blank %}
+                    <div class="mosaic-image lazyload" data-sizes="auto"
+                         style="background-image: url({{ page.metafields.custom.product_image | img_url: 'master' }})"></div>
+                {% else %}
+                    <div class="mosaic-image">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<section>
+  <div class="section-container">
+<div class="guides-block">
+  <div class="guides-block_item">
+    <p class="guides-block_item-title">Verify any branded item in 3 simple steps</p>
+    <div class="guides-block_item-steps">
+      <div class="guides-block_item-step"><span> <img alt="" src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/guide-block_round.svg?v=1702460484"> </span>
+      <p>Choose response time & upload photos</p>
+      </div>
+      <div class="guides-block_item-step"><span> <img alt="" src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/guide-block_round.svg?v=1702460484"> </span>
+      <p>Wait for AI & Human Experts decision</p>
+      </div>
+      <div class="guides-block_item-step"><span> <img alt="" src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/guide-block_checkmark.svg?v=1702460484"> </span>
+      <p>Get the verdict and personal certificate</p>
+      </div>
+      </div>
+    </div>
+  <div class="guides-block_item">
+  {% section 'product-form-blog_one-block' %}
+  </div>
+  <div class="guides-block_item">
+    <p class="guides-block_item-title">Authenticate your branded items with Experts & AI</p>
+    <div class="guides-block_item-advantages">
+      <div class="guides-block_item-advantages-reviews">
+        <div class="guides-block_item-advantages-reviews-stars">
+          <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.9895 1L14.0762 7.25342L20.979 8.26236L15.9842 13.1272L17.163 20L10.9895 16.7534L4.81598 20L5.99474 13.1272L1 8.26236L7.90273 7.25342L10.9895 1Z" fill="#CBAD73" stroke="#CBAD73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.9895 1L14.0762 7.25342L20.979 8.26236L15.9842 13.1272L17.163 20L10.9895 16.7534L4.81598 20L5.99474 13.1272L1 8.26236L7.90273 7.25342L10.9895 1Z" fill="#CBAD73" stroke="#CBAD73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.9895 1L14.0762 7.25342L20.979 8.26236L15.9842 13.1272L17.163 20L10.9895 16.7534L4.81598 20L5.99474 13.1272L1 8.26236L7.90273 7.25342L10.9895 1Z" fill="#CBAD73" stroke="#CBAD73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.9895 1L14.0762 7.25342L20.979 8.26236L15.9842 13.1272L17.163 20L10.9895 16.7534L4.81598 20L5.99474 13.1272L1 8.26236L7.90273 7.25342L10.9895 1Z" fill="#CBAD73" stroke="#CBAD73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.9895 1L14.0762 7.25342L20.979 8.26236L15.9842 13.1272L17.163 20L10.9895 16.7534L4.81598 20L5.99474 13.1272L1 8.26236L7.90273 7.25342L10.9895 1Z" fill="#CBAD73" stroke="#CBAD73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p class="guides-block_item-advantages-reviews-desc">rated 4.7/5.0 by more than 100,000 customers</p>
+        <div class="guides-block_item-advantages-reviews-imgs">
+          <div class="guides-block_item-advantages-reviews-img">
+            <img src="{{ "reviews_klients-1.jpg" | asset_url }}">
+          </div>
+          <div class="guides-block_item-advantages-reviews-img">
+            <img src="{{ "reviews_klients-2.jpg" | asset_url }}">
+          </div>
+          <div class="guides-block_item-advantages-reviews-img">
+            <img src="{{ "reviews_klients-3.jpg" | asset_url }}">
+          </div>
+          <div class="guides-block_item-advantages-reviews-img">
+            <img src="{{ "reviews_klients-4.jpg" | asset_url }}">
+          </div>
+          <div class="guides-block_item-advantages-reviews-img">
+            <img src="{{ "reviews_klients-5.jpg" | asset_url }}">
+          </div>
+        </div>
+      </div>
+        <div class="guides-block_item-advantages-featured">
+          <p class="guides-block_item-advantages-featured-desc">featured by</p>
+          <div class="guides-block_item-advantages-featured-images"><img alt="" src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/guide-block_rapaport.svg?v=1702460484"> <img alt="" src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/guide-block_insider.svg?v=1702460484"> <img alt="" src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/guide-block_forbes.svg?v=1702460484"> <img alt="" src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/guide-block_nice.svg?v=1702460484"></div>
+        </div>
+    </div>
+  </div>
+</div>
+    </div>
+</section>
+
+{% section 'legit-page-product-why-ai' %}
+{% section 'faq-ai' %}
+{% section 'new-reviews-2' %}
+{% section 'legit-page-why-services-background' %}
+
+<!-- TrustBox script -->
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<!-- End TrustBox script -->

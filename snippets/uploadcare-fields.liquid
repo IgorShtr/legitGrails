@@ -1,0 +1,7 @@
+{% assign fastProductItem = product.metafields.test.fast_check.value %}
+
+{% if fastProductItem != blank %}
+  {% render 'ai-fields-template', product: product %}
+{% else %}
+  {% render 'uploadcare-fields-template', product: product  %}
+{% endif %}

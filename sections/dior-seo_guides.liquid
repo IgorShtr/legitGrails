@@ -1,0 +1,145 @@
+<style>
+  a.guides-section_item {
+    text-align: center;
+    text-decoration: none;
+    justify-content: center;
+    height: max-content;
+  }
+  .guides-section_item-image {
+    border-radius: 11px;
+    border: 1px solid #E9E9E9;
+    background: #F3F3F3;
+    height: 295px;
+    width: 100%;
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  .guides-section_item-text {
+    gap: 10px;
+    justify-content: center;
+  }
+  a.guides-section_item:hover p.guides-section_item-title {
+    text-decoration: underline;
+  }
+  .guides-section_item-image img {
+    height: 200px;
+    width: auto;
+    margin-top: -30px;
+}
+  @media(max-width: 1450px) {
+    .guides-section_item-image {
+      height: 265px;
+    }
+  }
+  @media(max-width: 1250px) {
+    a.guides-section_item:last-child {
+      display: none;
+    }
+    .guides-section_item-image img {
+        height: 170px;
+    }
+  }
+  @media(max-width: 950px) {
+    .guides-section_items {
+    gap: 30px 15px;
+}
+    a.guides-section_item:nth-child(3) {
+      display: flex;
+    }
+    a.guides-section_item:last-child {
+      display: flex;
+    }
+  }
+  @media(max-width: 750px) {
+    .guides-section_item-title {
+      font-size: 20px;
+      letter-spacing: -0.8px;
+    }
+  }
+  @media(max-width: 550px) {
+    .guides-section_item-image img {
+        height: 120px;
+        margin-top: -20px;
+    }
+    .guides-section_item-image {
+        height: 195px;
+    }
+  }
+</style>
+
+<div class="rebranding_container">
+  <div class="block-container block-flex-wrap">
+    <div class="rebranding-section-title block-gap-15 block-flex-wrap">
+      <h2 class="h2-heading-ss">
+        Explore our 
+        <span class="h2-heading-pp">
+         Dior authentication guides
+        </span>
+      </h2>
+    </div>
+    <div class="guides-section_items block-flex-wrap block-gap-20">
+      <a href="https://legitgrails.com/blogs/dior/real-vs-fake-dior-book-tote-legit-check" class="guides-section_item block-flex-wrap block-gap-20 block-quarter-item-20">
+        <div class="guides-section_item-image block-flex-wrap block-flex-center-center">
+            <img src="{{ "dior-wwa_book-tote.webp" | asset_url }}">
+        </div>
+        <div class="guides-section_item-text block-flex-wrap">
+          <p class="guides-section_item-title h3-heading-pp">
+            How To Spot Fake Dior Book Tote
+          </p>
+          <p class="guides-section_item-desc small-text">
+            7 minute read
+          </p>
+        </div>
+      </a>
+      <a href="https://legitgrails.com/blogs/dior/how-to-spot-a-real-vs-fake-dior-sauvage-perfume" class="guides-section_item block-flex-wrap block-gap-20 block-quarter-item-20">
+        <div class="guides-section_item-image block-flex-wrap block-flex-center-center">
+            <img src="{{ "chanel-wwa_wallet-on-chain.webp" | asset_url }}">
+        </div>
+        <div class="guides-section_item-text block-flex-wrap">
+          <p class="guides-section_item-title h3-heading-pp">
+            How to Spot a Real vs. Fake Dior Sauvage Perfume
+          </p>
+          <p class="guides-section_item-desc small-text">
+            5 minute read
+          </p>
+        </div>
+      </a>
+      <a href="https://legitgrails.com/blogs/dior/dior-lady-bag-authentication-guide" class="guides-section_item block-flex-wrap block-gap-20 block-quarter-item-20">
+        <div class="guides-section_item-image block-flex-wrap block-flex-center-center">
+            <img src="{{ "dior-wwa_lady-dior-bag.webp" | asset_url }}">
+        </div>
+        <div class="guides-section_item-text block-flex-wrap">
+          <p class="guides-section_item-title h3-heading-pp">
+            How to Spot Fake vs Real Lady Dior Bag
+          </p>
+          <p class="guides-section_item-desc small-text">
+            7 minute read
+          </p>
+        </div>
+      </a>
+      <a href="https://legitgrails.com/blogs/dior/dior-saddle-bag-real-vs-fake-guide-how-to-legit-check-dior-saddle-bag" class="guides-section_item block-flex-wrap block-gap-20 block-quarter-item-20">
+        <div class="guides-section_item-image block-flex-wrap block-flex-center-center">
+            <img src="{{ "dior-wwa_saddle-handbag.webp" | asset_url }}">
+        </div>
+        <div class="guides-section_item-text block-flex-wrap">
+          <p class="guides-section_item-title h3-heading-pp">
+           How To Spot Fake Dior Saddle Bag
+          </p>
+          <p class="guides-section_item-desc small-text">
+            7 minute read
+          </p>
+        </div>
+      </a>
+    </div>
+    <a href="https://legitgrails.com/blogs/dior/" class="rebranding_btn rebranding_btn-main">View all</a>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Guides Section",
+    "class": "guides-section rebranding-section",
+    "settings": []
+  }
+{% endschema %}

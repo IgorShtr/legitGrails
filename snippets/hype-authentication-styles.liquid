@@ -1,0 +1,244 @@
+<style>
+  .hype_authentication {
+    padding: 0 0 110px 0;
+  }
+  .hype_authentication-wrapper {
+    border-radius: 12px;
+    border: 1px solid #E9E9E9;
+    padding: 25px;
+    width: 100%;
+    max-width: 862px;
+    margin: 30px auto 0 auto;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  .hype_authentication-wrapper.animated {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  img.hype_authentication-wrapper-image {
+    height: 113px;
+    display: block; 
+    margin: auto;
+  }
+  .hype_authentication-wrapper-title {
+    width: 100%;
+    margin: 20px auto 0 auto;
+    max-width: 530px;
+  }
+  .hype_authentication-wrapper-price {
+    margin-top: 20px;
+    text-align: center;
+  }
+  p.hype_authentication-wrapper-price-desc {
+    color: #161616;
+    font-family: "Open Sans";
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 127.8%;
+  }
+  p.hype_authentication-wrapper-price-title {
+    color: #161616;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1;
+    margin-top: 2px;
+  }
+  .hype_authentication-wrapper-content {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto 0 auto;
+    gap: 20px;
+    width: 100%;
+    max-width: 640px;
+  }
+  .hype_authentication-wrapper-content-options {
+    width: 194px;
+  }
+  p.hype_authentication-wrapper-content-title {
+    color: #161616;
+    font-family: "Open Sans";
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 127.8%;
+  }
+  .hype_authentication-wrapper-content-options-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .hype_authentication-wrapper-content-options-item {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  p.hype_authentication-wrapper-content-options-item-time {
+    color: #4F4F4F;
+    text-align: right;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 127.8%; 
+  }
+  p.hype_authentication-wrapper-content-options-item-price {
+    color: #161616;
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 127.8%;
+  }
+  span.hype_authentication-wrapper-content-split {
+    display: block;
+    height: auto;
+    width: 1px;
+    background: #DEDEDE;
+  }
+.hype_authentication-wrapper-content-offers {
+    max-width: calc(100% - 255px);
+    width: max-content;
+}
+  .hype_authentication-wrapper-content-offers-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .hype_authentication-wrapper-content-offers-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  .hype_authentication-wrapper-content-offers-item svg {
+    height: 20px;
+  }
+  .hype_authentication-wrapper-content-offers-item img {
+    height: 20px;
+  }
+  p.hype_authentication-wrapper-content-offers-item-text {
+    color: #4F4F4F;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 127.8%;
+    margin-left: 10px;
+    width: calc(100% - 30px);
+  }
+  a.hype_authentication-wrapper-btn, button.hype_authentication-wrapper-btn {
+    margin: 10px auto 0 auto;
+  }
+  .hype_authentication-wrapper-content-offers-mobile {
+    display: none;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  .hype_authentication-wrapper-content-offers-mobile.animated {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  label.radio.radio-wrap.hype_authentication-wrapper-content-options-item-time {
+    color: #4F4F4F;
+    text-align: right;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 127.8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+  .product-form {
+    width: 100%;
+  }
+  .variant-list {
+    width: 100%;
+}
+ .checkmark {
+    margin-top: 3.3px;
+} 
+  label.radio.radio-wrap.hype_authentication-wrapper-content-options-item-time {
+    margin-bottom: 10px;
+  }
+  @media(max-width: 950px) {
+    p.hype_authentication-wrapper-price-desc, p.hype_authentication-wrapper-content-title  {
+      font-size: 18px;
+    }
+    p.hype_authentication-wrapper-content-offers-item-text, p.hype_authentication-wrapper-content-options-item-time, p.hype_authentication-wrapper-content-options-item-price {
+      font-size: 16px;
+    }
+    label.radio.radio-wrap.hype_authentication-wrapper-content-options-item-time {
+      font-size: 16px;
+    }
+    p.hype_authentication-wrapper-price-title {
+      font-size: 24px;
+    }
+    .hype_authentication {
+    padding: 0 0 80px 0;
+  }
+    .checkmark {
+    margin-top: 1.3px;
+}
+  }
+  @media(max-width: 750px) {
+    .hype_authentication-wrapper-content-offers-mobile {
+      padding: 20px;
+    }
+    .hype_authentication-wrapper {
+      padding: 20px;
+    }
+  }
+  @media(max-width: 650px) {
+    .hype_authentication-wrapper-content-options {
+        width: 145px;
+    }
+    .hype_authentication-wrapper-content-offers-desk {
+      display: none;
+    }
+    .hype_authentication-wrapper-content-offers-mobile {
+        display: block;
+        border-radius: 12px;
+        border: 1px solid #E9E9E9;
+        width: 100%;
+        margin-top: 20px;
+      max-width: 100%;
+    }
+    span.hype_authentication-wrapper-content-split {
+      display: none;
+    }
+    .hype_authentication-wrapper-content {
+      justify-content: center;
+    }
+    .hype_authentication-wrapper-content-options-item {
+      width: 110px;
+    }
+    p.hype_authentication-wrapper-content-options-item-time {
+        text-align: right;
+        width: 76px;
+    }
+    p.hype_authentication-wrapper-content-title {
+      text-align: center;
+    }
+    .hype_authentication-wrapper-content-options-items {
+    justify-content: center;
+}
+  }
+  @media(max-width: 600px) {
+    .hype_authentication {
+    padding: 0 0 60px 0;
+}
+    .hype_authentication-wrapper {
+        margin: 20px auto 0 auto;
+    }
+    .hype_authentication-wrapper-content-offers-mobile {
+      margin-top: 15px;
+    }
+  }
+</style>

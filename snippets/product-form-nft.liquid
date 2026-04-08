@@ -1,0 +1,319 @@
+{% form 'product', product, class: 'product-form' %}
+
+    {% unless current_variant.available %}
+        {% assign button_text = 'products.product.sold_out' | t %}
+    {% else %}
+        {% assign button_text = 'products.product.add_to_cart' | t %}
+    {% endunless %}
+
+    {% if template.handle contains 'product' %}
+
+        {% unless product.has_only_default_variant %}
+            {% for option in product.options_with_values %}
+                <div class="product-form__item supports-js">
+                    {% if option.name != 'default' %}
+                        <label class="single-option-selector__label{% unless section.settings.show_variant_labels %} single-option-selector__label--hidden{% endunless %}"
+                               for="{{ option.name | escape }}">{{ option.name }}</label>
+                    {% endif %}
+
+                    <select id="{{ option.name | escape }}" name="{{ option.name | escape }}"
+                            class="single-option-selector" data-option-input>
+                        {% for value in option.values %}
+                            {% assign safeValue = value | replace: '"', '&quot;' %}
+                            <option value="{{ safeValue }}"
+                                    {% if option.selected_value == value %}selected{% endif %}>{{ value }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            {% endfor %}
+        {% endunless %}
+
+        <select name="id" class="product-form__master-select supports-no-js" data-master-select>
+            {% for variant in product.variants %}
+                {% if variant.available %}
+                    {% comment %}
+                    Note: if you use option_selection.js, your select tag will be overwritten, meaning what you have inside <option> will not reflect what you coded below.
+                    {% endcomment %}
+                    <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %}
+                            data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }}
+                        - {{ variant.price | money_with_currency }}</option>
+                {% else %}
+                    <option disabled="disabled">
+                        {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                    </option>
+                {% endif %}
+            {% endfor %}
+        </select>
+
+    {% endif %}
+
+    <div class="varient-list hidden">
+        {% for product_option in product.options_with_values %}
+            <div class="pro-option-name">{{ product_option.name }} </div>
+        {% endfor %}
+        <div class="product-variants infiniteoptions">
+            {% for variant in product.variants %}
+                {% capture random %}{{ 'now' | date: "%09N" }}{% endcapture %}
+                <div class="radio-options">
+                    {% if variant.available %}
+                        <input type="radio" name="id" id="radio_{{ random }}" value="{{ variant.id }}"
+                               data-price="{{ variant.price | money }}" data-variant-title="{{ variant.title }}"
+                               {% if forloop.first %}checked="checked"{% endif %} />
+                        <label class="radio" for="radio_{{ random }}">
+                            {{ variant.title | escape }}
+                            {% if variant.price < variant.compare_at_price %}
+                                <del>{{ variant.compare_at_price | money }}</del>{% endif %}
+                        </label>
+                    {% else %}
+                        <input type="radio" name="id" value="{{ variant.id }}" id="radio_{{ random }}"
+                               disabled="disabled"/>
+                        <label for="radio_{{ random }}" class="radio">
+                            {{ variant.title }} is temporarily unavailable
+                        </label>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <p class="product-description">Make sure you already have a certificate from LegitGrails!</p>
+
+    <div class="line-item-property__field">
+        <label for="certificate-code">
+            Unique certificate code*
+        </label>
+        <input type="text" required class="required" id="certificate-code" name="properties[_certificate-code]"
+               placeholder="2126121292349528 or EJC5F8FKU">
+    </div>
+    <div class="line-item-property__field">
+        <label for="wallet">
+            NFT Wallet Address*
+        </label>
+        <input type="text" required class="required" id="wallet" name="properties[_wallet]" placeholder="0X23VFBDJO">
+    </div>
+
+    {% if template.handle contains 'product' %}
+        <button class="btn btn--to-secondary btn--full product__add-to-cart-button{% if section.settings.enable_payment_button and current_variant.available %} shopify-payment-btn btn--secondary{% endif %}"
+                data-cart-submit
+                type="submit" name="add"
+                {% unless current_variant.available %} disabled="true"{% endunless %}
+                aria-label="{{ button_text }}"
+        >
+    <span class="primary-text" aria-hidden="false">
+      {{ button_text }}
+    </span>
+            <span class="secondary-text" aria-hidden=true
+                  data-cart-secondary-submit-text>{{ 'products.product.view_cart' | t }}</span>
+        </button>
+    {% endif %}
+
+    {% unless template.handle contains 'product' %}
+        <div class="submit-block">
+            <button type="submit" class="nft-cart-button">Add to cart</button>
+        </div>
+    {% endunless %}
+
+    <p class="product__notification text-small text-center" data-cart-notification></p>
+    {% if section.settings.enable_payment_button and current_variant.available %}
+        {{ form | payment_button }}
+    {% endif %}
+
+{% endform %}
+<script>
+    $(document).ready(() => {
+        let nftInput = document.getElementById('wallet');
+        let messageContainer = document.createElement('div')
+        let cartBtn = document.querySelector('.nft-cart-button')
+        messageContainer.setAttribute('id', 'wallet-message')
+        nftInput.parentElement.append(messageContainer)
+        let certificateInput = $('#certificate-code')
+
+        let properties = {
+            "_certificate": "",
+            "_wallet": ""
+        }
+
+        let formIsValid = false;
+
+        function setMessage(el) {
+            el.innerHTML = "Please make sure you insert your wallet address. Don’t have one? It’s very easy to set up, here is a <a href='https://metamask.io/' target='_blank'>popular crypto wallet</a> you can quickly register"
+        }
+
+        function validateNft() {
+            if (nftInput.value.length < 1) {
+                formIsValid = false;
+                setMessage(messageContainer)
+                nftInput.classList.add('invalid')
+                messageContainer.classList.add('visible')
+            } else {
+                nftInput.classList.remove('invalid')
+                messageContainer.innerHTML = "";
+                messageContainer.classList.remove('visible')
+            }
+        }
+
+        function validateRequiredFields() {
+            $('.required').each(index => {
+                let field = $('.required')[index]
+                if (field.id !== 'wallet') {
+                    if (field.value.length < 1) {
+                        field.classList.add('invalid')
+                        formIsValid = false
+                    } else {
+                        field.classList.remove('invalid')
+                    }
+                }
+            })
+        }
+
+        nftInput.addEventListener('blur', () => {
+            validateNft()
+        })
+
+        nftInput.addEventListener('input', () => {
+            nftInput.classList.remove('invalid')
+            if (nftInput.value.length >= 1) {
+                messageContainer.innerHTML = "";
+                messageContainer.classList.remove('visible')
+                cartBtn.removeAttribute('disabled')
+                if (!$('.required.invalid').length) {
+                    formIsValid = true
+                }
+            } else {
+                formIsValid = false
+            }
+        })
+
+        const messages = {
+            wait: 'Adding...',
+            thanks: 'Thank You!'
+        }
+
+        certificateInput.on('input', () => {
+            certificateInput.removeClass('invalid')
+        })
+
+        certificateInput.on('blur', () => {
+            if (certificateInput.val().length < 1) {
+                console.log(certificateInput.val())
+                certificateInput.addClass('invalid')
+            }
+        })
+
+        $('.nft-cart-button').on('click', async (e) => {
+            e.preventDefault()
+            await validateNft()
+            await validateRequiredFields()
+            if (!$('.required.invalid').length) {
+                $('.nft-cart-button').html(messages.wait)
+                properties._certificate = $('#certificate-code').val()
+                properties._wallet = $('#wallet').val()
+                let formData = {
+                    items: [{
+                        'id': '{{ product.variants[0].id }}',
+                        'quantity': 1,
+                        'properties': properties,
+                    }]
+                };
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/cart/add.js',
+                    dataType: 'json',
+                    data: JSON.stringify(formData),
+                    contentType: 'application/json',
+                    processData: false,
+                    success: function () {
+                        $('.nft-cart-button').html(messages.thanks)
+                        document.location.href = '/cart/checkout';
+                    }
+                });
+            }
+        })
+    })
+</script>
+<style>
+    .required.invalid {
+        border-color: red !important;
+    }
+    .nft-cart-button {
+        width: 100%;
+        background: #161616;
+        border: 1px solid #161616;
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-family: 'Work Sans';
+        border-radius: 5px;
+        transition: ease 0.5s;
+        height: 50px;
+        margin-top: 15px;
+    }
+    #wallet-message {
+        display: none;
+        line-height: 18px;
+        font-size: 15px;
+    }
+    #wallet-message.visible {
+        display: block;
+    }
+    #wallet-message a {
+        color: #cdab71;
+    }
+    .product_checkout-title {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 28px;
+        color: #161616;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .product_checkout-price {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+        text-align: center;
+        color: #161616;
+    }
+    .custom-cart-button {
+        width: 100%;
+        background: #161616;
+        border: 1px solid #161616;
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
+        border-radius: 5px;
+        transition: ease 0.5s;
+        height: 43px;
+        margin-top: 5px;
+    }
+    .line-item-property__field label {
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+    .line-item-property__field input {
+        border: 1px solid #161616;
+        border-radius: 6px;
+    }
+    .line-item-property__field input:focus {
+        outline: none;
+    }
+    .product-description {
+        font-size: 19px;
+        text-align: center;
+        line-height: 22px;
+    }
+    .product_checkout-right {
+    }
+    .hidden, .product__vendor {
+        display: none;
+    }
+    .uploadkit.uploadkit-injected {
+        display: none;
+    }
+    @media (min-width: 1024px) {
+        .line-item-property__field label {
+            font-size: 16px;
+        }
+    }
+</style>

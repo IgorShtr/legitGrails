@@ -1,0 +1,73 @@
+
+/****PLEASE DON'T MAKE CHANGES IN THIS FILE IT'S AFFECT THE CODE IF YOU NEED ANY HELP PLEASE CONTACT TO FLITS TEAM support@getflits.com ****/
+.flits-credit-code-div .flits-cart-drp.flits-select-row select.flits-input{
+  background-color: transparent;
+  height: 42px;
+  width: auto;
+  border: 1px solid #cdab71;
+  color: #cdab71;
+  width: 100%;
+  margin: 1px 0 10px;
+}
+.flits-store-credit-empty .flits-empty-text-div > p.flits-empty-text:first-child{
+  display: none;
+}
+.flits-store-credit-container .flits-account-box-header .flits-header-title{
+  visibility: hidden;
+}
+.flits-credit-code-div .flits-cart-drp.flits-select-row .flits-select-arrow{
+  top: 15px;
+}
+@media(max-width: 766px){
+  .flits-account-container .flits-order-card .flits-order-address .flits-order-label, .flits-account-container .flits-order-card .flits-order-information .flits-order-label{
+  	font-size: 13px;
+  }
+  .flits-account-container .flits-order-card .flits-order-address .flits-order-date, .flits-account-container .flits-order-card .flits-order-information .flits-order-date, .flits-account-container .flits-order-card .flits-order-address .flits-order-value, .flits-account-container .flits-order-card .flits-order-information .flits-order-value, .flits-account-container .flits-order-card .flits-order-address .flits-address-view-button span, .flits-account-container .flits-order-card .flits-order-address .flits-view-order-button span, .flits-account-container .flits-order-card .flits-order-information .flits-address-view-button span, .flits-account-container .flits-order-card .flits-order-information .flits-view-order-button span, .flits-account-container .flits-order-card .flits-line-items .flits-order-item .flits-product-name, .flits-account-container .flits-order-card .flits-line-items .flits-order-item .flits-product-price, .flits-account-container .flits-order-card .flits-order-price-breakdown .flits-price-row p, .flits-account-container .flits-order-card .flits-grand-total p, .flits-account-container .flits-order-card .flits-address-breakdown .flits-address-row p{
+  	font-size: 13px;
+  }
+  .flits-account-container .flits-order-card .flits-line-items .flits-order-item .flits-product-image-thumbnail{
+    min-width: 70px;
+    width: 70px;
+    height: 70px;
+  }
+  .flits-account-container .flits-order-card .flits-line-items{
+    height: 130px;
+  }
+  .flits-account-container .flits-order-card .flits-order-address, .flits-account-container .flits-order-card .flits-order-information{
+  	padding: 5px;
+  }
+  .flits-account-container .flits-mobile-view .flits-chart-container .flits-chart-title{
+  	font-size: 12px;
+  }
+  .flits-account-container .flits-credit-category-container .flits-credit-category-div .flits-credit-category-box .flits-credit-category-label, .flits-account-container .flits-credit-category-container .flits-credit-category-div .flits-credit-category-box .flits-credit-category-value{
+  	font-size: 12px;
+  }
+  .flits-account-container .flits-mobile-view .flits-chart-container .flits-credit-chart .flits-chart-inner-title, .flits-account-container .flits-mobile-view .flits-chart-container .flits-credit-chart text{
+  	font-size: 11px !important;
+  }
+  .flits-account-container .flits-mobile-view .flits-menus-list-box .flits-menu-items .flits-menu-item a .flist-menu-title{
+  	font-size: 13px;
+  }
+}
+@media(max-width: 400px){
+  .flits-account-container .flits-order-card .flits-order-address .flits-order-label, .flits-account-container .flits-order-card .flits-order-information .flits-order-label{
+  	font-size: 12px;
+  }
+  .flits-account-container .flits-order-card .flits-order-address .flits-order-date, .flits-account-container .flits-order-card .flits-order-information .flits-order-date, .flits-account-container .flits-order-card .flits-order-address .flits-order-value, .flits-account-container .flits-order-card .flits-order-information .flits-order-value, .flits-account-container .flits-order-card .flits-order-address .flits-address-view-button span, .flits-account-container .flits-order-card .flits-order-address .flits-view-order-button span, .flits-account-container .flits-order-card .flits-order-information .flits-address-view-button span, .flits-account-container .flits-order-card .flits-order-information .flits-view-order-button span, .flits-account-container .flits-order-card .flits-line-items .flits-order-item .flits-product-name, .flits-account-container .flits-order-card .flits-line-items .flits-order-item .flits-product-price, .flits-account-container .flits-order-card .flits-order-price-breakdown .flits-price-row p, .flits-account-container .flits-order-card .flits-grand-total p, .flits-account-container .flits-order-card .flits-address-breakdown .flits-address-row p{
+  	font-size: 12px;
+  }
+  .flits-account-container .flits-mobile-view .flits-menus-list-box .flits-menu-items .flits-menu-item a .flist-menu-title{
+  	font-size: 12px;
+  }
+}
+@media(max-width: 360px){
+  .flits-account-container .flits-order-card .flits-order-address .flits-order-label, .flits-account-container .flits-order-card .flits-order-information .flits-order-label{
+  	font-size: 11px;
+  }
+  .flits-account-container .flits-order-card .flits-order-address .flits-order-date, .flits-account-container .flits-order-card .flits-order-information .flits-order-date, .flits-account-container .flits-order-card .flits-order-address .flits-order-value, .flits-account-container .flits-order-card .flits-order-information .flits-order-value, .flits-account-container .flits-order-card .flits-order-address .flits-address-view-button span, .flits-account-container .flits-order-card .flits-order-address .flits-view-order-button span, .flits-account-container .flits-order-card .flits-order-information .flits-address-view-button span, .flits-account-container .flits-order-card .flits-order-information .flits-view-order-button span, .flits-account-container .flits-order-card .flits-line-items .flits-order-item .flits-product-name, .flits-account-container .flits-order-card .flits-line-items .flits-order-item .flits-product-price, .flits-account-container .flits-order-card .flits-order-price-breakdown .flits-price-row p, .flits-account-container .flits-order-card .flits-grand-total p, .flits-account-container .flits-order-card .flits-address-breakdown .flits-address-row p{
+  	font-size: 11px;
+  }
+}
+.flits-account-container .flits-order-card.flits-active .flits-order-address{
+  display:none;
+}

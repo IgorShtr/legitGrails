@@ -1,0 +1,120 @@
+<style>
+    #cookies-banner {
+        display: none;
+        position: fixed;
+        bottom: 15px;
+        width: 100%;
+        z-index: 1000;
+    }
+    #cookies-banner .container {
+        display: block;
+        max-width: 1230px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+    .cookies-banner_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        border: 1px solid #dcdcdc;
+        border-radius: 5px;
+        padding: 15px;
+        background: #fff;
+        align-items: stretch;
+    }
+    .cookies-banner_content p {
+        margin: 0;
+        font-size: 13px;
+    }
+    .cookies-banner_content a {
+        color: #cbad73;
+    }
+    .cookies-banner_buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+    .btn-reject {
+        font-weight: 700;
+        letter-spacing: .065em;
+        text-transform: uppercase;
+        background-color: #fff;
+        border: 1px solid #161616;
+        color: #161616;
+    }
+    .cookies-banner_buttons .btn {
+        padding: 12px 33px;
+        font-size: 15px;
+        line-height: 21px;
+        flex-grow: 1;
+    }
+    .cookies-banner_buttons .btn:after {
+        outline: none;
+    }
+    @media (min-width: 750px) {
+        .cookies-banner_content {
+            flex-direction: row;
+            gap: 30px;
+            align-items: flex-start;
+        }
+    }
+</style>
+<div id="cookies-banner">
+    <div class="container">
+        <div class="cookies-banner_content">
+            <p class="font-title">{{ 'general.cookie_form.cookie_text' | t }} <a href="https://legitgrails.com/pages/cookie">{{ 'general.cookie_form.read_more' | t }}</a></p>
+            <div class="cookies-banner_buttons">
+                <button class="btn btn-reject font-title"
+                        onclick="handleDecline()">{{ 'general.cookie_form.cookie_reject' | t }}</button>
+                <button class="btn main-btn font-title"
+                        onclick="handleAccept()">{{ 'general.cookie_form.cookie_accept' | t }}</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function getBannerEl() {
+        return document.getElementById('cookies-banner');
+    }
+
+    function hideBanner(res) {
+        getBannerEl().style.display = 'none';
+    }
+
+    function showBanner() {
+        getBannerEl().style.display = 'block';
+    }
+
+    function handleAccept(e) {
+        window.Shopify.customerPrivacy.setTrackingConsent(true, hideBanner);
+        document.addEventListener('trackingConsentAccepted', function () {
+            console.log('trackingConsentAccepted event fired');
+        });
+    }
+
+    function handleDecline() {
+        window.Shopify.customerPrivacy.setTrackingConsent(false, hideBanner);
+    }
+
+    function initCookieBanner() {
+        const userCanBeTracked = window.Shopify.customerPrivacy.userCanBeTracked();
+        const userTrackingConsent = window.Shopify.customerPrivacy.getTrackingConsent();
+        if (!userCanBeTracked && userTrackingConsent === 'no_interaction') {
+            showBanner();
+        }
+    }
+
+    window.Shopify.loadFeatures([
+            {
+                name: 'consent-tracking-api',
+                version: '0.1',
+            }
+        ],
+        function (error) {
+            if (error) {
+                throw error;
+            }
+            initCookieBanner();
+        });
+</script>

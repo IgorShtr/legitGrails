@@ -1,0 +1,422 @@
+<style>
+  .product_faq {
+    background: #3C1F1B;
+  }
+  .product_faq-wrapper {
+    justify-content: center;
+    gap: 50px;
+  }
+  .product_faq-text {
+    width: 515px;
+  }
+  .product_faq-text h2, .product_faq-text p {
+    color: #F2F2EA;
+  }
+  .product_faq-text p {
+    margin-top: 10px;
+  }
+  .product_faq-items {
+    width: calc(100% - 565px);
+    gap: 10px;
+  }
+  .product_faq-item {
+    border-radius: 12px;
+    background: #fff;
+    transition: 0.3s;
+    width: 100%;
+    padding: 4px 40px;
+  }
+  .product_faq-item:hover {
+    cursor: pointer;
+  }
+  .product_faq-item-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0px;
+  }
+  .product_faq-item-title p {
+    max-width: calc(100% - 38px);
+  }
+  a.product_faq-item-cross {
+    display: block;
+    height: max-content;
+  }
+  .product_faq-item-title a svg {
+      height: 28px;
+      width: auto;
+      transition: .3s;
+      transform: rotate(0deg);
+    display: block;
+  }
+  .product_faq-item-title a svg path {
+    transition: .3s;
+  }
+  .product_faq-item.active .product_faq-item-title a svg {
+      transform: rotate(45deg);
+  }
+  .product_faq-item.active .product_faq-item-title a svg path {
+    stroke: #F24F14;
+  }
+  .product_faq-item-text {
+    height: max-content;
+    max-height: 0px;
+    overflow: hidden;
+    width: 100%;
+    transition: .5s;
+    position: relative;
+  }
+  .product_faq-item-text a {
+    text-decoration: underline;
+    transition: .3s;
+  }
+  .product_faq-item-text a:hover {
+    opacity: .85;
+  }
+  .product_faq-item-text a:active {
+    opacity: .7;
+  }
+  .product_faq-item.active .product_faq-item-text {
+    padding-top: 21px;
+    padding-bottom: 16px;
+    max-height: 250px;
+  }
+  .product_faq-item-text::before {
+    content:'';
+    display: block;
+    height: 100%;
+    max-height: 0px;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    background: rgba(60, 31, 27, 0.30);
+    transition: .5s;
+  }
+  .product_faq-item-text::before {
+    max-height: 1px;
+  }
+  .product_faq-desc {
+    margin-top: 15px;
+  }
+  .product_faq-btns {
+    margin-top: 30px;
+    justify-content: center;
+  }
+  .product_faq-btns a {
+    margin: 0;
+  }
+  .product_faq-a {
+    text-decoration: underline;
+    color: #fff;
+  }
+  .product_faq-btns-desktop-hidden {
+    display: none;
+  }
+  @media(max-width: 1450px) {
+    .product_faq-item {
+        padding: 4px 30px;
+    }
+    .product_faq-item.active .product_faq-item-text {
+      max-height: 280px;
+    }
+  }
+  @media(max-width: 1250px) {
+    .product_faq-btns-mobile-hidden {
+      display: none;
+    }
+    .product_faq-btns-desktop-hidden {
+      display: flex!important;
+    }
+    .product_faq-items {
+      width: 100%;
+    }
+    .product_faq-btns {
+      margin-top: 0;
+      width: 100%;
+    }
+    .product_faq-text {
+        width: 100%;
+        text-align: center;
+    }
+    .product_faq-wrapper {
+      gap: 40px;
+    }
+  }
+  @media(max-width: 750px) {
+    .product_faq {
+      padding: 60px 0;
+    }
+    .product_faq-wrapper a.rebranding_btn {
+      margin: 0px auto;
+    }
+    .product_faq-item-title {
+      padding: 15px 0;
+    }
+    .product_faq-item {
+        padding: 0px 20px;
+    }
+    .product_faq-item.active .product_faq-item-text {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      max-height: 350px;
+    }
+    .product_faq-item-title a svg {
+      height: 24px;
+    }
+  }
+</style>
+
+<div class="container rebranding_container">
+  <div class="product_faq-wrapper block-flex-wrap">
+    <div class="product_faq-text">
+      <h2 class="h2-heading-ss">
+        Featured
+        <span class="h2-heading-pp">questions</span>
+      </h2>
+      <p class="product_faq-desc body-text">
+        Have more questions? Visit our <a href="https://legitgrails.frontkb.com/en" target="_blank" class="product_faq-a standart-hover">Help Center</a>
+      </p>
+      <div class="product_faq-btns block-flex-wrap block-gap-15 product_faq-btns-mobile-hidden">
+        <a href="https://legitgrails.frontkb.com/en" target="_blank" class="rebranding_btn">
+        Help Center
+      </a>
+        <a href="#product_boxes" class="rebranding_btn rebranding_btn-main product_authenticate-now-btn-track">
+        Authenticate now
+      </a>
+      </div>
+    </div>
+    <div class="product_faq-items block-flex-wrap">
+      <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <h3 class="body-text">How Does LegitGrails’ Gucci Authentication Process Work?</h3>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            LegitGrails authenticates Gucci items through a sophisticated combination of AI technology and expert human analysis. The process begins when you upload clear, high-quality photos of your item. Our AI system then analyzes these images, comparing them against a vast database of Gucci designs and production details to spot inconsistencies.
+<br><br>Once the AI completes its scan, our Gucci specialists conduct a detailed review, applying their deep understanding of the brand’s craftsmanship and design standards to confirm authenticity. We'll contact you directly if additional details are required to ensure the process remains accurate and efficient.
+          </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <h3 class="body-text">How Long Does LegitGrails’ Authentication Take?</h3>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            Our standard authentication process delivers results within 12 hours of receiving your item’s photos. We offer an express option for faster service that provides results within 6 hours. Our team is committed to providing quick, accurate assessments to meet your needs.
+          </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <h3 class="body-text">Who Owns Gucci?</h3>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            Gucci is owned by Kering, a French luxury conglomerate founded by François Pinault. Kering also oversees several major fashion houses, including Saint Laurent and Balenciaga. François Pinault and his family have an estimated net worth of about $40.3 billion.
+          </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <h3 class="body-text">What Makes Gucci So Expensive?</h3>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            Gucci’s high prices reflect its heritage and craftsmanship. Founded in 1921, the brand has built a legacy of luxury and exclusivity. Gucci products are handcrafted in Italy using high-quality materials like fine leathers and exclusive fabrics, ensuring both durability and style. Gucci’s reputation for innovative, trendsetting designs also adds to its value, making it a leader in the luxury market.
+          </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <h3 class="body-text">What Is Gucci’s Net Worth?</h3>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            In 2024, Gucci reported global revenues of approximately €7.65 billion, reinforcing its position as one of the most influential luxury brands worldwide.
+          </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <h3 class="body-text">Is Gucci Owned by Prada?</h3>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+           No, Gucci is not owned by Prada. Gucci is part of the Kering Group, while Prada remains an independent company managed by the Prada family.
+          </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <h3 class="body-text">Is Gucci Manufactured in China?</h3>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+            Gucci primarily manufactures its products in Italy, maintaining its reputation for Italian craftsmanship and quality. Some components or packaging may be sourced from other countries, including China, but the core production remains in Italy.
+          </p>
+        </div>
+      </div>
+              <div class="product_faq-item">
+        <div class="product_faq-item-title">
+          <h3 class="body-text">Is Balenciaga a Part of Gucci?</h3>
+          <a href="javascript:void(0)" class="product_faq-item-cross">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.94116V25.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 13.9412L26 13.9412" stroke="#3C1F1B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="product_faq-item-text">
+          <p class="small-text">
+           Balenciaga and Gucci are both owned by Kering but operate independently. Each brand maintains its distinct identity and creative direction within the luxury market.
+          </p>
+        </div>
+      </div>
+    </div>
+      <div class="product_faq-btns block-flex-wrap block-gap-15 product_faq-btns-desktop-hidden">
+        <a href="https://legitgrails.frontkb.com/en" target="_blank" class="rebranding_btn">
+        Help Center
+      </a>
+        <a href="#product_boxes" class="rebranding_btn rebranding_btn-main product_authenticate-now-btn-track">
+        Authenticate now
+      </a>
+      </div>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How Does LegitGrails’ Gucci Authentication Process Work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LegitGrails authenticates Gucci items through a sophisticated combination of AI technology and expert human analysis. The process begins when you upload clear, high-quality photos of your item. Our AI system then analyzes these images, comparing them against a vast database of Gucci designs and production details to spot inconsistencies. Once the AI completes its scan, our Gucci specialists conduct a detailed review, applying their deep understanding of the brand’s craftsmanship and design standards to confirm authenticity. We'll contact you directly if additional details are required to ensure the process remains accurate and efficient."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How Long Does LegitGrails’ Authentication Take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our standard authentication process delivers results within 12 hours of receiving your item’s photos. We offer an express option for faster service that provides results within 6 hours. Our team is committed to providing quick, accurate assessments to meet your needs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who Owns Gucci?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gucci is owned by Kering, a French luxury conglomerate founded by François Pinault. Kering also oversees several major fashion houses, including Saint Laurent and Balenciaga. François Pinault and his family have an estimated net worth of about $40.3 billion."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What Makes Gucci So Expensive?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gucci’s high prices reflect its heritage and craftsmanship. Founded in 1921, the brand has built a legacy of luxury and exclusivity. Gucci products are handcrafted in Italy using high-quality materials like fine leathers and exclusive fabrics, ensuring both durability and style. Gucci’s reputation for innovative, trendsetting designs also adds to its value, making it a leader in the luxury market."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What Is Gucci’s Net Worth?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In 2024, Gucci reported global revenues of approximately €7.65 billion, reinforcing its position as one of the most influential luxury brands worldwide."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Gucci Owned by Prada?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, Gucci is not owned by Prada. Gucci is part of the Kering Group, while Prada remains an independent company managed by the Prada family."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Gucci Manufactured in China?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gucci primarily manufactures its products in Italy, maintaining its reputation for Italian craftsmanship and quality. Some components or packaging may be sourced from other countries, including China, but the core production remains in Italy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Balenciaga a Part of Gucci?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Balenciaga and Gucci are both owned by Kering but operate independently. Each brand maintains its distinct identity and creative direction within the luxury market."
+      }
+    }
+  ]
+}
+</script>
+              
+<script>
+  $( ".product_faq-item" ).on( "click", function() {
+    if ($(this).hasClass("active")) {
+      $(".product_faq-item").removeClass("active");
+    } else {
+      $(".product_faq-item").removeClass("active");
+      $(this).addClass("active");
+    }
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "LV FAQ",
+    "class": "product_faq rebranding-section",
+    "settings": []
+  }
+{% endschema %}

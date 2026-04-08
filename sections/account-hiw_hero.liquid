@@ -1,0 +1,85 @@
+<style>
+  .account-hiw-hero {
+    padding-bottom: 0;
+  }
+  .account-hiw_items {
+    gap: 80px;
+  }
+  .account-hiw_item img {
+    width: 100%;
+    max-width: 568px;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid #EAEAEA;
+    box-shadow: 0px 52px 15px 0px rgba(108, 77, 72, 0.00), 0px 33px 13px 0px rgba(108, 77, 72, 0.01), 0px 19px 11px 0px rgba(108, 77, 72, 0.03), 0px 8px 8px 0px rgba(108, 77, 72, 0.04), 0px 2px 5px 0px rgba(108, 77, 72, 0.05);
+  }
+  .account-hiw_item-text {
+    width: calc(100% - 608px);
+  }
+  .account-hiw_item-text p.caption {
+    text-align: left;
+  }
+  @media(max-width: 1250px) {
+    .account-hiw_item-text {
+        width: 100%;
+        text-align: center;
+    }
+    .account-hiw_item {
+      justify-content: center;
+    }
+    .account-hiw_item-text p.caption {
+      text-align: center;
+    }
+  }
+  @media(max-width: 750px) {
+    .account-hiw_item img {
+      max-width: 350px;
+    }
+  }
+</style>
+
+<div class="rebranding_container block-flex-wrap block-gap-50">
+  <div class="block-flex-wrap block-gap-15 block-flex-center-center w-100">
+    <h2 class="h2-heading-ss w-100 tac">Everything in One Place — Built for <span class="h2-heading-pp">Speed, Simplicity & Scale</span></h2>
+    <p class="body-text w-100 tac">Authenticate items quickly, track progress, unlock special upgrades and save on every order</p>
+  </div>
+  <div class="account-hiw_items block-flex-wrap">
+    <div class="account-hiw_item block-flex-wrap block-gap-40 w-100 block-flex-center-start">
+      <img src="{{ "account-hiw-1.webp" | asset_url }}">
+      <div class="account-hiw_item-text block-flex-wrap block-gap-15">
+        <p class="caption w-100 tal">Step 1</p>
+        <h3 class="h3-heading-pp w-100">Add Credits to Your Account</h3>
+        <p class="body-text w-100">Top up your account with LegitGrails Credits — these are used to pay for each authentication. Larger top-ups come with more free authentications.</p>
+        <p class="body-text w-100">💡 Credits never expire and the more you buy, the more bonus credits you get</p>
+      </div>
+    </div>
+    <div class="account-hiw_item block-flex-wrap block-gap-40 w-100 block-flex-center-start">
+      <img src="{{ "account-hiw-2.webp" | asset_url }}">
+      <div class="account-hiw_item-text block-flex-wrap block-gap-15">
+        <p class="caption w-100 tal">Step 2</p>
+        <h3 class="h3-heading-pp w-100">Upload Your Item for Authentication</h3>
+        <p class="body-text w-100">
+          You will choose the brand you want to authenticate, your preferred answer time and upload clear photos of the angles needed for the specific item category.
+<br><br>
+Follow photo guidelines to avoid delays. Quickly see & respond to follow-up photo requests.
+        </p>
+      </div>
+    </div>
+    <div class="account-hiw_item block-flex-wrap block-gap-40 w-100 block-flex-center-start">
+      <img src="{{ "account-hiw-3.webp" | asset_url }}">
+      <div class="account-hiw_item-text block-flex-wrap block-gap-15">
+        <p class="caption w-100 tal">Step 3</p>
+        <h3 class="h3-heading-pp w-100">Track Your Request & Get Results</h3>
+        <p class="body-text w-100">Once submitted, you can track everything in your personal dashboard. See real-time progress, get notified when your results are ready, and access your authentication outcome along with a downloadable certificate and other special upgrades.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Account How it works",
+    "class": "account-hiw-hero rebranding-section",
+    "settings": []
+  }
+{% endschema %}

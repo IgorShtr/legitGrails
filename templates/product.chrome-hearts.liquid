@@ -1,0 +1,416 @@
+{% render "rebranding_main-styles" %}
+<style>
+  nav.breadcrumbs {
+    display: none;
+}
+  .product_boxes-wrapp {
+      justify-content: center;
+  }
+  .product-box {
+    width: 400px!important;
+    text-align: center;
+}
+  .variant-list {
+    margin: 25px 0;
+  }
+  .product-variants {
+    width: max-content;
+    margin: 0 auto;
+}
+  p.body-text.product-box_variant-price {
+    display: none;
+}
+  .radio-options {
+    width: 129px;
+}
+  button#authenticate-btn {
+    width: 100% !important;
+        border-radius: 8px !important;
+  }
+  .product_box {
+    border-radius: 8px;
+    border: 1px solid rgba(60, 31, 27, 0.20);
+    padding: 20px;
+    width: 400px;
+  }
+  .product_boxes-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+  .product_box-content {
+    height: max-content;
+    justify-content: center;
+  }
+  .product_box-title {
+    text-align: center;
+  }
+  .product_box-steps-items {
+    gap: 25px;
+  }
+  .product_box-steps-item {
+    gap: 15px;
+    align-items: center;
+  }
+  span.product_box-steps-item-circle {
+    justify-content: center;
+    align-items: center;
+    height: 53px;
+    width: 53px;
+    position: relative;
+    border-radius: 50%;
+    background: #F2F2EA;
+  }
+  span.product_box-steps-item-circle::before {
+    content: '';
+    display: block;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    border: 2px solid #3C1F1B;
+    top: 4px;
+    left: 4px;
+    position: absolute;
+  }
+span.product_box-steps-item-circle::after {
+    content: '';
+    position: absolute;
+    display: block;
+    border-radius: 2px;
+    background: #3C1F1B;
+    height: 25px;
+    width: 3px;
+    top: 100%;
+    left: 50%;
+    margin-left: -1.5px;
+}
+  .product_box-steps-item:last-child span.product_box-steps-item-circle::after {
+    display: none;
+  }
+  .product_box-steps-item p {
+    width: calc(100% - 68px);
+}
+  span.product_box-steps-item-circle svg {
+    margin-top: 2px;
+    margin-left: 1px;
+}
+.product_box-reviews-item {
+  gap: 10px;
+  justify-content: center;
+}
+.product_box-reviews-item p {
+  text-align: center;
+  width: 100%;
+}
+  .product_box-reviews-item-clients {
+    justify-content: center;
+  }
+  .product_box-reviews-item-clients img {
+    height:40px;
+    width:40px;
+    border-radius:50%;
+    overflow:hidden;
+    border: 2px solid #fff;
+    margin-left: -10px;
+  }
+  .product_box-reviews-item-logos {
+    justify-content: center;
+    gap: 10px 20px;
+    width: 100%;
+    align-items: center;
+  }
+  .product_box-reviews-item-logos img {
+    height: 18px;
+  }
+  .product_box-reviews-item-logos img:nth-child(3) {
+    height: 22px;
+  }
+  .product_box-reviews-item-logos img:nth-child(4) {
+    height: 27px;
+  }
+  @media(max-width: 1450px) {
+    .product_box {
+      width: 370px;
+    }
+    .product-box {
+      width: 400px!important;
+    }
+    .product_boxes-content {
+      gap: 15px;
+    }
+  }
+  @media(max-width: 1250px) {
+    .product-box {
+      width: 510px !important;
+    }
+    .product_box {
+        width: 400px;
+    }
+    .product_hero-box {
+      order: 1;
+    }
+    .product_box-steps {
+      order: 2;
+    }
+    .product_box-reviews {
+      order: 3;
+    }
+  }
+  @media(max-width: 950px) {
+    .product_box {
+      width: calc(50% - 7.5px);
+    }
+    footer {
+      border-top: 1px solid #3C1F1B;
+    }
+  }
+  @media(max-width: 750px) {
+    .checkmark {
+      margin-top: -1px!important;
+    }
+    .radio-options {
+    width: 109px;
+}
+    .product_box-steps-item {
+      gap: 10px;
+    }
+    span.product_box-steps-item-circle {
+      height: 43px;
+      width: 43px;
+    }
+    span.product_box-steps-item-circle::before {
+      height: 35px;
+      width: 35px;
+    }
+    span.product_box-steps-item-circle svg {
+        margin-top: 0;
+        margin-left: 0px;
+        height: 8px;
+    }
+    .product_box-steps-item:last-child span.product_box-steps-item-circle svg {
+      height: 12px;
+    }
+    .product_box-content {
+      gap: 30px!important;
+    }
+  }
+  @media(max-width: 660px) {
+    .product_box, .product_hero-box {
+      width: 100%;
+    }
+    .product-box {
+      width: 100% !important;
+    }
+    .product_box-steps-items {
+      max-width: 280px;
+    }
+  }
+
+  .product_box {
+    padding: 0;
+        height: 493px;
+        position: relative;
+        overflow: hidden;
+  }
+  .product_box-content {
+    padding: 20px;
+}
+  img.product-tests-1502_product-box-2-img {
+    border-top: 1px solid #F1F1F1;
+    border-right: 1px solid #F1F1F1;
+    border-left: 1px solid #F1F1F1;
+    background: url(<path-to-image>) lightgray 0px 0.087px / 100% 147.173% no-repeat;
+    box-shadow: 0 0 17px 0 rgba(57, 57, 57, 0.05);
+    width: 300px;
+    display: block;
+    margin: auto;
+    max-width: initial;
+}
+img.product-tests-1502_product-box-1-img {
+    position: absolute;
+    width: 234px;
+    left: 50%;
+    margin-left: -117px;
+    max-width: initial;
+    margin-top: 0;
+}
+@media(max-width: 1250px) {
+  .product_box.product_box-authenticators {
+    order: 2;
+}
+  .product_box.product_box-certificate {
+    order: 3;
+}
+}
+@media(max-width: 750px) {
+  .product_box-content {
+    padding: 20px;
+    height: max-content;
+    gap: 10px !important;
+}
+img.product-tests-1502_product-box-2-img {
+  width: 260px;
+}
+    img.product-tests-1502_product-box-1-img {
+        width: 256px;
+        margin-left: -132px;
+    }
+.product_box {
+  height: 450px;
+}
+}
+@media(max-width: 660px) {
+  .product_box {
+  height: 430px;
+}
+    img.product-tests-1502_product-box-1-img {
+        width: 289px;
+        margin-left: -146px;
+    }
+}
+@media(max-width: 450px) {
+    img.product-tests-1502_product-box-1-img {
+        width: 258px;
+        margin-left: -133px;
+    }
+}
+@media(max-width: 350px) {
+    img.product-tests-1502_product-box-1-img {
+        width: 232px;
+        margin-left: -117px;
+    }
+}
+</style>
+{% section "product_hero-1502" %}
+
+<section id="product_boxes" class="product_boxes rebranding-section">
+  <div class="container rebranding_container">
+    <div class="product_boxes-wrapp block-flex-wrap">
+      <div id="product_boxes-content" class="product_boxes-content">
+        <div class="product_box product_box-authenticators">
+            <div class="product_box-content block-flex-wrap block-gap-15 h-100">
+                <h3 class="h3-heading-ss w-100 tac">
+                    Checked by <span class="h3-heading-pp">at least 2 independent {{ product.title | remove: " Authentication Service" }} experts</span>
+                </h3>
+                <p class="body-text w-100 tac">
+                    Every item is personally reviewed by {{ product.title | remove: " Authentication Service" }} authentication experts to ensure accurate authentication
+                </p>
+            </div>
+            <img class="product-tests-1502_product-box-1-img" src="{{ "chrome-hearts-test_product-box-1-pointers.webp" | asset_url }}">
+        </div>
+        <div class="product_hero-box">
+          {% section 'product-box_second-test' %}
+        </div>
+        <div class="product_box product_box-certificate">
+            <div class="product_box-content block-flex-wrap block-gap-15">
+                <h3 class="h3-heading-ss w-100 tac">
+                    <span class="h3-heading-pp">Authentication certificate</span> with final outcome
+                </h3>
+                <p class="body-text w-100 tac">
+                    Receive a certificate with the final authentication result for your<br>{{ product.title | remove: " Authentication Service" }} item
+                </p>
+            </div>
+            <img class="product-tests-1502_product-box-2-img" src="{{ "chrome-hearts-test_product-box-2-certificate.webp" | asset_url }}">
+          </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+{% section "product_steps-rounded-images" %}
+{% section "product_offers" %}
+{% if product.tags contains "chrome-hearts-seo-faq" %}
+  {% section "product_faq-chrome-hearts-seo" %}
+{% elsif product.tags contains "loro-piana-seo-faq" %}
+  {% section "product_faq-loro-piana-seo" %}
+{% elsif product.tags contains "hugo-boss-seo-faq" %}
+  {% section "product_faq-hugo-boss-seo" %}
+{% elsif product.tags contains "dolce-gabbana-seo-faq" %}
+  {% section "product_faq-dolce-gabbana-seo" %}
+{% elsif product.tags contains "polene-seo-faq" %}
+  {% section "product_faq-polene-seo" %}
+{% elsif product.tags contains "rolex-seo-faq" %}
+  {% section "product_faq-rolex-seo" %}
+{% elsif product.tags contains "cartier-seo-faq" %}
+  {% section "product_faq-cartier-seo" %}
+{% elsif product.tags contains "lv-seo-faq" %}
+  {% section "product_faq-lv-seo" %}
+{% elsif product.tags contains "gucci-seo-faq" %}
+  {% section "product_faq-gucci-seo" %}
+{% else %}
+  {% section "product_faq" %}
+{% endif %}
+{% section "product_offers-left" %}
+{% section "product_reviews" %}
+
+{% assign product_name = product.title | escape %}
+{% assign short_product_name = product_name | remove: 'Authentication Service' %}
+{% if product.metafields.custom.hero_image != blank %}
+  {% assign product_image = product.metafields.custom.hero_image | image_url %}
+{% else %}
+  {% assign product_image = 'product_standart-hero.webp' | asset_url %}
+{% endif %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "{{ product_name }}",
+  "image": [ "{{ product_image }}" ],
+  "description": "Authenticate your {{ short_product_name }} items with our Hybrid Authentication, blending expert human insight and AI precision for unmatched accuracy of over 99.3%",
+  "sku": "{{ product.sku }}",
+  "brand": {
+    "@type": "Brand",
+    "name": "LegitGrails"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "{{ shop.url }}{{ product.url | escape }}",
+    "priceCurrency": "{{ shop.currency }}",
+    "price": "{{ product.price | divided_by: 100.0 }}",
+    "availability": "https://schema.org/InStock"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.5",
+    "reviewCount": "1800"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Sarah R" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Used LegitGrails twice now — it's reassuring to trust them when buying an expensive luxury item. Their responses are quick too!"
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Daniel L" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "LegitGrails's quick response saved me from buying a fake bag... Highly recommend their certificates for a peace of mind."
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Hannah O" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Thanks a lot for saving me from purchasing a fake bag. The seller eagerly sent many photos, but the truth came out in the results. Appreciate the excellent service!"
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Maxime J" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "For a few years now, I've relied on LegitGrails, and they consistently deliver. I have an eye for authenticating vintage bags but LegitGrails adds that extra layer of certainty."
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Kim A" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "My go-to for verifying luxury items online! LegitGrails always helps me ensure authenticity, and as a business owner, the fees are tax-deductible! 🙌"
+    }
+  ]
+}
+</script>
+
+<!-- TrustBox script -->
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<!-- End TrustBox script -->

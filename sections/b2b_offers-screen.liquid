@@ -1,0 +1,140 @@
+<style>
+  .b2b_offers-three {
+    padding: 110px 0;
+    background: #FAF7F1;
+  }
+  .b2b_offers-wrapp_items {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  .b2b_offers-wrapp_item {
+      width: calc(33.33333% - 14px);
+      height: max-content;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      text-align: center;
+  }
+  img.b2b_offers-wrapp_item-icon-img {
+    height: 100px;
+  }
+p.b2b_offers-wrapp_item-text-title {
+    padding-bottom: 0;
+    margin: 0;
+    line-height: 1;
+    padding-bottom: 5px;
+}
+  @media(max-width: 950px) {
+    .b2b_offers-wrapp_item {
+    width: calc(50% - 10px);
+    }
+    img.b2b_offers-wrapp_item-icon-img {
+    height: 100px;
+}
+  }
+  @media(max-width: 750px) {
+    .b2b_offers-three {
+      padding: 60px 0;
+    }
+    .b2b_offers-wrapp_items {
+      margin-top: 20px;
+    }
+  }
+  @media(max-width: 600px) {
+    .b2b_offers-wrapp_item {
+        width: 100%;
+    }
+    img.b2b_offers-wrapp_item-icon-img {
+    height: 65px;
+}
+    .b2b_offers-wrapp_item-text {
+    width: 100%;
+}
+  }
+</style>
+<div class="new-container">
+<div class="b2b_offers-wrapp">
+  {% if section.settings.title != blank %}
+  <h2 class="b2b_offers-wrapp-title second-title-style animation-title" data-animate>{{ section.settings.title }}</h2>
+  {% endif %}
+    <div class="b2b_offers-wrapp_items">
+    {% for block in section.blocks %}
+        <div class="b2b_offers-wrapp_item">
+            {% if block.settings.image != blank %}
+                <div class="b2b_offers-wrapp_item-icon">
+                    <img class="b2b_offers-wrapp_item-icon-img" src="{{ block.settings.image | img_url }}">
+                </div>
+            {% endif %}
+            <div class="b2b_offers-wrapp_item-text">
+                {% if block.settings.block_title != blank %}
+                    <p class="b2b_offers-wrapp_item-text-title font-title third-title-style">{{ block.settings.block_title }}</p>
+                {% endif %}
+                {% if block.settings.block_description != blank %}
+                    <p class="b2b_offers-wrapp_item-text-description common-desc-style">{{ block.settings.block_description }}</p>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+</div>
+
+{% schema %}
+  {
+    "name": "B2B Offers 3",
+    "class": "b2b_offers-three",
+    "settings": [
+        {
+        "type": "text",
+        "id": "title",
+        "label": {
+        "en": "Heading"
+        }
+        }
+    ],
+    "blocks": [
+            {
+            "type": "image",
+            "name": {
+            "en": "Image"
+            },
+            "settings": [
+            {
+            "type": "image_picker",
+            "id": "image",
+            "label": {
+            "en": "Image"
+            }
+            },
+              {
+            "type": "text",
+            "id": "block_title",
+            "label": {
+            "en": "Title"
+            },
+            "default": {
+            "en": "Offer's title"
+            }
+            },
+            {
+            "type": "text",
+            "id": "block_description",
+            "label": {
+            "en": "Description"
+            },
+            "default": {
+            "en": "Offer's description"
+            }
+            }
+      ]
+      }
+    ]
+  }
+{% endschema %}

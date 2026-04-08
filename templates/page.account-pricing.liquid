@@ -1,0 +1,42 @@
+<style>
+  .content-for-layout {
+    padding-bottom: 0!important;
+  }
+  a, p, ul, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    color: #3C1F1B;
+  }
+  .card-with-shadow {
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #EAEAEA;
+    background: #FFF;
+    box-shadow: 0px 52px 15px 0px rgba(108, 77, 72, 0.00), 0px 33px 13px 0px rgba(108, 77, 72, 0.01), 0px 19px 11px 0px rgba(108, 77, 72, 0.03), 0px 8px 8px 0px rgba(108, 77, 72, 0.04), 0px 2px 5px 0px rgba(108, 77, 72, 0.05);
+  }
+  @media(max-width: 750px) {
+    #MainContent {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #shopify-section-account-pricing_hero {
+  order: 2;
+  }
+#shopify-section-account-pricing_calculator {
+order: 1;
+padding: 60px 0 0 0;
+}
+#shopify-section-account_loyalty {
+order: 3;
+width: 100%;
+}
+#shopify-section-account_cta {
+order: 4;
+}
+}
+</style>
+{% render "rebranding_main-styles" %}
+{% section "account-pricing_hero" %}
+{% section "account-pricing_calculator" %}
+{% section "account_loyalty" %}
+{% section "account_cta" %}

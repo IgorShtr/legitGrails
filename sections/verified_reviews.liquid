@@ -1,0 +1,99 @@
+<style>
+  .verified-review {
+    border-radius: 8px;
+    border: 1px solid rgba(60, 31, 27, 0.30);
+    background: var(--White, #FFF);
+    width: calc(33.33334% - 13.33334px);
+    padding: 24px;
+  }
+  .verified-review_client-image {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+  }
+  .verified-review_client-name {
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+  }
+  .verified-review_client-text {
+    width: calc(100% - 120px);
+  }
+  @media(max-width: 1250px) {
+    .verified-review {
+      width: calc(50% - 10px);
+    }
+  }
+  @media(max-width: 950px) {
+    .verified-reviews {
+      padding-top: 80px;
+    }
+  }
+  @media(max-width: 750px) {
+    .verified-review {
+      width: 100%;
+    }
+    .verified-review_client-image {
+      height: 80px;
+      width: 80px;
+    }
+  }
+</style>
+
+<div class="rebranding_container">
+  <div class="block-flex-wrap block-gap-40 block-flex-center-center">
+    <div class="block-flex-wrap block-flex-center-center">
+      <h2 class="h2-heading-ss tac">What our <span class="h2-heading-pp">Verified partners</span> are saying</h2>
+    </div>
+    <div class="block-flex-wrap block-flex-center-center block-gap-20">
+      <div class="verified-review block-flex-wrap block-gap-30">
+        <div class="verified-review_client block-flex-wrap block-gap-20 block-flex-center-start">
+          <img class="verified-review_client-image" src="{{ "verified-homepage_hero.webp" | asset_url }}">
+          <div class="verified-review_client-text block-flex-wrap block-flex-center-start block-gap-5">
+            <p class="verified-review_client-name body-text w-100">Danny Phillips</p>
+            <p class="body-text w-100">Director of Arkade</p>
+          </div>
+        </div>
+        <div class="verified-review_text block-flex-wrap block-gap-10 w-100">
+          <h3 class="h3-heading-pp">Excellent!</h3>
+          <p class="body-text w-100">Used LegitGrails twice now — it's reassuring to trust them when buying an expensive luxury item.  Their responses are quick too!</p>
+        </div>
+      </div>
+      <div class="verified-review block-flex-wrap block-gap-30">
+        <div class="verified-review_client block-flex-wrap block-gap-20 block-flex-center-start">
+          <img class="verified-review_client-image" src="{{ "verified-homepage_hero.webp" | asset_url }}">
+          <div class="verified-review_client-text block-flex-wrap block-flex-center-start block-gap-5">
+            <p class="verified-review_client-name body-text w-100">Danny Phillips</p>
+            <p class="body-text w-100">Director of Arkade</p>
+          </div>
+        </div>
+        <div class="verified-review_text block-flex-wrap block-gap-10">
+          <h3 class="h3-heading-pp">Excellent!</h3>
+          <p class="body-text w-100">Used LegitGrails twice now — it's reassuring to trust them when buying an expensive luxury item.  Their responses are quick too!</p>
+        </div>
+      </div>
+      <div class="verified-review block-flex-wrap block-gap-30">
+        <div class="verified-review_client block-flex-wrap block-gap-20 block-flex-center-start">
+          <img class="verified-review_client-image" src="{{ "verified-homepage_hero.webp" | asset_url }}">
+          <div class="verified-review_client-text block-flex-wrap block-flex-center-start block-gap-5">
+            <p class="verified-review_client-name body-text w-100">Danny Phillips</p>
+            <p class="body-text w-100">Director of Arkade</p>
+          </div>
+        </div>
+        <div class="verified-review_text block-flex-wrap block-gap-10">
+          <h3 class="h3-heading-pp">Excellent!</h3>
+          <p class="body-text w-100">Used LegitGrails twice now — it's reassuring to trust them when buying an expensive luxury item.  Their responses are quick too!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Verified Reviews",
+    "class": "verified-reviews rebranding-section-bottom rebranding-section-top-image",
+    "settings": []
+  }
+{% endschema %}

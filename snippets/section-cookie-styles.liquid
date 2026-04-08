@@ -1,0 +1,136 @@
+<style>
+  .cookie-policy h1 {
+    padding-bottom: 10px;
+    font-size: 25px;
+    line-height: 28px;
+    color:#161616;
+    margin: 0;
+    font-weight: 700;
+}
+
+.cookie-policy h2 {
+    padding-top: 25px;
+    font-size: 20px;
+    line-height: 25px;
+    color:#161616;
+    margin: 0;
+    text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom:10px;
+}
+
+.cookie-policy p {
+    font-size: 15px;
+    margin-top: 23px;
+    line-height: 20px;
+    color: #161616;
+    margin: 0;
+}
+
+.cookie-policy p a {
+    text-decoration: none;
+    color:#CBAD73;
+  min-height: max-content;
+}
+
+.cookie-policy p a:hover {
+    text-decoration: underline;
+}
+
+.cookie-policy p.under-title {
+    padding-top: 25px;
+    font-size: 16px;
+    margin-top: 23px;
+    line-height: 20px;
+    color: #161616;
+    font-weight: 500;
+    margin: 0;
+}
+
+.cookie-box {
+    height: auto;
+    border-radius: 5px;
+    border:1px solid #C0C1C1;
+    margin-top: 15px;
+    transition: 1s;
+    max-height: 45px;
+    overflow: hidden;
+    padding: 2px 15px 0 15px;
+  position:relative;
+}
+
+.cookie-box:after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 17px;
+    border: 5px;
+    border-color: transparent;
+    border-style: solid;
+    border-right-color: #333B43;
+}
+
+.cookie-box.active::after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 19px;
+    border: 5px;
+    border-color: transparent;
+    border-style: solid;
+    border-top-color: #333B43;
+}
+
+  .cookie-policy p strong {
+    font-size: 16px;
+    line-height: 20px;
+    color: #161616;
+    font-weight: 600;
+  }
+
+.cookie-box:hover {
+    cursor: pointer;
+}
+
+.cookie-box.active {
+    max-height: 800px;
+}
+
+.cookie-box ul {
+    padding: 10px 0 0 28px;
+    font-size: 15px;
+    line-height: 20px;
+    color: #161616;
+    margin: 0;
+}
+
+.cookie-box ul li {
+    margin-bottom: 10px;
+}
+
+  .cookie-box p {
+    padding-top:10px;
+  }
+
+  @media(max-width:900px) {
+    .cookie-box.active {
+    max-height: 1000px;
+}
+    .cookie-policy h1 {
+          font-size: 23px;
+    line-height: 25px;
+          text-align: center;
+    }
+    .cookie-policy h2 {
+    padding-top: 20px;
+    font-size: 18px;
+    line-height: 20px;
+    }
+  }
+
+  @media(max-width:600px) {
+    .cookie-box.active {
+    max-height: 1300px;
+}
+  }
+</style>

@@ -1,0 +1,58 @@
+<style>
+  div.site-header {
+    position: fixed;
+    width: 100%;
+}
+  .site-header__wrapper {
+    background: transparent;
+}
+  .site-header__wrapper, .header-section-container {
+    height: 100%;
+}
+  .breadcrumbs {
+    display:none;
+  }
+  .featured-collection {
+    background: #f6f6f6;
+  }
+  .homepage_item-coverage {
+    background: #f6f6f6;
+  }
+  .products-search input::placeholder {
+    opacity: 0;
+}
+  .content-for-layout {
+    padding-bottom: 0;
+}
+  @media(max-width:749px) {
+  .index-section--image-with-text .row-styled--legit-text-image {
+    padding-bottom: 60px;
+}
+    #shopify-section-legit-images-text .feature-row__item.feature-row__text {
+    padding: 60px 0;
+    }
+    #shopify-section-legit-images-text-2 .feature-row__item.feature-row__text {
+      padding: 60px 0;
+    }
+    .featured-blog__view-all-wrap {
+      margin-top:0;
+    }
+    #shopify-section-legit-images-text-3 .feature-row__item.feature-row__text {
+      padding: 60px 0;
+    }
+}
+</style>
+{% section 'legit-homepage-tabs' %}
+{% section 'legit-featured-collection' %}
+{% section 'legit-homepage-time' %}
+{% section 'legit-homepage-coverage' %}
+{% section 'legit-text-image' %}
+{% section 'legit-steps' %}
+{% section 'legit-hero' %}
+{% section 'legit-services' %}
+{% section 'legit-product-search' %}
+{% section 'legit-images-text' %}
+{% section 'legit-images-text-2' %}
+{% section 'legit-featured-blogs' %}
+{% section 'legit-gallery' %}
+{% section 'legit-images-text-3' %}

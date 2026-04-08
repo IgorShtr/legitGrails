@@ -1,0 +1,126 @@
+<style>
+  a.guides-section_item {
+    text-align: center;
+    text-decoration: none;
+    justify-content: center;
+    height: max-content;
+  }
+  .guides-section_item-image {
+    border-radius: 11px;
+    border: 1px solid #E9E9E9;
+    background: #F3F3F3;
+    height: 295px;
+    width: 100%;
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  .guides-section_item-text {
+    gap: 10px;
+    justify-content: center;
+  }
+  a.guides-section_item:hover p.guides-section_item-title {
+    text-decoration: underline;
+  }
+  @media(max-width: 1450px) {
+    .guides-section_item-image {
+      height: 265px;
+    }
+  }
+  @media(max-width: 1250px) {
+    a.guides-section_item:last-child {
+      display: none;
+    }
+  }
+  @media(max-width: 950px) {
+    .guides-section_items {
+    gap: 30px 15px;
+}
+    a.guides-section_item:nth-child(3) {
+      display: flex;
+    }
+    a.guides-section_item:last-child {
+      display: flex;
+    }
+  }
+  @media(max-width: 750px) {
+    .guides-section_item-title {
+      font-size: 20px;
+      letter-spacing: -0.8px;
+    }
+  }
+  @media(max-width: 550px) {
+    .guides-section_item-image {
+        height: 195px;
+    }
+  }
+</style>
+
+<div class="rebranding_container">
+  <div class="block-container block-flex-wrap">
+    <div class="rebranding-section-title block-gap-15 block-flex-wrap">
+      <h2 class="h2-heading-ss">
+        Explore our 
+        <span class="h2-heading-pp">
+         authentication guides
+        </span>
+      </h2>
+      <p class="body-text">From Hermes & Chanel to Nike & North Face</p>
+    </div>
+    <div class="guides-section_items block-flex-wrap block-gap-20">
+      <a href="https://legitgrails.com/blogs/louis-vuitton/real-vs-fake-louis-vuitton-bag-legit-check" class="guides-section_item block-flex-wrap block-gap-20 block-quarter-item-20">
+        <div style="background-image: url('{{ "homepage_guides-lv.jpg" | asset_url }}')" class="guides-section_item-image"></div>
+        <div class="guides-section_item-text block-flex-wrap">
+          <p class="guides-section_item-title h3-heading-pp">
+            How To Authenticate Louis Vuitton Bag
+          </p>
+          <p class="guides-section_item-desc small-text">
+            7 minute read
+          </p>
+        </div>
+      </a>
+      <a href="https://legitgrails.com/blogs/yeezy/how-to-spot-fake-adidas-yeezy-boost-350-v2-yeezy-350-v2-fake-vs-real" class="guides-section_item block-flex-wrap block-gap-20 block-quarter-item-20">
+        <div style="background-image: url('{{ "homepage_guides-adidas.jpg" | asset_url }}')" class="guides-section_item-image"></div>
+        <div class="guides-section_item-text block-flex-wrap">
+          <p class="guides-section_item-title h3-heading-pp">
+            How To Spot Fake Adidas Yeezy Boost 350 V2
+          </p>
+          <p class="guides-section_item-desc small-text">
+            7 minute read
+          </p>
+        </div>
+      </a>
+      <a href="https://legitgrails.com/blogs/gucci/gucci-marmont-bag-fake-vs-real-guide" class="guides-section_item block-flex-wrap block-gap-20 block-quarter-item-20">
+        <div style="background-image: url('{{ "homepage_guides-gucci.jpg" | asset_url }}')" class="guides-section_item-image"></div>
+        <div class="guides-section_item-text block-flex-wrap">
+          <p class="guides-section_item-title h3-heading-pp">
+            How To Spot Fake Gucci Marmont Bag
+          </p>
+          <p class="guides-section_item-desc small-text">
+            7 minute read
+          </p>
+        </div>
+      </a>
+      <a href="https://legitgrails.com/blogs/yeezy/real-vs-fake-yeezy-slides-legit-check" class="guides-section_item block-flex-wrap block-gap-20 block-quarter-item-20">
+        <div style="background-image: url('{{ "homepage_guides-yeezy.jpg" | asset_url }}')" class="guides-section_item-image"></div>
+        <div class="guides-section_item-text block-flex-wrap">
+          <p class="guides-section_item-title h3-heading-pp">
+            How To Spot Fake Yeezy Slides
+          </p>
+          <p class="guides-section_item-desc small-text">
+            6 minute read
+          </p>
+        </div>
+      </a>
+    </div>
+    <a href="https://legitgrails.com/pages/guides" class="rebranding_btn rebranding_btn-main">View all</a>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Guides Section",
+    "class": "guides-section rebranding-section-bottom",
+    "settings": []
+  }
+{% endschema %}

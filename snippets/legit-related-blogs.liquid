@@ -1,0 +1,328 @@
+{%- assign timestamp = 'now' | date: "%s" -%}
+{%- assign ex_ids = "" -%}
+{%- assign ex_frmpool_id = article.id | append: '"' | prepend: '"' -%}
+
+{%- assign ex_tags = "" | split: "," -%}
+{%- assign no_post_display = 3 -%}
+
+{%- assign b_id = blog.id -%}
+
+{%- assign blog_ids = "51527614542,51546259534,77179551822,51557269582,51549470798,51553271886,50822512718,51538952270,26961510478,51514966094,51554222158,50822545486,51529777230,51528564814,50911805518,50822611022,50822643790,51520634958,51536986190,51515129934,50822578254,51541278798,51529547854,51543343182,50822447182,51534954574,50847645774,51517849678,50822873166,51554713678,51554320462,77172801614,51553861710,51559333966,51550748750"  -%}
+{% comment %}{%- assign blog_ids = "84747026603,77562511531" -%}{% endcomment %}
+
+{%- assign blog_handle_arr = blog.handle -%}
+
+{%- assign blog_flag = "false" -%}
+
+{%- unless blog_ids contains b_id -%}
+    {%- assign blog_flag = "true" -%}
+{%- endunless -%}
+
+{%- unless ex_ids contains article.id -%}
+
+    {%- if blog_flag == "false" -%}
+
+        {%- assign article_temp = article.id -%}
+
+        {%- assign related_posts = "" -%}
+        {%- assign curr_blog = blog.handle -%}
+
+        {%- for article in blogs[curr_blog].articles -%}
+            {%- if article.id == article_temp -%}
+                {%- assign current_post_tags = article.tags -%}
+                {%- assign article_author = article.author -%}
+                {%- assign article_title = article.title -%}
+                {%- assign article_title_arr = article_title | remove: " " | split: "" -%}
+            {%- endif -%}
+        {%- endfor -%}
+
+        {%- assign main_flag = "true" -%}
+        {%- for tag in ex_tags -%}
+            {%- assign ex_tags_temp = tag | strip -%}
+            {%- if current_post_tags contains ex_tags_temp -%}
+                {%- assign main_flag = "false" -%}
+            {%- endif -%}
+        {%- endfor -%}
+
+        {%- if main_flag == "true" -%}
+
+            <div id="relatedblogs">
+
+                {%- for blog in blog_handle_arr -%}
+
+                    {%- assign blog_temp = blog -%}
+
+                    {%- for article in blogs[blog_temp].articles -%}
+                        {%- unless ex_frmpool_id contains article.id -%}
+
+
+                            {%- assign atitle_temp = article.title | remove: " " | split: "" -%}
+                            {%- assign flag = "false" -%}
+                            {%- for word in atitle_temp -%}
+                                {%- if article_title_arr contains word -%}
+                                    {%- assign flag = "true" -%}
+                                    {%- break -%}
+                                {%- endif -%}
+                            {%- endfor -%}
+
+                            {%- assign t_flag = "false" -%}
+                            {%- for tag in current_post_tags -%}
+                                {%- if article.tags contains tag -%}
+                                    {%- assign t_flag = "true" -%}
+                                    {%- break -%}
+                                {%- endif -%}
+                            {%- endfor -%}
+
+                            {%- if t_flag == "true" or article_author == article.author or flag == "true" -%}
+                                {%- assign related_posts = related_posts | append: article.id | append: "," -%}
+                            {%- endif -%}
+
+                        {%- endunless -%}
+                    {%- endfor -%}
+
+
+                {%- endfor -%}
+
+                {%- if related_posts.size > 0 -%}
+
+                    {%- assign tsl = timestamp | slice: -1, 1 | times: 1 -%}
+                    {%- assign rids = related_posts | split: ',' -%}
+                    {%- assign rindex = tsl -%}
+                    {%- if tsl > rids.size or tsl < 0 -%}
+                        {%- assign time_arr = timestamp | split: '' -%}
+                        {%- for t in time_arr reversed -%}
+                            {%- assign ti = t | times: 1 -%}
+                            {%- if ti < rids.size -%}
+                                {%- assign rindex = forloop.index -%}
+                                {%- break -%}
+                            {%- endif -%}
+                        {%- endfor -%}
+                    {%- endif -%}
+
+                    {%- if rindex == rids.size -%}
+                        {%- assign rindex = rindex | minus: 1 -%}
+                    {%- endif -%}
+
+                    {%- assign articleids = '' -%}
+                    {%- for rid in rids offset: rindex -%}
+                        {%- assign articleids = articleids | append: rid | append: "," -%}
+                    {%- endfor -%}
+
+                    {%- assign rsize = articleids | split: "," -%}
+
+                    {%- if rsize.size < no_post_display -%}
+                        {%- for rid in rids -%}
+                            {%- unless articleids contains rid -%}
+                                {%- assign articleids = articleids | append: rid | append: "," -%}
+                            {%- endunless -%}
+                        {%- endfor -%}
+                    {%- endif -%}
+
+                    {%- assign rsize = articleids | size | minus: 1 -%}
+                    {%- assign articleids = articleids | slice: 0, rsize | split: "," -%}
+
+                    {%- assign article_ids = articleids | uniq -%}
+
+                    <h2>Related Posts</h2>
+                    <div class="related-blogs">
+                        {%- assign count = 0 -%}
+                        {%- for aid in article_ids -%}
+                            {%- assign rflag = "false" -%}
+                            {%- for blog in blog_handle_arr -%}
+                                {%- assign blog_temp = blog -%}
+
+                                {%- for article in blogs[blog_temp].articles -%}
+                                    {%- if count == no_post_display -%}
+                                        {%- break -%}
+                                    {%- endif -%}
+                                    {%- if aid contains article.id -%}
+
+                                        {%- assign ex_frmpool_tags = "" | split: "," -%}
+                                        {%- assign ex_frmpool_main_flag = "true" -%}
+                                        {%- for tag in ex_frmpool_tags -%}
+                                            {%- assign ex_frmpool_ex_tags_temp = tag | strip -%}
+                                            {%- if article.tags contains ex_frmpool_ex_tags_temp -%}
+                                                {%- assign ex_frmpool_main_flag = "false" -%}
+                                            {%- endif -%}
+                                        {%- endfor -%}
+
+                                        {%- if ex_frmpool_main_flag == "true" -%}
+                                            <div class="related-blogs__item">
+                                                {%- if article.image -%}
+                                                    <div class="related-blog_image_wrap">
+                                                        <a href="{{ article.url }}"><img
+                                                                    src="{{ article.image.src | img_url: '386x' }}"
+                                                                    alt="{{ article.title }}"
+                                                                    class="related-blog_image" height="376" width="376"/></a>
+                                                    </div>
+                                                {%- else -%}
+                                                    <div class="related-blog_image_wrap">
+                                                        <div class="related-blog_no_image"></div>
+                                                    </div>
+                                                {%- endif -%}
+                                                <div class="related-blog_contents">
+                                                    <h3 class="related-blog_title font-title"><a
+                                                                href='{{ article.url }}'>{{ article.title }}</a></h3>
+
+                                                    {%- if article.content != "" -%}
+                                                        <p class="font-description">{{ article.content | strip_html | strip | truncate: 120 }}</p>
+                                                    {%- endif -%}
+                                                    <a class="read-more font-title" href='{{ article.url }}'>Read more</a>
+                                                </div>
+
+                                            </div>      {%- endif -%}
+
+                                        {%- assign rflag = "true" -%}
+                                        {%- assign count = count | plus: 1 -%}
+                                        {%- break -%}
+                                    {%- endif -%}
+                                {%- endfor -%}
+                                {%- if rflag == "true" -%}
+                                    {%- break -%}
+                                {%- endif -%}
+                            {%- endfor -%}
+                        {%- endfor -%}
+                    </div>    {%- else -%}
+
+
+                    {%- assign all_articleids = "" -%}
+
+                    {%- for blog in blog_handle_arr -%}
+                        {%- assign blog_temp = blog -%}
+                        {%- for article in blogs[blog_temp].articles -%}
+                            {%- unless article.id == article_temp -%}
+                                {%- assign all_articleids = all_articleids | append: article.id | append: "," -%}
+                            {%- endunless -%}
+                        {%- endfor -%}
+                    {%- endfor -%}
+
+                    {%- assign tsl = timestamp | slice: -1, 1 | times: 1 -%}
+
+                    {%- assign rids = all_articleids | split: ',' -%}
+
+
+                    {%- assign rindex = tsl -%}
+
+                    {%- if tsl > rids.size or tsl < 0 -%}
+                        {%- assign time_arr = timestamp | split: '' -%}
+                        {%- for t in time_arr reversed -%}
+                            {%- assign ti = t | times: 1 -%}
+                            {%- if ti < rids.size -%}
+                                {%- assign rindex = forloop.index -%}
+                                {%- break -%}
+                            {%- endif -%}
+                        {%- endfor -%}
+                    {%- endif -%}
+
+                    {%- if rindex == rids.size -%}
+                        {%- assign rindex = rindex | minus: 1 -%}
+                    {%- endif -%}
+
+                    {%- assign articleids = '' -%}
+                    {%- for rid in rids offset: rindex -%}
+                        {%- assign articleids = articleids | append: rid | append: "," -%}
+                    {%- endfor -%}
+
+                    {%- assign rsize = articleids | split: "," -%}
+
+                    {%- if rsize.size < no_post_display -%}
+                        {%- for rid in rids -%}
+                            {%- unless articleids contains rid -%}
+                                {%- assign articleids = articleids | append: rid | append: "," -%}
+                            {%- endunless -%}
+                        {%- endfor -%}
+                    {%- endif -%}
+
+                    {%- assign rsize = articleids | size | minus: 1 -%}
+                    {%- assign articleids = articleids | slice: 0, rsize | split: "," -%}
+                    {% if articleids.size > 0 %}
+                        <h3>Related Posts</h3>
+                        <div class="related-blogs">
+                        {%- assign count = 0 -%}
+                        {%- for aid in articleids -%}
+                            {%- assign rflag = "false" -%}
+                            {%- for blog in blog_handle_arr -%}
+                                {%- assign blog_temp = blog -%}
+
+                                {%- for article in blogs[blog_temp].articles -%}
+                                    {%- if count == no_post_display -%}
+                                        {%- break -%}
+                                    {%- endif -%}
+                                    {%- if aid contains article.id -%}
+
+                                        {%- assign ex_frmpool_tags = "" | split: "," -%}
+                                        {%- assign ex_frmpool_main_flag = "true" -%}
+                                        {%- for tag in ex_frmpool_tags -%}
+                                            {%- assign ex_frmpool_ex_tags_temp = tag | strip -%}
+                                            {%- if article.tags contains ex_frmpool_ex_tags_temp -%}
+                                                {%- assign ex_frmpool_main_flag = "false" -%}
+                                            {%- endif -%}
+                                        {%- endfor -%}
+
+                                        {%- if ex_frmpool_main_flag == "true" -%}
+
+                                            <div class="related-blog_item">
+                                                {%- if article.image -%}
+                                                    <div class="related-blog_image_wrap">
+                                                        <img class="related-blog_image"
+                                                             src="{{ article.image.src | img_url: '386x' }}"
+                                                             alt="{{ article.title }}"/>
+                                                    </div>
+                                                {%- else -%}
+                                                    <div class="related-blog_no_image"></div>
+                                                {%- endif -%}
+
+                                                <div class="related-blog_contents">
+                                                    <h3 class="font-title related-blog_title"><a
+                                                                href='{{ article.url }}'>{{ article.title }}</a></h3>
+
+                                                    {%- if article.content != "" -%}
+                                                        <p class="font-description">{{ article.content | strip_html | strip | truncate: 120 }}</p>
+                                                    {%- endif -%}
+                                                    <a class="read-more font-title" href='{{ article.url }}'>Read more</a>
+                                                </div>
+                                            </div>          {%- endif -%}
+
+                                        {%- assign rflag = "true" -%}
+                                        {%- assign count = count | plus: 1 -%}
+                                        {%- break -%}
+                                    {%- endif -%}
+                                {%- endfor -%}
+                                {%- if rflag == "true" -%}
+                                    {%- break -%}
+                                {%- endif -%}
+                            {%- endfor -%}
+                        {%- endfor -%}
+                    </div>
+                    {% endif %}
+                {%- endif -%}
+                <style>
+                    .related-blogs{display:flex;flex-direction:column;gap:20px;justify-content:space-between;margin-bottom:50px; width:100%;}
+                    .related-blogs__item{flex-grow:1;}
+                    .related-blog_title{margin-bottom:12px;}
+                    .related-blog_title a{color:#161616;display:inherit;font-size:20px;line-height:28px;text-align:center;}
+                    #relatedblogs h2{color:#161616;font-size:24px;font-weight:700;line-height:28px;margin-bottom:50px;text-align:center;}
+                    .related-blog_contents{color:#161616;font-size:15px;}
+                    .related-blog_contents p{margin-bottom:12px;}
+                    .related-blog_image_wrap a img{height:auto;max-width:100%;width:100%;}
+                    .read-more{color:#cdab71;font-size:16px;font-weight:bold;letter-spacing:0px;padding-right:25px;position:relative;text-decoration:none;text-transform:uppercase;}
+                    .read-more:after{content:"►";height:5px;line-height:0px;position:absolute;right:0;top:8px;transform:scaleX(0.5);transition:all ease 0.3s;width:5px;}
+                    .read-more:hover:after{right:-5px;}
+                    .related-blog_image_wrap{margin-bottom:20px;}
+                    .related-blog_title a:hover{text-decoration:underline;}
+                    @media (min-width: 750px){ .related-blogs{display:flex;flex-direction:row;justify-content:start;}
+                        .related-blogs__item{flex-basis:30%;max-width:386px;}
+                    }
+                    @media (min-width: 1024px){ .related-blogs{display:flex;flex-direction:row;justify-content:start;}
+                        .related-blog_contents{font-size:17px;}
+                        .related-blog_title{margin-bottom:15px;}
+                        .related-blog_title a{font-size:24px;text-align:left;}
+                        .related-blog_image_wrap{margin-bottom:20px;}
+                        .related-blogs{margin-bottom:80px;}
+                        .related-blog_contents p{margin-bottom:15px;}
+                    }
+                </style>
+            </div>
+        {%- endif -%}
+    {%- endif -%}
+{%- endunless -%}

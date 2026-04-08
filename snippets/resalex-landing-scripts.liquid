@@ -1,0 +1,124 @@
+<script>
+  $(window).on('load', function () {
+        setInterval(loop, 6000);
+        setTimeout(function () {
+          $('.resalex_hero-illustration-main-label').addClass('animated');
+        }, 3000);
+        setTimeout(function () {
+          $('.resalex_hero-illustration-main-label').addClass('animated-out');
+        }, 5500);
+        setTimeout(function () {
+          $('.resalex_hero-illustration-main-label').removeClass('animated');
+          $('.resalex_hero-illustration-main-label').removeClass('animated-out');
+        }, 6000);
+
+    function loop(){
+        setTimeout(function () {
+          $('.resalex_hero-illustration-main-label').addClass('animated');
+        }, 3000);
+        setTimeout(function () {
+          $('.resalex_hero-illustration-main-label').addClass('animated-out');
+        }, 5500);
+        setTimeout(function () {
+          $('.resalex_hero-illustration-main-label').removeClass('animated');
+          $('.resalex_hero-illustration-main-label').removeClass('animated-out');
+        }, 6000);
+    }
+
+    
+    var winScrollTop = $(this).scrollTop();
+    let window_height = window.innerHeight
+    let screen1 = document.querySelector('.resalex_hero')
+    let screen2 = document.querySelector('.resalex_about')
+    let screen3 = document.querySelector('.resalex_offers')
+    let screen4 = document.querySelector('.resalex_steps')
+    let screen5 = document.querySelector('.resalex_trusted')
+    let screen6 = document.querySelector('.resalex_cta')
+    let screen1_scrolled = false
+    let screen2_scrolled = false
+    let screen3_scrolled = false
+    let screen4_scrolled = false
+    let screen5_scrolled = false
+
+
+    if (winScrollTop > screen3.offsetHeight - 200 && !screen3_scrolled) {
+        resalexStepsLoad();
+        screen3_scrolled = true;
+    };
+
+    window.addEventListener('scroll', () => {
+      if (screen4.offsetTop + 400 < window.pageYOffset + window_height && !screen3_scrolled) {
+            resalexStepsLoad();
+            screen3_scrolled = true;
+        };
+      
+      if ($(window).width() > 1450) {
+        if (screen4.offsetTop - 150 > window.pageYOffset ) {
+              $('.resalex_steps-text').removeClass('animation');
+              $('.resalex_steps-text').removeClass('animated');
+          };
+          if (screen4.offsetTop - 150 < window.pageYOffset && screen4.offsetTop + 516.98 > window.pageYOffset ) {
+              $('.resalex_steps-text').removeClass('animated');
+              $('.resalex_steps-text').addClass('animation');
+          };
+          if (screen4.offsetTop + 516.98 < window.pageYOffset) {
+              $('.resalex_steps-text').removeClass('animation');
+              $('.resalex_steps-text').addClass('animated');
+          };
+      } else if (($(window).width() > 1250) && ($(window).width() < 1450)) {
+        if (screen4.offsetTop - 150 > window.pageYOffset ) {
+              $('.resalex_steps-text').removeClass('animation');
+              $('.resalex_steps-text').removeClass('animated');
+          };
+          if (screen4.offsetTop - 150 < window.pageYOffset && screen4.offsetTop + 473.37 > window.pageYOffset ) {
+              $('.resalex_steps-text').removeClass('animated');
+              $('.resalex_steps-text').addClass('animation');
+          };
+          if (screen4.offsetTop + 473.37 < window.pageYOffset) {
+              $('.resalex_steps-text').removeClass('animation');
+              $('.resalex_steps-text').addClass('animated');
+          };
+      } else if (($(window).width() < 1250) && ($(window).width() > 950)) {
+          if (screen4.offsetTop - 150 > window.pageYOffset ) {
+                $('.resalex_steps-text').removeClass('animation');
+                $('.resalex_steps-text').removeClass('animated');
+            };
+            if (screen4.offsetTop - 150 < window.pageYOffset && screen4.offsetTop + 451.78 > window.pageYOffset ) {
+                $('.resalex_steps-text').removeClass('animated');
+                $('.resalex_steps-text').addClass('animation');
+            };
+            if (screen4.offsetTop + 451.78 < window.pageYOffset) {
+                $('.resalex_steps-text').removeClass('animation');
+                $('.resalex_steps-text').addClass('animated');
+            };
+        } else {
+            $('.resalex_steps-text').removeClass('animation');
+            $('.resalex_steps-text').removeClass('animated');
+        }
+    });
+
+});
+
+  function resalexStepsLoad() {
+    if ($(window).width() > 950) {
+      $('span.resalex_steps-line-main').addClass('animated');
+      $('.resalex_steps-line-item-1').addClass('animated');
+      setTimeout(function () {
+          $('.resalex_steps-item-1').addClass('animated');
+      }, 500);
+      setTimeout(function () {
+          $('.resalex_steps-line-item-2').addClass('animated');
+      }, 1500);
+      setTimeout(function () {
+          $('.resalex_steps-item-2').addClass('animated');
+      }, 2000);
+      setTimeout(function () {
+          $('.resalex_steps-line-item-3').addClass('animated');
+      }, 3000);
+      setTimeout(function () {
+          $('.resalex_steps-item-3').addClass('animated');
+      }, 3500);
+    } else {
+    }
+};
+</script>

@@ -1,0 +1,65 @@
+{% render 'section-partners_platform-block-styles-min' %}
+<div class="section-container">
+            <div class="platform-solutions_wrapp">
+                <div class="platform-solutions_text">
+                    <h2 class="platform-solutions_title section-title font-title">
+                        {{ section.settings.title }}
+                    </h2>
+                    <div class="platform-solutions_desc section-description font-description">
+                        <p>{{ section.settings.description }}</p>
+                    </div>
+                    {% if section.settings.button_label != blank %}
+                      <a href="{{ section.settings.button_link }}" class="main-btn font-title">
+                          {{ section.settings.button_label }}
+                      </a>
+                    {% endif %}
+                    
+                </div>
+                <div class="platform-solutions_image">
+                    <img src="{{ "platform-solutions.webp" | asset_url }}" loading="lazy" class="platform-solutions_image-desc" alt="">
+                    <img src="{{ "platform-solutions_mob.webp" | asset_url }}" loading="lazy" class="platform-solutions_image-mob" alt="">
+                </div>
+            </div>
+        </div>
+
+{% schema %}
+{
+"name": {
+"en": "Partners Platform"
+},
+"class" : "platform-solutions",
+"settings": [
+{
+"type": "text",
+"id": "title",
+"label": {
+"en": "Heading"
+},
+"default": {
+"en": "Legit services"
+}
+},
+{
+"type": "text",
+"id": "description",
+"label": {
+"en": "Description"
+}
+},
+{
+"type": "text",
+"id": "button_label",
+"label": {
+"en": "Button label"
+}
+},
+{
+"type": "url",
+"id": "button_link",
+"label": {
+"en": "Button link"
+}
+}
+]
+}
+{% endschema %}

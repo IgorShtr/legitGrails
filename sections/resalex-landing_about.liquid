@@ -1,0 +1,151 @@
+<style>
+  .resalex_about {
+    padding-top: 0px;
+  }
+.resalex_about-content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+  .resalex_about-text {
+    width: 678px;
+    transition: .5s;
+    opacity: 1;
+    transform: translateY(0)
+    order: 2;
+  }
+  h2.resalex_about-title {
+    text-align: left;
+  }
+  p.resalex_about-desc {
+    margin-top: 15px;
+    text-align: left;
+  }
+  .resalex_about-items {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 30px 50px;
+      margin-top: 40px;
+  }
+  img.resalex_about-image {
+    width: 647px;
+    border-radius: 15px;
+    transition: .5s;
+    opacity: 1;
+    transform: translateY(0px);
+    order: 1;
+  }
+  p.resalex_about-pretitle {
+    margin-bottom: 15px;
+    text-align: left;
+}
+  @media(max-width: 1450px) {
+    .resalex_about-text {
+    width: 600px;
+  }
+    img.resalex_about-image {
+        width: 530px;
+    }
+  }
+  @media(max-width: 1250px) {
+    .resalex_about {
+      padding-top: 120px;
+    }
+    .resalex_about-text {
+        width: 459px;
+    }
+    img.resalex_about-image {
+        width: 400px;
+    }
+    .resalex_about-items {
+        gap: 30px;
+        margin-top: 30px;
+    }
+  }
+  @media(max-width: 950px) {
+    .resalex_about-text {
+        width: 100%;
+        text-align: center;
+        order: 1;
+    }
+    h2.resalex_about-title {
+        text-align: center;
+    }
+    p.resalex_about-desc {
+        text-align: center;
+    }
+    .resalex_about-items {
+        justify-content: center;
+    }
+    img.resalex_about-image {
+        width: 100%;
+        max-width: 500px;
+        margin: auto;
+        order: 2;
+    }
+    .resalex_about-content {
+        gap: 40px;
+    }
+    .resalex_about {
+      padding-top: 50px;
+    }
+    p.resalex_about-pretitle {
+        text-align: center;
+    }
+  }
+</style>
+
+<div class="rebranding_container">
+  <div class="resalex_about-content">
+    
+    <div class="resalex_about-text">
+      <p class="resalex_about-pretitle resalex-pretitle caption">
+        What is ResaleX?
+      </p>
+      <h2 class="resalex_about-title resalex_section-title h2-heading-ss">
+        <span class="h2-heading-pp">AI-driven tool</span> designed to streamline resale operations
+      </h2>
+      <p class="resalex_about-desc resalex-desc body-text">
+        Powered by advanced algorithms, ResaleX reduces manual tasks, boosts accuracy and keeps your resale business competitive
+      </p>
+      <div class="resalex_about-items">
+        <div class="resalex_about-item">
+          <p class="resalex_about-item-title h3-heading-pp">
+            Save Time
+          </p>
+          <p class="resalex_about-item-desc body-text">
+            on manual listing creation
+          </p>
+        </div>
+        <div class="resalex_about-item">
+          <p class="resalex_about-item-title h3-heading-pp">
+            Enable Personalized
+          </p>
+          <p class="resalex_about-item-desc body-text">
+            shopping experiences
+          </p>
+        </div>
+        <div class="resalex_about-item">
+          <p class="resalex_about-item-title h3-heading-pp">
+            Maximize Profits
+          </p>
+          <p class="resalex_about-item-desc body-text">
+            with accurate pricing predictions
+          </p>
+        </div>
+      </div>
+    </div>
+    <img src="{{ 'resalex_about-img-2x.webp' | asset_url }}" class="resalex_about-image">
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "ResaleX About",
+    "class": "resalex_about rebranding-wider-section",
+    "settings": []
+  }
+{% endschema %}
