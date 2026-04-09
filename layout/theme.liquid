@@ -86,6 +86,31 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org",
+ "@type": "Service", 
+ "name": "Luxury Item Authentication",
+ "provider": { "@type": "Organization", "name": "LegitGrails" }, 
+ "serviceType": "Product Authentication", 
+ "areaServed": "Worldwide", 
+ "description": 
+ "Professional authentication for luxury goods" }
+</script>
+{% if request.page_type == "index" %} 
+  <script type="application/ld+json"> 
+      { 
+        "@context": "https://schema.org",
+        "@type": "WebSite", 
+        "name": "LegitGrails", 
+        "url": "https://legitgrails.com", 
+        "potentialAction": { "@type":
+        "SearchAction", 
+        "target": "https://legitgrails.com/search?q={search}", 
+        "query-input": "required name=search"
+        } 
+    } 
+</script>
+{% endif %}
 
 <style>
    #terms-of-service #MainContent, #privacy-policy #MainContent, #refund-policy #MainContent  {
@@ -190,6 +215,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-KXJPGZXV');</script>
 <!-- End Google Tag Manager -->
     {% endif %}
+    <link rel="alternate" hreflang="{{ request.locale.iso_code }}" href="{{ canonical_url }}">
+  <link rel="alternate" hreflang="x-default" href="{{ shop.url }}{{ request.path }}">
+
   </head>
   <body
     id="{{ page_title | handle }}"
@@ -302,13 +330,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
 
     <!-- Help Widget -->
-    <script src="https://chat-assets.frontapp.com/v1/chat.bundle.js"></script>
     <script>
-      window.FrontChat("init", {
-        chatId: "64481c65713587fcaf413e009bf7895f",
-        welcomeMessageAppearance: "hidden",
-        useDefaultLauncher: true
-      });
+      function loadScript() {
+        return new Promise((resolve, reject) => {
+        var script = document.createElement("script");
+        script.src = "https://chat-assets.frontapp.com/v1/chat.bundle.js";
+        script.defer = true;
+         script.onload = resolve;
+        script.onerror = reject;
+        document.body.appendChild(script);
+  })
+      }
+      setTimeout(async () => {
+        try {
+          await loadScript();
+          function initChat() {
+            window.FrontChat("init", {
+              chatId: "64481c65713587fcaf413e009bf7895f",
+              welcomeMessageAppearance: "hidden",
+              useDefaultLauncher: true
+            })
+          }
+        } catch (e) {
+          console.error("Ошибка загрузки скрипта", e);
+        }
+      }, 5000);
     </script>
     <!-- End of Help Widget -->
     <!-- optimization deleted -->
