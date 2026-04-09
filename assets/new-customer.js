@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded",
+  function (){
 $('.account_sidebar_profile-button div').on('click', function () {
     $('.account_sidebar_profile-button div').removeClass('active');
     $(this).addClass('active');
@@ -28,3 +30,5 @@ $('div#showAll').on('click', function () {
 $(document).ready(function() {
 $('input, select').styler();
 });
+  }
+  )

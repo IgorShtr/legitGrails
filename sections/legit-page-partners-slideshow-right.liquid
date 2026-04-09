@@ -1,7 +1,7 @@
 <div class="certificate-block-slides owl-carousel owl-theme">
     {%- for block in section.blocks -%}
         <div class="certificate-image image--{{ section.id }}">
-            <img src="{{ block.settings.image | img_url: 'master' }}" loading="lazy" alt="">
+            <img src="{{ block.settings.image | img_url: 'master' }}" loading="lazy" alt="Slide">
         </div>
     {% endfor %}
 </div>

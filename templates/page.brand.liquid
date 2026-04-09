@@ -4,6 +4,8 @@
 {% section "product_steps" %}
 
 <script>
+  document.addEventListener("DOMContentLoaded",
+    function () {
   $("#shopify-section-quarter_offers .rebranding_btn").attr("href","#search-brand"),$("#shopify-section-product_steps .rebranding_btn").attr("href","#search-brand");
 
 $('#search-brand-input').on('input', function(){
@@ -26,4 +28,6 @@ $('#search-brand-input').on('input', function(){
 		}
 	});
 });
+}
+)
 </script>

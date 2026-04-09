@@ -126,5 +126,9 @@
 <div class="hidden" id="product-data">{{ product.id }}</div>
 {% render 'uploadcare-fields', product: product  %}
 <script>
+    document.addEventListener("DOMContentLoaded",
+    function () {
   $(document).ready(function(){$(".template-page").length?$("#product_form_{{ product.id }} ").on("change",function(){let t=$("input:checked").attr("data-price");$(".product__current-price").html(t)}):$(".product-form").on("change",function(t){console.log(this);let e="."+t.target.form.parentElement.classList[1],a=$(e).find("input.radio-option:checked").attr("data-price");$(e).find(".product__current-price").html(a)});let t={empty:"Please upload photos before purchasing",wait:"Adding...",thanks:"Thank You!"};$(".custom-cart-button").on("click",function(e){e.preventDefault();let a="."+e.target.form.parentElement.classList[1],n;n=$(".uploadcare-attributes").length?$(".uploadcare-attributes").children():$(".uploadkit-attribute-container").children();let o={};if(n.length){for(item of($(".custom-cart-button").html(t.wait),sessionStorage.removeItem("uploadcare_{{ product.id }}"),n))o[item.name.substring(item.name.indexOf("[")+1,item.name.lastIndexOf("]"))]=item.value;let c={items:[{id:$(a).find("input.radio-option:checked").val(),quantity:1,properties:o}]};$("#product_form_{{ product.id }}"),$.ajax({type:"POST",url:"/cart/add.js",dataType:"json",data:JSON.stringify(c),contentType:"application/json",processData:!1,success:function(){$(a).find(".custom-cart-button").html(t.thanks),document.location.href="/cart/checkout"}})}else $(".cart-notification").html(t.empty),setTimeout(function(){$(".cart-notification").html("")},2e3)})});
-</script>
+  }
+)
+  </script>

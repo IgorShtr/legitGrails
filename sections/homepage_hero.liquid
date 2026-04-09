@@ -641,22 +641,28 @@ ul.slick-dots {
         </div>
       </div>
     </div>
-    <div class="homepage_hero-slider" style="background-image: url('{{ "homepage_hero-slide-2x.webp" | asset_url }}');
-        background-image: -webkit-image-set(
-          url('{{ "homepage_hero-slide-2x.webp" | asset_url }}') 1320px,
-          url('{{ "homepage_hero-slide-1x.webp" | asset_url }}') 660px,
-          url('{{ "homepage_hero-slide-mob.webp" | asset_url }}') 440px);
-        background-image: image-set(
-          url('{{ "homepage_hero-slide-2x.webp" | asset_url }}') 1320px,
-          url('{{ "homepage_hero-slide-1x.webp" | asset_url }}') 660px,
-          url('{{ "homepage_hero-slide-mob.webp" | asset_url }}') 440px);">
-    </div>
+    <div class="homepage_hero-slider" >
+     <img src="{{ 'homepage_hero-slide-2x.webp' | asset_url }}" 
+     class="hero-img" 
+     srcset="{{'homepage_hero-slide-mob.webp' | asset_url }} 750w, {{ 'homepage_hero-slide-1x.webp' | asset_url }} 1200w, {{ 'homepage_hero-slide-2x.webp'| asset_url }} 2400w" sizes="100vw" 
+     fetchpriority="high" 
+     alt="LegitGrails luxury authentication service"
+    width="1920" 
+    height="800" 
+    style="object-fit:cover; width:100%; height:100%;">
+    </div> 
   </div>
 </div>
               
 <script>
-$(function(){let t=$("#product-search"),e=$(".products-search_result");$(".products-wrapp").each(function(){$(this).children().length<1&&$(this).parents(".products-item").find(".products-view").hide()}),t.click(function(t){t.stopPropagation(),e.children().length&&this.value.length>=1&&e.show()}),$(window).click(function(){e.hide()}),t.on("input",function(){this.value.length>=1?$.ajax("/search?q="+this.value+"*&type=product",{type:"GET",success:function(t){e.show();let s=new DOMParser().parseFromString(t,"text/html").getElementsByClassName("card-list");s.item(0).children.item(0).children.length?(e.addClass("list-visible"),e.html(s)):(e.html('<a href="https://legitgrails.com/products/brands-legit-check" class="card__wrapper text-center"><div class="card__info card__info--aligned"><h3 class="card__name h4 font-title">Other Brands Authentication Service</h3></div></a>'),e.removeClass("list-visible"))}}):e.hide()})});
-$(".homepage_hero-button").on("click",function(){$(".homepage_hero-button").removeClass("active"),$(".homepage_hero-slide").removeClass("active"),$(this).addClass("active");var a=$(this).attr("id");return $(".homepage_hero-slide_"+a).addClass("active"),!1});</script>
+  document.addEventListener("DOMContentLoaded",
+  function (){
+    $(function(){let t=$("#product-search"),e=$(".products-search_result");$(".products-wrapp").each(function(){$(this).children().length<1&&$(this).parents(".products-item").find(".products-view").hide()}),t.click(function(t){t.stopPropagation(),e.children().length&&this.value.length>=1&&e.show()}),$(window).click(function(){e.hide()}),t.on("input",function(){this.value.length>=1?$.ajax("/search?q="+this.value+"*&type=product",{type:"GET",success:function(t){e.show();let s=new DOMParser().parseFromString(t,"text/html").getElementsByClassName("card-list");s.item(0).children.item(0).children.length?(e.addClass("list-visible"),e.html(s)):(e.html('<a href="https://legitgrails.com/products/brands-legit-check" class="card__wrapper text-center"><div class="card__info card__info--aligned"><h3 class="card__name h4 font-title">Other Brands Authentication Service</h3></div></a>'),e.removeClass("list-visible"))}}):e.hide()})});
+    $(".homepage_hero-button").on("click",function(){$(".homepage_hero-button").removeClass("active"),$(".homepage_hero-slide").removeClass("active"),$(this).addClass("active");var a=$(this).attr("id");return $(".homepage_hero-slide_"+a).addClass("active"),!1});
+    }
+  )
+    </script>
+  
 {% comment %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
@@ -670,7 +676,7 @@ $(".homepage_hero-button").on("click",function(){$(".homepage_hero-button").remo
   autoplay: true,
   autoplaySpeed: 6500,
     speed: 1000
-});
+});)
 </script>
 {% endcomment %}
 {% schema %}

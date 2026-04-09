@@ -250,7 +250,7 @@
       {% if type.example_image.size > 0 %}
       <div class="hidden">
         <div id="example-{{ tab.name }}_{{ type.name }}">
-          <img src="{{ type.example_image }}" class="example-popup-img">
+          <img src="{{ type.example_image }}" class="example-popup-img" loading="lazy" alt="{{ tab.name }}" >
         </div>
       </div>
         {% endif %}
@@ -270,7 +270,10 @@
   referrerpolicy="no-referrer"
 ></script>
 <script>
+  document.addEventListener("DOMContentLoaded",
+  function (){
   $('.popup').magnificPopup();
+   })
 </script>
 
 {{ 'uploadcare.full.min.js' | asset_url | script_tag }}

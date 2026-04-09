@@ -298,8 +298,11 @@
   </div>
 </div>
 <script>
-  $(function(){$(".guides_library-item-guides").each(function(){$(this).children().length<3&&$(this).parents(".guides_library-item").find(".guides-view").addClass("hideview")&&$(this).parents(".guides_library-item").find("h2").addClass("guides_library-item-wide")}),$("#blog-search").click(function(e){e.stopPropagation(),$(".guides-search_result").children().length&&this.value.length>=3&&$(".guides-search_result").show()}),$(window).click(function(){$(".guides-search_result").hide()}),$("#blog-search").on("input",function(){this.value.length>=3?$.ajax("/search?q="+this.value+"*&type=article",{type:"GET",success:function(e){$(".guides-search_result").show();let s=new DOMParser().parseFromString(e,"text/html").getElementsByClassName("card-list");console.log(s.item(0).children.item(0).children.length),s.item(0).children.item(0).children.length?$(".guides-search_result").html(s):$(".guides-search_result").html('<div class="no-results" style="text-align: center; margin-top: 20px; color: #000; font-size: 17px;">Your search for “'+$("#blog-search").val()+"” did not yield any results.</div>")}}):$(".guides-search_result").hide()})});
-</script>
+  document.addEventListener("DOMContentLoaded",
+  function(){$(function(){$(".guides_library-item-guides").each(function(){$(this).children().length<3&&$(this).parents(".guides_library-item").find(".guides-view").addClass("hideview")&&$(this).parents(".guides_library-item").find("h2").addClass("guides_library-item-wide")}),$("#blog-search").click(function(e){e.stopPropagation(),$(".guides-search_result").children().length&&this.value.length>=3&&$(".guides-search_result").show()}),$(window).click(function(){$(".guides-search_result").hide()}),$("#blog-search").on("input",function(){this.value.length>=3?$.ajax("/search?q="+this.value+"*&type=article",{type:"GET",success:function(e){$(".guides-search_result").show();let s=new DOMParser().parseFromString(e,"text/html").getElementsByClassName("card-list");console.log(s.item(0).children.item(0).children.length),s.item(0).children.item(0).children.length?$(".guides-search_result").html(s):$(".guides-search_result").html('<div class="no-results" style="text-align: center; margin-top: 20px; color: #000; font-size: 17px;">Your search for “'+$("#blog-search").val()+"” did not yield any results.</div>")}}):$(".guides-search_result").hide()})});
+    }
+  )
+  </script>
 {% schema %}
   {
     "name": "Guides Library",

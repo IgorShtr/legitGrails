@@ -549,7 +549,7 @@
       {% if type.example_image.size > 0 %}
       <div class="hidden">
         <div id="example-{{ tab.name }}_{{ type.name }}">
-          <img src="{{ type.example_image }}" class="example-popup-img">
+          <img src="{{ type.example_image }}" class="example-popup-img" loading="lazy" alt="{{ tab.name }}" >
         </div>
       </div>
         {% endif %}
@@ -563,12 +563,15 @@
   {% endif %}
 {% endfor %}
 <script>
+  document.addEventListener("DOMContentLoaded",
+  function (){
     $( document ).ready(function() {
       $("label[for='other-shoes-luxury'] span").text("Other shoes");
       $("label[for='other-shoes-hype'] span").text("Other shoes");
       $("label[for='sneakers-luxury'] span").text("Sneakers");
       $("label[for='sneakers-hype'] span").text("Sneakers");
   });
+  })
 </script>
                         
 {% for variant in product.variants %}

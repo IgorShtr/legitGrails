@@ -130,7 +130,7 @@ margin-bottom: -2px;
           <h3 class="h3-heading-pp w-100">Clients</h3>
           <div class="verified-partner_text-item-images block-flex-wrap block-gap-50">
             {% for image_object in array_of_image_objects %}
-                <img src="{{ image_object | image_url }}" >
+                <img src="{{ image_object | image_url }}" loading="lazy" alt="Verified partner clients logo" >
             {% endfor %}
           </div>
         </div>

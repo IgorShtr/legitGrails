@@ -119,9 +119,7 @@ font-family: "PP Fragment"!important;
 
 
 
-<script>
-$("a.guides_navigation-a").click(function(){$(".guides_navigation-ul").hasClass("open")?($("a.guides_navigation-a").html("open"),$(".guides_navigation-ul").removeClass("open")):($("a.guides_navigation-a").html("hide"),$(".guides_navigation-ul").addClass("open"))});
-</script>
+ <script src="{{ 'guides-navigation.js' | asset_url }}" defer></script>
 
 {% schema %}
 {

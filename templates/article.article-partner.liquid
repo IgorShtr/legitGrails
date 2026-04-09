@@ -159,6 +159,8 @@
 {% if uploadkit %}
   <script src="https://assets.getuploadkit.com/assets/uploadkit-app.js" defer></script>
   <script>
+    document.addEventListener("DOMContentLoaded",
+    function () {
     $(document).ready(function(){
       window.UploadKit.manualInit = true;
     });
@@ -301,7 +303,7 @@
         }
       }
     });
-
-
+ }
+)
   </script>
 {% endif %}

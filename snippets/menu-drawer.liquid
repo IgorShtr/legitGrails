@@ -167,6 +167,8 @@
 </div>
 
 <script>
+    document.addEventListener("DOMContentLoaded",
+  function (){
   $( "a.menu-close" ).on( "click", function() {
     $(".menu").removeClass("active");
     $(".menu-cover").removeClass("active");
@@ -183,4 +185,6 @@
             $(".menu-cover").removeClass("active");
 		}
 	});
+    }
+  )
 </script>
