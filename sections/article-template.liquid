@@ -41,7 +41,10 @@
   {% endif %}
 </div>
 <script>
-$(document).ready(function(){$(".blok-4-wrapper__right-content-img img:nth-child(1)").attr("src","//cdn.shopify.com/s/files/1/0094/6307/0798/t/112/assets/nicekicks-2.png?v=170669363440050049181685638408"),$(".blok-4-wrapper__right-content-img img:nth-child(2)").attr("src","//cdn.shopify.com/s/files/1/0094/6307/0798/t/112/assets/forbes-3.png?v=45807053214877541961685638418")}),$("a.guides_navigation-a").click(function(){$(".guides_navigation-ul").hasClass("open")?($("a.guides_navigation-a").html("open"),$(".guides_navigation-ul").removeClass("open")):($("a.guides_navigation-a").html("hide"),$(".guides_navigation-ul").addClass("open"))});
+  document.addEventListener("DOMContentLoaded",
+function(){$(".blok-4-wrapper__right-content-img img:nth-child(1)").attr("src","//cdn.shopify.com/s/files/1/0094/6307/0798/t/112/assets/nicekicks-2.png?v=170669363440050049181685638408"),$(".blok-4-wrapper__right-content-img img:nth-child(2)").attr("src","//cdn.shopify.com/s/files/1/0094/6307/0798/t/112/assets/forbes-3.png?v=45807053214877541961685638418")}),$("a.guides_navigation-a").click(function(){$(".guides_navigation-ul").hasClass("open")}?($("a.guides_navigation-a").html("open"),$(".guides_navigation-ul").removeClass("open")):($("a.guides_navigation-a").html("hide"),$(".guides_navigation-ul").addClass("open"))
+
+)
 </script>
 
 {% schema %}

@@ -70,7 +70,10 @@
     });
 </script>-->
 <script>
-$(function(){let t=$("#product-search"),e=$(".products-search_result");$(".products-wrapp").each(function(){$(this).children().length<3&&$(this).parents(".products-item").find(".products-view").hide()}),t.click(function(t){t.stopPropagation(),e.children().length&&this.value.length>=3&&e.show()}),$(window).click(function(){e.hide()}),t.on("input",function(){this.value.length>=2?$.ajax("/search?q="+this.value+"*&type=product",{type:"GET",success:function(t){e.show();let s=new DOMParser().parseFromString(t,"text/html").getElementsByClassName("card-list");s.item(0).children.item(0).children.length?(e.addClass("list-visible"),e.html(s)):(e.html('<div class="no-results" style="text-align: center; margin: 20px; color: #000; font-size: 17px;">Your search for “'+$("#product-search").val()+"” did not yield any results.</div>"),e.removeClass("list-visible"))}}):e.hide()})});
+    document.addEventListener("DOMContentLoaded",
+  function (){
+    let t=$("#product-search"),e=$(".products-search_result");$(".products-wrapp").each(function(){$(this).children().length<3&&$(this).parents(".products-item").find(".products-view").hide()}),t.click(function(t){t.stopPropagation(),e.children().length&&this.value.length>=3&&e.show()}),$(window).click(function(){e.hide()}),t.on("input",function(){this.value.length>=2?$.ajax("/search?q="+this.value+"*&type=product",{type:"GET",success:function(t){e.show();let s=new DOMParser().parseFromString(t,"text/html").getElementsByClassName("card-list");s.item(0).children.item(0).children.length?(e.addClass("list-visible"),e.html(s)):(e.html('<div class="no-results" style="text-align: center; margin: 20px; color: #000; font-size: 17px;">Your search for “'+$("#product-search").val()+"” did not yield any results.</div>"),e.removeClass("list-visible"))}}):e.hide()});
+        })
 </script>
 {% if section.settings.show_overlay %}
     <style>

@@ -45,7 +45,7 @@
                 </p>
                 <div class="partners_tabs-item_punkts">
                     <div class="partners_tabs-item_punkt">
-                        <img src="{{ "scalability.webp" | asset_url }}" alt="" loading="lazy" class="partners_tabs-item_punkts-img">
+                        <img src="{{ "scalability.webp" | asset_url }}" alt="Scalability" loading="lazy" class="partners_tabs-item_punkts-img">
                         <p class="partners_tabs-item_punkts-title font-title">
                             Scalability
                         </p>
@@ -54,7 +54,7 @@
                         </p>
                     </div>
                     <div class="partners_tabs-item_punkt">
-                        <img src="{{ "efficiency.webp" | asset_url }}" alt="" loading="lazy" class="partners_tabs-item_punkts-img">
+                        <img src="{{ "efficiency.webp" | asset_url }}" alt="Efficiency" loading="lazy" class="partners_tabs-item_punkts-img">
                         <p class="partners_tabs-item_punkts-title font-title">
                             Efficiency
                         </p>
@@ -63,7 +63,7 @@
                         </p>
                     </div>
                     <div class="partners_tabs-item_punkt">
-                        <img src="{{ "customization.webp" | asset_url }}" alt="" loading="lazy" class="partners_tabs-item_punkts-img">
+                        <img src="{{ "customization.webp" | asset_url }}" alt="Customization" loading="lazy" class="partners_tabs-item_punkts-img">
                         <p class="partners_tabs-item_punkts-title font-title">
                             Customization
                         </p>
@@ -84,24 +84,24 @@
                         </p>
                         <ul class="partners_tabs-item_platform-ul">
                             <li>
-                                <img src="{{ "login-arrow.svg" | asset_url }}" loading="lazy" alt="">
+                                <img src="{{ "login-arrow.svg" | asset_url }}" loading="lazy" alt="Submit and track authentication orders conveniently">
                                 <p class="font-description">Submit and track authentication orders conveniently</p>
                             </li>
                             <li>
-                                <img src="{{ "login-arrow.svg" | asset_url }}" loading="lazy" alt="">
+                                <img src="{{ "login-arrow.svg" | asset_url }}" loading="lazy" alt="Dashboard analytics and easy top up process">
                                 <p class="font-description">Dashboard analytics and easy top up process</p>
                             </li>
                             <li>
-                                <img src="{{ "login-arrow.svg" | asset_url }}" loading="lazy" alt="">
+                                <img src="{{ "login-arrow.svg" | asset_url }}" loading="lazy" alt="24/7 Customer Support">
                                 <p class="font-description">24/7 Customer Support</p>
                             </li>
                           <li>
-                                <img src="{{ "login-arrow.svg" | asset_url }}" loading="lazy" alt="">
+                                <img src="{{ "login-arrow.svg" | asset_url }}" loading="lazy" alt="Mobile and Desktop versions available">
                                 <p class="font-description">Mobile and Desktop versions available</p>
                             </li>
                         </ul> 
                     </div>
-                    <img src="{{ "partners_pc-mob.webp" | asset_url }}" loading="lazy" alt="" class="partners_tabs-item_platform-image">
+                    <img src="{{ "partners_pc-mob.webp" | asset_url }}" loading="lazy" alt="pc-mob" class="partners_tabs-item_platform-image">
                 </div>
                 <a href="http://b2b.legitgrails.com/" class="font-title main-btn">
                     EXPLORE PLATFORM
@@ -394,13 +394,15 @@
         </div>
         
         <script>
+          document.addEventListener("DOMContentLoaded",
+  function (){
           $(document).ready(function(){$(".section-steps--legit-steps-bundle").addClass("active")}),$(".partners_tab").on("click",function(){$(".partners_tab").removeClass("active"),$(".partners_tabs-item").removeClass("active"),$(this).addClass("active");var t=$(this).attr("id");return $(".partners_tabs-item_"+t).addClass("active"),$(".section-steps--legit-steps-bundle").removeClass("active"),!1}),$("a#tab-1").on("click",function(){$(".partners_tab").removeClass("active"),$(".partners_tabs-item").removeClass("active"),$(this).addClass("active");var t=$(this).attr("id");return $(".partners_tabs-item_"+t).addClass("active"),$(".section-steps--legit-steps-bundle").addClass("active"),!1});
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script>
           $('.popup').magnificPopup();
-        </script>
-                              
+                  }
+                )
+          </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+                       
 {% schema %}
   {
     "name": "Legit partners tabs",

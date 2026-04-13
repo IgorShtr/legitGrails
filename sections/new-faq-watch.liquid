@@ -101,9 +101,7 @@ Therefore, the determining factor here is how much you are willing to allocate f
 }
 </script>
 
-<script>
-$(".new-faq_item").on("click",function(){$(this).toggleClass("active")});
-</script>
+<script src="{{ 'new-faq-item-click.js' | asset_url }}" defer></script>
 
 {% schema %}
   {

@@ -20,13 +20,13 @@
 <div class="guides-block_item">
 <p class="guides-block_item-title">Verify any branded item in 3&nbsp;simple steps</p>
 <div class="guides-block_item-steps">
-<div class="guides-block_item-step"><span> <img src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/guide-block_round.svg?v=1702460484" loading="lazy" alt=""> </span>
+<div class="guides-block_item-step"><span> <img src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/guide-block_round.svg?v=1702460484" loading="lazy" alt="Choose response time upload photos"> </span>
 <p>Choose response time &amp; upload photos</p>
 </div>
-<div class="guides-block_item-step"><span> <img src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/guide-block_round.svg?v=1702460484" loading="lazy" alt=""> </span>
+<div class="guides-block_item-step"><span> <img src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/guide-block_round.svg?v=1702460484" loading="lazy" alt="Wait for AI & Human Experts decision"> </span>
 <p>Wait for AI & Human Experts decision</p>
 </div>
-<div class="guides-block_item-step"><span> <img src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/guide-block_checkmark.svg?v=1702460484" loading="lazy" alt=""> </span>
+<div class="guides-block_item-step"><span> <img src="https://cdn.shopify.com/s/files/1/0094/6307/0798/files/guide-block_checkmark.svg?v=1702460484" loading="lazy" alt="Get the verdict and personal certificate"> </span>
 <p>Get the verdict and personal certificate</p>
 </div>
 </div>
@@ -161,19 +161,19 @@
         <p class="guides-block_item-advantages-reviews-desc">rated 4.7/5.0 by more than 100,000 customers</p>
         <div class="guides-block_item-advantages-reviews-imgs">
           <div class="guides-block_item-advantages-reviews-img">
-            <img src="//legitgrails.com/cdn/shop/t/168/assets/reviews_klients-1.webp?v=74878100532075713011746166976">
+            <img src="//legitgrails.com/cdn/shop/t/168/assets/reviews_klients-1.webp?v=74878100532075713011746166976" alt="reviews_klients-1"  loading="lazy">
           </div>
           <div class="guides-block_item-advantages-reviews-img">
-            <img src="{{ "reviews_klients-2.webp" | asset_url }}" loading="lazy">
+            <img src="{{ "reviews_klients-2.webp" | asset_url }}" alt="reviews_klients-2"  loading="lazy">
           </div>
           <div class="guides-block_item-advantages-reviews-img">
-            <img src="{{ "reviews_klients-3.webp" | asset_url }}" loading="lazy">
+            <img src="{{ "reviews_klients-3.webp" | asset_url }}" alt="reviews_klients-3"  loading="lazy">
           </div>
           <div class="guides-block_item-advantages-reviews-img">
-            <img src="{{ "reviews_klients-4.webp" | asset_url }}" loading="lazy">
+            <img src="{{ "reviews_klients-4.webp" | asset_url }}" alt="reviews_klients-4"  loading="lazy">
           </div>
           <div class="guides-block_item-advantages-reviews-img">
-            <img src="{{ "reviews_klients-5.webp" | asset_url }}" loading="lazy">
+            <img src="{{ "reviews_klients-5.webp" | asset_url }}" alt="reviews_klients-5"  loading="lazy">
           </div>
         </div>
       </div>
@@ -295,5 +295,9 @@
 </script>-->
 
 <script>
+    document.addEventListener("DOMContentLoaded",
+    function () {
   $(document).ready(function(){$(".blok-4-wrapper").prev("p").css("display","none"),$(".blok-4-wrapper").next("p").css("display","none"),$(".blok-3-wrapper").prev("p").css("display","none"),$(".blok-3-wrapper").next("p").css("display","none"),$(".blok-2-wrapper").prev("p").css("display","none"),$(".blok-2-wrapper").next("p").css("display","none"),$(".blok-1-wrapper").prev("p").css("display","none"),$(".blok-1-wrapper").next("p").css("display","none"),$(".product-card__1").children(".guides-block").children(".guides-block_item-product").children("form").children(".variant-list").children(".product-variants").children(".radio-options").each(function(t){var e=$(this).find("input"),r=$(this).find("label"),n=e.attr("id"),a=r.attr("for");e.attr("id",n+"_1"),r.attr("for",a+"_1")}),$(".template-page").length?$("#product_form_{{ product.id }} ").on("change",function(){let t=$("input:checked").attr("data-price");$(".product__current-price").html(t)}):$(".product-form").on("change",function(t){console.log(this);let e="."+t.target.form.closest(".product-card").classList[1],r=$(e).find("input.radio-option:checked").attr("data-price");$(e).find(".product__current-price").html(r)});let t={empty:"Please upload photos before purchasing",wait:"Adding...",thanks:"Thank You!"};$(".custom-cart-button").on("click",function(e){e.preventDefault();let r="."+e.target.form.parentElement.classList[1],n;n=$(".uploadcare-attributes").length?$(".uploadcare-attributes").children():$(".uploadkit-attribute-container").children();let a={};if(n.length){for(item of($(".custom-cart-button").html(t.wait),sessionStorage.removeItem("uploadcare_{{ product.id }}"),n))a[item.name.substring(item.name.indexOf("[")+1,item.name.lastIndexOf("]"))]=item.value;let o={items:[{id:$(r).find("input.radio-option:checked").val(),quantity:1,properties:a}]};$("#product_form_{{ product.id }}"),$.ajax({type:"POST",url:"/cart/add.js",dataType:"json",data:JSON.stringify(o),contentType:"application/json",processData:!1,success:function(){$(r).find(".custom-cart-button").html(t.thanks),document.location.href="/cart/checkout"}})}else $(".cart-notification").html(t.empty),setTimeout(function(){$(".cart-notification").html("")},2e3)})});
-</script>
+  }
+)
+  </script>

@@ -176,6 +176,8 @@ line-height: 28px;}
   }
 </style>
 <script>
+  document.addEventListener("DOMContentLoaded",
+    function () {
    $(document).ready(function(){
       $(".article__body").find(".guides-block").eq(0).addClass("guides-block-1");
       $(".article__body").find(".guides-block").eq(1).addClass("guides-block-2");
@@ -346,7 +348,8 @@ line-height: 28px;}
         }
       }
     });
-
+}
+)
 
   </script>
 {% endif %}

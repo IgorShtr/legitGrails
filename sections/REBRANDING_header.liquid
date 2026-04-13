@@ -693,6 +693,8 @@
 </header>
           </div>
 <script>
+  document.addEventListener("DOMContentLoaded",
+  function (){
 $( "#SearchToggle" ).on( "click", function() {
     $(".search-cover").addClass("active");
   });
@@ -718,6 +720,8 @@ $( "#SearchToggle" ).on( "click", function() {
           $('header').removeClass('header-scrolled');
       };
     });
+    }
+  )
 </script>
 {% schema %}
 {

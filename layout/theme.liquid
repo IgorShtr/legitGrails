@@ -13,7 +13,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="{{ settings.color_primary }}">
-
+<link rel="preload" as="image" href="{{ 'homepage_hero-slide-2x.webp' | asset_url }}" type="image/webp"
+  fetchpriority="high">
       <link rel="canonical" href="{{ canonical_url }}">
     {% render 'pandectes-rules' %}
     {% if settings.favicon != blank %}
@@ -214,7 +215,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       {% endif %}
     {% unless template.suffix == 'blog_product' %}
       <a class="visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
-      {% render 'rebranding_preloader' %}
+      {% comment %} {% render 'rebranding_preloader' %} {% endcomment %}
       {% render 'rebranding_main-styles' %}
       {% section 'REBRANDING_header' %}
       {% render 'breadcrumbs' %}

@@ -427,9 +427,13 @@
 </footer>
 
 <script>
-$("#contact_form").submit(function(e) {
-    e.preventDefault();
-});
+  document.addEventListener("DOMContentLoaded",
+  function (){
+  $("#contact_form").submit(function(e) {
+      e.preventDefault();
+  });
+ }
+  )
 </script>
 
 {% schema %}

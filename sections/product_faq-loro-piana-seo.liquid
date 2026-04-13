@@ -410,16 +410,7 @@
 }
 </script>
               
-<script>
-  $( ".product_faq-item" ).on( "click", function() {
-    if ($(this).hasClass("active")) {
-      $(".product_faq-item").removeClass("active");
-    } else {
-      $(".product_faq-item").removeClass("active");
-      $(this).addClass("active");
-    }
-  });
-</script>
+<script src="{{ 'product-faq-item-click.js' | asset_url }}" defer></script>
 
 {% schema %}
   {

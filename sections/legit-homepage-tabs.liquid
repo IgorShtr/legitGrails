@@ -90,9 +90,15 @@
             </div>
             
         </div>
-        <img src="{{ "homepage-tabs_bottom-image.webp" | asset_url }}" class="homepage-tabs_bottom-image">
-<img loading="lazy" class="homepage-tabs_right-img" src="{{ "homepage-tabs_right-img.webp" | asset_url }}">
-<script>$(".homepage-tabs_tab").on("click",function(){$(".homepage-tabs_tab").removeClass("active"),$(".homepage-tabs_content_tab").removeClass("active"),$(this).addClass("active");var a=$(this).attr("id");return $(".homepage-tabs_content_"+a).addClass("active"),!1});</script>
+        <img src="{{ "homepage-tabs_bottom-image.webp" | asset_url }}" loading="lazy" alt="homepage-tabs_bottom-imag" class="homepage-tabs_bottom-image">
+<img loading="lazy" class="homepage-tabs_right-img" src="{{ "homepage-tabs_right-img.webp" | asset_url }}" alt="homepage-tabs_right-img">
+<script>
+    document.addEventListener("DOMContentLoaded",
+  function (){
+$(".homepage-tabs_tab").on("click",function(){$(".homepage-tabs_tab").removeClass("active"),$(".homepage-tabs_content_tab").removeClass("active"),$(this).addClass("active");var a=$(this).attr("id");return $(".homepage-tabs_content_"+a).addClass("active"),!1});
+}
+  )
+</script>
 <!-- TrustBox script -->
 <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
 <!-- End TrustBox script -->

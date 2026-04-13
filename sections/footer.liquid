@@ -149,9 +149,13 @@
 </footer>
 
 <script>
+  document.addEventListener("DOMContentLoaded",
+  function (){
 $("#contact_form").submit(function(e) {
     e.preventDefault();
 });
+  }
+  )
 </script>
 
 {% schema %}

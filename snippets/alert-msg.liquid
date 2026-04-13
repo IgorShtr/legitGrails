@@ -27,6 +27,8 @@
 <div class="alert-msg" id="js-alert-msg"></div>
 
 <script>
+  document.addEventListener("DOMContentLoaded",
+  function (){
   function showJsAlert(message, duration = 4000) {
     const $alert = $(".popup-notofocation");
 
@@ -51,4 +53,6 @@
       $(this).html("");
     });
   });
+   }
+  )
 </script>
